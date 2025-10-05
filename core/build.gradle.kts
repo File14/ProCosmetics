@@ -22,7 +22,7 @@ dependencies {
         exclude(group = "net.kyori")
     }
     compileOnly("com.github.MilkBowl:VaultAPI:1.7.1")
-    compileOnly("net.essentialsx:EssentialsX:2.21.1")
+    compileOnly("net.essentialsx:EssentialsX:2.21.2")
     compileOnly("com.github.Zrips:CMI-API:9.7.14.3")
     compileOnly("com.sk89q.worldguard:worldguard-bukkit:7.0.14")
     compileOnly("org.black_ixx:playerpoints:3.3.2")
