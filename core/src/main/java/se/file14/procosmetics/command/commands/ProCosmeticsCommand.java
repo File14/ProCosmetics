@@ -63,7 +63,6 @@ public class ProCosmeticsCommand extends SimpleCommand<CommandSender> {
                 // COMMON
                 new EquipPlayerCommand(plugin),
                 new InfoCommand(plugin),
-                new LicenseCommand(plugin),
                 new ItemCommand(plugin),
                 new MenuCommand(plugin),
                 new ReloadCommand(plugin),
