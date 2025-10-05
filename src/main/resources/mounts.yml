@@ -1,0 +1,203 @@
+# Enable/disable this entire category.
+# When disabled, players cannot equip any cosmetics from this category as they will NOT be loaded into cache.
+enable: true
+
+# This feature makes some entities toss items in different directions.
+tossing_items: true
+# This feature makes some entities spawn blocks underneath them.
+block_trail: true
+# This feature forces the player to ride the mount when it spawns.
+ride_on_spawn: false
+# This feature despawns the mount once a player stops riding it.
+despawn_on_dismount: false
+
+menu:
+  rows: 5
+
+  # Items use vanilla Minecraft format for flexible customization.
+  # Supports resource packs and custom data components.
+  #
+  # Custom Model Data Format (Spigot version):
+  # minecraft:stone[minecraft:custom_model_data={floats:[0.0f]}]
+  #
+  # For more information: https://minecraft.wiki/w/Data_component_format
+  items:
+    fill_empty_slots:
+      enable: true
+      item: "minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]"
+      count: 1
+
+    next_page:
+      item: "minecraft:arrow"
+      count: 1
+      slot: -3
+
+    previous_page:
+      item: "minecraft:arrow"
+      count: 1
+      slot: -7
+
+    go_back:
+      enable: true
+      item: "minecraft:red_bed"
+      count: 1
+      slot: -5
+      on_click:
+        # If the command is empty, players will be returned to the main menu.
+        command: ""
+        execute_as_player: false
+
+    locked_cosmetic:
+      # This specifies if another item should replace the original cosmetic item while it is locked.
+      # This is useful to easily visualize which cosmetics the player has access to or not.
+      enable: true
+      item: "minecraft:gray_dye"
+      count: 1
+
+cosmetics:
+  infernal_horror:
+    enable: true
+    obtainable: true
+    rarity: "RARE"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:bone"
+    count: 1
+
+  glacial_steed:
+    enable: true
+    obtainable: true
+    rarity: "RARE"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:packed_ice"
+    count: 1
+
+  lovely_sheep:
+    enable: true
+    obtainable: true
+    rarity: "RARE"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:pink_stained_glass"
+    count: 1
+
+  frosty_snowman:
+    enable: true
+    obtainable: true
+    rarity: "RARE"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:snowball"
+    count: 1
+
+  slime:
+    enable: true
+    obtainable: true
+    rarity: "RARE"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:slime_block"
+    count: 1
+
+  molten_snake:
+    enable: true
+    obtainable: true
+    rarity: "RARE"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:netherrack"
+    count: 1
+
+  ethereal_dragon:
+    enable: true
+    obtainable: true
+    rarity: "RARE"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:dragon_egg[!minecraft:rarity]"
+    count: 1
+
+  hype_train:
+    enable: true
+    obtainable: true
+    rarity: "RARE"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:minecart"
+    count: 1
+
+  pirate_ship:
+    enable: true
+    obtainable: true
+    rarity: "RARE"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:oak_boat"
+    count: 1
+
+  baby_reindeer:
+    enable: true
+    obtainable: true
+    rarity: "RARE"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:snow_block"
+    count: 1
+
+  cave_spider:
+    enable: true
+    obtainable: true
+    rarity: "RARE"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:spider_eye"
+    count: 1
+
+  clumsy_mule:
+    enable: true
+    obtainable: true
+    rarity: "RARE"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:chest"
+    count: 1
+
+  decrepit_warhorse:
+    enable: true
+    obtainable: true
+    rarity: "RARE"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:rotten_flesh"
+    count: 1
+
+  rudolf:
+    enable: true
+    obtainable: true
+    rarity: "RARE"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:dead_bush"
+    count: 1
+
+  unicorn:
+    enable: true
+    obtainable: true
+    rarity: "RARE"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:blaze_rod"
+    count: 1
+
+  crazy_chicken:
+    enable: true
+    obtainable: true
+    rarity: "RARE"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:egg"
+    count: 1
+
+# Do not edit this!
+config_version: 1

@@ -1,0 +1,86 @@
+# Enable/disable this entire category.
+# When disabled, players cannot equip any cosmetics from this category as they will NOT be loaded into cache.
+enable: true
+
+# Enable/disable the disco floor below the DJ booth.
+disco_floor: true
+
+menu:
+  rows: 3
+
+  # Items use vanilla Minecraft format for flexible customization.
+  # Supports resource packs and custom data components.
+  #
+  # Custom Model Data Format (Spigot version):
+  # minecraft:stone[minecraft:custom_model_data={floats:[0.0f]}]
+  #
+  # For more information: https://minecraft.wiki/w/Data_component_format
+  items:
+    fill_empty_slots:
+      enable: true
+      item: "minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]"
+      count: 1
+
+    next_page:
+      item: "minecraft:arrow"
+      count: 1
+      slot: -3
+
+    previous_page:
+      item: "minecraft:arrow"
+      count: 1
+      slot: -7
+
+    go_back:
+      enable: true
+      item: "minecraft:red_bed"
+      count: 1
+      slot: -5
+      on_click:
+        # If the command is empty, players will be returned to the main menu.
+        command: ""
+        execute_as_player: false
+
+    locked_cosmetic:
+      # This specifies if another item should replace the original cosmetic item while it is locked.
+      # This is useful to easily visualize which cosmetics the player has access to or not.
+      enable: true
+      item: "minecraft:gray_dye"
+      count: 1
+
+# A music bundle with around 35 songs and a pre-configured music.yml file can be found at:
+# https://github.com/File14/ProCosmetics/wiki/Creating-Custom-Cosmetics#creating-music
+# Note: This bundle is not included by default in the plugin due to copyright restrictions.
+# Please be aware of copyright laws and use the songs at your own risk. Do not sell the copyrighted music through your server store.
+#
+# The default songs listed below are safe to use as they are non-copyrighted.
+cosmetics:
+  in_the_hall_of_the_mountain_king:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:paper"
+    count: 1
+
+  fur_elise:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:paper"
+    count: 1
+
+  sweden:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:paper"
+    count: 1
+
+# Do not edit this!
+config_version: 1

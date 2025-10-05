@@ -1,0 +1,222 @@
+# Whenever or not to enable the Treasure Chests feature.
+enable: true
+
+# This setting allows you to configure who receives the message "File14 is opening a Common Chest!".
+# You can choose to broadcast the message to just the player who found the item, to nearby players
+# within a 32-block radius, world players, or to all online players.
+# NOTE: opening_broadcast must be set to true for the specific treasure you are opening for this to take effect!
+#
+# Modes: SELF, NEARBY, WORLD, ALL
+broadcast_opening_treasure:
+  mode: ALL
+
+broadcast_loot:
+  # This setting allows you to configure who receives the message "File14 has found Rare TNT (Gadget)!".
+  # You can choose to broadcast the message to just the player who found the item, to nearby players
+  # within a 32-block radius, world players, or to all online players.
+  #
+  # Modes: SELF, NEARBY, WORLD, ALL
+  mode: ALL
+  # You can exclude certain rarities from being broadcasted!
+  excludes:
+    - COMMON
+
+menu:
+  rows: 3
+
+  # Items use vanilla Minecraft format for flexible customization.
+  # Supports resource packs and custom data components.
+  #
+  # Custom Model Data Format (Spigot version):
+  # minecraft:stone[minecraft:custom_model_data={floats:[0.0f]}]
+  #
+  # For more information: https://minecraft.wiki/w/Data_component_format
+  items:
+    fill_empty_slots:
+      enable: true
+      item: "minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]"
+      count: 1
+
+treasure_chests:
+  common:
+    enable: true
+    purchasable: true
+    cost: 1000
+    chests_to_open: 4
+    chest_animation: COMMON
+    animation_layouts:
+      - "common_1"
+      - "common_2"
+      - "common_3"
+    opening_broadcast: true
+    item: "minecraft:chest"
+    count: 1
+    slot: 10
+    rewards:
+      money:
+        minimum_amount: 200
+        maximum_amount: 500
+        weight: 5
+      ammo:
+        minimum_amount: 20
+        maximum_amount: 50
+        weight: 95
+      arrow_effects:
+        weight: 1
+      balloons:
+        weight: 1
+      banners:
+        weight: 3
+      death_effects:
+        weight: 3
+      emotes:
+        weight: 1
+      gadgets:
+        weight: 7
+      miniatures:
+        weight: 0
+      morphs:
+        weight: 0
+      mounts:
+        weight: 0
+      music:
+        weight: 2
+      particle_effects:
+        weight: 0
+      pets:
+        weight: 5
+      statuses:
+        weight: 0
+      custom:
+        coin_bag:
+          enable: true
+          name: "&eSmall Coin Bag"
+          item: "minecraft:sunflower"
+          weight: 30
+          rarity: COMMON
+          message: "&e<player> &7has found a small bag of &ecoins&7!"
+          commands:
+            - "pc give coins <player> 100"
+
+  mythical:
+    enable: true
+    purchasable: true
+    cost: 5000
+    chests_to_open: 4
+    chest_animation: MYTHICAL
+    animation_layouts:
+      - "mythical_1"
+      - "mythical_2"
+      - "mythical_3"
+    opening_broadcast: true
+    item: "minecraft:ender_chest"
+    count: 1
+    slot: 13
+    rewards:
+      money:
+        minimum_amount: 500
+        maximum_amount: 2000
+        weight: 10
+      ammo:
+        minimum_amount: 30
+        maximum_amount: 80
+        weight: 40
+      arrow_effects:
+        weight: 10
+      balloons:
+        weight: 10
+      banners:
+        weight: 10
+      death_effects:
+        weight: 10
+      emotes:
+        weight: 8
+      gadgets:
+        weight: 6
+      miniatures:
+        weight: 7
+      morphs:
+        weight: 2
+      mounts:
+        weight: 2
+      music:
+        weight: 4
+      particle_effects:
+        weight: 1
+      pets:
+        weight: 15
+      statuses:
+        weight: 10
+      custom:
+        coin_bag:
+          enable: true
+          name: "&eMedium Coin Bag"
+          item: "minecraft:sunflower"
+          weight: 10
+          rarity: COMMON
+          message: "&e<player> &7has found a medium bag of &ecoins&7!"
+          commands:
+            - "pc give coins <player> 500"
+
+  legendary:
+    enable: true
+    purchasable: true
+    cost: 10000
+    chests_to_open: 4
+    chest_animation: LEGENDARY
+    animation_layouts:
+      - "legendary_1"
+      - "legendary_2"
+      - "legendary_3"
+    opening_broadcast: true
+    item: "minecraft:chest"
+    count: 1
+    slot: 16
+    rewards:
+      money:
+        minimum_amount: 1000
+        maximum_amount: 2500
+        weight: 15
+      ammo:
+        minimum_amount: 80
+        maximum_amount: 150
+        weight: 80
+      arrow_effects:
+        weight: 20
+      balloons:
+        weight: 22
+      banners:
+        weight: 22
+      death_effects:
+        weight: 20
+      emotes:
+        weight: 16
+      gadgets:
+        weight: 18
+      miniatures:
+        weight: 15
+      morphs:
+        weight: 10
+      mounts:
+        weight: 12
+      music:
+        weight: 15
+      particle_effects:
+        weight: 10
+      pets:
+        weight: 25
+      statuses:
+        weight: 14
+      custom:
+        coin_bag:
+          enable: true
+          name: "&eHuge Coin Bag"
+          item: "minecraft:sunflower"
+          weight: 3
+          rarity: LEGENDARY
+          message: "&e<player> &7has found a huge bag of &ecoins&7!"
+          commands:
+            - "pc give coins <player> 5000"
+
+# Do not edit this!
+config_version: 1

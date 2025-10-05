@@ -1,0 +1,46 @@
+name: ProCosmetics
+version: @VERSION@
+author: File14
+main: se.file14.procosmetics.ProCosmeticsPlugin
+load: POSTWORLD
+softdepend: [ CMI, Essentials, MVdWPlaceholderAPI, Multiverse-Core, PremiumVanish, PlaceholderAPI, PlayerPoints, PlotSquared, SuperVanish, Vault, WorldEdit, WorldGuard ]
+api-version: 1.20
+commands:
+  procosmetics:
+    description: ProCosmetics Command
+    usage: /procosmetics
+    permission: procosmetics.command
+    aliases:
+      - "pc"
+      - "proc"
+  cosmetics:
+    description: Opens the cosmetics menu.
+    usage: /cosmetics
+    permission: procosmetics.command.cosmetics
+  equip:
+    description: Equips a cosmetic.
+    usage: /equip
+    permission: procosmetics.command.equip
+  unequip:
+    description: Unequips a cosmetic.
+    usage: /unequip <type>
+    permission: procosmetics.command.unequip
+  unequipall:
+    description: Unequips your cosmetics.
+    usage: /unequipall
+    permission: procosmetics.command.unequipall
+  toggleselfview:
+    description: Toggles the self view
+    usage: /toggleselfview <type>
+    permission: procosmetics.command.toggleselfview
+
+
+
+
+
+
+
+
+
+
+

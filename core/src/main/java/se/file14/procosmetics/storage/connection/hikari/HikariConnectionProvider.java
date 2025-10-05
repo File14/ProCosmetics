@@ -1,0 +1,123 @@
+package se.file14.procosmetics.storage.connection.hikari;
+
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
+import org.bukkit.configuration.ConfigurationSection;
+import se.file14.procosmetics.ProCosmeticsPlugin;
+import se.file14.procosmetics.api.config.Config;
+import se.file14.procosmetics.storage.connection.ConnectionProvider;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+
+public abstract class HikariConnectionProvider implements ConnectionProvider {
+
+    private ProCosmeticsPlugin plugin;
+    private HikariDataSource hikari;
+
+    @Override
+    public void initialize(ProCosmeticsPlugin plugin) {
+        this.plugin = plugin;
+
+        try {
+            Config config = plugin.getConfigManager().getMainConfig();
+            HikariConfig hikariConfig = createHikariConfig(config);
+
+            this.hikari = new HikariDataSource(hikariConfig);
+
+            // Test the connection
+            try (Connection connection = hikari.getConnection()) {
+                plugin.getLogger().log(Level.INFO, "Database connection pool initialized successfully.");
+            }
+        } catch (Exception e) {
+            plugin.getLogger().log(Level.SEVERE, "Failed to initialize database connection pool.", e);
+        }
+    }
+
+    private HikariConfig createHikariConfig(Config config) {
+        HikariConfig hikariConfig = new HikariConfig();
+
+        hikariConfig.setPoolName(plugin.getName() + "-hikari");
+        hikariConfig.setDriverClassName(getDriverClassName());
+        hikariConfig.setJdbcUrl(buildJdbcUrl(config));
+        hikariConfig.setUsername(config.getString("storage.mysql.user"));
+        hikariConfig.setPassword(config.getString("storage.mysql.password"));
+
+        configurePoolSettings(hikariConfig, config);
+
+        configureDataSourceProperties(hikariConfig, config);
+
+        return hikariConfig;
+    }
+
+    private String buildJdbcUrl(Config config) {
+        return String.format("jdbc:%s://%s:%s/%s",
+                getDriverJdbcIdentifier(),
+                config.getString("storage.mysql.host"),
+                config.getInt("storage.mysql.port"),
+                config.getString("storage.mysql.database")
+        );
+    }
+
+    private void configurePoolSettings(HikariConfig hikariConfig, Config config) {
+        hikariConfig.setMaximumPoolSize(config.getInt("storage.mysql.maximum_pool_size"));
+        hikariConfig.setMinimumIdle(config.getInt("storage.mysql.minimum_idle"));
+        hikariConfig.setMinimumIdle(config.getInt("storage.mysql.idle_timeout"));
+        hikariConfig.setMaxLifetime(config.getInt("storage.mysql.maximum_lifetime"));
+        hikariConfig.setKeepaliveTime(config.getInt("storage.mysql.keepalive_time"));
+        hikariConfig.setConnectionTimeout(config.getInt("storage.mysql.connection_timeout"));
+    }
+
+    private void configureDataSourceProperties(HikariConfig hikariConfig, Config config) {
+        Map<String, Object> properties = new HashMap<>();
+        setDefaultProperties(properties);
+
+        // Override with custom properties from config
+        ConfigurationSection section = config.getConfigurationSection("storage.mysql.properties");
+        if (section != null) {
+            properties.putAll(section.getValues(false));
+        }
+
+        // Apply all properties to HikariConfig
+        for (Map.Entry<String, Object> property : properties.entrySet()) {
+            hikariConfig.addDataSourceProperty(property.getKey(), property.getValue());
+        }
+    }
+
+    protected void setDefaultProperties(Map<String, Object> properties) {
+        // Rapid Recovery settings - https://github.com/brettwooldridge/HikariCP/wiki/Rapid-Recovery
+        properties.put("socketTimeout", String.valueOf(TimeUnit.SECONDS.toMillis(30)));
+    }
+
+    protected abstract String getDriverClassName();
+
+    protected abstract String getDriverJdbcIdentifier();
+
+    @Override
+    public String getConfigKey() {
+        return "hikari";
+    }
+
+    @Override
+    public Connection getConnection() throws SQLException {
+        if (hikari == null || hikari.isClosed()) {
+            throw new SQLException("Connection pool is not initialized or has been closed.");
+        }
+        return hikari.getConnection();
+    }
+
+    @Override
+    public void shutdown() {
+        if (hikari != null && !hikari.isClosed()) {
+            hikari.close();
+        }
+    }
+
+    public HikariDataSource getDataSource() {
+        return hikari;
+    }
+}

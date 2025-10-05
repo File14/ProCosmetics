@@ -1,0 +1,562 @@
+# Enable/disable this entire category.
+# When disabled, players cannot equip any cosmetics from this category as they will NOT be loaded into cache.
+enable: true
+
+menu:
+  rows: 6
+
+  # Items use vanilla Minecraft format for flexible customization.
+  # Supports resource packs and custom data components.
+  #
+  # Custom Model Data Format (Spigot version):
+  # minecraft:stone[minecraft:custom_model_data={floats:[0.0f]}]
+  #
+  # For more information: https://minecraft.wiki/w/Data_component_format
+  items:
+    fill_empty_slots:
+      enable: true
+      item: "minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]"
+      count: 1
+
+    next_page:
+      item: "minecraft:arrow"
+      count: 1
+      slot: -3
+
+    previous_page:
+      item: "minecraft:arrow"
+      count: 1
+      slot: -7
+
+    go_back:
+      enable: true
+      item: "minecraft:red_bed"
+      count: 1
+      slot: -5
+      on_click:
+        # If the command is empty, players will be returned to the main menu.
+        command: ""
+        execute_as_player: false
+
+    locked_cosmetic:
+      # This specifies if another item should replace the original cosmetic item while it is locked.
+      # This is useful to easily visualize which cosmetics the player has access to or not.
+      enable: true
+      item: "minecraft:gray_dye"
+      count: 1
+
+cosmetics:
+  allay:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    entity: "ALLAY"
+    baby: false
+    scale: 1.0
+    spawn_sound: "ENTITY_ALLAY_AMBIENT_WITHOUT_ITEM"
+    toss_item:
+      enable: false
+      item: "minecraft:diamond"
+    item: "minecraft:ghast_tear"
+    count: 1
+
+  armadillo:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    entity: "ARMADILLO"
+    baby: true
+    scale: 1.0
+    spawn_sound: "ENTITY_ARMADILLO_AMBIENT"
+    toss_item:
+      enable: false
+      item: "minecraft:diamond"
+    item: "minecraft:armadillo_scute"
+    count: 1
+
+  axolotl:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    entity: "AXOLOTL"
+    baby: true
+    scale: 1.0
+    spawn_sound: "ENTITY_AXOLOTL_SWIM"
+    toss_item:
+      enable: false
+      item: "minecraft:diamond"
+    item: "minecraft:axolotl_bucket"
+    count: 1
+
+  bee:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    entity: "BEE"
+    baby: true
+    scale: 1.0
+    spawn_sound: "ENTITY_BEE_LOOP"
+    toss_item:
+      enable: true
+      item: "minecraft:honeycomb"
+    item: "minecraft:honeycomb"
+    count: 1
+
+  body_guard:
+    enable: true
+    obtainable: true
+    rarity: "LEGENDARY"
+    purchasable: true
+    cost: 2000
+    entity: "IRON_GOLEM"
+    baby: false
+    scale: 1.0
+    spawn_sound: "ENTITY_SNOW_GOLEM_AMBIENT"
+    toss_item:
+      enable: false
+      item: "minecraft:iron_ingot"
+    item: "minecraft:poppy"
+    count: 1
+
+  calf:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    entity: "COW"
+    baby: true
+    scale: 1.0
+    spawn_sound: "ENTITY_COW_AMBIENT"
+    toss_item:
+      enable: true
+      item: "minecraft:milk_bucket"
+    item: "minecraft:milk_bucket"
+    count: 1
+
+  camel:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    entity: "CAMEL"
+    baby: true
+    scale: 1.0
+    spawn_sound: "ENTITY_CAMEL_AMBIENT"
+    toss_item:
+      enable: false
+      item: "minecraft:diamond"
+    item: "minecraft:sand"
+    count: 1
+
+  cave_spider:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    entity: "CAVE_SPIDER"
+    baby: false
+    scale: 1.0
+    spawn_sound: "ENTITY_SPIDER_AMBIENT"
+    toss_item:
+      enable: true
+      item: "minecraft:cobweb"
+    item: "minecraft:spider_eye"
+    count: 1
+
+  chicken:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    entity: "CHICKEN"
+    baby: true
+    scale: 1.0
+    spawn_sound: "ENTITY_CHICKEN_AMBIENT"
+    toss_item:
+      enable: true
+      item: "minecraft:egg"
+    item: "minecraft:feather"
+    count: 1
+
+  colorful_lamb:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    entity: "SHEEP"
+    baby: true
+    scale: 1.0
+    spawn_sound: "ENTITY_SHEEP_AMBIENT"
+    toss_item:
+      enable: false
+      item: "minecraft:white_wool"
+    item: "minecraft:white_wool"
+    count: 1
+
+  easter_bunny:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    entity: "RABBIT"
+    baby: true
+    scale: 1.0
+    spawn_sound: "ENTITY_RABBIT_AMBIENT"
+    toss_item:
+      enable: true
+      item: "minecraft:egg"
+    item: "minecraft:carrot"
+    count: 1
+
+  elf:
+    enable: true
+    obtainable: true
+    rarity: "LEGENDARY"
+    purchasable: true
+    cost: 2000
+    entity: "ZOMBIE"
+    baby: true
+    scale: 1.0
+    spawn_sound: "ENTITY_WITCH_CELEBRATE"
+    toss_item:
+      enable: false
+      item: "minecraft:diamond"
+    item: "minecraft:emerald"
+    count: 1
+
+  endermite:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    entity: "ENDERMITE"
+    baby: true
+    scale: 1.0
+    spawn_sound: "ENTITY_ENDERMITE_AMBIENT"
+    toss_item:
+      enable: false
+      item: "minecraft:diamond"
+    item: "minecraft:ender_pearl"
+    count: 1
+
+  fox:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    entity: "FOX"
+    baby: true
+    scale: 1.0
+    spawn_sound: "ENTITY_FOX_AMBIENT"
+    toss_item:
+      enable: false
+      item: "minecraft:diamond"
+    item: "minecraft:orange_dye"
+    count: 1
+
+  frog:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    entity: "FROG"
+    baby: true
+    scale: 1.0
+    spawn_sound: "ENTITY_FROG_AMBIENT"
+    toss_item:
+      enable: false
+      item: "minecraft:diamond"
+    item: "minecraft:slime_ball"
+    count: 1
+
+  goat:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    entity: "GOAT"
+    baby: true
+    scale: 1.0
+    spawn_sound: "ENTITY_GOAT_AMBIENT"
+    toss_item:
+      enable: false
+      item: "minecraft:diamond"
+    item: "minecraft:milk_bucket"
+    count: 1
+
+  hoglin:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    entity: "HOGLIN"
+    baby: true
+    scale: 1.0
+    spawn_sound: "ENTITY_HOGLIN_AMBIENT"
+    toss_item:
+      enable: false
+      item: "minecraft:diamond"
+    item: "minecraft:raw_gold"
+    count: 1
+
+  kitten:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    entity: "CAT"
+    baby: true
+    scale: 1.0
+    spawn_sound: "ENTITY_CAT_AMBIENT"
+    toss_item:
+      enable: true
+      item: "minecraft:tropical_fish"
+    item: "minecraft:cod"
+    count: 1
+
+  llama:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    entity: "LLAMA"
+    baby: true
+    scale: 1.0
+    spawn_sound: "ENTITY_LLAMA_AMBIENT"
+    toss_item:
+      enable: false
+      item: "minecraft:diamond"
+    item: "minecraft:lead"
+    count: 1
+
+  mushroom_calf:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    entity: "MOOSHROOM"
+    baby: true
+    scale: 1.0
+    spawn_sound: "ENTITY_COW_AMBIENT"
+    toss_item:
+      enable: true
+      item: "minecraft:red_mushroom"
+    item: "minecraft:red_mushroom"
+    count: 1
+
+  panda:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    entity: "PANDA"
+    baby: true
+    scale: 1.0
+    spawn_sound: "ENTITY_PANDA_AMBIENT"
+    toss_item:
+      enable: true
+      item: "minecraft:bamboo"
+    item: "minecraft:bamboo"
+    count: 1
+
+  parrot:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    entity: "PARROT"
+    baby: false
+    scale: 1.0
+    spawn_sound: "ENTITY_PARROT_AMBIENT"
+    toss_item:
+      enable: false
+      item: "minecraft:diamond"
+    item: "minecraft:feather"
+    count: 1
+
+  piggy:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    entity: "PIG"
+    baby: true
+    scale: 1.0
+    spawn_sound: "ENTITY_PIG_AMBIENT"
+    toss_item:
+      enable: true
+      item: "minecraft:porkchop"
+    item: "minecraft:porkchop"
+    count: 1
+
+  piglin:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    entity: "PIGLIN"
+    baby: true
+    scale: 1.0
+    spawn_sound: "ENTITY_PIGLIN_AMBIENT"
+    toss_item:
+      enable: false
+      item: "minecraft:diamond"
+    item: "minecraft:gold_ingot"
+    count: 1
+
+  polar_bear:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    entity: "POLAR_BEAR"
+    baby: true
+    scale: 1.0
+    spawn_sound: "ENTITY_POLAR_BEAR_AMBIENT"
+    toss_item:
+      enable: false
+      item: "minecraft:diamond"
+    item: "minecraft:packed_ice"
+    count: 1
+
+  puppy:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    entity: "WOLF"
+    baby: true
+    scale: 1.0
+    spawn_sound: "ENTITY_WOLF_AMBIENT"
+    toss_item:
+      enable: true
+      item: "minecraft:bone"
+    item: "minecraft:bone"
+    count: 1
+
+  santa_claus:
+    enable: true
+    obtainable: true
+    rarity: "LEGENDARY"
+    purchasable: true
+    cost: 2000
+    entity: "ZOMBIE"
+    baby: false
+    scale: 1.0
+    spawn_sound: "ENTITY_WITCH_CELEBRATE"
+    toss_item:
+      enable: false
+      item: "minecraft:diamond"
+    item: "minecraft:redstone"
+    count: 1
+
+  silverfish:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    entity: "SILVERFISH"
+    baby: false
+    scale: 1.0
+    spawn_sound: "ENTITY_SILVERFISH_AMBIENT"
+    toss_item:
+      enable: false
+      item: "minecraft:diamond"
+    item: "minecraft:stone_button"
+    count: 1
+
+  sniffer:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    entity: "SNIFFER"
+    baby: true
+    scale: 1.0
+    spawn_sound: "ENTITY_SNIFFER_SNIFFING"
+    toss_item:
+      enable: false
+      item: "minecraft:diamond"
+    item: "minecraft:sniffer_egg[!minecraft:rarity]"
+    count: 1
+
+  turtle:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    entity: "TURTLE"
+    baby: false
+    scale: 1.0
+    spawn_sound: "ENTITY_TURTLE_EGG_HATCH"
+    toss_item:
+      enable: false
+      item: "minecraft:diamond"
+    item: "minecraft:turtle_helmet[!minecraft:attribute_modifiers]"
+    count: 1
+
+  villager:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    entity: "VILLAGER"
+    baby: true
+    scale: 1.0
+    spawn_sound: "ENTITY_VILLAGER_YES"
+    toss_item:
+      enable: false
+      item: "minecraft:emerald"
+    item: "minecraft:emerald"
+    count: 1
+
+  zombie_villager:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    entity: "ZOMBIE_VILLAGER"
+    baby: true
+    scale: 1.0
+    spawn_sound: "ENTITY_ZOMBIE_AMBIENT"
+    toss_item:
+      enable: true
+      item: "minecraft:rotten_flesh"
+    item: "minecraft:rotten_flesh"
+    count: 1
+
+# Do not edit this!
+config_version: 1

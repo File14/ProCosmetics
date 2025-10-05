@@ -1,0 +1,61 @@
+package se.file14.procosmetics.storage;
+
+import se.file14.procosmetics.ProCosmeticsPlugin;
+import se.file14.procosmetics.storage.database.MariaDbDatabase;
+import se.file14.procosmetics.storage.database.MysqlDatabase;
+import se.file14.procosmetics.storage.database.PostgresqlDatabase;
+import se.file14.procosmetics.storage.database.SqliteDatabase;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+import java.util.function.Function;
+
+public class DatabaseTypeProvider {
+
+    private static final Map<String, Function<ProCosmeticsPlugin, SQLDatabase>> DATABASE_PROVIDERS = new HashMap<>();
+
+    static {
+        register("mysql", MysqlDatabase::new);
+        register("mariadb", MariaDbDatabase::new);
+        register("postgresql", PostgresqlDatabase::new);
+        register("sqlite", SqliteDatabase::new);
+    }
+
+    public static SQLDatabase createDatabase(ProCosmeticsPlugin plugin, String databaseType) {
+        if (plugin == null) {
+            throw new IllegalArgumentException("Plugin cannot be null");
+        }
+        if (databaseType == null || databaseType.trim().isEmpty()) {
+            throw new IllegalArgumentException("Database type cannot be null or empty");
+        }
+        String normalizedType = databaseType.toLowerCase().trim();
+        Function<ProCosmeticsPlugin, SQLDatabase> provider = DATABASE_PROVIDERS.get(normalizedType);
+
+        if (provider == null) {
+            throw new IllegalArgumentException(String.format("Unsupported database type: %s. Supported types: %s", databaseType, getSupportedTypes()));
+        }
+        return provider.apply(plugin);
+    }
+
+    public static void register(String databaseType, Function<ProCosmeticsPlugin, SQLDatabase> databaseProvider) {
+        if (databaseType == null || databaseType.trim().isEmpty()) {
+            throw new IllegalArgumentException("Database type cannot be null or empty");
+        }
+        if (databaseProvider == null) {
+            throw new IllegalArgumentException("Database provider cannot be null");
+        }
+        DATABASE_PROVIDERS.put(databaseType.toLowerCase().trim(), databaseProvider);
+    }
+
+    public static boolean unregister(String databaseType) {
+        if (databaseType == null || databaseType.trim().isEmpty()) {
+            return false;
+        }
+        return DATABASE_PROVIDERS.remove(databaseType.toLowerCase().trim()) != null;
+    }
+
+    public static Set<String> getSupportedTypes() {
+        return DATABASE_PROVIDERS.keySet();
+    }
+}

@@ -1,0 +1,36 @@
+# SpecialSource
+SpecialSource.jar
+
+#Eclipse
+.classpath
+.project
+.settings/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
+
+# Gradle
+.gradle/
+build/
+*.lock
+buildOutputCleanup.lock
+cache.properties
+outputFiles.bin
+
+### NetBeans ###
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/

@@ -1,0 +1,2964 @@
+{
+  "cosmetic.arrow_effects.equip": "<gray>You equipped <yellow><cosmetic></yellow>.</gray>",
+  "cosmetic.arrow_effects.unequip": "<gray>You unequipped <yellow><cosmetic></yellow>.</gray>",
+
+  "cosmetic.balloons.equip": "<gray>You spawned <yellow><cosmetic></yellow>.</gray>",
+  "cosmetic.balloons.unequip": "<gray>You despawned <yellow><cosmetic></yellow>.</gray>",
+
+  "cosmetic.banners.equip": "<gray>You equipped <yellow><cosmetic></yellow>.</gray>",
+  "cosmetic.banners.unequip": "<gray>You unequipped <yellow><cosmetic></yellow>.</gray>",
+
+  "cosmetic.death_effects.equip": "<gray>You equipped <yellow><cosmetic></yellow>.</gray>",
+  "cosmetic.death_effects.unequip": "<gray>You unequipped <yellow><cosmetic></yellow>.</gray>",
+
+  "cosmetic.emotes.equip": "<gray>You equipped <yellow><cosmetic></yellow>.</gray>",
+  "cosmetic.emotes.unequip": "<gray>You unequipped <yellow><cosmetic></yellow>.</gray>",
+
+  "cosmetic.gadgets.equip": "<gray>You equipped <yellow><cosmetic></yellow>.</gray>",
+  "cosmetic.gadgets.equip.remove_item": "<red>Please remove your current item from the <slot>th slot to equip this gadget!</red>",
+  "cosmetic.gadgets.unequip": "<gray>You unequipped <yellow><cosmetic></yellow>.</gray>",
+  "cosmetic.gadgets.cooldown": "<gadget> <white><cooldown_bar></white> <white><cooldown_duration>s</white>",
+  "cosmetic.gadgets.cooldown.ready": "<yellow><gadget></yellow> <gray>is now recharged!</gray>",
+
+  "cosmetic.miniatures.equip": "<gray>You spawned <yellow><cosmetic></yellow>.</gray>",
+  "cosmetic.miniatures.unequip": "<gray>You despawned <yellow><cosmetic></yellow>.</gray>",
+
+  "cosmetic.morphs.equip": "<gray>You morphed into <yellow><cosmetic></yellow>.</gray>",
+  "cosmetic.morphs.unequip": "<gray>You unmorphed from <yellow><cosmetic></yellow>.</gray>",
+  "cosmetic.morphs.ability.cooldown.ready": "<yellow>You can now use the ability again!</yellow>",
+
+  "cosmetic.mounts.equip": "<gray>You spawned <yellow><cosmetic></yellow>.</gray>",
+  "cosmetic.mounts.unequip": "<gray>You despawned <yellow><cosmetic></yellow>.</gray>",
+  "cosmetic.mounts.equip.not_owner": "<red>This is not your mount!</red>",
+  "cosmetic.mounts.name_tag": "<aqua><player>'s</aqua> <gray><cosmetic></gray>",
+
+  "cosmetic.music.equip": "<gray>You spawned <yellow><cosmetic></yellow>.</gray>",
+  "cosmetic.music.equip.deny": "<red>You are too close to another Music Box. Go further away!</red>",
+  "cosmetic.music.unequip": "<gray>You despawned <yellow><cosmetic></yellow>.</gray>",
+  "cosmetic.music.hologram.dj": "<green><player>'s DJ</green>",
+  "cosmetic.music.hologram.song": "<yellow>Playing <song></yellow>",
+
+  "cosmetic.particle_effects.equip": "<gray>You summoned <yellow><cosmetic></yellow>.</gray>",
+  "cosmetic.particle_effects.unequip": "<gray>You unsummoned <yellow><cosmetic></yellow>.</gray>",
+
+  "cosmetic.pets.equip": "<gray>You spawned <yellow><cosmetic></yellow>.</gray>",
+  "cosmetic.pets.unequip": "<gray>You despawned <yellow><cosmetic></yellow>.</gray>",
+  "cosmetic.pets.name_tag": "<aqua><player>'s</aqua> <gray><cosmetic></gray>",
+
+  "cosmetic.statuses.equip": "<gray>You equipped <yellow><cosmetic></yellow>.</gray>",
+  "cosmetic.statuses.unequip": "<gray>You unequipped <yellow><cosmetic></yellow>.</gray>",
+
+  "treasure_chest.open.broadcast": "<yellow><player></yellow> <gray>is opening a <aqua><treasure_chest></aqua>!</gray>",
+  "treasure_chest.open.title": "<aqua><treasure_chest></aqua>",
+  "treasure_chest.open.subtitle": "Choose <yellow><amount></yellow> to open!",
+  "treasure_chest.reward.money": "<yellow><player></yellow> <gray>found <yellow><amount> coins</yellow>!</gray>",
+  "treasure_chest.reward.ammo": "<yellow><player></yellow> <gray>found <rarity_primary_color><rarity><amount> <cosmetic>!</gray>",
+  "treasure_chest.reward.arrow_effects": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <cosmetic></gray> (<aqua><category></aqua>)!",
+  "treasure_chest.reward.balloons": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <cosmetic></gray> (<aqua><category></aqua>)!",
+  "treasure_chest.reward.banners": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <cosmetic></gray> (<aqua><category></aqua>)!",
+  "treasure_chest.reward.death_effects": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <cosmetic></gray> (<aqua><category></aqua>)!",
+  "treasure_chest.reward.emotes": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <cosmetic></gray> (<aqua><category></aqua>)!",
+  "treasure_chest.reward.gadgets": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <cosmetic></gray> (<aqua><category></aqua>)!",
+  "treasure_chest.reward.miniatures": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <cosmetic></gray> (<aqua><category></aqua>)!",
+  "treasure_chest.reward.morphs": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <cosmetic></gray> (<aqua><category></aqua>)!",
+  "treasure_chest.reward.mounts": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <cosmetic></gray> (<aqua><category></aqua>)!",
+  "treasure_chest.reward.music": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <cosmetic></gray> (<aqua><category></aqua>)!",
+  "treasure_chest.reward.particle_effects": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <cosmetic></gray> (<aqua><category></aqua>)!",
+  "treasure_chest.reward.pets": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <cosmetic></gray> (<aqua><category></aqua>)!",
+  "treasure_chest.reward.statuses": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <cosmetic></gray> (<aqua><category></aqua>)!",
+  "treasure_chest.already_in_use": "<red>This platform is already in use!</red>",
+
+  "cosmetic.unequip.region": "<red>You entered a region where some cosmetics are not allowed!</red>",
+  "cosmetic.equip.deny.region": "<red>You cannot equip that cosmetic in this region!</red>",
+  "cosmetic.equip.deny.world": "<red>Cosmetics are not allowed in this world!</red>",
+  "cosmetic.equip.deny.space": "<red>There is not enough space to use this cosmetic here!</red>",
+  "cosmetic.equip.deny.ground": "<red>You must stand on the ground to use this cosmetic!</red>",
+
+  "player.not_enough_money": "<red>You don't have enough coins! You are missing <amount> coins!</red>",
+  "player.not_permission": "<red>You don't have permission to do this!</red>",
+
+  "category.not_found": "<red>Could not find a cosmetic category by that name!</red>",
+  "cosmetic.not_found": "<red>Could not find a cosmetic by that name!</red>",
+  "cosmetic.not_equipped": "<red>You don't have any cosmetic equipped from that category.</red>",
+  "cosmetic.already_equipped": "<red>That cosmetic is already equipped!</red>",
+
+  "treasure.not_found": "<red>Could not find a treasure by that name!</red>",
+
+  "command.equip.category_not_found": "<red>Could not find a category by that name!</red>",
+  "command.equip.cosmetic_not_found": "<red>Could not find a cosmetic by that name!</red>",
+  "command.equip.already_equipped": "<yellow>You already have that cosmetic equipped!</yellow>",
+
+  "command.toggleselfview.success": "<yellow>You toggled the self-view!</yellow>",
+  "command.toggleselfview.not_equipped": "<red>You don't have any cosmetic equipped in that category!</red>",
+
+  "command.get.ammo": "<yellow><player></yellow> has <green><amount> <gadget></green> ammo.",
+  "command.get.coins": "<yellow><player></yellow> has <green><amount> coins</green>!",
+  "command.get.treasure": "<yellow><player></yellow> has <green><amount> <treasure_chest>(s)</green>!",
+
+  "command.give.ammo":"<gray>You gave <aqua><amount></aqua> <gadget> <gray>ammo to <yellow><player></yellow><gray>! They now have <aqua><ammo></aqua> <gadget> <gray>ammo.",
+  "command.give.coins": "<gray>You gave <aqua><amount></aqua> <gray>coins to <yellow><player></yellow><gray>! They now have <aqua><coins></aqua> <gray>coins.",
+  "command.give.cosmetic": "<gray>You gave the <aqua><cosmetic></aqua> <gray>cosmetic to <aqua><player></aqua><gray>.",
+  "command.give.cosmetic.already_owned": "<red><player> already owns that cosmetic!</red>",
+  "command.give.treasure": "<gray>You gave <aqua><amount></aqua> <treasure_chest> <gray>treasure(s) to <yellow><player></yellow><gray>! They now have <aqua><current></aqua> <treasure_chest> <gray>treasure(s)!",
+
+  "command.giveall.ammo": "<gray>You gave <aqua><amount></aqua> <gadget> <gray>ammo to <green><player_count> players</green><gray>!",
+  "command.giveall.coins": "<gray>You gave <aqua><amount></aqua> <gray>coins to <green><player_count> players</green><gray>!",
+  "command.giveall.cosmetic": "<gray>You gave the <aqua><cosmetic></aqua> <gray>cosmetic to <green><player_count> players</green><gray>.",
+  "command.giveall.treasure": "<gray>You gave <aqua><amount></aqua> <treasure_chest> <gray>treasure chests to <green><player_count> players</green><gray>!",
+
+  "command.set.ammo": "<gray>You set <aqua><amount></aqua> <gadget> <gray>ammo to <yellow><player></yellow><gray>!",
+  "command.set.coins": "<gray>You set <aqua><amount></aqua> <gray>coins to <yellow><player></yellow><gray>!",
+  "command.set.treasure": "<gray>You set <aqua><amount></aqua> <treasure_chest> <gray>treasure chests to <yellow><player></yellow><gray>!",
+
+  "command.take.ammo": "<gray>You took <aqua><amount></aqua> <gadget> <gray>ammo from <yellow><player></yellow><gray>! They now have <aqua><ammo></aqua> <gadget> <gray>ammo.",
+  "command.take.coins": "<gray>You took <aqua><amount></aqua> <gray>coin(s) from <yellow><player></yellow><gray>! They now have <aqua><coins></aqua> <gray>coin(s).",
+  "command.take.treasure": "<gray>You took <aqua><amount></aqua> <treasure_chest> <gray>treasure(s) from <yellow><player></yellow><gray>! They now have <aqua><new_total></aqua> <treasure_chest> <gray>treasure(s)!",
+
+  "generic.error.player_data": "<red>An error occurred! Please contact an administrator!</red>",
+  "generic.error.player_data.target": "<red>Could not find data of that player!</red>",
+  "generic.error.database": "<red>An error occurred with the database! Please contact an administrator!</red>",
+  "generic.player_offline": "<red>That player is offline!</red>",
+  "generic.player_not_found": "<red>Could not find any player by that name!</red>",
+
+  "command.treasurechest.add.not_on_chest": "<red>You are not standing on a chest!</red>",
+  "command.treasurechest.add.already_exists": "<red>There is already a platform here!</red>",
+  "command.treasurechest.add.too_close": "<red>You are too close to another platform or structure!</red>",
+  "command.treasurechest.add.layout_not_found": "<red>That layout does not exist! The default one is: default-treasurechest",
+  "command.treasurechest.add.success": "<green>You successfully added a new treasure chest platform!",
+
+  "command.treasurechest.delete.not_found": "<red>Could not find the platform. Are you sure you are standing on its chest?",
+  "command.treasurechest.delete.in_use": "<red>That platform is currently in use!",
+  "command.treasurechest.delete.success": "<red>You deleted the platform!",
+
+  "command.treasurechest.list.header": "<green>Current platforms (amount):</green>",
+  "command.treasurechest.list.entry": "Id: <green><id></green>, X: <green><x></green>, Y: <green><y></green>, Z: <green><z></green>, World: <green><world></green>",
+
+  "command.treasurechest.teleport.not_found": "<red>Could not find that platform.",
+  "command.treasurechest.teleport.success": "<yellow>You teleported to platform <id>!</yellow>",
+
+  "command.equipplayer.already_equipped": "<red>That cosmetic is already equipped for that <player>!</red>",
+  "command.equipplayer.success": "<yellow>Attempted to equip the cosmetic for <player>.</yellow> <gray>(May fail if they don't own it or are in a cosmetic-disabled area)</gray>",
+
+  "command.info.header": "<aqua><player>'s information:",
+  "command.info.id": "Database Id: <yellow><hover:show_text:'<yellow>Click to copy!</yellow>'><click:copy_to_clipboard:'<id>'><id></click></hover></yellow>",
+  "command.info.uuid": "UUID: <yellow><hover:show_text:'<yellow>Click to copy!</yellow>'><click:copy_to_clipboard:'<uuid>'><uuid></click></hover></yellow>",
+  "command.info.coins": "Coins: <yellow><amount></yellow>",
+  "command.info.self_view.morph": "Self View Morph: <status>",
+  "command.info.self_view.status": "Self View Status: <status>",
+  "command.info.status.enable": "<green>✔</green>",
+  "command.info.status.disable": "<red>❌</red>",
+  "command.info.treasure_chests.header": "Treasure Chests:",
+  "command.info.treasure_chests.entry": "• <treasure_chest>: <amount></green>",
+  "command.info.equipped_cosmetics.header": "Equipped Cosmetics:",
+  "command.info.equipped_cosmetics.entry": "• <category>: <yellow><cosmetic></yellow>",
+  "command.info.ammo.header": "Gadget Ammo:",
+  "command.info.ammo.entry": "<gadget>: <yellow><amount></yellow>",
+
+  "command.menu.not_found": "<red>Could not find a menu by that name!</red>",
+  "command.menu.success": "<yellow>You opened the <menu> menu for <player>!</yellow>",
+
+  "command.unequipall": "<yellow>You unequipped all cosmetics for <player_count> online players!</yellow>",
+  "command.unequipplayer.all": "<yellow>You unequipped all cosmetics for <player>!</yellow>",
+  "command.unequipplayer.category": "<yellow>You unequipped <category> for <player>!</yellow>",
+
+  "item.cosmetic.name": "<green>Cosmetics</green> <gray>(Right Click)</gray>",
+  "item.cosmetic.desc": [],
+  "item.gadget.name": "<aqua><ammo> <name></aqua> <gray>(Click to use)</gray>",
+  "item.gadget.desc": "",
+
+  "rarity.common": "Common",
+  "rarity.rare": "Rare",
+  "rarity.legendary": "Legendary",
+
+  "treasure_chest.category.money": "Coins",
+  "treasure_chest.category.ammo": "Gadget Ammo",
+  "treasure_chest.category.arrow_effects": "Arrow Effect",
+  "treasure_chest.category.balloons": "Balloon",
+  "treasure_chest.category.banners": "Banner",
+  "treasure_chest.category.death_effects": "Death Effect",
+  "treasure_chest.category.emotes": "Emote",
+  "treasure_chest.category.gadgets": "Gadget",
+  "treasure_chest.category.miniatures": "Miniature",
+  "treasure_chest.category.morphs": "Morph",
+  "treasure_chest.category.mounts": "Mount",
+  "treasure_chest.category.music": "Music",
+  "treasure_chest.category.particle_effects": "Particle Effect",
+  "treasure_chest.category.pets": "Pet",
+  "treasure_chest.category.statuses": "Status",
+  "treasure_chest.category.custom": "",
+
+  "treasure_chest.platform.hologram":
+  [
+    "<yellow>More treasure chests available on our store!</yellow>",
+    "",
+    "<aqua>Open treasure chest</aqua>"
+  ],
+  "treasure_chest.open.hologram": "<rarity_primary_color><loot>\n<rarity_secondary_color><category>",
+
+  "treasure_chest.common": "Common Chest",
+  "treasure_chest.mythical": "Mythical Chest",
+  "treasure_chest.legendary": "Legendary Chest",
+
+  "menu.treasure_chests.title": "Treasure Chests",
+  "menu.treasure_chests.common.purchasable.name": "<aqua><name></aqua>",
+  "menu.treasure_chests.common.purchasable.desc": [
+    "<aqua>You own <dark_aqua><current> <name>!</aqua>",
+    "",
+    "<gray>Left Click to open one!</gray>",
+    "<gray>Right Click to purchase more for <yellow><cost> coins</yellow>!</gray>"
+  ],
+  "menu.treasure_chests.common.purchase_disabled.name": "<aqua><name></aqua>",
+  "menu.treasure_chests.common.purchase_disabled.desc": [
+    "<aqua>You own <dark_aqua><current> <aqua><name>!</aqua>",
+    "",
+    "<gray>Left Click to open one!</gray>",
+    "<red>This treasure chest cannot be purchased!</red>"
+  ],
+  "menu.treasure_chests.common.purchase_no_permission.name": "<aqua><name></aqua>",
+  "menu.treasure_chests.common.purchase_no_permission.desc": [
+    "<aqua>You own <dark_aqua><current> <aqua><name>!</aqua>",
+    "",
+    "<gray>Left Click to open one!</gray>",
+    "<red>You do not have permission to purchase this treasure chest!</red>"
+  ],
+  "menu.treasure_chests.mythical.purchasable.name": "<aqua><name></aqua>",
+  "menu.treasure_chests.mythical.purchasable.desc": [
+    "<aqua>You own <dark_aqua><current> <name>!</aqua>",
+    "",
+    "<gray>Left Click to open one!</gray>",
+    "<gray>Right Click to purchase more for <yellow><cost> coins</yellow>!</gray>"
+  ],
+  "menu.treasure_chests.mythical.purchase_disabled.name": "<aqua><name></aqua>",
+  "menu.treasure_chests.mythical.purchase_disabled.desc": [
+    "",
+    "<aqua>You own <dark_aqua><current> <aqua><name>!</aqua>",
+    "",
+    "<gray>Left Click to open one!</gray>",
+    "<red>This treasure chest cannot be purchased!</red>"
+  ],
+  "menu.treasure_chests.mythical.purchase_no_permission.name": "<aqua><name></aqua>",
+  "menu.treasure_chests.mythical.purchase_no_permission.desc": [
+    "",
+    "<aqua>You own <dark_aqua><current> <aqua><name>!</aqua>",
+    "",
+    "<gray>Left Click to open one!</gray>",
+    "<red>You do not have permission to purchase this treasure chest!</red>"
+  ],
+  "menu.treasure_chests.legendary.purchasable.name": "<aqua><name></aqua>",
+  "menu.treasure_chests.legendary.purchasable.desc": [
+    "<aqua>You own <dark_aqua><current> <name>!</aqua>",
+    "",
+    "<gray>Left Click to open one!</gray>",
+    "<gray>Right Click to purchase more for <yellow><cost> coins</yellow>!</gray>"
+  ],
+  "menu.treasure_chests.legendary.purchase_disabled.name": "<aqua><name></aqua>",
+  "menu.treasure_chests.legendary.purchase_disabled.desc": [
+    "",
+    "<aqua>You own <dark_aqua><current> <aqua><name>!</aqua>",
+    "",
+    "<gray>Left Click to open one!</gray>",
+    "<red>This treasure chest cannot be purchased!</red>"
+  ],
+  "menu.treasure_chests.legendary.purchase_no_permission.name": "<aqua><name></aqua>",
+  "menu.treasure_chests.legendary.purchase_no_permission.desc": [
+    "",
+    "<aqua>You own <dark_aqua><current> <aqua><name>!</aqua>",
+    "",
+    "<gray>Left Click to open one!</gray>",
+    "<red>You do not have permission to purchase this treasure chest!</red>"
+  ],
+
+  "menu.purchase.cosmetic.title": "Confirm Purchase",
+  "menu.purchase.cosmetic.accept.name": "<green>Accept</green>",
+  "menu.purchase.cosmetic.accept.desc": [
+        "<gray>Click to confirm your purchase of</gray>",
+        "<gray><name> for <yellow><cost> coins</yellow>!</gray>"
+  ],
+  "menu.purchase.cosmetic.deny.name": "<red>Deny</red>",
+  "menu.purchase.cosmetic.deny.desc": [
+    "<gray>Click to cancel!</gray>"
+  ],
+  "menu.purchase.gadget_ammo.title": "Confirm Purchase",
+  "menu.purchase.gadget_ammo.accept.name": "<green>Accept</green>",
+  "menu.purchase.gadget_ammo.accept.desc": [
+    "<gray>Click to confirm your purchase of</gray>",
+    "<gray><ammo_purchase_amount> ammo for <yellow><ammo_cost> coins</yellow>!</gray>"
+  ],
+  "menu.purchase.gadget_ammo.deny.name": "<red>Deny</red>",
+  "menu.purchase.gadget_ammo.deny.desc": [
+    "<gray>Click to cancel!</gray>"
+  ],
+  "menu.purchase.treasure_chest.title": "Confirm Purchase",
+  "menu.purchase.treasure_chest.accept.name": "<green>Accept</green>",
+  "menu.purchase.treasure_chest.accept.desc": [
+    "<gray>Click to confirm your purchase of</gray>",
+    "<gray><amount> <name> for <yellow><cost> coins</yellow>!</gray>"
+  ],
+  "menu.purchase.treasure_chest.deny.name": "<red>Deny</red>",
+  "menu.purchase.treasure_chest.deny.desc": [
+    "<gray>Click to cancel!</gray>"
+  ],
+
+  "menu.main.title": "Cosmetics",
+  "menu.main.unequip_all.name": "<red>Unequip All Cosmetics</red>",
+  "menu.main.unequip_all.desc": [
+    "<gray>Click to unequip your cosmetics!</gray>"
+  ],
+  "menu.main.coins.name": "<aqua>You have <yellow><coins> coins</yellow>!</aqua>",
+  "menu.main.coins.desc": [
+    "<yellow>Click to open the store to</yellow>",
+    "<yellow>purchase more coins!</yellow>"
+  ],
+  "menu.main.coins.click_prompt": "<yellow><hover:show_text:'<gray>Click here!</gray>'><click:open_url:'https://example.com/store'>Click to open the store!</click></hover></yellow>",
+  "menu.main.arrow_effects.name": "<aqua>Arrow Effects</aqua>",
+  "menu.main.arrow_effects.desc": [
+    "<gray>Enhance your arrows with beautiful</gray>",
+    "<gray>particle trails and visual effects</gray>",
+    "<gray>as they fly!</gray>",
+    "",
+    "<dark_aqua>You own <aqua><current></aqua><gray>/</gray><aqua><maximum></aqua><dark_aqua>!</dark_aqua>",
+    "",
+    "<gray>Left Click to open the menu!</gray>",
+    "<gray>Right Click to unequip your current!</gray>"
+  ],
+  "menu.main.balloons.name": "<aqua>Balloons</aqua>",
+  "menu.main.balloons.desc": [
+    "<gray>Summon a ballon that hover above</gray>",
+    "<gray>your head as you wander the world.</gray>",
+    "",
+    "<dark_aqua>You own <aqua><current></aqua><gray>/</gray><aqua><maximum></aqua><dark_aqua>!</dark_aqua>",
+    "",
+    "<gray>Left Click to open the menu!</gray>",
+    "<gray>Right Click to unequip your current!</gray>"
+  ],
+  "menu.main.banners.name": "<aqua>Banners</aqua>",
+  "menu.main.banners.desc": [
+    "<gray>Display unique banners on top of</gray>",
+    "<gray>your head.</gray>",
+    "",
+    "<dark_aqua>You own <aqua><current></aqua><gray>/</gray><aqua><maximum></aqua><dark_aqua>!</dark_aqua>",
+    "",
+    "<gray>Left Click to open the menu!</gray>",
+    "<gray>Right Click to unequip your current!</gray>"
+  ],
+  "menu.main.death_effects.name": "<aqua>Death Effects</aqua>",
+  "menu.main.death_effects.desc": [
+    "<gray>Turn your defeat into a spectacular</gray>",
+    "<gray>finale with dramatic particle effects!</gray>",
+    "",
+    "<dark_aqua>You own <aqua><current></aqua><gray>/</gray><aqua><maximum></aqua><dark_aqua>!</dark_aqua>",
+    "",
+    "<gray>Left Click to open the menu!</gray>",
+    "<gray>Right Click to unequip your current!</gray>"
+  ],
+  "menu.main.emotes.name": "<aqua>Emotes</aqua>",
+  "menu.main.emotes.desc": [
+    "<gray>Express your emotions with animated</gray>",
+    "<gray>gestures and reactions!</gray>",
+    "",
+    "<dark_aqua>You own <aqua><current></aqua><gray>/</gray><aqua><maximum></aqua><dark_aqua>!</dark_aqua>",
+    "",
+    "<gray>Left Click to open the menu!</gray>",
+    "<gray>Right Click to unequip your current!</gray>"
+  ],
+  "menu.main.gadgets.name": "<aqua>Gadgets</aqua>",
+  "menu.main.gadgets.desc": [
+    "<gray>Interactive items for entertainment</gray>",
+    "<gray>for you and your friends!</gray>",
+    "",
+    "<dark_aqua>You own <aqua><current></aqua><gray>/</gray><aqua><maximum></aqua><dark_aqua>!</dark_aqua>",
+    "",
+    "<gray>Left Click to open the menu!</gray>",
+    "<gray>Right Click to unequip your current!</gray>"
+  ],
+  "menu.main.miniatures.name": "<aqua>Miniatures</aqua>",
+  "menu.main.miniatures.desc": [
+    "<gray>Small companion creatures that</gray>",
+    "<gray>follow you around wherever</gray>",
+    "<gray>you go in the world!</gray>",
+    "",
+    "<dark_aqua>You own <aqua><current></aqua><gray>/</gray><aqua><maximum></aqua><dark_aqua>!</dark_aqua>",
+    "",
+    "<gray>Left Click to open the menu!</gray>",
+    "<gray>Right Click to unequip your current!</gray>"
+  ],
+  "menu.main.morphs.name": "<aqua>Morphs</aqua>",
+  "menu.main.morphs.desc": [
+    "<gray>Transform your appearance into</gray>",
+    "<gray>different creatures and animals!</gray>",
+    "<gray>Change your entire look!</gray>",
+    "",
+    "<dark_aqua>You own <aqua><current></aqua><gray>/</gray><aqua><maximum></aqua><dark_aqua>!</dark_aqua>",
+    "",
+    "<gray>Left Click to open the menu!</gray>",
+    "<gray>Right Click to unequip your current!</gray>"
+  ],
+  "menu.main.mounts.name": "<aqua>Mounts</aqua>",
+  "menu.main.mounts.desc": [
+    "<gray>Rideable creatures and vehicles</gray>",
+    "<gray>for traveling the world in style</gray>",
+    "<gray>and comfort!</gray>",
+    "",
+    "<dark_aqua>You own <aqua><current></aqua><gray>/</gray><aqua><maximum></aqua><dark_aqua>!</dark_aqua>",
+    "",
+    "<gray>Left Click to open the menu!</gray>",
+    "<gray>Right Click to unequip your current!</gray>"
+  ],
+  "menu.main.music.name": "<aqua>Music</aqua>",
+  "menu.main.music.desc": [
+    "<gray>Play musical tracks and melodies</gray>",
+    "<gray>for yourself and others to</gray>",
+    "<gray>enjoy together!</gray>",
+    "",
+    "<dark_aqua>You own <aqua><current></aqua><gray>/</gray><aqua><maximum></aqua><dark_aqua>!</dark_aqua>",
+    "",
+    "<gray>Left Click to open the menu!</gray>",
+    "<gray>Right Click to unequip your current!</gray>"
+  ],
+  "menu.main.particle_effects.name": "<aqua>Particle Effects</aqua>",
+  "menu.main.particle_effects.desc": [
+    "<gray>Visual effects that appear around,</gray>",
+    "<gray>above, or behind you as you.</gray>",
+    "",
+    "<dark_aqua>You own <aqua><current></aqua><gray>/</gray><aqua><maximum></aqua><dark_aqua>!</dark_aqua>",
+    "",
+    "<gray>Left Click to open the menu!</gray>",
+    "<gray>Right Click to unequip your current!</gray>"
+  ],
+  "menu.main.pets.name": "<aqua>Pets</aqua>",
+  "menu.main.pets.desc": [
+    "<gray>Summon loyal companions that bring</gray>",
+    "<gray>friendship to your adventures!</gray>",
+    "",
+    "<dark_aqua>You own <aqua><current></aqua><gray>/</gray><aqua><maximum></aqua><dark_aqua>!</dark_aqua>",
+    "",
+    "<gray>Left Click to open the menu!</gray>",
+    "<gray>Right Click to unequip your current!</gray>"
+  ],
+  "menu.main.statuses.name": "<aqua>Statuses</aqua>",
+  "menu.main.statuses.desc": [
+    "<gray>Set a status to be displayed above</gray>",
+    "<gray>your head.</gray>",
+    "",
+    "<dark_aqua>You own <aqua><current></aqua><gray>/</gray><aqua><maximum></aqua><dark_aqua>!</dark_aqua>",
+    "",
+    "<gray>Left Click to open the menu!</gray>",
+    "<gray>Right Click to unequip your current!</gray>"
+  ],
+
+  "cosmetic.arrow_effects.bloody_arrows": "Bloody Arrows",
+  "cosmetic.arrow_effects.candy_cane_arrows": "Candy Cane Arrows",
+  "cosmetic.arrow_effects.confetti_arrows": "Confetti Arrows",
+  "cosmetic.arrow_effects.enchanted_arrows": "Enchanted Arrows",
+  "cosmetic.arrow_effects.flame_arrows": "Flame Arrows",
+  "cosmetic.arrow_effects.frost_lord_arrows": "Frost Lord Arrows",
+  "cosmetic.arrow_effects.green_arrows": "Green Arrows",
+  "cosmetic.arrow_effects.lava_arrows": "Lava Arrows",
+  "cosmetic.arrow_effects.love_arrows": "Love Arrows",
+  "cosmetic.arrow_effects.magical_arrows": "Magical Arrows",
+  "cosmetic.arrow_effects.music_arrows": "Music Arrows",
+  "cosmetic.arrow_effects.rain_arrows": "Rain Arrows",
+  "cosmetic.arrow_effects.shadow_arrows": "Shadow Arrows",
+  "cosmetic.arrow_effects.sparkly_arrows": "Sparkly Arrows",
+
+  "menu.arrow_effects.title": "Arrow Effects",
+  "menu.arrow_effects.next_page.name": "<green>Next Page</green>",
+  "menu.arrow_effects.next_page.desc": [
+    "<gray>Page <page>/<pages></gray>"
+  ],
+  "menu.arrow_effects.previous_page.name": "<green>Previous Page</green>",
+  "menu.arrow_effects.previous_page.desc": [
+    "<gray>Page <page>/<pages></gray>"
+  ],
+  "menu.arrow_effects.go_back.name": "<red>Go back</red>",
+  "menu.arrow_effects.go_back.desc": [
+    "<gray>Click to go back to the previous menu!</gray>"
+  ],
+  "menu.arrow_effects.purchasable.name": "<name>",
+  "menu.arrow_effects.purchasable.desc": [
+    "",
+    "<green>Click to purchase for <yellow><cost> coins</yellow>!</green>"
+  ],
+  "menu.arrow_effects.purchase_disabled.name": "<name>",
+  "menu.arrow_effects.purchase_disabled.desc": [
+    "",
+    "<red>This cosmetic cannot be purchased!</red>"
+  ],
+  "menu.arrow_effects.purchase_no_permission.name": "<name>",
+  "menu.arrow_effects.purchase_no_permission.desc": [
+    "",
+    "<red>You do not have permission to</red>",
+    "<red>purchase this cosmetic!</red>"
+  ],
+  "menu.arrow_effects.unequipped.name": "<name>",
+  "menu.arrow_effects.unequipped.desc": [
+    "",
+    "<green>Click to equip!</green>"
+  ],
+  "menu.arrow_effects.equipped.name": "<name>",
+  "menu.arrow_effects.equipped.desc": [
+    "",
+    "<yellow>Click to unequip!</yellow>"
+  ],
+
+  "menu.arrow_effects.bloody_arrows.name": "<name>",
+  "menu.arrow_effects.bloody_arrows.desc": [
+    "<gray>Arrows soaked in poisoned blood</gray>",
+    "<gray>might bring your enemies a more</gray>",
+    "<gray>painful death!</gray>"
+  ],
+  "menu.arrow_effects.candy_cane_arrows.name": "<name>",
+  "menu.arrow_effects.candy_cane_arrows.desc": [
+    "<gray>Had enough of candy? Let us</gray>",
+    "<gray>give some to your enemy.</gray>"
+  ],
+  "menu.arrow_effects.confetti_arrows.name": "<name>",
+  "menu.arrow_effects.confetti_arrows.desc": [
+    "<gray>Explosive celebration arrows!</gray>",
+    "<gray>Burst into colorful confetti</gray>",
+    "<gray>that turns combat into party!</gray>"
+  ],
+  "menu.arrow_effects.enchanted_arrows.name": "<name>",
+  "menu.arrow_effects.enchanted_arrows.desc": [
+    "<gray>These mystical arrows shimmer</gray>",
+    "<gray>with ancient magic, crafted by</gray>",
+    "<gray>the most skilled archers!</gray>"
+  ],
+  "menu.arrow_effects.flame_arrows.name": "<name>",
+  "menu.arrow_effects.flame_arrows.desc": [
+    "<gray>Ignite your enemies' hearts</gray>",
+    "<gray>with arrows that burn with</gray>",
+    "<gray>passionate flames!</gray>"
+  ],
+  "menu.arrow_effects.frost_lord_arrows.name": "<name>",
+  "menu.arrow_effects.frost_lord_arrows.desc": [
+    "<gray>Channel the power of winter</gray>",
+    "<gray>with arrows that freeze the</gray>",
+    "<gray>air in their wake!</gray>"
+  ],
+  "menu.arrow_effects.green_arrows.name": "<name>",
+  "menu.arrow_effects.green_arrows.desc": [
+    "<gray>Nature-blessed arrows glowing</gray>",
+    "<gray>with emerald energy! Forest</gray>",
+    "<gray>spirits guide your aim.</gray>"
+  ],
+  "menu.arrow_effects.lava_arrows.name": "<name>",
+  "menu.arrow_effects.lava_arrows.desc": [
+    "<gray>Molten arrows that burn</gray>",
+    "<gray>hotter than the depths of</gray>",
+    "<gray>the Nether itself!</gray>"
+  ],
+  "menu.arrow_effects.love_arrows.name": "<name>",
+  "menu.arrow_effects.love_arrows.desc": [
+    "<gray>Spread love, not war! These</gray>",
+    "<gray>romantic arrows bring hearts</gray>",
+    "<gray>hearts to your battles.</gray>"
+  ],
+  "menu.arrow_effects.magical_arrows.name": "<name>",
+  "menu.arrow_effects.magical_arrows.desc": [
+    "<gray>Enchanted with mystical</gray>",
+    "<gray>purple energy, these arrows</gray>",
+    "<gray>prove magic is real!</gray>"
+  ],
+  "menu.arrow_effects.music_arrows.name": "<name>",
+  "menu.arrow_effects.music_arrows.desc": [
+    "<gray>Harmonious arrows that create</gray>",
+    "<gray>beautiful melodies as they</gray>",
+    "<gray>soar through the sky!</gray>"
+  ],
+  "menu.arrow_effects.rain_arrows.name": "<name>",
+  "menu.arrow_effects.rain_arrows.desc": [
+    "<gray>Arrows blessed by the storm</gray>",
+    "<gray>gods, bringing refreshing</gray>",
+    "<gray>rain wherever they land!</gray>"
+  ],
+  "menu.arrow_effects.shadow_arrows.name": "<name>",
+  "menu.arrow_effects.shadow_arrows.desc": [
+    "<gray>Dark arrows that embrace</gray>",
+    "<gray>the shadows, moving silently</gray>",
+    "<gray>through the darkness!</gray>"
+  ],
+  "menu.arrow_effects.sparkly_arrows.name": "<name>",
+  "menu.arrow_effects.sparkly_arrows.desc": [
+    "<gray>Brilliant arrows that sparkle</gray>",
+    "<gray>like fireworks, lighting up</gray>",
+    "<gray>the battlefield with joy!</gray>"
+  ],
+
+  "cosmetic.balloons.calf": "Calf Balloon",
+  "cosmetic.balloons.kitten": "Kitten Balloon",
+  "cosmetic.balloons.mini_pig": "Mini-Pig Balloon",
+  "cosmetic.balloons.mushroom_cow": "Mushroom Cow Balloon",
+  "cosmetic.balloons.puppy": "Puppy Balloon",
+  "cosmetic.balloons.rabbit": "Rabbit Balloon",
+  "cosmetic.balloons.tiny_villager": "Tiny Villager Balloon",
+  "cosmetic.balloons.zombie": "Zombie Balloon",
+  "cosmetic.balloons.guardian": "Guardian Balloon",
+  "cosmetic.balloons.disco": "Disco Balloon",
+  "cosmetic.balloons.egg": "Egg Balloon",
+  "cosmetic.balloons.emerald": "Emerald Balloon",
+  "cosmetic.balloons.explosive": "Explosive Balloon",
+  "cosmetic.balloons.pumpkin": "Pumpkin Balloon",
+  "cosmetic.balloons.beach_ball": "Beach ball Balloon",
+  "cosmetic.balloons.soccer_ball": "Soccer ball Balloon",
+  "cosmetic.balloons.sun": "Sun Balloon",
+  "cosmetic.balloons.bee": "Bee Balloon",
+  "cosmetic.balloons.bunny": "Bunny Balloon",
+  "cosmetic.balloons.cake": "Cake Balloon",
+  "cosmetic.balloons.burger": "Burger Balloon",
+  "cosmetic.balloons.earth": "Earth Balloon",
+  "cosmetic.balloons.present": "Present Balloon",
+  "cosmetic.balloons.ghost": "Ghost Balloon",
+  "cosmetic.balloons.mouse": "Mouse Balloon",
+  "cosmetic.balloons.pigeon": "Pigeon Balloon",
+  "cosmetic.balloons.police_car": "Police Car Balloon",
+  "cosmetic.balloons.truck": "Truck Balloon",
+  "cosmetic.balloons.money_bag": "Money Bag Balloon",
+  "cosmetic.balloons.pride": "Pride Balloon",
+  "cosmetic.balloons.united_states_of_america": "United States of America",
+  "cosmetic.balloons.canada": "Canada",
+  "cosmetic.balloons.united_kingdom": "United Kingdom",
+  "cosmetic.balloons.france": "France",
+  "cosmetic.balloons.spain": "Spain",
+  "cosmetic.balloons.portugal": "Portugal",
+  "cosmetic.balloons.germany": "Germany",
+  "cosmetic.balloons.belgium": "Belgium",
+  "cosmetic.balloons.poland": "Poland",
+  "cosmetic.balloons.italy": "Italy",
+  "cosmetic.balloons.norway": "Norway",
+  "cosmetic.balloons.sweden": "Sweden",
+  "cosmetic.balloons.denmark": "Denmark",
+  "cosmetic.balloons.finland": "Finland",
+  "cosmetic.balloons.turkey": "Turkey",
+  "cosmetic.balloons.greece": "Greece",
+  "cosmetic.balloons.china": "China",
+  "cosmetic.balloons.japan": "Japan",
+
+  "menu.balloons.title": "Balloons",
+  "menu.balloons.next_page.name": "<green>Next Page</green>",
+  "menu.balloons.next_page.desc": [
+    "<gray>Page <page>/<pages></gray>"
+  ],
+  "menu.balloons.previous_page.name": "<green>Previous Page</green>",
+  "menu.balloons.previous_page.desc": [
+    "<gray>Page <page>/<pages></gray>"
+  ],
+  "menu.balloons.go_back.name": "<red>Go back</red>",
+  "menu.balloons.go_back.desc": [
+    "<gray>Click to go back to the previous menu!</gray>"
+  ],
+  "menu.balloons.purchasable.name": "<name>",
+  "menu.balloons.purchasable.desc": [
+    "",
+    "<green>Click to purchase for <yellow><cost> coins</yellow>!</green>"
+  ],
+  "menu.balloons.purchase_disabled.name": "<name>",
+  "menu.balloons.purchase_disabled.desc": [
+    "",
+    "<red>This cosmetic cannot be purchased!</red>"
+  ],
+  "menu.balloons.purchase_no_permission.name": "<name>",
+  "menu.balloons.purchase_no_permission.desc": [
+    "",
+    "<red>You do not have permission to</red>",
+    "<red>purchase this cosmetic!</red>"
+  ],
+  "menu.balloons.unequipped.name": "<name>",
+  "menu.balloons.unequipped.desc": [
+    "",
+    "<green>Click to equip!</green>"
+  ],
+  "menu.balloons.equipped.name": "<name>",
+  "menu.balloons.equipped.desc": [
+    "",
+    "<yellow>Click to unequip!</yellow>"
+  ],
+
+  "menu.balloons.calf.name": "<name>",
+  "menu.balloons.calf.desc": [
+    "<gray>Got milk? Now you do!</gray>"
+  ],
+  "menu.balloons.kitten.name": "<name>",
+  "menu.balloons.kitten.desc": [
+    "<gray>A purr-fectly cute kitten!</gray>"
+  ],
+  "menu.balloons.mini_pig.name": "<name>",
+  "menu.balloons.mini_pig.desc": [
+    "<gray>Oink oink! A piggy that flies!</gray>"
+  ],
+  "menu.balloons.mushroom_cow.name": "<name>",
+  "menu.balloons.mushroom_cow.desc": [
+    "<gray>Moo-shroom magic!</gray>"
+  ],
+  "menu.balloons.puppy.name": "<name>",
+  "menu.balloons.puppy.desc": [
+    "<gray>Paws up! A flying puppy!</gray>"
+  ],
+  "menu.balloons.rabbit.name": "<name>",
+  "menu.balloons.rabbit.desc": [
+    "<gray>Hop into the air with this bunny!</gray>"
+  ],
+  "menu.balloons.tiny_villager.name": "<name>",
+  "menu.balloons.tiny_villager.desc": [
+    "<gray>Mini trader on the go!</gray>"
+  ],
+  "menu.balloons.zombie.name": "<name>",
+  "menu.balloons.zombie.desc": [
+    "<gray>Brains... I mean, balloons!</gray>"
+  ],
+  "menu.balloons.guardian.name": "<name>",
+  "menu.balloons.guardian.desc": [
+    "<gray>Keep an eye out with this one!</gray>"
+  ],
+  "menu.balloons.disco.name": "<name>",
+  "menu.balloons.disco.desc": [
+    "<gray>Party in the sky!</gray>"
+  ],
+  "menu.balloons.egg.name": "<name>",
+  "menu.balloons.egg.desc": [
+    "<gray>Hatch an adventure!</gray>"
+  ],
+  "menu.balloons.emerald.name": "<name>",
+  "menu.balloons.emerald.desc": [
+    "<gray>Show off your riches!</gray>"
+  ],
+  "menu.balloons.explosive.name": "<name>",
+  "menu.balloons.explosive.desc": [
+    "<gray>Boom! Just kidding... or not?</gray>"
+  ],
+  "menu.balloons.pumpkin.name": "<name>",
+  "menu.balloons.pumpkin.desc": [
+    "<gray>Spooky floating fun!</gray>"
+  ],
+  "menu.balloons.beach_ball.name": "<name>",
+  "menu.balloons.beach_ball.desc": [
+    "<gray>Catch the summer vibes!</gray>"
+  ],
+  "menu.balloons.soccer_ball.name": "<name>",
+  "menu.balloons.soccer_ball.desc": [
+    "<gray>Goal! A ball that floats!</gray>"
+  ],
+  "menu.balloons.sun.name": "<name>",
+  "menu.balloons.sun.desc": [
+    "<gray>Brighten up your day!</gray>"
+  ],
+  "menu.balloons.bee.name": "<name>",
+  "menu.balloons.bee.desc": [
+    "<gray>Buzzing around!</gray>"
+  ],
+  "menu.balloons.bunny.name": "<name>",
+  "menu.balloons.bunny.desc": [
+    "<gray>Want an Easter egg from me?</gray>"
+  ],
+  "menu.balloons.cake.name": "<name>",
+  "menu.balloons.cake.desc": [
+    "<gray>Whose birthday is it today?</gray>"
+  ],
+  "menu.balloons.burger.name": "<name>",
+  "menu.balloons.burger.desc": [
+    "<gray>A tasty balloon treat!</gray>"
+  ],
+  "menu.balloons.earth.name": "<name>",
+  "menu.balloons.earth.desc": [
+    "<gray>Take well care of it!</gray>"
+  ],
+  "menu.balloons.present.name": "<name>",
+  "menu.balloons.present.desc": [
+    "<gray>Surprise someone!</gray>"
+  ],
+  "menu.balloons.ghost.name": "<name>",
+  "menu.balloons.ghost.desc": [
+    "<gray>Boo! A spooky surprise!</gray>"
+  ],
+  "menu.balloons.mouse.name": "<name>",
+  "menu.balloons.mouse.desc": [
+    "<gray>Cheese not included!</gray>"
+  ],
+  "menu.balloons.pigeon.name": "<name>",
+  "menu.balloons.pigeon.desc": [
+    "<gray>Feed him some seeds!</gray>"
+  ],
+  "menu.balloons.police_car.name": "<name>",
+  "menu.balloons.police_car.desc": [
+    "<gray>Ever seen a flying car?</gray>"
+  ],
+  "menu.balloons.truck.name": "<name>",
+  "menu.balloons.truck.desc": [
+    "<gray>Honking from above!</gray>"
+  ],
+  "menu.balloons.money_bag.name": "<name>",
+  "menu.balloons.money_bag.desc": [
+    "<gray>Money floating in the air!</gray>"
+  ],
+  "menu.balloons.pride.name": "<name>",
+  "menu.balloons.pride.desc": [
+    "<gray>We stand together!</gray>"
+  ],
+  "menu.balloons.united_states_of_america.name": "<name>",
+  "menu.balloons.united_states_of_america.desc": [
+    "<gray>Stars and stripes forever!</gray>"
+  ],
+  "menu.balloons.canada.name": "<name>",
+  "menu.balloons.canada.desc": [
+    "<gray>Maple leaf high in the sky!</gray>"
+  ],
+  "menu.balloons.united_kingdom.name": "<name>",
+  "menu.balloons.united_kingdom.desc": [
+    "<gray>Show others you're from this country.</gray>"
+  ],
+  "menu.balloons.france.name": "<name>",
+  "menu.balloons.france.desc": [
+    "<gray>Vive la balloon!</gray>"
+  ],
+  "menu.balloons.spain.name": "<name>",
+  "menu.balloons.spain.desc": [
+    "<gray>Olé! A Spanish balloon!</gray>"
+  ],
+  "menu.balloons.portugal.name": "<name>",
+  "menu.balloons.portugal.desc": [
+    "<gray>Show others you're from this country.</gray>"
+  ],
+  "menu.balloons.germany.name": "<name>",
+  "menu.balloons.germany.desc": [
+    "<gray>Show others you're from this country.</gray>"
+  ],
+  "menu.balloons.belgium.name": "<name>",
+  "menu.balloons.belgium.desc": [
+    "<gray>Show others you're from this country.</gray>"
+  ],
+  "menu.balloons.poland.name": "<name>",
+  "menu.balloons.poland.desc": [
+    "<gray>Show others you're from this country.</gray>"
+  ],
+  "menu.balloons.italy.name": "<name>",
+  "menu.balloons.italy.desc": [
+    "<gray>Italia in the air!</gray>"
+  ],
+  "menu.balloons.norway.name": "<name>",
+  "menu.balloons.norway.desc": [
+    "<gray>Show others you're from this country.</gray>"
+  ],
+  "menu.balloons.sweden.name": "<name>",
+  "menu.balloons.sweden.desc": [
+    "<gray>Show others you're from this country.</gray>"
+  ],
+  "menu.balloons.denmark.name": "<name>",
+  "menu.balloons.denmark.desc": [
+    "<gray>Show others you're from this country.</gray>"
+  ],
+  "menu.balloons.finland.name": "<name>",
+  "menu.balloons.finland.desc": [
+    "<gray>Show others you're from this country.</gray>"
+  ],
+  "menu.balloons.turkey.name": "<name>",
+  "menu.balloons.turkey.desc": [
+    "<gray>Show others you're from this country.</gray>"
+  ],
+  "menu.balloons.greece.name": "<name>",
+  "menu.balloons.greece.desc": [
+    "<gray>Show others you're from this country.</gray>"
+  ],
+  "menu.balloons.china.name": "<name>",
+  "menu.balloons.china.desc": [
+    "<gray>Show others you're from this country.</gray>"
+  ],
+  "menu.balloons.japan.name": "<name>",
+  "menu.balloons.japan.desc": [
+    "<gray>Show others you're from this country.</gray>"
+  ],
+
+  "cosmetic.banners.pug": "Pug",
+  "cosmetic.banners.happy_sheep": "Happy Sheep",
+  "cosmetic.banners.rabbit": "Rabbit",
+  "cosmetic.banners.goose": "Goose",
+  "cosmetic.banners.panda": "Panda",
+  "cosmetic.banners.fox": "Fox",
+  "cosmetic.banners.octopus": "Octopus",
+  "cosmetic.banners.crown": "Crown",
+  "cosmetic.banners.sun_flower": "Sunflower",
+  "cosmetic.banners.rose": "Rose",
+  "cosmetic.banners.pineapple": "Pineapple",
+  "cosmetic.banners.taco": "Taco",
+  "cosmetic.banners.heart": "Heart",
+  "cosmetic.banners.speech_bubble": "Speech Bubble",
+  "cosmetic.banners.disco": "Disco",
+  "cosmetic.banners.united_states_of_america": "United States of America",
+  "cosmetic.banners.sweden": "Sweden",
+  "cosmetic.banners.sword": "Sword",
+  "cosmetic.banners.pirate_skull": "Pirate Skull",
+  "cosmetic.banners.ender_dragon": "Ender Dragon",
+  "cosmetic.banners.wither": "Wither",
+  "cosmetic.banners.fire": "Fire",
+  "cosmetic.banners.snowflake": "Snowflake",
+  "cosmetic.banners.present": "Present",
+  "cosmetic.banners.wreath": "Wreath",
+  "cosmetic.banners.santa_hat": "Santa Hat",
+  "cosmetic.banners.candy_cane": "Candy Cane",
+  "cosmetic.banners.snowy_tree": "Snowy Tree",
+
+  "menu.banners.title": "Banners",
+  "menu.banners.next_page.name": "<green>Next Page</green>",
+  "menu.banners.next_page.desc": [
+    "<gray>Page <page>/<pages></gray>"
+  ],
+  "menu.banners.previous_page.name": "<green>Previous Page</green>",
+  "menu.banners.previous_page.desc": [
+    "<gray>Page <page>/<pages></gray>"
+  ],
+  "menu.banners.go_back.name": "<red>Go back</red>",
+  "menu.banners.go_back.desc": [
+    "<gray>Click to go back to the previous menu!</gray>"
+  ],
+  "menu.banners.purchasable.name": "<name>",
+  "menu.banners.purchasable.desc": [
+    "",
+    "<green>Click to purchase for <yellow><cost> coins</yellow>!</green>"
+  ],
+  "menu.banners.purchase_disabled.name": "<name>",
+  "menu.banners.purchase_disabled.desc": [
+    "",
+    "<red>This cosmetic cannot be purchased!</red>"
+  ],
+  "menu.banners.purchase_no_permission.name": "<name>",
+  "menu.banners.purchase_no_permission.desc": [
+    "",
+    "<red>You do not have permission to</red>",
+    "<red>purchase this cosmetic!</red>"
+  ],
+  "menu.banners.unequipped.name": "<name>",
+  "menu.banners.unequipped.desc": [
+    "",
+    "<green>Click to equip!</green>"
+  ],
+  "menu.banners.equipped.name": "<name>",
+  "menu.banners.equipped.desc": [
+    "",
+    "<yellow>Click to unequip!</yellow>"
+  ],
+
+  "menu.banners.pug.name": "<name>",
+  "menu.banners.pug.desc": [
+    "<gray>Who doesn't love pugs?</gray>"
+  ],
+  "menu.banners.happy_sheep.name": "<name>",
+  "menu.banners.happy_sheep.desc": [
+    "<gray>Cute fluffy sheep!</gray>"
+  ],
+  "menu.banners.rabbit.name": "<name>",
+  "menu.banners.rabbit.desc": [
+    "<gray>It likes carrots!</gray>"
+  ],
+  "menu.banners.goose.name": "<name>",
+  "menu.banners.goose.desc": [
+    "<gray>Honk honk!</gray>"
+  ],
+  "menu.banners.panda.name": "<name>",
+  "menu.banners.panda.desc": [
+    "<gray>Loves bamboo and cake.</gray>"
+  ],
+  "menu.banners.fox.name": "<name>",
+  "menu.banners.fox.desc": [
+    "<gray>Orange thieves.</gray>"
+  ],
+  "menu.banners.octopus.name": "<name>",
+  "menu.banners.octopus.desc": [
+    "<gray>Can easily be confused with squid.</gray>"
+  ],
+  "menu.banners.crown.name": "<name>",
+  "menu.banners.crown.desc": [
+    "<gray>Become a ruler.</gray>"
+  ],
+  "menu.banners.sun_flower.name": "<name>",
+  "menu.banners.sun_flower.desc": [
+    "<gray>We're all golden sunflowers inside.</gray>"
+  ],
+  "menu.banners.rose.name": "<name>",
+  "menu.banners.rose.desc": [
+    "<gray>Be careful around its thorns.</gray>"
+  ],
+  "menu.banners.pineapple.name": "<name>",
+  "menu.banners.pineapple.desc": [
+    "<gray>Pen Pineapple Apple Pen</gray>"
+  ],
+  "menu.banners.taco.name": "<name>",
+  "menu.banners.taco.desc": [
+    "<gray>Often served gluten-free.</gray>"
+  ],
+  "menu.banners.heart.name": "<name>",
+  "menu.banners.heart.desc": [
+    "<gray>How deep is your love?</gray>"
+  ],
+  "menu.banners.speech_bubble.name": "<name>",
+  "menu.banners.speech_bubble.desc": [
+    "<gray>Express yourself.</gray>"
+  ],
+  "menu.banners.disco.name": "<name>",
+  "menu.banners.disco.desc": [
+    "<gray>Show me those dance moves.</gray>"
+  ],
+  "menu.banners.united_states_of_america.name": "<name>",
+  "menu.banners.united_states_of_america.desc": [
+    "<gray>How many stars are there on the flag?</gray>"
+  ],
+  "menu.banners.sweden.name": "<name>",
+  "menu.banners.sweden.desc": [
+    "<gray>Notch's favorite banner!</gray>"
+  ],
+  "menu.banners.sword.name": "<name>",
+  "menu.banners.sword.desc": [
+    "<gray>It's Excalibur!</gray>"
+  ],
+  "menu.banners.pirate_skull.name": "<name>",
+  "menu.banners.pirate_skull.desc": [
+    "<gray>YaRrr!</gray>"
+  ],
+  "menu.banners.ender_dragon.name": "<name>",
+  "menu.banners.ender_dragon.desc": [
+    "<gray>You made it all the way here?</gray>"
+  ],
+  "menu.banners.wither.name": "<name>",
+  "menu.banners.wither.desc": [
+    "<gray>Watch out for those skulls!</gray>"
+  ],
+  "menu.banners.fire.name": "<name>",
+  "menu.banners.fire.desc": [
+    "<gray>Keep yourself warm!</gray>"
+  ],
+  "menu.banners.snowflake.name": "<name>",
+  "menu.banners.snowflake.desc": [
+    "<gray>A snowflake is winter's butterfly.</gray>"
+  ],
+  "menu.banners.present.name": "<name>",
+  "menu.banners.present.desc": [
+    "<gray>Happy Holidays!</gray>"
+  ],
+  "menu.banners.wreath.name": "<name>",
+  "menu.banners.wreath.desc": [
+    "<gray>Not as pretty as a Christmas tree.</gray>"
+  ],
+  "menu.banners.santa_hat.name": "<name>",
+  "menu.banners.santa_hat.desc": [
+    "<gray>I believe in Santa!</gray>"
+  ],
+  "menu.banners.candy_cane.name": "<name>",
+  "menu.banners.candy_cane.desc": [
+    "<gray>Mmm, yummy!</gray>"
+  ],
+  "menu.banners.snowy_tree.name": "<name>",
+  "menu.banners.snowy_tree.desc": [
+    "<gray>It's a tree, but white.</gray>"
+  ],
+
+
+  "cosmetic.death_effects.bloody_death": "Bloody Death",
+  "cosmetic.death_effects.candy_cane_remains": "Candy Cane Remains",
+  "cosmetic.death_effects.confetti_death": "Confetti Death",
+  "cosmetic.death_effects.enchanted_death": "Enchanted",
+  "cosmetic.death_effects.fall_of_the_frost_lord": "Fall of the Frost Lord",
+  "cosmetic.death_effects.flame_death": "Flame Death",
+  "cosmetic.death_effects.last_love": "Last Love",
+  "cosmetic.death_effects.lightning_death": "Lightning Death",
+  "cosmetic.death_effects.lava_death": "Lava Death",
+  "cosmetic.death_effects.magical_death": "Magical Death",
+  "cosmetic.death_effects.musical_death": "Musical Death",
+  "cosmetic.death_effects.shadow_death": "Shadow Death",
+  "cosmetic.death_effects.sparkly_death": "Sparkly Death",
+  "cosmetic.death_effects.wet_death": "Wet Death",
+
+  "menu.death_effects.title": "Death Effects",
+  "menu.death_effects.next_page.name": "<green>Next Page</green>",
+  "menu.death_effects.next_page.desc": [
+    "<gray>Page <page>/<pages></gray>"
+  ],
+  "menu.death_effects.previous_page.name": "<green>Previous Page</green>",
+  "menu.death_effects.previous_page.desc": [
+    "<gray>Page <page>/<pages></gray>"
+  ],
+  "menu.death_effects.go_back.name": "<red>Go back</red>",
+  "menu.death_effects.go_back.desc": [
+    "<gray>Click to go back to the previous menu!</gray>"
+  ],
+  "menu.death_effects.purchasable.name": "<name>",
+  "menu.death_effects.purchasable.desc": [
+    "",
+    "<green>Click to purchase for <yellow><cost> coins</yellow>!</green>"
+  ],
+  "menu.death_effects.purchase_disabled.name": "<name>",
+  "menu.death_effects.purchase_disabled.desc": [
+    "",
+    "<red>This cosmetic cannot be purchased!</red>"
+  ],
+  "menu.death_effects.purchase_no_permission.name": "<name>",
+  "menu.death_effects.purchase_no_permission.desc": [
+    "",
+    "<red>You do not have permission to</red>",
+    "<red>purchase this cosmetic!</red>"
+  ],
+  "menu.death_effects.unequipped.name": "<name>",
+  "menu.death_effects.unequipped.desc": [
+    "",
+    "<green>Click to equip!</green>"
+  ],
+  "menu.death_effects.equipped.name": "<name>",
+  "menu.death_effects.equipped.desc": [
+    "",
+    "<yellow>Click to unequip!</yellow>"
+  ],
+
+  "menu.death_effects.bloody_death.name": "<name>",
+  "menu.death_effects.bloody_death.desc": [
+    "<gray>Let your blood in your body explode</gray>",
+    "<gray>of anger once you die!</gray>"
+  ],
+  "menu.death_effects.candy_cane_remains.name": "<name>",
+  "menu.death_effects.candy_cane_remains.desc": [
+    "<gray>Share your last candy upon</gray>",
+    "<gray>death.</gray>"
+  ],
+  "menu.death_effects.confetti_death.name": "<name>",
+  "menu.death_effects.confetti_death.desc": [
+    "<gray>Turn your defeat into a</gray>",
+    "<gray>celebration! Burst with</gray>",
+    "<gray>colorful party confetti!</gray>"
+  ],
+  "menu.death_effects.enchanted_death.name": "<name>",
+  "menu.death_effects.enchanted_death.desc": [
+    "<gray>Fade away in mystical sparkles</gray>",
+    "<gray>as ancient magic claims</gray>",
+    "<gray>another wise soul.</gray>"
+  ],
+  "menu.death_effects.fall_of_the_frost_lord.name": "<name>",
+  "menu.death_effects.fall_of_the_frost_lord.desc": [
+    "<gray>Did Winter just arrive upon</gray>",
+    "<gray>your death? You missed the</gray>",
+    "<gray>Christmas presents.</gray>"
+  ],
+  "menu.death_effects.flame_death.name": "<name>",
+  "menu.death_effects.flame_death.desc": [
+    "<gray>Let all of your anger burn</gray>",
+    "<gray>in to pieces.</gray>"
+  ],
+  "menu.death_effects.last_love.name": "<name>",
+  "menu.death_effects.last_love.desc": [
+    "<gray>You're always in my heart, no</gray>",
+    "<gray>matter what you do to me.</gray>"
+  ],
+  "menu.death_effects.lightning_death.name": "<name>",
+  "menu.death_effects.lightning_death.desc": [
+    "<gray>Let everyone know what king</gray>",
+    "<gray>really died!</gray>"
+  ],
+  "menu.death_effects.lava_death.name": "<name>",
+  "menu.death_effects.lava_death.desc": [
+    "<gray>Arh, so hot!</gray>"
+  ],
+  "menu.death_effects.magical_death.name": "<name>",
+  "menu.death_effects.magical_death.desc": [
+    "<gray>Cast the last spell you've.</gray>"
+  ],
+  "menu.death_effects.musical_death.name": "<name>",
+  "menu.death_effects.musical_death.desc": [
+    "<gray>Dance your way to the afterlife</gray>",
+    "<gray>with musical notes floating</gray>",
+    "<gray>through your final performance!</gray>"
+  ],
+  "menu.death_effects.shadow_death.name": "<name>",
+  "menu.death_effects.shadow_death.desc": [
+    "<gray>A poof of smoke and you're</gray>",
+    "<gray>gone!</gray>"
+  ],
+  "menu.death_effects.sparkly_death.name": "<name>",
+  "menu.death_effects.sparkly_death.desc": [
+    "<gray>Depart in dazzling style with</gray>",
+    "<gray>glittering sparkles that</gray>",
+    "<gray>light up your farewell.</gray>"
+  ],
+  "menu.death_effects.wet_death.name": "<name>",
+  "menu.death_effects.wet_death.desc": [
+    "<gray>Create a splash of sorrow</gray>",
+    "<gray>as water droplets mark</gray>",
+    "<gray>your emotional departure.</gray>"
+  ],
+
+  "cosmetic.emotes.happy": "Happy",
+  "cosmetic.emotes.cheeky": "Cheeky",
+  "cosmetic.emotes.cool": "Cool",
+  "cosmetic.emotes.wink": "Wink",
+  "cosmetic.emotes.in_love": "In Love",
+  "cosmetic.emotes.surprised": "Surprised",
+  "cosmetic.emotes.dizzy": "Dizzy",
+  "cosmetic.emotes.sleepy": "Sleepy",
+  "cosmetic.emotes.sad": "Sad",
+  "cosmetic.emotes.deal_with_it": "Deal With It",
+  "cosmetic.emotes.rage": "Rage",
+  "cosmetic.emotes.rip": "RIP",
+  "cosmetic.emotes.spicy": "Spicy",
+  "cosmetic.emotes.sun_tan": "Sun-Tan",
+
+  "menu.emotes.title": "Emotes",
+  "menu.emotes.next_page.name": "<green>Next Page</green>",
+  "menu.emotes.next_page.desc": [
+    "<gray>Page <page>/<pages></gray>"
+  ],
+  "menu.emotes.previous_page.name": "<green>Previous Page</green>",
+  "menu.emotes.previous_page.desc": [
+    "<gray>Page <page>/<pages></gray>"
+  ],
+  "menu.emotes.go_back.name": "<red>Go back</red>",
+  "menu.emotes.go_back.desc": [
+    "<gray>Click to go back to the previous menu!</gray>"
+  ],
+  "menu.emotes.purchasable.name": "<name>",
+  "menu.emotes.purchasable.desc": [
+    "",
+    "<green>Click to purchase for <yellow><cost> coins</yellow>!</green>"
+  ],
+  "menu.emotes.purchase_disabled.name": "<name>",
+  "menu.emotes.purchase_disabled.desc": [
+    "",
+    "<red>This cosmetic cannot be purchased!</red>"
+  ],
+  "menu.emotes.purchase_no_permission.name": "<name>",
+  "menu.emotes.purchase_no_permission.desc": [
+    "",
+    "<red>You do not have permission to</red>",
+    "<red>purchase this cosmetic!</red>"
+  ],
+  "menu.emotes.unequipped.name": "<name>",
+  "menu.emotes.unequipped.desc": [
+    "",
+    "<green>Click to equip!</green>"
+  ],
+  "menu.emotes.equipped.name": "<name>",
+  "menu.emotes.equipped.desc": [
+    "",
+    "<yellow>Click to unequip!</yellow>"
+  ],
+
+  "menu.emotes.happy.name": "<name>",
+  "menu.emotes.happy.desc": [
+    "<gray>Show everyone how happy</gray>",
+    "<gray>you're.</gray>"
+  ],
+  "menu.emotes.cheeky.name": "<name>",
+  "menu.emotes.cheeky.desc": [
+    "<gray>Are you up to some mischief?</gray>"
+  ],
+  "menu.emotes.cool.name": "<name>",
+  "menu.emotes.cool.desc": [
+    "<gray>Hm, cool!</gray>"
+  ],
+  "menu.emotes.wink.name": "<name>",
+  "menu.emotes.wink.desc": [
+    "<gray>Gotcha!</gray>"
+  ],
+  "menu.emotes.in_love.name": "<name>",
+  "menu.emotes.in_love.desc": [
+    "<gray>Butterflies in your stomach?</gray>"
+  ],
+  "menu.emotes.surprised.name": "<name>",
+  "menu.emotes.surprised.desc": [
+    "<gray>I don't know what to say!</gray>"
+  ],
+  "menu.emotes.dizzy.name": "<name>",
+  "menu.emotes.dizzy.desc": [
+    "<gray>Maybe roller coasters are not for you?</gray>"
+  ],
+  "menu.emotes.sleepy.name": "<name>",
+  "menu.emotes.sleepy.desc": [
+    "<gray>Zzz...</gray>"
+  ],
+  "menu.emotes.sad.name": "<name>",
+  "menu.emotes.sad.desc": [
+    "<gray>Did something make you sad?</gray>"
+  ],
+  "menu.emotes.deal_with_it.name": "<name>",
+  "menu.emotes.deal_with_it.desc": [
+    "<gray>Some are better than others!</gray>"
+  ],
+  "menu.emotes.rage.name": "<name>",
+  "menu.emotes.rage.desc": [
+    "<gray>Did anyone make you angry?</gray>",
+    "<gray>Show them with this emote.</gray>"
+  ],
+  "menu.emotes.rip.name": "<name>",
+  "menu.emotes.rip.desc": [
+    "<gray>Will I be missed?</gray>"
+  ],
+  "menu.emotes.spicy.name": "<name>",
+  "menu.emotes.spicy.desc": [
+    "<gray>That pepper was way too hot!</gray>"
+  ],
+  "menu.emotes.sun_tan.name": "<name>",
+  "menu.emotes.sun_tan.desc": [
+    "<gray>Looks like you stayed too</gray>",
+    "<gray>long in the sun.</gray>"
+  ],
+
+  "cosmetic.gadgets.ethereal_pearl": "Ethereal Pearl",
+  "cosmetic.gadgets.fireworks": "Fireworks",
+  "cosmetic.gadgets.tnt": "TNT",
+  "cosmetic.gadgets.paintball": "Paintball",
+  "cosmetic.gadgets.bat_blaster": "Bat Blaster",
+  "cosmetic.gadgets.confetti": "Confetti",
+  "cosmetic.gadgets.party_popper": "Party Popper",
+  "cosmetic.gadgets.coin_party_bomb": "Coin Party Bomb",
+  "cosmetic.gadgets.merry_go_round": "Merry-Go-Round",
+  "cosmetic.gadgets.rocket": "Rocket",
+  "cosmetic.gadgets.trampoline": "Trampoline",
+  "cosmetic.gadgets.disco_ball": "Disco Ball",
+  "cosmetic.gadgets.melon_launcher": "Melon Launcher",
+  "cosmetic.gadgets.grappling_hook": "Grappling Hook",
+  "cosmetic.gadgets.detonator": "Detonator",
+  "cosmetic.gadgets.explosive_sheep": "Explosive Sheep",
+  "cosmetic.gadgets.flesh_hook": "Flesh Hook",
+  "cosmetic.gadgets.wither_missile": "Wither Missile",
+  "cosmetic.gadgets.chicken_parachute": "Chicken Parachute",
+  "cosmetic.gadgets.cowboy": "Cowboy",
+  "cosmetic.gadgets.soccer_ball": "Soccer Ball",
+  "cosmetic.gadgets.swing": "Swing",
+  "cosmetic.gadgets.slide": "Slide",
+  "cosmetic.gadgets.shower": "Shower",
+  "cosmetic.gadgets.hot_tub": "Hot Tub",
+  "cosmetic.gadgets.hot_air_balloon": "Hot Air Balloon",
+  "cosmetic.gadgets.cannon": "Cannon",
+  "cosmetic.gadgets.diving_board": "Diving Board",
+  "cosmetic.gadgets.flame_thrower": "Flame Thrower",
+  "cosmetic.gadgets.parkour_spiral": "Parkour Spiral",
+  "cosmetic.gadgets.water_gun": "Water Gun",
+
+  "menu.gadgets.title": "Gadgets",
+  "menu.gadgets.next_page.name": "<green>Next Page</green>",
+  "menu.gadgets.next_page.desc": [
+    "<gray>Page <page>/<pages></gray>"
+  ],
+  "menu.gadgets.previous_page.name": "<green>Previous Page</green>",
+  "menu.gadgets.previous_page.desc": [
+    "<gray>Page <page>/<pages></gray>"
+  ],
+  "menu.gadgets.go_back.name": "<red>Go back</red>",
+  "menu.gadgets.go_back.desc": [
+    "<gray>Click to go back to the previous menu!</gray>"
+  ],
+  "menu.gadgets.purchasable.name": "<name>",
+  "menu.gadgets.purchasable.desc": [
+    "",
+    "<green>Click to purchase for <yellow><cost> coins</yellow>!</green>"
+  ],
+  "menu.gadgets.purchase_disabled.name": "<name>",
+  "menu.gadgets.purchase_disabled.desc": [
+    "",
+    "<red>This cosmetic cannot be purchased!</red>"
+  ],
+  "menu.gadgets.purchase_no_permission.name": "<name>",
+  "menu.gadgets.purchase_no_permission.desc": [
+    "",
+    "<red>You do not have permission to</red>",
+    "<red>purchase this cosmetic!</red>"
+  ],
+  "menu.gadgets.unequipped.name": "<name>",
+  "menu.gadgets.unequipped.desc": [
+    "",
+    "<green>Click to equip!</green>"
+  ],
+  "menu.gadgets.equipped.name": "<name>",
+  "menu.gadgets.equipped.desc": [
+    "",
+    "<yellow>Click to unequip!</yellow>"
+  ],
+
+  "menu.gadgets.ethereal_pearl.name": "<aqua><name></aqua>",
+  "menu.gadgets.ethereal_pearl.desc": [
+    "<gray>Harness the power of teleportation</gray>",
+    "<gray>with these mystical pearls stolen</gray>",
+    "<gray>from the End dimension!</gray>",
+    "",
+    "<aqua>You currently own <gray><ammo></gray>.</aqua>",
+    "",
+    "<blue>Right Click to purchase <ammo_purchase_amount> ammo for <yellow><ammo_cost> coins</yellow>!</blue>"
+  ],
+  "menu.gadgets.fireworks.name": "<aqua><name></aqua>",
+  "menu.gadgets.fireworks.desc": [
+    "<gray>Light up the sky with dazzling</gray>",
+    "<gray>explosions of color and joy!</gray>",
+    "<gray>Perfect for any celebration!</gray>",
+    "",
+    "<aqua>You currently own <gray><ammo></gray>.</aqua>",
+    "",
+    "<blue>Right Click to purchase <ammo_purchase_amount> ammo for <yellow><ammo_cost> coins</yellow>!</blue>"
+  ],
+  "menu.gadgets.tnt.name": "<aqua><name></aqua>",
+  "menu.gadgets.tnt.desc": [
+    "<gray>Explosive surprise delivery!</gray>",
+    "<gray>Watch your targets scatter</gray>",
+    "<gray>when this goes BOOM!</gray>",
+    "",
+    "<aqua>You currently own <gray><ammo></gray>.</aqua>",
+    "",
+    "<blue>Right Click to purchase <ammo_purchase_amount> ammo for <yellow><ammo_cost> coins</yellow>!</blue>"
+  ],
+  "menu.gadgets.paintball.name": "<aqua><name></aqua>",
+  "menu.gadgets.paintball.desc": [
+    "<gray>Transform the world into your</gray>",
+    "<gray>personal canvas! Splash vibrant</gray>",
+    "<gray>colors everywhere you go!</gray>",
+    "",
+    "<aqua>You currently own <gray><ammo></gray>.</aqua>",
+    "",
+    "<blue>Right Click to purchase <ammo_purchase_amount> ammo for <yellow><ammo_cost> coins</yellow>!</blue>"
+  ],
+  "menu.gadgets.bat_blaster.name": "<aqua><name></aqua>",
+  "menu.gadgets.bat_blaster.desc": [
+    "<gray>Summon a terrifying swarm of</gray>",
+    "<gray>bats to overwhelm your foes</gray>",
+    "<gray>with spooky chaos!</gray>",
+    "",
+    "<aqua>You currently own <gray><ammo></gray>.</aqua>",
+    "",
+    "<blue>Right Click to purchase <ammo_purchase_amount> ammo for <yellow><ammo_cost> coins</yellow>!</blue>"
+  ],
+  "menu.gadgets.confetti.name": "<aqua><name></aqua>",
+  "menu.gadgets.confetti.desc": [
+    "<gray>Shower your friends with a</gray>",
+    "<gray>rainbow burst of festive</gray>",
+    "<gray>celebration confetti!</gray>",
+    "",
+    "<aqua>You currently own <gray><ammo></gray>.</aqua>",
+    "",
+    "<blue>Right Click to purchase <ammo_purchase_amount> ammo for <yellow><ammo_cost> coins</yellow>!</blue>"
+  ],
+  "menu.gadgets.party_popper.name": "<aqua><name></aqua>",
+  "menu.gadgets.party_popper.desc": [
+    "<gray>Instant party starter! Pop</gray>",
+    "<gray>and watch the fun explode!</gray>",
+    "",
+    "<aqua>You currently own <gray><ammo></gray>.</aqua>",
+    "",
+    "<blue>Right Click to purchase <ammo_purchase_amount> ammo for <yellow><ammo_cost> coins</yellow>!</blue>"
+  ],
+  "menu.gadgets.coin_party_bomb.name": "<aqua><name></aqua>",
+  "menu.gadgets.coin_party_bomb.desc": [
+    "<gray>Become everyone's best friend</gray>",
+    "<gray>with this coin party comb</gray>",
+    "<gray>of generosity!</gray>",
+    "",
+    "<aqua>You currently own <gray><ammo></gray>.</aqua>",
+    "",
+    "<blue>Right Click to purchase <ammo_purchase_amount> ammo for <yellow><ammo_cost> coins</yellow>!</blue>"
+  ],
+  "menu.gadgets.merry_go_round.name": "<aqua><name></aqua>",
+  "menu.gadgets.merry_go_round.desc": [
+    "<gray>Round and round we go! Spin</gray>",
+    "<gray>with friends on this magical</gray>",
+    "<gray>carnival ride!</gray>",
+    "",
+    "<aqua>You currently own <gray><ammo></gray>.</aqua>",
+    "",
+    "<blue>Right Click to purchase <ammo_purchase_amount> ammo for <yellow><ammo_cost> coins</yellow>!</blue>"
+  ],
+  "menu.gadgets.rocket.name": "<aqua><name></aqua>",
+  "menu.gadgets.rocket.desc": [
+    "<gray>Blast off to new heights!</gray>",
+    "<gray>Experience the ultimate</gray>",
+    "<gray>sky-high adventure!</gray>",
+    "",
+    "<aqua>You currently own <gray><ammo></gray>.</aqua>",
+    "",
+    "<blue>Right Click to purchase <ammo_purchase_amount> ammo for <yellow><ammo_cost> coins</yellow>!</blue>"
+  ],
+  "menu.gadgets.trampoline.name": "<aqua><name></aqua>",
+  "menu.gadgets.trampoline.desc": [
+    "<gray>Bounce to incredible heights!</gray>",
+    "<gray>Defy gravity with friends!</gray>",
+    "",
+    "<aqua>You currently own <gray><ammo></gray>.</aqua>",
+    "",
+    "<blue>Right Click to purchase <ammo_purchase_amount> ammo for <yellow><ammo_cost> coins</yellow>!</blue>"
+  ],
+  "menu.gadgets.disco_ball.name": "<aqua><name></aqua>",
+  "menu.gadgets.disco_ball.desc": [
+    "<gray>Turn anywhere into a dance</gray>",
+    "<gray>floor with groovy lights!</gray>",
+    "",
+    "<aqua>You currently own <gray><ammo></gray>.</aqua>",
+    "",
+    "<blue>Right Click to purchase <ammo_purchase_amount> ammo for <yellow><ammo_cost> coins</yellow>!</blue>"
+  ],
+  "menu.gadgets.melon_launcher.name": "<aqua><name></aqua>",
+  "menu.gadgets.melon_launcher.desc": [
+    "<gray>Launch juicy melons for speed</gray>",
+    "<gray>boosts and fruity fun!</gray>",
+    "",
+    "<aqua>You currently own <gray><ammo></gray>.</aqua>",
+    "",
+    "<blue>Right Click to purchase <ammo_purchase_amount> ammo for <yellow><ammo_cost> coins</yellow>!</blue>"
+  ],
+  "menu.gadgets.grappling_hook.name": "<aqua><name></aqua>",
+  "menu.gadgets.grappling_hook.desc": [
+    "<gray>Swing like a superhero!</gray>",
+    "<gray>Hook, pull, and soar!</gray>",
+    "",
+    "<aqua>You currently own <gray><ammo></gray>.</aqua>",
+    "",
+    "<blue>Right Click to purchase <ammo_purchase_amount> ammo for <yellow><ammo_cost> coins</yellow>!</blue>"
+  ],
+  "menu.gadgets.detonator.name": "<aqua><name></aqua>",
+  "menu.gadgets.detonator.desc": [
+    "<gray>Master of explosions! Control</gray>",
+    "<gray>up to 3 TNT detonations!</gray>",
+    "",
+    "<aqua>You currently own <gray><ammo></gray>.</aqua>",
+    "",
+    "<blue>Right Click to purchase <ammo_purchase_amount> ammo for <yellow><ammo_cost> coins</yellow>!</blue>"
+  ],
+  "menu.gadgets.explosive_sheep.name": "<aqua><name></aqua>",
+  "menu.gadgets.explosive_sheep.desc": [
+    "<gray>One explosive sheep becomes</gray>",
+    "<gray>a fluffy army of chaos!</gray>",
+    "",
+    "<aqua>You currently own <gray><ammo></gray>.</aqua>",
+    "",
+    "<blue>Right Click to purchase <ammo_purchase_amount> ammo for <yellow><ammo_cost> coins</yellow>!</blue>"
+  ],
+  "menu.gadgets.flesh_hook.name": "<aqua><name></aqua>",
+  "menu.gadgets.flesh_hook.desc": [
+    "<gray>Forcefully make new friends</gray>",
+    "<gray>by dragging them closer!</gray>",
+    "",
+    "<aqua>You currently own <gray><ammo></gray>.</aqua>",
+    "",
+    "<blue>Right Click to purchase <ammo_purchase_amount> ammo for <yellow><ammo_cost> coins</yellow>!</blue>"
+  ],
+  "menu.gadgets.wither_missile.name": "<aqua><name></aqua>",
+  "menu.gadgets.wither_missile.desc": [
+    "<gray>Ride the skull of destruction</gray>",
+    "<gray>through the skies!</gray>",
+    "",
+    "<aqua>You currently own <gray><ammo></gray>.</aqua>",
+    "",
+    "<blue>Right Click to purchase <ammo_purchase_amount> ammo for <yellow><ammo_cost> coins</yellow>!</blue>"
+  ],
+  "menu.gadgets.chicken_parachute.name": "<aqua><name></aqua>",
+  "menu.gadgets.chicken_parachute.desc": [
+    "<gray>Float gracefully to safety</gray>",
+    "<gray>with feathered friends as</gray>",
+    "<gray>your parachute!</gray>",
+    "",
+    "<aqua>You currently own <gray><ammo></gray>.</aqua>",
+    "",
+    "<blue>Right Click to purchase <ammo_purchase_amount> ammo for <yellow><ammo_cost> coins</yellow>!</blue>"
+  ],
+  "menu.gadgets.cowboy.name": "<aqua><name></aqua>",
+  "menu.gadgets.cowboy.desc": [
+    "<gray>Yee-haw! Saddle up and ride</gray>",
+    "<gray>other players like a true</gray>",
+    "<gray>cowboy!</gray>",
+    "",
+    "<aqua>You currently own <gray><ammo></gray>.</aqua>",
+    "",
+    "<blue>Right Click to purchase <ammo_purchase_amount> ammo for <yellow><ammo_cost> coins</yellow>!</blue>"
+  ],
+  "menu.gadgets.soccer_ball.name": "<aqua><name></aqua>",
+  "menu.gadgets.soccer_ball.desc": [
+    "<gray>Score goals and kick around</gray>",
+    "<gray>with friends in an epic</gray>",
+    "<gray>soccer match!</gray>",
+    "",
+    "<aqua>You currently own <gray><ammo></gray>.</aqua>",
+    "",
+    "<blue>Right Click to purchase <ammo_purchase_amount> ammo for <yellow><ammo_cost> coins</yellow>!</blue>"
+  ],
+  "menu.gadgets.swing.name": "<aqua><name></aqua>",
+  "menu.gadgets.swing.desc": [
+    "<gray>Relax and sway back and forth</gray>",
+    "<gray>on the ultimate playground</gray>",
+    "<gray>swing!</gray>",
+    "",
+    "<aqua>You currently own <gray><ammo></gray>.</aqua>",
+    "",
+    "<blue>Right Click to purchase <ammo_purchase_amount> ammo for <yellow><ammo_cost> coins</yellow>!</blue>"
+  ],
+  "menu.gadgets.slide.name": "<aqua><name></aqua>",
+  "menu.gadgets.slide.desc": [
+    "<gray>Wheee! Race down the slide</gray>",
+    "<gray>with friends for pure joy!</gray>",
+    "",
+    "<aqua>You currently own <gray><ammo></gray>.</aqua>",
+    "",
+    "<blue>Right Click to purchase <ammo_purchase_amount> ammo for <yellow><ammo_cost> coins</yellow>!</blue>"
+  ],
+  "menu.gadgets.shower.name": "<aqua><name></aqua>",
+  "menu.gadgets.shower.desc": [
+    "<gray>Time for a refreshing wash!</gray>",
+    "<gray>Clean up and feel fresh!</gray>",
+    "",
+    "<aqua>You currently own <gray><ammo></gray>.</aqua>",
+    "",
+    "<blue>Right Click to purchase <ammo_purchase_amount> ammo for <yellow><ammo_cost> coins</yellow>!</blue>"
+  ],
+  "menu.gadgets.hot_tub.name": "<aqua><name></aqua>",
+  "menu.gadgets.hot_tub.desc": [
+    "<gray>Relax in bubbling hot water</gray>",
+    "<gray>with friends! Pool party time!</gray>",
+    "",
+    "<aqua>You currently own <gray><ammo></gray>.</aqua>",
+    "",
+    "<blue>Right Click to purchase <ammo_purchase_amount> ammo for <yellow><ammo_cost> coins</yellow>!</blue>"
+  ],
+  "menu.gadgets.hot_air_balloon.name": "<aqua><name></aqua>",
+  "menu.gadgets.hot_air_balloon.desc": [
+    "<gray>Soar high above the clouds</gray>",
+    "<gray>in this majestic balloon!</gray>",
+    "",
+    "<aqua>You currently own <gray><ammo></gray>.</aqua>",
+    "",
+    "<blue>Right Click to purchase <ammo_purchase_amount> ammo for <yellow><ammo_cost> coins</yellow>!</blue>"
+  ],
+  "menu.gadgets.cannon.name": "<aqua><name></aqua>",
+  "menu.gadgets.cannon.desc": [
+    "<gray>Load yourself into this mighty</gray>",
+    "<gray>cannon and fire away!</gray>",
+    "",
+    "<aqua>You currently own <gray><ammo></gray>.</aqua>",
+    "",
+    "<blue>Right Click to purchase <ammo_purchase_amount> ammo for <yellow><ammo_cost> coins</yellow>!</blue>"
+  ],
+  "menu.gadgets.diving_board.name": "<aqua><name></aqua>",
+  "menu.gadgets.diving_board.desc": [
+    "<gray>Take the perfect dive with</gray>",
+    "<gray>style and splash!</gray>",
+    "",
+    "<aqua>You currently own <gray><ammo></gray>.</aqua>",
+    "",
+    "<blue>Right Click to purchase <ammo_purchase_amount> ammo for <yellow><ammo_cost> coins</yellow>!</blue>"
+  ],
+  "menu.gadgets.flame_thrower.name": "<aqua><name></aqua>",
+  "menu.gadgets.flame_thrower.desc": [
+    "<gray>Unleash scorching flames and</gray>",
+    "<gray>burn through any obstacle!</gray>",
+    "",
+    "<aqua>You currently own <gray><ammo></gray>.</aqua>",
+    "",
+    "<blue>Right Click to purchase <ammo_purchase_amount> ammo for <yellow><ammo_cost> coins</yellow>!</blue>"
+  ],
+  "menu.gadgets.parkour_spiral.name": "<aqua><name></aqua>",
+  "menu.gadgets.parkour_spiral.desc": [
+    "<gray>Test your jumping skills on</gray>",
+    "<gray>this spiraling challenge!</gray>",
+    "",
+    "<aqua>You currently own <gray><ammo></gray>.</aqua>",
+    "",
+    "<blue>Right Click to purchase <ammo_purchase_amount> ammo for <yellow><ammo_cost> coins</yellow>!</blue>"
+  ],
+  "menu.gadgets.water_gun.name": "<aqua><name></aqua>",
+  "menu.gadgets.water_gun.desc": [
+    "<gray>Splash your friends in the</gray>",
+    "<gray>ultimate water battle!</gray>",
+    "",
+    "<aqua>You currently own <gray><ammo></gray>.</aqua>",
+    "",
+    "<blue>Right Click to purchase <ammo_purchase_amount> ammo for <yellow><ammo_cost> coins</yellow>!</blue>"
+  ],
+
+  "cosmetic.miniatures.astronaut": "Astronaut",
+  "cosmetic.miniatures.tiki": "Tiki",
+  "cosmetic.miniatures.devil": "Devil",
+  "cosmetic.miniatures.ghost": "Ghost",
+  "cosmetic.miniatures.vampire": "Vampire",
+  "cosmetic.miniatures.witch": "Witch",
+  "cosmetic.miniatures.skeleton": "Skeleton",
+  "cosmetic.miniatures.zombie": "Zombie",
+  "cosmetic.miniatures.spider": "Spider",
+  "cosmetic.miniatures.enderman": "Enderman",
+  "cosmetic.miniatures.brown_bear": "Brown Bear",
+  "cosmetic.miniatures.koala_bear": "Koala Bear",
+  "cosmetic.miniatures.panda": "Panda",
+  "cosmetic.miniatures.monkey": "Monkey",
+  "cosmetic.miniatures.elephant": "Elephant",
+  "cosmetic.miniatures.tiger": "Tiger",
+  "cosmetic.miniatures.zebra": "Zebra",
+  "cosmetic.miniatures.chicken": "Chicken",
+  "cosmetic.miniatures.cow": "Cow",
+  "cosmetic.miniatures.sheep": "Sheep",
+  "cosmetic.miniatures.iron_golem": "Iron Golem",
+  "cosmetic.miniatures.bunny": "Bunny",
+  "cosmetic.miniatures.fox": "Fox",
+  "cosmetic.miniatures.parrot": "Parrot",
+  "cosmetic.miniatures.ladybug": "Ladybug",
+  "cosmetic.miniatures.snail": "Snail",
+  "cosmetic.miniatures.turtle": "Turtle",
+  "cosmetic.miniatures.dolphin": "Dolphin",
+  "cosmetic.miniatures.shark": "Shark",
+  "cosmetic.miniatures.snowman": "Snowman",
+  "cosmetic.miniatures.santa_claus": "Santa Claus",
+  "cosmetic.miniatures.doge": "Doge",
+  "cosmetic.miniatures.dwarf": "Dwarf",
+
+  "menu.miniatures.title": "Miniatures",
+  "menu.miniatures.next_page.name": "<green>Next Page</green>",
+  "menu.miniatures.next_page.desc": [
+    "<gray>Page <page>/<pages></gray>"
+  ],
+  "menu.miniatures.previous_page.name": "<green>Previous Page</green>",
+  "menu.miniatures.previous_page.desc": [
+    "<gray>Page <page>/<pages></gray>"
+  ],
+  "menu.miniatures.go_back.name": "<red>Go back</red>",
+  "menu.miniatures.go_back.desc": [
+    "<gray>Click to go back to the previous menu!</gray>"
+  ],
+  "menu.miniatures.purchasable.name": "<name>",
+  "menu.miniatures.purchasable.desc": [
+    "",
+    "<green>Click to purchase for <yellow><cost> coins</yellow>!</green>"
+  ],
+  "menu.miniatures.purchase_disabled.name": "<name>",
+  "menu.miniatures.purchase_disabled.desc": [
+    "",
+    "<red>This cosmetic cannot be purchased!</red>"
+  ],
+  "menu.miniatures.purchase_no_permission.name": "<name>",
+  "menu.miniatures.purchase_no_permission.desc": [
+    "",
+    "<red>You do not have permission to</red>",
+    "<red>purchase this cosmetic!</red>"
+  ],
+  "menu.miniatures.unequipped.name": "<name>",
+  "menu.miniatures.unequipped.desc": [
+    "",
+    "<green>Click to equip!</green>"
+  ],
+  "menu.miniatures.equipped.name": "<name>",
+  "menu.miniatures.equipped.desc": [
+    "",
+    "<yellow>Click to unequip!</yellow>"
+  ],
+
+  "menu.miniatures.astronaut.name": "<name>",
+  "menu.miniatures.astronaut.desc": [
+    "<gray>Boldly goes where no miniature</gray>",
+    "<gray>has gone before!</gray>"
+  ],
+  "menu.miniatures.tiki.name": "<name>",
+  "menu.miniatures.tiki.desc": [
+    "<gray>Ancient island guardian with</gray>",
+    "<gray>mysterious tribal powers.</gray>"
+  ],
+  "menu.miniatures.devil.name": "<name>",
+  "menu.miniatures.devil.desc": [
+    "<gray>Mischievous little demon who</gray>",
+    "<gray>loves causing trouble!</gray>"
+  ],
+  "menu.miniatures.ghost.name": "<name>",
+  "menu.miniatures.ghost.desc": [
+    "<gray>Friendly phantom that phases</gray>",
+    "<gray>through walls and hearts!</gray>"
+  ],
+  "menu.miniatures.vampire.name": "<name>",
+  "menu.miniatures.vampire.desc": [
+    "<gray>Elegant creature of the night</gray>",
+    "<gray>with a thirst for adventure.</gray>"
+  ],
+  "menu.miniatures.witch.name": "<name>",
+  "menu.miniatures.witch.desc": [
+    "<gray>Magical spellcaster brewing</gray>",
+    "<gray>potions and enchantments.</gray>"
+  ],
+  "menu.miniatures.skeleton.name": "<name>",
+  "menu.miniatures.skeleton.desc": [
+    "<gray>Bone-rattling archer with</gray>",
+    "<gray>deadly accurate aim!</gray>"
+  ],
+  "menu.miniatures.zombie.name": "<name>",
+  "menu.miniatures.zombie.desc": [
+    "<gray>Shambling undead companion</gray>",
+    "<gray>with surprising loyalty.</gray>"
+  ],
+  "menu.miniatures.spider.name": "<name>",
+  "menu.miniatures.spider.desc": [
+    "<gray>Eight-legged hunter that</gray>",
+    "<gray>strikes from the shadows.</gray>"
+  ],
+  "menu.miniatures.enderman.name": "<name>",
+  "menu.miniatures.enderman.desc": [
+    "<gray>Teleporting guardian who</gray>",
+    "<gray>bends space and time.</gray>"
+  ],
+  "menu.miniatures.brown_bear.name": "<name>",
+  "menu.miniatures.brown_bear.desc": [
+    "<gray>Mighty forest dweller with</gray>",
+    "<gray>a gentle, caring heart.</gray>"
+  ],
+  "menu.miniatures.koala_bear.name": "<name>",
+  "menu.miniatures.koala_bear.desc": [
+    "<gray>Cuddly eucalyptus lover</gray>",
+    "<gray>ready for warm hugs!</gray>"
+  ],
+  "menu.miniatures.panda.name": "<name>",
+  "menu.miniatures.panda.desc": [
+    "<gray>Adorable bamboo muncher</gray>",
+    "<gray>spreading joy everywhere!</gray>"
+  ],
+  "menu.miniatures.monkey.name": "<name>",
+  "menu.miniatures.monkey.desc": [
+    "<gray>Playful primate swinging</gray>",
+    "<gray>into mischievous fun!</gray>"
+  ],
+  "menu.miniatures.elephant.name": "<name>",
+  "menu.miniatures.elephant.desc": [
+    "<gray>Wise gentle giant with an</gray>",
+    "<gray>unforgettable memory.</gray>"
+  ],
+  "menu.miniatures.tiger.name": "<name>",
+  "menu.miniatures.tiger.desc": [
+    "<gray>Majestic striped hunter</gray>",
+    "<gray>prowling with silent grace.</gray>"
+  ],
+  "menu.miniatures.zebra.name": "<name>",
+  "menu.miniatures.zebra.desc": [
+    "<gray>Galloping savanna runner</gray>",
+    "<gray>with striking black stripes.</gray>"
+  ],
+  "menu.miniatures.chicken.name": "<name>",
+  "menu.miniatures.chicken.desc": [
+    "<gray>Feathered friend that defies</gray>",
+    "<gray>gravity with stubby wings!</gray>"
+  ],
+  "menu.miniatures.cow.name": "<name>",
+  "menu.miniatures.cow.desc": [
+    "<gray>Peaceful pasture dweller</gray>",
+    "<gray>grazing through green fields.</gray>"
+  ],
+  "menu.miniatures.sheep.name": "<name>",
+  "menu.miniatures.sheep.desc": [
+    "<gray>Fluffy wool producer</gray>",
+    "<gray>bouncing through meadows!</gray>"
+  ],
+  "menu.miniatures.iron_golem.name": "<name>",
+  "menu.miniatures.iron_golem.desc": [
+    "<gray>Metallic protector forged</gray>",
+    "<gray>from iron and dedication.</gray>"
+  ],
+  "menu.miniatures.bunny.name": "<name>",
+  "menu.miniatures.bunny.desc": [
+    "<gray>Hopeful spring companion</gray>",
+    "<gray>bringing seasonal magic!</gray>"
+  ],
+  "menu.miniatures.fox.name": "<name>",
+  "menu.miniatures.fox.desc": [
+    "<gray>Clever woodland trickster</gray>",
+    "<gray>with fiery orange fur.</gray>"
+  ],
+  "menu.miniatures.parrot.name": "<name>",
+  "menu.miniatures.parrot.desc": [
+    "<gray>Colorful tropical chatterbox</gray>",
+    "<gray>repeating your adventures!</gray>"
+  ],
+  "menu.miniatures.ladybug.name": "<name>",
+  "menu.miniatures.ladybug.desc": [
+    "<gray>Lucky spotted beetle bringing</gray>",
+    "<gray>fortune to your journey.</gray>"
+  ],
+  "menu.miniatures.snail.name": "<name>",
+  "menu.miniatures.snail.desc": [
+    "<gray>Slow but steady traveler</gray>",
+    "<gray>carrying home on its back.</gray>"
+  ],
+  "menu.miniatures.turtle.name": "<name>",
+  "menu.miniatures.turtle.desc": [
+    "<gray>Ancient shell-bearer moving</gray>",
+    "<gray>with patient wisdom.</gray>"
+  ],
+  "menu.miniatures.dolphin.name": "<name>",
+  "menu.miniatures.dolphin.desc": [
+    "<gray>Intelligent ocean acrobat</gray>",
+    "<gray>surfing waves of friendship!</gray>"
+  ],
+  "menu.miniatures.shark.name": "<name>",
+  "menu.miniatures.shark.desc": [
+    "<gray>Fearsome ocean predator</gray>",
+    "<gray>ruling the deep blue seas.</gray>"
+  ],
+  "menu.miniatures.snowman.name": "<name>",
+  "menu.miniatures.snowman.desc": [
+    "<gray>Jolly winter creation</gray>",
+    "<gray>spreading frosty cheer!</gray>"
+  ],
+  "menu.miniatures.santa_claus.name": "<name>",
+  "menu.miniatures.santa_claus.desc": [
+    "<gray>Festive gift-giver spreading</gray>",
+    "<gray>holiday joy year-round!</gray>"
+  ],
+  "menu.miniatures.doge.name": "<name>",
+  "menu.miniatures.doge.desc": [
+    "<gray>Such companion! Very loyal!</gray>"
+  ],
+  "menu.miniatures.dwarf.name": "<name>",
+  "menu.miniatures.dwarf.desc": [
+    "<gray>Lucky leprechaun guardian</gray>",
+    "<gray>protecting hidden treasures!</gray>"
+  ],
+
+  "cosmetic.morphs.bat": "Bat",
+  "cosmetic.morphs.enderman": "Enderman",
+  "cosmetic.morphs.witch": "Witch",
+  "cosmetic.morphs.wither": "Wither",
+  "cosmetic.morphs.elder_guardian": "Elder Guardian",
+  "cosmetic.morphs.cave_spider": "Cave Spider",
+  "cosmetic.morphs.spider": "Spider",
+  "cosmetic.morphs.creeper": "Creeper",
+  "cosmetic.morphs.zombie": "Zombie",
+  "cosmetic.morphs.skeleton": "Skeleton",
+  "cosmetic.morphs.blaze": "Blaze",
+  "cosmetic.morphs.piglin": "Piglin",
+  "cosmetic.morphs.magma_cube": "Magma Cube",
+  "cosmetic.morphs.slime": "Slime",
+  "cosmetic.morphs.olaf": "Olaf",
+  "cosmetic.morphs.chicken": "Chicken",
+  "cosmetic.morphs.pig": "Pig",
+  "cosmetic.morphs.cow": "Cow",
+  "cosmetic.morphs.sheep": "Sheep",
+  "cosmetic.morphs.cat": "Cat",
+  "cosmetic.morphs.dog": "Dog",
+  "cosmetic.morphs.bunny": "Bunny",
+  "cosmetic.morphs.mushroom_cow": "Mushroom Cow",
+  "cosmetic.morphs.donkey": "Donkey",
+  "cosmetic.morphs.villager": "Villager",
+  "cosmetic.morphs.iron_golem": "Iron Golem",
+  "cosmetic.morphs.squid": "Squid",
+  "cosmetic.morphs.block": "Block",
+
+  "menu.morphs.title": "Morphs",
+  "menu.morphs.next_page.name": "<green>Next Page</green>",
+  "menu.morphs.next_page.desc": [
+    "<gray>Page <page>/<pages></gray>"
+  ],
+  "menu.morphs.previous_page.name": "<green>Previous Page</green>",
+  "menu.morphs.previous_page.desc": [
+    "<gray>Page <page>/<pages></gray>"
+  ],
+  "menu.morphs.go_back.name": "<red>Go back</red>",
+  "menu.morphs.go_back.desc": [
+    "<gray>Click to go back to the previous menu!</gray>"
+  ],
+  "menu.morphs.toggle_self_view.enable.name": "<green>Enable Self-View</green>",
+  "menu.morphs.toggle_self_view.enable.desc": [
+    "",
+    "<gray>Click to enable self-view</gray>",
+    "<gray>of your morph!</gray>"
+  ],
+  "menu.morphs.toggle_self_view.disable.name": "<red>Disable Self-View</red>",
+  "menu.morphs.toggle_self_view.disable.desc": [
+    "<gray>Click to disable self-view</gray>",
+    "<gray>of your morph!</gray>"
+  ],
+  "menu.morphs.purchasable.name": "<name>",
+  "menu.morphs.purchasable.desc": [
+    "",
+    "<green>Click to purchase for <yellow><cost> coins</yellow>!</green>"
+  ],
+  "menu.morphs.purchase_disabled.name": "<name>",
+  "menu.morphs.purchase_disabled.desc": [
+    "",
+    "<red>This cosmetic cannot be purchased!</red>"
+  ],
+  "menu.morphs.purchase_no_permission.name": "<name>",
+  "menu.morphs.purchase_no_permission.desc": [
+    "",
+    "<red>You do not have permission to</red>",
+    "<red>purchase this cosmetic!</red>"
+  ],
+  "menu.morphs.unequipped.name": "<name>",
+  "menu.morphs.unequipped.desc": [
+    "",
+    "<green>Click to equip!</green>"
+  ],
+  "menu.morphs.equipped.name": "<name>",
+  "menu.morphs.equipped.desc": [
+    "",
+    "<yellow>Click to unequip!</yellow>"
+  ],
+
+  "menu.morphs.bat.name": "<name>",
+  "menu.morphs.bat.desc": [
+    "<gray>Fly around to annoy people by screeching</gray>",
+    "<gray>loudly and dropping poop in their faces.</gray>",
+    "",
+    "<aqua>Left Click</aqua> <gray>to fly in a short period.</gray>",
+    "<aqua>Sneak</aqua> <gray>to drop poop.</gray>"
+  ],
+  "menu.morphs.enderman.name": "<name>",
+  "menu.morphs.enderman.desc": [
+    "<gray>No need of enderpearls anymore.</gray>",
+    "",
+    "<aqua>Sneak</aqua> <gray>to teleport in the</gray>",
+    "<gray>direction you're facing.</gray>"
+  ],
+  "menu.morphs.witch.name": "<name>",
+  "menu.morphs.witch.desc": [
+    "<gray>Ever wanted to curse someone? You</gray>",
+    "<gray>can choose to become the nicest or</gray>",
+    "<gray>the most evil witch in the world.</gray>",
+    "",
+    "<aqua>Left Click</aqua> <gray>to throw potion.</gray>"
+  ],
+  "menu.morphs.wither.name": "<name>",
+  "menu.morphs.wither.desc": [
+    "<gray>Transform into the most powerful</gray>",
+    "<gray>wither in the world.</gray>",
+    "",
+    "<aqua>Left Click</aqua> <gray>to shoot a skull causing</gray>",
+    "<gray>an explosion on impact.</gray>"
+  ],
+  "menu.morphs.elder_guardian.name": "<name>",
+  "menu.morphs.elder_guardian.desc": [
+    "<gray>You rule the world!</gray>",
+    "",
+    "<aqua>Left Click</aqua> <gray>to charge a laser that creates</gray>",
+    "<gray>a massive explosion once charged.</gray>"
+  ],
+  "menu.morphs.cave_spider.name": "<name>",
+  "menu.morphs.cave_spider.desc": [
+    "<gray>A single bite is very poisonous.</gray>",
+    "",
+    "<aqua>Left Click</aqua> <gray>someone to bite,</gray>",
+    "<gray>causing them to get dizzy.</gray>"
+  ],
+  "menu.morphs.spider.name": "<name>",
+  "menu.morphs.spider.desc": [
+    "<gray>Some may be afraid of spiders.</gray>",
+    "",
+    "<aqua>Left Click</aqua> <gray>to spit web on someone.</gray>"
+  ],
+  "menu.morphs.creeper.name": "<name>",
+  "menu.morphs.creeper.desc": [
+    "<gray>Transform into an explosive Creeper</gray>",
+    "<gray>to blow people up!</gray>",
+    "",
+    "<aqua>Sneak</aqua> <gray>to charge up to create</gray>",
+    "<gray>a massive explosion.</gray>"
+  ],
+  "menu.morphs.zombie.name": "<name>",
+  "menu.morphs.zombie.desc": [
+    "<gray>Transform into a scary zombie!</gray>",
+    "",
+    "<aqua>Left Click</aqua> <gray>to summon a baby zombie</gray>",
+    "<gray>to target someone.</gray>"
+  ],
+  "menu.morphs.skeleton.name": "<name>",
+  "menu.morphs.skeleton.desc": [
+    "<gray>Transform into a spooky</gray>",
+    "<gray>scary skeleton.</gray>",
+    "",
+    "<aqua>Tap sneak</aqua> <gray>to create</gray>",
+    "<gray>an explosion of your</gray>",
+    "<gray>last bones.</gray>"
+  ],
+  "menu.morphs.blaze.name": "<name>",
+  "menu.morphs.blaze.desc": [
+    "<gray>Transform into a fiery Blaze!</gray>",
+    "",
+    "<aqua>Hold sneak</aqua> <gray>to fly in the direction</gray>",
+    "<gray>you're facing.</gray>"
+  ],
+  "menu.morphs.piglin.name": "<name>",
+  "menu.morphs.piglin.desc": [
+    "<gray>If you hit me, I'll defeat you!</gray>",
+    "",
+    "<aqua>Left Click</aqua> <gray>to make a noise!</gray>"
+  ],
+  "menu.morphs.magma_cube.name": "<name>",
+  "menu.morphs.magma_cube.desc": [
+    "<gray>Don't touch me! I am hot!</gray>",
+    "",
+    "<aqua>Hold sneak</aqua> <gray>to jump.</gray>",
+    "<gray>Look up to jump higher.</gray>"
+  ],
+  "menu.morphs.slime.name": "<name>",
+  "menu.morphs.slime.desc": [
+    "<gray>Jumping around as a Slime</gray>",
+    "<gray>can be very exciting.</gray>",
+    "",
+    "<aqua>Left Click</aqua> <gray>to throw a slime block.</gray>",
+    "<aqua>Hold sneak</aqua> <gray>to jump.</gray>"
+  ],
+  "menu.morphs.olaf.name": "<name>",
+  "menu.morphs.olaf.desc": [
+    "<gray>Everyone loves Olaf!</gray>",
+    "",
+    "<aqua>Left Click</aqua> <gray>to throw a</gray>",
+    "<gray>snowball at somone.</gray>"
+  ],
+  "menu.morphs.chicken.name": "<name>",
+  "menu.morphs.chicken.desc": [
+    "<gray>Pop, ah an egg!</gray>",
+    "",
+    "<aqua>Left Click</aqua> <gray>to cackle.</gray>",
+    "<aqua>Tap sneak</aqua> <gray>to pop an egg.</gray>"
+  ],
+  "menu.morphs.pig.name": "<name>",
+  "menu.morphs.pig.desc": [
+    "<gray>Run into others to punch them. Such</gray>",
+    "<gray>annoying pig running around.</gray>",
+    "",
+    "<aqua>Left Click</aqua> <gray>to oink.</gray>"
+  ],
+  "menu.morphs.cow.name": "<name>",
+  "menu.morphs.cow.desc": [
+    "<gray>Moo at your friends.</gray>",
+    "",
+    "<aqua>Left Click</aqua> <gray>to moo.</gray>"
+  ],
+  "menu.morphs.sheep.name": "<name>",
+  "menu.morphs.sheep.desc": [
+    "<gray>Change color quickly to blend in with the</gray>",
+    "<gray>surrounding environment.</gray>",
+    "",
+    "<aqua>Tap sneak</aqua> <gray>to change color of the wool.</gray>"
+  ],
+  "menu.morphs.cat.name": "<name>",
+  "menu.morphs.cat.desc": [
+    "<gray>Finally you get to sleep all day just like a cat!</gray>",
+    "",
+    "<aqua>Left Click</aqua> <gray>to miaow.</gray>",
+    "<aqua>Sneak</aqua> <gray>to purr.</gray>"
+  ],
+  "menu.morphs.dog.name": "<name>",
+  "menu.morphs.dog.desc": [
+    "<gray>Voff, voff!</gray>",
+    "",
+    "<aqua>Left Click</aqua> <gray>to bark!</gray>"
+  ],
+  "menu.morphs.bunny.name": "<name>",
+  "menu.morphs.bunny.desc": [
+    "<gray>Transform into a cute little</gray>",
+    "<gray> bunny jumping around.</gray>",
+    "",
+    "<aqua>Hold sneak</aqua> <gray>to jump.</gray>"
+  ],
+  "menu.morphs.mushroom_cow.name": "<name>",
+  "menu.morphs.mushroom_cow.desc": [
+    "<gray>Transform into a rare variant</gray>",
+    "<gray>of a cow.</gray>",
+    "",
+    "<aqua>Left Click</aqua> <gray>to moo.</gray>"
+  ],
+  "menu.morphs.donkey.name": "<name>",
+  "menu.morphs.donkey.desc": [
+    "<gray>Become the fastest donkey</gray>",
+    "<gray>ever existed.</gray>",
+    "",
+    "<aqua>Left Click</aqua> <gray>to bray.</gray>"
+  ],
+  "menu.morphs.villager.name": "<name>",
+  "menu.morphs.villager.desc": [
+    "<gray>Transform into the best dealer</gray>",
+    "<gray>in the world.</gray>",
+    "",
+    "<aqua>Left Click</aqua> <gray>to agree.</gray>",
+    "<aqua>Right Click</aqua> <gray>to disagree.</gray>"
+  ],
+  "menu.morphs.iron_golem.name": "<name>",
+  "menu.morphs.iron_golem.desc": [
+    "<gray>Transform into a beast!</gray>",
+    "",
+    "<aqua>Left Click</aqua> <gray>to punch attack.</gray>"
+  ],
+  "menu.morphs.squid.name": "<name>",
+  "menu.morphs.squid.desc": [
+    "<gray>It's funnier to be a squid than</gray>",
+    "<gray>to eat one!</gray>",
+    "",
+    "<aqua>Left Click</aqua> <gray>to squirt ink.</gray>"
+  ],
+  "menu.morphs.block.name": "<name>",
+  "menu.morphs.block.desc": [
+    "<gray>You can transform into any block you</gray>",
+    "<gray>ever wanted.</gray>",
+    "",
+    "<aqua>Right Click</aqua> <gray>a block to transform into it.</gray>"
+  ],
+
+  "cosmetic.mounts.infernal_horror": "Infernal Horror",
+  "cosmetic.mounts.glacial_steed": "Glacial Steed",
+  "cosmetic.mounts.lovely_sheep": "Lovely Sheep",
+  "cosmetic.mounts.frosty_snowman": "Frosty Snowman",
+  "cosmetic.mounts.slime": "Slime",
+  "cosmetic.mounts.molten_snake": "Molten Snake",
+  "cosmetic.mounts.ethereal_dragon": "Ethereal Dragon",
+  "cosmetic.mounts.hype_train": "Hype Train",
+  "cosmetic.mounts.pirate_ship": "Pirate Ship",
+  "cosmetic.mounts.baby_reindeer": "Baby Reindeer",
+  "cosmetic.mounts.cave_spider": "Cave Spider",
+  "cosmetic.mounts.clumsy_mule": "Clumsy Mule",
+  "cosmetic.mounts.decrepit_warhorse": "Decrepit Warhorse",
+  "cosmetic.mounts.rudolf": "Rudolf",
+  "cosmetic.mounts.unicorn": "Unicorn",
+  "cosmetic.mounts.crazy_chicken": "Crazy Chicken",
+
+  "menu.mounts.title": "Mounts",
+  "menu.mounts.next_page.name": "<green>Next Page</green>",
+  "menu.mounts.next_page.desc": [
+    "<gray>Page <page>/<pages></gray>"
+  ],
+  "menu.mounts.previous_page.name": "<green>Previous Page</green>",
+  "menu.mounts.previous_page.desc": [
+    "<gray>Page <page>/<pages></gray>"
+  ],
+  "menu.mounts.go_back.name": "<red>Go back</red>",
+  "menu.mounts.go_back.desc": [
+    "<gray>Click to go back to the previous menu!</gray>"
+  ],
+  "menu.mounts.purchasable.name": "<name>",
+  "menu.mounts.purchasable.desc": [
+    "",
+    "<green>Click to purchase for <yellow><cost> coins</yellow>!</green>"
+  ],
+  "menu.mounts.purchase_disabled.name": "<name>",
+  "menu.mounts.purchase_disabled.desc": [
+    "",
+    "<red>This cosmetic cannot be purchased!</red>"
+  ],
+  "menu.mounts.purchase_no_permission.name": "<name>",
+  "menu.mounts.purchase_no_permission.desc": [
+    "",
+    "<red>You do not have permission to</red>",
+    "<red>purchase this cosmetic!</red>"
+  ],
+  "menu.mounts.unequipped.name": "<name>",
+  "menu.mounts.unequipped.desc": [
+    "",
+    "<green>Click to equip!</green>"
+  ],
+  "menu.mounts.equipped.name": "<name>",
+  "menu.mounts.equipped.desc": [
+    "",
+    "<yellow>Click to unequip!</yellow>"
+  ],
+
+  "menu.mounts.infernal_horror.name": "<name>",
+  "menu.mounts.infernal_horror.desc": [
+    "<gray>A nightmarish steed from the</gray>",
+    "<gray>depths of darkness. Only the</gray>",
+    "<gray>bravest dare to ride this beast!</gray>"
+  ],
+  "menu.mounts.glacial_steed.name": "<name>",
+  "menu.mounts.glacial_steed.desc": [
+    "<gray>Gallop across frozen landscapes</gray>",
+    "<gray>on this magnificent ice horse</gray>",
+    "<gray>that never melts!</gray>"
+  ],
+  "menu.mounts.lovely_sheep.name": "<name>",
+  "menu.mounts.lovely_sheep.desc": [
+    "<gray>Spread love and joy wherever</gray>",
+    "<gray>you go on this adorable</gray>",
+    "<gray>fluffy companion!</gray>"
+  ],
+  "menu.mounts.frosty_snowman.name": "<name>",
+  "menu.mounts.frosty_snowman.desc": [
+    "<gray>Roll through winter wonderlands</gray>",
+    "<gray>with this jolly snowman who</gray>",
+    "<gray>loves warm hugs!</gray>"
+  ],
+  "menu.mounts.slime.name": "<name>",
+  "menu.mounts.slime.desc": [
+    "<gray>Bounce to incredible heights</gray>",
+    "<gray>on this giant gelatinous</gray>",
+    "<gray>blob of squishy fun!</gray>"
+  ],
+  "menu.mounts.molten_snake.name": "<name>",
+  "menu.mounts.molten_snake.desc": [
+    "<gray>Slither through realms of fire</gray>",
+    "<gray>on this serpent forged from</gray>",
+    "<gray>pure molten lava!</gray>"
+  ],
+  "menu.mounts.ethereal_dragon.name": "<name>",
+  "menu.mounts.ethereal_dragon.desc": [
+    "<gray>Soar through the skies on this</gray>",
+    "<gray>legendary dragon that obeys</gray>",
+    "<gray>only the most worthy riders!</gray>"
+  ],
+  "menu.mounts.hype_train.name": "<name>",
+  "menu.mounts.hype_train.desc": [
+    "<gray>All aboard the excitement</gray>",
+    "<gray>express! Choo-choo your way</gray>",
+    "<gray>to epic adventures!</gray>"
+  ],
+  "menu.mounts.pirate_ship.name": "<name>",
+  "menu.mounts.pirate_ship.desc": [
+    "<gray>Sail the seven seas and</gray>",
+    "<gray>command this mighty vessel</gray>",
+    "<gray>like a true pirate captain!</gray>"
+  ],
+  "menu.mounts.baby_reindeer.name": "<name>",
+  "menu.mounts.baby_reindeer.desc": [
+    "<gray>Train the next generation of</gray>",
+    "<gray>Santa's sleigh team with this</gray>",
+    "<gray>adorable young reindeer!</gray>"
+  ],
+  "menu.mounts.cave_spider.name": "<name>",
+  "menu.mounts.cave_spider.desc": [
+    "<gray>Crawl through dark caverns on</gray>",
+    "<gray>this venomous arachnid that</gray>",
+    "<gray>strikes fear into enemies!</gray>"
+  ],
+  "menu.mounts.clumsy_mule.name": "<name>",
+  "menu.mounts.clumsy_mule.desc": [
+    "<gray>Sturdy and reliable, this</gray>",
+    "<gray>hardworking mule carries</gray>",
+    "<gray>you and your treasures!</gray>"
+  ],
+  "menu.mounts.decrepit_warhorse.name": "<name>",
+  "menu.mounts.decrepit_warhorse.desc": [
+    "<gray>Battle-scarred veteran of</gray>",
+    "<gray>countless wars, still fierce</gray>",
+    "<gray>and ready for combat!</gray>"
+  ],
+  "menu.mounts.rudolf.name": "<name>",
+  "menu.mounts.rudolf.desc": [
+    "<gray>The famous red-nosed reindeer</gray>",
+    "<gray>will guide you through the</gray>",
+    "<gray>darkest nights!</gray>"
+  ],
+  "menu.mounts.unicorn.name": "<name>",
+  "menu.mounts.unicorn.desc": [
+    "<gray>Prance on rainbow trails with</gray>",
+    "<gray>this magical horn-bearing</gray>",
+    "<gray>steed of pure wonder!</gray>"
+  ],
+  "menu.mounts.crazy_chicken.name": "<name>",
+  "menu.mounts.crazy_chicken.desc": [
+    "<gray>Hold on tight! This wild feathered</gray>",
+    "<gray>escape artist runs fast!</gray>"
+  ],
+
+  "cosmetic.music.in_the_hall_of_the_mountain_king": "In the Hall of the Mountain King",
+  "cosmetic.music.fur_elise": "Fur Elise",
+  "cosmetic.music.sweden": "Sweden",
+
+  "menu.music.title": "Music",
+  "menu.music.next_page.name": "<green>Next Page</green>",
+  "menu.music.next_page.desc": [
+    "<gray>Page <page>/<pages></gray>"
+  ],
+  "menu.music.previous_page.name": "<green>Previous Page</green>",
+  "menu.music.previous_page.desc": [
+    "<gray>Page <page>/<pages></gray>"
+  ],
+  "menu.music.go_back.name": "<red>Go back</red>",
+  "menu.music.go_back.desc": [
+    "<gray>Click to go back to the previous menu!</gray>"
+  ],
+  "menu.music.purchasable.name": "<name>",
+  "menu.music.purchasable.desc": [
+    "",
+    "<green>Click to purchase for <yellow><cost> coins</yellow>!</green>"
+  ],
+  "menu.music.purchase_disabled.name": "<name>",
+  "menu.music.purchase_disabled.desc": [
+    "",
+    "<red>This cosmetic cannot be purchased!</red>"
+  ],
+  "menu.music.purchase_no_permission.name": "<name>",
+  "menu.music.purchase_no_permission.desc": [
+    "",
+    "<red>You do not have permission to</red>",
+    "<red>purchase this cosmetic!</red>"
+  ],
+  "menu.music.unequipped.name": "<name>",
+  "menu.music.unequipped.desc": [
+    "",
+    "<green>Click to equip!</green>"
+  ],
+  "menu.music.equipped.name": "<name>",
+  "menu.music.equipped.desc": [
+    "",
+    "<yellow>Click to unequip!</yellow>"
+  ],
+
+  "menu.music.in_the_hall_of_the_mountain_king.name": "<name>",
+  "menu.music.in_the_hall_of_the_mountain_king.desc": [
+    "<gray>Epic orchestral masterpiece that</gray>",
+    "<gray>builds from whispers to thunder!</gray>",
+    "<gray>Feel the mountain's power!</gray>"
+  ],
+  "menu.music.fur_elise.name": "<name>",
+  "menu.music.fur_elise.desc": [
+    "<gray>Beethoven's timeless piano</gray>",
+    "<gray>melody that touches the soul</gray>",
+    "<gray>with elegant beauty.</gray>"
+  ],
+  "menu.music.sweden.name": "<name>",
+  "menu.music.sweden.desc": [
+    "<gray>Peaceful ambient tones by C418</gray>",
+    "<gray>that evoke nostalgic memories</gray>",
+    "<gray>of endless adventures.</gray>"
+  ],
+
+  "cosmetic.particle_effects.shadow_walk": "Shadow Walk",
+  "cosmetic.particle_effects.emerald_twirl": "Emerald Twirl",
+  "cosmetic.particle_effects.rain_cloud": "Rain Cloud",
+  "cosmetic.particle_effects.blood_helix": "Blood Helix",
+  "cosmetic.particle_effects.enchanted": "Enchanted",
+  "cosmetic.particle_effects.music": "Music",
+  "cosmetic.particle_effects.party_time": "Party Time",
+  "cosmetic.particle_effects.in_love": "In Love",
+  "cosmetic.particle_effects.crushed_candy_cane": "Crushed Candy Cane",
+  "cosmetic.particle_effects.frost_lord": "Frost Lord",
+  "cosmetic.particle_effects.legendary_aura": "Legendary Aura",
+  "cosmetic.particle_effects.demon_twist": "Demon Twist",
+  "cosmetic.particle_effects.yin_and_yang": "Yin and Yang",
+  "cosmetic.particle_effects.flame_rings": "Flame Rings",
+  "cosmetic.particle_effects.tornado": "Tornado",
+  "cosmetic.particle_effects.flame_of_magic": "Flame of Magic",
+  "cosmetic.particle_effects.angel_wings": "Angel Wings",
+  "cosmetic.particle_effects.vampire_wings": "Vampire Wings",
+  "cosmetic.particle_effects.protective_shield": "Protective Shield",
+  "cosmetic.particle_effects.black_hole": "Black Hole",
+  "cosmetic.particle_effects.flame_flairy": "Flame Flairy",
+  "cosmetic.particle_effects.flame_of_the_demons": "Flame of the Demons",
+  "cosmetic.particle_effects.aura_of_flame": "Aura of Flame",
+  "cosmetic.particle_effects.big_heart": "Big Heart",
+  "cosmetic.particle_effects.star": "Star",
+  "cosmetic.particle_effects.umbrella": "Umbrella",
+  "cosmetic.particle_effects.colorful_trail": "Colorful Trail",
+  "cosmetic.particle_effects.snow_cloud": "Snow Cloud",
+  "cosmetic.particle_effects.rainbow_wings": "Rainbow Wings",
+  "cosmetic.particle_effects.confetti": "Confetti",
+  "cosmetic.particle_effects.snowflake": "Snowflake",
+  "cosmetic.particle_effects.christmas_tree": "Christmas Tree",
+  "cosmetic.particle_effects.skull": "Skull",
+  "cosmetic.particle_effects.bunny": "Bunny",
+
+  "menu.particle_effects.title": "Particle Effects",
+  "menu.particle_effects.next_page.name": "<green>Next Page</green>",
+  "menu.particle_effects.next_page.desc": [
+    "<gray>Page <page>/<pages></gray>"
+  ],
+  "menu.particle_effects.previous_page.name": "<green>Previous Page</green>",
+  "menu.particle_effects.previous_page.desc": [
+    "<gray>Page <page>/<pages></gray>"
+  ],
+  "menu.particle_effects.go_back.name": "<red>Go back</red>",
+  "menu.particle_effects.go_back.desc": [
+    "<gray>Click to go back to the previous menu!</gray>"
+  ],
+  "menu.particle_effects.purchasable.name": "<name>",
+  "menu.particle_effects.purchasable.desc": [
+    "",
+    "<green>Click to purchase for <yellow><cost> coins</yellow>!</green>"
+  ],
+  "menu.particle_effects.locked.name": "<name>",
+  "menu.particle_effects.locked.desc": [
+    "",
+    "<red>This cosmetic cannot be purchased!</red>"
+  ],
+  "menu.particle_effects.unequipped.name": "<name>",
+  "menu.particle_effects.unequipped.desc": [
+    "",
+    "<green>Click to equip!</green>"
+  ],
+  "menu.particle_effects.equipped.name": "<name>",
+  "menu.particle_effects.equipped.desc": [
+    "",
+    "<yellow>Click to unequip!</yellow>"
+  ],
+
+  "menu.particle_effects.shadow_walk.name": "<name>",
+  "menu.particle_effects.shadow_walk.desc": [
+    "<gray>Leave mysterious dark shadows</gray>",
+    "<gray>trailing behind your every</gray>",
+    "<gray>step through the world!</gray>"
+  ],
+  "menu.particle_effects.emerald_twirl.name": "<name>",
+  "menu.particle_effects.emerald_twirl.desc": [
+    "<gray>Brilliant green sparkles swirl</gray>",
+    "<gray>around you like precious</gray>",
+    "<gray>emerald dust in motion!</gray>"
+  ],
+  "menu.particle_effects.rain_cloud.name": "<name>",
+  "menu.particle_effects.rain_cloud.desc": [
+    "<gray>A personal storm cloud hovers</gray>",
+    "<gray>above, showering you with</gray>",
+    "<gray>gentle raindrops constantly!</gray>"
+  ],
+  "menu.particle_effects.blood_helix.name": "<name>",
+  "menu.particle_effects.blood_helix.desc": [
+    "<gray>Crimson energy spirals around you,</gray>",
+    "<gray>marking a legendary presence!</gray>"
+  ],
+  "menu.particle_effects.enchanted.name": "<name>",
+  "menu.particle_effects.enchanted.desc": [
+    "<gray>Mystical sparkles float around the</gray>",
+    "<gray>chosen one! Wisdom radiates from</gray>",
+    "<gray>your aura.</gray>"
+  ],
+  "menu.particle_effects.music.name": "<name>",
+  "menu.particle_effects.music.desc": [
+    "<gray>Musical notes float gracefully</gray>",
+    "<gray>above you, creating a symphony</gray>",
+    "<gray>of visual melody!</gray>"
+  ],
+  "menu.particle_effects.party_time.name": "<name>",
+  "menu.particle_effects.party_time.desc": [
+    "<gray>Festive party particles burst</gray>",
+    "<gray>above you constantly!</gray>",
+    "<gray>Every step is a celebration!</gray>"
+  ],
+  "menu.particle_effects.in_love.name": "<name>",
+  "menu.particle_effects.in_love.desc": [
+    "<gray>Floating hearts surround you</gray>",
+    "<gray>like cupid's blessing!</gray>"
+  ],
+  "menu.particle_effects.crushed_candy_cane.name": "<name>",
+  "menu.particle_effects.crushed_candy_cane.desc": [
+    "<gray>There's no such thing as too</gray>",
+    "<gray>much Christmas Candy. Don't</gray>",
+    "<gray>listen to your dentist.</gray>"
+  ],
+  "menu.particle_effects.frost_lord.name": "<name>",
+  "menu.particle_effects.frost_lord.desc": [
+    "<gray>Ice crystals swirl around</gray>",
+    "<gray>you constantly!</gray>"
+  ],
+  "menu.particle_effects.legendary_aura.name": "<name>",
+  "menu.particle_effects.legendary_aura.desc": [
+    "<gray>Only true legends uses this!</gray>"
+  ],
+  "menu.particle_effects.demon_twist.name": "<name>",
+  "menu.particle_effects.demon_twist.desc": [
+    "<gray>Red twisted spirals</gray>",
+    "<gray>around your!</gray>"
+  ],
+  "menu.particle_effects.yin_and_yang.name": "<name>",
+  "menu.particle_effects.yin_and_yang.desc": [
+    "<gray>Perfect balance manifests below</gray>",
+    "<gray>your feet! Light and darkness</gray>",
+    "<gray>spin in eternal harmony.</gray>"
+  ],
+  "menu.particle_effects.flame_rings.name": "<name>",
+  "menu.particle_effects.flame_rings.desc": [
+    "<gray>Blazing rings of fire orbit</gray>",
+    "<gray>around your body like a</gray>",
+    "<gray>celestial inferno crown!</gray>"
+  ],
+  "menu.particle_effects.tornado.name": "<name>",
+  "menu.particle_effects.tornado.desc": [
+    "<gray>Summons a tornado under</gray>",
+    "<gray>your feet.</gray>"
+  ],
+  "menu.particle_effects.flame_of_magic.name": "<name>",
+  "menu.particle_effects.flame_of_magic.desc": [
+    "<gray>A swirling wind vortex spins</gray>",
+    "<gray>beneath your feet!</gray>"
+  ],
+  "menu.particle_effects.angel_wings.name": "<name>",
+  "menu.particle_effects.angel_wings.desc": [
+    "<gray>Become an angel as you always</gray>",
+    "<gray>wanted!</gray>"
+  ],
+  "menu.particle_effects.vampire_wings.name": "<name>",
+  "menu.particle_effects.vampire_wings.desc": [
+    "<gray>Dark bat wings spread behind</gray>",
+    "<gray>you! Embrace the eternal</gray>",
+    "<gray>darkness of the night.</gray>"
+  ],
+  "menu.particle_effects.protective_shield.name": "<name>",
+  "menu.particle_effects.protective_shield.desc": [
+    "<gray>Shimmering barriers surrounds</gray>",
+    "<gray>you constantly!</gray>"
+  ],
+  "menu.particle_effects.black_hole.name": "<name>",
+  "menu.particle_effects.black_hole.desc": [
+    "<gray>A swirling void appears beneath</gray>",
+    "<gray>your feet! Bend space and</gray>",
+    "<gray>time with cosmic power.</gray>"
+  ],
+  "menu.particle_effects.flame_flairy.name": "<name>",
+  "menu.particle_effects.flame_flairy.desc": [
+    "<gray>A loyal fire spirit follows</gray>",
+    "<gray>you around constantly!</gray>"
+  ],
+  "menu.particle_effects.flame_of_the_demons.name": "<name>",
+  "menu.particle_effects.flame_of_the_demons.desc": [
+    "<gray>Hellfire burns around your</gray>",
+    "<gray>form with infernal intensity!</gray>"
+  ],
+  "menu.particle_effects.aura_of_flame.name": "<name>",
+  "menu.particle_effects.aura_of_flame.desc": [
+    "<gray>A magnificent whirlwind of</gray>",
+    "<gray>flames.</gray>"
+  ],
+  "menu.particle_effects.big_heart.name": "<name>",
+  "menu.particle_effects.big_heart.desc": [
+    "<gray>Love is the master key that opens</gray>",
+    "<gray>the gates of happiness.</gray>"
+  ],
+  "menu.particle_effects.star.name": "<name>",
+  "menu.particle_effects.star.desc": [
+    "<gray>Let the star shine.</gray>"
+  ],
+  "menu.particle_effects.umbrella.name": "<name>",
+  "menu.particle_effects.umbrella.desc": [
+    "<gray>A magical umbrella hovers above</gray>",
+    "<gray>you constantly, protecting</gray>",
+    "<gray>from rainy weather!</gray>"
+  ],
+  "menu.particle_effects.colorful_trail.name": "<name>",
+  "menu.particle_effects.colorful_trail.desc": [
+    "<gray>Rainbow particles trail behind</gray>",
+    "<gray>your every movement!</gray>",
+    "<gray>Paint the world with color.</gray>"
+  ],
+  "menu.particle_effects.snow_cloud.name": "<name>",
+  "menu.particle_effects.snow_cloud.desc": [
+    "<gray>A snow cloud floats above,</gray>",
+    "<gray>gently dropping snowflakes</gray>",
+    "<gray>around you constantly!</gray>"
+  ],
+  "menu.particle_effects.rainbow_wings.name": "<name>",
+  "menu.particle_effects.rainbow_wings.desc": [
+    "<gray>Spectrum wings of pure color</gray>",
+    "<gray>spread behind you!</gray>"
+  ],
+  "menu.particle_effects.confetti.name": "<name>",
+  "menu.particle_effects.confetti.desc": [
+    "<gray>Colorful confetti bursts around</gray>",
+    "<gray>you constantly! Every moment</gray>",
+    "<gray>becomes celebration!</gray>"
+  ],
+  "menu.particle_effects.snowflake.name": "<name>",
+  "menu.particle_effects.snowflake.desc": [
+    "<gray>A snowflakes drift below</gray>",
+    "<gray>you gracefully!</gray>"
+  ],
+  "menu.particle_effects.christmas_tree.name": "<name>",
+  "menu.particle_effects.christmas_tree.desc": [
+    "<gray>Spread festive cheer wherever</gray>",
+    "<gray>you go! Holiday spirit blooms</gray>",
+    "<gray>in your presence.</gray>"
+  ],
+  "menu.particle_effects.skull.name": "<name>",
+  "menu.particle_effects.skull.desc": [
+    "<gray>Spooky scary skeletons!</gray>"
+  ],
+  "menu.particle_effects.bunny.name": "<name>",
+  "menu.particle_effects.bunny.desc": [
+    "<gray>Adorable bunny face float</gray>",
+    "<gray>behind you constantly!</gray>"
+  ],
+
+  "cosmetic.pets.allay": "Allay",
+  "cosmetic.pets.armadillo": "Armadillo",
+  "cosmetic.pets.axolotl": "Axolotl",
+  "cosmetic.pets.bee": "Bee",
+  "cosmetic.pets.body_guard": "Body Guard",
+  "cosmetic.pets.calf": "Calf",
+  "cosmetic.pets.camel": "Camel",
+  "cosmetic.pets.cave_spider": "Cave Spider",
+  "cosmetic.pets.chicken": "Chicken",
+  "cosmetic.pets.colorful_lamb": "Colorful Lamb",
+  "cosmetic.pets.easter_bunny": "Easter Bunny",
+  "cosmetic.pets.elf": "Elf",
+  "cosmetic.pets.endermite": "Endermite",
+  "cosmetic.pets.fox": "Fox",
+  "cosmetic.pets.frog": "Frog",
+  "cosmetic.pets.goat": "Goat",
+  "cosmetic.pets.hoglin": "Hoglin",
+  "cosmetic.pets.kitten": "Kitten",
+  "cosmetic.pets.llama": "Llama",
+  "cosmetic.pets.mushroom_calf": "Mushroom Calf",
+  "cosmetic.pets.panda": "Panda",
+  "cosmetic.pets.parrot": "Parrot",
+  "cosmetic.pets.piggy": "Pig",
+  "cosmetic.pets.piglin": "Piglin",
+  "cosmetic.pets.polar_bear": "Polar Bear",
+  "cosmetic.pets.puppy": "Puppy",
+  "cosmetic.pets.santa_claus": "Santa Claus",
+  "cosmetic.pets.silverfish": "Silverfish",
+  "cosmetic.pets.sniffer": "Sniffer",
+  "cosmetic.pets.turtle": "Turtle",
+  "cosmetic.pets.villager": "Villager",
+  "cosmetic.pets.zombie_villager": "Zombie Villager",
+
+  "menu.pets.title": "Pets",
+  "menu.pets.next_page.name": "<green>Next Page</green>",
+  "menu.pets.next_page.desc": [
+    "<gray>Page <page>/<pages></gray>"
+  ],
+  "menu.pets.previous_page.name": "<green>Previous Page</green>",
+  "menu.pets.previous_page.desc": [
+    "<gray>Page <page>/<pages></gray>"
+  ],
+  "menu.pets.go_back.name": "<red>Go back</red>",
+  "menu.pets.go_back.desc": [
+    "<gray>Click to go back to the previous menu!</gray>"
+  ],
+  "menu.pets.purchasable.name": "<name>",
+  "menu.pets.purchasable.desc": [
+    "",
+    "<green>Click to purchase for <yellow><cost> coins</yellow>!</green>"
+  ],
+  "menu.pets.purchase_disabled.name": "<name>",
+  "menu.pets.purchase_disabled.desc": [
+    "",
+    "<red>This cosmetic cannot be purchased!</red>"
+  ],
+  "menu.pets.purchase_no_permission.name": "<name>",
+  "menu.pets.purchase_no_permission.desc": [
+    "",
+    "<red>You do not have permission to</red>",
+    "<red>purchase this cosmetic!</red>"
+  ],
+  "menu.pets.unequipped.name": "<name>",
+  "menu.pets.unequipped.desc": [
+    "",
+    "<green>Click to equip!</green>"
+  ],
+  "menu.pets.equipped.name": "<name>",
+  "menu.pets.equipped.desc": [
+    "",
+    "<yellow>Click to unequip!</yellow>"
+  ],
+
+  "menu.pets.allay.name": "<name>",
+  "menu.pets.allay.desc": [
+    "<gray>A friendly spirit that</gray>",
+    "<gray>follows you around.</gray>"
+  ],
+  "menu.pets.armadillo.name": "<name>",
+  "menu.pets.armadillo.desc": [
+    "<gray>A friendly companion.</gray>"
+  ],
+  "menu.pets.axolotl.name": "<name>",
+  "menu.pets.axolotl.desc": [
+    "<gray>A cute water creature.</gray>"
+  ],
+  "menu.pets.bee.name": "<name>",
+  "menu.pets.bee.desc": [
+    "<gray>A buzzing companion.</gray>"
+  ],
+  "menu.pets.body_guard.name": "<name>",
+  "menu.pets.body_guard.desc": [
+    "<gray>Follows you around with a</gray>",
+    "<gray>rose in his hand.</gray>"
+  ],
+  "menu.pets.calf.name": "<name>",
+  "menu.pets.calf.desc": [
+    "<gray>He wants a lot of grass</gray>",
+    "<gray>to eat.</gray>"
+  ],
+  "menu.pets.camel.name": "<name>",
+  "menu.pets.camel.desc": [
+    "<gray>A desert companion.</gray>"
+  ],
+  "menu.pets.cave_spider.name": "<name>",
+  "menu.pets.cave_spider.desc": [
+    "<gray>It may look like the spider</gray>",
+    "<gray>is interested in you.</gray>"
+  ],
+  "menu.pets.chicken.name": "<name>",
+  "menu.pets.chicken.desc": [
+    "<gray>A clucking companion.</gray>"
+  ],
+  "menu.pets.colorful_lamb.name": "<name>",
+  "menu.pets.colorful_lamb.desc": [
+    "<gray>Who said sheep cannot change</gray>",
+    "<gray>their wool color?</gray>"
+  ],
+  "menu.pets.easter_bunny.name": "<name>",
+  "menu.pets.easter_bunny.desc": [
+    "<gray>A cute bunny following</gray>",
+    "<gray>you around!</gray>"
+  ],
+  "menu.pets.elf.name": "<name>",
+  "menu.pets.elf.desc": [
+    "<gray>I'm Santa's helper.</gray>"
+  ],
+  "menu.pets.endermite.name": "<name>",
+  "menu.pets.endermite.desc": [
+    "<gray>A mysterious ender creature.</gray>"
+  ],
+  "menu.pets.fox.name": "<name>",
+  "menu.pets.fox.desc": [
+    "<gray>A clever and sly friend.</gray>"
+  ],
+  "menu.pets.frog.name": "<name>",
+  "menu.pets.frog.desc": [
+    "<gray>Hop, hop! Ribbit, ribbit!</gray>"
+  ],
+  "menu.pets.goat.name": "<name>",
+  "menu.pets.goat.desc": [
+    "<gray>A furry friend with horns.</gray>"
+  ],
+  "menu.pets.hoglin.name": "<name>",
+  "menu.pets.hoglin.desc": [
+    "<gray>A tough and fierce companion.</gray>"
+  ],
+  "menu.pets.kitten.name": "<name>",
+  "menu.pets.kitten.desc": [
+    "<gray>Who wouldn't want a kitten</gray>",
+    "<gray>following them around?</gray>"
+  ],
+  "menu.pets.llama.name": "<name>",
+  "menu.pets.llama.desc": [
+    "<gray>Carries your items in style.</gray>"
+  ],
+  "menu.pets.mushroom_calf.name": "<name>",
+  "menu.pets.mushroom_calf.desc": [
+    "<gray>It grows mushrooms on</gray>",
+    "<gray>their back.</gray>"
+  ],
+  "menu.pets.panda.name": "<name>",
+  "menu.pets.panda.desc": [
+    "<gray>A cute panda to keep you company.</gray>"
+  ],
+  "menu.pets.parrot.name": "<name>",
+  "menu.pets.parrot.desc": [
+    "<gray>A colorful feathered companion.</gray>"
+  ],
+  "menu.pets.piggy.name": "<name>",
+  "menu.pets.piggy.desc": [
+    "<gray>Christmas ham?</gray>",
+    "<gray>No!</gray>"
+  ],
+  "menu.pets.piglin.name": "<name>",
+  "menu.pets.piglin.desc": [
+    "<gray>A pig-like creature from the</gray>",
+    "<gray>Nether with a golden touch.</gray>"
+  ],
+  "menu.pets.polar_bear.name": "<name>",
+  "menu.pets.polar_bear.desc": [
+    "<gray>A furry companion from</gray>",
+    "<gray>the icy wilderness.</gray>"
+  ],
+  "menu.pets.puppy.name": "<name>",
+  "menu.pets.puppy.desc": [
+    "<gray>Voff...</gray>"
+  ],
+  "menu.pets.santa_claus.name": "<name>",
+  "menu.pets.santa_claus.desc": [
+    "<gray>I hope you've</gray>",
+    "<gray>been nice.</gray>"
+  ],
+  "menu.pets.silverfish.name": "<name>",
+  "menu.pets.silverfish.desc": [
+    "<gray>You may not even notice</gray>",
+    "<gray>him.</gray>"
+  ],
+  "menu.pets.sniffer.name": "<name>",
+  "menu.pets.sniffer.desc": [
+    "<gray>Has a keen sense of smell.</gray>"
+  ],
+  "menu.pets.turtle.name": "<name>",
+  "menu.pets.turtle.desc": [
+    "<gray>A slow but steady companion.</gray>"
+  ],
+  "menu.pets.villager.name": "<name>",
+  "menu.pets.villager.desc": [
+    "<gray>Your smallest trader ever.</gray>"
+  ],
+  "menu.pets.zombie_villager.name": "<name>",
+  "menu.pets.zombie_villager.desc": [
+    "<gray>A young villager has been infected.</gray>",
+    "<gray>They seem to be okay...</gray>"
+  ],
+
+  "cosmetic.statuses.just_chilling": "Just Chilling",
+  "cosmetic.statuses.looking_to_chat": "Looking to Chat",
+  "cosmetic.statuses.looking_to_team_up": "Looking to Team Up",
+  "cosmetic.statuses.afk": "AFK",
+  "cosmetic.statuses.do_not_disturb": "Do Not Disturb",
+  "cosmetic.statuses.ping": "Ping",
+  "cosmetic.statuses.coins": "Coins",
+
+  "cosmetic.statuses.just_chilling.tag": "<green><name></green>",
+  "cosmetic.statuses.looking_to_chat.tag": "<aqua><name></aqua>",
+  "cosmetic.statuses.looking_to_team_up.tag": "<yellow><name></yellow>",
+  "cosmetic.statuses.afk.tag": "<orange><name></orange>",
+  "cosmetic.statuses.do_not_disturb.tag": "<red><name></red>",
+  "cosmetic.statuses.ping.tag": "<green><ping>ms</green>",
+  "cosmetic.statuses.coins.tag": "<yellow><coins> coins</yellow>",
+
+  "menu.statuses.title": "Statuses",
+  "menu.statuses.next_page.name": "<green>Next Page</green>",
+  "menu.statuses.next_page.desc": [
+    "<gray>Page <page>/<pages></gray>"
+  ],
+  "menu.statuses.previous_page.name": "<green>Previous Page</green>",
+  "menu.statuses.previous_page.desc": [
+    "<gray>Page <page>/<pages></gray>"
+  ],
+  "menu.statuses.go_back.name": "<red>Go back</red>",
+  "menu.statuses.go_back.desc": [
+    "<gray>Click to go back to the previous menu!</gray>"
+  ],
+  "menu.statuses.toggle_self_view.enable.name": "<green>Enable Self-View</green>",
+  "menu.statuses.toggle_self_view.enable.desc": [
+    "<gray>Click to enable self-view</gray>",
+    "<gray>of your status!</gray>"
+  ],
+  "menu.statuses.toggle_self_view.disable.name": "<red>Disable Self-View</red>",
+  "menu.statuses.toggle_self_view.disable.desc": [
+    "<gray>Click to disable self-view</gray>",
+    "<gray>of your status!</gray>"
+  ],
+  "menu.statuses.purchasable.name": "<name>",
+  "menu.statuses.purchasable.desc": [
+    "",
+    "<green>Click to purchase for <yellow><cost> coins</yellow>!</green>"
+  ],
+  "menu.statuses.purchase_disabled.name": "<name>",
+  "menu.statuses.purchase_disabled.desc": [
+    "",
+    "<red>This cosmetic cannot be purchased!</red>"
+  ],
+  "menu.statuses.purchase_no_permission.name": "<name>",
+  "menu.statuses.purchase_no_permission.desc": [
+    "",
+    "<red>You do not have permission to</red>",
+    "<red>purchase this cosmetic!</red>"
+  ],
+  "menu.statuses.unequipped.name": "<name>",
+  "menu.statuses.unequipped.desc": [
+    "",
+    "<green>Click to equip!</green>"
+  ],
+  "menu.statuses.equipped.name": "<name>",
+  "menu.statuses.equipped.desc": [
+    "",
+    "<yellow>Click to unequip!</yellow>"
+  ],
+
+  "menu.statuses.just_chilling.name": "<name>",
+  "menu.statuses.just_chilling.desc": [
+    "<gray>Let someone know you're chilling.</gray>"
+  ],
+  "menu.statuses.looking_to_chat.name": "<name>",
+  "menu.statuses.looking_to_chat.desc": [
+    "<gray>Let someone know you want to</gray>",
+    "<gray>get into contact with them.</gray>"
+  ],
+  "menu.statuses.looking_to_team_up.name": "<name>",
+  "menu.statuses.looking_to_team_up.desc": [
+    "<gray>Let someone know you want to</gray>",
+    "<gray>team up with them.</gray>"
+  ],
+  "menu.statuses.afk.name": "<name>",
+  "menu.statuses.afk.desc": [
+    "<gray>Let someone know you're AFK.</gray>"
+  ],
+  "menu.statuses.do_not_disturb.name": "<name>",
+  "menu.statuses.do_not_disturb.desc": [
+    "<gray>Let someone know you're AFK.</gray>"
+  ],
+  "menu.statuses.ping.name": "<name>",
+  "menu.statuses.ping.desc": [
+    "<gray>Let someone know your ping.</gray>"
+  ],
+  "menu.statuses.coins.name": "<name>",
+  "menu.statuses.coins.desc": [
+    "<gray>Show others how many coins</gray>",
+    "<gray>you have.</gray>"
+  ]
+}

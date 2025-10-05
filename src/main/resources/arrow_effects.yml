@@ -1,0 +1,176 @@
+# Enable/disable this entire category.
+# When disabled, players cannot equip any cosmetics from this category as they will NOT be loaded into cache.
+enable: true
+
+menu:
+  rows: 4
+
+  # Items use vanilla Minecraft format for flexible customization.
+  # Supports resource packs and custom data components.
+  #
+  # Custom Model Data Format (Spigot version):
+  # minecraft:stone[minecraft:custom_model_data={floats:[0.0f]}]
+  #
+  # For more information: https://minecraft.wiki/w/Data_component_format
+  items:
+    fill_empty_slots:
+      enable: true
+      item: "minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]"
+      count: 1
+
+    next_page:
+      item: "minecraft:arrow"
+      count: 1
+      slot: -3
+
+    previous_page:
+      item: "minecraft:arrow"
+      count: 1
+      slot: -7
+
+    go_back:
+      enable: true
+      item: "minecraft:red_bed"
+      count: 1
+      slot: -5
+      on_click:
+        # If the command is empty, players will be returned to the main menu.
+        command: ""
+        execute_as_player: false
+
+    locked_cosmetic:
+      # This specifies if another item should replace the original cosmetic item while it is locked.
+      # This is useful to easily visualize which cosmetics the player has access to or not.
+      enable: true
+      item: "minecraft:gray_dye"
+      count: 1
+
+cosmetics:
+  bloody_arrows:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:redstone"
+    count: 1
+
+  candy_cane_arrows:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:sugar"
+    count: 1
+
+  confetti_arrows:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:melon_seeds"
+    count: 1
+
+  enchanted_arrows:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:book"
+    count: 1
+
+  flame_arrows:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:blaze_powder"
+    count: 1
+
+  frost_lord_arrows:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:snowball"
+    count: 1
+
+  green_arrows:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:emerald"
+    count: 1
+
+  lava_arrows:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:lava_bucket"
+    count: 1
+
+  love_arrows:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:poppy"
+    count: 1
+
+  magical_arrows:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:purple_dye"
+    count: 1
+
+  music_arrows:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:note_block"
+    count: 1
+
+  rain_arrows:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:water_bucket"
+    count: 1
+
+  shadow_arrows:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:coal"
+    count: 1
+
+  sparkly_arrows:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:firework_rocket[!minecraft:fireworks]"
+    count: 1
+
+# Do not edit this!
+config_version: 1

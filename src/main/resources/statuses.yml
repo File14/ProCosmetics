@@ -1,0 +1,134 @@
+# Enable/disable this entire category.
+# When disabled, players cannot equip any cosmetics from this category as they will NOT be loaded into cache.
+enable: true
+
+# This allows you to adjust the height of the status tag.
+# Above player name-tag: 0.525
+# Below player name-tag: 0.025
+height_offset: 0.025
+
+self_view:
+  default_enabled: false
+
+menu:
+  rows: 3
+
+  # Items use vanilla Minecraft format for flexible customization.
+  # Supports resource packs and custom data components.
+  #
+  # Custom Model Data Format (Spigot version):
+  # minecraft:stone[minecraft:custom_model_data={floats:[0.0f]}]
+  #
+  # For more information: https://minecraft.wiki/w/Data_component_format
+  items:
+    fill_empty_slots:
+      enable: true
+      item: "minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]"
+      count: 1
+
+    next_page:
+      item: "minecraft:arrow"
+      count: 1
+      slot: -3
+
+    previous_page:
+      item: "minecraft:arrow"
+      count: 1
+      slot: -7
+
+    go_back:
+      enable: true
+      item: "minecraft:red_bed"
+      count: 1
+      slot: -5
+      on_click:
+        # If the command is empty, players will be returned to the main menu.
+        command: ""
+        execute_as_player: false
+
+    locked_cosmetic:
+      # This specifies if another item should replace the original cosmetic item while it is locked.
+      # This is useful to easily visualize which cosmetics the player has access to or not.
+      enable: true
+      item: "minecraft:gray_dye"
+      count: 1
+
+    toggle_self_view:
+      enable: true
+      item: "minecraft:book"
+      count: 1
+      slot: -1
+
+cosmetics:
+  just_chilling:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:name_tag"
+    count: 1
+    refresh_interval: -1
+
+  looking_to_chat:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:name_tag"
+    count: 1
+    refresh_interval: -1
+
+  looking_to_team_up:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:name_tag"
+    count: 1
+    refresh_interval: -1
+
+  afk:
+    enable: true
+    obtainable: true
+    rarity: "RARE"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:name_tag"
+    count: 1
+    refresh_interval: -1
+
+  do_not_disturb:
+    enable: true
+    obtainable: true
+    rarity: "RARE"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:name_tag"
+    count: 1
+    refresh_interval: -1
+
+  ping:
+    enable: true
+    obtainable: true
+    rarity: "LEGENDARY"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:name_tag"
+    count: 1
+    refresh_interval: 120
+
+  coins:
+    enable: true
+    obtainable: true
+    rarity: "RARE"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:name_tag"
+    count: 1
+    refresh_interval: 120
+
+# Do not edit this!
+config_version: 1
