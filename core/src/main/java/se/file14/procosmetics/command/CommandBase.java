@@ -14,7 +14,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.*;
 import org.bukkit.entity.Player;
 import se.file14.procosmetics.ProCosmeticsPlugin;
-import se.file14.procosmetics.api.cosmetic.registry.CosmeticCategory;
 import se.file14.procosmetics.command.argument.ArgumentHandler;
 import se.file14.procosmetics.command.argument.ArgumentType;
 
@@ -147,7 +146,6 @@ public class CommandBase implements CommandExecutor, TabCompleter {
         registerArgumentType(String.class, string -> string)
                 .registerArgumentType(Player.class, Bukkit::getPlayerExact)
                 .registerArgumentType(Integer.class, string -> StringUtils.isNumeric(string) ? Integer.parseInt(string) : 0)
-                .registerArgumentType(Boolean.class, string -> string.equalsIgnoreCase("true") || (string.equalsIgnoreCase("false") ? false : null))
-                .registerArgumentType(CosmeticCategory.class, plugin.getCategoryRegistries()::getCategory);
+                .registerArgumentType(Boolean.class, string -> string.equalsIgnoreCase("true") || (string.equalsIgnoreCase("false") ? false : null));
     }
 }
