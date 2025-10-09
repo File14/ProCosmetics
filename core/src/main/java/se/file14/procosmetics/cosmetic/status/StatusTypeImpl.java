@@ -1,6 +1,7 @@
 package se.file14.procosmetics.cosmetic.status;
 
 import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
 import org.bukkit.inventory.ItemStack;
 import se.file14.procosmetics.ProCosmeticsPlugin;
 import se.file14.procosmetics.api.cosmetic.registry.CosmeticCategory;
@@ -11,13 +12,13 @@ import se.file14.procosmetics.api.rarity.CosmeticRarity;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.cosmetic.CosmeticTypeImpl;
 
-import java.util.function.Function;
+import java.util.function.BiFunction;
 import java.util.function.Supplier;
 
 public class StatusTypeImpl extends CosmeticTypeImpl<StatusType, StatusBehavior> implements StatusType {
 
     private final long refreshInterval;
-    private final Function<User, Component> textProvider;
+    private final BiFunction<StatusType, User, Component> textProvider;
 
     public StatusTypeImpl(String key,
                           CosmeticCategory<StatusType, StatusBehavior, ?> category,
@@ -29,7 +30,7 @@ public class StatusTypeImpl extends CosmeticTypeImpl<StatusType, StatusBehavior>
                           CosmeticRarity rarity,
                           ItemStack itemStack,
                           long refreshInterval,
-                          Function<User, Component> textProvider) {
+                          BiFunction<StatusType, User, Component> textProvider) {
         super(key, category, behaviorFactory, enabled, findable, purchasable, cost, rarity, itemStack);
         this.refreshInterval = refreshInterval;
         this.textProvider = textProvider;
@@ -46,14 +47,14 @@ public class StatusTypeImpl extends CosmeticTypeImpl<StatusType, StatusBehavior>
     }
 
     @Override
-    public Function<User, Component> getTextProvider() {
+    public BiFunction<StatusType, User, Component> getTextProvider() {
         return textProvider;
     }
 
     public static class BuilderImpl extends CosmeticTypeImpl.BuilderImpl<StatusType, StatusBehavior, StatusType.Builder> implements StatusType.Builder {
 
         private long refreshInterval = -1L;
-        private Function<User, Component> textProvider;
+        private BiFunction<StatusType, User, Component> textProvider;
 
         public BuilderImpl(String key, CosmeticCategory<StatusType, StatusBehavior, ?> category) {
             super(key, category);
@@ -69,8 +70,10 @@ public class StatusTypeImpl extends CosmeticTypeImpl<StatusType, StatusBehavior>
             super.readFromConfig();
 
             refreshInterval = category.getConfig().getInt("refresh_interval", false);
-            textProvider = user -> user.translate("cosmetic." + category.getKey() + "." + key + ".tag");
-
+            textProvider = (statusType, user) -> user.translate(
+                    "cosmetic." + category.getKey() + "." + key + ".tag",
+                    Placeholder.unparsed("name", statusType.getName(user))
+            );
             return this;
         }
 
@@ -81,7 +84,7 @@ public class StatusTypeImpl extends CosmeticTypeImpl<StatusType, StatusBehavior>
         }
 
         @Override
-        public StatusType.Builder textProvider(Function<User, Component> textProvider) {
+        public StatusType.Builder textProvider(BiFunction<StatusType, User, Component> textProvider) {
             this.textProvider = textProvider;
             return this;
         }
