@@ -30,15 +30,19 @@ public class MorphMenu extends CosmeticMenuImpl<MorphType> {
             if (user.hasSelfViewMorph()) {
                 itemBuilder.setGlintOverride(true);
             }
-            player.setCooldown(itemBuilder.getItemStack(), COOLDOWN);
 
             setItem(itemBuilder.getSlot(), itemBuilder.getItemStack(), event -> {
                 if (player.hasCooldown(itemBuilder.getItemStack())) {
                     return;
                 }
                 player.setCooldown(itemBuilder.getItemStack(), COOLDOWN);
-                user.setSelfViewMorph(!user.hasSelfViewMorph(), true);
+
+                boolean toggle = !user.hasSelfViewMorph();
+                user.setSelfViewMorph(toggle, true);
+                plugin.getDatabase().setSelfViewMorphAsync(user, toggle);
+
                 player.playSound(player, Sound.ENTITY_CHICKEN_EGG, 0.5f, 1.0f);
+                refresh();
             });
         }
     }

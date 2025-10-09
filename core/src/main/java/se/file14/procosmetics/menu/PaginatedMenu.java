@@ -128,7 +128,6 @@ public abstract class PaginatedMenu extends MenuImpl {
         addItems();
 
         fillEmptySlots(inventory, getFillEmptySlotsItem());
-        ;
     }
 
     public void openPage(int page) {

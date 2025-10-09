@@ -30,15 +30,19 @@ public class StatusMenu extends CosmeticMenuImpl<StatusType> {
             if (user.hasSelfViewStatus()) {
                 itemBuilder.setGlintOverride(true);
             }
-            player.setCooldown(itemBuilder.getItemStack(), COOLDOWN);
 
             setItem(itemBuilder.getSlot(), itemBuilder.getItemStack(), event -> {
                 if (player.hasCooldown(itemBuilder.getItemStack())) {
                     return;
                 }
                 player.setCooldown(itemBuilder.getItemStack(), COOLDOWN);
-                user.setSelfViewStatus(!user.hasSelfViewStatus(), true);
+
+                boolean toggle = !user.hasSelfViewStatus();
+                user.setSelfViewStatus(toggle, true);
+                plugin.getDatabase().setSelfViewStatusAsync(user, toggle);
+
                 player.playSound(player, Sound.ENTITY_CHICKEN_EGG, 0.5f, 1.0f);
+                refresh();
             });
         }
     }
