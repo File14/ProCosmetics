@@ -11,6 +11,10 @@ ProCosmetics currently supports Spigot/Paper 1.20.6 and newer, and is maintained
 release. To keep the codebase fresh and take advantage of the newest features, we may drop support for older versions
 when necessary.
 
+[![bStats](https://bstats.org/signatures/bukkit/ProCosmetics.svg)](https://bstats.org/plugin/bukkit/ProCosmetics)  
+*Figure: Shows real-time concurrent player counts across servers running the plugin. More detailed statistics and charts
+are available on [bStats](https://bstats.org/plugin/bukkit/ProCosmetics/6408).*
+
 ## Documentation
 
 Full documentation is available on our [Wiki](https://github.com/File14/ProCosmetics/wiki).
@@ -35,4 +39,4 @@ Official and stable releases can be found on:
 
 ## License
 
-This project is licensed under the GNU General Public License v3.0. See [LICENSE](LICENSE).md for full details.
+This project is licensed under the GNU General Public License v3.0. See [LICENSE](LICENSE) for full details.
