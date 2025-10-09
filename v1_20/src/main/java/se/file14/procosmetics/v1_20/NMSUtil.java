@@ -1,7 +1,5 @@
 package se.file14.procosmetics.v1_20;
 
-import com.mojang.authlib.GameProfile;
-import com.mojang.authlib.properties.Property;
 import io.netty.channel.Channel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.Connection;
@@ -42,16 +40,6 @@ public class NMSUtil extends NMSUtilImpl {
     @Override
     public int getPing(Player player) {
         return player.getPing();
-    }
-
-    @Override
-    public GameProfile getProfile(Player player) {
-        return ((CraftPlayer) player).getHandle().getGameProfile();
-    }
-
-    @Override
-    public String getPropertiesValue(Property property) {
-        return property.value();
     }
 
     @Override

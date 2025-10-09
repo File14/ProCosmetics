@@ -9,7 +9,6 @@ import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.checkerframework.checker.nullness.qual.NonNull;
 import se.file14.procosmetics.api.ProCosmetics;
 import se.file14.procosmetics.api.ProCosmeticsProvider;
 import se.file14.procosmetics.api.config.Config;
@@ -285,7 +284,7 @@ public class ProCosmeticsPlugin extends JavaPlugin implements ProCosmetics {
         return plugin;
     }
 
-    public @NonNull BukkitAudiences adventure() {
+    public BukkitAudiences adventure() {
         if (adventure == null) {
             throw new IllegalStateException("Tried to access Adventure when the plugin was disabled!");
         }

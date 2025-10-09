@@ -6,13 +6,16 @@ import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
 import org.bukkit.inventory.meta.PotionMeta;
+import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.potion.PotionEffect;
+import org.bukkit.profile.PlayerProfile;
 import se.file14.procosmetics.ProCosmeticsPlugin;
 import se.file14.procosmetics.api.config.Config;
 import se.file14.procosmetics.api.util.item.ItemBuilder;
@@ -21,10 +24,15 @@ import se.file14.procosmetics.util.mapping.Mapping;
 import se.file14.procosmetics.util.mapping.MappingType;
 
 import javax.annotation.Nullable;
+import java.net.MalformedURLException;
+import java.net.URI;
 import java.util.*;
 import java.util.function.Consumer;
+import java.util.logging.Level;
 
 public class ItemBuilderImpl implements ItemBuilder {
+
+    private static final String TEXTURE_URL = "https://textures.minecraft.net/texture/%s";
 
     public static final ItemFlag[] ITEM_FLAGS = Arrays.stream(ItemFlag.values())
             .filter(flag -> Mapping.MAPPING_TYPE == MappingType.SPIGOT && flag != ItemFlag.HIDE_LORE)
@@ -228,12 +236,6 @@ public class ItemBuilderImpl implements ItemBuilder {
     public ItemBuilderImpl setGlintOverride(boolean override) {
         return modifyItemMeta(meta -> {
             meta.setEnchantmentGlintOverride(override);
-
-            if (override) {
-                meta.addItemFlags(ItemFlag.HIDE_ENCHANTMENT_GLINT_OVERRIDE);
-            } else {
-                meta.removeItemFlags(ItemFlag.HIDE_ENCHANTMENT_GLINT_OVERRIDE);
-            }
         });
     }
 
@@ -266,6 +268,38 @@ public class ItemBuilderImpl implements ItemBuilder {
         return modifyItemMeta(meta -> {
             if (meta instanceof PotionMeta potionMeta) {
                 potionMeta.addCustomEffect(effect, overwrite);
+            }
+        });
+    }
+
+    @Override
+    public ItemBuilderImpl setSkullOwner(Player player) {
+        return modifyItemMeta(meta -> {
+            if (meta instanceof SkullMeta skullMeta) {
+                skullMeta.setOwnerProfile(player.getPlayerProfile());
+            }
+        });
+    }
+
+    @Override
+    public ItemBuilderImpl setSkullTexture(String texture) {
+        if (texture == null || texture.isBlank()) {
+            return this;
+        }
+        return modifyItemMeta(meta -> {
+            if (meta instanceof SkullMeta skullMeta) {
+                final String finalTexture = String.format(TEXTURE_URL, texture);
+
+                PlayerProfile profile = PLUGIN.getJavaPlugin().getServer().createPlayerProfile(
+                        UUID.nameUUIDFromBytes(finalTexture.getBytes()), ""
+                );
+
+                try {
+                    profile.getTextures().setSkin(URI.create(finalTexture).toURL());
+                } catch (MalformedURLException e) {
+                    PLUGIN.getLogger().log(Level.WARNING, "Invalid skin URL.", e);
+                }
+                skullMeta.setOwnerProfile(profile);
             }
         });
     }

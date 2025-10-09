@@ -1,5 +1,6 @@
 package se.file14.procosmetics.util.item;
 
+import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
 public enum Heads {
@@ -19,7 +20,7 @@ public enum Heads {
     private final ItemStack itemStack;
 
     Heads(String texture) {
-        itemStack = HeadUtil.getSkull(texture);
+        itemStack = new ItemBuilderImpl(Material.PLAYER_HEAD).setSkullTexture(texture).getItemStack();
     }
 
     public ItemStack getSkull() {

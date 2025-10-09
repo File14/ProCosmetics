@@ -6,7 +6,7 @@ import java.util.List;
 public enum BukkitVersion {
 
     v1_20("1.20.6"),
-    v1_21("1.21.7", "1.21.8");
+    v1_21("1.21.9", "1.21.10");
 
     private final List<String> supportedMinorVersions;
 

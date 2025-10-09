@@ -1,7 +1,5 @@
 package se.file14.procosmetics.v1_21;
 
-import com.mojang.authlib.GameProfile;
-import com.mojang.authlib.properties.Property;
 import io.netty.channel.Channel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.Connection;
@@ -11,8 +9,8 @@ import net.minecraft.world.level.block.Blocks;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
-import org.bukkit.craftbukkit.v1_21_R5.CraftWorld;
-import org.bukkit.craftbukkit.v1_21_R5.entity.CraftPlayer;
+import org.bukkit.craftbukkit.v1_21_R6.CraftWorld;
+import org.bukkit.craftbukkit.v1_21_R6.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import se.file14.procosmetics.nms.NMSUtilImpl;
 import se.file14.procosmetics.util.ReflectionUtil;
@@ -42,16 +40,6 @@ public class NMSUtil extends NMSUtilImpl {
     @Override
     public int getPing(Player player) {
         return player.getPing();
-    }
-
-    @Override
-    public GameProfile getProfile(Player player) {
-        return ((CraftPlayer) player).getHandle().getGameProfile();
-    }
-
-    @Override
-    public String getPropertiesValue(Property property) {
-        return property.value();
     }
 
     @Override

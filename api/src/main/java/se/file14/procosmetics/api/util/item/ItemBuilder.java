@@ -5,6 +5,7 @@ import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -220,6 +221,22 @@ public interface ItemBuilder {
      * @return this builder instance for chaining
      */
     ItemBuilder addPotionEffect(PotionEffect effect, boolean overwrite);
+
+    /**
+     * Sets the owner of the skull item to the specified player.
+     *
+     * @param player the player whose skin will be applied to the skull
+     * @return this builder instance for chaining
+     */
+    ItemBuilder setSkullOwner(Player player);
+
+    /**
+     * Sets a custom skull texture on the item.
+     *
+     * @param texture the texture string to apply
+     * @return this builder instance for chaining
+     */
+    ItemBuilder setSkullTexture(String texture);
 
     /**
      * Adds item flags to hide specific attributes in the tooltip.

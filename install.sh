@@ -84,7 +84,7 @@ sleep 3s
 curl -o BuildTools.jar https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
 
 # List of supported Minecraft versions
-for mcVersion in "1.20.6" "1.21.8"; do
+for mcVersion in "1.20.6" "1.21.10"; do
    snap="$mcVersion-R0.1-SNAPSHOT"
    spigotRepository="$HOME/.m2/repository/org/spigotmc/spigot/$snap/spigot-$snap"
    mcSrvRepository="$HOME/.m2/repository/org/spigotmc/minecraft-server/$snap/minecraft-server-$snap"

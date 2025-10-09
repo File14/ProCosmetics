@@ -14,6 +14,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.FireworkMeta;
+import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.util.Vector;
 import org.joml.Matrix4f;
 import se.file14.procosmetics.ProCosmeticsPlugin;
@@ -28,7 +29,6 @@ import se.file14.procosmetics.nms.EntityTrackerImpl;
 import se.file14.procosmetics.util.FastMathUtil;
 import se.file14.procosmetics.util.MathUtil;
 import se.file14.procosmetics.util.MetadataUtil;
-import se.file14.procosmetics.util.item.HeadUtil;
 import se.file14.procosmetics.util.item.Heads;
 import se.file14.procosmetics.util.item.ItemBuilderImpl;
 import se.file14.procosmetics.util.material.Materials;
@@ -240,10 +240,16 @@ public class MusicImpl extends CosmeticImpl<MusicType, MusicBehavior> implements
     }
 
     private void createDJ(Location location) {
+        ItemStack itemStack = new ItemStack(Material.PLAYER_HEAD);
+
+        if (itemStack.getItemMeta() instanceof SkullMeta skullMeta) {
+            skullMeta.setOwnerProfile(player.getPlayerProfile());
+            itemStack.setItemMeta(skullMeta);
+        }
         armorStand = plugin.getNMSManager().createEntity(location.getWorld(), EntityType.ARMOR_STAND, tracker);
         armorStand.setArmorStandArms(true);
         armorStand.setArmorStandBasePlate(false);
-        armorStand.setHelmet(HeadUtil.getPlayerSkull(player));
+        armorStand.setHelmet(itemStack);
         armorStand.setChestplate(DJ_CHESTPLATE.getItemStack());
         armorStand.setLeggings(DJ_LEGGINGS.getItemStack());
         armorStand.setBoots(DJ_BOOTS.getItemStack());
