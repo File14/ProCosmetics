@@ -30,6 +30,6 @@ dependencies {
     compileOnly("com.sk89q.worldguard:worldguard-bukkit:7.0.14") {
         exclude(group = "com.google.guava")
     }
-    compileOnly("org.black_ixx:playerpoints:3.3.2")
+    compileOnly("org.black_ixx:playerpoints:3.3.3")
     compileOnly("com.github.LeonMangler:SuperVanish:6.2.19")
 }
