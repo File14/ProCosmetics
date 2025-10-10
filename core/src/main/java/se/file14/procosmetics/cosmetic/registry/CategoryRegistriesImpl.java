@@ -308,6 +308,7 @@ public class CategoryRegistriesImpl implements CategoryRegistries {
         particleEffects.register(particleEffects.builder("flame_rings").readFromConfig().factory(FlameRings::new).build());
         particleEffects.register(particleEffects.builder("frost_lord").readFromConfig().factory(FrostLord::new).build());
         particleEffects.register(particleEffects.builder("in_love").readFromConfig().factory(se.file14.procosmetics.cosmetic.particleeffect.type.InLove::new).repeatDelay(2).build());
+        particleEffects.register(particleEffects.builder("jack_o_lantern").readFromConfig().factory(JackOLantern::new).repeatDelay(2).build());
         particleEffects.register(particleEffects.builder("legendary_aura").readFromConfig().factory(LegendaryAura::new).repeatDelay(2).build());
         particleEffects.register(particleEffects.builder("music").readFromConfig().factory(Music::new).repeatDelay(1).build());
         particleEffects.register(particleEffects.builder("party_time").readFromConfig().factory(PartyTime::new).build());

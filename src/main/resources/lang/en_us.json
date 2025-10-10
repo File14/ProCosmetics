@@ -2429,6 +2429,7 @@
   "cosmetic.particle_effects.christmas_tree": "Christmas Tree",
   "cosmetic.particle_effects.skull": "Skull",
   "cosmetic.particle_effects.bunny": "Bunny",
+  "cosmetic.particle_effects.jack_o_lantern": "Jack-o'-Lantern",
 
   "menu.particle_effects.title": "Particle Effects",
   "menu.particle_effects.next_page.name": "<green>Next Page</green>",
@@ -2646,6 +2647,11 @@
   "menu.particle_effects.bunny.desc": [
     "<gray>Adorable bunny face float</gray>",
     "<gray>behind you constantly!</gray>"
+  ],
+  "menu.particle_effects.jack_o_lantern.name": "<name>",
+  "menu.particle_effects.jack_o_lantern.desc": [
+    "<gray>A mischievous pumpkin spirit</gray>",
+    "<gray>hovers behind you with a grin!</gray>"
   ],
 
   "cosmetic.pets.allay": "Allay",

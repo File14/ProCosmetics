@@ -355,5 +355,14 @@ cosmetics:
     item: "minecraft:rabbit_spawn_egg"
     count: 1
 
+  jack_o_lantern:
+    enable: true
+    obtainable: true
+    rarity: "LEGENDARY"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:jack_o_lantern"
+    count: 1
+
 # Do not edit this!
 config_version: 1
