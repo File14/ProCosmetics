@@ -1,9 +1,9 @@
 package se.file14.procosmetics.cosmetic.particleeffect.type;
 
 import org.bukkit.Color;
-import se.file14.procosmetics.cosmetic.particleeffect.shape.AbstractShapeParticleEffect;
+import se.file14.procosmetics.cosmetic.particleeffect.shape.ShapeParticleEffectBehavior;
 
-public class JackOLantern extends AbstractShapeParticleEffect {
+public class JackOLantern extends ShapeParticleEffectBehavior {
 
     private static final Color[] COLORS = new Color[]{
             null,
@@ -30,7 +30,7 @@ public class JackOLantern extends AbstractShapeParticleEffect {
     };
 
     public JackOLantern() {
-        super(JackOLantern.builder()
+        super(settings()
                 .shape(SHAPE)
                 .colorProvider(value -> COLORS[value])
                 .spacing(0.15d)
@@ -42,17 +42,5 @@ public class JackOLantern extends AbstractShapeParticleEffect {
                 .rotationSpeed(0.0f)
                 .positionMode(PositionMode.BEHIND_PLAYER)
         );
-    }
-
-    public static JackOLantern.Builder builder() {
-        return new JackOLantern.Builder();
-    }
-
-    public static class Builder extends AbstractShapeParticleEffect.Builder {
-        @Override
-        public JackOLantern build() {
-            validate();
-            return new JackOLantern();
-        }
     }
 }

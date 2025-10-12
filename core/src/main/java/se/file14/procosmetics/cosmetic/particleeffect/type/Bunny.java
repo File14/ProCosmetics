@@ -1,16 +1,15 @@
 package se.file14.procosmetics.cosmetic.particleeffect.type;
 
-import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Color;
-import se.file14.procosmetics.cosmetic.particleeffect.shape.AbstractShapeParticleEffect;
+import se.file14.procosmetics.cosmetic.particleeffect.shape.ShapeParticleEffectBehavior;
 
-public class Bunny extends AbstractShapeParticleEffect {
+public class Bunny extends ShapeParticleEffectBehavior {
 
-    private static final ChatColor[] COLORS = new ChatColor[]{
+    private static final Color[] COLORS = new Color[]{
             null,
-            ChatColor.WHITE,
-            ChatColor.LIGHT_PURPLE,
-            ChatColor.BLACK
+            Color.WHITE,
+            Color.fromRGB(0xFF55FF), // Light purple
+            Color.BLACK
     };
 
     private static final int[][] SHAPE = new int[][]{
@@ -26,15 +25,9 @@ public class Bunny extends AbstractShapeParticleEffect {
     };
 
     public Bunny() {
-        super(Bunny.builder()
+        super(settings()
                 .shape(SHAPE)
-                .colorProvider(value -> {
-                    if (value > 0 && value < COLORS.length && COLORS[value] != null) {
-                        java.awt.Color awtColor = COLORS[value].getColor();
-                        return Color.fromRGB(awtColor.getRed(), awtColor.getGreen(), awtColor.getBlue());
-                    }
-                    return Color.WHITE;
-                })
+                .colorProvider(value -> COLORS[value])
                 .spacing(0.2d)
                 .heightOffset(0.2d)
                 .distanceBehind(0.4d)
@@ -44,17 +37,5 @@ public class Bunny extends AbstractShapeParticleEffect {
                 .rotationSpeed(0.5f)
                 .positionMode(PositionMode.BEHIND_PLAYER)
         );
-    }
-
-    public static Builder builder() {
-        return new Builder();
-    }
-
-    public static class Builder extends AbstractShapeParticleEffect.Builder {
-        @Override
-        public Bunny build() {
-            validate();
-            return new Bunny();
-        }
     }
 }

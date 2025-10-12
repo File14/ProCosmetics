@@ -1,18 +1,17 @@
 package se.file14.procosmetics.cosmetic.particleeffect.type;
 
-import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Color;
-import se.file14.procosmetics.cosmetic.particleeffect.shape.AbstractShapeParticleEffect;
+import se.file14.procosmetics.cosmetic.particleeffect.shape.ShapeParticleEffectBehavior;
 
-public class ChristmasTree extends AbstractShapeParticleEffect {
+public class ChristmasTree extends ShapeParticleEffectBehavior {
 
-    private static final ChatColor[] COLORS = new ChatColor[]{
+    private static final Color[] COLORS = new Color[]{
             null,
-            ChatColor.of("#663300"), // Brown
-            ChatColor.of("#006600"), // Green
-            ChatColor.YELLOW,
-            ChatColor.RED,
-            ChatColor.AQUA
+            Color.fromRGB(0x663300), // Brown
+            Color.fromRGB(0x006600), // Green
+            Color.YELLOW,
+            Color.RED,
+            Color.AQUA
     };
 
     private static final int[][] SHAPE = new int[][]{
@@ -34,15 +33,9 @@ public class ChristmasTree extends AbstractShapeParticleEffect {
     };
 
     public ChristmasTree() {
-        super(ChristmasTree.builder()
+        super(settings()
                 .shape(SHAPE)
-                .colorProvider(value -> {
-                    if (value > 0 && value < COLORS.length && COLORS[value] != null) {
-                        java.awt.Color awtColor = COLORS[value].getColor();
-                        return Color.fromRGB(awtColor.getRed(), awtColor.getGreen(), awtColor.getBlue());
-                    }
-                    return Color.WHITE;
-                })
+                .colorProvider(value -> COLORS[value])
                 .spacing(0.2d)
                 .heightOffset(0.1d)
                 .distanceBehind(0.3d)
@@ -52,17 +45,5 @@ public class ChristmasTree extends AbstractShapeParticleEffect {
                 .rotationSpeed(0.5f)
                 .positionMode(PositionMode.BEHIND_PLAYER)
         );
-    }
-
-    public static Builder builder() {
-        return new Builder();
-    }
-
-    public static class Builder extends AbstractShapeParticleEffect.Builder {
-        @Override
-        public ChristmasTree build() {
-            validate();
-            return new ChristmasTree();
-        }
     }
 }

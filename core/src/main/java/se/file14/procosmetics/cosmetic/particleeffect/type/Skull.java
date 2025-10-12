@@ -1,9 +1,15 @@
 package se.file14.procosmetics.cosmetic.particleeffect.type;
 
 import org.bukkit.Color;
-import se.file14.procosmetics.cosmetic.particleeffect.shape.AbstractShapeParticleEffect;
+import se.file14.procosmetics.cosmetic.particleeffect.shape.ShapeParticleEffectBehavior;
 
-public class Skull extends AbstractShapeParticleEffect {
+public class Skull extends ShapeParticleEffectBehavior {
+
+    private static final Color[] COLORS = new Color[]{
+            null,
+            Color.WHITE,
+            Color.BLACK
+    };
 
     private static final int[][] SHAPE = new int[][]{
             {0, 1, 1, 1, 1, 1, 0},
@@ -16,13 +22,9 @@ public class Skull extends AbstractShapeParticleEffect {
     };
 
     public Skull() {
-        super(Skull.builder()
+        super(settings()
                 .shape(SHAPE)
-                .colorProvider(value -> switch (value) {
-                    case 1 -> Color.WHITE;
-                    case 2 -> Color.BLACK;
-                    default -> Color.WHITE;
-                })
+                .colorProvider(value -> COLORS[value])
                 .spacing(0.25d)
                 .heightOffset(0.1d)
                 .distanceBehind(0.4d)
@@ -32,17 +34,5 @@ public class Skull extends AbstractShapeParticleEffect {
                 .rotationSpeed(0.5f)
                 .positionMode(PositionMode.BEHIND_PLAYER)
         );
-    }
-
-    public static Builder builder() {
-        return new Builder();
-    }
-
-    public static class Builder extends AbstractShapeParticleEffect.Builder {
-        @Override
-        public Skull build() {
-            validate();
-            return new Skull();
-        }
     }
 }

@@ -10,7 +10,7 @@ import se.file14.procosmetics.api.cosmetic.particleeffect.ParticleEffectType;
 import se.file14.procosmetics.util.FastMathUtil;
 import se.file14.procosmetics.util.MathUtil;
 
-public abstract class AbstractShapeParticleEffect implements ParticleEffectBehavior {
+public abstract class ShapeParticleEffectBehavior implements ParticleEffectBehavior {
 
     public enum PositionMode {
         BEHIND_PLAYER,
@@ -28,23 +28,23 @@ public abstract class AbstractShapeParticleEffect implements ParticleEffectBehav
     protected final float rotationSpeed;
     protected final PositionMode positionMode;
 
-    protected final Vector workingVector = new Vector();
-    protected float currentRotation = 0.0f;
+    protected final Vector vector = new Vector();
+    protected float currentRotation;
 
-    protected AbstractShapeParticleEffect(Builder builder) {
-        this.shape = builder.shape;
-        this.colorProvider = builder.colorProvider;
-        this.spacing = builder.spacing;
-        this.heightOffset = builder.heightOffset;
-        this.distanceBehind = builder.distanceBehind;
-        this.movingParticleCount = builder.movingParticleCount;
-        this.movingParticleSpread = builder.movingParticleSpread;
-        this.shouldRotate = builder.shouldRotate;
-        this.rotationSpeed = builder.rotationSpeed;
-        this.positionMode = builder.positionMode;
+    protected ShapeParticleEffectBehavior(Settings settings) {
+        this.shape = settings.shape;
+        this.colorProvider = settings.colorProvider;
+        this.spacing = settings.spacing;
+        this.heightOffset = settings.heightOffset;
+        this.distanceBehind = settings.distanceBehind;
+        this.movingParticleCount = settings.movingParticleCount;
+        this.movingParticleSpread = settings.movingParticleSpread;
+        this.shouldRotate = settings.shouldRotate;
+        this.rotationSpeed = settings.rotationSpeed;
+        this.positionMode = settings.positionMode;
     }
 
-    public static abstract class Builder {
+    public static class Settings {
 
         private int[][] shape;
         private ColorProvider colorProvider = value -> Color.WHITE;
@@ -57,67 +57,68 @@ public abstract class AbstractShapeParticleEffect implements ParticleEffectBehav
         private float rotationSpeed = 0.5f;
         private PositionMode positionMode = PositionMode.BEHIND_PLAYER;
 
-        public Builder shape(int[][] shape) {
+        public Settings shape(int[][] shape) {
+            if (shape == null) {
+                throw new IllegalArgumentException("Shape cannot be null");
+            }
             this.shape = shape;
             return this;
         }
 
-        public Builder colorProvider(ColorProvider colorProvider) {
+        public Settings colorProvider(ColorProvider colorProvider) {
+            if (colorProvider == null) {
+                throw new IllegalArgumentException("ColorProvider cannot be null");
+            }
             this.colorProvider = colorProvider;
             return this;
         }
 
-        public Builder spacing(double spacing) {
+        public Settings spacing(double spacing) {
             this.spacing = spacing;
             return this;
         }
 
-        public Builder heightOffset(double heightOffset) {
+        public Settings heightOffset(double heightOffset) {
             this.heightOffset = heightOffset;
             return this;
         }
 
-        public Builder distanceBehind(double distanceBehind) {
+        public Settings distanceBehind(double distanceBehind) {
             this.distanceBehind = distanceBehind;
             return this;
         }
 
-        public Builder movingParticleCount(int count) {
+        public Settings movingParticleCount(int count) {
             this.movingParticleCount = count;
             return this;
         }
 
-        public Builder movingParticleSpread(double spread) {
+        public Settings movingParticleSpread(double spread) {
             this.movingParticleSpread = spread;
             return this;
         }
 
-        public Builder shouldRotate(boolean shouldRotate) {
+        public Settings shouldRotate(boolean shouldRotate) {
             this.shouldRotate = shouldRotate;
             return this;
         }
 
-        public Builder rotationSpeed(float speed) {
+        public Settings rotationSpeed(float speed) {
             this.rotationSpeed = speed;
             return this;
         }
 
-        public Builder positionMode(PositionMode mode) {
+        public Settings positionMode(PositionMode mode) {
+            if (mode == null) {
+                throw new IllegalArgumentException("PositionMode cannot be null");
+            }
             this.positionMode = mode;
             return this;
         }
-
-        public abstract AbstractShapeParticleEffect build();
-
-        protected void validate() {
-            if (shape == null) {
-                throw new IllegalStateException("Shape must be provided");
-            }
-        }
     }
 
-    public static Builder builder() {
-        throw new UnsupportedOperationException("Use a concrete subclass builder");
+    public static Settings settings() {
+        return new Settings();
     }
 
     @Override
@@ -198,10 +199,10 @@ public abstract class AbstractShapeParticleEffect implements ParticleEffectBehav
                         y = startY - (row * spacing);
                         z = startZ;
                     }
-                    workingVector.setX(x).setY(y).setZ(z);
+                    vector.setX(x).setY(y).setZ(z);
 
                     // Apply rotation
-                    Vector rotated = MathUtil.rotateAroundAxisY(workingVector, angle);
+                    Vector rotated = MathUtil.rotateAroundAxisY(vector, angle);
 
                     location.add(0.0d, heightOffset, 0.0d);
                     location.add(rotated);

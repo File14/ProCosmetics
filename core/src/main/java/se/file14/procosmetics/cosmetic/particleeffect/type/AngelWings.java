@@ -1,9 +1,14 @@
 package se.file14.procosmetics.cosmetic.particleeffect.type;
 
 import org.bukkit.Color;
-import se.file14.procosmetics.cosmetic.particleeffect.shape.AbstractShapeParticleEffect;
+import se.file14.procosmetics.cosmetic.particleeffect.shape.ShapeParticleEffectBehavior;
 
-public class AngelWings extends AbstractShapeParticleEffect {
+public class AngelWings extends ShapeParticleEffectBehavior {
+
+    private static final Color[] COLORS = new Color[]{
+            null,
+            Color.WHITE
+    };
 
     private static final int[][] SHAPE = new int[][]{
             {0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0},
@@ -17,9 +22,9 @@ public class AngelWings extends AbstractShapeParticleEffect {
     };
 
     public AngelWings() {
-        super(AngelWings.builder()
+        super(settings()
                 .shape(SHAPE)
-                .colorProvider(value -> Color.fromRGB(255, 255, 255))
+                .colorProvider(value -> COLORS[value])
                 .spacing(0.2d)
                 .heightOffset(0.1d)
                 .distanceBehind(0.3d)
@@ -29,17 +34,5 @@ public class AngelWings extends AbstractShapeParticleEffect {
                 .rotationSpeed(0.0f)
                 .positionMode(PositionMode.BEHIND_PLAYER)
         );
-    }
-
-    public static Builder builder() {
-        return new Builder();
-    }
-
-    public static class Builder extends AbstractShapeParticleEffect.Builder {
-        @Override
-        public AngelWings build() {
-            validate();
-            return new AngelWings();
-        }
     }
 }
