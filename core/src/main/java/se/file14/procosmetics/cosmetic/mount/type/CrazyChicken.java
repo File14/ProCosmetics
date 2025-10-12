@@ -38,6 +38,11 @@ public class CrazyChicken implements MountBehavior {
 
     @Override
     public void onUpdate(CosmeticContext<MountType> context, Entity entity, NMSEntity nmsEntity) {
+        // Custom controls
+        if (context.getPlayer().getVehicle() == entity) {
+            nmsEntity.moveRide(context.getPlayer());
+        }
+
         if (ticks % 5 == 0) {
             if (isTossItemsEnabled(context)) {
                 entity.getLocation(location);

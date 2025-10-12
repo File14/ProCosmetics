@@ -33,6 +33,11 @@ public class Slime implements MountBehavior {
     public void onUpdate(CosmeticContext<MountType> context, Entity entity, NMSEntity nmsEntity) {
         Player player = context.getPlayer();
 
+        // Custom controls
+        if (player.getVehicle() == entity) {
+            nmsEntity.moveRide(player);
+        }
+
         if (context.getUser().isMoving() && player.getVehicle() == entity && entity.isOnGround()) {
             if (ticks % 30 == 0) {
                 Vector vector = entity.getVelocity();

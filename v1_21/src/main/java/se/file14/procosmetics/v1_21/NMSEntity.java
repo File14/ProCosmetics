@@ -8,21 +8,15 @@ import net.minecraft.core.Rotations;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.*;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.server.network.ServerGamePacketListenerImpl;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
-import net.minecraft.world.entity.ai.navigation.PathNavigation;
-import net.minecraft.world.entity.ambient.Bat;
-import net.minecraft.world.entity.animal.horse.Donkey;
+import net.minecraft.world.entity.animal.horse.Horse;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.item.FallingBlockEntity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.monster.Guardian;
-import net.minecraft.world.entity.monster.Slime;
-import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
@@ -38,30 +32,30 @@ import org.bukkit.craftbukkit.v1_21_R6.entity.CraftPlayer;
 import org.bukkit.craftbukkit.v1_21_R6.inventory.CraftItemStack;
 import org.bukkit.craftbukkit.v1_21_R6.util.CraftChatMessage;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.EntityEquipment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Vector;
 import se.file14.procosmetics.api.nms.EntityTracker;
 import se.file14.procosmetics.nms.NMSEntityImpl;
 import se.file14.procosmetics.nms.entitytype.CachedEntityType;
 
+import javax.annotation.Nullable;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-import java.util.Collections;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
-public class NMSEntity extends NMSEntityImpl {
+public class NMSEntity extends NMSEntityImpl<Packet<? super ClientGamePacketListener>> {
 
     private static final LegacyComponentSerializer SERIALIZER = LegacyComponentSerializer.legacySection();
+    private static final List<Pose> POSES = List.of(Pose.values());
 
     private static Constructor<FallingBlockEntity> fallingBlockConstructor;
 
     private Entity entity;
-
     private Entity leashHolder;
-    private ClientboundSetEquipmentPacket helmetPacket, chestplatePacket, leggningsPacket, bootsPacket, handPacket, offhandPacket;
-
-    private List<SynchedEntityData.DataValue<?>> metadataList;
 
     public NMSEntity(World world, CachedEntityType cachedEntityType, EntityTracker tracker) {
         super(world, cachedEntityType, tracker);
@@ -89,8 +83,28 @@ public class NMSEntity extends NMSEntityImpl {
     }
 
     @Override
-    public void spawn(Player player) {
-        ((CraftPlayer) player).getHandle().connection.send(new ClientboundAddEntityPacket(
+    public void sendPacketToPlayers(@Nullable Collection<Player> players, @Nullable Packet<? super ClientGamePacketListener> packet) {
+        if (packet == null || players == null) {
+            return;
+        }
+        for (Player player : players) {
+            ((CraftPlayer) player).getHandle().connection.send(packet);
+        }
+    }
+
+    @Override
+    public void sendPacketToViewers(@Nullable Packet<? super ClientGamePacketListener> packet) {
+        if (packet == null || entityTracker == null) {
+            return;
+        }
+        for (Player player : entityTracker.getViewers()) {
+            ((CraftPlayer) player).getHandle().connection.send(packet);
+        }
+    }
+
+    @Override
+    public ClientboundAddEntityPacket getSpawnPacket() {
+        return new ClientboundAddEntityPacket(
                 entity.getId(),
                 entity.getUUID(),
                 entity.getX(),
@@ -102,178 +116,138 @@ public class NMSEntity extends NMSEntityImpl {
                 entity instanceof FallingBlockEntity fallingBlockEntity ? Block.getId(fallingBlockEntity.getBlockState()) : 0,
                 entity.getDeltaMovement(),
                 entity.getYHeadRot()
-        ));
-        sendEntityMetadataPacket(player);
-        sendUpdateAttributesPacket(player);
-        sendEntityEquipmentPacket(player);
-        sendLeashHolderPacket(player);
-        sendVelocityPacket(player);
-        sendMountPacket(player);
+        );
     }
 
     @Override
-    public void despawn(Player... players) {
-        ClientboundRemoveEntitiesPacket removeEntityPacket = new ClientboundRemoveEntitiesPacket(entity.getId());
-
-        for (Player player : players) {
-            ((CraftPlayer) player).getHandle().connection.send(removeEntityPacket);
+    protected ClientboundBundlePacket getSpawnBundlePacket() {
+        List<Packet<? super ClientGamePacketListener>> buffer = new ArrayList<>();
+        addIfNotNull(buffer, getSpawnPacket());
+        addIfNotNull(buffer, getEntityMetadataPacket(true));
+        addIfNotNull(buffer, getUpdateAttributesPacket());
+        addIfNotNull(buffer, getEntityEquipmentPacket());
+        if (!entity.getPassengers().isEmpty()) {
+            addIfNotNull(buffer, getSetPassengersPacket());
         }
-    }
-
-    @Override
-    public void sendPacketsToViewers(Object... packets) {
-        for (Player player : entityTracker.getViewers()) {
-            ServerGamePacketListenerImpl playerConnection = ((CraftPlayer) player).getHandle().connection;
-
-            for (Object packet : packets) {
-                playerConnection.send((Packet<?>) packet);
-            }
+        if (entity.isPassenger()) {
+            addIfNotNull(buffer, getSetPassengersPacket(entity.getVehicle()));
         }
+        addIfNotNull(buffer, getSetEntityLinkPacket());
+        return new ClientboundBundlePacket(buffer);
     }
 
     @Override
-    public void sendEntityMetadataPacket(Player player) {
-        metadataList = entity.getEntityData().getNonDefaultValues();
+    public ClientboundRemoveEntitiesPacket getDespawnPacket() {
+        return new ClientboundRemoveEntitiesPacket(entity.getId());
+    }
 
-        if (metadataList != null) {
-            ((CraftPlayer) player).getHandle().connection.send(new ClientboundSetEntityDataPacket(entity.getId(), metadataList));
+    @Override
+    @Nullable
+    protected ClientboundSetEntityDataPacket getEntityMetadataPacket(boolean isInitialView) {
+        List<SynchedEntityData.DataValue<?>> metadata = isInitialView ?
+                entity.getEntityData().getNonDefaultValues() : entity.getEntityData().packDirty();
+
+        if (metadata != null) {
+            return new ClientboundSetEntityDataPacket(entity.getId(), metadata);
         }
+        return null;
     }
 
     @Override
-    public void sendUpdateAttributesPacket(Player player) {
-        if (entity instanceof LivingEntity) {
-            Set<AttributeInstance> set = ((LivingEntity) entity).getAttributes().getAttributesToSync();
+    @Nullable
+    protected ClientboundUpdateAttributesPacket getUpdateAttributesPacket() {
+        if (entity instanceof LivingEntity livingEntity) {
+            Set<AttributeInstance> set = livingEntity.getAttributes().getAttributesToSync();
 
             if (!set.isEmpty()) {
-                ((CraftPlayer) player).getHandle().connection.send(new ClientboundUpdateAttributesPacket(entity.getId(), set));
+                return new ClientboundUpdateAttributesPacket(entity.getId(), set);
             }
         }
+        return null;
     }
 
     @Override
-    public void sendEntityEquipmentPacket(Player player) {
-        ServerGamePacketListenerImpl playerConnection = ((CraftPlayer) player).getHandle().connection;
+    @Nullable
+    public ClientboundSetEquipmentPacket getEntityEquipmentPacket() {
+        if (entity.getBukkitEntity() instanceof org.bukkit.entity.LivingEntity livingEntity) {
+            List<Pair<EquipmentSlot, net.minecraft.world.item.ItemStack>> equipmentList = new ArrayList<>();
+            EntityEquipment equipment = livingEntity.getEquipment();
 
-        if (handPacket != null) {
-            playerConnection.send(handPacket);
+            if (equipment != null) {
+                ItemStack helmet = equipment.getHelmet();
+                if (helmet != null) {
+                    equipmentList.add(Pair.of(EquipmentSlot.HEAD, CraftItemStack.asNMSCopy(helmet)));
+                }
+                ItemStack chest = equipment.getChestplate();
+                if (chest != null) {
+                    equipmentList.add(Pair.of(EquipmentSlot.CHEST, CraftItemStack.asNMSCopy(chest)));
+                }
+                ItemStack legs = equipment.getLeggings();
+                if (legs != null) {
+                    equipmentList.add(Pair.of(EquipmentSlot.LEGS, CraftItemStack.asNMSCopy(legs)));
+                }
+                ItemStack boots = equipment.getBoots();
+                if (boots != null) {
+                    equipmentList.add(Pair.of(EquipmentSlot.FEET, CraftItemStack.asNMSCopy(boots)));
+                }
+                ItemStack mainHand = equipment.getItemInMainHand();
+                if (mainHand != null) {
+                    equipmentList.add(Pair.of(EquipmentSlot.MAINHAND, CraftItemStack.asNMSCopy(mainHand)));
+                }
+                ItemStack offHand = equipment.getItemInOffHand();
+                if (offHand != null) {
+                    equipmentList.add(Pair.of(EquipmentSlot.OFFHAND, CraftItemStack.asNMSCopy(offHand)));
+                }
+                return new ClientboundSetEquipmentPacket(entity.getId(), equipmentList);
+            }
         }
-        if (offhandPacket != null) {
-            playerConnection.send(offhandPacket);
+        return null;
+    }
+
+    @Override
+    public ClientboundEntityEventPacket getEntityEventPacket(byte eventId) {
+        return new ClientboundEntityEventPacket(entity, eventId);
+    }
+
+    @Override
+    public ClientboundAnimatePacket getAnimatePacket(int actionId) {
+        return new ClientboundAnimatePacket(entity, actionId);
+    }
+
+    @Override
+    public ClientboundSetEntityMotionPacket getVelocityPacket() {
+        if (entity.getDeltaMovement().lengthSqr() == 0) {
+            return null;
         }
-        if (helmetPacket != null) {
-            playerConnection.send(helmetPacket);
+        return new ClientboundSetEntityMotionPacket(entity);
+    }
+
+    private ClientboundSetPassengersPacket getSetPassengersPacket(Entity entity) {
+        return new ClientboundSetPassengersPacket(entity);
+    }
+
+    @Override
+    public ClientboundSetPassengersPacket getSetPassengersPacket() {
+        return getSetPassengersPacket(entity);
+    }
+
+    @Override
+    public ClientboundSetEntityLinkPacket getSetEntityLinkPacket() {
+        if (leashHolder != null) {
+            return new ClientboundSetEntityLinkPacket(entity, leashHolder);
         }
-        if (chestplatePacket != null) {
-            playerConnection.send(chestplatePacket);
-        }
-        if (leggningsPacket != null) {
-            playerConnection.send(leggningsPacket);
-        }
-        if (bootsPacket != null) {
-            playerConnection.send(bootsPacket);
-        }
+        return null;
     }
 
     @Override
-    public void sendPositionRotationPacket(Location location) {
-        if (location == null || location.equals(previousLocation)) {
-            return;
-        }
-        setPositionRotation(location);
-        //sendPacketsToViewers(new ClientboundTeleportEntityPacket(entity.getId(), PositionMoveRotation.of(entity), Set.of(), entity.onGround));
-        //sendPacketsToViewers(new ClientboundMoveEntityPacket(entity.getId(), PositionMoveRotation.of(entity), Set.of(), entity.onGround));
-        sendPacketsToViewers(ClientboundEntityPositionSyncPacket.of(entity));
-
-        if (entity instanceof LivingEntity) {
-            sendHeadRotationPacket();
-        }
+    public ClientboundRotateHeadPacket getRotateHeadPacket() {
+        float yaw = entity.getYRot() * 256.0f / 360.0f;
+        return new ClientboundRotateHeadPacket(entity, (byte) yaw);
     }
 
     @Override
-    public void sendMetadataPacket() {
-        metadataList = entity.getEntityData().packDirty();
-
-        if (metadataList != null) {
-            sendPacketsToViewers(new ClientboundSetEntityDataPacket(entity.getId(), metadataList));
-        }
-    }
-
-    @Override
-    public void sendIronGolemAttackAnimationPacket() {
-        sendPacketsToViewers(new ClientboundEntityEventPacket(entity, (byte) 4));
-    }
-
-    @Override
-    public void sendRabbitJumpAnimationPacket() {
-        sendPacketsToViewers(new ClientboundEntityEventPacket(entity, (byte) 1));
-    }
-
-    @Override
-    public void sendEntityAnimationPacket() {
-        sendPacketsToViewers(new ClientboundAnimatePacket(entity, 0));
-    }
-
-    @Override
-    public void sendLeashHolderPacket(Player player) {
-        if (leashHolder != null && (!(leashHolder instanceof ServerPlayer) || player.canSee((Player) leashHolder.getBukkitEntity()))) {
-            ((CraftPlayer) player).getHandle().connection.send(new ClientboundSetEntityLinkPacket(entity, leashHolder));
-        }
-    }
-
-    @Override
-    public void sendVelocityPacket(Player player) {
-        Vec3 vec3D = entity.getDeltaMovement();
-
-        if (vec3D.x() != 0.0d || vec3D.y() != 0.0d || vec3D.z() != 0.0d) {
-            ((CraftPlayer) player).getHandle().connection.send(new ClientboundSetEntityMotionPacket(entity));
-        }
-    }
-
-    @Override
-    public void sendVelocityPacket() {
-        Vec3 vec3D = entity.getDeltaMovement();
-
-        if (vec3D.x() != 0.0d || vec3D.y() != 0.0d || vec3D.z() != 0.0d) {
-            sendPacketsToViewers(new ClientboundSetEntityMotionPacket(entity));
-        }
-    }
-
-    @Override
-    public void sendMountPacket(Player player) {
-        if (!entity.getPassengers().isEmpty()) {
-            ((CraftPlayer) player).getHandle().connection.send(new ClientboundSetPassengersPacket(entity));
-        }
-    }
-
-    @Override
-    public void setMainHand(ItemStack itemStack) {
-        handPacket = new ClientboundSetEquipmentPacket(entity.getId(), Collections.singletonList(new Pair<>(EquipmentSlot.MAINHAND, CraftItemStack.asNMSCopy(itemStack))));
-    }
-
-    @Override
-    public void setOffhandHand(ItemStack itemStack) {
-        offhandPacket = new ClientboundSetEquipmentPacket(entity.getId(), Collections.singletonList(new Pair<>(EquipmentSlot.OFFHAND, CraftItemStack.asNMSCopy(itemStack))));
-    }
-
-    @Override
-    public void setHelmet(ItemStack itemStack) {
-        helmetPacket = new ClientboundSetEquipmentPacket(entity.getId(), Collections.singletonList(new Pair<>(EquipmentSlot.HEAD, CraftItemStack.asNMSCopy(itemStack))));
-    }
-
-    @Override
-    public void setChestplate(ItemStack itemStack) {
-        chestplatePacket = new ClientboundSetEquipmentPacket(entity.getId(), Collections.singletonList(new Pair<>(EquipmentSlot.CHEST, CraftItemStack.asNMSCopy(itemStack))));
-    }
-
-    @Override
-    public void setLeggings(ItemStack itemStack) {
-        leggningsPacket = new ClientboundSetEquipmentPacket(entity.getId(), Collections.singletonList(new Pair<>(EquipmentSlot.LEGS, CraftItemStack.asNMSCopy(itemStack))));
-    }
-
-    @Override
-    public void setBoots(ItemStack itemStack) {
-        bootsPacket = new ClientboundSetEquipmentPacket(entity.getId(), Collections.singletonList(new Pair<>(EquipmentSlot.FEET, CraftItemStack.asNMSCopy(itemStack))));
+    public ClientboundEntityPositionSyncPacket getTeleportEntityPacket() {
+        return ClientboundEntityPositionSyncPacket.of(entity);
     }
 
     @Override
@@ -294,200 +268,6 @@ public class NMSEntity extends NMSEntityImpl {
     }
 
     @Override
-    public void sendHeadRotationPacket() {
-        float yaw = entity.getYRot() * 256.0f / 360.0f;
-        sendPacketsToViewers(new ClientboundRotateHeadPacket(entity, (byte) yaw));
-    }
-
-    @Override
-    public void setInvisible(boolean invisible) {
-        entity.setInvisible(invisible);
-    }
-
-    @Override
-    public void setLeashHolder(org.bukkit.entity.Entity entity2) {
-        leashHolder = ((CraftEntity) entity2).getHandle();
-    }
-
-    @Override
-    public void setBaby(boolean baby) {
-        if (entity instanceof AgeableMob ageableMob) {
-            ageableMob.setBaby(baby);
-        }
-    }
-
-    @Override
-    public void setZombieBaby(boolean baby) {
-        if (entity instanceof Zombie zombie) {
-            zombie.setBaby(baby);
-        }
-    }
-
-    @Override
-    public void setArmorStandSmall(boolean small) {
-        if (entity instanceof ArmorStand armorStand) {
-            armorStand.setSmall(small);
-        }
-    }
-
-    @Override
-    public void setArmorStandBasePlate(boolean plate) {
-        if (entity instanceof ArmorStand armorStand) {
-            armorStand.setNoBasePlate(!plate);
-        }
-    }
-
-    @Override
-    public void setArmorStandArms(boolean arms) {
-        if (entity instanceof ArmorStand armorStand) {
-            armorStand.setShowArms(arms);
-        }
-    }
-
-    @Override
-    public void setArmorStandMarker(boolean marker) {
-        if (entity instanceof ArmorStand armorStand) {
-            armorStand.setMarker(marker);
-        }
-    }
-
-    @Override
-    public void setGuardianAttackTarget(int id) {
-        if (entity instanceof Guardian guardian) {
-            guardian.setActiveAttackTarget(id);
-        }
-    }
-
-    @Override
-    public void setSlimeSize(int size) {
-        if (entity instanceof Slime slime) {
-            slime.setSize(size, true);
-        }
-    }
-
-    @Override
-    public void setSilent(boolean silent) {
-        entity.setSilent(silent);
-    }
-
-    @Override
-    public void setBatSleeping(boolean sleeping) {
-        if (entity instanceof Bat bat) {
-            bat.setResting(sleeping);
-        }
-    }
-
-    @Override
-    public void setCreeperIgnited(boolean ignited) {
-        if (entity instanceof Creeper creeper) {
-            creeper.setSwellDir(ignited ? 1 : -1);
-        }
-    }
-
-    @Override
-    public void setCreeperPowered(boolean powered) {
-        if (entity instanceof Creeper creeper) {
-            creeper.setPowered(powered);
-        }
-    }
-
-    @Override
-    public boolean isCreeperPowered() {
-        return entity instanceof Creeper creeper && creeper.isPowered();
-    }
-
-    @Override
-    public void setSneaking(boolean sneaking) {
-        entity.setPose(sneaking ? Pose.CROUCHING : Pose.STANDING);
-    }
-
-    @Override
-    public void setGravity(boolean gravity) {
-        entity.setNoGravity(!gravity);
-    }
-
-    @Override
-    public void setCustomName(Component name) {
-        entity.setCustomNameVisible(true);
-        entity.setCustomName(CraftChatMessage.fromStringOrNull(SERIALIZER.serialize(name)));
-    }
-
-    @Override
-    public void setHeadPose(float x, float y, float z) {
-        if (entity instanceof ArmorStand armorStand) {
-            armorStand.setHeadPose(new Rotations(x, y, z));
-        }
-    }
-
-    @Override
-    public void setBodyPose(float x, float y, float z) {
-        if (entity instanceof ArmorStand armorStand) {
-            armorStand.setBodyPose(new Rotations(x, y, z));
-        }
-    }
-
-    @Override
-    public void setLeftArmPose(float x, float y, float z) {
-        if (entity instanceof ArmorStand armorStand) {
-            armorStand.setLeftArmPose(new Rotations(x, y, z));
-        }
-    }
-
-    @Override
-    public void setRightArmPose(float x, float y, float z) {
-        if (entity instanceof ArmorStand armorStand) {
-            armorStand.setRightArmPose(new Rotations(x, y, z));
-        }
-    }
-
-    @Override
-    public void setLeftLegPose(float x, float y, float z) {
-        if (entity instanceof ArmorStand armorStand) {
-            armorStand.setLeftLegPose(new Rotations(x, y, z));
-        }
-    }
-
-    @Override
-    public void setRightLegPose(float x, float y, float z) {
-        if (entity instanceof ArmorStand armorStand) {
-            armorStand.setRightLegPose(new Rotations(x, y, z));
-        }
-    }
-
-    @Override
-    public void setNoClip(boolean noClip) {
-        entity.noPhysics = noClip;
-    }
-
-    @Override
-    public void setNoAI(boolean ai) {
-        if (entity instanceof Mob mob) {
-            mob.setNoAi(ai);
-        }
-    }
-
-    @Override
-    public void setInvulnerable(boolean invulnerable) {
-        entity.setInvulnerable(invulnerable);
-    }
-
-    @Override
-    public void setPersistent(boolean persistent) {
-        entity.getBukkitEntity().setPersistent(persistent);
-    }
-
-    @Override
-    public void setDonkeyStanding(boolean standing) {
-        if (entity instanceof Donkey donkey) {
-            if (standing) {
-                donkey.setStanding(1);
-            } else {
-                donkey.clearStanding();
-            }
-        }
-    }
-
-    @Override
     public void setYaw(float yaw) {
         entity.setYRot(yaw);
     }
@@ -495,6 +275,13 @@ public class NMSEntity extends NMSEntityImpl {
     @Override
     public void setPitch(float pitch) {
         entity.setXRot(pitch);
+    }
+
+    @Override
+    public void navigateTo(Location location, double speed) {
+        if (entity instanceof Mob mob) {
+            mob.getNavigation().moveTo(location.getX(), location.getY(), location.getZ(), speed);
+        }
     }
 
     @Override
@@ -541,7 +328,7 @@ public class NMSEntity extends NMSEntityImpl {
             double jumpPower = 0.25d;
             entityLiving.setDeltaMovement(vec3d1.x * jumpPower, 0.5d, vec3d1.z * jumpPower);
         }
-        float speedModifier = entity.onGround() ? getDefaultRideSpeed() : 0.3f;
+        float speedModifier = entity.onGround() ? getRideSpeed() : 0.3f;
         float speed;
         float swimSpeed;
 
@@ -624,13 +411,129 @@ public class NMSEntity extends NMSEntityImpl {
     }
 
     @Override
-    public void goToLocation(Location location, double speed) {
-        if (entity instanceof Mob mob) {
-            PathNavigation navigation = mob.getNavigation();
+    public void setMainHand(@Nullable ItemStack itemStack) {
+        if (entity.getBukkitEntity() instanceof org.bukkit.entity.LivingEntity livingEntity) {
+            EntityEquipment equipment = livingEntity.getEquipment();
+            if (equipment != null) {
+                equipment.setItemInMainHand(itemStack);
+            }
+        }
+    }
 
-            navigation.moveTo(location.getX(), location.getY(), location.getZ(), speed);
-            // TODO Check if it is not needed?
-            navigation.setSpeedModifier(speed);
+    @Override
+    public void setOffHand(@Nullable ItemStack itemStack) {
+        if (entity.getBukkitEntity() instanceof org.bukkit.entity.LivingEntity livingEntity) {
+            EntityEquipment equipment = livingEntity.getEquipment();
+            if (equipment != null) {
+                equipment.setItemInOffHand(itemStack);
+            }
+        }
+    }
+
+    @Override
+    public void setHelmet(@Nullable ItemStack itemStack) {
+        if (entity.getBukkitEntity() instanceof org.bukkit.entity.LivingEntity livingEntity) {
+            EntityEquipment equipment = livingEntity.getEquipment();
+            if (equipment != null) {
+                equipment.setHelmet(itemStack);
+            }
+        }
+    }
+
+    @Override
+    public void setChestplate(@Nullable ItemStack itemStack) {
+        if (entity.getBukkitEntity() instanceof org.bukkit.entity.LivingEntity livingEntity) {
+            EntityEquipment equipment = livingEntity.getEquipment();
+            if (equipment != null) {
+                equipment.setChestplate(itemStack);
+            }
+        }
+    }
+
+    @Override
+    public void setLeggings(@Nullable ItemStack itemStack) {
+        if (entity.getBukkitEntity() instanceof org.bukkit.entity.LivingEntity livingEntity) {
+            EntityEquipment equipment = livingEntity.getEquipment();
+            if (equipment != null) {
+                equipment.setLeggings(itemStack);
+            }
+        }
+    }
+
+    @Override
+    public void setBoots(@Nullable ItemStack itemStack) {
+        if (entity.getBukkitEntity() instanceof org.bukkit.entity.LivingEntity livingEntity) {
+            EntityEquipment equipment = livingEntity.getEquipment();
+            if (equipment != null) {
+                equipment.setBoots(itemStack);
+            }
+        }
+    }
+
+    @Override
+    public void setHeadPose(float x, float y, float z) {
+        if (entity instanceof ArmorStand armorStand) {
+            armorStand.setHeadPose(new Rotations(x, y, z));
+        }
+    }
+
+    @Override
+    public void setBodyPose(float x, float y, float z) {
+        if (entity instanceof ArmorStand armorStand) {
+            armorStand.setBodyPose(new Rotations(x, y, z));
+        }
+    }
+
+    @Override
+    public void setLeftArmPose(float x, float y, float z) {
+        if (entity instanceof ArmorStand armorStand) {
+            armorStand.setLeftArmPose(new Rotations(x, y, z));
+        }
+    }
+
+    @Override
+    public void setRightArmPose(float x, float y, float z) {
+        if (entity instanceof ArmorStand armorStand) {
+            armorStand.setRightArmPose(new Rotations(x, y, z));
+        }
+    }
+
+    @Override
+    public void setLeftLegPose(float x, float y, float z) {
+        if (entity instanceof ArmorStand armorStand) {
+            armorStand.setLeftLegPose(new Rotations(x, y, z));
+        }
+    }
+
+    @Override
+    public void setRightLegPose(float x, float y, float z) {
+        if (entity instanceof ArmorStand armorStand) {
+            armorStand.setRightLegPose(new Rotations(x, y, z));
+        }
+    }
+
+    @Override
+    public void setCustomName(@Nullable Component component) {
+        entity.setCustomNameVisible(true);
+        entity.setCustomName(CraftChatMessage.fromStringOrNull(SERIALIZER.serialize(component)));
+    }
+
+    @Override
+    public void setLeashHolder(@Nullable org.bukkit.entity.Entity entity2) {
+        leashHolder = ((CraftEntity) entity2).getHandle();
+    }
+
+    @Override
+    public void setCreeperPowered(boolean powered) {
+        if (entity instanceof Creeper creeper) {
+            creeper.setPowered(powered);
+        }
+    }
+
+    @Override
+    public void setCreeperIgnited(boolean ignited) {
+        if (entity instanceof Creeper creeper) {
+            creeper.setSwellDir(ignited ? 1 : -1);
         }
     }
 
@@ -642,6 +545,18 @@ public class NMSEntity extends NMSEntityImpl {
     }
 
     @Override
+    public void setPose(org.bukkit.entity.Pose pose) {
+        if (entity instanceof LivingEntity livingEntity) {
+            livingEntity.setPose(POSES.get(pose.ordinal()));
+        }
+    }
+
+    @Override
+    public void setNoClip(boolean noClip) {
+        entity.noPhysics = noClip;
+    }
+
+    @Override
     public void setEntityItemStack(ItemStack itemStack) {
         if (entity instanceof ItemEntity itemEntity) {
             itemEntity.setItem(CraftItemStack.asNMSCopy(itemStack));
@@ -649,18 +564,21 @@ public class NMSEntity extends NMSEntityImpl {
     }
 
     @Override
-    public Object getNMSEntity() {
-        return entity;
+    public void setHorseStanding(boolean standing) {
+        if (entity instanceof Horse horse) {
+            if (standing) {
+                horse.setStanding(1);
+            } else {
+                horse.clearStanding();
+            }
+        }
     }
 
     @Override
-    public org.bukkit.entity.Entity getBukkitEntity() {
-        return entity.getBukkitEntity();
-    }
-
-    @Override
-    public int getId() {
-        return entity.getId();
+    public void setGuardianTarget(int id) {
+        if (entity instanceof Guardian guardian) {
+            guardian.setActiveAttackTarget(id);
+        }
     }
 
     @Override
@@ -670,11 +588,23 @@ public class NMSEntity extends NMSEntityImpl {
 
             entityInsentient.goalSelector.getAvailableGoals().clear();
             entityInsentient.targetSelector.getAvailableGoals().clear();
-
-            //entityInsentient.goalSelector.removeAllGoals();
-            //entityInsentient.targetSelector.removeAllGoals();
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public Object getNMSEntity() {
+        return entity;
+    }
+
+    @Override
+    public int getId() {
+        return entity.getId();
+    }
+
+    @Override
+    public org.bukkit.entity.Entity getBukkitEntity() {
+        return entity.getBukkitEntity();
     }
 }

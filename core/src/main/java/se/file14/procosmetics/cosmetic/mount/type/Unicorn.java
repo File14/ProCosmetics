@@ -4,6 +4,7 @@ import org.bukkit.Color;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Particle;
+import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Horse;
@@ -51,9 +52,11 @@ public class Unicorn extends BlockTrailBehavior {
             horse.getInventory().setSaddle(new ItemStack(Material.SADDLE));
         }
         horn = context.getPlugin().getNMSManager().createEntity(entity.getWorld(), EntityType.ARMOR_STAND);
-        horn.setInvisible(true);
-        horn.setArmorStandArms(false);
-        horn.setArmorStandMarker(false);
+        if (horn.getBukkitEntity() instanceof ArmorStand armorStand) {
+            armorStand.setInvisible(true);
+            armorStand.setArms(false);
+            armorStand.setMarker(false);
+        }
         horn.setHelmet(BLAZE_ROD_ITEM);
         horn.setPositionRotation(entity.getLocation());
         horn.getTracker().startTracking();

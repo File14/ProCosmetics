@@ -4,6 +4,7 @@ import net.kyori.adventure.text.Component;
 import org.bukkit.Location;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
+import org.bukkit.entity.Pose;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Vector;
 
@@ -22,40 +23,179 @@ import java.util.Collection;
 public interface NMSEntity {
 
     /**
-     * Spawns the entity for a specific player.
+     * Spawns the entity for a specific collection of players.
+     * Only the specified players will be able to see this entity.
      *
-     * @param player The player to spawn the entity for
+     * @param players The collection of players who should see the entity
      */
-    void spawn(Player player);
+    void spawn(Collection<Player> players);
 
     /**
-     * Despawns the entity for specific players.
-     *
-     * @param players The players to despawn the entity for
+     * Spawns the entity for all tracked players.
+     * This typically includes all players within tracking range.
      */
-    void despawn(Player... players);
+    void spawn();
 
     /**
-     * Gets the Bukkit entity representation.
+     * Despawns the entity for a specific collection of players.
+     * The entity will be removed from view for these players only.
      *
-     * @return The Bukkit entity, or null if not spawned
+     * @param players The collection of players for whom to despawn the entity
      */
-    @Nullable
-    Entity getBukkitEntity();
+    void despawn(Collection<Player> players);
 
     /**
-     * Gets the entity's unique ID.
-     *
-     * @return The entity ID
+     * Despawns the entity for all tracked players.
+     * This removes the entity from view for all players who can currently see it.
      */
-    int getId();
+    void despawn();
+
+    /**
+     * Sends entity metadata packet to specific players.
+     * This updates properties like custom name visibility, flags, and entity-specific data.
+     *
+     * @param players The collection of players to send the packet to
+     */
+    void sendEntityMetadataPacket(Collection<Player> players);
+
+    /**
+     * Sends entity metadata packet to all tracked players.
+     * This updates properties like custom name visibility, flags, and entity-specific data.
+     */
+    void sendEntityMetadataPacket();
+
+    /**
+     * Sends entity attribute update packet to specific players.
+     * This updates attributes like movement speed, max health, and attack damage.
+     *
+     * @param players The collection of players to send the packet to
+     */
+    void sendUpdateAttributesPacket(Collection<Player> players);
+
+    /**
+     * Sends entity attribute update packet to all tracked players.
+     * This updates attributes like movement speed, max health, and attack damage.
+     */
+    void sendUpdateAttributesPacket();
+
+    /**
+     * Sends entity equipment packet to specific players.
+     * This updates the items held in hands and armor pieces.
+     *
+     * @param players The collection of players to send the packet to
+     */
+    void sendEntityEquipmentPacket(Collection<Player> players);
+
+    /**
+     * Sends entity equipment packet to all tracked players.
+     * This updates the items held in hands and armor pieces.
+     */
+    void sendEntityEquipmentPacket();
+
+    /**
+     * Sends an entity event packet to specific players.
+     * Events include hurt animation, death animation, and entity-specific events.
+     *
+     * @param players The collection of players to send the packet to
+     * @param eventId The event ID to trigger
+     */
+    void sendEntityEventPacket(Collection<Player> players, byte eventId);
+
+    /**
+     * Sends an entity event packet to all tracked players.
+     * Events include hurt animation, death animation, and entity-specific events.
+     *
+     * @param eventId The event ID to trigger
+     */
+    void sendEntityEventPacket(byte eventId);
+
+    /**
+     * Sends an animation packet to specific players.
+     * This triggers animations like swinging arm or taking damage.
+     *
+     * @param players  The collection of players to send the packet to
+     * @param actionId The animation action ID
+     */
+    void sendAnimatePacket(Collection<Player> players, int actionId);
+
+    /**
+     * Sends an animation packet to all tracked players.
+     * This triggers animations like swinging arm or taking damage.
+     *
+     * @param actionId The animation action ID
+     */
+    void sendAnimatePacket(int actionId);
+
+    /**
+     * Sends velocity update packet to specific players.
+     * This applies the current velocity vector to the entity on client side.
+     *
+     * @param players The collection of players to send the packet to
+     */
+    void sendVelocityPacket(Collection<Player> players);
+
+    /**
+     * Sends velocity update packet to all tracked players.
+     * This applies the current velocity vector to the entity on client side.
+     */
+    void sendVelocityPacket();
+
+    /**
+     * Sends passenger update packet to specific players.
+     * This synchronizes which entities are riding this entity.
+     *
+     * @param players The collection of players to send the packet to
+     */
+    void sendSetPassengersPacket(Collection<Player> players);
+
+    /**
+     * Sends passenger update packet to all tracked players.
+     * This synchronizes which entities are riding this entity.
+     */
+    void sendSetPassengersPacket();
+
+    /**
+     * Sends entity link packet to specific players.
+     * This establishes relationships between entities like leash connections.
+     *
+     * @param players The collection of players to send the packet to
+     */
+    void sendSetEntityLinkPacket(Collection<Player> players);
+
+    /**
+     * Sends entity link packet to all tracked players.
+     * This establishes relationships between entities like leash connections.
+     */
+    void sendSetEntityLinkPacket();
+
+    /**
+     * Sends head rotation packet to all tracked players.
+     * This updates only the head yaw without affecting body rotation.
+     */
+    void sendRotateHeadPacket();
+
+    /**
+     * Sends head rotation packet to specific players.
+     * This updates only the head yaw without affecting body rotation.
+     *
+     * @param players The collection of players to send the packet to
+     */
+    void sendRotateHeadPacket(Collection<Player> players);
+
+    /**
+     * Sends position and rotation update packet to all tracked players.
+     * This teleports the entity to the specified location on client side.
+     *
+     * @param location The target location including position and rotation
+     */
+    void sendPositionRotationPacket(Location location);
 
     /**
      * Sets the entity's position and rotation.
      *
      * @param location The new location
      */
-    void setPosition(Location location);
+    void setPositionRotation(Location location);
 
     /**
      * Gets the entity's previous location.
@@ -66,372 +206,55 @@ public interface NMSEntity {
     Location getPreviousLocation();
 
     /**
-     * Sets the entity's velocity.
-     *
-     * @param velocity The velocity vector
-     */
-    void setVelocity(Vector velocity);
-
-    /**
-     * Makes the entity follow a player.
-     *
-     * @param player The player to follow
-     */
-    void follow(Player player);
-
-    /**
-     * Makes the entity go to a specific location.
-     *
-     * @param location The target location
-     * @param speed    The movement speed
-     */
-    void goToLocation(Location location, double speed);
-
-    /**
-     * Sets the item in the entity's main hand.
-     *
-     * @param itemStack The item to set
-     */
-    void setMainHand(@Nullable ItemStack itemStack);
-
-    /**
-     * Sets the item in the entity's offhand.
-     *
-     * @param itemStack The item to set
-     */
-    void setOffHand(@Nullable ItemStack itemStack);
-
-    /**
-     * Sets the entity's helmet.
-     *
-     * @param itemStack The helmet item
-     */
-    void setHelmet(@Nullable ItemStack itemStack);
-
-    /**
-     * Sets the entity's chestplate.
-     *
-     * @param itemStack The chestplate item
-     */
-    void setChestplate(@Nullable ItemStack itemStack);
-
-    /**
-     * Sets the entity's leggings.
-     *
-     * @param itemStack The leggings item
-     */
-    void setLeggings(@Nullable ItemStack itemStack);
-
-    /**
-     * Sets the entity's boots.
-     *
-     * @param itemStack The boots item
-     */
-    void setBoots(@Nullable ItemStack itemStack);
-
-    /**
-     * Sets the entity's custom name.
-     *
-     * @param component The custom name, or null to remove
-     */
-    void setCustomName(@Nullable Component component);
-
-    /**
-     * Sets whether the entity is invisible.
-     *
-     * @param invisible True to make invisible
-     */
-    void setInvisible(boolean invisible);
-
-    /**
-     * Sets whether the entity is a baby.
-     *
-     * @param baby True to make baby
-     */
-    void setBaby(boolean baby);
-
-    /**
-     * Sets whether the entity is sneaking.
-     *
-     * @param sneaking True to make sneaking
-     */
-    void setSneaking(boolean sneaking);
-
-    /**
-     * Sets whether the entity has gravity.
-     *
-     * @param gravity True to enable gravity
-     */
-    void setGravity(boolean gravity);
-
-    /**
-     * Sets whether the entity has AI.
-     *
-     * @param ai True to enable AI
-     */
-    void setAI(boolean ai);
-
-    /**
-     * Sets whether the entity is invulnerable.
-     *
-     * @param invulnerable True to make invulnerable
-     */
-    void setInvulnerable(boolean invulnerable);
-
-    /**
-     * Sets whether the entity is silent.
-     *
-     * @param silent True to make silent
-     */
-    void setSilent(boolean silent);
-
-    /**
-     * Sets whether the entity is persistent.
-     *
-     * @param persistent True to make persistent
-     */
-    void setPersistent(boolean persistent);
-
-    /**
-     * Removes collision with a player.
-     *
-     * @param player The player to remove collision with
-     */
-    void removeCollision(Player player);
-
-    /**
-     * Adds collision with a player.
-     *
-     * @param player The player to add collision with
-     */
-    void addCollision(Player player);
-
-    /**
-     * Gets the entity's group tracker.
-     *
-     * @return The group tracker, or null if not applicable
-     */
-    @Nullable
-    EntityTracker getTracker();
-
-    /**
-     * Gets all players currently viewing this entity.
-     *
-     * @return Collection of viewing players
-     */
-    Collection<Player> getViewers();
-
-    /**
-     * Sets the size of a slime entity.
-     *
-     * @param size The slime size
-     */
-    void setSlimeSize(int size);
-
-    /**
-     * Sets whether a creeper is ignited.
-     *
-     * @param ignited True to ignite
-     */
-    void setCreeperIgnited(boolean ignited);
-
-    /**
-     * Sets whether a creeper is powered.
-     *
-     * @param powered True to power
-     */
-    void setCreeperPowered(boolean powered);
-
-    /**
-     * Gets whether a creeper is powered.
-     *
-     * @return True if powered
-     */
-    boolean isCreeperPowered();
-
-    /**
-     * Sets whether a bat is sleeping.
-     *
-     * @param sleeping True to make sleeping
-     */
-    void setBatSleeping(boolean sleeping);
-
-    /**
-     * Sets a guardian's attack target.
-     *
-     * @param targetId The target entity ID
-     */
-    void setGuardianTarget(int targetId);
-
-    // === Armor Stand Specific ===
-
-    /**
-     * Sets whether an armor stand is small.
-     *
-     * @param small True to make small
-     */
-    void setArmorStandSmall(boolean small);
-
-    /**
-     * Sets whether an armor stand has a base plate.
-     *
-     * @param basePlate True to show base plate
-     */
-    void setArmorStandBasePlate(boolean basePlate);
-
-    /**
-     * Sets whether an armor stand has arms.
-     *
-     * @param arms True to show arms
-     */
-    void setArmorStandArms(boolean arms);
-
-    /**
-     * Sets whether an armor stand is a marker.
-     *
-     * @param marker True to make marker
-     */
-    void setArmorStandMarker(boolean marker);
-
-    /**
-     * Sets the head pose of an armor stand.
-     *
-     * @param x X rotation
-     * @param y Y rotation
-     * @param z Z rotation
-     */
-    void setHeadPose(float x, float y, float z);
-
-    /**
-     * Sets the body pose of an armor stand.
-     *
-     * @param x X rotation
-     * @param y Y rotation
-     * @param z Z rotation
-     */
-    void setBodyPose(float x, float y, float z);
-
-    /**
-     * Sets the left arm pose of an armor stand.
-     *
-     * @param x X rotation
-     * @param y Y rotation
-     * @param z Z rotation
-     */
-    void setLeftArmPose(float x, float y, float z);
-
-    /**
-     * Sets the right arm pose of an armor stand.
-     *
-     * @param x X rotation
-     * @param y Y rotation
-     * @param z Z rotation
-     */
-    void setRightArmPose(float x, float y, float z);
-
-    /**
-     * Sets the left leg pose of an armor stand.
-     *
-     * @param x X rotation
-     * @param y Y rotation
-     * @param z Z rotation
-     */
-    void setLeftLegPose(float x, float y, float z);
-
-    /**
-     * Sets the right leg pose of an armor stand.
-     *
-     * @param x X rotation
-     * @param y Y rotation
-     * @param z Z rotation
-     */
-    void setRightLegPose(float x, float y, float z);
-
-    /**
-     * Plays an attack animation.
-     */
-    void playAttackAnimation();
-
-    /**
-     * Plays rabbit jump animation.
-     */
-    void playRabbitJumpAnimation();
-
-    /**
-     * Set hurt ticks.
-     *
-     * @param hurtTicks The number of hurt ticks
-     */
-    void setHurtTicks(int hurtTicks);
-
-    /**
-     * Mounts this entity on another entity.
-     *
-     * @param mount The entity to mount on
-     */
-    void mount(Entity mount);
-
-    /**
-     * Dismounts this entity.
-     */
-    void dismount();
-
-    /**
-     * Gets the default ride speed.
-     *
-     * @return The ride speed
-     */
-    float getRideSpeed();
-
-    /**
-     * Sets the default ride speed.
-     *
-     * @param speed The ride speed
-     */
-    void setRideSpeed(float speed);
-
-    /**
-     * Sets the leash holder for this entity.
-     *
-     * @param holder The entity to hold the leash
-     */
-    void setLeashHolder(@Nullable Entity holder);
-
-    /**
-     * Removes pathfinding from this entity.
-     */
-    void removePathfinder();
-
-    /**
-     * Cleans up the entity and removes it from all viewers.
-     */
-    void cleanup();
-
-    // === Additional missing methods from implementation ===
-
-    /**
-     * Sets whether a zombie is a baby.
-     *
-     * @param baby True to make baby zombie
-     */
-    void setZombieBaby(boolean baby);
-
-    /**
      * Sets entity's yaw rotation.
      *
-     * @param yaw The yaw value
+     * @param yaw The yaw value in degrees
      */
     void setYaw(float yaw);
 
     /**
      * Sets entity's pitch rotation.
      *
-     * @param pitch The pitch value
+     * @param pitch The pitch value in degrees
      */
     void setPitch(float pitch);
 
     /**
+     * Gets the previous location and copies it to the provided location.
+     *
+     * @param loc The location to copy to
+     * @return The location parameter with copied values
+     */
+    Location getPreviousLocation(Location loc);
+
+    /**
+     * Sets the previous location.
+     * This is used for interpolation and movement tracking.
+     *
+     * @param location The location to set as previous
+     */
+    void setPreviousLocation(Location location);
+
+    /**
+     * Makes the entity follow a player.
+     * The entity will navigate towards and track the player's position.
+     *
+     * @param player The player to follow
+     */
+    void follow(Player player);
+
+    /**
+     * Makes the entity navigate to a specific location with a set speed.
+     * The entity will use pathfinding to reach the destination.
+     *
+     * @param location The target location
+     * @param speed    The movement speed multiplier
+     */
+    void navigateTo(Location location, double speed);
+
+    /**
      * Moves the entity by a vector.
+     * This applies an immediate position offset.
      *
      * @param vector The movement vector
      */
@@ -439,40 +262,212 @@ public interface NMSEntity {
 
     /**
      * Moves the entity as a rideable mount.
+     * This handles movement input from a player riding the entity.
      *
-     * @param player The player riding
+     * @param player The player riding the entity
      */
     void moveRide(Player player);
 
     /**
-     * Sets the entity's velocity with individual components.
+     * Gets the default ride speed.
      *
-     * @param x X velocity
-     * @param y Y velocity
-     * @param z Z velocity
+     * @return The ride speed multiplier
+     */
+    float getRideSpeed();
+
+    /**
+     * Sets the default ride speed.
+     *
+     * @param speed The ride speed multiplier
+     */
+    void setRideSpeed(float speed);
+
+    /**
+     * Sets the entity's velocity.
+     *
+     * @param x, y, z The velocity components
      */
     void setVelocity(double x, double y, double z);
 
     /**
-     * Sets the entity's position and rotation.
+     * Sets the entity's velocity.
      *
-     * @param location The new location
+     * @param velocity The velocity vector
      */
-    void setPositionRotation(Location location);
+    default void setVelocity(Vector velocity) {
+        setVelocity(velocity.getX(), velocity.getY(), velocity.getZ());
+    }
+
+    /**
+     * Adds collision with a player.
+     * The entity will physically interact with the specified player.
+     *
+     * @param player The player to add collision with
+     */
+    void addCollision(Player player);
+
+    /**
+     * Removes collision with a player.
+     * The entity will pass through the specified player.
+     *
+     * @param player The player to remove collision with
+     */
+    void removeCollision(Player player);
+
+    /**
+     * Sets the item in the entity's main hand.
+     *
+     * @param itemStack The item to set, or null to clear
+     */
+    void setMainHand(@Nullable ItemStack itemStack);
+
+    /**
+     * Sets the item in the entity's offhand.
+     *
+     * @param itemStack The item to set, or null to clear
+     */
+    void setOffHand(@Nullable ItemStack itemStack);
+
+    /**
+     * Sets the entity's helmet.
+     *
+     * @param itemStack The helmet item, or null to clear
+     */
+    void setHelmet(@Nullable ItemStack itemStack);
+
+    /**
+     * Sets the entity's chestplate.
+     *
+     * @param itemStack The chestplate item, or null to clear
+     */
+    void setChestplate(@Nullable ItemStack itemStack);
+
+    /**
+     * Sets the entity's leggings.
+     *
+     * @param itemStack The leggings item, or null to clear
+     */
+    void setLeggings(@Nullable ItemStack itemStack);
+
+    /**
+     * Sets the entity's boots.
+     *
+     * @param itemStack The boots item, or null to clear
+     */
+    void setBoots(@Nullable ItemStack itemStack);
+
+    /**
+     * Sets the head pose of an armor stand.
+     * All angles are in degrees.
+     *
+     * @param x X rotation (pitch)
+     * @param y Y rotation (yaw)
+     * @param z Z rotation (roll)
+     */
+    void setHeadPose(float x, float y, float z);
+
+    /**
+     * Sets the body pose of an armor stand.
+     * All angles are in degrees.
+     *
+     * @param x X rotation (pitch)
+     * @param y Y rotation (yaw)
+     * @param z Z rotation (roll)
+     */
+    void setBodyPose(float x, float y, float z);
+
+    /**
+     * Sets the left arm pose of an armor stand.
+     * All angles are in degrees.
+     *
+     * @param x X rotation (pitch)
+     * @param y Y rotation (yaw)
+     * @param z Z rotation (roll)
+     */
+    void setLeftArmPose(float x, float y, float z);
+
+    /**
+     * Sets the right arm pose of an armor stand.
+     * All angles are in degrees.
+     *
+     * @param x X rotation (pitch)
+     * @param y Y rotation (yaw)
+     * @param z Z rotation (roll)
+     */
+    void setRightArmPose(float x, float y, float z);
+
+    /**
+     * Sets the left leg pose of an armor stand.
+     * All angles are in degrees.
+     *
+     * @param x X rotation (pitch)
+     * @param y Y rotation (yaw)
+     * @param z Z rotation (roll)
+     */
+    void setLeftLegPose(float x, float y, float z);
+
+    /**
+     * Sets the right leg pose of an armor stand.
+     * All angles are in degrees.
+     *
+     * @param x X rotation (pitch)
+     * @param y Y rotation (yaw)
+     * @param z Z rotation (roll)
+     */
+    void setRightLegPose(float x, float y, float z);
+
+    /**
+     * Sets the entity's custom name.
+     * The custom name appears above the entity when visible.
+     *
+     * @param component The custom name component, or null to remove
+     */
+    void setCustomName(@Nullable Component component);
+
+    /**
+     * Sets the leash holder for this entity.
+     * Creates a visual leash connection between this entity and the holder.
+     *
+     * @param holder The entity to hold the leash, or null to remove leash
+     */
+    void setLeashHolder(@Nullable Entity holder);
+
+    /**
+     * Sets whether a creeper is powered.
+     * When powered, the aura shield is visible.
+     *
+     * @param powered True to power the creeper
+     */
+    void setCreeperPowered(boolean powered);
+
+    /**
+     * Sets whether a creeper is ignited.
+     * When ignited, the creeper begins its explosion countdown.
+     *
+     * @param ignited True to ignite the creeper
+     */
+    void setCreeperIgnited(boolean ignited);
+
+    /**
+     * Sets hurt ticks for the entity.
+     *
+     * @param hurtTicks The number of hurt ticks
+     */
+    void setHurtTicks(int hurtTicks);
+
+    /**
+     * Sets a pose for the entity.
+     *
+     * @param pose The pose
+     */
+    void setPose(Pose pose);
 
     /**
      * Sets whether the entity clips through blocks.
      *
-     * @param noClip True to disable clipping
+     * @param noClip True to disable block collision
      */
     void setNoClip(boolean noClip);
-
-    /**
-     * Sets whether a donkey is standing.
-     *
-     * @param standing True to make standing
-     */
-    void setDonkeyStanding(boolean standing);
 
     /**
      * Sets the entity's item stack (for item entities).
@@ -482,136 +477,55 @@ public interface NMSEntity {
     void setEntityItemStack(ItemStack itemStack);
 
     /**
-     * Gets the NMS entity object.
+     * Sets whether a horse is standing (rearing).
      *
-     * @return The NMS entity
+     * @param standing True to make the horse stand
+     */
+    void setHorseStanding(boolean standing);
+
+    /**
+     * Sets a guardian's attack target.
+     * This creates the laser beam effect pointing at the target.
+     *
+     * @param targetId The target entity ID, or 0 to remove target
+     */
+    void setGuardianTarget(int targetId);
+
+    /**
+     * Removes pathfinding from this entity.
+     * The entity will no longer automatically navigate or move on its own.
+     */
+    void removePathfinder();
+
+    /**
+     * Gets the underlying NMS entity object.
+     * This returns the version-specific Minecraft server entity instance.
+     *
+     * @return The NMS entity object
      */
     Object getNMSEntity();
 
     /**
-     * Sends packets to all viewers of this entity.
+     * Gets the entity's unique network ID.
      *
-     * @param packets The packets to send
+     * @return The entity ID used in packets
      */
-    void sendPacketsToViewers(Object... packets);
+    int getId();
 
     /**
-     * Sends entity metadata packet to a specific player.
+     * Gets the Bukkit entity wrapper if this NMS entity is backed by a real entity.
      *
-     * @param player The player to send to
+     * @return The Bukkit entity, or null if this is a virtual entity
      */
-    void sendEntityMetadataPacket(Player player);
+    @Nullable
+    Entity getBukkitEntity();
 
     /**
-     * Sends entity equipment packet to a specific player.
+     * Gets the entity's group tracker.
+     * The tracker manages automatic spawning and despawning based on player proximity.
      *
-     * @param player The player to send to
+     * @return The group tracker, or null if not tracked
      */
-    void sendEntityEquipmentPacket(Player player);
-
-    /**
-     * Sends entity equipment packet to all viewers.
-     */
-    void sendEntityEquipmentPacket();
-
-    /**
-     * Sends position and rotation packet.
-     *
-     * @param location The location
-     */
-    void sendPositionRotationPacket(Location location);
-
-    /**
-     * Sends metadata packet to all viewers.
-     */
-    void sendMetadataPacket();
-
-    /**
-     * Sends iron golem attack animation packet.
-     */
-    void sendIronGolemAttackAnimationPacket();
-
-    /**
-     * Sends entity animation packet.
-     */
-    void sendEntityAnimationPacket();
-
-    /**
-     * Sends leash holder packet to a specific player.
-     *
-     * @param player The player to send to
-     */
-    void sendLeashHolderPacket(Player player);
-
-    /**
-     * Sends velocity packet to a specific player.
-     *
-     * @param player The player to send to
-     */
-    void sendVelocityPacket(Player player);
-
-    /**
-     * Sends velocity packet to all viewers.
-     */
-    void sendVelocityPacket();
-
-    /**
-     * Sends mount packet to a specific player.
-     *
-     * @param player The player to send to
-     */
-    void sendMountPacket(Player player);
-
-    /**
-     * Sends head rotation packet to all viewers.
-     */
-    void sendHeadRotationPacket();
-
-    /**
-     * Sets the bounding box of the entity.
-     *
-     * @param boundingBox The bounding box
-     */
-    void setBoundingBox(BoundingBox boundingBox);
-
-    /**
-     * Gets the previous location and copies it to the provided location.
-     *
-     * @param loc The location to copy to
-     * @return The location parameter
-     */
-    Location getPreviousLocation(Location loc);
-
-    /**
-     * Sets the previous location.
-     *
-     * @param location The location to set
-     */
-    void setPreviousLocation(Location location);
-
-    /**
-     * Inner class for bounding box data.
-     */
-    class BoundingBox {
-
-        private final double x, y, z;
-
-        public BoundingBox(double x, double y, double z) {
-            this.x = x;
-            this.y = y;
-            this.z = z;
-        }
-
-        public double getX() {
-            return x;
-        }
-
-        public double getY() {
-            return y;
-        }
-
-        public double getZ() {
-            return z;
-        }
-    }
+    @Nullable
+    EntityTracker getTracker();
 }

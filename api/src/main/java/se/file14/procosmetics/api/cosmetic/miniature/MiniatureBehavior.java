@@ -6,7 +6,7 @@ import se.file14.procosmetics.api.nms.NMSEntity;
 
 public interface MiniatureBehavior extends CosmeticBehavior<MiniatureType> {
 
-    void setupEntity(CosmeticContext<MiniatureType> context, NMSEntity entity);
+    void setupEntity(CosmeticContext<MiniatureType> context, NMSEntity nmsEntity);
 
-    void onUpdate(CosmeticContext<MiniatureType> context, NMSEntity entity, int tick);
+    void onUpdate(CosmeticContext<MiniatureType> context, NMSEntity nmsEntity, int tick);
 }

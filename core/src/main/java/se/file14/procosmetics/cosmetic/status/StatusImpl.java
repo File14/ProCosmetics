@@ -98,7 +98,7 @@ public class StatusImpl extends CosmeticImpl<StatusType, StatusBehavior> impleme
                 textDisplay.setText(updatedTagText);
 
                 if (sendPacket) {
-                    nmsEntity.sendMetadataPacket();
+                    nmsEntity.sendEntityMetadataPacket();
                 }
             }
         }

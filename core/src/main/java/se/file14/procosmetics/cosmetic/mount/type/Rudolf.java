@@ -4,6 +4,7 @@ import org.bukkit.Color;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Particle;
+import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Horse;
@@ -45,9 +46,11 @@ public class Rudolf implements MountBehavior {
 
             for (int i = 0; i < 2; i++) {
                 NMSEntity horn = context.getPlugin().getNMSManager().createEntity(entity.getWorld(), EntityType.ARMOR_STAND, tracker);
-                horn.setInvisible(true);
-                horn.setArmorStandArms(false);
-                horn.setArmorStandMarker(false);
+                if (horn.getBukkitEntity() instanceof ArmorStand armorStand) {
+                    armorStand.setInvisible(true);
+                    armorStand.setArms(false);
+                    armorStand.setMarker(false);
+                }
                 horn.setHelmet(DEAD_BUSH_ITEM);
                 horn.setPositionRotation(location);
                 horn.setHeadPose(0.0f, (float) Math.toDegrees(-1.0d + i * 2.0d), (float) Math.toDegrees(1.0d + i * -2.0d));

@@ -3,8 +3,9 @@ package se.file14.procosmetics.cosmetic.mount;
 import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import org.bukkit.Location;
+import org.bukkit.attribute.Attribute;
+import org.bukkit.attribute.AttributeInstance;
 import org.bukkit.entity.Entity;
-import org.bukkit.entity.Horse;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -27,7 +28,7 @@ import se.file14.procosmetics.util.MetadataUtil;
 public class MountImpl extends CosmeticImpl<MountType, MountBehavior> implements Mount {
 
     private static final LegacyComponentSerializer SERIALIZER = LegacyComponentSerializer.legacySection();
-    
+
     private final boolean rideOnSpawn;
     private final boolean despawnOnDismount;
 
@@ -59,19 +60,9 @@ public class MountImpl extends CosmeticImpl<MountType, MountBehavior> implements
         if (nmsEntity != null && entity.isValid()) {
             behavior.onUpdate(this, entity, nmsEntity);
 
-            if (entity instanceof LivingEntity) {
-                if (player.getVehicle() == entity) { // RIDING
-                    // Custom ride movement controller (not needed for horses since it is baked into the game)
-                    if (!(entity instanceof Horse)) {
-                        nmsEntity.moveRide(player);
-                    }
-                } else { // NOT RIDING
-                    // Follow player
-                    if (user.isMoving()) {
-                        nmsEntity.follow(player);
-                    }
-
-                }
+            // Follow player around
+            if (entity instanceof LivingEntity && player.getVehicle() != entity && user.isMoving()) {
+                nmsEntity.follow(player);
             }
         }
     }
@@ -158,6 +149,16 @@ public class MountImpl extends CosmeticImpl<MountType, MountBehavior> implements
                     Placeholder.unparsed("player", player.getName()),
                     Placeholder.unparsed("cosmetic", cosmeticType.getName(user))))
             );
+
+            if (entity instanceof LivingEntity livingEntity) {
+                AttributeInstance attribute = livingEntity.getAttribute(Attribute.MAX_HEALTH);
+
+                if (attribute != null) {
+                    double health = 2.0d;
+                    attribute.setBaseValue(health);
+                    livingEntity.setHealth(health);
+                }
+            }
             nmsEntity = plugin.getNMSManager().entityToNMSEntity(entity);
             MetadataUtil.setCustomEntity(entity);
             behavior.setupEntity(this, entity, nmsEntity);

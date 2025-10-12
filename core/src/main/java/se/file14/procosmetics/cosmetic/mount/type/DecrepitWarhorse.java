@@ -4,7 +4,7 @@ import org.bukkit.Material;
 import org.bukkit.Particle;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
-import org.bukkit.entity.Horse;
+import org.bukkit.entity.ZombieHorse;
 import org.bukkit.inventory.ItemStack;
 import se.file14.procosmetics.api.cosmetic.CosmeticContext;
 import se.file14.procosmetics.api.cosmetic.mount.MountType;
@@ -30,7 +30,7 @@ public class DecrepitWarhorse extends BlockTrailBehavior {
     public void setupEntity(CosmeticContext<MountType> context, Entity entity, NMSEntity nmsEntity) {
         super.setupEntity(context, entity, nmsEntity);
 
-        if (entity instanceof Horse horse) {
+        if (entity instanceof ZombieHorse horse) {
             horse.setJumpStrength(1.0d);
             horse.setAdult();
             horse.setTamed(true);

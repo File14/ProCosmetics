@@ -3,10 +3,7 @@ package se.file14.procosmetics.cosmetic.gadget.type;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
-import org.bukkit.entity.ArmorStand;
-import org.bukkit.entity.Entity;
-import org.bukkit.entity.EntityType;
-import org.bukkit.entity.Player;
+import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerInteractAtEntityEvent;
 import org.bukkit.inventory.ItemStack;
@@ -72,9 +69,12 @@ public class Swing implements GadgetBehavior {
 
             NMSEntity rabbit = context.getPlugin().getNMSManager().createEntity(center.getWorld(), EntityType.RABBIT, tracker);
             rabbit.setPositionRotation(location);
-            rabbit.setBaby(true);
-            rabbit.setInvisible(true);
             rabbit.setLeashHolder(seat.getBukkitEntity());
+
+            if (rabbit instanceof Ageable ageable) {
+                ageable.setBaby();
+                ageable.setInvisible(true);
+            }
         }
         tracker.startTracking();
 

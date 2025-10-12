@@ -86,7 +86,9 @@ public class MerryGoRound implements GadgetBehavior {
             NMSEntity nmsEntityLeash = context.getPlugin().getNMSManager().createEntity(world, EntityType.BAT, tracker);
             nmsEntityLeash.setPositionRotation(leashLoc);
             nmsEntityLeash.setLeashHolder(nmsEntityHorse.getBukkitEntity());
-            nmsEntityLeash.setInvisible(true);
+            if (nmsEntityLeash.getBukkitEntity() instanceof LivingEntity livingEntity) {
+                livingEntity.setInvisible(true);
+            }
 
             CoasterHorse coasterHorse = new CoasterHorse(nmsEntityHorse, nmsEntityArmorStand, nmsEntityLeash);
             coasterHorses.add(coasterHorse);

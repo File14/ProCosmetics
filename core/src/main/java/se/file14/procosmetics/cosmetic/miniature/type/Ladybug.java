@@ -12,11 +12,11 @@ public class Ladybug implements MiniatureBehavior {
     }
 
     @Override
-    public void setupEntity(CosmeticContext<MiniatureType> context, NMSEntity entity) {
+    public void setupEntity(CosmeticContext<MiniatureType> context, NMSEntity nmsEntity) {
     }
 
     @Override
-    public void onUpdate(CosmeticContext<MiniatureType> context, NMSEntity entity, int tick) {
+    public void onUpdate(CosmeticContext<MiniatureType> context, NMSEntity nmsEntity, int tick) {
     }
 
     @Override

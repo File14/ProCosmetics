@@ -9,10 +9,7 @@ import se.file14.procosmetics.api.nms.NMSEntity;
 import se.file14.procosmetics.util.AbstractRunnable;
 
 import javax.annotation.Nullable;
-import java.util.Collection;
-import java.util.Set;
-import java.util.UUID;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.*;
 import java.util.function.BiPredicate;
 import java.util.function.Predicate;
 
@@ -27,9 +24,9 @@ public class EntityTrackerImpl extends AbstractRunnable implements EntityTracker
     private long updateInterval = DEFAULT_UPDATE_INTERVAL;
     private long startDelay = DEFAULT_START_DELAY;
 
-    private final Set<NMSEntity> entities = ConcurrentHashMap.newKeySet();
-    private final Set<Player> viewers = ConcurrentHashMap.newKeySet();
-    private final Set<UUID> antiViewers = ConcurrentHashMap.newKeySet();
+    private final Set<NMSEntity> entities = new HashSet<>();
+    private final Set<Player> viewers = new HashSet<>();
+    private final Set<UUID> antiViewers = new HashSet<>();
 
     private volatile Player owner;
     private volatile UUID ownerUUID;
@@ -37,12 +34,9 @@ public class EntityTrackerImpl extends AbstractRunnable implements EntityTracker
     private volatile Predicate<Player> visibilityPredicate;
     private volatile BiPredicate<Player, Player> ownerVisibilityPredicate;
 
-    private volatile ViewerCallback onViewerAdded;
-    private volatile ViewerCallback onViewerRemoved;
-    private volatile EntityCallback onEntityAdded;
-    private volatile EntityCallback onEntityRemoved;
-
-    private final ThreadLocal<Location> reusableLocation = ThreadLocal.withInitial(() -> new Location(null, 0, 0, 0));
+    private final Location reusableLocation = new Location(null, 0, 0, 0);
+    private final Set<Player> playersToAdd = new HashSet<>();
+    private final Set<Player> playersToRemove = new HashSet<>();
 
     public EntityTrackerImpl() {
     }
@@ -52,30 +46,19 @@ public class EntityTrackerImpl extends AbstractRunnable implements EntityTracker
     }
 
     @Override
-    public void addEntity(NMSEntity entity) {
-        if (entities.add(entity)) {
-            if (onEntityAdded != null) {
-                onEntityAdded.onEvent(entity, this);
-            }
-        }
+    public void addEntity(NMSEntity nmsEntity) {
+        entities.add(nmsEntity);
     }
 
     @Override
-    public void removeEntity(NMSEntity entity) {
-        if (entities.remove(entity)) {
+    public void removeEntity(NMSEntity nmsEntity) {
+        if (entities.remove(nmsEntity)) {
             // Despawn entity for all current viewers
-            for (Player viewer : viewers) {
-                entity.despawn(viewer);
-            }
-
-            if (onEntityRemoved != null) {
-                onEntityRemoved.onEvent(entity, this);
-            }
+            nmsEntity.despawn(viewers);
         }
     }
 
     @Override
-
     public Collection<NMSEntity> getEntities() {
         return ImmutableSet.copyOf(entities);
     }
@@ -101,9 +84,7 @@ public class EntityTrackerImpl extends AbstractRunnable implements EntityTracker
         if (isTracking()) {
             cancel();
             // Despawn all entities for all viewers
-            for (Player viewer : ImmutableSet.copyOf(viewers)) {
-                removeViewer(viewer);
-            }
+            removeViewers(getViewers());
         }
     }
 
@@ -117,12 +98,6 @@ public class EntityTrackerImpl extends AbstractRunnable implements EntityTracker
         stopTracking();
         clearEntities();
         clearAntiViewers();
-
-        // Clear callbacks
-        onViewerAdded = null;
-        onViewerRemoved = null;
-        onEntityAdded = null;
-        onEntityRemoved = null;
     }
 
     @Override
@@ -133,28 +108,47 @@ public class EntityTrackerImpl extends AbstractRunnable implements EntityTracker
     @Override
     public void addViewer(Player player) {
         if (viewers.add(player)) {
-            // Spawn all entities for this viewer
-            for (NMSEntity entity : entities) {
-                entity.spawn(player);
-            }
+            Collection<Player> players = Collections.singleton(player);
 
-            if (onViewerAdded != null) {
-                onViewerAdded.onEvent(player, this);
+            for (NMSEntity entity : entities) {
+                entity.spawn(players);
             }
+        }
+    }
+
+    @Override
+    public void addViewers(Collection<Player> players) {
+        if (players.isEmpty()) {
+            return;
+        }
+        viewers.addAll(players);
+
+        for (NMSEntity entity : entities) {
+            entity.spawn(players);
         }
     }
 
     @Override
     public void removeViewer(Player player) {
         if (viewers.remove(player)) {
-            // Despawn all entities for this viewer
-            for (NMSEntity entity : entities) {
-                entity.despawn(player);
-            }
+            Collection<Player> players = Collections.singleton(player);
 
-            if (onViewerRemoved != null) {
-                onViewerRemoved.onEvent(player, this);
+            for (NMSEntity entity : entities) {
+                entity.despawn(players);
             }
+        }
+    }
+
+    @Override
+    public void removeViewers(Collection<Player> players) {
+        if (players.isEmpty()) {
+            return;
+        }
+        viewers.removeAll(players);
+
+        // Despawn all entities for these viewers in batch
+        for (NMSEntity entity : entities) {
+            entity.despawn(players);
         }
     }
 
@@ -261,12 +255,11 @@ public class EntityTrackerImpl extends AbstractRunnable implements EntityTracker
     @Override
     public void respawnAt(Location location) {
         // Despawn all entities for all viewers
-        for (Player viewer : ImmutableSet.copyOf(viewers)) {
-            removeViewer(viewer);
-        }
+        removeViewers(getViewers());
+
         // Update entity positions
         for (NMSEntity entity : entities) {
-            entity.setPosition(location);
+            entity.setPositionRotation(location);
         }
         // Force update to respawn entities
         updateViewers();
@@ -276,10 +269,7 @@ public class EntityTrackerImpl extends AbstractRunnable implements EntityTracker
     @Nullable
     public Location getTrackingLocation() {
         for (NMSEntity entity : entities) {
-            Location location = entity.getPreviousLocation();
-            if (location != null) {
-                return location.clone();
-            }
+            return entity.getPreviousLocation();
         }
         return null;
     }
@@ -297,30 +287,13 @@ public class EntityTrackerImpl extends AbstractRunnable implements EntityTracker
     }
 
     @Override
-    public void setOnViewerAdded(@Nullable ViewerCallback callback) {
-        this.onViewerAdded = callback;
-    }
-
-    @Override
-    public void setOnViewerRemoved(@Nullable ViewerCallback callback) {
-        this.onViewerRemoved = callback;
-    }
-
-    @Override
-    public void setOnEntityAdded(@Nullable EntityCallback callback) {
-        this.onEntityAdded = callback;
-    }
-
-    @Override
-    public void setOnEntityRemoved(@Nullable EntityCallback callback) {
-        this.onEntityRemoved = callback;
-    }
-
-    @Override
     public void run() {
         if (entities.isEmpty()) {
             return;
         }
+        playersToAdd.clear();
+        playersToRemove.clear();
+
         Location trackingLocation = getTrackingLocation();
 
         if (trackingLocation == null) {
@@ -329,8 +302,6 @@ public class EntityTrackerImpl extends AbstractRunnable implements EntityTracker
         // Remove offline viewers
         viewers.removeIf(player -> !player.isOnline());
 
-        // Get reusable location for this thread
-        Location playerLocation = reusableLocation.get();
         double rangeSquared = trackingRange * trackingRange;
 
         // Check all online players
@@ -338,15 +309,22 @@ public class EntityTrackerImpl extends AbstractRunnable implements EntityTracker
             if (!player.isValid()) {
                 continue;
             }
-            player.getLocation(playerLocation);
-            boolean shouldView = shouldPlayerSeeEntities(player, playerLocation, trackingLocation, rangeSquared);
+            player.getLocation(reusableLocation);
+            boolean shouldView = shouldPlayerSeeEntities(player, reusableLocation, trackingLocation, rangeSquared);
             boolean currentlyViewing = isViewer(player);
 
             if (shouldView && !currentlyViewing) {
-                addViewer(player);
+                playersToAdd.add(player);
             } else if (!shouldView && currentlyViewing) {
-                removeViewer(player);
+                playersToRemove.add(player);
             }
+        }
+
+        if (!playersToAdd.isEmpty()) {
+            addViewers(playersToAdd);
+        }
+        if (!playersToRemove.isEmpty()) {
+            removeViewers(playersToRemove);
         }
     }
 
@@ -395,7 +373,6 @@ public class EntityTrackerImpl extends AbstractRunnable implements EntityTracker
         return player.canSee(owner);
     }
 
-
     public static Builder builder() {
         return new BuilderImpl();
     }
@@ -408,11 +385,6 @@ public class EntityTrackerImpl extends AbstractRunnable implements EntityTracker
         private Player owner;
         private Predicate<Player> visibilityPredicate;
         private BiPredicate<Player, Player> ownerVisibilityPredicate;
-        private EntityTrackerImpl.ViewerCallback onViewerAdded;
-        private EntityTrackerImpl.ViewerCallback onViewerRemoved;
-        private EntityTrackerImpl.EntityCallback onEntityAdded;
-        private EntityTrackerImpl.EntityCallback onEntityRemoved;
-
 
         @Override
         public Builder trackingRange(double range) {
@@ -420,13 +392,11 @@ public class EntityTrackerImpl extends AbstractRunnable implements EntityTracker
             return this;
         }
 
-
         @Override
         public Builder updateInterval(long interval) {
             this.updateInterval = interval;
             return this;
         }
-
 
         @Override
         public Builder startDelay(long delay) {
@@ -434,13 +404,11 @@ public class EntityTrackerImpl extends AbstractRunnable implements EntityTracker
             return this;
         }
 
-
         @Override
         public Builder owner(@Nullable Player owner) {
             this.owner = owner;
             return this;
         }
-
 
         @Override
         public Builder visibilityPredicate(@Nullable Predicate<Player> predicate) {
@@ -448,41 +416,11 @@ public class EntityTrackerImpl extends AbstractRunnable implements EntityTracker
             return this;
         }
 
-
         @Override
         public Builder ownerVisibilityPredicate(@Nullable BiPredicate<Player, Player> predicate) {
             this.ownerVisibilityPredicate = predicate;
             return this;
         }
-
-
-        @Override
-        public Builder onViewerAdded(@Nullable EntityTrackerImpl.ViewerCallback callback) {
-            this.onViewerAdded = callback;
-            return this;
-        }
-
-
-        @Override
-        public Builder onViewerRemoved(@Nullable EntityTrackerImpl.ViewerCallback callback) {
-            this.onViewerRemoved = callback;
-            return this;
-        }
-
-
-        @Override
-        public Builder onEntityAdded(@Nullable EntityTrackerImpl.EntityCallback callback) {
-            this.onEntityAdded = callback;
-            return this;
-        }
-
-
-        @Override
-        public Builder onEntityRemoved(@Nullable EntityTrackerImpl.EntityCallback callback) {
-            this.onEntityRemoved = callback;
-            return this;
-        }
-
 
         @Override
         public EntityTrackerImpl build() {
@@ -493,10 +431,7 @@ public class EntityTrackerImpl extends AbstractRunnable implements EntityTracker
             tracker.setOwner(owner);
             tracker.setVisibilityPredicate(visibilityPredicate);
             tracker.setOwnerVisibilityPredicate(ownerVisibilityPredicate);
-            tracker.setOnViewerAdded(onViewerAdded);
-            tracker.setOnViewerRemoved(onViewerRemoved);
-            tracker.setOnEntityAdded(onEntityAdded);
-            tracker.setOnEntityRemoved(onEntityRemoved);
+
             return tracker;
         }
     }

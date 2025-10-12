@@ -29,16 +29,16 @@ public class Astronaut implements MiniatureBehavior {
     }
 
     @Override
-    public void setupEntity(CosmeticContext<MiniatureType> context, NMSEntity entity) {
-        entity.setMainHand(HAND_ITEM);
-        entity.setChestplate(CHESTPLATE_ITEM);
-        entity.setLeggings(LEGGINGS_ITEM);
-        entity.setBoots(BOOTS_ITEM);
+    public void setupEntity(CosmeticContext<MiniatureType> context, NMSEntity nmsEntity) {
+        nmsEntity.setMainHand(HAND_ITEM);
+        nmsEntity.setChestplate(CHESTPLATE_ITEM);
+        nmsEntity.setLeggings(LEGGINGS_ITEM);
+        nmsEntity.setBoots(BOOTS_ITEM);
     }
 
     @Override
-    public void onUpdate(CosmeticContext<MiniatureType> context, NMSEntity entity, int tick) {
-        entity.getPreviousLocation().getWorld().spawnParticle(Particle.CLOUD, entity.getPreviousLocation(), 3, 0.1d, 0.0d, 0.1d, 0.0d);
+    public void onUpdate(CosmeticContext<MiniatureType> context, NMSEntity nmsEntity, int tick) {
+        nmsEntity.getPreviousLocation().getWorld().spawnParticle(Particle.CLOUD, nmsEntity.getPreviousLocation(), 3, 0.1d, 0.0d, 0.1d, 0.0d);
     }
 
     @Override

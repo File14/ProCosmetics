@@ -4,6 +4,7 @@ import org.bukkit.Location;
 import org.bukkit.Particle;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
+import org.bukkit.entity.Slime;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.util.Vector;
 import se.file14.procosmetics.api.cosmetic.CosmeticContext;
@@ -20,8 +21,10 @@ public class MagmaCube implements MorphBehavior {
     }
 
     @Override
-    public void setupEntity(CosmeticContext<MorphType> context, NMSEntity entity) {
-        entity.setSlimeSize(2);
+    public void setupEntity(CosmeticContext<MorphType> context, NMSEntity nmsEntity) {
+        if (nmsEntity.getBukkitEntity() instanceof Slime slime) {
+            slime.setSize(2);
+        }
     }
 
     @Override

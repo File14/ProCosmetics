@@ -5,6 +5,7 @@ import org.bukkit.Material;
 import org.bukkit.Particle;
 import org.bukkit.Sound;
 import org.bukkit.entity.ArmorStand;
+import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
@@ -16,6 +17,8 @@ import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.cosmetic.morph.FlyableMorph;
 import se.file14.procosmetics.util.MathUtil;
 import se.file14.procosmetics.util.MetadataUtil;
+
+import javax.annotation.Nullable;
 
 public class ElderGuardian extends FlyableMorph {
 
@@ -43,10 +46,10 @@ public class ElderGuardian extends FlyableMorph {
                 Player player = context.getPlayer();
                 Location location = armorStand.getLocation();
 
-                nmsEntity.setGuardianTarget(0);
-
                 location.getWorld().spawnParticle(Particle.EXPLOSION_EMITTER, location, 5, 2.0d, 1.0d, 2.0d, 0.1d);
                 location.getWorld().playSound(player, Sound.ENTITY_GENERIC_EXPLODE, 1.0f, 0.0f);
+
+                setGuardianTarget(nmsEntity, null);
 
                 for (Player hitPlayer : MathUtil.getClosestPlayersFromLocation(location, HIT_RANGE)) {
                     if (hitPlayer != player) {
@@ -85,9 +88,14 @@ public class ElderGuardian extends FlyableMorph {
                 entity.setGravity(false);
                 MetadataUtil.setCustomEntity(entity);
             });
-            nmsEntity.setGuardianTarget(armorStand.getEntityId());
+            setGuardianTarget(nmsEntity, armorStand);
         }
         return InteractionResult.SUCCESS;
+    }
+
+    public void setGuardianTarget(NMSEntity nmsEntity, @Nullable LivingEntity target) {
+        nmsEntity.setGuardianTarget(target != null ? target.getEntityId() : 0);
+        nmsEntity.sendEntityMetadataPacket();
     }
 
     @Override

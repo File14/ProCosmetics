@@ -21,7 +21,7 @@ public class Bunny implements MorphBehavior {
     }
 
     @Override
-    public void setupEntity(CosmeticContext<MorphType> context, NMSEntity entity) {
+    public void setupEntity(CosmeticContext<MorphType> context, NMSEntity nmsEntity) {
     }
 
     @Override
@@ -42,7 +42,7 @@ public class Bunny implements MorphBehavior {
             if (player.isOnGround()) {
                 Location location = player.getLocation();
 
-                nmsEntity.playRabbitJumpAnimation();
+                nmsEntity.sendEntityEventPacket((byte) 1);
 
                 // Set pitch to 0 for horizontal jump
                 location.setPitch(0.0f);

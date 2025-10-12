@@ -69,6 +69,10 @@ public class BalloonImpl extends CosmeticImpl<BalloonType, BalloonBehavior> impl
         createBalloonEntity();
         createLeashEntity();
 
+        // Set as passenger to avoid disconnect between balloon and leash
+        if (leashEntity != null) {
+            entity.getBukkitEntity().addPassenger(leashEntity.getBukkitEntity());
+        }
         entityTracker.startTracking();
         runTaskTimerAsynchronously(plugin, 5L, 1L);
     }
@@ -77,9 +81,6 @@ public class BalloonImpl extends CosmeticImpl<BalloonType, BalloonBehavior> impl
     protected void onUpdate() {
         updatePhysics();
 
-        if (leashEntity != null) {
-            leashEntity.sendPositionRotationPacket(location);
-        }
         entity.sendPositionRotationPacket(location);
 
         behavior.onUpdate(this, location);
@@ -117,8 +118,8 @@ public class BalloonImpl extends CosmeticImpl<BalloonType, BalloonBehavior> impl
         applyEntityScale(bukkitEntity);
         configureDisplayEntity(bukkitEntity);
 
-        if (cosmeticType.isBaby()) {
-            entity.setBaby(true);
+        if (cosmeticType.isBaby() && bukkitEntity instanceof Ageable ageable) {
+            ageable.setBaby();
         }
         entity.setPositionRotation(location);
 
@@ -164,11 +165,13 @@ public class BalloonImpl extends CosmeticImpl<BalloonType, BalloonBehavior> impl
 
     private void createLeashEntity() {
         // Some entities (e.g., item displays) can't be leashed directly, so create a separate leash entity
-        // TODO: Set as passenger to avoid disconnect between balloon and leash
         if (!(entity.getBukkitEntity() instanceof Mob)) {
             leashEntity = plugin.getNMSManager().createEntity(location.getWorld(), EntityType.RABBIT, entityTracker);
-            leashEntity.setBaby(true);
-            leashEntity.setInvisible(true);
+
+            if (leashEntity.getBukkitEntity() instanceof Ageable ageable) {
+                ageable.setBaby();
+                ageable.setInvisible(true);
+            }
             leashEntity.setLeashHolder(player);
             leashEntity.setPositionRotation(location);
         }

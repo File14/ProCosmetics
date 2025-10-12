@@ -29,8 +29,10 @@ public class Slime implements MorphBehavior, Listener {
     }
 
     @Override
-    public void setupEntity(CosmeticContext<MorphType> context, NMSEntity entity) {
-        entity.setSlimeSize(3);
+    public void setupEntity(CosmeticContext<MorphType> context, NMSEntity nmsEntity) {
+        if (nmsEntity.getBukkitEntity() instanceof org.bukkit.entity.Slime slime) {
+            slime.setSize(3);
+        }
     }
 
     @Override

@@ -30,16 +30,16 @@ public class Tiki implements MiniatureBehavior {
     }
 
     @Override
-    public void setupEntity(CosmeticContext<MiniatureType> context, NMSEntity entity) {
-        entity.setChestplate(CHESTPLATE_ITEM);
-        entity.setLeggings(LEGGINGS_ITEM);
-        entity.setBoots(BOOTS_ITEM);
+    public void setupEntity(CosmeticContext<MiniatureType> context, NMSEntity nmsEntity) {
+        nmsEntity.setChestplate(CHESTPLATE_ITEM);
+        nmsEntity.setLeggings(LEGGINGS_ITEM);
+        nmsEntity.setBoots(BOOTS_ITEM);
     }
 
     @Override
-    public void onUpdate(CosmeticContext<MiniatureType> context, NMSEntity entity, int tick) {
-        entity.getPreviousLocation().getWorld().spawnParticle(Particle.FALLING_DUST,
-                entity.getPreviousLocation(),
+    public void onUpdate(CosmeticContext<MiniatureType> context, NMSEntity nmsEntity, int tick) {
+        nmsEntity.getPreviousLocation().getWorld().spawnParticle(Particle.FALLING_DUST,
+                nmsEntity.getPreviousLocation(),
                 2,
                 0.2d,
                 0.0d,

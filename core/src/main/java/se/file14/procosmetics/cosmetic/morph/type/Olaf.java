@@ -26,7 +26,7 @@ public class Olaf implements MorphBehavior, Listener {
     }
 
     @Override
-    public void setupEntity(CosmeticContext<MorphType> context, NMSEntity entity) {
+    public void setupEntity(CosmeticContext<MorphType> context, NMSEntity nmsEntity) {
     }
 
     @Override

@@ -27,7 +27,9 @@ public class Bat implements MorphBehavior {
 
     @Override
     public void setupEntity(CosmeticContext<MorphType> context, NMSEntity nmsEntity) {
-        nmsEntity.setBatSleeping(false);
+        if (nmsEntity.getBukkitEntity() instanceof org.bukkit.entity.Bat bat) {
+            bat.setAwake(true);
+        }
     }
 
     @Override

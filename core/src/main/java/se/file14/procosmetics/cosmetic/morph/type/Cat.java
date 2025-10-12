@@ -34,8 +34,8 @@ public class Cat implements MorphBehavior {
     }
 
     @Override
-    public void setupEntity(CosmeticContext<MorphType> context, NMSEntity entity) {
-        if (entity.getBukkitEntity() instanceof org.bukkit.entity.Cat cat) {
+    public void setupEntity(CosmeticContext<MorphType> context, NMSEntity nmsEntity) {
+        if (nmsEntity.getBukkitEntity() instanceof org.bukkit.entity.Cat cat) {
             cat.setCatType(MathUtil.getRandomElement(TYPES));
         }
     }

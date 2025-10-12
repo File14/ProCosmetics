@@ -21,14 +21,14 @@ public class Ghost implements MiniatureBehavior {
     }
 
     @Override
-    public void setupEntity(CosmeticContext<MiniatureType> context, NMSEntity entity) {
-        entity.setChestplate(CHESTPLATE_ITEM);
+    public void setupEntity(CosmeticContext<MiniatureType> context, NMSEntity nmsEntity) {
+        nmsEntity.setChestplate(CHESTPLATE_ITEM);
     }
 
     @Override
-    public void onUpdate(CosmeticContext<MiniatureType> context, NMSEntity entity, int tick) {
-        entity.getPreviousLocation().getWorld().spawnParticle(Particle.ITEM_SNOWBALL,
-                entity.getPreviousLocation().add(0.0d, 0.3d, 0.0d),
+    public void onUpdate(CosmeticContext<MiniatureType> context, NMSEntity nmsEntity, int tick) {
+        nmsEntity.getPreviousLocation().getWorld().spawnParticle(Particle.ITEM_SNOWBALL,
+                nmsEntity.getPreviousLocation().add(0.0d, 0.3d, 0.0d),
                 1,
                 0.0d,
                 0.0d,

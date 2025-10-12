@@ -29,18 +29,18 @@ public class Dolphin implements MiniatureBehavior {
     }
 
     @Override
-    public void setupEntity(CosmeticContext<MiniatureType> context, NMSEntity entity) {
-        entity.setMainHand(HAND_ITEM);
-        entity.setChestplate(CHESTPLATE_ITEM);
-        entity.setLeggings(LEGGINGS_ITEM);
-        entity.setBoots(BOOTS_ITEM);
+    public void setupEntity(CosmeticContext<MiniatureType> context, NMSEntity nmsEntity) {
+        nmsEntity.setMainHand(HAND_ITEM);
+        nmsEntity.setChestplate(CHESTPLATE_ITEM);
+        nmsEntity.setLeggings(LEGGINGS_ITEM);
+        nmsEntity.setBoots(BOOTS_ITEM);
     }
 
     @Override
-    public void onUpdate(CosmeticContext<MiniatureType> context, NMSEntity entity, int tick) {
+    public void onUpdate(CosmeticContext<MiniatureType> context, NMSEntity nmsEntity, int tick) {
         if (tick % 5 == 0) {
-            entity.getPreviousLocation().getWorld().spawnParticle(Particle.SPLASH,
-                    entity.getPreviousLocation(),
+            nmsEntity.getPreviousLocation().getWorld().spawnParticle(Particle.SPLASH,
+                    nmsEntity.getPreviousLocation(),
                     4,
                     0.1d,
                     1.0d,

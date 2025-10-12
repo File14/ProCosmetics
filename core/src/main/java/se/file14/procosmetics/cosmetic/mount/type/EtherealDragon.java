@@ -10,7 +10,7 @@ import se.file14.procosmetics.api.nms.NMSEntity;
 
 public class EtherealDragon implements MountBehavior {
 
-    private static final NMSEntity.BoundingBox DEFAULT_BOUNDING_BOX = new NMSEntity.BoundingBox(1.0d, 5.0d, 1.0d);
+    private static final double SPEED_MULTIPLIER = 0.6d;
 
     private final Location location = new Location(null, 0.0d, 0.0d, 0.0d);
 
@@ -20,7 +20,6 @@ public class EtherealDragon implements MountBehavior {
 
     @Override
     public void setupEntity(CosmeticContext<MountType> context, Entity entity, NMSEntity nmsEntity) {
-        nmsEntity.setBoundingBox(DEFAULT_BOUNDING_BOX);
         nmsEntity.setNoClip(false);
         nmsEntity.setHurtTicks(-1);
 
@@ -35,15 +34,7 @@ public class EtherealDragon implements MountBehavior {
             return;
         }
         context.getPlayer().getLocation(location);
-        float facingPitch = location.getPitch() - 25.0f;
-
-        if (facingPitch > 90.0f) {
-            facingPitch = 90.0f;
-        } else if (facingPitch < -90.0f) {
-            facingPitch = -90.0f;
-        }
-        location.setPitch(facingPitch);
-        nmsEntity.move(location.getDirection().multiply(0.5d));
+        nmsEntity.move(location.getDirection().multiply(SPEED_MULTIPLIER));
         nmsEntity.setYaw(location.getYaw() - 180.0f);
         nmsEntity.setPitch(location.getPitch());
 

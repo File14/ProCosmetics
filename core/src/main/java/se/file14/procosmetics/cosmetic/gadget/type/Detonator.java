@@ -5,6 +5,7 @@ import org.bukkit.Material;
 import org.bukkit.Particle;
 import org.bukkit.Sound;
 import org.bukkit.block.Block;
+import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -62,10 +63,13 @@ public class Detonator implements GadgetBehavior {
             Player player = context.getPlayer();
 
             NMSEntity nmsEntity = context.getPlugin().getNMSManager().createEntity(player.getWorld(), EntityType.ARMOR_STAND);
-            nmsEntity.setInvisible(true);
-            nmsEntity.setArmorStandSmall(true);
-            nmsEntity.setArmorStandArms(false);
-            nmsEntity.setArmorStandMarker(true);
+
+            if (nmsEntity.getBukkitEntity() instanceof ArmorStand armorStand) {
+                armorStand.setInvisible(true);
+                armorStand.setSmall(true);
+                armorStand.setArms(false);
+                armorStand.setMarker(true);
+            }
             nmsEntity.setHelmet(TNT_ITEM);
             nmsEntity.setPositionRotation(location);
             nmsEntity.setHeadPose(0.0f, player.getLocation().getYaw(), 0.0f);

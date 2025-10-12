@@ -32,8 +32,8 @@ public class Dog implements MorphBehavior {
     }
 
     @Override
-    public void setupEntity(CosmeticContext<MorphType> context, NMSEntity entity) {
-        if (entity.getBukkitEntity() instanceof Wolf wolf) {
+    public void setupEntity(CosmeticContext<MorphType> context, NMSEntity nmsEntity) {
+        if (nmsEntity.getBukkitEntity() instanceof Wolf wolf) {
             wolf.setVariant(MathUtil.getRandomElement(VARIANTS));
         }
     }

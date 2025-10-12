@@ -24,6 +24,11 @@ public class FrostySnowman extends BlockTrailBehavior {
     public void onUpdate(CosmeticContext<MountType> context, Entity entity, NMSEntity nmsEntity) {
         super.onUpdate(context, entity, nmsEntity);
 
+        // Custom controls
+        if (context.getPlayer().getVehicle() == entity) {
+            nmsEntity.moveRide(context.getPlayer());
+        }
+
         if (ticks % 5 == 0) {
             entity.getLocation(location).add(0.0d, 1.0d, 0.0d);
             location.getWorld().spawnParticle(Particle.SNOWFLAKE, location, 8, 0.1d, 0.1d, 0.1d, 0.0d);

@@ -36,6 +36,11 @@ public class LovelySheep extends BlockTrailBehavior {
     public void onUpdate(CosmeticContext<MountType> context, Entity entity, NMSEntity nmsEntity) {
         super.onUpdate(context, entity, nmsEntity);
 
+        // Custom controls
+        if (context.getPlayer().getVehicle() == entity) {
+            nmsEntity.moveRide(context.getPlayer());
+        }
+
         if (ticks % 10 == 0) {
             entity.getLocation(location);
 

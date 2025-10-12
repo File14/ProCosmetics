@@ -2,6 +2,7 @@ package se.file14.procosmetics.api.nms;
 
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.ApiStatus;
 
 import javax.annotation.Nullable;
 import java.util.Collection;
@@ -24,16 +25,16 @@ public interface EntityTracker {
     /**
      * Adds an entity to this tracker.
      *
-     * @param entity The entity to add
+     * @param nmsEntity The entity to add
      */
-    void addEntity(NMSEntity entity);
+    void addEntity(NMSEntity nmsEntity);
 
     /**
      * Removes an entity from this tracker.
      *
-     * @param entity The entity to remove
+     * @param nmsEntity The entity to remove
      */
-    void removeEntity(NMSEntity entity);
+    void removeEntity(NMSEntity nmsEntity);
 
     /**
      * Gets all entities managed by this tracker.
@@ -83,12 +84,18 @@ public interface EntityTracker {
      */
     void addViewer(Player player);
 
+    @ApiStatus.Internal
+    void addViewers(Collection<Player> player);
+
     /**
      * Manually removes a viewer from this tracker.
      *
      * @param player The player to remove as a viewer
      */
     void removeViewer(Player player);
+
+    @ApiStatus.Internal
+    void removeViewers(Collection<Player> player);
 
     /**
      * Checks if a player is currently viewing entities from this tracker.
@@ -241,50 +248,6 @@ public interface EntityTracker {
     void updateViewers();
 
     /**
-     * Sets a callback for when a player starts viewing entities.
-     *
-     * @param callback The callback to execute
-     */
-    void setOnViewerAdded(@Nullable ViewerCallback callback);
-
-    /**
-     * Sets a callback for when a player stops viewing entities.
-     *
-     * @param callback The callback to execute
-     */
-    void setOnViewerRemoved(@Nullable ViewerCallback callback);
-
-    /**
-     * Sets a callback for when an entity is added to the tracker.
-     *
-     * @param callback The callback to execute
-     */
-    void setOnEntityAdded(@Nullable EntityCallback callback);
-
-    /**
-     * Sets a callback for when an entity is removed from the tracker.
-     *
-     * @param callback The callback to execute
-     */
-    void setOnEntityRemoved(@Nullable EntityCallback callback);
-
-    /**
-     * Callback interface for viewer-related events.
-     */
-    @FunctionalInterface
-    interface ViewerCallback {
-        void onEvent(Player player, EntityTracker tracker);
-    }
-
-    /**
-     * Callback interface for entity-related events.
-     */
-    @FunctionalInterface
-    interface EntityCallback {
-        void onEvent(NMSEntity entity, EntityTracker tracker);
-    }
-
-    /**
      * Builder class for creating and configuring EntityTracker instances.
      */
     interface Builder {
@@ -337,37 +300,6 @@ public interface EntityTracker {
          */
         Builder ownerVisibilityPredicate(@Nullable BiPredicate<Player, Player> predicate);
 
-        /**
-         * Sets the viewer added callback.
-         *
-         * @param callback The callback
-         * @return This builder
-         */
-        Builder onViewerAdded(@Nullable EntityTracker.ViewerCallback callback);
-
-        /**
-         * Sets the viewer removed callback.
-         *
-         * @param callback The callback
-         * @return This builder
-         */
-        Builder onViewerRemoved(@Nullable EntityTracker.ViewerCallback callback);
-
-        /**
-         * Sets the entity added callback.
-         *
-         * @param callback The callback
-         * @return This builder
-         */
-        Builder onEntityAdded(@Nullable EntityTracker.EntityCallback callback);
-
-        /**
-         * Sets the entity removed callback.
-         *
-         * @param callback The callback
-         * @return This builder
-         */
-        Builder onEntityRemoved(@Nullable EntityTracker.EntityCallback callback);
 
         /**
          * Builds the EntityTracker with the configured settings.

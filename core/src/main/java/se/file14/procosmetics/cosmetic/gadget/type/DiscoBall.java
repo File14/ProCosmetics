@@ -5,6 +5,7 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Particle;
 import org.bukkit.block.Block;
+import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
@@ -40,8 +41,10 @@ public class DiscoBall implements GadgetBehavior {
         location = player.getLocation();
 
         nmsEntity = context.getPlugin().getNMSManager().createEntity(player.getWorld(), EntityType.ARMOR_STAND);
-        nmsEntity.setInvisible(true);
-        nmsEntity.setArmorStandArms(false);
+        if (nmsEntity.getBukkitEntity() instanceof ArmorStand armorStand) {
+            armorStand.setInvisible(true);
+            armorStand.setArms(false);
+        }
         nmsEntity.setPositionRotation(location.add(0.0d, HEIGHT_OFFSET, 0.0d));
         nmsEntity.getTracker().startTracking();
 
@@ -58,7 +61,7 @@ public class DiscoBall implements GadgetBehavior {
             return;
         }
         nmsEntity.setHeadPose(0.0f, ROTATION_PER_TICK * tick, 0.0f);
-        nmsEntity.sendMetadataPacket();
+        nmsEntity.sendEntityMetadataPacket();
 
         if (tick % 4 == 0) {
             nmsEntity.setHelmet(Materials.getRandomStainedGlassItem());

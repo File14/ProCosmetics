@@ -21,7 +21,7 @@ public class IronGolem implements MorphBehavior {
     }
 
     @Override
-    public void setupEntity(CosmeticContext<MorphType> context, NMSEntity entity) {
+    public void setupEntity(CosmeticContext<MorphType> context, NMSEntity nmsEntity) {
     }
 
     @Override
@@ -35,7 +35,7 @@ public class IronGolem implements MorphBehavior {
             Location attackLocation = location.clone().add(location.getDirection().multiply(2.0d));
             attackLocation.setY(location.getY());
 
-            nmsEntity.sendIronGolemAttackAnimationPacket();
+            nmsEntity.sendEntityEventPacket((byte) 4);
 
             // Find and push nearby players
             for (Player pushPlayer : MathUtil.getClosestPlayersFromLocation(attackLocation, 3.0d)) {

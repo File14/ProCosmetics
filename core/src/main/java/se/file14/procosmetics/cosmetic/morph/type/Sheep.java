@@ -21,7 +21,7 @@ public class Sheep implements MorphBehavior {
     }
 
     @Override
-    public void setupEntity(CosmeticContext<MorphType> context, NMSEntity entity) {
+    public void setupEntity(CosmeticContext<MorphType> context, NMSEntity nmsEntity) {
     }
 
     @Override
@@ -36,7 +36,7 @@ public class Sheep implements MorphBehavior {
         if (!player.isSneaking()) {
             if (nmsEntity.getBukkitEntity() instanceof org.bukkit.entity.Sheep sheep) {
                 sheep.setColor(DYE_COLORS[MathUtil.randomRangeInt(0, DYE_COLORS.length - 1)]);
-                nmsEntity.sendMetadataPacket();
+                nmsEntity.sendEntityMetadataPacket();
             }
             player.getWorld().playSound(player, Sound.ENTITY_SHEEP_AMBIENT, 0.5f, 1.0f);
             player.getWorld().spawnParticle(Particle.CLOUD,

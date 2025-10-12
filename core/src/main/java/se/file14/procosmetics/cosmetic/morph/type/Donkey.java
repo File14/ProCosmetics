@@ -19,9 +19,9 @@ public class Donkey implements MorphBehavior {
     }
 
     @Override
-    public void setupEntity(CosmeticContext<MorphType> context, NMSEntity entity) {
-        if (entity.getBukkitEntity() instanceof org.bukkit.entity.Donkey) {
-            ((org.bukkit.entity.Donkey) entity.getBukkitEntity()).setCarryingChest(true);
+    public void setupEntity(CosmeticContext<MorphType> context, NMSEntity nmsEntity) {
+        if (nmsEntity.getBukkitEntity() instanceof org.bukkit.entity.Donkey) {
+            ((org.bukkit.entity.Donkey) nmsEntity.getBukkitEntity()).setCarryingChest(true);
         }
     }
 
@@ -42,15 +42,15 @@ public class Donkey implements MorphBehavior {
         Player player = context.getPlayer();
 
         if (!player.isOnGround() && !player.isFlying() && !jumped) {
-            // Player is in air, set donkey standing
-            nmsEntity.setDonkeyStanding(true);
+            // Player is in the air, set donkey standing
+            nmsEntity.setHorseStanding(true);
             jumped = true;
-            nmsEntity.sendMetadataPacket();
+            nmsEntity.sendEntityMetadataPacket();
         } else if ((player.isOnGround() || player.isFlying()) && jumped) {
-            // Player is on ground, unset donkey standing
-            nmsEntity.setDonkeyStanding(false);
+            // Player is on the ground, unset donkey standing
+            nmsEntity.setHorseStanding(false);
             jumped = false;
-            nmsEntity.sendMetadataPacket();
+            nmsEntity.sendEntityMetadataPacket();
         }
     }
 

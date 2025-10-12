@@ -7,9 +7,7 @@ import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
 import org.bukkit.*;
 import org.bukkit.block.Block;
-import org.bukkit.entity.EntityType;
-import org.bukkit.entity.Firework;
-import org.bukkit.entity.ItemDisplay;
+import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
@@ -240,21 +238,27 @@ public class MusicImpl extends CosmeticImpl<MusicType, MusicBehavior> implements
 
     private void createDJ(Location location) {
         armorStand = plugin.getNMSManager().createEntity(location.getWorld(), EntityType.ARMOR_STAND, tracker);
-        armorStand.setArmorStandArms(true);
-        armorStand.setArmorStandBasePlate(false);
         armorStand.setHelmet(new ItemBuilderImpl(Material.PLAYER_HEAD).setSkullOwner(player).getItemStack());
         armorStand.setChestplate(DJ_CHESTPLATE.getItemStack());
         armorStand.setLeggings(DJ_LEGGINGS.getItemStack());
         armorStand.setBoots(DJ_BOOTS.getItemStack());
         armorStand.setMainHand(DJ_HAND);
         armorStand.setPositionRotation(location);
+
+        if (armorStand.getBukkitEntity() instanceof ArmorStand armorStandBukkit) {
+            armorStandBukkit.setArms(true);
+            armorStandBukkit.setBasePlate(false);
+        }
         updateHologramName();
     }
 
     private void createJukebox(Location location) {
-        jukebox = plugin.getNMSManager().createFallingBlock(location.getWorld(), Material.JUKEBOX.createBlockData(), tracker);
+        jukebox = plugin.getNMSManager().createEntity(location.getWorld(), EntityType.BLOCK_DISPLAY, tracker);
         jukebox.setPositionRotation(location);
-        jukebox.setGravity(false);
+
+        if (jukebox.getBukkitEntity() instanceof BlockDisplay blockDisplay) {
+            blockDisplay.setBlock(Material.JUKEBOX.createBlockData());
+        }
     }
 
     private void createDiscoBall(Location location) {
@@ -282,11 +286,15 @@ public class MusicImpl extends CosmeticImpl<MusicType, MusicBehavior> implements
                 MathUtil.rotateAroundAxisY(target.toVector().subtract(location.toVector()), angle));
         loc.add(0.0d, 0.2d, 0.0d);
 
+        // TODO: Replace with item display
         cd = plugin.getNMSManager().createEntity(location.getWorld(), EntityType.ARMOR_STAND, tracker);
-        cd.setInvisible(true);
-        cd.setArmorStandArms(true);
         cd.setMainHand(DISC);
         cd.setPositionRotation(loc);
+
+        if (cd.getBukkitEntity() instanceof ArmorStand armorStand) {
+            armorStand.setInvisible(true);
+            armorStand.setArms(true);
+        }
     }
 
     private void spawnFirework(Location location) {
@@ -337,16 +345,17 @@ public class MusicImpl extends CosmeticImpl<MusicType, MusicBehavior> implements
         armorStand.setBodyPose(0.0f, move, 0.0f);
         armorStand.setLeftLegPose(10.0f, move, -6.0f);
         armorStand.setRightLegPose(-move, move, 12.0f);
-        armorStand.sendMetadataPacket();
+        armorStand.sendEntityMetadataPacket();
     }
 
     private void updateDisc() {
+        // TODO: Replace with item display
         cd.setRightArmPose(
                 0.0f,
                 tick * DISC_ROTATION_SPEED,
                 0.0f
         );
-        cd.sendMetadataPacket();
+        cd.sendEntityMetadataPacket();
     }
 
     private void updateDiscoBall() {

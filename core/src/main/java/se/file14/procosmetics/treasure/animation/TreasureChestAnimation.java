@@ -258,8 +258,11 @@ public abstract class TreasureChestAnimation extends BukkitRunnable implements L
 
     private NMSEntity spawnNMSArmorstand(Location location) {
         NMSEntity nmsEntity = plugin.getNMSManager().createEntity(location.getWorld(), EntityType.ARMOR_STAND);
-        nmsEntity.setInvisible(true);
-        nmsEntity.setArmorStandSmall(true);
+
+        if (nmsEntity.getNMSEntity() instanceof ArmorStand armorStand) {
+            armorStand.setInvisible(true);
+            armorStand.setSmall(true);
+        }
         nmsEntity.setPositionRotation(location);
 
         return nmsEntity;

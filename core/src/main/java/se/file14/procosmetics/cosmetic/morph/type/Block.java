@@ -22,8 +22,8 @@ public class Block implements MorphBehavior {
     }
 
     @Override
-    public void setupEntity(CosmeticContext<MorphType> context, NMSEntity entity) {
-        if (entity.getBukkitEntity() instanceof BlockDisplay blockDisplay) {
+    public void setupEntity(CosmeticContext<MorphType> context, NMSEntity nmsEntity) {
+        if (nmsEntity.getBukkitEntity() instanceof BlockDisplay blockDisplay) {
             blockDisplay.setBlock(currentMaterial.createBlockData());
             blockDisplay.setInterpolationDelay(0);
             blockDisplay.setInterpolationDuration(1);

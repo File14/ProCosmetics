@@ -72,9 +72,9 @@ public class Creeper implements MorphBehavior {
     }
 
     private void setCreeperEffect(NMSEntity nmsEntity, boolean effect) {
-        nmsEntity.setCreeperIgnited(effect);
         nmsEntity.setCreeperPowered(effect);
-        nmsEntity.sendMetadataPacket();
+        nmsEntity.setCreeperIgnited(effect);
+        nmsEntity.sendEntityMetadataPacket();
     }
 
     @Override

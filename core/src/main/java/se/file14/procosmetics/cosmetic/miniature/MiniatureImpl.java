@@ -1,6 +1,7 @@
 package se.file14.procosmetics.cosmetic.miniature;
 
 import org.bukkit.Location;
+import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.EntityType;
 import se.file14.procosmetics.ProCosmeticsPlugin;
 import se.file14.procosmetics.api.cosmetic.miniature.Miniature;
@@ -64,7 +65,7 @@ public class MiniatureImpl extends CosmeticImpl<MiniatureType, MiniatureBehavior
         }
         nmsEntity.sendPositionRotationPacket(entityLocation);
         nmsEntity.setHeadPose(entityLocation.getPitch(), 0.0f, 0.0f);
-        nmsEntity.sendMetadataPacket();
+        nmsEntity.sendEntityMetadataPacket();
 
         if (++tick >= 360) {
             tick = 0;
@@ -82,12 +83,15 @@ public class MiniatureImpl extends CosmeticImpl<MiniatureType, MiniatureBehavior
 
     private void spawnEntity() {
         nmsEntity = plugin.getNMSManager().createEntity(player.getWorld(), EntityType.ARMOR_STAND);
-        nmsEntity.setInvisible(cosmeticType.hasInvisibility());
-        nmsEntity.setArmorStandBasePlate(false);
-        nmsEntity.setArmorStandSmall(true);
-        nmsEntity.setArmorStandArms(cosmeticType.hasArms());
         nmsEntity.setPositionRotation(getSpawnLocation());
         nmsEntity.setHelmet(cosmeticType.getItemStack());
+
+        if (nmsEntity.getBukkitEntity() instanceof ArmorStand armorStand) {
+            armorStand.setInvisible(cosmeticType.hasInvisibility());
+            armorStand.setBasePlate(false);
+            armorStand.setSmall(true);
+            armorStand.setArms(cosmeticType.hasArms());
+        }
         behavior.setupEntity(this, nmsEntity);
         nmsEntity.getTracker().startTracking();
     }

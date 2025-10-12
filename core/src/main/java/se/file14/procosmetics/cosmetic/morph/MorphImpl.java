@@ -4,6 +4,7 @@ import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
 import org.bukkit.Location;
 import org.bukkit.Sound;
+import org.bukkit.entity.Pose;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
@@ -90,7 +91,8 @@ public class MorphImpl extends CosmeticImpl<MorphType, MorphBehavior> implements
     @EventHandler
     public void onSneak(PlayerToggleSneakEvent event) {
         if (event.getPlayer() == player && nmsEntity != null) {
-            nmsEntity.setSneaking(event.isSneaking());
+            nmsEntity.setPose(event.isSneaking() ? Pose.SNEAKING : Pose.STANDING);
+            nmsEntity.sendEntityMetadataPacket();
 
             if (canPerformAbility()) {
                 MorphBehavior.InteractionResult result = behavior.onToggleSneak(this, event, nmsEntity);
@@ -114,7 +116,7 @@ public class MorphImpl extends CosmeticImpl<MorphType, MorphBehavior> implements
         if (event.getPlayer() == player) {
             if (action == Action.LEFT_CLICK_AIR || action == Action.LEFT_CLICK_BLOCK) {
                 if (behavior.hasAttackAnimation()) {
-                    nmsEntity.sendEntityAnimationPacket();
+                    nmsEntity.sendAnimatePacket(0);
                 }
             }
 

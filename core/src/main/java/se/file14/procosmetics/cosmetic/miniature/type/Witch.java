@@ -30,17 +30,17 @@ public class Witch implements MiniatureBehavior {
     }
 
     @Override
-    public void setupEntity(CosmeticContext<MiniatureType> context, NMSEntity entity) {
-        entity.setMainHand(HAND_ITEM);
-        entity.setChestplate(CHESTPLATE_ITEM);
-        entity.setLeggings(LEGGINGS_ITEM);
-        entity.setBoots(BOOTS_ITEM);
+    public void setupEntity(CosmeticContext<MiniatureType> context, NMSEntity nmsEntity) {
+        nmsEntity.setMainHand(HAND_ITEM);
+        nmsEntity.setChestplate(CHESTPLATE_ITEM);
+        nmsEntity.setLeggings(LEGGINGS_ITEM);
+        nmsEntity.setBoots(BOOTS_ITEM);
     }
 
     @Override
-    public void onUpdate(CosmeticContext<MiniatureType> context, NMSEntity entity, int tick) {
+    public void onUpdate(CosmeticContext<MiniatureType> context, NMSEntity nmsEntity, int tick) {
         if (tick % 5 == 0) {
-            MathUtil.findLocationsInCircle(entity.getPreviousLocation(), 8, 0.3d, 1.5d,
+            MathUtil.findLocationsInCircle(nmsEntity.getPreviousLocation(), 8, 0.3d, 1.5d,
                     location -> location.getWorld().spawnParticle(Particle.WITCH, location, 0)
             );
         }

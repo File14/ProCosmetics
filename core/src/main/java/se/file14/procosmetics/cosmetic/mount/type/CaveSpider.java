@@ -35,10 +35,14 @@ public class CaveSpider extends BlockTrailBehavior {
     public void onUpdate(CosmeticContext<MountType> context, Entity entity, NMSEntity nmsEntity) {
         super.onUpdate(context, entity, nmsEntity);
 
+        // Custom controls
+        if (context.getPlayer().getVehicle() == entity) {
+            nmsEntity.moveRide(context.getPlayer());
+        }
+
         if (ticks % 10 == 0) {
             entity.getLocation(location);
             location.getWorld().spawnParticle(Particle.ENCHANTED_HIT, location, 10, 0.7f, 0.8f, 0.7f, 0.0f);
-
 
             if (isTossItemsEnabled(context)) {
                 NMSEntity itemEntity = context.getPlugin().getNMSManager().createEntity(location.getWorld(), EntityType.ITEM);

@@ -19,8 +19,7 @@ public class MappingRegistry {
     public static final String SERVERBOUND_INTERACT_PACKET = "ServerboundInteractPacket";
     public static final String SERVERBOUND_INTERACT_PACKET_ID = "ServerboundInteractPacket_id";
     public static final String JUMPING = "jumping";
-    public static final String BOUNDING_BOX = "boundingBox";
-    public static final String GUARDIAN_MOVE = "getGuardianATargetMethod";
+    public static final String GUARDIAN_MOVE = "setMoving";
 
     static {
         // Version 1.21
@@ -38,8 +37,6 @@ public class MappingRegistry {
         addMapping(SERVERBOUND_INTERACT_PACKET, BukkitVersion.v1_21, MappingType.SPIGOT, "PacketPlayInUseEntity");
         addMapping(SERVERBOUND_INTERACT_PACKET_ID, BukkitVersion.v1_21, MappingType.MOJANG, "entityId");
         addMapping(SERVERBOUND_INTERACT_PACKET_ID, BukkitVersion.v1_21, MappingType.SPIGOT, "b");
-        addMapping(BOUNDING_BOX, BukkitVersion.v1_21, MappingType.MOJANG, "bb");
-        addMapping(BOUNDING_BOX, BukkitVersion.v1_21, MappingType.SPIGOT, "ba");
         addMapping(JUMPING, BukkitVersion.v1_21, MappingType.MOJANG, "jumping");
         addMapping(JUMPING, BukkitVersion.v1_21, MappingType.SPIGOT, "bB");
         addMapping(GUARDIAN_MOVE, BukkitVersion.v1_21, MappingType.MOJANG, "setMoving");
@@ -60,8 +57,6 @@ public class MappingRegistry {
         addMapping(SERVERBOUND_INTERACT_PACKET, BukkitVersion.v1_20, MappingType.SPIGOT, "PacketPlayInUseEntity");
         addMapping(SERVERBOUND_INTERACT_PACKET_ID, BukkitVersion.v1_20, MappingType.MOJANG, "entityId");
         addMapping(SERVERBOUND_INTERACT_PACKET_ID, BukkitVersion.v1_20, MappingType.SPIGOT, "b");
-        addMapping(BOUNDING_BOX, BukkitVersion.v1_20, MappingType.MOJANG, "bb");
-        addMapping(BOUNDING_BOX, BukkitVersion.v1_20, MappingType.SPIGOT, "aH");
         addMapping(JUMPING, BukkitVersion.v1_20, MappingType.MOJANG, "jumping");
         addMapping(JUMPING, BukkitVersion.v1_20, MappingType.SPIGOT, "bn");
         addMapping(GUARDIAN_MOVE, BukkitVersion.v1_20, MappingType.MOJANG, "setMoving");

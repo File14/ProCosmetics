@@ -22,8 +22,7 @@ public class Bunny implements MiniatureBehavior {
         Color color = Color.GRAY;
         CHESTPLATE_ITEM = new ItemBuilderImpl(Material.LEATHER_CHESTPLATE).setLeatherArmorColor(color).getItemStack();
         LEGGINGS_ITEM = new ItemBuilderImpl(Material.LEATHER_LEGGINGS).setLeatherArmorColor(color).getItemStack();
-        BOOTS_ITEM = new ItemBuilderImpl(Material.LEATHER_BOOTS).setLeatherArmorColor(color)
-                .getItemStack();
+        BOOTS_ITEM = new ItemBuilderImpl(Material.LEATHER_BOOTS).setLeatherArmorColor(color).getItemStack();
     }
 
     @Override
@@ -31,17 +30,17 @@ public class Bunny implements MiniatureBehavior {
     }
 
     @Override
-    public void setupEntity(CosmeticContext<MiniatureType> context, NMSEntity entity) {
-        entity.setMainHand(Heads.EGG_BASKET.getSkull());
-        entity.setChestplate(CHESTPLATE_ITEM);
-        entity.setLeggings(LEGGINGS_ITEM);
-        entity.setBoots(BOOTS_ITEM);
+    public void setupEntity(CosmeticContext<MiniatureType> context, NMSEntity nmsEntity) {
+        nmsEntity.setMainHand(Heads.EGG_BASKET.getSkull());
+        nmsEntity.setChestplate(CHESTPLATE_ITEM);
+        nmsEntity.setLeggings(LEGGINGS_ITEM);
+        nmsEntity.setBoots(BOOTS_ITEM);
     }
 
     @Override
-    public void onUpdate(CosmeticContext<MiniatureType> context, NMSEntity entity, int tick) {
+    public void onUpdate(CosmeticContext<MiniatureType> context, NMSEntity nmsEntity, int tick) {
         if (tick % 15 == 0) {
-            MathUtil.findLocationsInCircle(entity.getPreviousLocation(), 8, 0.3d, 0.0d, location ->
+            MathUtil.findLocationsInCircle(nmsEntity.getPreviousLocation(), 8, 0.3d, 0.0d, location ->
                     location.getWorld().spawnParticle(Particle.DUST,
                             location,
                             1,

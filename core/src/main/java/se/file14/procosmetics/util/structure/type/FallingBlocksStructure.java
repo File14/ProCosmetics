@@ -2,6 +2,7 @@ package se.file14.procosmetics.util.structure.type;
 
 import org.bukkit.Location;
 import org.bukkit.block.data.BlockData;
+import org.bukkit.entity.FallingBlock;
 import org.bukkit.util.Vector;
 import se.file14.procosmetics.ProCosmeticsPlugin;
 import se.file14.procosmetics.api.nms.EntityTracker;
@@ -33,8 +34,9 @@ public class FallingBlocksStructure extends Structure<NMSEntity> {
             rotate(blockData, location.getYaw());
 
             NMSEntity nmsFallingBlock = PLUGIN.getNMSManager().createFallingBlock(location.getWorld(), blockData, tracker);
-            nmsFallingBlock.setGravity(false);
-
+            if (nmsFallingBlock instanceof FallingBlock fallingBlock) {
+                fallingBlock.setGravity(false);
+            }
             location.add(vector);
             nmsFallingBlock.setPositionRotation(location);
             location.subtract(vector);
