@@ -44,8 +44,8 @@ public abstract class HikariConnectionProvider implements ConnectionProvider {
         hikariConfig.setPoolName(plugin.getName() + "-hikari");
         hikariConfig.setDriverClassName(getDriverClassName());
         hikariConfig.setJdbcUrl(buildJdbcUrl(config));
-        hikariConfig.setUsername(config.getString("storage.mysql.user"));
-        hikariConfig.setPassword(config.getString("storage.mysql.password"));
+        hikariConfig.setUsername(config.getString("storage.hikari.user"));
+        hikariConfig.setPassword(config.getString("storage.hikari.password"));
 
         configurePoolSettings(hikariConfig, config);
 
@@ -57,19 +57,19 @@ public abstract class HikariConnectionProvider implements ConnectionProvider {
     private String buildJdbcUrl(Config config) {
         return String.format("jdbc:%s://%s:%s/%s",
                 getDriverJdbcIdentifier(),
-                config.getString("storage.mysql.host"),
-                config.getInt("storage.mysql.port"),
-                config.getString("storage.mysql.database")
+                config.getString("storage.hikari.host"),
+                config.getInt("storage.hikari.port"),
+                config.getString("storage.hikari.database")
         );
     }
 
     private void configurePoolSettings(HikariConfig hikariConfig, Config config) {
-        hikariConfig.setMaximumPoolSize(config.getInt("storage.mysql.maximum_pool_size"));
-        hikariConfig.setMinimumIdle(config.getInt("storage.mysql.minimum_idle"));
-        hikariConfig.setMinimumIdle(config.getInt("storage.mysql.idle_timeout"));
-        hikariConfig.setMaxLifetime(config.getInt("storage.mysql.maximum_lifetime"));
-        hikariConfig.setKeepaliveTime(config.getInt("storage.mysql.keepalive_time"));
-        hikariConfig.setConnectionTimeout(config.getInt("storage.mysql.connection_timeout"));
+        hikariConfig.setMaximumPoolSize(config.getInt("storage.hikari.maximum_pool_size"));
+        hikariConfig.setMinimumIdle(config.getInt("storage.hikari.minimum_idle"));
+        hikariConfig.setMinimumIdle(config.getInt("storage.hikari.idle_timeout"));
+        hikariConfig.setMaxLifetime(config.getInt("storage.hikari.maximum_lifetime"));
+        hikariConfig.setKeepaliveTime(config.getInt("storage.hikari.keepalive_time"));
+        hikariConfig.setConnectionTimeout(config.getInt("storage.hikari.connection_timeout"));
     }
 
     private void configureDataSourceProperties(HikariConfig hikariConfig, Config config) {
@@ -77,7 +77,7 @@ public abstract class HikariConnectionProvider implements ConnectionProvider {
         setDefaultProperties(properties);
 
         // Override with custom properties from config
-        ConfigurationSection section = config.getConfigurationSection("storage.mysql.properties");
+        ConfigurationSection section = config.getConfigurationSection("storage.hikari.properties");
         if (section != null) {
             properties.putAll(section.getValues(false));
         }
