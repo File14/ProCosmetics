@@ -29,6 +29,9 @@ public class MenuManagerImpl implements MenuManager {
 
     public MenuManagerImpl(ProCosmeticsPlugin plugin) {
         this.plugin = plugin;
+    }
+
+    public void registerListeners() {
         plugin.getServer().getPluginManager().registerEvents(new Listeners(), plugin);
     }
 

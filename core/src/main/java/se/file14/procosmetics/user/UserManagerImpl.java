@@ -43,6 +43,9 @@ public class UserManagerImpl implements UserManager {
 
     public UserManagerImpl(ProCosmeticsPlugin plugin) {
         this.plugin = plugin;
+    }
+
+    public void registerListeners() {
         plugin.getServer().getPluginManager().registerEvents(new Listeners(), plugin);
         plugin.getServer().getScheduler().runTaskTimer(plugin, new MovementRunnable(), 1L, 1L);
     }

@@ -10,6 +10,14 @@ dependencies {
     //implementation("com.github.koca2000:NoteBlockAPI:1.6.3") temporarily disabled
     implementation("com.github.ashtton:NoteBlockAPI:78f2966ccd")
     implementation("com.zaxxer:HikariCP:7.0.2")
+    {
+        exclude(group = "com.google.code.gson", module = "gson")
+    }
+    implementation("redis.clients:jedis:7.0.0")
+    {
+        exclude(group = "com.google.code.gson", module = "gson")
+        exclude(group = "com.google.guava")
+    }
     implementation("org.bstats:bstats-bukkit:3.1.0")
     compileOnly("org.xerial:sqlite-jdbc:3.50.3.0") // Included in Spigot
 

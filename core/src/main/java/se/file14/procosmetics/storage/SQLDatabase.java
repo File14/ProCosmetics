@@ -376,7 +376,7 @@ public abstract class SQLDatabase extends DatabaseImpl {
     }
 
     @Override
-    public CompletableFuture<BooleanIntPair> addCoinsAsync(User user, int amount) {
+    public CompletableFuture<BooleanIntPair> addCoinsAsyncImpl(User user, int amount) {
         return CompletableFuture.supplyAsync(() -> {
             try (Connection connection = connectionProvider.getConnection()) {
                 try (PreparedStatement statement = connection.prepareStatement(String.format(SQL_ADD_COINS, usersTable))) {
@@ -412,7 +412,7 @@ public abstract class SQLDatabase extends DatabaseImpl {
     }
 
     @Override
-    public CompletableFuture<BooleanIntPair> removeCoinsAsync(User user, int amount) {
+    public CompletableFuture<BooleanIntPair> removeCoinsAsyncImpl(User user, int amount) {
         return CompletableFuture.supplyAsync(() -> {
             try (Connection connection = connectionProvider.getConnection()) {
                 // Remove coins
@@ -449,7 +449,7 @@ public abstract class SQLDatabase extends DatabaseImpl {
     }
 
     @Override
-    public CompletableFuture<BooleanIntPair> setCoinsAsync(User user, int amount) {
+    public CompletableFuture<BooleanIntPair> setCoinsAsyncImpl(User user, int amount) {
         return CompletableFuture.supplyAsync(() -> {
             if (amount < 0) {
                 return BooleanIntPair.of(false, user.getCoins());
@@ -490,7 +490,7 @@ public abstract class SQLDatabase extends DatabaseImpl {
     }
 
     @Override
-    public CompletableFuture<BooleanIntPair> addGadgetAmmoAsync(User user, GadgetType gadgetType, int amount) {
+    public CompletableFuture<BooleanIntPair> addGadgetAmmoAsyncImpl(User user, GadgetType gadgetType, int amount) {
         return CompletableFuture.supplyAsync(() -> {
             try (Connection connection = connectionProvider.getConnection()) {
                 try (PreparedStatement statement = connection.prepareStatement(String.format(getAddGadgetAmmo(), gadgetAmmoTable))) {
@@ -527,7 +527,7 @@ public abstract class SQLDatabase extends DatabaseImpl {
     }
 
     @Override
-    public CompletableFuture<BooleanIntPair> removeGadgetAmmoAsync(User user, GadgetType gadgetType, int amount) {
+    public CompletableFuture<BooleanIntPair> removeGadgetAmmoAsyncImpl(User user, GadgetType gadgetType, int amount) {
         return CompletableFuture.supplyAsync(() -> {
             try (Connection connection = connectionProvider.getConnection()) {
                 try (PreparedStatement statement = connection.prepareStatement(String.format(SQL_REMOVE_GADGET_AMMO, gadgetAmmoTable))) {
@@ -568,7 +568,7 @@ public abstract class SQLDatabase extends DatabaseImpl {
     }
 
     @Override
-    public CompletableFuture<BooleanIntPair> setGadgetAmmoAsync(User user, GadgetType gadgetType, int amount) {
+    public CompletableFuture<BooleanIntPair> setGadgetAmmoAsyncImpl(User user, GadgetType gadgetType, int amount) {
         return CompletableFuture.supplyAsync(() -> {
             if (amount < 0) {
                 return BooleanIntPair.of(false, user.getAmmo(gadgetType));
@@ -609,7 +609,7 @@ public abstract class SQLDatabase extends DatabaseImpl {
     }
 
     @Override
-    public CompletableFuture<BooleanIntPair> addTreasureKeysAsync(User user, TreasureChest treasureChest, int amount) {
+    public CompletableFuture<BooleanIntPair> addTreasureKeysAsyncImpl(User user, TreasureChest treasureChest, int amount) {
         return CompletableFuture.supplyAsync(() -> {
             try (Connection connection = connectionProvider.getConnection()) {
                 try (PreparedStatement statement = connection.prepareStatement(String.format(getAddTreasureKeys(), treasuresTable))) {
@@ -646,7 +646,7 @@ public abstract class SQLDatabase extends DatabaseImpl {
     }
 
     @Override
-    public CompletableFuture<BooleanIntPair> removeTreasureKeysAsync(User user, TreasureChest treasureChest, int amount) {
+    public CompletableFuture<BooleanIntPair> removeTreasureKeysAsyncImpl(User user, TreasureChest treasureChest, int amount) {
         return CompletableFuture.supplyAsync(() -> {
             try (Connection connection = connectionProvider.getConnection()) {
                 try (PreparedStatement statement = connection.prepareStatement(String.format(SQL_REMOVE_TREASURE_KEYS, treasuresTable))) {
@@ -687,7 +687,7 @@ public abstract class SQLDatabase extends DatabaseImpl {
     }
 
     @Override
-    public CompletableFuture<BooleanIntPair> setTreasureKeysAsync(User user, TreasureChest treasureChest, int amount) {
+    public CompletableFuture<BooleanIntPair> setTreasureKeysAsyncImpl(User user, TreasureChest treasureChest, int amount) {
         return CompletableFuture.supplyAsync(() -> {
             if (amount < 0) {
                 return BooleanIntPair.of(false, user.getTreasureChests(treasureChest));

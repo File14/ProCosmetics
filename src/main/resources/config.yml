@@ -85,6 +85,23 @@ storage:
     database: procosmetics
     table_prefix: "procosmetics"
 
+# Redis (optional)
+# Enables real-time visual synchronization of player data across multiple servers in your network.
+#
+# What gets synced (visual):
+# - Player coins (built-in mode only), gadget ammo, and treasure chests
+#
+# Important:
+# Redis is NOT required for multiserver setups. All data transactions remain safe without Redis.
+# This only provides instant visual synchronization for a smoother player experience.
+redis:
+  enable: false
+  host: "localhost"
+  port: 6379
+  username: ""
+  password: ""
+  ssl: false
+
 economy:
   # Choose which economy system to use for handling the cosmetic currency.
   #

@@ -19,17 +19,18 @@ import java.util.NoSuchElementException;
 
 public class PacketManager {
 
-    private final String CUSTOM_CHANNEL_NAME;
+    private final String channelName;
 
     private final ProCosmeticsPlugin plugin;
     private final List<PacketHandler> packetHandlers = new ArrayList<>();
 
     public PacketManager(ProCosmeticsPlugin plugin) {
         this.plugin = plugin;
-
-        CUSTOM_CHANNEL_NAME = plugin.getName() + "_channel";
-
+        channelName = plugin.getName() + "_channel";
         addPacketHandler(new EntityInUse(plugin));
+    }
+
+    public void registerListeners() {
         plugin.getServer().getPluginManager().registerEvents(new Listeners(), plugin);
     }
 
@@ -41,8 +42,8 @@ public class PacketManager {
         try {
             ChannelPipeline channelPipeline = plugin.getNMSManager().getNMSUtil().getChannel(player).pipeline();
 
-            if (channelPipeline.get(CUSTOM_CHANNEL_NAME) == null) {
-                channelPipeline.addBefore("packet_handler", CUSTOM_CHANNEL_NAME, new ChannelDuplexHandler() {
+            if (channelPipeline.get(channelName) == null) {
+                channelPipeline.addBefore("packet_handler", channelName, new ChannelDuplexHandler() {
                     @Override
                     public void channelRead(ChannelHandlerContext context, Object packet) throws Exception {
                         for (PacketHandler packetHandler : packetHandlers) {
@@ -68,9 +69,9 @@ public class PacketManager {
             Channel channel = plugin.getNMSManager().getNMSUtil().getChannel(player);
             ChannelPipeline channelPipeline = channel.pipeline();
 
-            if (channelPipeline.context(CUSTOM_CHANNEL_NAME) != null && channelPipeline.get(CUSTOM_CHANNEL_NAME) != null) {
+            if (channelPipeline.context(channelName) != null && channelPipeline.get(channelName) != null) {
                 channel.eventLoop().submit(() -> {
-                    channelPipeline.remove(CUSTOM_CHANNEL_NAME);
+                    channelPipeline.remove(channelName);
                 });
             }
         } catch (NoSuchElementException ignored) {

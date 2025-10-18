@@ -13,6 +13,7 @@ import se.file14.procosmetics.api.ProCosmetics;
 import se.file14.procosmetics.api.ProCosmeticsProvider;
 import se.file14.procosmetics.api.config.Config;
 import se.file14.procosmetics.api.cosmetic.registry.CategoryRegistries;
+import se.file14.procosmetics.api.cosmetic.registry.CosmeticRarityRegistry;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.command.CommandBase;
 import se.file14.procosmetics.command.SimpleCommand;
@@ -21,6 +22,7 @@ import se.file14.procosmetics.command.commands.UnsupportedCommand;
 import se.file14.procosmetics.command.commands.external.*;
 import se.file14.procosmetics.config.ConfigManagerImpl;
 import se.file14.procosmetics.cosmetic.registry.CategoryRegistriesImpl;
+import se.file14.procosmetics.cosmetic.registry.CosmeticRarityRegistryImpl;
 import se.file14.procosmetics.economy.EconomyManagerImpl;
 import se.file14.procosmetics.listener.*;
 import se.file14.procosmetics.listener.hook.cmi.CMIVanishListener;
@@ -31,7 +33,7 @@ import se.file14.procosmetics.menu.MenuManagerImpl;
 import se.file14.procosmetics.nms.NMSManagerImpl;
 import se.file14.procosmetics.packet.PacketManager;
 import se.file14.procosmetics.placeholder.PlaceholderManager;
-import se.file14.procosmetics.rarity.CosmeticRarityRegistry;
+import se.file14.procosmetics.redis.RedisManager;
 import se.file14.procosmetics.storage.DatabaseImpl;
 import se.file14.procosmetics.storage.DatabaseTypeProvider;
 import se.file14.procosmetics.treasure.TreasureChestManagerImpl;
@@ -71,13 +73,12 @@ public class ProCosmeticsPlugin extends JavaPlugin implements ProCosmetics {
     private PacketManager packetManager;
     private FakeBlockManager fakeBlockManager;
     private EconomyManagerImpl economyManager;
-    private WorldGuardManager worldGuardManager;
     private PlaceholderManager placeholderManager;
     private CommandBase commandBase;
+    private RedisManager redisManager;
     private DatabaseImpl database;
+    private WorldGuardManager worldGuardManager;
     private boolean disabling;
-
-    private CategoryRegistries categoryRegistries;
 
     @Override
     public void onLoad() {
@@ -100,12 +101,16 @@ public class ProCosmeticsPlugin extends JavaPlugin implements ProCosmetics {
         nmsManager = new NMSManagerImpl(this);
         cosmeticRarityRegistry = new CosmeticRarityRegistryImpl(this);
         categoryRegistries = new CategoryRegistriesImpl(this);
-
+        userManager = new UserManagerImpl(this);
+        treasureChestManager = new TreasureChestManagerImpl(this);
+        menuManager = new MenuManagerImpl(this);
+        packetManager = new PacketManager(this);
         fakeBlockManager = new FakeBlockManager(this);
         economyManager = new EconomyManagerImpl(this);
         placeholderManager = new PlaceholderManager(this);
         commandBase = new CommandBase(this);
 
+        initializeRedis();
         initializeDatabase();
         initializeMetrics();
         preHookPlugins();
@@ -121,25 +126,39 @@ public class ProCosmeticsPlugin extends JavaPlugin implements ProCosmetics {
             registerCommands(new UnsupportedCommand(this));
             return;
         }
-        userManager = new UserManagerImpl(this);
-        treasureChestManager = new TreasureChestManagerImpl(this);
-        menuManager = new MenuManagerImpl(this);
-        packetManager = new PacketManager(this);
-
         economyManager.hookPlugin();
-        treasureChestManager.delayLoadPlatform();
 
-        initializeListeners();
-        initializeCommands();
+        registerListeners();
+        registerCommands();
         hookPlugins();
         checkUpdate();
 
         NoteBlockAPI.initializeAPI(this);
-        ProCosmeticsProvider.register(this);
 
         userManager.loadOnlinePlayers();
+        if (redisManager != null) {
+            redisManager.registerChannels();
+        }
+        ProCosmeticsProvider.register(this);
 
         logger.info("Initialized!");
+    }
+
+    private void registerListeners() {
+        userManager.registerListeners();
+        treasureChestManager.registerListeners();
+        menuManager.registerListeners();
+        packetManager.registerListeners();
+
+        registerListeners(new BlockListener(),
+                new CosmeticItemListener(this),
+                new CosmeticListener(this),
+                new CreatureSpawnListener(),
+                new EntityListener(),
+                new FallDamageListener(this),
+                new InventoryListener(),
+                new PlayerListener(this)
+        );
     }
 
     @Override
@@ -150,12 +169,16 @@ public class ProCosmeticsPlugin extends JavaPlugin implements ProCosmetics {
         }
         disabling = true;
 
+        if (redisManager != null) {
+            redisManager.shutdown();
+        }
+
         for (User user : userManager.getAllConnected()) {
             user.clearAllCosmetics(true, false);
         }
         database.shutdown();
 
-        for (TreasureChestPlatformImpl platform : plugin.getTreasureChestManager().getPlatforms()) {
+        for (TreasureChestPlatformImpl platform : treasureChestManager.getPlatforms()) {
             platform.getHologram().despawn();
         }
         HandlerList.unregisterAll(this);
@@ -168,23 +191,17 @@ public class ProCosmeticsPlugin extends JavaPlugin implements ProCosmetics {
         NoteBlockAPI.getAPI().onDisable(this);
     }
 
+    private void initializeRedis() {
+        if (configManager.getMainConfig().getBoolean("redis.enable")) {
+            redisManager = new RedisManager(this);
+        }
+    }
+
     private void initializeDatabase() {
         database = DatabaseTypeProvider.createDatabase(plugin, configManager.getMainConfig().getString("storage.type"));
     }
 
-    private void initializeListeners() {
-        registerListeners(new BlockListener(),
-                new CosmeticItemListener(this),
-                new CosmeticListener(this),
-                new CreatureSpawnListener(),
-                new EntityListener(),
-                new FallDamageListener(this),
-                new InventoryListener(),
-                new PlayerListener(this)
-        );
-    }
-
-    private void initializeCommands() {
+    private void registerCommands() {
         commandBase.getCommands().clear();
 
         registerCommands(new CosmeticsCommand(this),
@@ -199,7 +216,7 @@ public class ProCosmeticsPlugin extends JavaPlugin implements ProCosmetics {
     private void preHookPlugins() {
         PluginManager pluginManager = getServer().getPluginManager();
 
-        if (pluginManager.getPlugin("WorldGuard") != null && plugin.getConfigManager().getMainConfig().getBoolean("world_guard.enable")) {
+        if (pluginManager.getPlugin("WorldGuard") != null && configManager.getMainConfig().getBoolean("world_guard.enable")) {
             logger.info("Hooking into WorldGuard...");
             this.worldGuardManager = new WorldGuardManager(this);
         }
@@ -236,14 +253,14 @@ public class ProCosmeticsPlugin extends JavaPlugin implements ProCosmetics {
         if (config.getBoolean("settings.enable_metrics")) {
             Metrics metrics = new Metrics(this, 6408);
             metrics.addCustomChart(new SimplePie("database", () -> database.getType()));
-            metrics.addCustomChart(new SimplePie("economy", () -> plugin.getEconomyManager().getType().getName()));
-            metrics.addCustomChart(new SimplePie("world-guard", () -> plugin.getWorldGuardManager() != null ? "Yes" : "No"));
+            metrics.addCustomChart(new SimplePie("economy", () -> economyManager.getType().getName()));
+            metrics.addCustomChart(new SimplePie("world-guard", () -> worldGuardManager != null ? "Yes" : "No"));
         }
     }
 
     private void checkUpdate() {
         if (configManager.getMainConfig().getBoolean("settings.check_updates")) {
-            getServer().getScheduler().runTaskAsynchronously(this, () -> {
+            ayncExecutor.execute(() -> {
                 try {
                     URLConnection urlConnection = URI.create("https://api.spigotmc.org/legacy/update.php?resource=49106").toURL().openConnection();
                     urlConnection.setConnectTimeout(1000);
@@ -359,12 +376,16 @@ public class ProCosmeticsPlugin extends JavaPlugin implements ProCosmetics {
         return economyManager;
     }
 
-    public WorldGuardManager getWorldGuardManager() {
-        return worldGuardManager;
-    }
-
     public PlaceholderManager getPlaceholderManager() {
         return placeholderManager;
+    }
+
+    public CommandBase getCommandBase() {
+        return commandBase;
+    }
+
+    public RedisManager getRedisManager() {
+        return redisManager;
     }
 
     @Override
@@ -372,12 +393,11 @@ public class ProCosmeticsPlugin extends JavaPlugin implements ProCosmetics {
         return database;
     }
 
-    public boolean isDisabling() {
-        return disabling;
+    public WorldGuardManager getWorldGuardManager() {
+        return worldGuardManager;
     }
 
-    @Override
-    public CategoryRegistries getCategoryRegistries() {
-        return categoryRegistries;
+    public boolean isDisabling() {
+        return disabling;
     }
 }
