@@ -5,7 +5,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import se.file14.procosmetics.api.cosmetic.registry.CosmeticCategory;
 import se.file14.procosmetics.api.locale.Translator;
-import se.file14.procosmetics.api.rarity.CosmeticRarity;
 import se.file14.procosmetics.api.treasure.loot.LootEntry;
 import se.file14.procosmetics.api.user.User;
 

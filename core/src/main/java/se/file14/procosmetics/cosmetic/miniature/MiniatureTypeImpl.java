@@ -2,11 +2,11 @@ package se.file14.procosmetics.cosmetic.miniature;
 
 import org.bukkit.inventory.ItemStack;
 import se.file14.procosmetics.ProCosmeticsPlugin;
+import se.file14.procosmetics.api.cosmetic.CosmeticRarity;
 import se.file14.procosmetics.api.cosmetic.miniature.Miniature;
 import se.file14.procosmetics.api.cosmetic.miniature.MiniatureBehavior;
 import se.file14.procosmetics.api.cosmetic.miniature.MiniatureType;
 import se.file14.procosmetics.api.cosmetic.registry.CosmeticCategory;
-import se.file14.procosmetics.api.rarity.CosmeticRarity;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.cosmetic.CosmeticTypeImpl;
 

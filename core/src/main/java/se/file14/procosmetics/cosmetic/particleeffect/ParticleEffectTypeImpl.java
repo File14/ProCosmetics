@@ -2,11 +2,11 @@ package se.file14.procosmetics.cosmetic.particleeffect;
 
 import org.bukkit.inventory.ItemStack;
 import se.file14.procosmetics.ProCosmeticsPlugin;
+import se.file14.procosmetics.api.cosmetic.CosmeticRarity;
 import se.file14.procosmetics.api.cosmetic.particleeffect.ParticleEffect;
 import se.file14.procosmetics.api.cosmetic.particleeffect.ParticleEffectBehavior;
 import se.file14.procosmetics.api.cosmetic.particleeffect.ParticleEffectType;
 import se.file14.procosmetics.api.cosmetic.registry.CosmeticCategory;
-import se.file14.procosmetics.api.rarity.CosmeticRarity;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.cosmetic.CosmeticTypeImpl;
 

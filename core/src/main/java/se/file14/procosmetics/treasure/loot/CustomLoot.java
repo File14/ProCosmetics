@@ -4,10 +4,10 @@ import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
 import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import se.file14.procosmetics.api.cosmetic.CosmeticRarity;
 import se.file14.procosmetics.api.locale.Translator;
 import se.file14.procosmetics.api.treasure.loot.LootEntry;
 import se.file14.procosmetics.api.user.User;
-import se.file14.procosmetics.rarity.CosmeticRarityImpl;
 
 import java.util.List;
 
@@ -15,14 +15,14 @@ public class CustomLoot extends LootTable<CustomLoot> implements LootEntry {
 
     private final String name;
     private final ItemStack itemStack;
-    private final CosmeticRarityImpl rarity;
+    private final CosmeticRarity rarity;
     private final List<String> commands;
 
     public CustomLoot(String key,
                       int weight,
                       String name,
                       ItemStack itemStack,
-                      CosmeticRarityImpl rarity,
+                      CosmeticRarity rarity,
                       List<String> commands) {
         super(key, weight);
         this.name = name;
@@ -66,7 +66,7 @@ public class CustomLoot extends LootTable<CustomLoot> implements LootEntry {
     }
 
     @Override
-    public CosmeticRarityImpl getRarity() {
+    public CosmeticRarity getRarity() {
         return rarity;
     }
 

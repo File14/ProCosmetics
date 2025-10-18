@@ -63,6 +63,8 @@ public class ProCosmeticsPlugin extends JavaPlugin implements ProCosmetics {
     private ConfigManagerImpl configManager;
     private LanguageManagerImpl languageManager;
     private NMSManagerImpl nmsManager;
+    private CosmeticRarityRegistryImpl cosmeticRarityRegistry;
+    private CategoryRegistriesImpl categoryRegistries;
     private UserManagerImpl userManager;
     private TreasureChestManagerImpl treasureChestManager;
     private MenuManagerImpl menuManager;
@@ -96,9 +98,7 @@ public class ProCosmeticsPlugin extends JavaPlugin implements ProCosmetics {
         configManager = new ConfigManagerImpl(this);
         languageManager = new LanguageManagerImpl(this);
         nmsManager = new NMSManagerImpl(this);
-
-        logger.info("Initializing cosmetics...");
-        CosmeticRarityRegistry.load();
+        cosmeticRarityRegistry = new CosmeticRarityRegistryImpl(this);
         categoryRegistries = new CategoryRegistriesImpl(this);
 
         fakeBlockManager = new FakeBlockManager(this);
@@ -319,6 +319,16 @@ public class ProCosmeticsPlugin extends JavaPlugin implements ProCosmetics {
     @Override
     public NMSManagerImpl getNMSManager() {
         return nmsManager;
+    }
+
+    @Override
+    public CosmeticRarityRegistry getCosmeticRarityRegistry() {
+        return cosmeticRarityRegistry;
+    }
+
+    @Override
+    public CategoryRegistries getCategoryRegistries() {
+        return categoryRegistries;
     }
 
     @Override

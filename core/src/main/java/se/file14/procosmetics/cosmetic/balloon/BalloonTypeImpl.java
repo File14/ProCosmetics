@@ -4,11 +4,11 @@ import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.ItemStack;
 import se.file14.procosmetics.ProCosmeticsPlugin;
 import se.file14.procosmetics.api.config.Config;
+import se.file14.procosmetics.api.cosmetic.CosmeticRarity;
 import se.file14.procosmetics.api.cosmetic.balloon.Balloon;
 import se.file14.procosmetics.api.cosmetic.balloon.BalloonBehavior;
 import se.file14.procosmetics.api.cosmetic.balloon.BalloonType;
 import se.file14.procosmetics.api.cosmetic.registry.CosmeticCategory;
-import se.file14.procosmetics.api.rarity.CosmeticRarity;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.cosmetic.CosmeticTypeImpl;
 

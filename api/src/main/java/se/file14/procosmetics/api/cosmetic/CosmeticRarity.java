@@ -1,4 +1,4 @@
-package se.file14.procosmetics.api.rarity;
+package se.file14.procosmetics.api.cosmetic;
 
 import org.bukkit.FireworkEffect;
 import se.file14.procosmetics.api.locale.Translator;

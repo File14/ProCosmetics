@@ -2,13 +2,15 @@ package se.file14.procosmetics.treasure.loot;
 
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
+import se.file14.procosmetics.ProCosmeticsPlugin;
+import se.file14.procosmetics.api.ProCosmetics;
+import se.file14.procosmetics.api.cosmetic.CosmeticRarity;
 import se.file14.procosmetics.api.locale.Translator;
 import se.file14.procosmetics.api.treasure.loot.LootEntry;
-import se.file14.procosmetics.rarity.CosmeticRarityImpl;
-import se.file14.procosmetics.rarity.CosmeticRarityRegistry;
 
 public class MoneyLootEntry implements LootEntry {
 
+    private static final ProCosmetics PLUGIN = ProCosmeticsPlugin.getPlugin();
     private static final ItemStack ITEM_STACK = new ItemStack(Material.SUNFLOWER);
 
     private final int amount;
@@ -27,8 +29,8 @@ public class MoneyLootEntry implements LootEntry {
     }
 
     @Override
-    public CosmeticRarityImpl getRarity() {
-        return CosmeticRarityRegistry.FALL_BACK_RARITY;
+    public CosmeticRarity getRarity() {
+        return PLUGIN.getCosmeticRarityRegistry().getFallbackRarity();
     }
 
     @Override

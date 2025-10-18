@@ -11,12 +11,11 @@ import se.file14.procosmetics.ProCosmeticsPlugin;
 import se.file14.procosmetics.api.config.Config;
 import se.file14.procosmetics.api.cosmetic.Cosmetic;
 import se.file14.procosmetics.api.cosmetic.CosmeticBehavior;
+import se.file14.procosmetics.api.cosmetic.CosmeticRarity;
 import se.file14.procosmetics.api.cosmetic.CosmeticType;
 import se.file14.procosmetics.api.cosmetic.registry.CosmeticCategory;
 import se.file14.procosmetics.api.locale.Translator;
-import se.file14.procosmetics.api.rarity.CosmeticRarity;
 import se.file14.procosmetics.api.user.User;
-import se.file14.procosmetics.rarity.CosmeticRarityRegistry;
 import se.file14.procosmetics.util.item.ItemBuilderImpl;
 
 import java.util.function.Supplier;
@@ -233,7 +232,7 @@ public abstract class CosmeticTypeImpl<T extends CosmeticType<T, B>,
             this.findable = config.getBoolean(path + "obtainable");
             this.purchasable = config.getBoolean(path + "purchasable");
             this.cost = config.getInt(path + "cost");
-            this.rarity = CosmeticRarityRegistry.getSafelyBy(config.getString(path + "rarity"));
+            this.rarity = PLUGIN.getCosmeticRarityRegistry().getSafely(config.getString(path + "rarity"));
             this.itemStack = new ItemBuilderImpl(config, path).getItemStack();
 
             return self();

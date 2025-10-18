@@ -2,11 +2,11 @@ package se.file14.procosmetics.cosmetic.deatheffect;
 
 import org.bukkit.inventory.ItemStack;
 import se.file14.procosmetics.ProCosmeticsPlugin;
+import se.file14.procosmetics.api.cosmetic.CosmeticRarity;
 import se.file14.procosmetics.api.cosmetic.deatheffect.DeathEffect;
 import se.file14.procosmetics.api.cosmetic.deatheffect.DeathEffectBehavior;
 import se.file14.procosmetics.api.cosmetic.deatheffect.DeathEffectType;
 import se.file14.procosmetics.api.cosmetic.registry.CosmeticCategory;
-import se.file14.procosmetics.api.rarity.CosmeticRarity;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.cosmetic.CosmeticTypeImpl;
 

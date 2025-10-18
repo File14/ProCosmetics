@@ -3,6 +3,7 @@ package se.file14.procosmetics.api;
 import org.bukkit.plugin.java.JavaPlugin;
 import se.file14.procosmetics.api.config.ConfigManager;
 import se.file14.procosmetics.api.cosmetic.registry.CategoryRegistries;
+import se.file14.procosmetics.api.cosmetic.registry.CosmeticRarityRegistry;
 import se.file14.procosmetics.api.economy.EconomyManager;
 import se.file14.procosmetics.api.locale.LanguageManager;
 import se.file14.procosmetics.api.menu.MenuManager;
@@ -72,6 +73,20 @@ public interface ProCosmetics {
     NMSManager getNMSManager();
 
     /**
+     * Gets the cosmetic rarity registry.
+     *
+     * @return The cosmetic rarity registry
+     */
+    CosmeticRarityRegistry getCosmeticRarityRegistry();
+
+    /**
+     * Gets the category registries containing all cosmetic categories.
+     *
+     * @return The category registries
+     */
+    CategoryRegistries getCategoryRegistries();
+
+    /**
      * Gets the treasure chest manager for loot operations.
      *
      * @return The treasure chest manager
@@ -84,13 +99,6 @@ public interface ProCosmetics {
      * @return The economy manager
      */
     EconomyManager getEconomyManager();
-
-    /**
-     * Gets the category registries containing all cosmetic categories.
-     *
-     * @return The category registries
-     */
-    CategoryRegistries getCategoryRegistries();
 
     /**
      * Gets the underlying Bukkit JavaPlugin instance.

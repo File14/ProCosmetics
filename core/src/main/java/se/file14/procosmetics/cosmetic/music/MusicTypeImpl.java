@@ -5,11 +5,11 @@ import com.xxmicloxx.NoteBlockAPI.utils.NBSDecoder;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.Nullable;
 import se.file14.procosmetics.ProCosmeticsPlugin;
+import se.file14.procosmetics.api.cosmetic.CosmeticRarity;
 import se.file14.procosmetics.api.cosmetic.music.Music;
 import se.file14.procosmetics.api.cosmetic.music.MusicBehavior;
 import se.file14.procosmetics.api.cosmetic.music.MusicType;
 import se.file14.procosmetics.api.cosmetic.registry.CosmeticCategory;
-import se.file14.procosmetics.api.rarity.CosmeticRarity;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.cosmetic.CosmeticTypeImpl;
 

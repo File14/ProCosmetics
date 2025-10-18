@@ -6,6 +6,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import se.file14.procosmetics.ProCosmeticsPlugin;
 import se.file14.procosmetics.api.config.Config;
+import se.file14.procosmetics.api.cosmetic.CosmeticRarity;
 import se.file14.procosmetics.api.cosmetic.CosmeticType;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetType;
 import se.file14.procosmetics.api.cosmetic.registry.CosmeticCategory;
@@ -15,8 +16,6 @@ import se.file14.procosmetics.api.treasure.animation.AnimationType;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.api.util.item.ItemBuilder;
 import se.file14.procosmetics.api.util.structure.StructureData;
-import se.file14.procosmetics.rarity.CosmeticRarityImpl;
-import se.file14.procosmetics.rarity.CosmeticRarityRegistry;
 import se.file14.procosmetics.treasure.loot.*;
 import se.file14.procosmetics.util.EnumUtil;
 import se.file14.procosmetics.util.item.ItemBuilderImpl;
@@ -129,7 +128,7 @@ public class TreasureChestImpl implements TreasureChest {
         if (config.getConfigurationSection(customRewardsPath) != null) {
             for (String key2 : config.getConfigurationSection(customRewardsPath).getKeys(false)) {
                 String path1 = customRewardsPath + "." + key2 + ".";
-                CosmeticRarityImpl rarity = CosmeticRarityRegistry.getSafelyBy(config.getString(path1 + "rarity"));
+                CosmeticRarity rarity = plugin.getCosmeticRarityRegistry().getSafely(config.getString(path1 + "rarity"));
                 weight = config.getInt(path1 + "weight");
 
                 if (weight > 0) {

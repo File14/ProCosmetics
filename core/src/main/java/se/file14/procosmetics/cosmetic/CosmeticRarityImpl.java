@@ -1,8 +1,8 @@
-package se.file14.procosmetics.rarity;
+package se.file14.procosmetics.cosmetic;
 
 import org.bukkit.FireworkEffect;
+import se.file14.procosmetics.api.cosmetic.CosmeticRarity;
 import se.file14.procosmetics.api.locale.Translator;
-import se.file14.procosmetics.api.rarity.CosmeticRarity;
 
 public class CosmeticRarityImpl implements CosmeticRarity {
 

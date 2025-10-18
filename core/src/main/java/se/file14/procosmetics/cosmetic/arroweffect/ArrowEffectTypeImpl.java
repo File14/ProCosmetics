@@ -2,11 +2,11 @@ package se.file14.procosmetics.cosmetic.arroweffect;
 
 import org.bukkit.inventory.ItemStack;
 import se.file14.procosmetics.ProCosmeticsPlugin;
+import se.file14.procosmetics.api.cosmetic.CosmeticRarity;
 import se.file14.procosmetics.api.cosmetic.arroweffect.ArrowEffect;
 import se.file14.procosmetics.api.cosmetic.arroweffect.ArrowEffectBehavior;
 import se.file14.procosmetics.api.cosmetic.arroweffect.ArrowEffectType;
 import se.file14.procosmetics.api.cosmetic.registry.CosmeticCategory;
-import se.file14.procosmetics.api.rarity.CosmeticRarity;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.cosmetic.CosmeticTypeImpl;
 

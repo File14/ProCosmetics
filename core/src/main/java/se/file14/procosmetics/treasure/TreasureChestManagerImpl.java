@@ -5,9 +5,11 @@ import org.bukkit.block.Block;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.event.server.ServerLoadEvent;
 import se.file14.procosmetics.ProCosmeticsPlugin;
 import se.file14.procosmetics.api.config.Config;
 import se.file14.procosmetics.api.treasure.TreasureChest;
@@ -30,29 +32,22 @@ import java.util.logging.Level;
 public class TreasureChestManagerImpl implements TreasureChestManager {
 
     private final ProCosmeticsPlugin plugin;
+    private final Config treasureChestsConfig;
+    private final Config platformsConfig;
     private final Broadcaster openingTreasureBroadcaster;
     private final LootBroadcaster lootBroadcaster;
     private final List<TreasureChest> treasuresChests = new ArrayList<>();
     private final List<TreasureChestPlatformImpl> platforms = new ArrayList<>();
 
-    private final Config treasureChestsConfig;
-    private final Config platformsConfig;
-
     public TreasureChestManagerImpl(ProCosmeticsPlugin plugin) {
         this.plugin = plugin;
 
-        this.openingTreasureBroadcaster = new Broadcaster(
-                plugin.getConfigManager().getConfig("treasure_chests"),
-                "broadcast_opening_treasure"
-        );
-        this.lootBroadcaster = new LootBroadcaster(
-                plugin.getConfigManager().getConfig("treasure_chests"),
-                "broadcast_loot"
-        );
-        treasureChestsConfig = plugin.getConfigManager().register("treasure_chests");
-        platformsConfig = plugin.getConfigManager().register("data/treasure_chest_platforms");
+        this.treasureChestsConfig = plugin.getConfigManager().register("treasure_chests");
+        this.platformsConfig = plugin.getConfigManager().register("data/treasure_chest_platforms");
+        this.openingTreasureBroadcaster = new Broadcaster(treasureChestsConfig, "broadcast_opening_treasure");
+        this.lootBroadcaster = new LootBroadcaster(plugin, treasureChestsConfig, "broadcast_loot");
+
         loadTreasureChests();
-        plugin.getServer().getPluginManager().registerEvents(new Listeners(), plugin);
     }
 
     private void loadTreasureChests() {
@@ -64,9 +59,8 @@ public class TreasureChestManagerImpl implements TreasureChestManager {
         }
     }
 
-    public void delayLoadPlatform() {
-        // We schedule to load them after all world-plugins are loaded!
-        plugin.getServer().getScheduler().runTaskLater(plugin, this::loadPlatforms, 20L);
+    public void registerListeners() {
+        plugin.getServer().getPluginManager().registerEvents(new Listeners(), plugin);
     }
 
     private void loadPlatforms() {
@@ -157,6 +151,11 @@ public class TreasureChestManagerImpl implements TreasureChestManager {
     }
 
     private final class Listeners implements Listener {
+
+        @EventHandler(priority = EventPriority.HIGHEST)
+        public void onServerStartUp(ServerLoadEvent event) {
+            loadPlatforms();
+        }
 
         @EventHandler
         public void onChestClick(PlayerInteractEvent event) {

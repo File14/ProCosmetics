@@ -3,11 +3,11 @@ package se.file14.procosmetics.cosmetic.mount;
 import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.ItemStack;
 import se.file14.procosmetics.ProCosmeticsPlugin;
+import se.file14.procosmetics.api.cosmetic.CosmeticRarity;
 import se.file14.procosmetics.api.cosmetic.mount.Mount;
 import se.file14.procosmetics.api.cosmetic.mount.MountBehavior;
 import se.file14.procosmetics.api.cosmetic.mount.MountType;
 import se.file14.procosmetics.api.cosmetic.registry.CosmeticCategory;
-import se.file14.procosmetics.api.rarity.CosmeticRarity;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.cosmetic.CosmeticTypeImpl;
 
