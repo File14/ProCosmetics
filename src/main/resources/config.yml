@@ -85,11 +85,31 @@ storage:
     database: procosmetics
     table_prefix: "procosmetics"
 
+  mongodb:
+    # MongoDB connection URI
+    # Format: mongodb://[username:password@]host[:port]/database[?options]
+    #
+    # Examples:
+    # - Local: "mongodb://localhost:27017/procosmetics"
+    # - With auth: "mongodb://username:password@localhost:27017/procosmetics?authSource=admin"
+    # - MongoDB Atlas: "mongodb+srv://user:pass@cluster.mongodb.net/procosmetics?retryWrites=true&w=majority"
+    # - Replica Set: "mongodb://host1:27017,host2:27017/procosmetics?replicaSet=myReplicaSet"
+    #
+    # For more URI configuration options, see:
+    # https://www.mongodb.com/docs/manual/reference/connection-string/
+    uri: "mongodb://username:password@localhost:27017/procosmetics?authSource=admin"
+
+    # Collection prefix allows multiple servers to share the same database
+    # Change this if you want to use different collections for different servers.
+    collection_prefix: "procosmetics"
+
 # Redis (optional)
 # Enables real-time visual synchronization of player data across multiple servers in your network.
 #
 # What gets synced (visual):
-# - Player coins (built-in mode only), gadget ammo, and treasure chests
+# - Player coins (built-in mode only)
+# - Gadget ammo
+# - Treasure Chests
 #
 # Important:
 # Redis is NOT required for multiserver setups. All data transactions remain safe without Redis.

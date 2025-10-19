@@ -9,6 +9,7 @@ dependencies {
     // Runtime libraries (will be shaded)
     //implementation("com.github.koca2000:NoteBlockAPI:1.6.3") temporarily disabled
     implementation("com.github.ashtton:NoteBlockAPI:78f2966ccd")
+    implementation("org.mongodb:mongodb-driver-sync:5.6.1")
     implementation("com.zaxxer:HikariCP:7.0.2")
     {
         exclude(group = "com.google.code.gson", module = "gson")

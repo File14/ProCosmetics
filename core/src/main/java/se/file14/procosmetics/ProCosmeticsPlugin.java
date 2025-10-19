@@ -14,6 +14,7 @@ import se.file14.procosmetics.api.ProCosmeticsProvider;
 import se.file14.procosmetics.api.config.Config;
 import se.file14.procosmetics.api.cosmetic.registry.CategoryRegistries;
 import se.file14.procosmetics.api.cosmetic.registry.CosmeticRarityRegistry;
+import se.file14.procosmetics.api.storage.Database;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.command.CommandBase;
 import se.file14.procosmetics.command.SimpleCommand;
@@ -34,7 +35,6 @@ import se.file14.procosmetics.nms.NMSManagerImpl;
 import se.file14.procosmetics.packet.PacketManager;
 import se.file14.procosmetics.placeholder.PlaceholderManager;
 import se.file14.procosmetics.redis.RedisManager;
-import se.file14.procosmetics.storage.DatabaseImpl;
 import se.file14.procosmetics.storage.DatabaseTypeProvider;
 import se.file14.procosmetics.treasure.TreasureChestManagerImpl;
 import se.file14.procosmetics.treasure.TreasureChestPlatformImpl;
@@ -76,7 +76,7 @@ public class ProCosmeticsPlugin extends JavaPlugin implements ProCosmetics {
     private PlaceholderManager placeholderManager;
     private CommandBase commandBase;
     private RedisManager redisManager;
-    private DatabaseImpl database;
+    private Database database;
     private WorldGuardManager worldGuardManager;
     private boolean disabling;
 
@@ -389,7 +389,7 @@ public class ProCosmeticsPlugin extends JavaPlugin implements ProCosmetics {
     }
 
     @Override
-    public DatabaseImpl getDatabase() {
+    public Database getDatabase() {
         return database;
     }
 

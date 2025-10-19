@@ -1,10 +1,8 @@
 package se.file14.procosmetics.storage;
 
 import se.file14.procosmetics.ProCosmeticsPlugin;
-import se.file14.procosmetics.storage.database.MariaDbDatabase;
-import se.file14.procosmetics.storage.database.MysqlDatabase;
-import se.file14.procosmetics.storage.database.PostgresqlDatabase;
-import se.file14.procosmetics.storage.database.SqliteDatabase;
+import se.file14.procosmetics.api.storage.Database;
+import se.file14.procosmetics.storage.database.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,16 +11,17 @@ import java.util.function.Function;
 
 public class DatabaseTypeProvider {
 
-    private static final Map<String, Function<ProCosmeticsPlugin, SQLDatabase>> DATABASE_PROVIDERS = new HashMap<>();
+    private static final Map<String, Function<ProCosmeticsPlugin, Database>> DATABASE_PROVIDERS = new HashMap<>();
 
     static {
         register("mysql", MysqlDatabase::new);
         register("mariadb", MariaDbDatabase::new);
         register("postgresql", PostgresqlDatabase::new);
         register("sqlite", SqliteDatabase::new);
+        register("mongodb", MongoDbDatabase::new);
     }
 
-    public static SQLDatabase createDatabase(ProCosmeticsPlugin plugin, String databaseType) {
+    public static Database createDatabase(ProCosmeticsPlugin plugin, String databaseType) {
         if (plugin == null) {
             throw new IllegalArgumentException("Plugin cannot be null");
         }
@@ -30,7 +29,7 @@ public class DatabaseTypeProvider {
             throw new IllegalArgumentException("Database type cannot be null or empty");
         }
         String normalizedType = databaseType.toLowerCase().trim();
-        Function<ProCosmeticsPlugin, SQLDatabase> provider = DATABASE_PROVIDERS.get(normalizedType);
+        Function<ProCosmeticsPlugin, Database> provider = DATABASE_PROVIDERS.get(normalizedType);
 
         if (provider == null) {
             throw new IllegalArgumentException(String.format("Unsupported database type: %s. Supported types: %s", databaseType, getSupportedTypes()));
@@ -38,7 +37,7 @@ public class DatabaseTypeProvider {
         return provider.apply(plugin);
     }
 
-    public static void register(String databaseType, Function<ProCosmeticsPlugin, SQLDatabase> databaseProvider) {
+    public static void register(String databaseType, Function<ProCosmeticsPlugin, Database> databaseProvider) {
         if (databaseType == null || databaseType.trim().isEmpty()) {
             throw new IllegalArgumentException("Database type cannot be null or empty");
         }
