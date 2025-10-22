@@ -288,7 +288,7 @@ public abstract class SQLDatabase extends DatabaseImpl {
     }
 
     @Override
-    public CompletableFuture<Boolean> equipCosmeticAsync(User user, CosmeticType<?, ?> cosmeticType) {
+    public CompletableFuture<Boolean> saveEquippedCosmeticAsync(User user, CosmeticType<?, ?> cosmeticType) {
         // Skip the music category
         if (cosmeticType.getCategory() == plugin.getCategoryRegistries().music()) {
             return CompletableFuture.completedFuture(true);
@@ -310,7 +310,7 @@ public abstract class SQLDatabase extends DatabaseImpl {
     }
 
     @Override
-    public CompletableFuture<Boolean> unequipCosmeticAsync(User user, CosmeticCategory<?, ?, ?> category) {
+    public CompletableFuture<Boolean> removeEquippedCosmeticAsync(User user, CosmeticCategory<?, ?, ?> category) {
         // Skip the music category
         if (category == plugin.getCategoryRegistries().music()) {
             return CompletableFuture.completedFuture(true);

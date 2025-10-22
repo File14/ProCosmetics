@@ -39,11 +39,19 @@ public final class ProCosmeticsProvider {
         return plugin;
     }
 
+    /**
+     * Registers the active ProCosmetics API instance.
+     *
+     * @param plugin the active {@link ProCosmetics} instance
+     */
     @ApiStatus.Internal
     public static void register(ProCosmetics plugin) {
         ProCosmeticsProvider.plugin = plugin;
     }
 
+    /**
+     * Unregisters the ProCosmetics API instance.
+     */
     @ApiStatus.Internal
     public static void unregister() {
         plugin = null;

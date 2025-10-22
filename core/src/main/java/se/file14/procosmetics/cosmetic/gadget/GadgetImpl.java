@@ -20,7 +20,7 @@ import se.file14.procosmetics.ProCosmeticsPlugin;
 import se.file14.procosmetics.api.cosmetic.gadget.Gadget;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetBehavior;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetType;
-import se.file14.procosmetics.api.event.PlayerUseGadgetEvent;
+import se.file14.procosmetics.api.event.PlayerPreUseGadgetEvent;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.api.util.item.ItemBuilder;
 import se.file14.procosmetics.cosmetic.CosmeticImpl;
@@ -122,7 +122,7 @@ public class GadgetImpl extends CosmeticImpl<GadgetType, GadgetBehavior> impleme
             user.sendMessage(user.translate("cosmetic.equip.deny.space"));
             return false;
         }
-        PlayerUseGadgetEvent event = new PlayerUseGadgetEvent(user, player, this);
+        PlayerPreUseGadgetEvent event = new PlayerPreUseGadgetEvent(user, player, this);
         plugin.getServer().getPluginManager().callEvent(event);
 
         if (event.isCancelled()) {

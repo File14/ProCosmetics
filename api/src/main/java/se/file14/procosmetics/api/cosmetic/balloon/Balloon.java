@@ -22,7 +22,6 @@ public interface Balloon extends Cosmetic<BalloonType, BalloonBehavior> {
 
     /**
      * Gets the NMS entity representing the balloon itself.
-     * This is the main floating entity that appears above the player.
      *
      * @return the NMS entity for the balloon
      */

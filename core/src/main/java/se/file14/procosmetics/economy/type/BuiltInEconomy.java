@@ -2,7 +2,7 @@ package se.file14.procosmetics.economy.type;
 
 import it.unimi.dsi.fastutil.booleans.BooleanIntPair;
 import se.file14.procosmetics.api.ProCosmetics;
-import se.file14.procosmetics.api.economy.EconomyFailureException;
+import se.file14.procosmetics.api.economy.EconomyHookException;
 import se.file14.procosmetics.api.economy.EconomyProvider;
 import se.file14.procosmetics.api.user.User;
 
@@ -22,7 +22,7 @@ public class BuiltInEconomy implements EconomyProvider {
     }
 
     @Override
-    public void hook(ProCosmetics plugin) throws EconomyFailureException {
+    public void hook(ProCosmetics plugin) throws EconomyHookException {
     }
 
     @Override

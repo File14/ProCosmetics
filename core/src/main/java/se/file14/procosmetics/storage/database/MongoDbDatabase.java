@@ -263,7 +263,7 @@ public class MongoDbDatabase extends DatabaseImpl {
     }
 
     @Override
-    public CompletableFuture<Boolean> equipCosmeticAsync(User user, CosmeticType<?, ?> cosmeticType) {
+    public CompletableFuture<Boolean> saveEquippedCosmeticAsync(User user, CosmeticType<?, ?> cosmeticType) {
         if (cosmeticType.getCategory() == plugin.getCategoryRegistries().music()) {
             return CompletableFuture.completedFuture(true);
         }
@@ -296,7 +296,7 @@ public class MongoDbDatabase extends DatabaseImpl {
     }
 
     @Override
-    public CompletableFuture<Boolean> unequipCosmeticAsync(User user, CosmeticCategory<?, ?, ?> category) {
+    public CompletableFuture<Boolean> removeEquippedCosmeticAsync(User user, CosmeticCategory<?, ?, ?> category) {
         if (category == plugin.getCategoryRegistries().music()) {
             return CompletableFuture.completedFuture(true);
         }

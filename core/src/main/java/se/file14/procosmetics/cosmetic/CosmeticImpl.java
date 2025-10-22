@@ -107,7 +107,7 @@ public abstract class CosmeticImpl<T extends CosmeticType<T, B>,
         pluginManager.callEvent(new PlayerEquipCosmeticEvent(user, player, cosmeticType));
 
         if (saveToDatabase) {
-            plugin.getDatabase().equipCosmeticAsync(user, cosmeticType);
+            plugin.getDatabase().saveEquippedCosmeticAsync(user, cosmeticType);
         }
     }
 
@@ -144,7 +144,7 @@ public abstract class CosmeticImpl<T extends CosmeticType<T, B>,
         equipped = false;
 
         if (saveToDatabase) {
-            plugin.getDatabase().unequipCosmeticAsync(user, cosmeticType.getCategory());
+            plugin.getDatabase().removeEquippedCosmeticAsync(user, cosmeticType.getCategory());
         }
     }
 

@@ -84,6 +84,11 @@ public interface EntityTracker {
      */
     void addViewer(Player player);
 
+    /**
+     * Adds multiple viewers to this tracker at once.
+     *
+     * @param player the collection of players to add as viewers
+     */
     @ApiStatus.Internal
     void addViewers(Collection<Player> player);
 
@@ -94,6 +99,11 @@ public interface EntityTracker {
      */
     void removeViewer(Player player);
 
+    /**
+     * Removes multiple viewers from this tracker at once.
+     *
+     * @param player the collection of players to remove as viewers
+     */
     @ApiStatus.Internal
     void removeViewers(Collection<Player> player);
 
@@ -309,4 +319,3 @@ public interface EntityTracker {
         EntityTracker build();
     }
 }
-

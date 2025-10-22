@@ -54,6 +54,11 @@ public interface Menu {
      */
     void clear();
 
+    /**
+     * Gets the item used to fill empty inventory slots, if any.
+     *
+     * @return the {@link ItemStack} used for empty slots, or {@code null} if none is set
+     */
     @Nullable
     ItemStack getFillEmptySlotsItem();
 

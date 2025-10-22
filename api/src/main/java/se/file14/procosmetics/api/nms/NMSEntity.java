@@ -285,7 +285,9 @@ public interface NMSEntity {
     /**
      * Sets the entity's velocity.
      *
-     * @param x, y, z The velocity components
+     * @param x the X-axis velocity component
+     * @param y the Y-axis velocity component
+     * @param z the Z-axis velocity component
      */
     void setVelocity(double x, double y, double z);
 

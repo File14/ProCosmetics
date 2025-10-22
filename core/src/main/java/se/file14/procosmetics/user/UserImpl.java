@@ -365,6 +365,6 @@ public class UserImpl implements User {
 
     @Override
     public String toString() {
-        return toDisplayString();
+        return getDebugName();
     }
 }

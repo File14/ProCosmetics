@@ -8,19 +8,19 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 /**
- * Represents an entity that can provide translation services
+ * Represents an entity that can provide translation services.
  */
 public interface Translator {
 
     /**
-     * Get the locale for this translation provider
+     * Get the locale for this translation provider.
      *
      * @return the locale string (e.g., "en_us")
      */
     String getLocale();
 
     /**
-     * Translate a key to a component
+     * Translate a key to a component.
      *
      * @param key       the translation key
      * @param style     optional style to apply
@@ -30,7 +30,7 @@ public interface Translator {
     Component translate(String key, @Nullable Style style, TagResolver... resolvers);
 
     /**
-     * Translate a key to a component with no style
+     * Translate a key to a component with no style.
      *
      * @param key       the translation key
      * @param resolvers tag resolvers for placeholders
@@ -41,7 +41,7 @@ public interface Translator {
     }
 
     /**
-     * Translate a translatable object
+     * Translate a translatable object.
      *
      * @param translatable the translatable object
      * @return the translated component
@@ -49,7 +49,7 @@ public interface Translator {
     Component translate(Translatable translatable);
 
     /**
-     * Translate a key to a list of components
+     * Translate a key to a list of components.
      *
      * @param key       the translation key
      * @param style     optional style to apply
@@ -59,7 +59,7 @@ public interface Translator {
     List<Component> translateList(String key, @Nullable Style style, TagResolver... resolvers);
 
     /**
-     * Translate a key to a list of components with no style
+     * Translate a key to a list of components with no style.
      *
      * @param key       the translation key
      * @param resolvers tag resolvers for placeholders
@@ -70,7 +70,7 @@ public interface Translator {
     }
 
     /**
-     * Translate a translatable object to a list of components
+     * Translate a translatable object to a list of components.
      *
      * @param translatable the translatable object
      * @return the translated component list
@@ -78,7 +78,7 @@ public interface Translator {
     List<Component> translateList(Translatable translatable);
 
     /**
-     * Translate a key to a raw string
+     * Translate a key to a raw string.
      *
      * @param key the translation key
      * @return the translated string
@@ -86,7 +86,7 @@ public interface Translator {
     String translateRaw(String key);
 
     /**
-     * Translate a key to a list of raw strings
+     * Translate a key to a list of raw strings.
      *
      * @param key the translation key
      * @return the translated string list

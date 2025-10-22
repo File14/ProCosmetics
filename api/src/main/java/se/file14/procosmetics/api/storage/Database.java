@@ -138,9 +138,32 @@ public interface Database {
         return CompletableFuture.runAsync(() -> updateName(user, name));
     }
 
-    CompletableFuture<Boolean> equipCosmeticAsync(User user, CosmeticType<?, ?> cosmeticType);
+    /**
+     * Updates the equipped cosmetic entry for a user in the database asynchronously.
+     * <p>
+     * This method does not directly equip the cosmetic in-game, it only saves the user's
+     * currently equipped cosmetic for the given category in persistent storage.
+     * Any previously equipped cosmetic in the same category is automatically replaced.
+     *
+     * @param user         The user whose equipped cosmetic should be updated
+     * @param cosmeticType The cosmetic type to store as equipped
+     * @return A {@link CompletableFuture} that completes with {@code true} if the operation succeeded,
+     * or {@code false} otherwise
+     */
+    CompletableFuture<Boolean> saveEquippedCosmeticAsync(User user, CosmeticType<?, ?> cosmeticType);
 
-    CompletableFuture<Boolean> unequipCosmeticAsync(User user, CosmeticCategory<?, ?, ?> category);
+    /**
+     * Removes the equipped cosmetic entry for a user in the specified category from the database asynchronously.
+     * <p>
+     * This method does not directly unequip the cosmetic in-game, it only removes the stored
+     * "equipped" record from persistent storage.
+     *
+     * @param user     The user whose equipped cosmetic should be cleared
+     * @param category The cosmetic category to clear
+     * @return A {@link CompletableFuture} that completes with {@code true} if the operation succeeded,
+     * or {@code false} otherwise
+     */
+    CompletableFuture<Boolean> removeEquippedCosmeticAsync(User user, CosmeticCategory<?, ?, ?> category);
 
     CompletableFuture<Boolean> setSelfViewMorphAsync(User user, boolean enabled);
 

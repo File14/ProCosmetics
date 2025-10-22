@@ -1,39 +1,36 @@
 package se.file14.procosmetics.api.event;
 
 import org.bukkit.entity.Player;
-import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 import org.jetbrains.annotations.ApiStatus;
-import se.file14.procosmetics.api.cosmetic.CosmeticType;
+import se.file14.procosmetics.api.treasure.TreasureChest;
 import se.file14.procosmetics.api.user.User;
 
 import javax.annotation.Nonnull;
 
 /**
- * Called when a player attempts to equip a cosmetic before the
- * equip action is actually applied.
+ * Called when a player purchases a treasure chest.
  */
-public class PlayerPreEquipCosmeticEvent extends Event implements Cancellable {
+public class PlayerPurchaseTreasureChestEvent extends Event {
 
     private static final HandlerList HANDLER_LIST = new HandlerList();
     private final User user;
     private final Player player;
-    private final CosmeticType<?, ?> cosmeticType;
-    private boolean cancelled;
+    private final TreasureChest treasureChest;
 
     /**
-     * Constructs a new {@link PlayerPreEquipCosmeticEvent}.
+     * Constructs a new {@link PlayerPurchaseTreasureChestEvent}.
      *
-     * @param user         the user associated with this event
-     * @param player       the Bukkit player equipping the cosmetic
-     * @param cosmeticType the cosmetic type being equipped
+     * @param user          the user associated with the purchase
+     * @param player        the Bukkit player who made the purchase
+     * @param treasureChest the type of treasure chest that was purchased
      */
     @ApiStatus.Internal
-    public PlayerPreEquipCosmeticEvent(User user, Player player, CosmeticType<?, ?> cosmeticType) {
+    public PlayerPurchaseTreasureChestEvent(User user, Player player, TreasureChest treasureChest) {
         this.user = user;
         this.player = player;
-        this.cosmeticType = cosmeticType;
+        this.treasureChest = treasureChest;
     }
 
     /**
@@ -50,28 +47,17 @@ public class PlayerPreEquipCosmeticEvent extends Event implements Cancellable {
      *
      * @return the {@link Player} instance
      */
-
     public Player getPlayer() {
         return player;
     }
 
     /**
-     * Gets the cosmetic type for this event.
+     * Gets the treasure chest for this event.
      *
-     * @return the {@link CosmeticType} instance
+     * @return the {@link TreasureChest} instance
      */
-    public CosmeticType<?, ?> getCosmeticType() {
-        return cosmeticType;
-    }
-
-    @Override
-    public boolean isCancelled() {
-        return cancelled;
-    }
-
-    @Override
-    public void setCancelled(boolean cancelled) {
-        this.cancelled = cancelled;
+    public TreasureChest getTreasureChest() {
+        return treasureChest;
     }
 
     @Nonnull

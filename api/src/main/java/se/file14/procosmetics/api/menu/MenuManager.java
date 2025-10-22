@@ -10,6 +10,11 @@ import org.jetbrains.annotations.Nullable;
  */
 public interface MenuManager {
 
+    /**
+     * Registers a menu instance for internal tracking.
+     *
+     * @param menu the {@link Menu} instance to register
+     */
     @ApiStatus.Internal
     void register(Menu menu);
 

@@ -18,7 +18,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 import se.file14.procosmetics.api.ProCosmetics;
 import se.file14.procosmetics.api.cosmetic.CosmeticRarity;
-import se.file14.procosmetics.api.event.PlayerOpenTreasureEvent;
+import se.file14.procosmetics.api.event.PlayerOpenTreasureChestEvent;
 import se.file14.procosmetics.api.nms.NMSEntity;
 import se.file14.procosmetics.api.treasure.TreasureChest;
 import se.file14.procosmetics.api.treasure.TreasureChestPlatform;
@@ -91,7 +91,7 @@ public abstract class TreasureChestAnimation extends BukkitRunnable implements L
                 DEFAULT_TIMES
         );
         Server server = plugin.getJavaPlugin().getServer();
-        server.getPluginManager().callEvent(new PlayerOpenTreasureEvent(user, player, treasureChest, platform.getCenter().clone()));
+        server.getPluginManager().callEvent(new PlayerOpenTreasureChestEvent(user, player, treasureChest));
         server.getPluginManager().registerEvents(this, plugin.getJavaPlugin());
         server.getLogger().log(Level.INFO, user + " is opening a " + treasureChest.getKey() + " treasure chest.");
         runTaskTimer(plugin.getJavaPlugin(), 0L, 1L);

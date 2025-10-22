@@ -2,6 +2,9 @@ package se.file14.procosmetics.api.cosmetic.deatheffect;
 
 import se.file14.procosmetics.api.cosmetic.CosmeticType;
 
+/**
+ * Represents a type of death effect cosmetic.
+ */
 public interface DeathEffectType extends CosmeticType<DeathEffectType, DeathEffectBehavior> {
 
     /**

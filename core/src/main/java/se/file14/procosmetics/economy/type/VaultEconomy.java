@@ -6,7 +6,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import se.file14.procosmetics.api.ProCosmetics;
-import se.file14.procosmetics.api.economy.EconomyFailureException;
+import se.file14.procosmetics.api.economy.EconomyHookException;
 import se.file14.procosmetics.api.economy.EconomyProvider;
 import se.file14.procosmetics.api.user.User;
 
@@ -22,11 +22,11 @@ public class VaultEconomy implements EconomyProvider {
     }
 
     @Override
-    public void hook(ProCosmetics plugin) throws EconomyFailureException {
+    public void hook(ProCosmetics plugin) throws EconomyHookException {
         RegisteredServiceProvider<Economy> ecoProvider = plugin.getJavaPlugin().getServer().getServicesManager().getRegistration(Economy.class);
 
         if (ecoProvider == null) {
-            throw new EconomyFailureException("Unable to detect an economy-provider to Vault! Using the built-in economy system for now.");
+            throw new EconomyHookException("Unable to detect an economy-provider to Vault! Using the built-in economy system for now.");
         }
         economy = ecoProvider.getProvider();
     }

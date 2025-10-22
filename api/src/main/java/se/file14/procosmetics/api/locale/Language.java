@@ -38,6 +38,12 @@ public interface Language {
     @Nullable
     Translation getTranslation(String key);
 
+    /**
+     * Set the translation strings for a given key.
+     *
+     * @param key     The translation key
+     * @param strings The list of translation lines
+     */
     @ApiStatus.Internal
     void setStrings(String key, List<String> strings);
 
@@ -81,6 +87,11 @@ public interface Language {
          */
         List<String> getStringList();
 
+        /**
+         * Sets a raw string list of this translation.
+         *
+         * @param strings The new list of translation strings
+         */
         @ApiStatus.Internal
         void setStringList(List<String> strings);
 

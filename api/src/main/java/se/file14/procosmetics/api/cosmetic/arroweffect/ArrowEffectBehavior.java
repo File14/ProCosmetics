@@ -4,10 +4,16 @@ import org.bukkit.Location;
 import se.file14.procosmetics.api.cosmetic.CosmeticBehavior;
 import se.file14.procosmetics.api.cosmetic.CosmeticContext;
 
+/**
+ * Defines the behavior for arrow effect cosmetics.
+ *
+ * @see CosmeticBehavior
+ * @see ArrowEffectType
+ */
 public interface ArrowEffectBehavior extends CosmeticBehavior<ArrowEffectType> {
 
     /**
-     * Called when the arrow is in flight
+     * Called every tick when the arrow is in flight.
      *
      * @param context  the context containing information about the arrow effect
      * @param location the current location of the arrow

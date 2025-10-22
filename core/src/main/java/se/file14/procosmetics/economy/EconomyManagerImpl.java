@@ -1,7 +1,7 @@
 package se.file14.procosmetics.economy;
 
 import se.file14.procosmetics.ProCosmeticsPlugin;
-import se.file14.procosmetics.api.economy.EconomyFailureException;
+import se.file14.procosmetics.api.economy.EconomyHookException;
 import se.file14.procosmetics.api.economy.EconomyManager;
 import se.file14.procosmetics.api.economy.EconomyProvider;
 
@@ -51,7 +51,7 @@ public class EconomyManagerImpl implements EconomyManager {
     private void hook(int attempt) {
         try {
             economy.hook(plugin);
-        } catch (EconomyFailureException e) {
+        } catch (EconomyHookException e) {
             if (attempt < MAX_ATTEMPTS) {
                 plugin.getServer().getScheduler().runTaskLater(plugin, () -> hook(attempt + 1), 10L);
             } else {

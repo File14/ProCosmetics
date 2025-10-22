@@ -12,9 +12,17 @@ import se.file14.procosmetics.api.nms.NMSEntity;
  */
 public interface Mount extends Cosmetic<MountType, MountBehavior> {
 
+    /**
+     * Spawns the mount.
+     */
     @ApiStatus.Internal
     void spawn();
 
+    /**
+     * Spawns the mount at the specified location.
+     *
+     * @param location the world location where the mount should be spawned
+     */
     @ApiStatus.Internal
     void spawn(Location location);
 

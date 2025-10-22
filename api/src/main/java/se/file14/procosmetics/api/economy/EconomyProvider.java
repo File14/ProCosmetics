@@ -25,9 +25,9 @@ public interface EconomyProvider {
      * Initializes the economy provider and establishes connection to the underlying economy system.
      *
      * @param plugin the ProCosmetics plugin instance
-     * @throws EconomyFailureException if the economy system cannot be hooked
+     * @throws EconomyHookException if the economy system cannot be hooked
      */
-    void hook(ProCosmetics plugin) throws EconomyFailureException;
+    void hook(ProCosmetics plugin) throws EconomyHookException;
 
     /**
      * Gets the current coin balance for a user (synchronous).
@@ -50,8 +50,23 @@ public interface EconomyProvider {
         return getCoins(user) >= amount;
     }
 
+    /**
+     * Gets the user's current coin balance asynchronously.
+     *
+     * @param user the user to get the balance for
+     * @return a {@link CompletableFuture} resolving to a {@link BooleanIntPair}
+     * containing the success status and balance value
+     */
     CompletableFuture<BooleanIntPair> getCoinsAsync(User user);
 
+    /**
+     * Checks asynchronously whether a user has at least the specified number of coins.
+     *
+     * @param user   the user to check
+     * @param amount the required minimum amount
+     * @return a {@link CompletableFuture} resolving to {@code true} if the user has enough coins,
+     * otherwise {@code false}
+     */
     default CompletableFuture<Boolean> hasCoinsAsync(User user, int amount) {
         return getCoinsAsync(user).thenApply(result ->
                 result.leftBoolean() && result.rightInt() >= amount);
@@ -80,7 +95,21 @@ public interface EconomyProvider {
      */
     CompletableFuture<Boolean> addCoinsAsync(User user, int amount);
 
+    /**
+     * Sets a user's coin balance to a specific value asynchronously.
+     *
+     * @param user   the user whose balance should be modified
+     * @param amount the new balance amount
+     * @return a {@link CompletableFuture} resolving to {@code true} if the operation succeeded
+     */
     CompletableFuture<Boolean> setCoinsAsync(User user, int amount);
 
+    /**
+     * Removes coins from a user's balance asynchronously.
+     *
+     * @param user   the user to remove coins from
+     * @param amount the amount of coins to remove
+     * @return a {@link CompletableFuture} resolving to {@code true} if the operation succeeded
+     */
     CompletableFuture<Boolean> removeCoinsAsync(User user, int amount);
 }
