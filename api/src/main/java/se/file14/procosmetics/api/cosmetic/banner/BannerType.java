@@ -1,9 +1,9 @@
 package se.file14.procosmetics.api.cosmetic.banner;
 
+import org.jetbrains.annotations.Nullable;
 import se.file14.procosmetics.api.cosmetic.CosmeticType;
 import se.file14.procosmetics.api.util.AnimationFrame;
 
-import javax.annotation.Nullable;
 import java.util.List;
 
 /**

@@ -1,8 +1,7 @@
 package se.file14.procosmetics.api.cosmetic.registry;
 
+import org.jetbrains.annotations.Nullable;
 import se.file14.procosmetics.api.cosmetic.CosmeticRarity;
-
-import javax.annotation.Nullable;
 
 /**
  * Manages all registered {@link CosmeticRarity} instances.

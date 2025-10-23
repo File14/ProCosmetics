@@ -3,9 +3,8 @@ package se.file14.procosmetics.api.cosmetic.pet;
 import org.bukkit.Sound;
 import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.ItemStack;
+import org.jetbrains.annotations.Nullable;
 import se.file14.procosmetics.api.cosmetic.CosmeticType;
-
-import javax.annotation.Nullable;
 
 /**
  * Represents a type of pet cosmetic.

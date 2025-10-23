@@ -1,8 +1,8 @@
 package se.file14.procosmetics.api.treasure;
 
 import org.bukkit.Location;
+import org.jetbrains.annotations.Nullable;
 
-import javax.annotation.Nullable;
 import java.util.List;
 
 /**

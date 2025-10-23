@@ -1,5 +1,6 @@
 package se.file14.procosmetics.api.cosmetic.registry;
 
+import org.jetbrains.annotations.Nullable;
 import se.file14.procosmetics.api.cosmetic.CosmeticBehavior;
 import se.file14.procosmetics.api.cosmetic.CosmeticType;
 import se.file14.procosmetics.api.cosmetic.arroweffect.ArrowEffectBehavior;
@@ -29,7 +30,6 @@ import se.file14.procosmetics.api.cosmetic.pet.PetType;
 import se.file14.procosmetics.api.cosmetic.status.StatusBehavior;
 import se.file14.procosmetics.api.cosmetic.status.StatusType;
 
-import javax.annotation.Nullable;
 import java.util.Collection;
 
 /**

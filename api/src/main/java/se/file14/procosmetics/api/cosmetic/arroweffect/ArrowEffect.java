@@ -1,9 +1,8 @@
 package se.file14.procosmetics.api.cosmetic.arroweffect;
 
 import org.bukkit.entity.Entity;
+import org.jetbrains.annotations.Nullable;
 import se.file14.procosmetics.api.cosmetic.Cosmetic;
-
-import javax.annotation.Nullable;
 
 /**
  * Represents an arrow effect cosmetic instance associated with a user.

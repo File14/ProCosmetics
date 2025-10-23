@@ -1,6 +1,6 @@
 package se.file14.procosmetics.api.config;
 
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Manages configuration files for the plugin.
