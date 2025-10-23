@@ -26,6 +26,7 @@ build/
 buildOutputCleanup.lock
 cache.properties
 outputFiles.bin
+/gradle.properties
 
 ### NetBeans ###
 /nbproject/private/
