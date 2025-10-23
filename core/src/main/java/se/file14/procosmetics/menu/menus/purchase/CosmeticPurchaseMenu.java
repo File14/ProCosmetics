@@ -9,9 +9,9 @@ import se.file14.procosmetics.api.config.Config;
 import se.file14.procosmetics.api.cosmetic.CosmeticType;
 import se.file14.procosmetics.api.cosmetic.registry.CosmeticCategory;
 import se.file14.procosmetics.api.economy.EconomyProvider;
-import se.file14.procosmetics.api.event.PlayerPurchaseCosmeticEvent;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.api.util.item.ItemBuilder;
+import se.file14.procosmetics.event.PlayerPurchaseCosmeticEventImpl;
 import se.file14.procosmetics.menu.MenuImpl;
 import se.file14.procosmetics.util.item.ItemBuilderImpl;
 
@@ -85,7 +85,7 @@ public class CosmeticPurchaseMenu extends MenuImpl {
                             .replace("<player>", player.getName())
                             .replace("<permission>", cosmeticType.getPermission())
                     );
-                    server.getPluginManager().callEvent(new PlayerPurchaseCosmeticEvent(user, player, cosmeticType));
+                    server.getPluginManager().callEvent(new PlayerPurchaseCosmeticEventImpl(plugin, user, player, cosmeticType));
                     cosmeticType.equip(user, false, true);
                 } else {
                     economy.sendInsufficientCoinsMessage(user, cost);

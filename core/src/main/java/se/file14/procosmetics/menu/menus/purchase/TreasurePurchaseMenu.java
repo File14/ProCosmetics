@@ -7,10 +7,10 @@ import org.bukkit.inventory.ItemStack;
 import se.file14.procosmetics.api.ProCosmetics;
 import se.file14.procosmetics.api.config.Config;
 import se.file14.procosmetics.api.economy.EconomyProvider;
-import se.file14.procosmetics.api.event.PlayerPurchaseTreasureChestEvent;
 import se.file14.procosmetics.api.treasure.TreasureChest;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.api.util.item.ItemBuilder;
+import se.file14.procosmetics.event.PlayerPurchaseTreasureChestEventImpl;
 import se.file14.procosmetics.menu.MenuImpl;
 import se.file14.procosmetics.util.item.ItemBuilderImpl;
 
@@ -85,7 +85,7 @@ public class TreasurePurchaseMenu extends MenuImpl {
                     plugin.getDatabase().addTreasureKeysAsync(user, treasureChest, 1).thenAcceptAsync(result2 -> {
                         if (result2.leftBoolean()) {
                             player.playSound(player, Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.0f);
-                            plugin.getJavaPlugin().getServer().getPluginManager().callEvent(new PlayerPurchaseTreasureChestEvent(user, player, treasureChest));
+                            plugin.getJavaPlugin().getServer().getPluginManager().callEvent(new PlayerPurchaseTreasureChestEventImpl(plugin, user, player, treasureChest));
                         } else {
                             // Failed, refund the coins
                             economy.addCoinsAsync(user, cost);

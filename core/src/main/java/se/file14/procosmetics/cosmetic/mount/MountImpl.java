@@ -19,10 +19,10 @@ import se.file14.procosmetics.api.config.Config;
 import se.file14.procosmetics.api.cosmetic.mount.Mount;
 import se.file14.procosmetics.api.cosmetic.mount.MountBehavior;
 import se.file14.procosmetics.api.cosmetic.mount.MountType;
-import se.file14.procosmetics.api.event.CosmeticEntitySpawnEvent;
 import se.file14.procosmetics.api.nms.NMSEntity;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.cosmetic.CosmeticImpl;
+import se.file14.procosmetics.event.CosmeticEntitySpawnEventImpl;
 import se.file14.procosmetics.util.MetadataUtil;
 
 public class MountImpl extends CosmeticImpl<MountType, MountBehavior> implements Mount {
@@ -164,7 +164,7 @@ public class MountImpl extends CosmeticImpl<MountType, MountBehavior> implements
             behavior.setupEntity(this, entity, nmsEntity);
         });
 
-        CosmeticEntitySpawnEvent event = new CosmeticEntitySpawnEvent(user, player, entity);
+        CosmeticEntitySpawnEventImpl event = new CosmeticEntitySpawnEventImpl(plugin, user, player, entity);
         plugin.getServer().getPluginManager().callEvent(event);
     }
 

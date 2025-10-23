@@ -16,9 +16,9 @@ import se.file14.procosmetics.ProCosmeticsPlugin;
 import se.file14.procosmetics.api.cosmetic.pet.Pet;
 import se.file14.procosmetics.api.cosmetic.pet.PetBehavior;
 import se.file14.procosmetics.api.cosmetic.pet.PetType;
-import se.file14.procosmetics.api.event.CosmeticEntitySpawnEvent;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.cosmetic.CosmeticImpl;
+import se.file14.procosmetics.event.CosmeticEntitySpawnEventImpl;
 import se.file14.procosmetics.nms.NMSEntityImpl;
 import se.file14.procosmetics.util.MathUtil;
 import se.file14.procosmetics.util.MetadataUtil;
@@ -107,8 +107,8 @@ public class PetImpl extends CosmeticImpl<PetType, PetBehavior> implements Pet {
         }
         plugin.getNMSManager().entityToNMSEntity(entity).removePathfinder();
 
-        CosmeticEntitySpawnEvent cosmeticEntitySpawnEvent = new CosmeticEntitySpawnEvent(user, player, entity);
-        plugin.getServer().getPluginManager().callEvent(cosmeticEntitySpawnEvent);
+        CosmeticEntitySpawnEventImpl event = new CosmeticEntitySpawnEventImpl(plugin, user, player, entity);
+        plugin.getServer().getPluginManager().callEvent(event);
     }
 
     private void despawn() {

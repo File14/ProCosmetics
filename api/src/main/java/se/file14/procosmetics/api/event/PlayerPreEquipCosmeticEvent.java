@@ -2,90 +2,33 @@ package se.file14.procosmetics.api.event;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
-import org.bukkit.event.Event;
-import org.bukkit.event.HandlerList;
-import org.jetbrains.annotations.ApiStatus;
 import se.file14.procosmetics.api.cosmetic.CosmeticType;
 import se.file14.procosmetics.api.user.User;
-
-import javax.annotation.Nonnull;
 
 /**
  * Called when a player attempts to equip a cosmetic before the
  * equip action is actually applied.
  */
-public class PlayerPreEquipCosmeticEvent extends Event implements Cancellable {
-
-    private static final HandlerList HANDLER_LIST = new HandlerList();
-    private final User user;
-    private final Player player;
-    private final CosmeticType<?, ?> cosmeticType;
-    private boolean cancelled;
-
-    /**
-     * Constructs a new {@link PlayerPreEquipCosmeticEvent}.
-     *
-     * @param user         the user associated with this event
-     * @param player       the Bukkit player equipping the cosmetic
-     * @param cosmeticType the cosmetic type being equipped
-     */
-    @ApiStatus.Internal
-    public PlayerPreEquipCosmeticEvent(User user, Player player, CosmeticType<?, ?> cosmeticType) {
-        this.user = user;
-        this.player = player;
-        this.cosmeticType = cosmeticType;
-    }
+public interface PlayerPreEquipCosmeticEvent extends ProCosmeticsEvent, Cancellable {
 
     /**
      * Gets the user for this event.
      *
      * @return the {@link User} instance
      */
-    public User getUser() {
-        return user;
-    }
+    User getUser();
 
     /**
      * Gets the player for this event.
      *
      * @return the {@link Player} instance
      */
-
-    public Player getPlayer() {
-        return player;
-    }
+    Player getPlayer();
 
     /**
      * Gets the cosmetic type for this event.
      *
      * @return the {@link CosmeticType} instance
      */
-    public CosmeticType<?, ?> getCosmeticType() {
-        return cosmeticType;
-    }
-
-    @Override
-    public boolean isCancelled() {
-        return cancelled;
-    }
-
-    @Override
-    public void setCancelled(boolean cancelled) {
-        this.cancelled = cancelled;
-    }
-
-    @Nonnull
-    @Override
-    public HandlerList getHandlers() {
-        return HANDLER_LIST;
-    }
-
-    /**
-     * Gets the handler list for this event.
-     *
-     * @return the static {@link HandlerList} instance
-     */
-    public static HandlerList getHandlerList() {
-        return HANDLER_LIST;
-    }
+    CosmeticType<?, ?> getCosmeticType();
 }

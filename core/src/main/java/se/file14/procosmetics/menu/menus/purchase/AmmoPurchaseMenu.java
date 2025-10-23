@@ -9,10 +9,10 @@ import se.file14.procosmetics.api.config.Config;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetType;
 import se.file14.procosmetics.api.cosmetic.registry.CosmeticCategory;
 import se.file14.procosmetics.api.economy.EconomyProvider;
-import se.file14.procosmetics.api.event.PlayerPurchaseGadgetAmmoEvent;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.api.util.item.ItemBuilder;
 import se.file14.procosmetics.cosmetic.gadget.GadgetImpl;
+import se.file14.procosmetics.event.PlayerPurchaseGadgetAmmoEventImpl;
 import se.file14.procosmetics.menu.MenuImpl;
 import se.file14.procosmetics.util.item.ItemBuilderImpl;
 
@@ -81,7 +81,7 @@ public class AmmoPurchaseMenu extends MenuImpl {
                 if (result.booleanValue()) {
                     plugin.getDatabase().addGadgetAmmoAsync(user, gadgetType, gadgetType.getPurchaseAmount()).thenAcceptAsync(result2 -> {
                         if (result2.leftBoolean()) {
-                            plugin.getJavaPlugin().getServer().getPluginManager().callEvent(new PlayerPurchaseGadgetAmmoEvent(user, player, gadgetType));
+                            plugin.getJavaPlugin().getServer().getPluginManager().callEvent(new PlayerPurchaseGadgetAmmoEventImpl(plugin, user, player, gadgetType));
                             player.playSound(player, Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.0f);
 
                             GadgetImpl gadget = (GadgetImpl) user.getCosmetic(plugin.getCategoryRegistries().gadgets());
