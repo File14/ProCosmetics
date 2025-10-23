@@ -25,9 +25,9 @@ public interface EconomyProvider {
      * Initializes the economy provider and establishes connection to the underlying economy system.
      *
      * @param plugin the ProCosmetics plugin instance
-     * @throws EconomyHookException if the economy system cannot be hooked
+     * @throws IllegalStateException if the economy system cannot be hooked
      */
-    void hook(ProCosmetics plugin) throws EconomyHookException;
+    void hook(ProCosmetics plugin) throws IllegalStateException;
 
     /**
      * Gets the current coin balance for a user (synchronous).

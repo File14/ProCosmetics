@@ -4,7 +4,6 @@ import it.unimi.dsi.fastutil.booleans.BooleanIntPair;
 import org.black_ixx.playerpoints.PlayerPoints;
 import org.black_ixx.playerpoints.PlayerPointsAPI;
 import se.file14.procosmetics.api.ProCosmetics;
-import se.file14.procosmetics.api.economy.EconomyHookException;
 import se.file14.procosmetics.api.economy.EconomyProvider;
 import se.file14.procosmetics.api.user.User;
 
@@ -20,11 +19,11 @@ public class PlayerPointsEconomy implements EconomyProvider {
     }
 
     @Override
-    public void hook(ProCosmetics plugin) throws EconomyHookException {
+    public void hook(ProCosmetics plugin) throws IllegalStateException {
         api = PlayerPoints.getInstance().getAPI();
 
         if (api == null) {
-            throw new EconomyHookException("PlayerPoints API was null! Is it installed?");
+            throw new IllegalStateException("PlayerPoints API was null! Is it installed?");
         }
     }
 
