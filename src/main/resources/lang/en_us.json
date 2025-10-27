@@ -82,7 +82,7 @@
   "cosmetic.not_equipped": "<red>You don't have any cosmetic equipped from that category.</red>",
   "cosmetic.already_equipped": "<red>That cosmetic is already equipped!</red>",
 
-  "treasure.not_found": "<red>Could not find a treasure by that name!</red>",
+  "treasure_chest.not_found": "<red>Could not find a treasure chest by that name!</red>",
 
   "command.equip.category_not_found": "<red>Could not find a category by that name!</red>",
   "command.equip.cosmetic_not_found": "<red>Could not find a cosmetic by that name!</red>",
@@ -91,28 +91,28 @@
   "command.toggleselfview.success": "<yellow>You toggled the self-view!</yellow>",
   "command.toggleselfview.not_equipped": "<red>You don't have any cosmetic equipped in that category!</red>",
 
+  "command.add.ammo":"<gray>You gave <aqua><amount></aqua> <gadget> <gray>ammo to <yellow><player></yellow><gray>! They now have <aqua><ammo></aqua> <gadget> <gray>ammo.",
+  "command.add.coins": "<gray>You gave <aqua><amount></aqua> <gray>coins to <yellow><player></yellow><gray>! They now have <aqua><coins></aqua> <gray>coins.",
+  "command.add.cosmetic": "<gray>You gave the <aqua><cosmetic></aqua> <gray>cosmetic to <aqua><player></aqua><gray>.",
+  "command.add.cosmetic.already_owned": "<red><player> already owns that cosmetic!</red>",
+  "command.add.treasure_chest": "<gray>You gave <aqua><amount></aqua> <treasure_chest> <gray>treasure(s) to <yellow><player></yellow><gray>! They now have <aqua><current></aqua> <treasure_chest> <gray>treasure(s)!",
+
   "command.get.ammo": "<yellow><player></yellow> has <green><amount> <gadget></green> ammo.",
   "command.get.coins": "<yellow><player></yellow> has <green><amount> coins</green>!",
-  "command.get.treasure": "<yellow><player></yellow> has <green><amount> <treasure_chest>(s)</green>!",
+  "command.get.treasure_chest": "<yellow><player></yellow> has <green><amount> <treasure_chest>(s)</green>!",
 
-  "command.give.ammo":"<gray>You gave <aqua><amount></aqua> <gadget> <gray>ammo to <yellow><player></yellow><gray>! They now have <aqua><ammo></aqua> <gadget> <gray>ammo.",
-  "command.give.coins": "<gray>You gave <aqua><amount></aqua> <gray>coins to <yellow><player></yellow><gray>! They now have <aqua><coins></aqua> <gray>coins.",
-  "command.give.cosmetic": "<gray>You gave the <aqua><cosmetic></aqua> <gray>cosmetic to <aqua><player></aqua><gray>.",
-  "command.give.cosmetic.already_owned": "<red><player> already owns that cosmetic!</red>",
-  "command.give.treasure": "<gray>You gave <aqua><amount></aqua> <treasure_chest> <gray>treasure(s) to <yellow><player></yellow><gray>! They now have <aqua><current></aqua> <treasure_chest> <gray>treasure(s)!",
-
-  "command.giveall.ammo": "<gray>You gave <aqua><amount></aqua> <gadget> <gray>ammo to <green><player_count> players</green><gray>!",
-  "command.giveall.coins": "<gray>You gave <aqua><amount></aqua> <gray>coins to <green><player_count> players</green><gray>!",
-  "command.giveall.cosmetic": "<gray>You gave the <aqua><cosmetic></aqua> <gray>cosmetic to <green><player_count> players</green><gray>.",
-  "command.giveall.treasure": "<gray>You gave <aqua><amount></aqua> <treasure_chest> <gray>treasure chests to <green><player_count> players</green><gray>!",
+  "command.addall.ammo": "<gray>You gave <aqua><amount></aqua> <gadget> <gray>ammo to <green><player_count> players</green><gray>!",
+  "command.addall.coins": "<gray>You gave <aqua><amount></aqua> <gray>coins to <green><player_count> players</green><gray>!",
+  "command.addall.cosmetic": "<gray>You gave the <aqua><cosmetic></aqua> <gray>cosmetic to <green><player_count> players</green><gray>.",
+  "command.addall.treasure_chest": "<gray>You gave <aqua><amount></aqua> <treasure_chest> <gray>treasure chests to <green><player_count> players</green><gray>!",
 
   "command.set.ammo": "<gray>You set <aqua><amount></aqua> <gadget> <gray>ammo to <yellow><player></yellow><gray>!",
   "command.set.coins": "<gray>You set <aqua><amount></aqua> <gray>coins to <yellow><player></yellow><gray>!",
-  "command.set.treasure": "<gray>You set <aqua><amount></aqua> <treasure_chest> <gray>treasure chests to <yellow><player></yellow><gray>!",
+  "command.set.treasure_chest": "<gray>You set <aqua><amount></aqua> <treasure_chest> <gray>treasure chests to <yellow><player></yellow><gray>!",
 
-  "command.take.ammo": "<gray>You took <aqua><amount></aqua> <gadget> <gray>ammo from <yellow><player></yellow><gray>! They now have <aqua><ammo></aqua> <gadget> <gray>ammo.",
-  "command.take.coins": "<gray>You took <aqua><amount></aqua> <gray>coin(s) from <yellow><player></yellow><gray>! They now have <aqua><coins></aqua> <gray>coin(s).",
-  "command.take.treasure": "<gray>You took <aqua><amount></aqua> <treasure_chest> <gray>treasure(s) from <yellow><player></yellow><gray>! They now have <aqua><new_total></aqua> <treasure_chest> <gray>treasure(s)!",
+  "command.remove.ammo": "<gray>You took <aqua><amount></aqua> <gadget> <gray>ammo from <yellow><player></yellow><gray>! They now have <aqua><ammo></aqua> <gadget> <gray>ammo.",
+  "command.remove.coins": "<gray>You took <aqua><amount></aqua> <gray>coin(s) from <yellow><player></yellow><gray>! They now have <aqua><coins></aqua> <gray>coin(s).",
+  "command.remove.treasure_chest": "<gray>You took <aqua><amount></aqua> <treasure_chest> <gray>treasure(s) from <yellow><player></yellow><gray>! They now have <aqua><new_total></aqua> <treasure_chest> <gray>treasure(s)!",
 
   "generic.error.player_data": "<red>An error occurred! Please contact an administrator!</red>",
   "generic.error.player_data.target": "<red>Could not find data of that player!</red>",
@@ -120,26 +120,26 @@
   "generic.player_offline": "<red>That player is offline!</red>",
   "generic.player_not_found": "<red>Could not find any player by that name!</red>",
 
-  "command.treasurechest.add.not_on_chest": "<red>You are not standing on a chest!</red>",
-  "command.treasurechest.add.already_exists": "<red>There is already a platform here!</red>",
-  "command.treasurechest.add.too_close": "<red>You are too close to another platform or structure!</red>",
-  "command.treasurechest.add.layout_not_found": "<red>That layout does not exist! The default one is: default-treasurechest",
-  "command.treasurechest.add.success": "<green>You successfully added a new treasure chest platform!",
+  "command.platform.create.not_on_chest": "<red>You are not standing on a chest!</red>",
+  "command.platform.create.already_exists": "<red>There is already a platform here!</red>",
+  "command.platform.create.too_close": "<red>You are too close to another platform or structure!</red>",
+  "command.platform.create.layout_not_found": "<red>That layout does not exist! The default one is: default_platform</red>",
+  "command.platform.create.success": "<green>You successfully added a new treasure chest platform!</green>",
 
-  "command.treasurechest.delete.not_found": "<red>Could not find the platform. Are you sure you are standing on its chest?",
-  "command.treasurechest.delete.in_use": "<red>That platform is currently in use!",
-  "command.treasurechest.delete.success": "<red>You deleted the platform!",
+  "command.platform.delete.not_found": "<red>Could not find the platform. Are you sure you are standing on its chest?</red>",
+  "command.platform.delete.in_use": "<red>That platform is currently in use!</red>",
+  "command.platform.delete.success": "<red>You deleted the platform!</red>",
 
-  "command.treasurechest.list.header": "<green>Current platforms (amount):</green>",
-  "command.treasurechest.list.entry": "Id: <green><id></green>, X: <green><x></green>, Y: <green><y></green>, Z: <green><z></green>, World: <green><world></green>",
+  "command.platform.list.header": "<green>Current platforms (amount):</green>",
+  "command.platform.list.entry": "Id: <green><id></green>, X: <green><x></green>, Y: <green><y></green>, Z: <green><z></green>, World: <green><world></green>",
 
-  "command.treasurechest.teleport.not_found": "<red>Could not find that platform.",
-  "command.treasurechest.teleport.success": "<yellow>You teleported to platform <id>!</yellow>",
+  "command.platform.teleport.not_found": "<red>Could not find that platform.</red>",
+  "command.platform.teleport.success": "<yellow>You teleported to platform <id>!</yellow>",
 
   "command.equipplayer.already_equipped": "<red>That cosmetic is already equipped for that <player>!</red>",
   "command.equipplayer.success": "<yellow>Attempted to equip the cosmetic for <player>.</yellow> <gray>(May fail if they don't own it or are in a cosmetic-disabled area)</gray>",
 
-  "command.info.header": "<aqua><player>'s information:",
+  "command.info.header": "<aqua><player>'s information:</aqua>",
   "command.info.id": "Database Id: <yellow><hover:show_text:'<yellow>Click to copy!</yellow>'><click:copy_to_clipboard:'<id>'><id></click></hover></yellow>",
   "command.info.uuid": "UUID: <yellow><hover:show_text:'<yellow>Click to copy!</yellow>'><click:copy_to_clipboard:'<uuid>'><uuid></click></hover></yellow>",
   "command.info.coins": "Coins: <yellow><amount></yellow>",
@@ -202,28 +202,28 @@
   "menu.treasure_chests.title": "Treasure Chests",
   "menu.treasure_chests.common.purchasable.name": "<aqua><name></aqua>",
   "menu.treasure_chests.common.purchasable.desc": [
-    "<aqua>You own <dark_aqua><current> <name>!</aqua>",
+    "<aqua>You own <dark_aqua><current></dark_aqua> <name>!</aqua>",
     "",
     "<gray>Left Click to open one!</gray>",
     "<gray>Right Click to purchase more for <yellow><cost> coins</yellow>!</gray>"
   ],
   "menu.treasure_chests.common.purchase_disabled.name": "<aqua><name></aqua>",
   "menu.treasure_chests.common.purchase_disabled.desc": [
-    "<aqua>You own <dark_aqua><current> <aqua><name>!</aqua>",
+    "<aqua>You own <dark_aqua><current></dark_aqua> <name>!</aqua>",
     "",
     "<gray>Left Click to open one!</gray>",
     "<red>This treasure chest cannot be purchased!</red>"
   ],
   "menu.treasure_chests.common.purchase_no_permission.name": "<aqua><name></aqua>",
   "menu.treasure_chests.common.purchase_no_permission.desc": [
-    "<aqua>You own <dark_aqua><current> <aqua><name>!</aqua>",
+    "<aqua>You own <dark_aqua><current></dark_aqua> <aqua><name>!</aqua>",
     "",
     "<gray>Left Click to open one!</gray>",
     "<red>You do not have permission to purchase this treasure chest!</red>"
   ],
   "menu.treasure_chests.mythical.purchasable.name": "<aqua><name></aqua>",
   "menu.treasure_chests.mythical.purchasable.desc": [
-    "<aqua>You own <dark_aqua><current> <name>!</aqua>",
+    "<aqua>You own <dark_aqua><current></dark_aqua> <name>!</aqua>",
     "",
     "<gray>Left Click to open one!</gray>",
     "<gray>Right Click to purchase more for <yellow><cost> coins</yellow>!</gray>"
@@ -231,7 +231,7 @@
   "menu.treasure_chests.mythical.purchase_disabled.name": "<aqua><name></aqua>",
   "menu.treasure_chests.mythical.purchase_disabled.desc": [
     "",
-    "<aqua>You own <dark_aqua><current> <aqua><name>!</aqua>",
+    "<aqua>You own <dark_aqua><current></dark_aqua> <name>!</aqua>",
     "",
     "<gray>Left Click to open one!</gray>",
     "<red>This treasure chest cannot be purchased!</red>"
@@ -239,14 +239,14 @@
   "menu.treasure_chests.mythical.purchase_no_permission.name": "<aqua><name></aqua>",
   "menu.treasure_chests.mythical.purchase_no_permission.desc": [
     "",
-    "<aqua>You own <dark_aqua><current> <aqua><name>!</aqua>",
+    "<aqua>You own <dark_aqua><current></dark_aqua> <name>!</aqua>",
     "",
     "<gray>Left Click to open one!</gray>",
     "<red>You do not have permission to purchase this treasure chest!</red>"
   ],
   "menu.treasure_chests.legendary.purchasable.name": "<aqua><name></aqua>",
   "menu.treasure_chests.legendary.purchasable.desc": [
-    "<aqua>You own <dark_aqua><current> <name>!</aqua>",
+    "<aqua>You own <dark_aqua><current></dark_aqua> <name>!</aqua>",
     "",
     "<gray>Left Click to open one!</gray>",
     "<gray>Right Click to purchase more for <yellow><cost> coins</yellow>!</gray>"
@@ -254,7 +254,7 @@
   "menu.treasure_chests.legendary.purchase_disabled.name": "<aqua><name></aqua>",
   "menu.treasure_chests.legendary.purchase_disabled.desc": [
     "",
-    "<aqua>You own <dark_aqua><current> <aqua><name>!</aqua>",
+    "<aqua>You own <dark_aqua><current></dark_aqua> <name>!</aqua>",
     "",
     "<gray>Left Click to open one!</gray>",
     "<red>This treasure chest cannot be purchased!</red>"
@@ -262,7 +262,7 @@
   "menu.treasure_chests.legendary.purchase_no_permission.name": "<aqua><name></aqua>",
   "menu.treasure_chests.legendary.purchase_no_permission.desc": [
     "",
-    "<aqua>You own <dark_aqua><current> <aqua><name>!</aqua>",
+    "<aqua>You own <dark_aqua><current></dark_aqua> <name>!</aqua>",
     "",
     "<gray>Left Click to open one!</gray>",
     "<red>You do not have permission to purchase this treasure chest!</red>"
@@ -1439,7 +1439,7 @@
   "menu.gadgets.coin_party_bomb.name": "<aqua><name></aqua>",
   "menu.gadgets.coin_party_bomb.desc": [
     "<gray>Become everyone's best friend</gray>",
-    "<gray>with this coin party comb</gray>",
+    "<gray>with this coin party bomb</gray>",
     "<gray>of generosity!</gray>",
     "",
     "<aqua>You currently own <gray><ammo></gray>.</aqua>",
@@ -2449,11 +2449,18 @@
     "",
     "<green>Click to purchase for <yellow><cost> coins</yellow>!</green>"
   ],
-  "menu.particle_effects.locked.name": "<name>",
-  "menu.particle_effects.locked.desc": [
+  "menu.particle_effects.purchase_disabled.name": "<name>",
+  "menu.particle_effects.purchase_disabled.desc": [
     "",
     "<red>This cosmetic cannot be purchased!</red>"
   ],
+  "menu.particle_effects.purchase_no_permission.name": "<name>",
+  "menu.particle_effects.purchase_no_permission.desc": [
+    "",
+    "<red>You do not have permission to</red>",
+    "<red>purchase this cosmetic!</red>"
+  ],
+
   "menu.particle_effects.unequipped.name": "<name>",
   "menu.particle_effects.unequipped.desc": [
     "",
@@ -2956,7 +2963,7 @@
   ],
   "menu.statuses.do_not_disturb.name": "<name>",
   "menu.statuses.do_not_disturb.desc": [
-    "<gray>Let someone know you're AFK.</gray>"
+    "<gray>Let someone know you're busy.</gray>"
   ],
   "menu.statuses.ping.name": "<name>",
   "menu.statuses.ping.desc": [

@@ -96,7 +96,7 @@ treasure_chests:
           rarity: COMMON
           message: "&e<player> &7has found a small bag of &ecoins&7!"
           commands:
-            - "pc give coins <player> 100"
+            - "pc add coins <player> 100"
 
   mythical:
     enable: true
@@ -156,7 +156,7 @@ treasure_chests:
           rarity: COMMON
           message: "&e<player> &7has found a medium bag of &ecoins&7!"
           commands:
-            - "pc give coins <player> 500"
+            - "pc add coins <player> 500"
 
   legendary:
     enable: true
@@ -216,7 +216,7 @@ treasure_chests:
           rarity: LEGENDARY
           message: "&e<player> &7has found a huge bag of &ecoins&7!"
           commands:
-            - "pc give coins <player> 5000"
+            - "pc add coins <player> 5000"
 
 # Do not edit this!
 config_version: 1

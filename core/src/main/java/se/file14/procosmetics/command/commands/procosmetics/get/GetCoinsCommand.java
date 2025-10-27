@@ -1,0 +1,43 @@
+package se.file14.procosmetics.command.commands.procosmetics.get;
+
+import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+import se.file14.procosmetics.ProCosmeticsPlugin;
+import se.file14.procosmetics.api.locale.Translator;
+import se.file14.procosmetics.command.SubCommand;
+
+import java.util.stream.Collectors;
+
+public class GetCoinsCommand extends SubCommand<CommandSender> {
+
+    public GetCoinsCommand(ProCosmeticsPlugin plugin) {
+        super(plugin, "procosmetics.command.get.coins", true);
+        addFlats("get", "coins");
+        addArgument(String.class, "target", sender -> plugin.getServer().getOnlinePlayers().stream().map(Player::getName).collect(Collectors.toList()));
+    }
+
+    @Override
+    public void onExecute(CommandSender sender, String[] args) {
+        Translator translator = translator(sender);
+        String name = parseArgument(args, 2);
+
+        plugin.getUserManager().getAsync(name).thenAccept(user -> {
+            if (user == null) {
+                audience(sender).sendMessage(translator.translate("generic.error.player_data.target"));
+                return;
+            }
+            plugin.getEconomyManager().getEconomyProvider().getCoinsAsync(user).thenAccept(result -> {
+                if (result.leftBoolean()) {
+                    audience(sender).sendMessage(translator.translate(
+                            "command.get.coins",
+                            Placeholder.unparsed("player", user.getName()),
+                            Placeholder.unparsed("amount", String.valueOf(result.rightInt()))
+                    ));
+                } else {
+                    audience(sender).sendMessage(translator.translate("generic.error.database"));
+                }
+            });
+        });
+    }
+}

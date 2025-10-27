@@ -1,90 +1,93 @@
 package se.file14.procosmetics.command.commands;
 
-import net.md_5.bungee.api.ChatColor;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.TextComponent;
+import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.command.CommandSender;
 import se.file14.procosmetics.ProCosmeticsPlugin;
 import se.file14.procosmetics.command.SimpleCommand;
 import se.file14.procosmetics.command.argument.Argument;
-import se.file14.procosmetics.command.commands.get.GetAmmoCommand;
-import se.file14.procosmetics.command.commands.get.GetCoinsCommand;
-import se.file14.procosmetics.command.commands.get.GetTreasureCommand;
-import se.file14.procosmetics.command.commands.give.GiveAmmoCommand;
-import se.file14.procosmetics.command.commands.give.GiveCoinsCommand;
-import se.file14.procosmetics.command.commands.give.GiveCosmeticCommand;
-import se.file14.procosmetics.command.commands.give.GiveTreasureCommand;
-import se.file14.procosmetics.command.commands.giveall.GiveAllAmmoCommand;
-import se.file14.procosmetics.command.commands.giveall.GiveAllCoinsCommand;
-import se.file14.procosmetics.command.commands.giveall.GiveAllCosmeticCommand;
-import se.file14.procosmetics.command.commands.giveall.GiveAllTreasureCommand;
-import se.file14.procosmetics.command.commands.set.SetAmmoCommand;
-import se.file14.procosmetics.command.commands.set.SetCoinsCommand;
-import se.file14.procosmetics.command.commands.set.SetTreasureCommand;
-import se.file14.procosmetics.command.commands.take.TakeAmmoCommand;
-import se.file14.procosmetics.command.commands.take.TakeCoinsCommand;
-import se.file14.procosmetics.command.commands.take.TakeTreasureCommand;
-import se.file14.procosmetics.command.commands.treasurechest.AddCommand;
-import se.file14.procosmetics.command.commands.treasurechest.DeleteCommand;
-import se.file14.procosmetics.command.commands.treasurechest.ListCommand;
-import se.file14.procosmetics.command.commands.treasurechest.TeleportCommand;
+import se.file14.procosmetics.command.commands.procosmetics.*;
+import se.file14.procosmetics.command.commands.procosmetics.EquipCommand;
+import se.file14.procosmetics.command.commands.procosmetics.UnequipCommand;
+import se.file14.procosmetics.command.commands.procosmetics.add.AddAmmoCommand;
+import se.file14.procosmetics.command.commands.procosmetics.add.AddCoinsCommand;
+import se.file14.procosmetics.command.commands.procosmetics.add.AddCosmeticCommand;
+import se.file14.procosmetics.command.commands.procosmetics.add.AddTreasureChestCommand;
+import se.file14.procosmetics.command.commands.procosmetics.addall.AddAllAmmoCommand;
+import se.file14.procosmetics.command.commands.procosmetics.addall.AddAllCoinsCommand;
+import se.file14.procosmetics.command.commands.procosmetics.addall.AddAllCosmeticCommand;
+import se.file14.procosmetics.command.commands.procosmetics.addall.AddAllTreasureChestCommand;
+import se.file14.procosmetics.command.commands.procosmetics.get.GetAmmoCommand;
+import se.file14.procosmetics.command.commands.procosmetics.get.GetCoinsCommand;
+import se.file14.procosmetics.command.commands.procosmetics.get.GetTreasureChestCommand;
+import se.file14.procosmetics.command.commands.procosmetics.platform.CreateCommand;
+import se.file14.procosmetics.command.commands.procosmetics.platform.DeleteCommand;
+import se.file14.procosmetics.command.commands.procosmetics.platform.ListCommand;
+import se.file14.procosmetics.command.commands.procosmetics.platform.TeleportCommand;
+import se.file14.procosmetics.command.commands.procosmetics.remove.RemoveAmmoCommand;
+import se.file14.procosmetics.command.commands.procosmetics.remove.RemoveCoinsCommand;
+import se.file14.procosmetics.command.commands.procosmetics.remove.RemoveTreasureChestCommand;
+import se.file14.procosmetics.command.commands.procosmetics.set.SetAmmoCommand;
+import se.file14.procosmetics.command.commands.procosmetics.set.SetCoinsCommand;
+import se.file14.procosmetics.command.commands.procosmetics.set.SetTreasureChestCommand;
 
 public class ProCosmeticsCommand extends SimpleCommand<CommandSender> {
 
     public ProCosmeticsCommand(ProCosmeticsPlugin plugin) {
         super(plugin, "procosmetics", "procosmetics.command");
         setSubCommands(
+                new AddAmmoCommand(plugin),
+                new AddCoinsCommand(plugin),
+                new AddCosmeticCommand(plugin),
+                new AddTreasureChestCommand(plugin),
+
                 new GetAmmoCommand(plugin),
                 new GetCoinsCommand(plugin),
-                new GetTreasureCommand(plugin),
+                new GetTreasureChestCommand(plugin),
 
-                new GiveAmmoCommand(plugin),
-                new GiveCoinsCommand(plugin),
-                new GiveCosmeticCommand(plugin),
-                new GiveTreasureCommand(plugin),
-
-                new GiveAllAmmoCommand(plugin),
-                new GiveAllCoinsCommand(plugin),
-                new GiveAllCosmeticCommand(plugin),
-                new GiveAllTreasureCommand(plugin),
+                new AddAllAmmoCommand(plugin),
+                new AddAllCoinsCommand(plugin),
+                new AddAllCosmeticCommand(plugin),
+                new AddAllTreasureChestCommand(plugin),
 
                 new SetAmmoCommand(plugin),
                 new SetCoinsCommand(plugin),
-                new SetTreasureCommand(plugin),
+                new SetTreasureChestCommand(plugin),
 
-                new TakeAmmoCommand(plugin),
-                new TakeCoinsCommand(plugin),
-                new TakeTreasureCommand(plugin),
+                new RemoveAmmoCommand(plugin),
+                new RemoveCoinsCommand(plugin),
+                new RemoveTreasureChestCommand(plugin),
 
-                // TREASURE CHEST
-                new AddCommand(plugin),
-                new DeleteCommand(plugin),
-                new ListCommand(plugin),
-                new TeleportCommand(plugin),
-
-                // COMMON
-                new EquipPlayerCommand(plugin),
+                new EquipCommand(plugin),
                 new InfoCommand(plugin),
                 new ItemCommand(plugin),
                 new MenuCommand(plugin),
                 new ReloadCommand(plugin),
                 new StructureCommand(plugin),
                 new UnequipAllPlayersCommand(plugin),
-                new UnequipPlayerCommand(plugin)
+                new UnequipCommand(plugin),
+
+                // Treasure Chest Platform
+                new CreateCommand(plugin),
+                new DeleteCommand(plugin),
+                new ListCommand(plugin),
+                new TeleportCommand(plugin)
         );
     }
 
     @Override
     public void onExecute(CommandSender sender, String[] args) {
-        StringBuilder stringBuilder = new StringBuilder(ChatColor.AQUA + plugin.getDescription().getName() + " Commands");
+        TextComponent.Builder builder = Component.text();
+        builder.append(Component.text(plugin.getDescription().getName() + " Commands", NamedTextColor.AQUA));
 
         getSubCommands().forEach(subCommand -> {
-            stringBuilder.append("\n");
-            stringBuilder.append(ChatColor.YELLOW);
-            stringBuilder.append("/pc ");
+            builder.append(Component.newline());
 
             for (Argument<?> argument : subCommand.getArguments()) {
-                stringBuilder.append(argument.getType() == null ? argument.getArgument() + " " : "<" + argument.getArgument() + "> ");
+                builder.append(Component.text("/pc " + (argument.getType() == null ? argument.getArgument() + " " : "<" + argument.getArgument() + "> "), NamedTextColor.YELLOW));
             }
         });
-        sender.sendMessage(stringBuilder.toString());
+        audience(sender).sendMessage(builder);
     }
 }
