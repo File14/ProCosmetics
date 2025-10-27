@@ -34,7 +34,7 @@ public interface UserManager {
      * @return The connected user, or null if not online
      */
     @Nullable
-    User getConnected(UUID uuid);
+    User getConnected(@Nullable UUID uuid);
 
     /**
      * Gets a connected user by their Player object.
@@ -43,7 +43,7 @@ public interface UserManager {
      * @return The connected user, or null if player is null or not online
      */
     @Nullable
-    default User getConnected(Player player) {
+    default User getConnected(@Nullable Player player) {
         if (player == null) {
             return null;
         }
@@ -58,7 +58,7 @@ public interface UserManager {
      * @return The connected user, or null if name is null or user is not online
      */
     @Nullable
-    default User getConnected(String name) {
+    default User getConnected(@Nullable String name) {
         if (name == null) {
             return null;
         }
@@ -96,7 +96,7 @@ public interface UserManager {
      * @return The user if connected or cached, or null otherwise
      */
     @Nullable
-    User getConnectedOrCached(UUID uuid);
+    User getConnectedOrCached(@Nullable UUID uuid);
 
     /**
      * Gets a user by their Player object from connected users or cache.
@@ -105,7 +105,7 @@ public interface UserManager {
      * @return The user if connected or cached, or null if player is null or user not found
      */
     @Nullable
-    default User getConnectedOrCached(Player player) {
+    default User getConnectedOrCached(@Nullable Player player) {
         if (player == null) {
             return null;
         }
@@ -119,7 +119,7 @@ public interface UserManager {
      * @return The user if connected or cached, or null otherwise
      */
     @Nullable
-    User getConnectedOrCached(String name);
+    User getConnectedOrCached(@Nullable String name);
 
     /**
      * Gets a user by their database ID from connected users or cache.
@@ -139,7 +139,7 @@ public interface UserManager {
      * @return The user, or null if not found in database
      */
     @Nullable
-    User get(UUID uuid);
+    User get(@Nullable UUID uuid);
 
     /**
      * Gets a user by their name, loading from database if necessary (synchronous).
@@ -150,7 +150,7 @@ public interface UserManager {
      * @return The user, or null if not found in database
      */
     @Nullable
-    User get(String name);
+    User get(@Nullable String name);
 
     /**
      * Gets a user by their database ID, loading from database if necessary (synchronous).
@@ -170,8 +170,7 @@ public interface UserManager {
      * @param uuid The user's UUID
      * @return A CompletableFuture containing the user, or null if not found in database
      */
-    @Nullable
-    CompletableFuture<User> getAsync(UUID uuid);
+    CompletableFuture<@Nullable User> getAsync(@Nullable UUID uuid);
 
     /**
      * Gets a user by their name asynchronously, loading from database if necessary.
@@ -180,8 +179,7 @@ public interface UserManager {
      * @param name The user's name
      * @return A CompletableFuture containing the user, or null if not found in database
      */
-    @Nullable
-    CompletableFuture<User> getAsync(String name);
+    CompletableFuture<@Nullable User> getAsync(@Nullable String name);
 
     /**
      * Gets a user by their database ID asynchronously, loading from database if necessary.
@@ -190,6 +188,5 @@ public interface UserManager {
      * @param id The user's database ID
      * @return A CompletableFuture containing the user, or null if not found in database
      */
-    @Nullable
-    CompletableFuture<User> getAsync(int id);
+    CompletableFuture<@Nullable User> getAsync(int id);
 }

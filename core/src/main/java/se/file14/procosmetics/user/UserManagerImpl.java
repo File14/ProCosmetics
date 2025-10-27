@@ -11,6 +11,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerPreLoginEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import se.file14.procosmetics.ProCosmeticsPlugin;
 import se.file14.procosmetics.api.user.User;
@@ -30,11 +31,11 @@ public class UserManagerImpl implements UserManager {
 
     private final ProCosmeticsPlugin plugin;
 
-    private final Cache<UUID, User> cached = CacheBuilder.newBuilder().expireAfterWrite(5, TimeUnit.MINUTES).build();
-    private final Cache<Integer, User> cachedIds = CacheBuilder.newBuilder().expireAfterWrite(5, TimeUnit.MINUTES).build();
+    private final Cache<@NotNull UUID, @NotNull User> cached = CacheBuilder.newBuilder().expireAfterWrite(5, TimeUnit.MINUTES).build();
+    private final Cache<@NotNull Integer, @NotNull User> cachedIds = CacheBuilder.newBuilder().expireAfterWrite(5, TimeUnit.MINUTES).build();
 
     private final Map<UUID, Object> loginLocks = new ConcurrentHashMap<>();
-    private final Cache<UUID, User> connecting = CacheBuilder.newBuilder().expireAfterWrite(40, TimeUnit.SECONDS).build();
+    private final Cache<@NotNull UUID, @NotNull User> connecting = CacheBuilder.newBuilder().expireAfterWrite(40, TimeUnit.SECONDS).build();
     private final Map<UUID, User> connected = new ConcurrentHashMap<>();
 
     private final Map<UUID, CompletableFuture<User>> uuidRequests = new ConcurrentHashMap<>();
@@ -73,7 +74,7 @@ public class UserManagerImpl implements UserManager {
     private final class Listeners implements Listener {
 
         @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
-        private void onJoin(AsyncPlayerPreLoginEvent event) {
+        private void onAsyncPreLogin(AsyncPlayerPreLoginEvent event) {
             if (event.getLoginResult() == AsyncPlayerPreLoginEvent.Result.ALLOWED) {
                 UUID uuid = event.getUniqueId();
                 String name = event.getName();
@@ -133,7 +134,8 @@ public class UserManagerImpl implements UserManager {
     }
 
     @Override
-    public @Nullable User getConnected(UUID uuid) {
+    @Nullable
+    public User getConnected(@Nullable UUID uuid) {
         if (uuid == null) {
             return null;
         }
@@ -141,7 +143,8 @@ public class UserManagerImpl implements UserManager {
     }
 
     @Override
-    public @Nullable User getConnectedOrCached(UUID uuid) {
+    @Nullable
+    public User getConnectedOrCached(@Nullable UUID uuid) {
         if (uuid == null) {
             return null;
         }
@@ -156,7 +159,8 @@ public class UserManagerImpl implements UserManager {
     }
 
     @Override
-    public @Nullable User getConnectedOrCached(String name) {
+    @Nullable
+    public User getConnectedOrCached(@Nullable String name) {
         if (name == null || name.isEmpty()) {
             return null;
         }
@@ -177,7 +181,8 @@ public class UserManagerImpl implements UserManager {
     }
 
     @Override
-    public @Nullable User getConnectedOrCached(int id) {
+    @Nullable
+    public User getConnectedOrCached(int id) {
         User user = getConnected(id);
 
         if (user == null) {
@@ -189,7 +194,8 @@ public class UserManagerImpl implements UserManager {
     }
 
     @Override
-    public @Nullable User get(UUID uuid) {
+    @Nullable
+    public User get(@Nullable UUID uuid) {
         if (uuid == null) {
             return null;
         }
@@ -207,7 +213,8 @@ public class UserManagerImpl implements UserManager {
     }
 
     @Override
-    public @Nullable User get(String name) {
+    @Nullable
+    public User get(@Nullable String name) {
         if (name == null || name.isEmpty()) {
             return null;
         }
@@ -225,7 +232,8 @@ public class UserManagerImpl implements UserManager {
     }
 
     @Override
-    public @Nullable User get(int id) {
+    @Nullable
+    public User get(int id) {
         User user = getConnectedOrCached(id);
 
         if (user == null) {
@@ -240,7 +248,10 @@ public class UserManagerImpl implements UserManager {
     }
 
     @Override
-    public @Nullable CompletableFuture<User> getAsync(UUID uuid) {
+    public CompletableFuture<@Nullable User> getAsync(@Nullable UUID uuid) {
+        if (uuid == null) {
+            return CompletableFuture.completedFuture(null);
+        }
         return uuidRequests.computeIfAbsent(uuid, (uuid1) -> CompletableFuture.supplyAsync(() -> get(uuid), plugin.getAsyncExecutor())
                 .whenComplete((corePlayer, throwable) -> {
                     if (throwable != null) {
@@ -251,7 +262,10 @@ public class UserManagerImpl implements UserManager {
     }
 
     @Override
-    public @Nullable CompletableFuture<User> getAsync(String name) {
+    public CompletableFuture<@Nullable User> getAsync(@Nullable String name) {
+        if (name == null || name.isEmpty()) {
+            return CompletableFuture.completedFuture(null);
+        }
         String lowerName = name.toLowerCase(Locale.ROOT);
 
         return nameRequests.computeIfAbsent(lowerName, (name1) -> CompletableFuture.supplyAsync(() -> get(lowerName), plugin.getAsyncExecutor())
@@ -264,7 +278,7 @@ public class UserManagerImpl implements UserManager {
     }
 
     @Override
-    public @Nullable CompletableFuture<User> getAsync(int id) {
+    public CompletableFuture<@Nullable User> getAsync(int id) {
         return idRequests.computeIfAbsent(id, (uuid1) -> CompletableFuture.supplyAsync(() -> get(id), plugin.getAsyncExecutor())
                 .whenComplete((corePlayer, throwable) -> {
                     if (throwable != null) {
@@ -295,14 +309,17 @@ public class UserManagerImpl implements UserManager {
             }
         }
 
-        private boolean hasDifference(Location from, Location to) {
-            return (from == null || to == null)
-                    || from.getWorld() != to.getWorld()
-                    && (from.getWorld() == null
-                    || !from.getWorld().equals(to.getWorld()))
-                    || (Double.doubleToLongBits(from.getX()) != Double.doubleToLongBits(to.getX())
-                    || (Double.doubleToLongBits(from.getY()) != Double.doubleToLongBits(to.getY())
-                    || (Double.doubleToLongBits(from.getZ()) != Double.doubleToLongBits(to.getZ()))));
+        private boolean hasDifference(@Nullable Location from, @Nullable Location to) {
+            if (from == null || to == null) {
+                return true;
+            }
+
+            if (from.getWorld() != to.getWorld()) {
+                return true;
+            }
+            return Double.doubleToLongBits(from.getX()) != Double.doubleToLongBits(to.getX())
+                    || Double.doubleToLongBits(from.getY()) != Double.doubleToLongBits(to.getY())
+                    || Double.doubleToLongBits(from.getZ()) != Double.doubleToLongBits(to.getZ());
         }
     }
 }
