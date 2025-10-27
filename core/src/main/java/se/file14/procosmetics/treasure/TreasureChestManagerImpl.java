@@ -131,7 +131,6 @@ public class TreasureChestManagerImpl implements TreasureChestManager {
         int id = generateID();
 
         TreasureChestPlatformImpl platform = new TreasureChestPlatformImpl(plugin, id, location, structureData);
-
         savePlatform(platform);
         platforms.add(platform);
     }
@@ -139,15 +138,10 @@ public class TreasureChestManagerImpl implements TreasureChestManager {
     private int generateID() {
         int i = 0;
 
-        while (checkExists(i)) {
+        while (getPlatform(i) != null) {
             i++;
         }
         return i;
-    }
-
-    private boolean checkExists(int i) {
-        return platforms.stream().anyMatch(treasureChest ->
-                treasureChest.getId() == i);
     }
 
     private final class Listeners implements Listener {
@@ -168,15 +162,12 @@ public class TreasureChestManagerImpl implements TreasureChestManager {
                 if (user == null) {
                     return;
                 }
+                TreasureChestPlatform platform = getPlatform(block.getLocation());
 
-                for (TreasureChestPlatform platform : platforms) {
-                    if (block.equals(platform.getCenter().getBlock())) {
-                        new TreasureChestMenu(plugin, user).open();
-                        user.setCurrentPlatform(platform);
-
-                        event.setCancelled(true);
-                        break;
-                    }
+                if (platform != null) {
+                    new TreasureChestMenu(plugin, user).open();
+                    user.setCurrentPlatform(platform);
+                    event.setCancelled(true);
                 }
             }
         }
@@ -185,22 +176,40 @@ public class TreasureChestManagerImpl implements TreasureChestManager {
     @Override
     @Nullable
     public TreasureChestPlatformImpl getPlatform(Location location) {
-        return platforms.stream().filter(platform ->
-                location.getBlock().equals(platform.getCenter().getBlock())).findAny().orElse(null);
+        if (location == null) {
+            return null;
+        }
+        for (TreasureChestPlatformImpl platform : platforms) {
+            if (location.equals(platform.getCenter().getBlock().getLocation())) {
+                return platform;
+            }
+        }
+        return null;
     }
 
     @Override
     @Nullable
     public TreasureChestPlatformImpl getPlatform(int id) {
-        return platforms.stream().filter(platform ->
-                id == platform.getId()).findAny().orElse(null);
+        for (TreasureChestPlatformImpl platform : platforms) {
+            if (id == platform.getId()) {
+                return platform;
+            }
+        }
+        return null;
     }
 
     @Override
     @Nullable
     public TreasureChest getTreasureChest(String key) {
-        return treasuresChests.stream().filter(treasure ->
-                key.equalsIgnoreCase(treasure.getKey())).findAny().orElse(null);
+        if (key == null || key.isBlank()) {
+            return null;
+        }
+        for (TreasureChest treasureChest : treasuresChests) {
+            if (treasureChest.getKey().equalsIgnoreCase(key)) {
+                return treasureChest;
+            }
+        }
+        return null;
     }
 
     public Broadcaster getOpeningTreasureBroadcaster() {

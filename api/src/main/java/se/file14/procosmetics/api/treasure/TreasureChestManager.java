@@ -24,7 +24,7 @@ public interface TreasureChestManager {
      * @return the {@link TreasureChestPlatform} at the location, or {@code null} if none exists
      */
     @Nullable
-    TreasureChestPlatform getPlatform(Location location);
+    TreasureChestPlatform getPlatform(@Nullable Location location);
 
     /**
      * Gets a treasure platform by its unique numeric identifier.
@@ -42,7 +42,7 @@ public interface TreasureChestManager {
      * @return the {@link TreasureChest} associated with the key, or {@code null} if not found
      */
     @Nullable
-    TreasureChest getTreasureChest(String key);
+    TreasureChest getTreasureChest(@Nullable String key);
 
     /**
      * Gets a list of all loaded treasure chests.
