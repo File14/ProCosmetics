@@ -13,10 +13,10 @@ import java.util.stream.Collectors;
 public class TakeTreasureCommand extends SubCommand<CommandSender> {
 
     public TakeTreasureCommand(ProCosmeticsPlugin plugin) {
-        super(plugin, "procosmetics.command.take-treasure", true);
-        addFlats("take", "treasure");
+        super(plugin, "procosmetics.command.take.treasure_chest", true);
+        addFlats("take", "treasure_chest");
         addArgument(String.class, "target", sender -> plugin.getServer().getOnlinePlayers().stream().map(Player::getName).collect(Collectors.toList()));
-        addArgument(String.class, "treasure", sender -> plugin.getTreasureChestManager().getTreasureChests().stream().map(TreasureChest::getKey).collect(Collectors.toList()));
+        addArgument(String.class, "treasure_chest", sender -> plugin.getTreasureChestManager().getTreasureChests().stream().map(TreasureChest::getKey).collect(Collectors.toList()));
         addArgument(Integer.class, "amount");
     }
 
@@ -37,7 +37,7 @@ public class TakeTreasureCommand extends SubCommand<CommandSender> {
                 audience(sender).sendMessage(translator.translate("generic.error.player_data.target"));
                 return;
             }
-            plugin.getDatabase().removeTreasureKeysAsync(user, treasureChest, amount).thenAccept(result -> {
+            plugin.getDatabase().removeTreasureChestsAsync(user, treasureChest, amount).thenAccept(result -> {
                 if (result.firstBoolean()) {
                     audience(sender).sendMessage(translator.translate(
                             "command.take.treasure",

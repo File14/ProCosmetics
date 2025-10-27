@@ -14,8 +14,8 @@ public class GiveAllTreasureCommand extends SubCommand<CommandSender> {
 
     public GiveAllTreasureCommand(ProCosmeticsPlugin plugin) {
         super(plugin, "procosmetics.command.giveall.treasure", true);
-        addFlats("giveall", "treasure");
-        addArgument(String.class, "treasure", sender -> plugin.getTreasureChestManager().getTreasureChests().stream().map(TreasureChest::getKey).collect(Collectors.toList()));
+        addFlats("giveall", "treasure_chest");
+        addArgument(String.class, "treasure_chest", sender -> plugin.getTreasureChestManager().getTreasureChests().stream().map(TreasureChest::getKey).collect(Collectors.toList()));
         addArgument(Integer.class, "amount");
     }
 
@@ -32,7 +32,7 @@ public class GiveAllTreasureCommand extends SubCommand<CommandSender> {
         int players = 0;
 
         for (User user : plugin.getUserManager().getAllConnected()) {
-            plugin.getDatabase().addTreasureKeysAsync(user, treasureChest, amount);
+            plugin.getDatabase().addTreasureChestsAsync(user, treasureChest, amount);
             players++;
         }
 

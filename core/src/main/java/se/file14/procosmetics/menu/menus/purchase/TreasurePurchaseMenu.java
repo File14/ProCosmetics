@@ -82,7 +82,7 @@ public class TreasurePurchaseMenu extends MenuImpl {
             }
             economy.removeCoinsAsync(user, cost).thenAcceptAsync(result -> {
                 if (result.booleanValue()) {
-                    plugin.getDatabase().addTreasureKeysAsync(user, treasureChest, 1).thenAcceptAsync(result2 -> {
+                    plugin.getDatabase().addTreasureChestsAsync(user, treasureChest, 1).thenAcceptAsync(result2 -> {
                         if (result2.leftBoolean()) {
                             player.playSound(player, Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.0f);
                             plugin.getJavaPlugin().getServer().getPluginManager().callEvent(new PlayerPurchaseTreasureChestEventImpl(plugin, user, player, treasureChest));

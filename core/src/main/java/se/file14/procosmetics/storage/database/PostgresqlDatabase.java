@@ -53,10 +53,10 @@ public class PostgresqlDatabase extends SQLDatabase {
     }
 
     @Override
-    protected String getCreateTreasureKeysTable() {
+    protected String getCreateTreasureChestsTable() {
         return "CREATE TABLE IF NOT EXISTS %s (" +
                 "player_id INT NOT NULL, " +
-                "treasure VARCHAR(32) NOT NULL, " +
+                "treasure_chest VARCHAR(32) NOT NULL, " +
                 "amount INT NOT NULL DEFAULT 0, " +
                 "PRIMARY KEY (player_id, treasure), " +
                 "FOREIGN KEY (player_id) REFERENCES %s(id) ON DELETE CASCADE, " +
@@ -83,13 +83,13 @@ public class PostgresqlDatabase extends SQLDatabase {
     }
 
     @Override
-    protected String getAddTreasureKeys() {
+    protected String getAddTreasureChests() {
         return "INSERT INTO %s (player_id, treasure, amount) VALUES (?, ?, ?) " +
                 "ON CONFLICT (player_id, treasure) DO UPDATE SET amount = %s.amount + EXCLUDED.amount;";
     }
 
     @Override
-    protected String getSetTreasureKeys() {
+    protected String getSetTreasureChests() {
         return "INSERT INTO %s (player_id, treasure, amount) VALUES (?, ?, ?) " +
                 "ON CONFLICT (player_id, treasure) DO UPDATE SET amount = EXCLUDED.amount;";
     }

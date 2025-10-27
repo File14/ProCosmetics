@@ -14,9 +14,9 @@ public class GetTreasureCommand extends SubCommand<CommandSender> {
 
     public GetTreasureCommand(ProCosmeticsPlugin plugin) {
         super(plugin, "procosmetics.command.get.treasure", true);
-        addFlats("get", "treasure");
+        addFlats("get", "treasure_chest");
         addArgument(String.class, "target", sender -> plugin.getServer().getOnlinePlayers().stream().map(Player::getName).collect(Collectors.toList()));
-        addArgument(String.class, "treasure", sender -> plugin.getTreasureChestManager().getTreasureChests().stream().map(TreasureChest::getKey).collect(Collectors.toList()));
+        addArgument(String.class, "treasure_chest", sender -> plugin.getTreasureChestManager().getTreasureChests().stream().map(TreasureChest::getKey).collect(Collectors.toList()));
     }
 
     @Override

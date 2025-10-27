@@ -31,11 +31,11 @@ public abstract class DatabaseImpl implements Database {
 
     protected abstract CompletableFuture<BooleanIntPair> setGadgetAmmoAsyncImpl(User user, GadgetType gadgetType, int amount);
 
-    protected abstract CompletableFuture<BooleanIntPair> addTreasureKeysAsyncImpl(User user, TreasureChest treasureChest, int amount);
+    protected abstract CompletableFuture<BooleanIntPair> addTreasureChestsAsyncImpl(User user, TreasureChest treasureChest, int amount);
 
-    protected abstract CompletableFuture<BooleanIntPair> removeTreasureKeysAsyncImpl(User user, TreasureChest treasureChest, int amount);
+    protected abstract CompletableFuture<BooleanIntPair> removeTreasureChestsAsyncImpl(User user, TreasureChest treasureChest, int amount);
 
-    protected abstract CompletableFuture<BooleanIntPair> setTreasureKeysAsyncImpl(User user, TreasureChest treasureChest, int amount);
+    protected abstract CompletableFuture<BooleanIntPair> setTreasureChestsAsyncImpl(User user, TreasureChest treasureChest, int amount);
 
     // Wrapper methods for Redis messaging
     @Override
@@ -123,11 +123,11 @@ public abstract class DatabaseImpl implements Database {
     }
 
     @Override
-    public CompletableFuture<BooleanIntPair> addTreasureKeysAsync(User user, TreasureChest treasureChest, int amount) {
+    public CompletableFuture<BooleanIntPair> addTreasureChestsAsync(User user, TreasureChest treasureChest, int amount) {
         if (!redisEnabled) {
-            return addTreasureKeysAsyncImpl(user, treasureChest, amount);
+            return addTreasureChestsAsyncImpl(user, treasureChest, amount);
         }
-        return addTreasureKeysAsyncImpl(user, treasureChest, amount)
+        return addTreasureChestsAsyncImpl(user, treasureChest, amount)
                 .thenApply(result -> {
                     if (result.leftBoolean()) {
                         plugin.getRedisManager().sendTreasureKeyUpdate(user.getDatabaseId(), treasureChest.getKey(), result.rightInt());
@@ -137,11 +137,11 @@ public abstract class DatabaseImpl implements Database {
     }
 
     @Override
-    public CompletableFuture<BooleanIntPair> removeTreasureKeysAsync(User user, TreasureChest treasureChest, int amount) {
+    public CompletableFuture<BooleanIntPair> removeTreasureChestsAsync(User user, TreasureChest treasureChest, int amount) {
         if (!redisEnabled) {
-            return removeTreasureKeysAsyncImpl(user, treasureChest, amount);
+            return removeTreasureChestsAsyncImpl(user, treasureChest, amount);
         }
-        return removeTreasureKeysAsyncImpl(user, treasureChest, amount)
+        return removeTreasureChestsAsyncImpl(user, treasureChest, amount)
                 .thenApply(result -> {
                     if (result.leftBoolean()) {
                         plugin.getRedisManager().sendTreasureKeyUpdate(user.getDatabaseId(), treasureChest.getKey(), result.rightInt());
@@ -151,11 +151,11 @@ public abstract class DatabaseImpl implements Database {
     }
 
     @Override
-    public CompletableFuture<BooleanIntPair> setTreasureKeysAsync(User user, TreasureChest treasureChest, int amount) {
+    public CompletableFuture<BooleanIntPair> setTreasureChestsAsync(User user, TreasureChest treasureChest, int amount) {
         if (!redisEnabled) {
-            return setTreasureKeysAsyncImpl(user, treasureChest, amount);
+            return setTreasureChestsAsyncImpl(user, treasureChest, amount);
         }
-        return setTreasureKeysAsyncImpl(user, treasureChest, amount)
+        return setTreasureChestsAsyncImpl(user, treasureChest, amount)
                 .thenApply(result -> {
                     if (result.leftBoolean()) {
                         plugin.getRedisManager().sendTreasureKeyUpdate(user.getDatabaseId(), treasureChest.getKey(), result.rightInt());

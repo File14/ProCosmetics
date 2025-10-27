@@ -77,7 +77,7 @@ public class TreasureChestMenu extends MenuImpl {
                             }
                             platform.setUser(user);
 
-                            plugin.getDatabase().removeTreasureKeysAsync(user, treasureChest, 1).thenAcceptAsync(result -> {
+                            plugin.getDatabase().removeTreasureChestsAsync(user, treasureChest, 1).thenAcceptAsync(result -> {
                                 if (result.leftBoolean()) {
                                     switch (treasureChest.getChestAnimationType()) {
                                         case COMMON: {

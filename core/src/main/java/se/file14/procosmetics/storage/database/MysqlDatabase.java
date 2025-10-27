@@ -53,7 +53,7 @@ public class MysqlDatabase extends SQLDatabase {
     }
 
     @Override
-    protected String getCreateTreasureKeysTable() {
+    protected String getCreateTreasureChestsTable() {
         return "CREATE TABLE IF NOT EXISTS %s (" +
                 "player_id INT NOT NULL, " +
                 "treasure VARCHAR(32) NOT NULL, " +
@@ -83,13 +83,13 @@ public class MysqlDatabase extends SQLDatabase {
     }
 
     @Override
-    protected String getAddTreasureKeys() {
+    protected String getAddTreasureChests() {
         return "INSERT INTO %s (player_id, treasure, amount) VALUES (?, ?, ?) " +
                 "ON DUPLICATE KEY UPDATE amount = amount + VALUES(amount);";
     }
 
     @Override
-    protected String getSetTreasureKeys() {
+    protected String getSetTreasureChests() {
         return "INSERT INTO %s (player_id, treasure, amount) VALUES (?, ?, ?) " +
                 "ON DUPLICATE KEY UPDATE amount = VALUES(amount);";
     }

@@ -41,9 +41,9 @@ public abstract class SQLDatabase extends DatabaseImpl {
     private static final String SQL_REMOVE_GADGET_AMMO = "UPDATE %s SET amount = amount - ? WHERE player_id = ? AND gadget = ? AND amount >= ?;";
     private static final String SQL_GET_GADGET_AMMO = "SELECT amount FROM %s WHERE player_id = ? AND gadget = ?;";
 
-    private static final String SQL_LOAD_USER_TREASURE_KEYS = "SELECT treasure, amount FROM %s WHERE player_id = ?;";
-    private static final String SQL_REMOVE_TREASURE_KEYS = "UPDATE %s SET amount = amount - ? WHERE player_id = ? AND treasure = ? AND amount >= ?;";
-    private static final String SQL_GET_TREASURE_KEYS = "SELECT amount FROM %s WHERE player_id = ? AND treasure = ?;";
+    private static final String SQL_LOAD_USER_TREASURE_CHESTS = "SELECT treasure_chest, amount FROM %s WHERE player_id = ?;";
+    private static final String SQL_REMOVE_TREASURE_CHESTS = "UPDATE %s SET amount = amount - ? WHERE player_id = ? AND treasure_chest = ? AND amount >= ?;";
+    private static final String SQL_GET_TREASURE_CHEST = "SELECT amount FROM %s WHERE player_id = ? AND treasure_chest = ?;";
 
     protected final ConnectionProvider connectionProvider;
     private final String usersTable;
@@ -75,7 +75,7 @@ public abstract class SQLDatabase extends DatabaseImpl {
 
     protected abstract String getCreateGadgetAmmoTable();
 
-    protected abstract String getCreateTreasureKeysTable();
+    protected abstract String getCreateTreasureChestsTable();
 
     protected abstract String getEquipCosmeticQuery();
 
@@ -83,9 +83,9 @@ public abstract class SQLDatabase extends DatabaseImpl {
 
     protected abstract String getSetGadgetAmmo();
 
-    protected abstract String getAddTreasureKeys();
+    protected abstract String getAddTreasureChests();
 
-    protected abstract String getSetTreasureKeys();
+    protected abstract String getSetTreasureChests();
 
     protected void initializeTables() {
         try (Connection connection = connectionProvider.getConnection()) {
@@ -93,7 +93,7 @@ public abstract class SQLDatabase extends DatabaseImpl {
                 statement.addBatch(String.format(getCreateUsersTable(), usersTable));
                 statement.addBatch(String.format(getCreateCosmeticsTable(), cosmeticsTable, usersTable));
                 statement.addBatch(String.format(getCreateGadgetAmmoTable(), gadgetAmmoTable, usersTable));
-                statement.addBatch(String.format(getCreateTreasureKeysTable(), treasuresTable, usersTable));
+                statement.addBatch(String.format(getCreateTreasureChestsTable(), treasuresTable, usersTable));
                 statement.executeBatch();
             }
         } catch (SQLException e) {
@@ -170,7 +170,7 @@ public abstract class SQLDatabase extends DatabaseImpl {
             loadUserCosmetics(user);
         }
         loadUserGadgetAmmo(user);
-        loadUserTreasureKeys(user);
+        loadUserTreasureChests(user);
 
         return user;
     }
@@ -230,16 +230,15 @@ public abstract class SQLDatabase extends DatabaseImpl {
         }
     }
 
-    private void loadUserTreasureKeys(UserImpl user) {
+    private void loadUserTreasureChests(UserImpl user) {
         try (Connection connection = connectionProvider.getConnection();
-             PreparedStatement statement = connection.prepareStatement(String.format(SQL_LOAD_USER_TREASURE_KEYS, treasuresTable))) {
+             PreparedStatement statement = connection.prepareStatement(String.format(SQL_LOAD_USER_TREASURE_CHESTS, treasuresTable))) {
             statement.setInt(1, user.getDatabaseId());
 
             try (ResultSet resultSet = statement.executeQuery()) {
                 while (resultSet.next()) {
-                    String treasureKey = resultSet.getString("treasure");
+                    TreasureChest treasureChest = plugin.getTreasureChestManager().getTreasureChest(resultSet.getString("treasure_chest"));
                     int amount = resultSet.getInt("amount");
-                    TreasureChest treasureChest = plugin.getTreasureChestManager().getTreasureChest(treasureKey);
 
                     if (treasureChest != null) {
                         user.setTreasureChests(treasureChest, amount);
@@ -247,7 +246,7 @@ public abstract class SQLDatabase extends DatabaseImpl {
                 }
             }
         } catch (SQLException e) {
-            plugin.getLogger().log(Level.WARNING, "Failed to load treasure keys for player: " + user + ".", e);
+            plugin.getLogger().log(Level.WARNING, "Failed to load treasure chests for player: " + user + ".", e);
         }
     }
 
@@ -609,10 +608,10 @@ public abstract class SQLDatabase extends DatabaseImpl {
     }
 
     @Override
-    public CompletableFuture<BooleanIntPair> addTreasureKeysAsyncImpl(User user, TreasureChest treasureChest, int amount) {
+    public CompletableFuture<BooleanIntPair> addTreasureChestsAsyncImpl(User user, TreasureChest treasureChest, int amount) {
         return CompletableFuture.supplyAsync(() -> {
             try (Connection connection = connectionProvider.getConnection()) {
-                try (PreparedStatement statement = connection.prepareStatement(String.format(getAddTreasureKeys(), treasuresTable))) {
+                try (PreparedStatement statement = connection.prepareStatement(String.format(getAddTreasureChests(), treasuresTable))) {
                     statement.setInt(1, user.getDatabaseId());
                     statement.setString(2, treasureChest.getKey());
                     statement.setInt(3, amount);
@@ -620,7 +619,7 @@ public abstract class SQLDatabase extends DatabaseImpl {
 
                     if (rowsAffected > 0) {
                         // Get the actual new value from database
-                        try (PreparedStatement selectStatement = connection.prepareStatement(String.format(SQL_GET_TREASURE_KEYS, treasuresTable))) {
+                        try (PreparedStatement selectStatement = connection.prepareStatement(String.format(SQL_GET_TREASURE_CHEST, treasuresTable))) {
                             selectStatement.setInt(1, user.getDatabaseId());
                             selectStatement.setString(2, treasureChest.getKey());
 
@@ -634,7 +633,7 @@ public abstract class SQLDatabase extends DatabaseImpl {
                     }
                 }
             } catch (SQLException e) {
-                plugin.getLogger().log(Level.WARNING, "Failed to add treasure keys for player " + user + ".", e);
+                plugin.getLogger().log(Level.WARNING, "Failed to add treasure chests for player " + user + ".", e);
             }
             return BooleanIntPair.of(false, user.getTreasureChests(treasureChest));
         }).thenApplyAsync(result -> {
@@ -646,10 +645,10 @@ public abstract class SQLDatabase extends DatabaseImpl {
     }
 
     @Override
-    public CompletableFuture<BooleanIntPair> removeTreasureKeysAsyncImpl(User user, TreasureChest treasureChest, int amount) {
+    public CompletableFuture<BooleanIntPair> removeTreasureChestsAsyncImpl(User user, TreasureChest treasureChest, int amount) {
         return CompletableFuture.supplyAsync(() -> {
             try (Connection connection = connectionProvider.getConnection()) {
-                try (PreparedStatement statement = connection.prepareStatement(String.format(SQL_REMOVE_TREASURE_KEYS, treasuresTable))) {
+                try (PreparedStatement statement = connection.prepareStatement(String.format(SQL_REMOVE_TREASURE_CHESTS, treasuresTable))) {
                     statement.setInt(1, amount);
                     statement.setInt(2, user.getDatabaseId());
                     statement.setString(3, treasureChest.getKey());
@@ -658,7 +657,7 @@ public abstract class SQLDatabase extends DatabaseImpl {
 
                     if (rowsAffected > 0) {
                         // Get the actual new value from database
-                        try (PreparedStatement selectStatement = connection.prepareStatement(String.format(SQL_GET_TREASURE_KEYS, treasuresTable))) {
+                        try (PreparedStatement selectStatement = connection.prepareStatement(String.format(SQL_GET_TREASURE_CHEST, treasuresTable))) {
                             selectStatement.setInt(1, user.getDatabaseId());
                             selectStatement.setString(2, treasureChest.getKey());
 
@@ -675,7 +674,7 @@ public abstract class SQLDatabase extends DatabaseImpl {
                     }
                 }
             } catch (SQLException e) {
-                plugin.getLogger().log(Level.WARNING, "Failed to remove treasure keys for player " + user + ".", e);
+                plugin.getLogger().log(Level.WARNING, "Failed to remove treasure chests for player " + user + ".", e);
             }
             return BooleanIntPair.of(false, user.getTreasureChests(treasureChest));
         }).thenApplyAsync(result -> {
@@ -687,14 +686,14 @@ public abstract class SQLDatabase extends DatabaseImpl {
     }
 
     @Override
-    public CompletableFuture<BooleanIntPair> setTreasureKeysAsyncImpl(User user, TreasureChest treasureChest, int amount) {
+    public CompletableFuture<BooleanIntPair> setTreasureChestsAsyncImpl(User user, TreasureChest treasureChest, int amount) {
         return CompletableFuture.supplyAsync(() -> {
             if (amount < 0) {
                 return BooleanIntPair.of(false, user.getTreasureChests(treasureChest));
             }
 
             try (Connection connection = connectionProvider.getConnection()) {
-                try (PreparedStatement statement = connection.prepareStatement(String.format(getSetTreasureKeys(), treasuresTable))) {
+                try (PreparedStatement statement = connection.prepareStatement(String.format(getSetTreasureChests(), treasuresTable))) {
                     statement.setInt(1, user.getDatabaseId());
                     statement.setString(2, treasureChest.getKey());
                     statement.setInt(3, amount);
@@ -702,7 +701,7 @@ public abstract class SQLDatabase extends DatabaseImpl {
 
                     if (rowsAffected > 0) {
                         // Get the actual new value from database
-                        try (PreparedStatement selectStatement = connection.prepareStatement(String.format(SQL_GET_TREASURE_KEYS, treasuresTable))) {
+                        try (PreparedStatement selectStatement = connection.prepareStatement(String.format(SQL_GET_TREASURE_CHEST, treasuresTable))) {
                             selectStatement.setInt(1, user.getDatabaseId());
                             selectStatement.setString(2, treasureChest.getKey());
 
@@ -716,7 +715,7 @@ public abstract class SQLDatabase extends DatabaseImpl {
                     }
                 }
             } catch (SQLException e) {
-                plugin.getLogger().log(Level.WARNING, "Failed to set treasure keys for player " + user + ".", e);
+                plugin.getLogger().log(Level.WARNING, "Failed to set treasure chests for player " + user + ".", e);
             }
             return BooleanIntPair.of(false, user.getTreasureChests(treasureChest));
         }).thenApplyAsync(result -> {

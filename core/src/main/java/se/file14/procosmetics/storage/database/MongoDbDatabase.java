@@ -595,7 +595,7 @@ public class MongoDbDatabase extends DatabaseImpl {
     }
 
     @Override
-    protected CompletableFuture<BooleanIntPair> addTreasureKeysAsyncImpl(User user, TreasureChest treasureChest, int amount) {
+    protected CompletableFuture<BooleanIntPair> addTreasureChestsAsyncImpl(User user, TreasureChest treasureChest, int amount) {
         return CompletableFuture.supplyAsync(() -> {
             try {
                 String treasureKey = treasureChest.getKey();
@@ -646,7 +646,7 @@ public class MongoDbDatabase extends DatabaseImpl {
     }
 
     @Override
-    protected CompletableFuture<BooleanIntPair> removeTreasureKeysAsyncImpl(User user, TreasureChest treasureChest, int amount) {
+    protected CompletableFuture<BooleanIntPair> removeTreasureChestsAsyncImpl(User user, TreasureChest treasureChest, int amount) {
         return CompletableFuture.supplyAsync(() -> {
             try {
                 String treasureKey = treasureChest.getKey();
@@ -694,7 +694,7 @@ public class MongoDbDatabase extends DatabaseImpl {
     }
 
     @Override
-    protected CompletableFuture<BooleanIntPair> setTreasureKeysAsyncImpl(User user, TreasureChest treasureChest, int amount) {
+    protected CompletableFuture<BooleanIntPair> setTreasureChestsAsyncImpl(User user, TreasureChest treasureChest, int amount) {
         return CompletableFuture.supplyAsync(() -> {
             if (amount < 0) {
                 return BooleanIntPair.of(false, user.getTreasureChests(treasureChest));

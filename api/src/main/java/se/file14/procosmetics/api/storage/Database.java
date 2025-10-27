@@ -15,7 +15,7 @@ import java.util.concurrent.CompletableFuture;
 /**
  * Provides database operations for user data persistence.
  * This interface handles loading and saving user data including cosmetic ownership,
- * equipped cosmetics, coins, gadget ammunition, treasure keys, and user preferences.
+ * equipped cosmetics, coins, gadget ammunition, treasure chests, and user preferences.
  * Operations are available in both synchronous and asynchronous variants.
  *
  * <p>Async methods return {@link CompletableFuture} instances that can be used for
@@ -237,7 +237,7 @@ public interface Database {
     CompletableFuture<BooleanIntPair> setGadgetAmmoAsync(User user, GadgetType gadgetType, int amount);
 
     /**
-     * Adds treasure chest keys to a user's inventory asynchronously.
+     * Adds treasure chests to a user's inventory asynchronously.
      * On success, the user's in-memory key count is automatically updated on the main thread.
      *
      * @param user          The user
@@ -245,10 +245,10 @@ public interface Database {
      * @param amount        The amount to add
      * @return A CompletableFuture containing a pair: success status and new key count from database
      */
-    CompletableFuture<BooleanIntPair> addTreasureKeysAsync(User user, TreasureChest treasureChest, int amount);
+    CompletableFuture<BooleanIntPair> addTreasureChestsAsync(User user, TreasureChest treasureChest, int amount);
 
     /**
-     * Removes treasure chest keys from a user's inventory asynchronously.
+     * Removes treasure chests from a user's inventory asynchronously.
      * This operation only succeeds if the user has sufficient keys.
      * On success, the user's in-memory key count is automatically updated on the main thread.
      *
@@ -257,10 +257,10 @@ public interface Database {
      * @param amount        The amount to remove
      * @return A CompletableFuture containing a pair: success status and new key count from database
      */
-    CompletableFuture<BooleanIntPair> removeTreasureKeysAsync(User user, TreasureChest treasureChest, int amount);
+    CompletableFuture<BooleanIntPair> removeTreasureChestsAsync(User user, TreasureChest treasureChest, int amount);
 
     /**
-     * Sets a user's treasure chest key count asynchronously.
+     * Sets a user's treasure chest count asynchronously.
      * This operation fails if the amount is negative.
      * On success, the user's in-memory key count is automatically updated on the main thread.
      *
@@ -269,7 +269,7 @@ public interface Database {
      * @param amount        The new key count (must be non-negative)
      * @return A CompletableFuture containing a pair: success status and new key count from database
      */
-    CompletableFuture<BooleanIntPair> setTreasureKeysAsync(User user, TreasureChest treasureChest, int amount);
+    CompletableFuture<BooleanIntPair> setTreasureChestsAsync(User user, TreasureChest treasureChest, int amount);
 
     /**
      * Shuts down the database connection and releases resources.
