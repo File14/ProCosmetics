@@ -84,13 +84,13 @@ public class PostgresqlDatabase extends SQLDatabase {
 
     @Override
     protected String getAddTreasureChests() {
-        return "INSERT INTO %s (player_id, treasure, amount) VALUES (?, ?, ?) " +
-                "ON CONFLICT (player_id, treasure) DO UPDATE SET amount = %s.amount + EXCLUDED.amount;";
+        return "INSERT INTO %s (player_id, treasure_chest, amount) VALUES (?, ?, ?) " +
+                "ON CONFLICT (player_id, treasure_chest) DO UPDATE SET amount = %s.amount + EXCLUDED.amount;";
     }
 
     @Override
     protected String getSetTreasureChests() {
-        return "INSERT INTO %s (player_id, treasure, amount) VALUES (?, ?, ?) " +
-                "ON CONFLICT (player_id, treasure) DO UPDATE SET amount = EXCLUDED.amount;";
+        return "INSERT INTO %s (player_id, treasure_chest, amount) VALUES (?, ?, ?) " +
+                "ON CONFLICT (player_id, treasure_chest) DO UPDATE SET amount = EXCLUDED.amount;";
     }
 }

@@ -56,9 +56,9 @@ public class SqliteDatabase extends SQLDatabase {
     protected String getCreateTreasureChestsTable() {
         return "CREATE TABLE IF NOT EXISTS %s (" +
                 "player_id INTEGER NOT NULL, " +
-                "treasure TEXT NOT NULL, " +
+                "treasure_chest TEXT NOT NULL, " +
                 "amount INTEGER NOT NULL DEFAULT 0, " +
-                "PRIMARY KEY (player_id, treasure), " +
+                "PRIMARY KEY (player_id, treasure_chest), " +
                 "FOREIGN KEY (player_id) REFERENCES %s(id) ON DELETE CASCADE, " +
                 "CHECK (amount >= 0)" +
                 ");";
@@ -84,13 +84,13 @@ public class SqliteDatabase extends SQLDatabase {
 
     @Override
     protected String getAddTreasureChests() {
-        return "INSERT INTO %s (player_id, treasure, amount) VALUES (?, ?, ?) " +
-                "ON CONFLICT(player_id, treasure) DO UPDATE SET amount = amount + excluded.amount;";
+        return "INSERT INTO %s (player_id, treasure_chest, amount) VALUES (?, ?, ?) " +
+                "ON CONFLICT(player_id, treasure_chest) DO UPDATE SET amount = amount + excluded.amount;";
     }
 
     @Override
     protected String getSetTreasureChests() {
-        return "INSERT INTO %s (player_id, treasure, amount) VALUES (?, ?, ?) " +
-                "ON CONFLICT(player_id, treasure) DO UPDATE SET amount = excluded.amount;";
+        return "INSERT INTO %s (player_id, treasure_chest, amount) VALUES (?, ?, ?) " +
+                "ON CONFLICT(player_id, treasure_chest) DO UPDATE SET amount = excluded.amount;";
     }
 }

@@ -49,7 +49,7 @@ public abstract class SQLDatabase extends DatabaseImpl {
     private final String usersTable;
     private final String cosmeticsTable;
     private final String gadgetAmmoTable;
-    private final String treasuresTable;
+    private final String treasureChestsTable;
 
     public SQLDatabase(ProCosmeticsPlugin plugin, ConnectionProvider connectionProvider) {
         super(plugin);
@@ -62,7 +62,7 @@ public abstract class SQLDatabase extends DatabaseImpl {
         usersTable = tablePrefix + "_users";
         cosmeticsTable = tablePrefix + "_cosmetics";
         gadgetAmmoTable = tablePrefix + "_gadget_ammo";
-        treasuresTable = tablePrefix + "_treasures";
+        treasureChestsTable = tablePrefix + "_treasure_chests";
 
         initializeTables();
     }
@@ -93,7 +93,7 @@ public abstract class SQLDatabase extends DatabaseImpl {
                 statement.addBatch(String.format(getCreateUsersTable(), usersTable));
                 statement.addBatch(String.format(getCreateCosmeticsTable(), cosmeticsTable, usersTable));
                 statement.addBatch(String.format(getCreateGadgetAmmoTable(), gadgetAmmoTable, usersTable));
-                statement.addBatch(String.format(getCreateTreasureChestsTable(), treasuresTable, usersTable));
+                statement.addBatch(String.format(getCreateTreasureChestsTable(), treasureChestsTable, usersTable));
                 statement.executeBatch();
             }
         } catch (SQLException e) {
@@ -232,7 +232,7 @@ public abstract class SQLDatabase extends DatabaseImpl {
 
     private void loadUserTreasureChests(UserImpl user) {
         try (Connection connection = connectionProvider.getConnection();
-             PreparedStatement statement = connection.prepareStatement(String.format(SQL_LOAD_USER_TREASURE_CHESTS, treasuresTable))) {
+             PreparedStatement statement = connection.prepareStatement(String.format(SQL_LOAD_USER_TREASURE_CHESTS, treasureChestsTable))) {
             statement.setInt(1, user.getDatabaseId());
 
             try (ResultSet resultSet = statement.executeQuery()) {
@@ -611,7 +611,7 @@ public abstract class SQLDatabase extends DatabaseImpl {
     public CompletableFuture<BooleanIntPair> addTreasureChestsAsyncImpl(User user, TreasureChest treasureChest, int amount) {
         return CompletableFuture.supplyAsync(() -> {
             try (Connection connection = connectionProvider.getConnection()) {
-                try (PreparedStatement statement = connection.prepareStatement(String.format(getAddTreasureChests(), treasuresTable))) {
+                try (PreparedStatement statement = connection.prepareStatement(String.format(getAddTreasureChests(), treasureChestsTable))) {
                     statement.setInt(1, user.getDatabaseId());
                     statement.setString(2, treasureChest.getKey());
                     statement.setInt(3, amount);
@@ -619,7 +619,7 @@ public abstract class SQLDatabase extends DatabaseImpl {
 
                     if (rowsAffected > 0) {
                         // Get the actual new value from database
-                        try (PreparedStatement selectStatement = connection.prepareStatement(String.format(SQL_GET_TREASURE_CHEST, treasuresTable))) {
+                        try (PreparedStatement selectStatement = connection.prepareStatement(String.format(SQL_GET_TREASURE_CHEST, treasureChestsTable))) {
                             selectStatement.setInt(1, user.getDatabaseId());
                             selectStatement.setString(2, treasureChest.getKey());
 
@@ -648,7 +648,7 @@ public abstract class SQLDatabase extends DatabaseImpl {
     public CompletableFuture<BooleanIntPair> removeTreasureChestsAsyncImpl(User user, TreasureChest treasureChest, int amount) {
         return CompletableFuture.supplyAsync(() -> {
             try (Connection connection = connectionProvider.getConnection()) {
-                try (PreparedStatement statement = connection.prepareStatement(String.format(SQL_REMOVE_TREASURE_CHESTS, treasuresTable))) {
+                try (PreparedStatement statement = connection.prepareStatement(String.format(SQL_REMOVE_TREASURE_CHESTS, treasureChestsTable))) {
                     statement.setInt(1, amount);
                     statement.setInt(2, user.getDatabaseId());
                     statement.setString(3, treasureChest.getKey());
@@ -657,7 +657,7 @@ public abstract class SQLDatabase extends DatabaseImpl {
 
                     if (rowsAffected > 0) {
                         // Get the actual new value from database
-                        try (PreparedStatement selectStatement = connection.prepareStatement(String.format(SQL_GET_TREASURE_CHEST, treasuresTable))) {
+                        try (PreparedStatement selectStatement = connection.prepareStatement(String.format(SQL_GET_TREASURE_CHEST, treasureChestsTable))) {
                             selectStatement.setInt(1, user.getDatabaseId());
                             selectStatement.setString(2, treasureChest.getKey());
 
@@ -693,7 +693,7 @@ public abstract class SQLDatabase extends DatabaseImpl {
             }
 
             try (Connection connection = connectionProvider.getConnection()) {
-                try (PreparedStatement statement = connection.prepareStatement(String.format(getSetTreasureChests(), treasuresTable))) {
+                try (PreparedStatement statement = connection.prepareStatement(String.format(getSetTreasureChests(), treasureChestsTable))) {
                     statement.setInt(1, user.getDatabaseId());
                     statement.setString(2, treasureChest.getKey());
                     statement.setInt(3, amount);
@@ -701,7 +701,7 @@ public abstract class SQLDatabase extends DatabaseImpl {
 
                     if (rowsAffected > 0) {
                         // Get the actual new value from database
-                        try (PreparedStatement selectStatement = connection.prepareStatement(String.format(SQL_GET_TREASURE_CHEST, treasuresTable))) {
+                        try (PreparedStatement selectStatement = connection.prepareStatement(String.format(SQL_GET_TREASURE_CHEST, treasureChestsTable))) {
                             selectStatement.setInt(1, user.getDatabaseId());
                             selectStatement.setString(2, treasureChest.getKey());
 

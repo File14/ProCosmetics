@@ -56,7 +56,7 @@ public class MysqlDatabase extends SQLDatabase {
     protected String getCreateTreasureChestsTable() {
         return "CREATE TABLE IF NOT EXISTS %s (" +
                 "player_id INT NOT NULL, " +
-                "treasure VARCHAR(32) NOT NULL, " +
+                "treasure_chest VARCHAR(32) NOT NULL, " +
                 "amount INT NOT NULL DEFAULT 0, " +
                 "PRIMARY KEY (player_id, treasure), " +
                 "FOREIGN KEY (player_id) REFERENCES %s(id) ON DELETE CASCADE, " +
@@ -84,13 +84,13 @@ public class MysqlDatabase extends SQLDatabase {
 
     @Override
     protected String getAddTreasureChests() {
-        return "INSERT INTO %s (player_id, treasure, amount) VALUES (?, ?, ?) " +
+        return "INSERT INTO %s (player_id, treasure_chest, amount) VALUES (?, ?, ?) " +
                 "ON DUPLICATE KEY UPDATE amount = amount + VALUES(amount);";
     }
 
     @Override
     protected String getSetTreasureChests() {
-        return "INSERT INTO %s (player_id, treasure, amount) VALUES (?, ?, ?) " +
+        return "INSERT INTO %s (player_id, treasure_chest, amount) VALUES (?, ?, ?) " +
                 "ON DUPLICATE KEY UPDATE amount = VALUES(amount);";
     }
 }
