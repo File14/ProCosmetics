@@ -22,6 +22,7 @@ public class CosmeticRarityRegistryImpl implements CosmeticRarityRegistry {
 
     public CosmeticRarityRegistryImpl(ProCosmeticsPlugin plugin) {
         this.plugin = plugin;
+        load();
     }
 
     @Override
