@@ -14,7 +14,6 @@ import se.file14.procosmetics.api.cosmetic.CosmeticBehavior;
 import se.file14.procosmetics.api.cosmetic.CosmeticRarity;
 import se.file14.procosmetics.api.cosmetic.CosmeticType;
 import se.file14.procosmetics.api.cosmetic.registry.CosmeticCategory;
-import se.file14.procosmetics.api.locale.Translator;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.util.item.ItemBuilderImpl;
 
@@ -82,8 +81,8 @@ public abstract class CosmeticTypeImpl<T extends CosmeticType<T, B>,
     }
 
     @Override
-    public String getName(Translator translator) {
-        return translator.translateRaw("cosmetic." + category.getKey() + "." + key);
+    public String getNameTranslationKey() {
+        return "cosmetic." + category.getKey() + "." + key;
     }
 
     @Override

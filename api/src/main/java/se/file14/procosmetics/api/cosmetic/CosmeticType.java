@@ -1,10 +1,8 @@
 package se.file14.procosmetics.api.cosmetic;
 
-import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import se.file14.procosmetics.api.cosmetic.registry.CosmeticCategory;
-import se.file14.procosmetics.api.locale.Translator;
 import se.file14.procosmetics.api.treasure.loot.LootEntry;
 import se.file14.procosmetics.api.user.User;
 
@@ -34,22 +32,6 @@ public interface CosmeticType<T extends CosmeticType<T, B>, B extends CosmeticBe
      * @return the cosmetic's unique key
      */
     String getKey();
-
-    /**
-     * Gets the display name of this cosmetic type.
-     *
-     * @param translator the translator to use for localization
-     * @return the localized display name component
-     */
-    String getName(Translator translator);
-
-    /**
-     * Gets the tag resolvers for this cosmetic type for use with MiniMessage formatting.
-     *
-     * @param user the user to use for the resolvers
-     * @return the tag resolver for this cosmetic
-     */
-    TagResolver getResolvers(User user);
 
     /**
      * Gets the category this cosmetic type belongs to.

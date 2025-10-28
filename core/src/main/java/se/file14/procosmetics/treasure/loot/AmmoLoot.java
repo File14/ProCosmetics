@@ -43,7 +43,7 @@ public class AmmoLoot extends LootTable<AmmoLootEntry> {
                 PLUGIN.getTreasureChestManager().getLootBroadcaster().broadcastMessage(
                         player,
                         lootEntry.getRarity(),
-                        "treasure_chest.reward." + key,
+                        "treasure_chest.loot." + key + ".broadcast",
                         receiverUser -> new TagResolver[]{
                                 Placeholder.unparsed("player", player.getName()),
                                 Placeholder.unparsed("cosmetic", lootEntry.getName(receiverUser)),

@@ -29,7 +29,7 @@ public class CosmeticLoot extends LootTable<CosmeticType<?, ?>> {
         PLUGIN.getTreasureChestManager().getLootBroadcaster().broadcastMessage(
                 player,
                 lootEntry.getRarity(),
-                "treasure_chest.reward." + getKey(),
+                "treasure_chest.loot." + getKey() + ".broadcast",
                 receiverUser -> new TagResolver[]{
                         Placeholder.unparsed("player", player.getName()),
                         Placeholder.unparsed("cosmetic", lootEntry.getName(user)),

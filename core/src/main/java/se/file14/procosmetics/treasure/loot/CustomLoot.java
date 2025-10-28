@@ -5,7 +5,6 @@ import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import se.file14.procosmetics.api.cosmetic.CosmeticRarity;
-import se.file14.procosmetics.api.locale.Translator;
 import se.file14.procosmetics.api.treasure.loot.LootEntry;
 import se.file14.procosmetics.api.user.User;
 
@@ -13,19 +12,16 @@ import java.util.List;
 
 public class CustomLoot extends LootTable<CustomLoot> implements LootEntry {
 
-    private final String name;
     private final ItemStack itemStack;
     private final CosmeticRarity rarity;
     private final List<String> commands;
 
     public CustomLoot(String key,
                       int weight,
-                      String name,
                       ItemStack itemStack,
                       CosmeticRarity rarity,
                       List<String> commands) {
         super(key, weight);
-        this.name = name;
         this.itemStack = itemStack;
         this.rarity = rarity;
         this.commands = commands;
@@ -51,8 +47,9 @@ public class CustomLoot extends LootTable<CustomLoot> implements LootEntry {
         PLUGIN.getTreasureChestManager().getLootBroadcaster().broadcastMessage(
                 player,
                 lootEntry.getRarity(),
-                "treasure_chest.reward." + getKey(),
+                "treasure_chest.loot.custom.broadcast",
                 receiverUser -> new TagResolver[]{
+                        Placeholder.unparsed("loot", lootEntry.getName(user)),
                         Placeholder.unparsed("player", player.getName()),
                         Placeholder.unparsed("rarity", lootEntry.getRarity().getName(user)),
                         Placeholder.parsed("rarity_primary_color", lootEntry.getRarity().getPrimaryColor()),
@@ -61,8 +58,18 @@ public class CustomLoot extends LootTable<CustomLoot> implements LootEntry {
     }
 
     @Override
-    public String getName(Translator translator) {
-        return name;
+    public String getCategory(User user) {
+        return user.translateRaw("treasure_chest.category.custom");
+    }
+
+    @Override
+    public String getNameTranslationKey() {
+        return "treasure_chest.loot.custom." + key;
+    }
+
+    @Override
+    public TagResolver getResolvers(User user) {
+        return TagResolver.empty();
     }
 
     @Override

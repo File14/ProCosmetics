@@ -184,8 +184,8 @@ public abstract class TreasureChestAnimation extends BukkitRunnable implements L
         if (text.getBukkitEntity() instanceof TextDisplay textDisplay) {
             textDisplay.setText(SERIALIZER.serialize(user.translate(
                     "treasure_chest.open.hologram",
-                    Placeholder.unparsed("loot", lootEntry.getName(user)),
                     Placeholder.unparsed("category", lootTable.getCategory(user)),
+                    Placeholder.component("loot", lootEntry.getResolvedName(user)),
                     Placeholder.parsed("rarity_primary_color", rarity.getPrimaryColor()),
                     Placeholder.parsed("rarity_secondary_color", rarity.getSecondaryColor())
             )));

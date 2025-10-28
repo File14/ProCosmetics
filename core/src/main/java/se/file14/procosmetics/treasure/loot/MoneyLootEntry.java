@@ -1,12 +1,14 @@
 package se.file14.procosmetics.treasure.loot;
 
+import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
+import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import se.file14.procosmetics.ProCosmeticsPlugin;
 import se.file14.procosmetics.api.ProCosmetics;
 import se.file14.procosmetics.api.cosmetic.CosmeticRarity;
-import se.file14.procosmetics.api.locale.Translator;
 import se.file14.procosmetics.api.treasure.loot.LootEntry;
+import se.file14.procosmetics.api.user.User;
 
 public class MoneyLootEntry implements LootEntry {
 
@@ -24,8 +26,15 @@ public class MoneyLootEntry implements LootEntry {
     }
 
     @Override
-    public String getName(Translator translator) {
-        return String.valueOf(amount);
+    public String getNameTranslationKey() {
+        return "treasure_chest.loot.money";
+    }
+
+    @Override
+    public TagResolver getResolvers(User user) {
+        return TagResolver.resolver(
+                Placeholder.unparsed("amount", String.valueOf(amount))
+        );
     }
 
     @Override

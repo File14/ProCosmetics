@@ -79,7 +79,7 @@ public class TreasureChestImpl implements TreasureChest {
                 ammo.add(ammoType);
             }
         }
-        String ammoPath = path + ".rewards.ammo.";
+        String ammoPath = path + ".loot.ammo.";
         int weight = config.getInt(ammoPath + "weight");
         if (weight > 0) {
             totalWeight += weight;
@@ -92,7 +92,7 @@ public class TreasureChestImpl implements TreasureChest {
         }
 
         // MONEY
-        String moneyPath = path + ".rewards.money.";
+        String moneyPath = path + ".loot.money.";
         weight = config.getInt(moneyPath + "weight");
         if (weight > 0) {
             totalWeight += weight;
@@ -105,8 +105,8 @@ public class TreasureChestImpl implements TreasureChest {
 
         // COSMETICS
         for (CosmeticCategory<?, ?, ?> cosmeticCategory : plugin.getCategoryRegistries().getCategories()) {
-            String path2 = "treasure_chests." + key + ".rewards." + cosmeticCategory.getKey() + ".";
-            weight = config.getInt(path2 + "weight");
+            String cosmeticPath = path + ".loot." + cosmeticCategory.getKey() + ".";
+            weight = config.getInt(cosmeticPath + "weight");
 
             if (weight > 0) {
                 List<CosmeticType<?, ?>> cosmeticTypes = new ArrayList<>();
@@ -124,22 +124,20 @@ public class TreasureChestImpl implements TreasureChest {
             }
         }
         // CUSTOM LOOT
-        String customRewardsPath = path + ".rewards.custom";
-        if (config.getConfigurationSection(customRewardsPath) != null) {
-            for (String key2 : config.getConfigurationSection(customRewardsPath).getKeys(false)) {
-                String path1 = customRewardsPath + "." + key2 + ".";
+        String customLootPath = path + ".loot.custom";
+        if (config.getConfigurationSection(customLootPath) != null) {
+            for (String customKey : config.getConfigurationSection(customLootPath).getKeys(false)) {
+                String path1 = customLootPath + "." + customKey + ".";
                 CosmeticRarity rarity = plugin.getCosmeticRarityRegistry().getSafely(config.getString(path1 + "rarity"));
                 weight = config.getInt(path1 + "weight");
 
-                if (weight > 0) {
+                if (weight > 0 && config.getBoolean(path1 + "enable")) {
                     totalWeight += weight;
-
                     ItemBuilderImpl customItemBuilder = new ItemBuilderImpl(config, path1);
 
                     lootEntries.add(new CustomLoot(
-                            key2,
+                            customKey,
                             weight,
-                            config.getString(path1 + "name"),
                             customItemBuilder.getItemStack(),
                             rarity,
                             config.getStringList(path1 + "commands")

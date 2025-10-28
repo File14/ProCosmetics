@@ -52,7 +52,7 @@ treasure_chests:
     item: "minecraft:chest"
     count: 1
     slot: 10
-    rewards:
+    loot:
       money:
         minimum_amount: 200
         maximum_amount: 500
@@ -88,13 +88,11 @@ treasure_chests:
       statuses:
         weight: 0
       custom:
-        coin_bag:
+        small_coin_bag:
           enable: true
-          name: "&eSmall Coin Bag"
           item: "minecraft:sunflower"
           weight: 30
           rarity: COMMON
-          message: "&e<player> &7has found a small bag of &ecoins&7!"
           commands:
             - "pc add coins <player> 100"
 
@@ -112,7 +110,7 @@ treasure_chests:
     item: "minecraft:ender_chest"
     count: 1
     slot: 13
-    rewards:
+    loot:
       money:
         minimum_amount: 500
         maximum_amount: 2000
@@ -148,13 +146,11 @@ treasure_chests:
       statuses:
         weight: 10
       custom:
-        coin_bag:
+        medium_coin_bag:
           enable: true
-          name: "&eMedium Coin Bag"
           item: "minecraft:sunflower"
           weight: 10
           rarity: COMMON
-          message: "&e<player> &7has found a medium bag of &ecoins&7!"
           commands:
             - "pc add coins <player> 500"
 
@@ -172,7 +168,7 @@ treasure_chests:
     item: "minecraft:chest"
     count: 1
     slot: 16
-    rewards:
+    loot:
       money:
         minimum_amount: 1000
         maximum_amount: 2500
@@ -208,13 +204,11 @@ treasure_chests:
       statuses:
         weight: 14
       custom:
-        coin_bag:
+        large_coin_bag:
           enable: true
-          name: "&eHuge Coin Bag"
           item: "minecraft:sunflower"
           weight: 3
           rarity: LEGENDARY
-          message: "&e<player> &7has found a huge bag of &ecoins&7!"
           commands:
             - "pc add coins <player> 5000"
 
