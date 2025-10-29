@@ -9,7 +9,20 @@ import se.file14.procosmetics.util.FastMathUtil;
 
 public class YinAndYang implements ParticleEffectBehavior {
 
-    private static final float SPEED = 10.0f;
+    private static final double MOVING_FIREWORK_MOTION_X = 0.0d;
+    private static final double MOVING_FIREWORK_MOTION_Y = 1.0d;
+    private static final double MOVING_FIREWORK_MOTION_Z = 0.0d;
+    private static final double MOVING_HEIGHT_OFFSET = 0.2d;
+    private static final float MOVING_RANGE = 0.12f;
+    private static final double MOVING_SPEED = 0.2d;
+
+    private static final double STATIC_HEIGHT_OFFSET = 0.1d;
+    private static final float STATIC_ROTATION_SPEED = 10.0f;
+    private static final float STATIC_ORBIT_RADIUS = 1.5f;
+    private static final double STATIC_FIREWORK_MOTION_Y = 0.1d;
+    private static final double STATIC_FIREWORK_SPEED = 0.2d;
+    private static final double STATIC_SMOKE_MOTION_Y = 0.1d;
+    private static final double STATIC_SMOKE_SPEED = 0.1d;
 
     private int ticks;
 
@@ -19,46 +32,82 @@ public class YinAndYang implements ParticleEffectBehavior {
 
     @Override
     public void onUpdate(CosmeticContext<ParticleEffectType> context, Location location) {
-        float angle;
-        float range;
-        float x;
-        float z;
-
         if (context.getUser().isMoving()) {
-            angle = FastMathUtil.toRadians(location.getYaw());
-            range = 0.12f;
-            x = range * FastMathUtil.cos(angle);
-            z = range * FastMathUtil.sin(angle);
-
-            location.add(x, 0.2d, z);
-            location.getWorld().spawnParticle(Particle.FIREWORK, location, 0, 0.0d, 1.0d, 0.0d, 0.2d);
-            location.subtract(2 * x, 0.0d, 2 * z);
-            location.getWorld().spawnParticle(Particle.FIREWORK, location, 0, 0.0d, 1.0d, 0.0d, 0.2d);
+            spawnMovingEffect(location);
         } else {
-            location.add(0.0d, 0.1d, 0.0d);
-            angle = SPEED * FastMathUtil.toRadians(ticks);
-            x = FastMathUtil.sin(angle);
-            z = FastMathUtil.cos(angle);
-
-            for (int i = 0; i < 2; i++) {
-                range = i == 0 ? 1.5f : -1.5f;
-                float x2 = x * range;
-                float z2 = z * range;
-
-                location.getWorld().spawnParticle(Particle.FIREWORK, location, 0, x2, 0.1d, z2, 0.2d);
-
-                location.add(x2, 0.0d, z2);
-                location.getWorld().spawnParticle(Particle.SMOKE, location, 0, 0.0d, 0.1d, 0.0d, 0.1d);
-                location.subtract(x2, 0.0d, z2);
-            }
-
-            if (++ticks > 360) {
-                ticks = 0;
-            }
+            spawnStaticEffect(location);
         }
     }
 
     @Override
     public void onUnequip(CosmeticContext<ParticleEffectType> context) {
+    }
+
+    private void spawnMovingEffect(Location location) {
+        float yawAngle = FastMathUtil.toRadians(location.getYaw());
+        float offsetX = MOVING_RANGE * FastMathUtil.cos(yawAngle);
+        float offsetZ = MOVING_RANGE * FastMathUtil.sin(yawAngle);
+
+        location.add(offsetX, MOVING_HEIGHT_OFFSET, offsetZ);
+        location.getWorld().spawnParticle(
+                Particle.FIREWORK,
+                location,
+                0,
+                MOVING_FIREWORK_MOTION_X,
+                MOVING_FIREWORK_MOTION_Y,
+                MOVING_FIREWORK_MOTION_Z,
+                MOVING_SPEED
+        );
+
+        location.subtract(2.0d * offsetX, 0.0d, 2.0d * offsetZ);
+        location.getWorld().spawnParticle(
+                Particle.FIREWORK,
+                location,
+                0,
+                MOVING_FIREWORK_MOTION_X,
+                MOVING_FIREWORK_MOTION_Y,
+                MOVING_FIREWORK_MOTION_Z,
+                MOVING_SPEED
+        );
+    }
+
+    private void spawnStaticEffect(Location location) {
+        location.add(0.0d, STATIC_HEIGHT_OFFSET, 0.0d);
+
+        float angle = STATIC_ROTATION_SPEED * FastMathUtil.toRadians(ticks);
+        float directionX = FastMathUtil.sin(angle);
+        float directionZ = FastMathUtil.cos(angle);
+
+        for (int i = 0; i < 2; i++) {
+            float radius = i == 0 ? STATIC_ORBIT_RADIUS : -STATIC_ORBIT_RADIUS;
+            float motionX = directionX * radius;
+            float motionZ = directionZ * radius;
+
+            location.getWorld().spawnParticle(
+                    Particle.FIREWORK,
+                    location,
+                    0,
+                    motionX,
+                    STATIC_FIREWORK_MOTION_Y,
+                    motionZ,
+                    STATIC_FIREWORK_SPEED
+            );
+
+            location.add(motionX, 0.0d, motionZ);
+            location.getWorld().spawnParticle(
+                    Particle.SMOKE,
+                    location,
+                    0,
+                    0.0d,
+                    STATIC_SMOKE_MOTION_Y,
+                    0.0d,
+                    STATIC_SMOKE_SPEED
+            );
+            location.subtract(motionX, 0.0d, motionZ);
+        }
+
+        if (ticks++ >= 360) {
+            ticks = 0;
+        }
     }
 }

@@ -14,7 +14,7 @@ public class LegendaryAura implements ParticleEffectBehavior {
 
     @Override
     public void onUpdate(CosmeticContext<ParticleEffectType> context, Location location) {
-        context.getPlayer().getWorld().playEffect(context.getPlayer().getLocation(), Effect.ENDER_SIGNAL, 0);
+        location.getWorld().playEffect(location, Effect.ENDER_SIGNAL, 0);
     }
 
     @Override

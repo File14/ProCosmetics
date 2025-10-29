@@ -9,8 +9,13 @@ import se.file14.procosmetics.util.FastMathUtil;
 
 public class InLove implements ParticleEffectBehavior {
 
-    private static final float SPEED = 30.0f;
-    private static final float RANGE = 0.6f;
+    private static final double MOVING_HEIGHT_OFFSET = 0.6d;
+    private static final int MOVING_PARTICLE_COUNT = 0;
+
+    private static final double STATIC_HEIGHT_OFFSET = 2.1d;
+    private static final float STATIC_ROTATION_SPEED = 30.0f;
+    private static final float STATIC_ORBIT_RADIUS = 0.6f;
+    private static final int STATIC_PARTICLE_COUNT = 0;
 
     private int ticks;
 
@@ -21,26 +26,31 @@ public class InLove implements ParticleEffectBehavior {
     @Override
     public void onUpdate(CosmeticContext<ParticleEffectType> context, Location location) {
         if (context.getUser().isMoving()) {
-            location.getWorld().spawnParticle(Particle.HEART, location.clone().add(0.0d, 0.6d, 0.0d), 0);
+            spawnMovingEffect(location);
         } else {
-            float angle = SPEED * FastMathUtil.toRadians(ticks);
-
-            location.getWorld().spawnParticle(Particle.HEART,
-                    location.add(
-                            RANGE * FastMathUtil.cos(angle),
-                            2.1d,
-                            RANGE * FastMathUtil.sin(angle)
-                    ),
-                    0
-            );
-
-            if (++ticks > 360) {
-                ticks = 0;
-            }
+            spawnStaticEffect(location);
         }
     }
 
     @Override
     public void onUnequip(CosmeticContext<ParticleEffectType> context) {
+    }
+
+    private void spawnMovingEffect(Location location) {
+        location.add(0.0d, MOVING_HEIGHT_OFFSET, 0.0d);
+        location.getWorld().spawnParticle(Particle.HEART, location, MOVING_PARTICLE_COUNT);
+    }
+
+    private void spawnStaticEffect(Location location) {
+        float angle = STATIC_ROTATION_SPEED * FastMathUtil.toRadians(ticks);
+        float offsetX = STATIC_ORBIT_RADIUS * FastMathUtil.cos(angle);
+        float offsetZ = STATIC_ORBIT_RADIUS * FastMathUtil.sin(angle);
+
+        location.add(offsetX, STATIC_HEIGHT_OFFSET, offsetZ);
+        location.getWorld().spawnParticle(Particle.HEART, location, STATIC_PARTICLE_COUNT);
+
+        if (ticks++ >= 360) {
+            ticks = 0;
+        }
     }
 }

@@ -9,7 +9,9 @@ import se.file14.procosmetics.util.FastMathUtil;
 
 public class EmeraldTwirl implements ParticleEffectBehavior {
 
-    private static final float SPEED = 10.0f;
+    private static final float ROTATION_SPEED = 10.0f;
+    private static final float FREQUENCY_MULTIPLIER = 0.2f;
+    private static final float HEIGHT_OFFSET = 1.2f;
 
     private int ticks;
 
@@ -19,15 +21,19 @@ public class EmeraldTwirl implements ParticleEffectBehavior {
 
     @Override
     public void onUpdate(CosmeticContext<ParticleEffectType> context, Location location) {
-        float angle = SPEED * FastMathUtil.toRadians(ticks);
+        float angle = ROTATION_SPEED * FastMathUtil.toRadians(ticks);
+        float offsetX = FastMathUtil.sin(angle);
+        float offsetY = FastMathUtil.sin(FREQUENCY_MULTIPLIER * angle) + HEIGHT_OFFSET;
+        float offsetZ = FastMathUtil.cos(angle);
 
-        location.add(FastMathUtil.sin(angle),
-                FastMathUtil.sin(0.2f * angle) + 1.2f,
-                FastMathUtil.cos(angle)
+        location.add(offsetX, offsetY, offsetZ);
+        location.getWorld().spawnParticle(
+                Particle.HAPPY_VILLAGER,
+                location,
+                0
         );
-        location.getWorld().spawnParticle(Particle.HAPPY_VILLAGER, location, 0);
 
-        if (ticks++ > 360) {
+        if (ticks++ >= 360) {
             ticks = 0;
         }
     }

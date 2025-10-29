@@ -8,6 +8,20 @@ import se.file14.procosmetics.api.cosmetic.particleeffect.ParticleEffectType;
 
 public class SnowCloud implements ParticleEffectBehavior {
 
+    private static final double MOVING_HEIGHT_OFFSET = 0.4d;
+    private static final int MOVING_PARTICLE_COUNT = 2;
+
+    private static final double STATIC_CLOUD_HEIGHT_OFFSET = 2.8d;
+    private static final double STATIC_CLOUD_OFFSET_X = 0.5d;
+    private static final double STATIC_CLOUD_OFFSET_Y = 0.1d;
+    private static final double STATIC_CLOUD_OFFSET_Z = 0.5d;
+    private static final int STATIC_CLOUD_PARTICLE_COUNT = 4;
+
+    private static final double STATIC_SNOW_OFFSET_X = 0.25d;
+    private static final double STATIC_SNOW_OFFSET_Y = 0.05d;
+    private static final double STATIC_SNOW_OFFSET_Z = 0.25d;
+    private static final int STATIC_SNOW_PARTICLE_COUNT = 2;
+
     @Override
     public void onEquip(CosmeticContext<ParticleEffectType> context) {
     }
@@ -15,35 +29,48 @@ public class SnowCloud implements ParticleEffectBehavior {
     @Override
     public void onUpdate(CosmeticContext<ParticleEffectType> context, Location location) {
         if (context.getUser().isMoving()) {
-            location.getWorld().spawnParticle(Particle.SNOWFLAKE,
-                    location.add(0.0d, 0.4d, 0.0d),
-                    2,
-                    0.0d,
-                    0.0d,
-                    0.0d,
-                    0.0d
-            );
+            spawnMovingEffect(location);
         } else {
-            location.getWorld().spawnParticle(Particle.CLOUD,
-                    location.add(0.0d, 2.8d, 0.0d),
-                    4,
-                    0.5d,
-                    0.1d,
-                    0.5d,
-                    0.0d
-            );
-            location.getWorld().spawnParticle(Particle.SNOWFLAKE,
-                    location,
-                    2,
-                    0.25d,
-                    0.05d,
-                    0.25d,
-                    0.0d
-            );
+            spawnStaticEffect(location);
         }
     }
 
     @Override
     public void onUnequip(CosmeticContext<ParticleEffectType> context) {
+    }
+
+    private void spawnMovingEffect(Location location) {
+        location.add(0.0d, MOVING_HEIGHT_OFFSET, 0.0d);
+        location.getWorld().spawnParticle(
+                Particle.SNOWFLAKE,
+                location,
+                MOVING_PARTICLE_COUNT,
+                0.0d,
+                0.0d,
+                0.0d,
+                0.0d
+        );
+    }
+
+    private void spawnStaticEffect(Location location) {
+        location.add(0.0d, STATIC_CLOUD_HEIGHT_OFFSET, 0.0d);
+        location.getWorld().spawnParticle(
+                Particle.CLOUD,
+                location,
+                STATIC_CLOUD_PARTICLE_COUNT,
+                STATIC_CLOUD_OFFSET_X,
+                STATIC_CLOUD_OFFSET_Y,
+                STATIC_CLOUD_OFFSET_Z,
+                0.0d
+        );
+        location.getWorld().spawnParticle(
+                Particle.SNOWFLAKE,
+                location,
+                STATIC_SNOW_PARTICLE_COUNT,
+                STATIC_SNOW_OFFSET_X,
+                STATIC_SNOW_OFFSET_Y,
+                STATIC_SNOW_OFFSET_Z,
+                0.0d
+        );
     }
 }

@@ -9,7 +9,7 @@ public class VampireWings extends ShapeParticleEffectBehavior {
             null,
             Color.BLACK
     };
-    
+
     private static final int[][] SHAPE = new int[][]{
             {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
             {0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0},

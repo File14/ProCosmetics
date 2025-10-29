@@ -12,9 +12,15 @@ import se.file14.procosmetics.util.MathUtil;
 
 public class ColorfulTrail implements ParticleEffectBehavior {
 
-    private int r = 255;
-    private int g = 0;
-    private int b = 0;
+    private static final double HEIGHT_OFFSET = 0.1d;
+    private static final int PARTICLE_COUNT = 10;
+    private static final float TRAIL_START_OFFSET = -0.85f;
+    private static final float TRAIL_SPACING = 0.2f;
+    private static final int RGB_STEP = 15;
+
+    private int red = 255;
+    private int green = 0;
+    private int blue = 0;
 
     private final Vector vector = new Vector();
 
@@ -24,51 +30,57 @@ public class ColorfulTrail implements ParticleEffectBehavior {
 
     @Override
     public void onUpdate(CosmeticContext<ParticleEffectType> context, Location location) {
-        location.add(0.0d, 0.1d, 0.0d);
-        float x = -0.85f;
-        float angle = -FastMathUtil.toRadians(location.getYaw());
-
         if (context.getUser().isMoving()) {
-            nextRGB();
+            cycleRainbowColor();
         }
-
-        for (int i = 0; i < 10; i++) {
-            vector.setX(x).setY(0.0d).setZ(0.0d);
-            MathUtil.rotateAroundAxisY(vector, angle);
-            location.add(vector);
-
-            location.getWorld().spawnParticle(
-                    Particle.DUST,
-                    location,
-                    2,
-                    0,
-                    0,
-                    0,
-                    0.0d,
-                    new Particle.DustOptions(Color.fromRGB(r, g, b), 1)
-            );
-            location.subtract(vector);
-            x += 0.2f;
-        }
-    }
-
-    private void nextRGB() {
-        if (r == 255 && g < 255 && b == 0) {
-            g = Math.min(g + 15, 255);
-        } else if (g == 255 && r > 0 && b == 0) {
-            r = Math.max(r - 15, 0);
-        } else if (g == 255 && b < 255 && r == 0) {
-            b = Math.min(b + 15, 255);
-        } else if (b == 255 && g > 0 && r == 0) {
-            g = Math.max(g - 15, 0);
-        } else if (b == 255 && r < 255 && g == 0) {
-            r = Math.min(r + 15, 255);
-        } else if (r == 255 && b > 0 && g == 0) {
-            b = Math.max(b - 15, 0);
-        }
+        spawnParticles(location);
     }
 
     @Override
     public void onUnequip(CosmeticContext<ParticleEffectType> context) {
+    }
+
+    private void spawnParticles(Location location) {
+        location.add(0.0d, HEIGHT_OFFSET, 0.0d);
+
+        float yawAngle = -FastMathUtil.toRadians(location.getYaw());
+        float offsetX = TRAIL_START_OFFSET;
+        Particle.DustOptions dustOptions = new Particle.DustOptions(Color.fromRGB(red, green, blue), 1);
+
+        for (int i = 0; i < PARTICLE_COUNT; i++) {
+            vector.setX(offsetX).setY(0.0d).setZ(0.0d);
+            MathUtil.rotateAroundAxisY(vector, yawAngle);
+
+            location.add(vector);
+            location.getWorld().spawnParticle(
+                    Particle.DUST,
+                    location,
+                    1,
+                    0.0d,
+                    0.0d,
+                    0.0d,
+                    0.0d,
+                    dustOptions
+            );
+            location.subtract(vector);
+
+            offsetX += TRAIL_SPACING;
+        }
+    }
+
+    private void cycleRainbowColor() {
+        if (red == 255 && green < 255 && blue == 0) {
+            green = Math.min(green + RGB_STEP, 255);
+        } else if (green == 255 && red > 0 && blue == 0) {
+            red = Math.max(red - RGB_STEP, 0);
+        } else if (green == 255 && blue < 255 && red == 0) {
+            blue = Math.min(blue + RGB_STEP, 255);
+        } else if (blue == 255 && green > 0 && red == 0) {
+            green = Math.max(green - RGB_STEP, 0);
+        } else if (blue == 255 && red < 255 && green == 0) {
+            red = Math.min(red + RGB_STEP, 255);
+        } else if (red == 255 && blue > 0 && green == 0) {
+            blue = Math.max(blue - RGB_STEP, 0);
+        }
     }
 }

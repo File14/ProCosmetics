@@ -9,9 +9,24 @@ import se.file14.procosmetics.util.FastMathUtil;
 
 public class ProtectiveShield implements ParticleEffectBehavior {
 
-    private static final float RANGE = 1.3f;
+    private static final double MOVING_HEIGHT_OFFSET = 0.4d;
+    private static final double MOVING_OFFSET_X = 0.0d;
+    private static final double MOVING_OFFSET_Y = 0.0d;
+    private static final double MOVING_OFFSET_Z = 0.0d;
+    private static final double MOVING_SPEED = 0.0d;
+    private static final int MOVING_PARTICLE_COUNT = 3;
 
-    private int i;
+    private static final float STATIC_SHIELD_RADIUS = 1.3f;
+    private static final float STATIC_HEIGHT_OFFSET = 1.4f;
+    private static final float STATIC_STEP_INCREMENT = FastMathUtil.PI / 10.0f;
+    private static final float STATIC_ANGLE_INCREMENT = FastMathUtil.PI / 15.0f;
+    private static final float STATIC_MAX_ANGLE = 2.0f * FastMathUtil.PI;
+    private static final float STATIC_MAX_STEP = 8.0f * FastMathUtil.PI;
+    private static final int STATIC_MAX_TICKS = 40;
+    private static final int STATIC_ANIMATION_TICKS = 20;
+    private static final int STATIC_PARTICLE_COUNT = 1;
+
+    private int ticks;
     private float step;
 
     @Override
@@ -21,43 +36,63 @@ public class ProtectiveShield implements ParticleEffectBehavior {
     @Override
     public void onUpdate(CosmeticContext<ParticleEffectType> context, Location location) {
         if (context.getUser().isMoving()) {
-            location.getWorld().spawnParticle(Particle.ENCHANTED_HIT,
-                    location.add(0.0d, 0.4d, 0.0d),
-                    3,
-                    0,
-                    0,
-                    0,
-                    0.0d
-            );
-            step = 0;
-            i = 0;
+            spawnMovingEffect(location);
         } else {
-            i++;
-
-            if (i >= 40) {
-                i = 0;
-            } else if (i <= 20) {
-                step += FastMathUtil.PI / 10.0f;
-
-                for (float angle = 0; angle <= 2.0f * FastMathUtil.PI; angle += FastMathUtil.PI / 15.0f) {
-                    float sinStep = FastMathUtil.sin(step);
-                    float x = RANGE * FastMathUtil.cos(angle) * sinStep;
-                    float y = RANGE * FastMathUtil.cos(step) + 1.4f;
-                    float z = RANGE * FastMathUtil.sin(angle) * sinStep;
-
-                    location.add(x, y, z);
-                    location.getWorld().spawnParticle(Particle.ENCHANTED_HIT, location, 1, 0, 0, 0, 0.0d);
-                    location.subtract(x, y, z);
-                }
-
-                if (step > 8 * Math.PI) {
-                    step = 0;
-                }
-            }
+            spawnStaticEffect(location);
         }
     }
 
     @Override
     public void onUnequip(CosmeticContext<ParticleEffectType> context) {
+    }
+
+    private void spawnMovingEffect(Location location) {
+        location.add(0.0d, MOVING_HEIGHT_OFFSET, 0.0d);
+        spawnEnchantedHitParticle(location, MOVING_PARTICLE_COUNT, MOVING_OFFSET_X, MOVING_OFFSET_Y, MOVING_OFFSET_Z, MOVING_SPEED);
+
+        step = 0.0f;
+        ticks = 0;
+    }
+
+    private void spawnStaticEffect(Location location) {
+        ticks++;
+
+        if (ticks >= STATIC_MAX_TICKS) {
+            ticks = 0;
+        } else if (ticks <= STATIC_ANIMATION_TICKS) {
+            step += STATIC_STEP_INCREMENT;
+
+            float sinStep = FastMathUtil.sin(step);
+            float cosStep = FastMathUtil.cos(step);
+
+            for (float angle = 0.0f; angle <= STATIC_MAX_ANGLE; angle += STATIC_ANGLE_INCREMENT) {
+                float cosAngle = FastMathUtil.cos(angle);
+                float sinAngle = FastMathUtil.sin(angle);
+
+                float offsetX = STATIC_SHIELD_RADIUS * cosAngle * sinStep;
+                float offsetY = STATIC_SHIELD_RADIUS * cosStep + STATIC_HEIGHT_OFFSET;
+                float offsetZ = STATIC_SHIELD_RADIUS * sinAngle * sinStep;
+
+                location.add(offsetX, offsetY, offsetZ);
+                spawnEnchantedHitParticle(location, STATIC_PARTICLE_COUNT, 0.0d, 0.0d, 0.0d, 0.0d);
+                location.subtract(offsetX, offsetY, offsetZ);
+            }
+
+            if (step >= STATIC_MAX_STEP) {
+                step = 0.0f;
+            }
+        }
+    }
+
+    private void spawnEnchantedHitParticle(Location location, int count, double offsetX, double offsetY, double offsetZ, double speed) {
+        location.getWorld().spawnParticle(
+                Particle.ENCHANTED_HIT,
+                location,
+                count,
+                offsetX,
+                offsetY,
+                offsetZ,
+                speed
+        );
     }
 }
