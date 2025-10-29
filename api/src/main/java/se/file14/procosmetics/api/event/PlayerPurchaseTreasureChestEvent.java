@@ -46,4 +46,11 @@ public interface PlayerPurchaseTreasureChestEvent extends ProCosmeticsEvent {
      * @return the {@link TreasureChest} instance
      */
     TreasureChest getTreasureChest();
+
+    /**
+     * Gets the number of treasure chests the user purchased.
+     *
+     * @return the amount of treasure chests bought
+     */
+    int getAmount();
 }

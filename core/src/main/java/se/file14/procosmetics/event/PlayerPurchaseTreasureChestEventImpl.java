@@ -35,12 +35,14 @@ public class PlayerPurchaseTreasureChestEventImpl extends Event implements Playe
     private final User user;
     private final Player player;
     private final TreasureChest treasureChest;
+    private final int amount;
 
-    public PlayerPurchaseTreasureChestEventImpl(ProCosmetics plugin, User user, Player player, TreasureChest treasureChest) {
+    public PlayerPurchaseTreasureChestEventImpl(ProCosmetics plugin, User user, Player player, TreasureChest treasureChest, int amount) {
         this.plugin = plugin;
         this.user = user;
         this.player = player;
         this.treasureChest = treasureChest;
+        this.amount = amount;
     }
 
     @Override
@@ -61,6 +63,11 @@ public class PlayerPurchaseTreasureChestEventImpl extends Event implements Playe
     @Override
     public TreasureChest getTreasureChest() {
         return treasureChest;
+    }
+
+    @Override
+    public int getAmount() {
+        return amount;
     }
 
     @Nonnull

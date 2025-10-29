@@ -126,7 +126,7 @@ public class TreasurePurchaseMenu extends MenuImpl {
                     plugin.getDatabase().addTreasureChestsAsync(user, treasureChest, amount).thenAcceptAsync(result2 -> {
                         if (result2.leftBoolean()) {
                             player.playSound(player, Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.0f);
-                            plugin.getJavaPlugin().getServer().getPluginManager().callEvent(new PlayerPurchaseTreasureChestEventImpl(plugin, user, player, treasureChest));
+                            plugin.getJavaPlugin().getServer().getPluginManager().callEvent(new PlayerPurchaseTreasureChestEventImpl(plugin, user, player, treasureChest, amount));
                             plugin.getJavaPlugin().getLogger().log(Level.INFO, "[TREASURE CHEST] " + user + " bought " + amount + " " + treasureChest.getKey() + " for " + cost + ".");
                         } else {
                             // Failed, refund the coins
