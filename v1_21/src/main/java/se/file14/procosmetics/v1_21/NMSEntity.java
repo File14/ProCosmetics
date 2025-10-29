@@ -3,12 +3,10 @@ package se.file14.procosmetics.v1_21;
 import com.mojang.datafixers.util.Pair;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
-import net.minecraft.core.BlockPos;
 import net.minecraft.core.Rotations;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.*;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.util.Mth;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.animal.horse.Horse;
@@ -316,93 +314,19 @@ public class NMSEntity extends NMSEntityImpl<Packet<? super ClientGamePacketList
         if (movementVec.lengthSqr() > 1.0) {
             movementVec = movementVec.normalize();
         }
-        setYaw(entityLivingPlayer.getYRot());
-        setPitch(entityLivingPlayer.getXRot());
-
         LivingEntity entityLiving = (LivingEntity) entity;
 
+        setYaw(entityLivingPlayer.getYRot());
+        setPitch(entityLivingPlayer.getXRot());
         entityLiving.setYHeadRot(entityLivingPlayer.getYRot());
+        entityLiving.setSpeed(getRideSpeed());
 
         if (entity.onGround() && jumping) {
             Vec3 vec3d1 = entityLiving.getDeltaMovement();
             double jumpPower = 0.25d;
             entityLiving.setDeltaMovement(vec3d1.x * jumpPower, 0.5d, vec3d1.z * jumpPower);
         }
-        float speedModifier = entity.onGround() ? getRideSpeed() : 0.3f;
-        float speed;
-        float swimSpeed;
-
-        if (entityLiving.isInWater()) {
-            double locY = entityLiving.getY();
-            speed = 0.8f;
-            swimSpeed = 0.02f;
-
-            entityLiving.moveRelative(swimSpeed, movementVec);
-            entityLiving.move(MoverType.SELF, entityLiving.getDeltaMovement());
-            double motX = entityLiving.getDeltaMovement().x * (double) speed;
-            double motY = entityLiving.getDeltaMovement().y * 0.800000011920929d;
-            double motZ = entityLiving.getDeltaMovement().z * (double) speed;
-            motY -= 0.02d;
-
-            if (entityLiving.horizontalCollision && entityLiving.isFree(entityLiving.getDeltaMovement().x, entityLiving.getDeltaMovement().y + 0.6000000238418579d - entityLiving.getY() + locY, entityLiving.getDeltaMovement().z)) {
-                motY = 0.30000001192092896d;
-            }
-            entityLiving.setDeltaMovement(motX, motY, motZ);
-        } else {
-            double minY = entityLiving.getBoundingBox().minY;
-            float friction = 0.51f;
-
-            if (entityLiving.onGround()) {
-                friction = entityLiving.level().getBlockState(new BlockPos(Mth.floor(entityLiving.getX()), Mth.floor(minY) - 1, Mth.floor(entityLiving.getZ()))).getBlock().getFriction() * 0.91f;
-            }
-            speed = speedModifier * 0.21600002f / friction * friction * friction;
-
-            a(speed, movementVec);
-
-            double motX = entityLiving.getDeltaMovement().x;
-            double motY = entityLiving.getDeltaMovement().y;
-            double motZ = entityLiving.getDeltaMovement().z;
-
-/*            if (entityLiving.isClimbing()) {
-                swimSpeed = 0.15f;
-                motX = MathHelper.a(motX, -swimSpeed, swimSpeed);
-                motZ = MathHelper.a(motZ, -swimSpeed, swimSpeed);
-                entityLiving.K = 0.0f;
-
-                if (motY < -0.15d) {
-                    motY = -0.15d;
-                }
-            }*/
-            entityLiving.move(MoverType.SELF, new Vec3(motX, motY, motZ));
-
-/*            if (entityLiving.A && entityLiving.isClimbing()) {
-                motY = 0.2d;
-            }*/
-            motY -= 0.08d;
-            motY *= 0.9800000190734863d;
-            motX *= friction;
-            motZ *= friction;
-
-            entityLiving.setDeltaMovement(motX, motY, motZ);
-        }
-        entityLiving.calculateEntityAnimation(false);
-    }
-
-    public void a(float f, Vec3 vec3d) {
-        Vec3 vec3d1 = a(vec3d, f, entity.getYRot());
-        entity.setDeltaMovement(entity.getDeltaMovement().add(vec3d1));
-    }
-
-    private static Vec3 a(Vec3 vec3d, float f, float f1) {
-        double d0 = vec3d.length();
-        if (d0 < 1.0E-7D) {
-            return Vec3.ZERO;
-        } else {
-            Vec3 vec3d1 = (d0 > 1.0D ? vec3d.normalize() : vec3d).scale(f);
-            float f2 = Mth.sin(f1 * 0.017453292F);
-            float f3 = Mth.cos(f1 * 0.017453292F);
-            return new Vec3(vec3d1.x * (double) f3 - vec3d1.z * (double) f2, vec3d1.y, vec3d1.z * (double) f3 + vec3d1.x * (double) f2);
-        }
+        entityLiving.travel(movementVec);
     }
 
     @Override

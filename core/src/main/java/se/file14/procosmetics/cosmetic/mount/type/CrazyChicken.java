@@ -33,7 +33,7 @@ public class CrazyChicken implements MountBehavior {
         if (entity instanceof LivingEntity livingEntity) {
             livingEntity.addPotionEffect(POTION_EFFECT);
         }
-        nmsEntity.setRideSpeed(3.0f);
+        nmsEntity.setRideSpeed(0.3f);
     }
 
     @Override

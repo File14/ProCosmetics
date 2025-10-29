@@ -1,14 +1,29 @@
+/*
+ * This file is part of ProCosmetics - https://github.com/File14/ProCosmetics
+ * Copyright (C) 2025 File14 and contributors
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
 package se.file14.procosmetics.v1_20;
 
 import com.mojang.datafixers.util.Pair;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
-import net.minecraft.core.BlockPos;
 import net.minecraft.core.Rotations;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.*;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.util.Mth;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.animal.horse.Horse;
@@ -293,8 +308,8 @@ public class NMSEntity extends NMSEntityImpl<Packet<? super ClientGamePacketList
     @Override
     public void moveRide(Player player) {
         LivingEntity entityLivingPlayer = ((CraftPlayer) player).getHandle();
-        float x = entityLivingPlayer.xxa;
-        float z = entityLivingPlayer.zza;
+        float forward = entityLivingPlayer.xxa;
+        float strafe = entityLivingPlayer.zza;
         boolean jumping = false;
 
         try {
@@ -302,84 +317,27 @@ public class NMSEntity extends NMSEntityImpl<Packet<? super ClientGamePacketList
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         }
-        setYaw(entityLivingPlayer.getYRot());
-        setPitch(entityLivingPlayer.getXRot());
 
+        if (forward < 0.0f) {
+            forward *= 0.50f;
+        }
+        Vec3 movementVec = new Vec3(strafe, 0.0f, forward);
+        if (movementVec.lengthSqr() > 1.0) {
+            movementVec = movementVec.normalize();
+        }
         LivingEntity entityLiving = (LivingEntity) entity;
 
+        setYaw(entityLivingPlayer.getYRot());
+        setPitch(entityLivingPlayer.getXRot());
         entityLiving.setYHeadRot(entityLivingPlayer.getYRot());
+        entityLiving.setSpeed(getRideSpeed());
 
-        if (z < 0.0f) {
-            z *= 0.50f;
-        }
         if (entity.onGround() && jumping) {
             Vec3 vec3d1 = entityLiving.getDeltaMovement();
             double jumpPower = 0.25d;
             entityLiving.setDeltaMovement(vec3d1.x * jumpPower, 0.5d, vec3d1.z * jumpPower);
         }
-        float speedModifier = entity.onGround() ? getRideSpeed() : 0.3f;
-        double y = 0.0f;
-        float speed;
-        float swimSpeed;
-
-        if (entityLiving.isInWater()) {
-            double locY = entityLiving.getY();
-            speed = 0.8f;
-            swimSpeed = 0.02f;
-
-            entityLiving.moveRelative(swimSpeed, new Vec3(x, y, z));
-            entityLiving.move(MoverType.SELF, entityLiving.getDeltaMovement());
-            double motX = entityLiving.getDeltaMovement().x * (double) speed;
-            double motY = entityLiving.getDeltaMovement().y * 0.800000011920929d;
-            double motZ = entityLiving.getDeltaMovement().z * (double) speed;
-            motY -= 0.02d;
-
-            if (entityLiving.horizontalCollision && entityLiving.isFree(entityLiving.getDeltaMovement().x, entityLiving.getDeltaMovement().y + 0.6000000238418579d - entityLiving.getY() + locY, entityLiving.getDeltaMovement().z)) {
-                motY = 0.30000001192092896d;
-            }
-            entityLiving.setDeltaMovement(motX, motY, motZ);
-        } else {
-            double minY = entityLiving.getBoundingBox().minY;
-            float friction = 0.51f;
-
-            if (entityLiving.onGround()) {
-                friction = entityLiving.level().getBlockState(new BlockPos(Mth.floor(entityLiving.getX()), Mth.floor(minY) - 1, Mth.floor(entityLiving.getZ()))).getBlock().getFriction() * 0.91f;
-            }
-            speed = speedModifier * 0.21600002f / friction * friction * friction;
-
-            a(speed, new Vec3(x, y, z));
-
-            double motX = entityLiving.getDeltaMovement().x;
-            double motY = entityLiving.getDeltaMovement().y;
-            double motZ = entityLiving.getDeltaMovement().z;
-
-            entityLiving.move(MoverType.SELF, new Vec3(motX, motY, motZ));
-
-            motY -= 0.08d;
-            motY *= 0.9800000190734863d;
-            motX *= friction;
-            motZ *= friction;
-
-            entityLiving.setDeltaMovement(motX, motY, motZ);
-        }
-        entityLiving.calculateEntityAnimation(false);
-    }
-
-    public void a(float f, Vec3 vec3d) {
-        Vec3 vec3d1 = a(vec3d, f, entity.getYRot());
-        entity.setDeltaMovement(entity.getDeltaMovement().add(vec3d1));
-    }
-
-    private static Vec3 a(Vec3 vec3d, float f, float f1) {
-        double d0 = vec3d.length();
-        if (d0 < 1.0E-7D) {
-            return Vec3.ZERO;
-        } else {
-            Vec3 vec3d1 = (d0 > 1.0D ? vec3d.normalize() : vec3d).scale(f);
-            float f2 = Mth.sin(f1 * 0.017453292F);
-            float f3 = Mth.cos(f1 * 0.017453292F);
-            return new Vec3(vec3d1.x * (double) f3 - vec3d1.z * (double) f2, vec3d1.y, vec3d1.z * (double) f3 + vec3d1.x * (double) f2);
-        }
+        entityLiving.travel(movementVec);
     }
 
     @Override

@@ -24,7 +24,7 @@ public abstract class NMSEntityImpl<T> implements NMSEntity {
 
     protected final EntityTracker entityTracker;
     protected Location previousLocation;
-    private float rideSpeed = 1.3f;
+    private float rideSpeed = 0.2f;
 
     public NMSEntityImpl(World world, CachedEntityType cachedEntityType, EntityTracker entityTracker) {
         this.entityTracker = entityTracker;
