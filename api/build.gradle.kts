@@ -33,10 +33,6 @@ dependencies {
     compileOnly("com.github.ashtton:NoteBlockAPI:78f2966ccd")
 }
 
-fun requiredProperty(name: String): String =
-    (project.findProperty(name) as? String)?.takeIf { it.isNotBlank() }
-        ?: throw GradleException("Missing required property '$name' in gradle.properties")
-
 publishing {
     publications {
         create<MavenPublication>("mavenJava") {
@@ -80,10 +76,14 @@ publishing {
             name = "CentralPortal"
             url = uri("https://central.sonatype.com/api/v1/publisher/upload")
 
+            val username = findProperty("centralUsername") as? String
+            val password = findProperty("centralPassword") as? String
 
-            credentials {
-                username = requiredProperty("centralUsername")
-                password = requiredProperty("centralPassword")
+            if (username != null && password != null) {
+                credentials {
+                    this.username = username
+                    this.password = password
+                }
             }
         }
     }
