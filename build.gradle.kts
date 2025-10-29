@@ -4,7 +4,7 @@ import java.net.URI
 
 plugins {
     java
-    id("com.gradleup.shadow") version "8.3.8"
+    id("com.gradleup.shadow") version "9.2.2"
     id("com.diffplug.spotless") version "8.0.0"
 }
 
@@ -32,28 +32,23 @@ tasks.processResources {
 // Configure shadow jar
 tasks.named<ShadowJar>("shadowJar") {
     archiveClassifier.set("")
-
-    // Exclude unnecessary files
-    exclude("META-INF/maven/**")
-    exclude("META-INF/versions/**")
-    exclude("module-info.class")
     relocate("org.bstats", "se.file14.procosmetics.bstats")
 }
 
 // Make build depend on shadowJar instead of jar
 tasks.named("build") {
-    dependsOn("shadowJar")
+    dependsOn(tasks.named("shadowJar"))
 }
 
 // Disable the default jar task since we're using shadowJar
-tasks.named("jar") {
+tasks.named<Jar>("jar") {
     enabled = false
 }
 
 repositories {
     mavenLocal()
     mavenCentral()
-    maven(url = "https://jitpack.io")
+    maven("https://jitpack.io")
 }
 
 dependencies {
@@ -71,19 +66,19 @@ subprojects {
         mavenCentral()
 
         // Spigot
-        maven(url = "https://oss.sonatype.org/content/repositories/snapshots")
-        maven(url = "https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
+        maven("https://oss.sonatype.org/content/repositories/snapshots")
+        maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
 
         // Paper
-        maven { url = uri("https://papermc.io/repo/maven-public/") }
+        maven("https://papermc.io/repo/maven-public/")
 
         // Plugins
-        maven(url = "https://jitpack.io")
-        maven(url = "https://repo.essentialsx.net/releases/")
-        maven(url = "https://repo.extendedclip.com/content/repositories/placeholderapi/")
-        maven(url = "https://maven.enginehub.org/repo/")
-        maven(url = "https://ci.ender.zone/plugin/repository/everything/")
-        maven(url = "https://repo.rosewooddev.io/repository/public/")
+        maven("https://jitpack.io")
+        maven("https://repo.essentialsx.net/releases/")
+        maven("https://repo.extendedclip.com/content/repositories/placeholderapi/")
+        maven("https://maven.enginehub.org/repo/")
+        maven("https://ci.ender.zone/plugin/repository/everything/")
+        maven("https://repo.rosewooddev.io/repository/public/")
     }
     val javaVersion = findProperty("javaVersion")?.toString()?.toIntOrNull() ?: 21
 
@@ -134,6 +129,13 @@ abstract class VersionedObfTask @Inject constructor(
     @get:Internal
     val buildDir: File = project.layout.buildDirectory.get().asFile
 
+    @get:Internal
+    val projectDir: File = project.projectDir
+
+    @get:Internal
+    val specialSourcePath: String? = project.findProperty("SpecialSourcePath")?.toString()?.takeIf { it.isNotBlank() }
+        ?: System.getenv("SpecialSourcePath")?.takeIf { it.isNotBlank() }
+
     init {
         group = "jar preparation"
         description = "Generates an obfuscated version of the jar to use with Spigot!"
@@ -141,13 +143,10 @@ abstract class VersionedObfTask @Inject constructor(
     }
 
     private fun resolveSpecialSourceJar(): File {
-        val envDir = project.findProperty("SpecialSourcePath")?.toString()?.takeIf { it.isNotBlank() }
-            ?: System.getenv("SpecialSourcePath")?.takeIf { it.isNotBlank() }
-
-        val candidate = if (envDir != null) {
-            File(envDir, "SpecialSource.jar")
+        val candidate = if (specialSourcePath != null) {
+            File(specialSourcePath, "SpecialSource.jar")
         } else {
-            File(project.projectDir, "SpecialSource.jar")
+            File(projectDir, "SpecialSource.jar")
         }
 
         // If found, use it
@@ -156,7 +155,7 @@ abstract class VersionedObfTask @Inject constructor(
         }
 
         // If not found, we download it to the project root
-        val downloadTarget = File(project.projectDir, "SpecialSource.jar")
+        val downloadTarget = File(projectDir, "SpecialSource.jar")
 
         if (!downloadTarget.exists()) {
             val downloadUrl =
