@@ -110,7 +110,7 @@ public abstract class TreasureChestAnimation extends BukkitRunnable implements L
         Server server = plugin.getJavaPlugin().getServer();
         server.getPluginManager().callEvent(new PlayerOpenTreasureChestEventImpl(plugin, user, player, treasureChest));
         server.getPluginManager().registerEvents(this, plugin.getJavaPlugin());
-        server.getLogger().log(Level.INFO, user + " is opening a " + treasureChest.getKey() + " treasure chest.");
+        server.getLogger().log(Level.INFO, "[TREASURE CHEST] " + user + " is opening a " + treasureChest.getKey() + " treasure chest.");
         runTaskTimer(plugin.getJavaPlugin(), 0L, 1L);
     }
 

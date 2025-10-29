@@ -37,6 +37,7 @@ public class TreasurePurchaseMenu extends MenuImpl {
 
     private final TreasureChest treasureChest;
     private final Config config;
+    private int amount = 1;
 
     public TreasurePurchaseMenu(ProCosmetics plugin, User user, TreasureChest treasureChest) {
         super(plugin, user,
@@ -54,30 +55,52 @@ public class TreasurePurchaseMenu extends MenuImpl {
         String name = treasureChest.getName(user);
         TagResolver tagResolver = treasureChest.getResolvers(user);
 
-        // TODO: Add something like this to localization
         treasureChestItem.setDisplayName(user.translate(
-                "menu." + treasureChest.getKey() + ".name",
+                "menu.purchase.treasure_chest.item.name",
                 Placeholder.unparsed("name", name),
                 tagResolver
         ));
         treasureChestItem.setLoreComponent(user.translateList(
-                "menu." + treasureChest.getKey() + ".desc",
+                "menu.purchase.treasure_chest.item.desc",
                 Placeholder.unparsed("name", name),
+                Placeholder.unparsed("amount", String.valueOf(amount)),
                 tagResolver
         ));
+        treasureChestItem.setAmount(amount);
 
         setItem(13, treasureChestItem.getItemStack(), event -> {
+            if (event.isLeftClick()) {
+                if (amount < 64) {
+                    amount++;
+                    playClickSound();
+                    addItems();
+                } else {
+                    playDenySound();
+                }
+            } else {
+                if (amount > 1) {
+                    amount--;
+                    playClickSound();
+                    addItems();
+                } else {
+                    playDenySound();
+                }
+            }
         });
+        int cost = treasureChest.getCost() * amount;
+
         ItemBuilder acceptPurchase = new ItemBuilderImpl(config, "menu.purchase.treasure_chest.items.accept");
         acceptPurchase.setDisplayName(user.translate(
                 "menu.purchase.treasure_chest.accept.name",
                 Placeholder.unparsed("name", name),
-                tagResolver
+                Placeholder.unparsed("cost", String.valueOf(cost)),
+                Placeholder.unparsed("amount", String.valueOf(amount))
         ));
         acceptPurchase.setLoreComponent(user.translateList(
                 "menu.purchase.treasure_chest.accept.desc",
                 Placeholder.unparsed("name", name),
-                tagResolver
+                Placeholder.unparsed("cost", String.valueOf(cost)),
+                Placeholder.unparsed("amount", String.valueOf(amount))
         ));
         player.setCooldown(acceptPurchase.getItemStack(), COOLDOWN);
 
@@ -90,7 +113,6 @@ public class TreasurePurchaseMenu extends MenuImpl {
             player.setCooldown(acceptPurchase.getItemStack(), COOLDOWN);
 
             EconomyProvider economy = plugin.getEconomyManager().getEconomyProvider();
-            int cost = treasureChest.getCost();
 
             if (!economy.hasCoins(user, cost)) {
                 economy.sendInsufficientCoinsMessage(user, cost);
@@ -99,7 +121,7 @@ public class TreasurePurchaseMenu extends MenuImpl {
             }
             economy.removeCoinsAsync(user, cost).thenAcceptAsync(result -> {
                 if (result.booleanValue()) {
-                    plugin.getDatabase().addTreasureChestsAsync(user, treasureChest, 1).thenAcceptAsync(result2 -> {
+                    plugin.getDatabase().addTreasureChestsAsync(user, treasureChest, amount).thenAcceptAsync(result2 -> {
                         if (result2.leftBoolean()) {
                             player.playSound(player, Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.0f);
                             plugin.getJavaPlugin().getServer().getPluginManager().callEvent(new PlayerPurchaseTreasureChestEventImpl(plugin, user, player, treasureChest));

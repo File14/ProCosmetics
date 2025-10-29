@@ -297,6 +297,11 @@
     "<gray>Click to cancel!</gray>"
   ],
   "menu.purchase.treasure_chest.title": "Confirm Purchase",
+  "menu.purchase.treasure_chest.item.name": "<aqua><name></aqua>",
+  "menu.purchase.treasure_chest.item.desc": [
+    "<gray>Left-click to increase the amount.</gray>",
+    "<gray>Right-click to decrease the amount.</gray>"
+  ],
   "menu.purchase.treasure_chest.accept.name": "<green>Accept</green>",
   "menu.purchase.treasure_chest.accept.desc": [
     "<gray>Click to confirm your purchase of</gray>",

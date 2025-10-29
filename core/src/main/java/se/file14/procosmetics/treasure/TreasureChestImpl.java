@@ -207,8 +207,7 @@ public class TreasureChestImpl implements TreasureChest {
     public TagResolver getResolvers(User user) {
         return TagResolver.resolver(
                 Placeholder.unparsed("current", String.valueOf(user.getTreasureChests(this))),
-                Placeholder.unparsed("cost", String.valueOf(cost)),
-                Placeholder.unparsed("amount", String.valueOf(1))
+                Placeholder.unparsed("cost", String.valueOf(cost))
         );
     }
 
