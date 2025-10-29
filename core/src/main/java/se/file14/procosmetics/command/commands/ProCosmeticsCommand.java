@@ -99,10 +99,12 @@ public class ProCosmeticsCommand extends SimpleCommand<CommandSender> {
         builder.append(Component.text(plugin.getDescription().getName() + " Commands", NamedTextColor.AQUA));
 
         getSubCommands().forEach(subCommand -> {
-            builder.append(Component.newline());
+            builder.append(Component.newline(),
+                    Component.text("/pc ", NamedTextColor.YELLOW)
+            );
 
             for (Argument<?> argument : subCommand.getArguments()) {
-                builder.append(Component.text("/pc " + (argument.getType() == null ? argument.getArgument() + " " : "<" + argument.getArgument() + "> "), NamedTextColor.YELLOW));
+                builder.append(Component.text(argument.getType() == null ? argument.getArgument() + " " : "<" + argument.getArgument() + "> ", NamedTextColor.YELLOW));
             }
         });
         audience(sender).sendMessage(builder);
