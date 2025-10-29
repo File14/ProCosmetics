@@ -5,6 +5,7 @@ import java.net.URI
 plugins {
     java
     id("com.gradleup.shadow") version "8.3.8"
+    id("com.diffplug.spotless") version "8.0.0"
 }
 
 group = "se.file14"
@@ -63,6 +64,7 @@ dependencies {
 
 subprojects {
     apply(plugin = "java")
+    apply(plugin = "com.diffplug.spotless")
 
     repositories {
         mavenLocal()
@@ -89,6 +91,21 @@ subprojects {
         javaCompiler.set(javaToolchains.compilerFor {
             languageVersion.set(JavaLanguageVersion.of(javaVersion))
         })
+    }
+    // Configure Spotless for all subprojects
+    spotless {
+        java {
+            target("src/**/*.java")
+            trimTrailingWhitespace()
+            endWithNewline()
+            removeUnusedImports()
+            //palantirJavaFormat("2.81.0").style("GOOGLE").formatJavadoc(true)
+            licenseHeaderFile(rootProject.file("/config/spotless/license-header.txt"), "package ")
+        }
+    }
+
+    tasks.named("build") {
+        dependsOn("spotlessApply")
     }
 }
 
