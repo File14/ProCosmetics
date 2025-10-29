@@ -487,6 +487,15 @@
   "menu.arrow_effects.go_back.desc": [
     "<gray>Click to go back to the previous menu!</gray>"
   ],
+  "menu.arrow_effects.sort.name": "<yellow>Sorting</yellow>",
+  "menu.arrow_effects.sort.desc": [
+    "",
+    "<green>Click to change!</green>"
+  ],
+  "menu.arrow_effects.sorting.alphabetical": "Name (A-Z)",
+  "menu.arrow_effects.sorting.unlocked": "Unlocked First",
+  "menu.arrow_effects.sorting.rarity": "Rarity",
+  "menu.arrow_effects.sorting.cost": "Cost",
   "menu.arrow_effects.purchasable.name": "<name>",
   "menu.arrow_effects.purchasable.desc": [
     "",
@@ -660,6 +669,15 @@
   "menu.balloons.go_back.desc": [
     "<gray>Click to go back to the previous menu!</gray>"
   ],
+  "menu.balloons.sort.name": "<yellow>Sorting</yellow>",
+  "menu.balloons.sort.desc": [
+    "",
+    "<green>Click to change!</green>"
+  ],
+  "menu.balloons.sorting.alphabetical": "Name (A-Z)",
+  "menu.balloons.sorting.unlocked": "Unlocked First",
+  "menu.balloons.sorting.rarity": "Rarity",
+  "menu.balloons.sorting.cost": "Cost",
   "menu.balloons.purchasable.name": "<name>",
   "menu.balloons.purchasable.desc": [
     "",
@@ -922,6 +940,15 @@
   "menu.banners.go_back.desc": [
     "<gray>Click to go back to the previous menu!</gray>"
   ],
+  "menu.banners.sort.name": "<yellow>Sorting</yellow>",
+  "menu.banners.sort.desc": [
+    "",
+    "<green>Click to change!</green>"
+  ],
+  "menu.banners.sorting.alphabetical": "Name (A-Z)",
+  "menu.banners.sorting.unlocked": "Unlocked First",
+  "menu.banners.sorting.rarity": "Rarity",
+  "menu.banners.sorting.cost": "Cost",
   "menu.banners.purchasable.name": "<name>",
   "menu.banners.purchasable.desc": [
     "",
@@ -1091,6 +1118,15 @@
   "menu.death_effects.go_back.desc": [
     "<gray>Click to go back to the previous menu!</gray>"
   ],
+  "menu.death_effects.sort.name": "<yellow>Sorting</yellow>",
+  "menu.death_effects.sort.desc": [
+    "",
+    "<green>Click to change!</green>"
+  ],
+  "menu.death_effects.sorting.alphabetical": "Name (A-Z)",
+  "menu.death_effects.sorting.unlocked": "Unlocked First",
+  "menu.death_effects.sorting.rarity": "Rarity",
+  "menu.death_effects.sorting.cost": "Cost",
   "menu.death_effects.purchasable.name": "<name>",
   "menu.death_effects.purchasable.desc": [
     "",
@@ -1221,6 +1257,15 @@
   "menu.emotes.go_back.desc": [
     "<gray>Click to go back to the previous menu!</gray>"
   ],
+  "menu.emotes.sort.name": "<yellow>Sorting</yellow>",
+  "menu.emotes.sort.desc": [
+    "",
+    "<green>Click to change!</green>"
+  ],
+  "menu.emotes.sorting.alphabetical": "Name (A-Z)",
+  "menu.emotes.sorting.unlocked": "Unlocked First",
+  "menu.emotes.sorting.rarity": "Rarity",
+  "menu.emotes.sorting.cost": "Cost",
   "menu.emotes.purchasable.name": "<name>",
   "menu.emotes.purchasable.desc": [
     "",
@@ -1353,6 +1398,15 @@
   "menu.gadgets.go_back.desc": [
     "<gray>Click to go back to the previous menu!</gray>"
   ],
+  "menu.gadgets.sort.name": "<yellow>Sorting</yellow>",
+  "menu.gadgets.sort.desc": [
+    "",
+    "<green>Click to change!</green>"
+  ],
+  "menu.gadgets.sorting.alphabetical": "Name (A-Z)",
+  "menu.gadgets.sorting.unlocked": "Unlocked First",
+  "menu.gadgets.sorting.rarity": "Rarity",
+  "menu.gadgets.sorting.cost": "Cost",
   "menu.gadgets.purchasable.name": "<name>",
   "menu.gadgets.purchasable.desc": [
     "",
@@ -1720,6 +1774,15 @@
   "menu.miniatures.go_back.desc": [
     "<gray>Click to go back to the previous menu!</gray>"
   ],
+  "menu.miniatures.sort.name": "<yellow>Sorting</yellow>",
+  "menu.miniatures.sort.desc": [
+    "",
+    "<green>Click to change!</green>"
+  ],
+  "menu.miniatures.sorting.alphabetical": "Name (A-Z)",
+  "menu.miniatures.sorting.unlocked": "Unlocked First",
+  "menu.miniatures.sorting.rarity": "Rarity",
+  "menu.miniatures.sorting.cost": "Cost",
   "menu.miniatures.purchasable.name": "<name>",
   "menu.miniatures.purchasable.desc": [
     "",
@@ -1954,9 +2017,17 @@
   "menu.morphs.go_back.desc": [
     "<gray>Click to go back to the previous menu!</gray>"
   ],
+  "menu.morphs.sort.name": "<yellow>Sorting</yellow>",
+  "menu.morphs.sort.desc": [
+    "",
+    "<green>Click to change!</green>"
+  ],
+  "menu.morphs.sorting.alphabetical": "Name (A-Z)",
+  "menu.morphs.sorting.unlocked": "Unlocked First",
+  "menu.morphs.sorting.rarity": "Rarity",
+  "menu.morphs.sorting.cost": "Cost",
   "menu.morphs.toggle_self_view.enable.name": "<green>Enable Self-View</green>",
   "menu.morphs.toggle_self_view.enable.desc": [
-    "",
     "<gray>Click to enable self-view</gray>",
     "<gray>of your morph!</gray>"
   ],
@@ -2222,6 +2293,15 @@
   "menu.mounts.go_back.desc": [
     "<gray>Click to go back to the previous menu!</gray>"
   ],
+  "menu.mounts.sort.name": "<yellow>Sorting</yellow>",
+  "menu.mounts.sort.desc": [
+    "",
+    "<green>Click to change!</green>"
+  ],
+  "menu.mounts.sorting.alphabetical": "Name (A-Z)",
+  "menu.mounts.sorting.unlocked": "Unlocked First",
+  "menu.mounts.sorting.rarity": "Rarity",
+  "menu.mounts.sorting.cost": "Cost",
   "menu.mounts.purchasable.name": "<name>",
   "menu.mounts.purchasable.desc": [
     "",
@@ -2362,6 +2442,15 @@
   "menu.music.go_back.desc": [
     "<gray>Click to go back to the previous menu!</gray>"
   ],
+  "menu.music.sort.name": "<yellow>Sorting</yellow>",
+  "menu.music.sort.desc": [
+    "",
+    "<green>Click to change!</green>"
+  ],
+  "menu.music.sorting.alphabetical": "Name (A-Z)",
+  "menu.music.sorting.unlocked": "Unlocked First",
+  "menu.music.sorting.rarity": "Rarity",
+  "menu.music.sorting.cost": "Cost",
   "menu.music.purchasable.name": "<name>",
   "menu.music.purchasable.desc": [
     "",
@@ -2457,6 +2546,15 @@
   "menu.particle_effects.go_back.desc": [
     "<gray>Click to go back to the previous menu!</gray>"
   ],
+  "menu.particle_effects.sort.name": "<yellow>Sorting</yellow>",
+  "menu.particle_effects.sort.desc": [
+    "",
+    "<green>Click to change!</green>"
+  ],
+  "menu.particle_effects.sorting.alphabetical": "Name (A-Z)",
+  "menu.particle_effects.sorting.unlocked": "Unlocked First",
+  "menu.particle_effects.sorting.rarity": "Rarity",
+  "menu.particle_effects.sorting.cost": "Cost",
   "menu.particle_effects.purchasable.name": "<name>",
   "menu.particle_effects.purchasable.desc": [
     "",
@@ -2720,6 +2818,15 @@
   "menu.pets.go_back.desc": [
     "<gray>Click to go back to the previous menu!</gray>"
   ],
+  "menu.pets.sort.name": "<yellow>Sorting</yellow>",
+  "menu.pets.sort.desc": [
+    "",
+    "<green>Click to change!</green>"
+  ],
+  "menu.pets.sorting.alphabetical": "Name (A-Z)",
+  "menu.pets.sorting.unlocked": "Unlocked First",
+  "menu.pets.sorting.rarity": "Rarity",
+  "menu.pets.sorting.cost": "Cost",
   "menu.pets.purchasable.name": "<name>",
   "menu.pets.purchasable.desc": [
     "",
@@ -2919,6 +3026,15 @@
   "menu.statuses.go_back.desc": [
     "<gray>Click to go back to the previous menu!</gray>"
   ],
+  "menu.statuses.sort.name": "<yellow>Sorting</yellow>",
+  "menu.statuses.sort.desc": [
+    "",
+    "<green>Click to change!</green>"
+  ],
+  "menu.statuses.sorting.alphabetical": "Name (A-Z)",
+  "menu.statuses.sorting.unlocked": "Unlocked First",
+  "menu.statuses.sorting.rarity": "Rarity",
+  "menu.statuses.sorting.cost": "Cost",
   "menu.statuses.toggle_self_view.enable.name": "<green>Enable Self-View</green>",
   "menu.statuses.toggle_self_view.enable.desc": [
     "<gray>Click to enable self-view</gray>",

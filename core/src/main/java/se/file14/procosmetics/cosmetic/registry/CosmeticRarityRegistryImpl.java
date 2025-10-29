@@ -51,6 +51,7 @@ public class CosmeticRarityRegistryImpl implements CosmeticRarityRegistry {
 
         for (String key : config.getConfigurationSection("rarities").getKeys(false)) {
             String path = "rarities." + key + ".";
+            int priority = config.getInt(path + "priority");
             String mainColor = config.getString(path + "colors.primary");
             String secondaryColor = config.getString(path + "colors.secondary");
             int detonations = config.getInt(path + "firework.detonations");
@@ -66,6 +67,7 @@ public class CosmeticRarityRegistryImpl implements CosmeticRarityRegistry {
 
             CosmeticRarityImpl rarity = new CosmeticRarityImpl(
                     key.toUpperCase(),
+                    priority,
                     mainColor,
                     secondaryColor,
                     detonations,
@@ -80,7 +82,7 @@ public class CosmeticRarityRegistryImpl implements CosmeticRarityRegistry {
         }
 
         if (fallbackRarity == null) {
-            fallbackRarity = new CosmeticRarityImpl("default", "", "", 0, 0, null);
+            fallbackRarity = new CosmeticRarityImpl("default", 0, "", "", 0, 0, null);
         }
     }
 

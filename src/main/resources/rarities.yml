@@ -19,6 +19,7 @@
 
 rarities:
   common:
+    priority: 1
     colors:
       primary: "<color:#55FFFF>"
       secondary: "<color:#00AAAA>"
@@ -31,6 +32,7 @@ rarities:
       flicker: false
       trail: false
   rare:
+    priority: 2
     colors:
       primary: "<color:#FF55FF>"
       secondary: "<color:#AA00AA>"
@@ -43,6 +45,7 @@ rarities:
       flicker: false
       trail: false
   legendary:
+    priority: 3
     colors:
       primary: "<color:#55FF55>"
       secondary: "<color:#00AA00>"

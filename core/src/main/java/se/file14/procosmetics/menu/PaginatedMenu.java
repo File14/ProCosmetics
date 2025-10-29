@@ -23,26 +23,25 @@ import it.unimi.dsi.fastutil.ints.IntList;
 import net.kyori.adventure.text.Component;
 import org.bukkit.inventory.ItemStack;
 import se.file14.procosmetics.api.ProCosmetics;
-import se.file14.procosmetics.api.menu.ClickableItem;
 import se.file14.procosmetics.api.user.User;
 
 import java.util.*;
 import java.util.function.Function;
 
-public abstract class PaginatedMenu extends MenuImpl {
+public abstract class PaginatedMenu<T extends PaginatedItem> extends MenuImpl {
 
     private final int top;
     private final int bottom;
     private final int left;
     private final int right;
-    private final List<PaginatedItem> items = new ArrayList<>();
+    private final List<T> items = new ArrayList<>();
     private final IntList slots = new IntArrayList();
     protected int page = 1;
     private Function<PageInfo, ItemStack> nextPageItem;
     private Function<PageInfo, ItemStack> previousPageItem;
     private int nextPageSlot = -1;
     private int previousPageSlot = -1;
-    private Comparator<PaginatedItem> sorting;
+    private Comparator<T> sorting;
     private boolean sorted;
 
     public PaginatedMenu(ProCosmetics plugin, User user, Component title, int rows,
@@ -86,9 +85,9 @@ public abstract class PaginatedMenu extends MenuImpl {
             sorted = true;
         }
 
-        List<List<PaginatedItem>> pages = Lists.partition(items, getContainerSize());
+        List<List<T>> pages = Lists.partition(items, getContainerSize());
         page = Math.max(1, Math.min(pages.size(), page));
-        List<PaginatedItem> pageContent = pages.isEmpty() ? Collections.emptyList() : pages.get(page - 1);
+        List<T> pageContent = pages.isEmpty() ? Collections.emptyList() : pages.get(page - 1);
         PageInfo pageInfo = new PageInfo(page, pages.size());
 
         // Handle next page button
@@ -124,7 +123,8 @@ public abstract class PaginatedMenu extends MenuImpl {
 
         // Add paginated items
         for (int i = 0; i < pageContent.size(); i++) {
-            PaginatedItem item = pageContent.get(i);
+            T item = pageContent.get(i);
+
             if (item != null) {
                 int slot = slots.getInt(i);
                 setItem(slot, item.getItemStack(), item.getClickHandler());
@@ -157,17 +157,17 @@ public abstract class PaginatedMenu extends MenuImpl {
         }
     }
 
-    public void addPaginatedItem(PaginatedItem item) {
+    public void addPaginatedItem(T item) {
         items.add(item);
         sorted = false;
     }
 
-    public void addPaginatedItems(Collection<PaginatedItem> items) {
+    public void addPaginatedItems(Collection<T> items) {
         this.items.addAll(items);
         sorted = false;
     }
 
-    public void removePaginatedItem(PaginatedItem item) {
+    public void removePaginatedItem(T item) {
         items.remove(item);
     }
 
@@ -216,34 +216,17 @@ public abstract class PaginatedMenu extends MenuImpl {
         this.previousPageSlot = previousPageSlot;
     }
 
-    public Comparator<PaginatedItem> getSorting() {
+    public Comparator<T> getSorting() {
         return sorting;
     }
 
-    public void setSorting(Comparator<PaginatedItem> sorting) {
+    public void setSorting(Comparator<T> sorting) {
         this.sorting = sorting;
         sorted = false;
     }
 
-    public static class PaginatedItem {
-        private final ItemStack itemStack;
-        private final ClickableItem clickHandler;
-
-        public PaginatedItem(ItemStack itemStack, ClickableItem clickHandler) {
-            this.itemStack = itemStack;
-            this.clickHandler = clickHandler;
-        }
-
-        public ItemStack getItemStack() {
-            return itemStack;
-        }
-
-        public ClickableItem getClickHandler() {
-            return clickHandler;
-        }
-    }
-
     public static class PageInfo {
+
         private final int currentPage;
         private final int pageCount;
 

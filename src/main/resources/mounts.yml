@@ -47,6 +47,12 @@ menu:
         command: ""
         execute_as_player: false
 
+    sorting:
+      enable: true
+      item: "minecraft:hopper"
+      count: 1
+      slot: -1
+
     locked_cosmetic:
       # This specifies if another item should replace the original cosmetic item while it is locked.
       # This is useful to easily visualize which cosmetics the player has access to or not.

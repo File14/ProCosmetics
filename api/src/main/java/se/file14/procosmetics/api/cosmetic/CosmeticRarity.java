@@ -25,7 +25,7 @@ import se.file14.procosmetics.api.locale.Translator;
  *
  * @see se.file14.procosmetics.api.cosmetic.registry.CosmeticRarityRegistry
  */
-public interface CosmeticRarity {
+public interface CosmeticRarity extends Comparable<CosmeticRarity> {
 
     /**
      * Gets the unique key of this rarity.
@@ -41,6 +41,14 @@ public interface CosmeticRarity {
      * @return the localized rarity name
      */
     String getName(Translator translator);
+
+    /**
+     * Gets the priority/weight of this rarity.
+     * Higher values indicate rarer/more valuable items.
+     *
+     * @return the priority value
+     */
+    int getPriority();
 
     String getPrimaryColor();
 
@@ -66,4 +74,16 @@ public interface CosmeticRarity {
      * @return the {@link FireworkEffect} representing this rarity’s effect
      */
     FireworkEffect getFireworkEffect();
+
+    /**
+     * Compares this rarity to another based on priority.
+     *
+     * @param other the rarity to compare to
+     * @return a negative integer, zero, or a positive integer as this rarity's priority
+     * is less than, equal to, or greater than the specified rarity's priority
+     */
+    @Override
+    default int compareTo(CosmeticRarity other) {
+        return Integer.compare(this.getPriority(), other.getPriority());
+    }
 }

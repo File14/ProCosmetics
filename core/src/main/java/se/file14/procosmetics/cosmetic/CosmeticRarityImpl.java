@@ -24,6 +24,7 @@ import se.file14.procosmetics.api.locale.Translator;
 public class CosmeticRarityImpl implements CosmeticRarity {
 
     private final String key;
+    private final int priority;
     private final String mainColor;
     private final String secondaryColor;
     private final int detonations;
@@ -31,12 +32,14 @@ public class CosmeticRarityImpl implements CosmeticRarity {
     private final FireworkEffect fireworkEffect;
 
     public CosmeticRarityImpl(String key,
+                              int priority,
                               String mainColor,
                               String secondaryColor,
                               int detonations,
                               int tickInterval,
                               FireworkEffect fireworkEffect) {
         this.key = key.toLowerCase();
+        this.priority = priority;
         this.mainColor = mainColor;
         this.secondaryColor = secondaryColor;
         this.detonations = detonations;
@@ -52,6 +55,11 @@ public class CosmeticRarityImpl implements CosmeticRarity {
     @Override
     public String getName(Translator translator) {
         return translator.translateRaw("rarity." + key);
+    }
+
+    @Override
+    public int getPriority() {
+        return priority;
     }
 
     @Override
