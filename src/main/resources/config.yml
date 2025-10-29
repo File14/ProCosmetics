@@ -198,13 +198,13 @@ menu:
       death_effects:
         # Specifies whenever or not this category should be visible in the main menu.
         enable: true
-        item: "minecraft:skeleton_skull"
+        item: "minecraft:skeleton_skull[!minecraft:rarity]"
         count: 1
         slot: 14
       emotes:
         # Specifies whenever or not this category should be visible in the main menu.
         enable: true
-        item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ3M2U3MmNjMzcxZGUyNWYzMzA1NjY1NzY5ZGQ3ZTlmZjExNjE2OTUyNTJlNzk5NjEyNTgwZGVlZWRkMyJ9fX0='}]}]"
+        item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ3M2U3MmNjMzcxZGUyNWYzMzA1NjY1NzY5ZGQ3ZTlmZjExNjE2OTUyNTJlNzk5NjEyNTgwZGVlZWRkMyJ9fX0='}]},!minecraft:rarity]"
         count: 1
         slot: 15
       gadgets:
@@ -216,7 +216,7 @@ menu:
       miniatures:
         # Specifies whenever or not this category should be visible in the main menu.
         enable: true
-        item: "minecraft:zombie_head"
+        item: "minecraft:zombie_head[!minecraft:rarity]"
         count: 1
         slot: 21
       morphs:
@@ -234,13 +234,13 @@ menu:
       music:
         # Specifies whenever or not this category should be visible in the main menu.
         enable: true
-        item: "minecraft:music_disc_mall[!minecraft:jukebox_playable]"
+        item: "minecraft:music_disc_mall[!minecraft:jukebox_playable, !minecraft:rarity]"
         count: 1
         slot: 24
       particle_effects:
         # Specifies whenever or not this category should be visible in the main menu.
         enable: true
-        item: "minecraft:nether_star"
+        item: "minecraft:nether_star[!minecraft:rarity]"
         count: 1
         slot: 30
       pets:
