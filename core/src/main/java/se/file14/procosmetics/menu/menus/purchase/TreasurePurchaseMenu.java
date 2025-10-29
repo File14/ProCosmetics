@@ -31,6 +31,8 @@ import se.file14.procosmetics.event.PlayerPurchaseTreasureChestEventImpl;
 import se.file14.procosmetics.menu.MenuImpl;
 import se.file14.procosmetics.util.item.ItemBuilderImpl;
 
+import java.util.logging.Level;
+
 public class TreasurePurchaseMenu extends MenuImpl {
 
     private static final int COOLDOWN = 20;
@@ -125,6 +127,7 @@ public class TreasurePurchaseMenu extends MenuImpl {
                         if (result2.leftBoolean()) {
                             player.playSound(player, Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.0f);
                             plugin.getJavaPlugin().getServer().getPluginManager().callEvent(new PlayerPurchaseTreasureChestEventImpl(plugin, user, player, treasureChest));
+                            plugin.getJavaPlugin().getLogger().log(Level.INFO, "[TREASURE CHEST] " + user + " bought " + amount + " " + treasureChest.getKey() + " for " + cost + ".");
                         } else {
                             // Failed, refund the coins
                             economy.addCoinsAsync(user, cost);

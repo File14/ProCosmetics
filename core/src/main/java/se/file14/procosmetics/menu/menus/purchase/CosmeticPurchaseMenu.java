@@ -32,6 +32,8 @@ import se.file14.procosmetics.event.PlayerPurchaseCosmeticEventImpl;
 import se.file14.procosmetics.menu.MenuImpl;
 import se.file14.procosmetics.util.item.ItemBuilderImpl;
 
+import java.util.logging.Level;
+
 public class CosmeticPurchaseMenu extends MenuImpl {
 
     private static final int COOLDOWN = 20;
@@ -104,6 +106,7 @@ public class CosmeticPurchaseMenu extends MenuImpl {
                     );
                     server.getPluginManager().callEvent(new PlayerPurchaseCosmeticEventImpl(plugin, user, player, cosmeticType));
                     cosmeticType.equip(user, false, true);
+                    plugin.getJavaPlugin().getLogger().log(Level.INFO, "[COSMETIC] " + user + " bought " + cosmeticType.getKey() + " for " + cost + ".");
                 } else {
                     economy.sendInsufficientCoinsMessage(user, cost);
                     playDenySound();

@@ -33,6 +33,8 @@ import se.file14.procosmetics.event.PlayerPurchaseGadgetAmmoEventImpl;
 import se.file14.procosmetics.menu.MenuImpl;
 import se.file14.procosmetics.util.item.ItemBuilderImpl;
 
+import java.util.logging.Level;
+
 public class AmmoPurchaseMenu extends MenuImpl {
 
     private static final int COOLDOWN = 20;
@@ -107,6 +109,7 @@ public class AmmoPurchaseMenu extends MenuImpl {
                             if (gadget != null && gadget.isEquipped()) {
                                 gadget.setGadgetItemInInventory();
                             }
+                            plugin.getJavaPlugin().getLogger().log(Level.INFO, "[AMMO] " + user + " bought " + gadgetType.getPurchaseAmount() + " " + gadgetType.getKey() + " ammo for " + cost + ".");
                         } else {
                             // Failed, refund the coins
                             economy.addCoinsAsync(user, cost);
