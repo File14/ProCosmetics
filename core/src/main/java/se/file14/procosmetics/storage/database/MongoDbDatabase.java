@@ -304,23 +304,16 @@ public class MongoDbDatabase extends DatabaseImpl {
         }
         return CompletableFuture.supplyAsync(() -> {
             try {
-                String categoryKey = cosmeticType.getCategory().getKey();
-                String cosmeticKey = cosmeticType.getKey();
-
-                // Remove existing cosmetic in the same category
-                usersCollection.updateOne(
-                        Filters.eq("id", user.getDatabaseId()),
-                        Updates.pull("cosmetics", Filters.eq("category", categoryKey))
-                );
-
-                // Add new cosmetic
                 Document cosmeticDoc = new Document()
-                        .append("category", categoryKey)
-                        .append("cosmetic", cosmeticKey);
+                        .append("category", cosmeticType.getCategory().getKey())
+                        .append("cosmetic", cosmeticType.getKey());
 
                 usersCollection.updateOne(
                         Filters.eq("id", user.getDatabaseId()),
-                        Updates.push("cosmetics", cosmeticDoc)
+                        Updates.combine(
+                                Updates.pull("cosmetics", Filters.eq("category", cosmeticType.getCategory().getKey())),
+                                Updates.push("cosmetics", cosmeticDoc)
+                        )
                 );
                 return true;
             } catch (Exception e) {
