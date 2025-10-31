@@ -130,6 +130,7 @@ public class UserManagerImpl implements UserManager {
 
                 if (player.getGameMode() != GameMode.SPECTATOR) {
                     user.equipSavedCosmetics(true);
+                    plugin.getDatabase().updateLastSeenAsync(user);
                 }
             }
         }

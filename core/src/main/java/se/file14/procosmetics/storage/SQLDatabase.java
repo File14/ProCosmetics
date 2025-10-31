@@ -38,10 +38,11 @@ public abstract class SQLDatabase extends DatabaseImpl {
 
     // Standard SQL queries
     private static final String SQL_LOAD_USER_BY_UUID = "SELECT * FROM %s WHERE uuid = ?;";
-    private static final String SQL_LOAD_USER_BY_NAME = "SELECT * FROM %s WHERE name = ?;";
+    private static final String SQL_LOAD_USER_BY_NAME = "SELECT * FROM %s WHERE name = ? ORDER BY last_seen DESC LIMIT 1;";
     private static final String SQL_LOAD_USER_BY_ID = "SELECT * FROM %s WHERE id = ?;";
     private static final String SQL_INSERT_USER = "INSERT INTO %s (uuid, name) VALUES (?, ?);";
     private static final String SQL_UPDATE_USER_NAME = "UPDATE %s SET name = ? WHERE id = ?;";
+    private static final String SQL_UPDATE_LAST_SEEN = "UPDATE %s SET last_seen = ? WHERE id = ?;";
 
     private static final String SQL_SET_SELF_VIEW_MORPH = "UPDATE %s SET self_view_morph = ? WHERE id = ?;";
     private static final String SQL_SET_SELF_VIEW_STATUS = "UPDATE %s SET self_view_status = ? WHERE id = ?;";
@@ -300,6 +301,18 @@ public abstract class SQLDatabase extends DatabaseImpl {
             stmt.executeUpdate();
         } catch (SQLException e) {
             plugin.getLogger().log(Level.WARNING, "Failed to update name for " + user, e);
+        }
+    }
+
+    @Override
+    public void updateLastSeen(User user) {
+        try (Connection connection = connectionProvider.getConnection();
+             PreparedStatement stmt = connection.prepareStatement(String.format(SQL_UPDATE_LAST_SEEN, usersTable))) {
+            stmt.setTimestamp(1, new Timestamp(System.currentTimeMillis()));
+            stmt.setInt(2, user.getDatabaseId());
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            plugin.getLogger().log(Level.WARNING, "Failed to update last seen for " + user, e);
         }
     }
 

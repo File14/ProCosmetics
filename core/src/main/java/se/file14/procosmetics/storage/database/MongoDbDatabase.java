@@ -21,10 +21,7 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import com.mongodb.client.model.Filters;
-import com.mongodb.client.model.FindOneAndUpdateOptions;
-import com.mongodb.client.model.ReturnDocument;
-import com.mongodb.client.model.Updates;
+import com.mongodb.client.model.*;
 import it.unimi.dsi.fastutil.booleans.BooleanIntPair;
 import org.bson.Document;
 import se.file14.procosmetics.ProCosmeticsPlugin;
@@ -39,6 +36,7 @@ import se.file14.procosmetics.storage.DatabaseImpl;
 import se.file14.procosmetics.user.UserImpl;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
@@ -109,9 +107,9 @@ public class MongoDbDatabase extends DatabaseImpl {
     }
 
     private void createIndexes() {
-        usersCollection.createIndex(new Document("uuid", 1));
-        usersCollection.createIndex(new Document("name", 1));
-        usersCollection.createIndex(new Document("id", 1));
+        usersCollection.createIndex(new Document("uuid", 1), new IndexOptions().unique(true));
+        usersCollection.createIndex(new Document("name", 1).append("last_seen", -1));
+        usersCollection.createIndex(new Document("id", 1), new IndexOptions().unique(true));
     }
 
     @Override
@@ -136,7 +134,11 @@ public class MongoDbDatabase extends DatabaseImpl {
     @Override
     public UserImpl loadUser(String name) {
         try {
-            Document doc = usersCollection.find(Filters.eq("name", name)).first();
+            Document doc = usersCollection
+                    .find(Filters.eq("name", name))
+                    .sort(new Document("last_seen", -1))
+                    .limit(1)
+                    .first();
 
             if (doc != null) {
                 return loadUserFromDocument(doc);
@@ -248,6 +250,8 @@ public class MongoDbDatabase extends DatabaseImpl {
     public UserImpl insertUser(UUID uuid, String name) {
         try {
             int id = idCounter.incrementAndGet();
+            Date now = new Date();
+
             Document userDoc = new Document()
                     .append("id", id)
                     .append("uuid", uuid.toString())
@@ -255,6 +259,8 @@ public class MongoDbDatabase extends DatabaseImpl {
                     .append("coins", 0)
                     .append("self_view_morph", false)
                     .append("self_view_status", false)
+                    .append("created_at", now)
+                    .append("last_seen", now)
                     .append("cosmetics", new ArrayList<>())
                     .append("gadget_ammo", new ArrayList<>())
                     .append("treasure_chests", new ArrayList<>()
@@ -276,6 +282,18 @@ public class MongoDbDatabase extends DatabaseImpl {
             );
         } catch (Exception e) {
             plugin.getLogger().log(Level.WARNING, "Failed to update name for " + user, e);
+        }
+    }
+
+    @Override
+    public void updateLastSeen(User user) {
+        try {
+            usersCollection.updateOne(
+                    Filters.eq("id", user.getDatabaseId()),
+                    Updates.set("last_seen", new Date())
+            );
+        } catch (Exception e) {
+            plugin.getLogger().log(Level.WARNING, "Failed to update last seen for " + user, e);
         }
     }
 

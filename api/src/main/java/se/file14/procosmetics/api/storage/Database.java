@@ -156,6 +156,23 @@ public interface Database {
     }
 
     /**
+     * Updates a user's last seen timestamp in the database.
+     *
+     * @param user The user to update
+     */
+    void updateLastSeen(User user);
+
+    /**
+     * Updates a user's last seen timestamp in the database asynchronously.
+     *
+     * @param user The user to update
+     * @return A CompletableFuture that completes when the update is done
+     */
+    default CompletableFuture<Void> updateLastSeenAsync(User user) {
+        return CompletableFuture.runAsync(() -> updateLastSeen(user));
+    }
+
+    /**
      * Updates the equipped cosmetic entry for a user in the database asynchronously.
      * <p>
      * This method does not directly equip the cosmetic in-game, it only saves the user's
