@@ -21,15 +21,16 @@ import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
 import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
 import org.bukkit.entity.Player;
 import se.file14.procosmetics.api.cosmetic.CosmeticType;
+import se.file14.procosmetics.api.treasure.loot.CosmeticLoot;
 import se.file14.procosmetics.api.user.User;
 
 import java.util.List;
 
-public class CosmeticLoot extends LootTable<CosmeticType<?, ?>> {
+public class CosmeticLootImpl extends LootTableImpl<CosmeticType<?, ?>> implements CosmeticLoot {
 
     private final List<CosmeticType<?, ?>> cosmeticTypes;
 
-    public CosmeticLoot(String category, int weight, List<CosmeticType<?, ?>> cosmeticTypes) {
+    public CosmeticLootImpl(String category, int weight, List<CosmeticType<?, ?>> cosmeticTypes) {
         super(category, weight);
         this.cosmeticTypes = cosmeticTypes;
     }
@@ -64,5 +65,10 @@ public class CosmeticLoot extends LootTable<CosmeticType<?, ?>> {
                         .replace("<player>", player.getName())
                         .replace("<permission>", permission)
         );
+    }
+
+    @Override
+    public List<CosmeticType<?, ?>> getCosmeticTypes() {
+        return cosmeticTypes;
     }
 }

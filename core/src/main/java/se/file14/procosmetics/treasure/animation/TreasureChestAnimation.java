@@ -39,13 +39,12 @@ import se.file14.procosmetics.api.nms.NMSEntity;
 import se.file14.procosmetics.api.treasure.TreasureChest;
 import se.file14.procosmetics.api.treasure.TreasureChestPlatform;
 import se.file14.procosmetics.api.treasure.loot.LootEntry;
+import se.file14.procosmetics.api.treasure.loot.LootTable;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.api.util.structure.StructureData;
 import se.file14.procosmetics.event.PlayerOpenTreasureChestEventImpl;
-import se.file14.procosmetics.treasure.TreasureChestImpl;
 import se.file14.procosmetics.treasure.TreasureChestManagerImpl;
 import se.file14.procosmetics.treasure.TreasureChestPlatformImpl;
-import se.file14.procosmetics.treasure.loot.LootTable;
 import se.file14.procosmetics.util.LocationUtil;
 import se.file14.procosmetics.util.MathUtil;
 import se.file14.procosmetics.util.MetadataUtil;
@@ -63,7 +62,7 @@ public abstract class TreasureChestAnimation extends BukkitRunnable implements L
 
     protected ProCosmetics plugin;
     protected TreasureChestPlatformImpl platform;
-    protected TreasureChestImpl treasureChest;
+    protected TreasureChest treasureChest;
     protected User user;
     protected Player player;
 
@@ -80,8 +79,8 @@ public abstract class TreasureChestAnimation extends BukkitRunnable implements L
 
     public TreasureChestAnimation(ProCosmetics plugin, TreasureChestPlatform platform, TreasureChest treasureChest, User user) {
         this.plugin = plugin;
-        this.platform = (TreasureChestPlatformImpl) platform; // TODO: Remove chest when more is exposed to the API
-        this.treasureChest = (TreasureChestImpl) treasureChest;
+        this.platform = (TreasureChestPlatformImpl) platform; // TODO: Remove cast in the future
+        this.treasureChest = treasureChest;
         this.user = user;
         this.player = user.getPlayer();
         this.location = LocationUtil.center(platform.getCenter().clone());
@@ -90,6 +89,7 @@ public abstract class TreasureChestAnimation extends BukkitRunnable implements L
         this.platform.getHologram().despawn();
 
         if (treasureChest.isOpeningBroadcast()) {
+            // TODO: Remove cast
             ((TreasureChestManagerImpl) plugin.getTreasureChestManager()).getOpeningTreasureBroadcaster().broadcastMessage(
                     player,
                     "treasure_chest.open.broadcast",

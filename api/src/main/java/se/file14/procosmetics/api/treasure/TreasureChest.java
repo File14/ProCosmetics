@@ -20,8 +20,10 @@ package se.file14.procosmetics.api.treasure;
 import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.jetbrains.annotations.Nullable;
 import se.file14.procosmetics.api.locale.Translator;
 import se.file14.procosmetics.api.treasure.animation.AnimationType;
+import se.file14.procosmetics.api.treasure.loot.LootTable;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.api.util.item.ItemBuilder;
 import se.file14.procosmetics.api.util.structure.StructureData;
@@ -35,6 +37,14 @@ import java.util.List;
  * them with cosmetics or other items.
  */
 public interface TreasureChest {
+
+    /**
+     * Retrieves a random loot table associated with this treasure chest.
+     *
+     * @return a randomly selected {@link LootTable}, or {@code null} if none is available
+     */
+    @Nullable
+    LootTable<?> getRandomLootTable();
 
     /**
      * Checks if the player has permission to purchase this treasure chest.

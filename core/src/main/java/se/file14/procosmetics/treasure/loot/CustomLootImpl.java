@@ -27,17 +27,17 @@ import se.file14.procosmetics.api.user.User;
 
 import java.util.List;
 
-public class CustomLoot extends LootTable<CustomLoot> implements LootEntry {
+public class CustomLootImpl extends LootTableImpl<CustomLootImpl> implements LootEntry {
 
     private final ItemStack itemStack;
     private final CosmeticRarity rarity;
     private final List<String> commands;
 
-    public CustomLoot(String key,
-                      int weight,
-                      ItemStack itemStack,
-                      CosmeticRarity rarity,
-                      List<String> commands) {
+    public CustomLootImpl(String key,
+                          int weight,
+                          ItemStack itemStack,
+                          CosmeticRarity rarity,
+                          List<String> commands) {
         super(key, weight);
         this.itemStack = itemStack;
         this.rarity = rarity;
@@ -45,12 +45,12 @@ public class CustomLoot extends LootTable<CustomLoot> implements LootEntry {
     }
 
     @Override
-    public CustomLoot getRandomLoot() {
+    public CustomLootImpl getRandomLoot() {
         return this;
     }
 
     @Override
-    public void give(Player player, User user, CustomLoot lootEntry) {
+    public void give(Player player, User user, CustomLootImpl lootEntry) {
         for (String command : commands) {
             PLUGIN.getServer().dispatchCommand(
                     PLUGIN.getServer().getConsoleSender(),

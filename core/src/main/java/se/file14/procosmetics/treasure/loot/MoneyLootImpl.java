@@ -20,24 +20,36 @@ package se.file14.procosmetics.treasure.loot;
 import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
 import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
 import org.bukkit.entity.Player;
+import se.file14.procosmetics.api.treasure.loot.MoneyLoot;
+import se.file14.procosmetics.api.treasure.loot.MoneyLootEntry;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.util.MathUtil;
 
-public class MoneyLoot extends LootTable<MoneyLootEntry> {
+public class MoneyLootImpl extends LootTableImpl<MoneyLootEntry> implements MoneyLoot {
 
     private final int min;
     private final int max;
 
-    public MoneyLoot(String key, int weight, int min, int max) {
+    public MoneyLootImpl(String key, int weight, int min, int max) {
         super(key, weight);
         this.min = min;
         this.max = max;
     }
 
     @Override
+    public int getMin() {
+        return min;
+    }
+
+    @Override
+    public int getMax() {
+        return max;
+    }
+
+    @Override
     public MoneyLootEntry getRandomLoot() {
         int amount = MathUtil.randomRangeInt(min, max);
-        return new MoneyLootEntry(amount);
+        return new MoneyLootEntryImpl(amount);
     }
 
     @Override

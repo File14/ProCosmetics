@@ -21,12 +21,14 @@ import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
 import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
 import org.bukkit.entity.Player;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetType;
+import se.file14.procosmetics.api.treasure.loot.AmmoLoot;
+import se.file14.procosmetics.api.treasure.loot.AmmoLootEntry;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.util.MathUtil;
 
 import java.util.List;
 
-public class AmmoLoot extends LootTable<AmmoLootEntry> {
+public class AmmoLootImpl extends LootTableImpl<AmmoLootEntry> implements AmmoLoot {
 
     private static final GadgetType COIN_PARTY_BOMB = PLUGIN.getCategoryRegistries().gadgets().getCosmeticRegistry().getType("coin_party_bomb");
 
@@ -34,7 +36,7 @@ public class AmmoLoot extends LootTable<AmmoLootEntry> {
     private final int max;
     private final List<GadgetType> ammo;
 
-    public AmmoLoot(String key, int weight, int min, int max, List<GadgetType> ammo) {
+    public AmmoLootImpl(String key, int weight, int min, int max, List<GadgetType> ammo) {
         super(key, weight);
         this.min = min;
         this.max = max;
@@ -42,7 +44,7 @@ public class AmmoLoot extends LootTable<AmmoLootEntry> {
     }
 
     @Override
-    public AmmoLootEntry getRandomLoot() {
+    public AmmoLootEntryImpl getRandomLoot() {
         GadgetType gadgetType = ammo.get(RANDOM.nextInt(ammo.size()));
         int amount = MathUtil.randomRangeInt(min, max);
 
@@ -50,7 +52,7 @@ public class AmmoLoot extends LootTable<AmmoLootEntry> {
         if (gadgetType.equals(COIN_PARTY_BOMB)) {
             amount = 1;
         }
-        return new AmmoLootEntry(gadgetType, amount);
+        return new AmmoLootEntryImpl(gadgetType, amount);
     }
 
     @Override
@@ -73,5 +75,20 @@ public class AmmoLoot extends LootTable<AmmoLootEntry> {
                 user.sendMessage(user.translate("generic.error.database"));
             }
         });
+    }
+
+    @Override
+    public int getMin() {
+        return min;
+    }
+
+    @Override
+    public int getMax() {
+        return max;
+    }
+
+    @Override
+    public List<GadgetType> getAmmo() {
+        return ammo;
     }
 }

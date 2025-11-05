@@ -61,7 +61,7 @@ public class TreasureChestImpl implements TreasureChest {
     private final ItemBuilder itemBuilder;
 
     private int totalWeight;
-    private final List<LootTable<?>> lootEntries = new ArrayList<>();
+    private final List<LootTableImpl<?>> lootEntries = new ArrayList<>();
 
     public TreasureChestImpl(ProCosmeticsPlugin plugin, String key) {
         this.key = key;
@@ -100,7 +100,7 @@ public class TreasureChestImpl implements TreasureChest {
         int weight = config.getInt(ammoPath + "weight");
         if (weight > 0) {
             totalWeight += weight;
-            lootEntries.add(new AmmoLoot("ammo",
+            lootEntries.add(new AmmoLootImpl("ammo",
                     weight,
                     config.getInt(ammoPath + "minimum_amount"),
                     config.getInt(ammoPath + "maximum_amount"),
@@ -113,7 +113,7 @@ public class TreasureChestImpl implements TreasureChest {
         weight = config.getInt(moneyPath + "weight");
         if (weight > 0) {
             totalWeight += weight;
-            lootEntries.add(new MoneyLoot("money",
+            lootEntries.add(new MoneyLootImpl("money",
                     weight,
                     config.getInt(moneyPath + "minimum_amount"),
                     config.getInt(moneyPath + "maximum_amount"))
@@ -136,7 +136,7 @@ public class TreasureChestImpl implements TreasureChest {
 
                 if (!cosmeticTypes.isEmpty()) {
                     totalWeight += weight;
-                    lootEntries.add(new CosmeticLoot(cosmeticCategory.getKey(), weight, cosmeticTypes));
+                    lootEntries.add(new CosmeticLootImpl(cosmeticCategory.getKey(), weight, cosmeticTypes));
                 }
             }
         }
@@ -152,7 +152,7 @@ public class TreasureChestImpl implements TreasureChest {
                     totalWeight += weight;
                     ItemBuilderImpl customItemBuilder = new ItemBuilderImpl(config, path1);
 
-                    lootEntries.add(new CustomLoot(
+                    lootEntries.add(new CustomLootImpl(
                             customKey,
                             weight,
                             customItemBuilder.getItemStack(),
@@ -164,7 +164,7 @@ public class TreasureChestImpl implements TreasureChest {
         }
         List<String> chances = new ArrayList<>();
 
-        for (LootTable<?> lootTable : lootEntries) {
+        for (LootTableImpl<?> lootTable : lootEntries) {
             if (lootTable.getWeight() == 0) {
                 continue;
             }
@@ -173,12 +173,13 @@ public class TreasureChestImpl implements TreasureChest {
         }
     }
 
+    @Override
     @Nullable
-    public LootTable<?> getRandomLootTable() {
+    public LootTableImpl<?> getRandomLootTable() {
         int randomValue = RANDOM.nextInt(totalWeight);
         int currentWeight = 0;
 
-        for (LootTable<?> item : lootEntries) {
+        for (LootTableImpl<?> item : lootEntries) {
             currentWeight += item.getWeight();
 
             if (randomValue < currentWeight) {
