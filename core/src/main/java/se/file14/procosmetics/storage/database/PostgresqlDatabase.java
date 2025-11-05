@@ -75,7 +75,7 @@ public class PostgresqlDatabase extends SQLDatabase {
                 "player_id INT NOT NULL, " +
                 "treasure_chest VARCHAR(32) NOT NULL, " +
                 "amount INT NOT NULL DEFAULT 0, " +
-                "PRIMARY KEY (player_id, treasure), " +
+                "PRIMARY KEY (player_id, treasure_chest), " +
                 "FOREIGN KEY (player_id) REFERENCES %s(id) ON DELETE CASCADE, " +
                 "CHECK (amount >= 0)" +
                 ");";
