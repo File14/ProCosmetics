@@ -162,7 +162,7 @@ public class MountImpl extends CosmeticImpl<MountType, MountBehavior> implements
         }
         entity = location.getWorld().spawn(location, cosmeticType.getEntityType().getEntityClass(), entity -> {
             entity.setCustomName(SERIALIZER.serialize(user.translate(
-                    "cosmetic.pets.name_tag",
+                    "cosmetic.mounts.name_tag",
                     Placeholder.unparsed("player", player.getName()),
                     Placeholder.unparsed("cosmetic", cosmeticType.getName(user))))
             );
