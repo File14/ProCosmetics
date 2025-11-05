@@ -143,6 +143,9 @@ settings:
   # Allows enabling or disabling the sending of statistics (https://bstats.org/plugin/bukkit/ProCosmetics/6408)
   enable_metrics: true
 
+  # Sets the default language used in the plugin.
+  default_language: "en_us"
+
   # Saves players' last equipped cosmetics to automatically re-equip them upon their next login.
   restore_cosmetics: true
 

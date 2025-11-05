@@ -44,10 +44,10 @@ import java.util.logging.Level;
 public class LanguageManagerImpl implements LanguageManager {
 
     private static final Gson GSON = new GsonBuilder().create();
-    public static final String DEFAULT_LOCALE = "en_us";
 
     private final ProCosmetics plugin;
     private final Map<String, Language> languages = new HashMap<>();
+    public String defaultLocale = "en_us";
 
     public LanguageManagerImpl(ProCosmetics plugin) {
         this.plugin = plugin;
@@ -72,6 +72,8 @@ public class LanguageManagerImpl implements LanguageManager {
             e.printStackTrace();
         }
         loadTranslations(plugin.getJavaPlugin());
+
+        defaultLocale = plugin.getConfigManager().getMainConfig().getString("settings.default_language");
     }
 
     private void loadTranslations(Plugin plugin) {
@@ -125,8 +127,8 @@ public class LanguageManagerImpl implements LanguageManager {
             translation = language.getTranslation(key);
         }
 
-        if (translation == null && !locale.equals(DEFAULT_LOCALE)) {
-            language = getLanguage(DEFAULT_LOCALE);
+        if (translation == null && !locale.equals(defaultLocale)) {
+            language = getLanguage(defaultLocale);
 
             if (language != null) {
                 translation = language.getTranslation(key);
@@ -231,36 +233,41 @@ public class LanguageManagerImpl implements LanguageManager {
 
     @Override
     public String getLocale() {
-        return DEFAULT_LOCALE;
+        return defaultLocale;
+    }
+
+    @Override
+    public void setLocale(String locale) {
+        this.defaultLocale = locale;
     }
 
     @Override
     public Component translate(String key, @Nullable Style style, TagResolver... resolvers) {
-        return render(key, getLocale(), style, resolvers);
+        return render(key, defaultLocale, style, resolvers);
     }
 
     @Override
     public Component translate(Translatable translatable) {
-        return render(translatable, getLocale());
+        return render(translatable, defaultLocale);
     }
 
     @Override
     public List<Component> translateList(String key, @Nullable Style style, TagResolver... resolvers) {
-        return renderList(key, getLocale(), style, resolvers);
+        return renderList(key, defaultLocale, style, resolvers);
     }
 
     @Override
     public List<Component> translateList(Translatable translatable) {
-        return renderList(translatable, getLocale());
+        return renderList(translatable, defaultLocale);
     }
 
     @Override
     public String translateRaw(String key) {
-        return translate(key, getLocale());
+        return translate(key, defaultLocale);
     }
 
     @Override
     public List<String> translateRawList(String key) {
-        return translateList(key, getLocale());
+        return translateList(key, defaultLocale);
     }
 }

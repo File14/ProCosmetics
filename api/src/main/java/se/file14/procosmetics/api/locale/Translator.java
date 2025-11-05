@@ -37,6 +37,16 @@ public interface Translator {
     String getLocale();
 
     /**
+     * Sets the locale for this translation provider.
+     * <p>
+     * This can be used to dynamically change the active language at runtime,
+     * for example when a player switches their preferred language.
+     *
+     * @param locale the new locale string (e.g., "en_us")
+     */
+    void setLocale(String locale);
+
+    /**
      * Translate a key to a component.
      *
      * @param key       the translation key

@@ -49,7 +49,7 @@ public class UserImpl implements User {
     private final int databaseId;
     private final UUID uuid;
     private final String name;
-    private String locale = "en_us";
+    private String locale;
     private boolean moving;
     private final Location lastLocation = new Location(null, 0.0d, 0.0d, 0.0d, 0.0f, 0.0f);
     private int coins;
@@ -70,6 +70,7 @@ public class UserImpl implements User {
         this.databaseId = databaseId;
         this.uuid = uuid;
         this.name = name;
+        this.locale = plugin.getLanguageManager().getLocale();
     }
 
     private Audience getAudience() {
@@ -130,6 +131,11 @@ public class UserImpl implements User {
     @Override
     public String getLocale() {
         return locale;
+    }
+
+    @Override
+    public void setLocale(String locale) {
+        this.locale = locale;
     }
 
     @Override
