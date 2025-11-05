@@ -28,6 +28,7 @@ import se.file14.procosmetics.api.cosmetic.registry.CosmeticCategory;
 import se.file14.procosmetics.api.cosmetic.registry.CosmeticRegistry;
 import se.file14.procosmetics.api.menu.CosmeticMenu;
 import se.file14.procosmetics.api.user.User;
+import se.file14.procosmetics.api.util.item.ItemBuilder;
 import se.file14.procosmetics.cosmetic.CosmeticTypeImpl;
 import se.file14.procosmetics.menu.CosmeticMenuImpl;
 import se.file14.procosmetics.util.item.ItemBuilderImpl;
@@ -94,7 +95,8 @@ public class CosmeticCategoryImpl<T extends CosmeticType<T, B>,
         return purchasePermission;
     }
 
-    public ItemBuilderImpl getMenuItem() {
+    @Override
+    public ItemBuilder getMenuItem() {
         return menuItem;
     }
 

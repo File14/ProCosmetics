@@ -27,7 +27,6 @@ import se.file14.procosmetics.api.cosmetic.registry.CosmeticCategory;
 import se.file14.procosmetics.api.menu.Menu;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.api.util.item.ItemBuilder;
-import se.file14.procosmetics.cosmetic.registry.CosmeticCategoryImpl;
 import se.file14.procosmetics.menu.MenuImpl;
 import se.file14.procosmetics.util.item.ItemBuilderImpl;
 
@@ -62,11 +61,12 @@ public class MainMenu extends MenuImpl {
             ItemBuilder itemBuilder = new ItemBuilderImpl(config, "menu.main.items.coins");
             itemBuilder.setDisplayName(user.translate(
                     "menu.main.coins.name",
-                    Placeholder.unparsed("coins", String.valueOf(coins))));
+                    Placeholder.unparsed("coins", String.valueOf(coins))
+            ));
             itemBuilder.setLoreComponent(user.translateList(
                     "menu.main.coins.desc",
-                    Placeholder.unparsed("coins", String.valueOf(coins)))
-            );
+                    Placeholder.unparsed("coins", String.valueOf(coins))
+            ));
 
             setItem(itemBuilder.getSlot(), itemBuilder.getItemStack(), event -> {
                 user.sendMessage(user.translate("menu.main.coins.click_prompt"));
@@ -80,14 +80,13 @@ public class MainMenu extends MenuImpl {
                 continue;
             }
             int amount = category.getCosmeticRegistry().getEnabledTypes().size();
-
-            // TODO: Remove cast in the future
-            ItemBuilderImpl menuItem = ((CosmeticCategoryImpl<?, ?, ?>) category).getMenuItem();
+            ItemBuilder menuItem = category.getMenuItem();
             menuItem.setDisplayName(user.translate("menu.main." + category.getKey() + ".name"));
             menuItem.setLoreComponent(user.translateList(
                     "menu.main." + category.getKey() + ".desc",
                     Placeholder.unparsed("current", String.valueOf(category.getUnlockedCosmetics(player))),
-                    Placeholder.unparsed("maximum", String.valueOf(amount))));
+                    Placeholder.unparsed("maximum", String.valueOf(amount))
+            ));
 
             setItem(menuItem.getSlot(), menuItem.getItemStack(), event -> {
                         if (event.isRightClick()) {

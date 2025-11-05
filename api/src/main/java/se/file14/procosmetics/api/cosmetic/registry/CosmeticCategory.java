@@ -80,6 +80,13 @@ public interface CosmeticCategory<T extends CosmeticType<T, B>,
     String getPurchasePermission();
 
     /**
+     * Gets the {@link ItemBuilder} representing this category in menus.
+     *
+     * @return the {@link ItemBuilder} representing this category in menus
+     */
+    ItemBuilder getMenuItem();
+
+    /**
      * Gets the cosmetic registry managing cosmetics within this category.
      *
      * @return the {@link CosmeticRegistry} instance
