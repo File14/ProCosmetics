@@ -17,7 +17,6 @@
  */
 package se.file14.procosmetics.treasure.loot;
 
-import org.bukkit.entity.Player;
 import se.file14.procosmetics.ProCosmeticsPlugin;
 import se.file14.procosmetics.api.treasure.loot.LootEntry;
 import se.file14.procosmetics.api.treasure.loot.LootTable;
@@ -37,12 +36,6 @@ public abstract class LootTableImpl<T extends LootEntry> implements LootTable<T>
         this.key = key;
         this.weight = weight;
     }
-
-    @Override
-    public abstract T getRandomLoot();
-
-    @Override
-    public abstract void give(Player player, User user, T lootEntry);
 
     @Override
     public String getCategory(User user) {
