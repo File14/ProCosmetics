@@ -65,7 +65,7 @@ public class TNT implements GadgetBehavior, Listener {
         entities.add(location.getWorld().spawn(location, TNTPrimed.class, entity -> {
             entity.setVelocity(location.getDirection().multiply(0.8d));
             entity.setFuseTicks(FUSE_TICKS);
-            entity.setSource(player);
+            // Do not use entity.setSource(player) because then HangingBreakByEntity will change its remover entity
 
             MetadataUtil.setCustomEntity(entity);
         }));

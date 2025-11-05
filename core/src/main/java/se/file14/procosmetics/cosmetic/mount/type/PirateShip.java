@@ -27,7 +27,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityExplodeEvent;
-import org.bukkit.event.hanging.HangingBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import se.file14.procosmetics.ProCosmeticsPlugin;
 import se.file14.procosmetics.api.cosmetic.CosmeticContext;
@@ -66,8 +65,7 @@ public class PirateShip implements MountBehavior, Listener {
         Player player = context.getPlayer();
 
         if (player.getVehicle() == entity) {
-            player.getLocation(location);
-            entity.setVelocity(location.getDirection().multiply(0.3d));
+            entity.setVelocity(player.getLocation(location).getDirection().multiply(0.3d));
         }
         if (tnt != null) {
             tnt.getLocation(location).add(0.0d, 0.7d, 0.0d);
@@ -111,25 +109,12 @@ public class PirateShip implements MountBehavior, Listener {
         if (event.getAction() == Action.LEFT_CLICK_AIR && tnt == null && player.getVehicle() == ship) {
             player.getLocation(location).add(0.0d, 1.8d, 0.0d);
 
-            tnt = location.getWorld().spawn(location, TNTPrimed.class, tntEntity -> {
-                tntEntity.setFuseTicks(80);
-                tntEntity.setYield(0.0f);
-                MetadataUtil.setCustomEntity(tntEntity);
+            tnt = location.getWorld().spawn(location, TNTPrimed.class, entity -> {
+                entity.setFuseTicks(80);
+                entity.setYield(0.0f);
+                MetadataUtil.setCustomEntity(entity);
+                // Do not use entity.setSource(player) because then HangingBreakByEntity will change its remover entity
             });
-        }
-    }
-
-    // Ugly workaround (TODO: Is it possible somehow else?)
-    @EventHandler(ignoreCancelled = true)
-    public void onHangingBreak(HangingBreakEvent event) {
-        if (tnt != null) {
-            Entity entity = event.getEntity();
-
-            if (entity.getWorld() != tnt.getWorld()
-                    || entity.getLocation().distanceSquared(tnt.getLocation()) > 64.0d) {
-                return;
-            }
-            event.setCancelled(true);
         }
     }
 
