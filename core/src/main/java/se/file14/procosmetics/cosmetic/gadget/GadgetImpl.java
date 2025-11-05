@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
 
 public class GadgetImpl extends CosmeticImpl<GadgetType, GadgetBehavior> implements Gadget {
 
-    private static final ItemIdentifier GADGET_ID = new ItemIdentifier("GADGET_ITEM");
+    public static final ItemIdentifier GADGET_ID = new ItemIdentifier("GADGET_ITEM");
 
     private static final int BAR_LENGTH = 50;
     private static final String GREEN_BAR = ChatColor.GREEN + "┃";

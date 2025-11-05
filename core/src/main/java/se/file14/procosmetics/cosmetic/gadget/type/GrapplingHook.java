@@ -29,6 +29,7 @@ import se.file14.procosmetics.api.cosmetic.CosmeticContext;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetBehavior;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetType;
 import se.file14.procosmetics.api.user.User;
+import se.file14.procosmetics.cosmetic.gadget.GadgetImpl;
 
 import javax.annotation.Nullable;
 
@@ -82,7 +83,7 @@ public class GrapplingHook implements GadgetBehavior, Listener {
     @EventHandler
     public void onFish(PlayerFishEvent event) {
         if (event.getPlayer() != player
-                // || player.getInventory().getHeldItemSlot() != GADGET_SLOT // TODO: Fix later :-)
+                || !GadgetImpl.GADGET_ID.is(event.getPlayer().getItemInUse())
                 || event.getState() == PlayerFishEvent.State.BITE
                 || event.getState() == PlayerFishEvent.State.FAILED_ATTEMPT) {
             return;
