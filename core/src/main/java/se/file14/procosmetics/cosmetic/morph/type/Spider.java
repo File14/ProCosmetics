@@ -130,7 +130,8 @@ public class Spider implements MorphBehavior {
 
                 items.add(location.getWorld().dropItem(
                         location.add(0.0d, 0.2d, 0.0d),
-                        new ItemBuilderImpl(ITEMSTACK).setDisplayName(String.valueOf(tick)).getItemStack(), item -> {
+                        new ItemBuilderImpl(ITEMSTACK).setMaxSize(1).getItemStack(),
+                        item -> {
                             Vector vector = location.getDirection().multiply(1.3d);
                             item.setVelocity(vector.add(UP_FORCE));
                             item.setPickupDelay(Integer.MAX_VALUE);

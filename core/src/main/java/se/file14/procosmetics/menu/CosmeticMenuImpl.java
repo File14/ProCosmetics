@@ -66,7 +66,7 @@ public class CosmeticMenuImpl<T extends CosmeticType<T, ?>> extends PaginatedMen
         setNextPageSlot(nextPageItem.getSlot());
         setNextPageItemStack(pageInfo ->
                 nextPageItem.setDisplayName(user.translate("menu." + category.getKey() + ".next_page.name"))
-                        .setLoreComponent(user.translateList(
+                        .setLore(user.translateList(
                                 "menu." + category.getKey() + ".next_page.desc",
                                 Placeholder.unparsed("page", String.valueOf(page + 1)),
                                 Placeholder.unparsed("pages", String.valueOf(pageInfo.getPageCount()))
@@ -79,7 +79,7 @@ public class CosmeticMenuImpl<T extends CosmeticType<T, ?>> extends PaginatedMen
         setPreviousPageSlot(previousPageItem.getSlot());
         setPreviousPageItemStack(pageInfo ->
                 previousPageItem.setDisplayName(user.translate("menu." + category.getKey() + ".previous_page.name"))
-                        .setLoreComponent(user.translateList(
+                        .setLore(user.translateList(
                                 "menu." + category.getKey() + ".previous_page.desc",
                                 Placeholder.unparsed("page", String.valueOf(page - 1)),
                                 Placeholder.unparsed("pages", String.valueOf(pageInfo.getPageCount()))
@@ -137,7 +137,10 @@ public class CosmeticMenuImpl<T extends CosmeticType<T, ?>> extends PaginatedMen
                     .replace("<uuid>", player.getUniqueId().toString());
 
             goBackItem.setDisplayName(user.translate("menu." + category.getKey() + ".go_back.name"));
-            goBackItem.setLoreComponent(user.translateList("menu." + category.getKey() + ".go_back.desc"));
+            goBackItem.setLore(user.translateList(
+                    "menu." + category.getKey() + ".go_back.desc",
+                    Placeholder.component("menu", getPreviousMenu().getTitle())
+            ));
 
             if (command.isEmpty()) {
                 setItem(goBackItem.getSlot(), goBackItem.getItemStack(), event -> {
@@ -177,7 +180,7 @@ public class CosmeticMenuImpl<T extends CosmeticType<T, ?>> extends PaginatedMen
 
     private ItemStack getSortingItem() {
         sortingItem.setDisplayName(user.translate("menu." + category.getKey() + ".sort.name"));
-        sortingItem.setLoreComponent(List.of());
+        sortingItem.setLore(List.of());
 
         for (Sorting s : Sorting.VALUES) {
             if (this.sorting == s) {
@@ -245,7 +248,7 @@ public class CosmeticMenuImpl<T extends CosmeticType<T, ?>> extends PaginatedMen
                                 Placeholder.component("name", name),
                                 tagResolver
                         ))
-                        .setLoreComponent(lore)
+                        .setLore(lore)
                         .addLore(user.translateList("menu." + category.getKey() + ".equipped.desc"))
                         .setGlintOverride(true);
             } else if (!locked) {
@@ -254,7 +257,7 @@ public class CosmeticMenuImpl<T extends CosmeticType<T, ?>> extends PaginatedMen
                                 Placeholder.component("name", name),
                                 tagResolver
                         ))
-                        .setLoreComponent(lore)
+                        .setLore(lore)
                         .addLore(user.translateList("menu." + category.getKey() + ".unequipped.desc"));
             } else {
                 if (lockedItem != null) {
@@ -275,7 +278,7 @@ public class CosmeticMenuImpl<T extends CosmeticType<T, ?>> extends PaginatedMen
                                 Placeholder.component("name", name),
                                 tagResolver
                         ))
-                        .setLoreComponent(lore)
+                        .setLore(lore)
                         .addLore(user.translateList(
                                 "menu." + category.getKey() + "." + path + ".desc",
                                 tagResolver

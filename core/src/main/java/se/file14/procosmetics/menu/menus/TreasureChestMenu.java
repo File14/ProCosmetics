@@ -66,7 +66,7 @@ public class TreasureChestMenu extends MenuImpl {
                     Placeholder.unparsed("name", name),
                     tagResolver
             ));
-            itemBuilder.setLoreComponent(user.translateList(
+            itemBuilder.setLore(user.translateList(
                     "menu.treasure_chests." + treasureChest.getKey() + "." + path + ".desc",
                     Placeholder.unparsed("name", name),
                     tagResolver

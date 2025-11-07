@@ -215,7 +215,7 @@ public class GadgetImpl extends CosmeticImpl<GadgetType, GadgetBehavior> impleme
                         "item.gadget.name",
                         Placeholder.unparsed("name", cosmeticType.getName(user)),
                         Placeholder.unparsed("ammo", (!cosmeticType.hasInfinityAmmo() ? String.valueOf(user.getAmmo(cosmeticType)) : ""))))
-                .setLoreComponent(user.translateList("item.gadget.desc")));
+                .setLore(user.translateList("item.gadget.desc")));
     }
 
     @EventHandler

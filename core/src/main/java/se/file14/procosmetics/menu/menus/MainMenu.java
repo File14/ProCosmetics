@@ -46,7 +46,7 @@ public class MainMenu extends MenuImpl {
         if (config.getBoolean("menu.main.items.unequip_all.enable")) {
             ItemBuilder itemBuilder = new ItemBuilderImpl(config, "menu.main.items.unequip_all");
             itemBuilder.setDisplayName(user.translate("menu.main.unequip_all.name"));
-            itemBuilder.setLoreComponent(user.translateList("menu.main.unequip_all.desc"));
+            itemBuilder.setLore(user.translateList("menu.main.unequip_all.desc"));
 
             setItem(itemBuilder.getSlot(), itemBuilder.getItemStack(), event -> {
                         user.clearAllCosmetics(false, true);
@@ -63,7 +63,7 @@ public class MainMenu extends MenuImpl {
                     "menu.main.coins.name",
                     Placeholder.unparsed("coins", String.valueOf(coins))
             ));
-            itemBuilder.setLoreComponent(user.translateList(
+            itemBuilder.setLore(user.translateList(
                     "menu.main.coins.desc",
                     Placeholder.unparsed("coins", String.valueOf(coins))
             ));
@@ -79,13 +79,15 @@ public class MainMenu extends MenuImpl {
             if (!category.isEnabled()) {
                 continue;
             }
+            int unlocked = category.getUnlockedCosmetics(player);
             int amount = category.getCosmeticRegistry().getEnabledTypes().size();
             ItemBuilder menuItem = category.getMenuItem();
             menuItem.setDisplayName(user.translate("menu.main." + category.getKey() + ".name"));
-            menuItem.setLoreComponent(user.translateList(
+            menuItem.setLore(user.translateList(
                     "menu.main." + category.getKey() + ".desc",
-                    Placeholder.unparsed("current", String.valueOf(category.getUnlockedCosmetics(player))),
-                    Placeholder.unparsed("maximum", String.valueOf(amount))
+                    Placeholder.unparsed("unlocked_count", String.valueOf(unlocked)),
+                    Placeholder.unparsed("total_count", String.valueOf(amount)),
+                    Placeholder.unparsed("unlocked_percent", String.format("%.1f%%", (unlocked * 100.0) / amount))
             ));
 
             setItem(menuItem.getSlot(), menuItem.getItemStack(), event -> {

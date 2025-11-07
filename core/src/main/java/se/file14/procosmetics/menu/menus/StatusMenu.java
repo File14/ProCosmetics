@@ -42,7 +42,7 @@ public class StatusMenu extends CosmeticMenuImpl<StatusType> {
             ItemBuilder itemBuilder = new ItemBuilderImpl(category.getConfig(), "menu.items.toggle_self_view");
             String path = user.hasSelfViewStatus() ? "disable" : "enable";
             itemBuilder.setDisplayName(user.translate("menu.statuses.toggle_self_view." + path + ".name"));
-            itemBuilder.setLoreComponent(user.translateList("menu.statuses.toggle_self_view." + path + ".desc"));
+            itemBuilder.setLore(user.translateList("menu.statuses.toggle_self_view." + path + ".desc"));
 
             if (user.hasSelfViewStatus()) {
                 itemBuilder.setGlintOverride(true);

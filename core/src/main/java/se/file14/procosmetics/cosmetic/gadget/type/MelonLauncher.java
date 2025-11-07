@@ -92,15 +92,17 @@ public class MelonLauncher implements GadgetBehavior, Listener {
             List<Item> items = new ArrayList<>();
 
             for (int i = 0; i < SLICES; i++) {
-                Item droppedItem = location.getWorld().dropItem(location, new ItemBuilderImpl(MELON_SLICE).setDisplayName(String.valueOf(i)).getItemStack(), entity -> {
-                    entity.setVelocity(new Vector(
-                            MathUtil.randomRange(-EXPLOSION_SPREAD, EXPLOSION_SPREAD),
-                            MathUtil.randomRange(0.2d, EXPLOSION_SPREAD),
-                            MathUtil.randomRange(-EXPLOSION_SPREAD, EXPLOSION_SPREAD)
+                Item droppedItem = location.getWorld().dropItem(location,
+                        new ItemBuilderImpl(MELON_SLICE).setMaxSize(1).getItemStack(),
+                        entity -> {
+                            entity.setVelocity(new Vector(
+                                    MathUtil.randomRange(-EXPLOSION_SPREAD, EXPLOSION_SPREAD),
+                                    MathUtil.randomRange(0.2d, EXPLOSION_SPREAD),
+                                    MathUtil.randomRange(-EXPLOSION_SPREAD, EXPLOSION_SPREAD)
 
-                    ));
-                    MetadataUtil.setCustomEntity(entity);
-                });
+                            ));
+                            MetadataUtil.setCustomEntity(entity);
+                        });
                 items.add(droppedItem);
                 slices.add(droppedItem);
             }

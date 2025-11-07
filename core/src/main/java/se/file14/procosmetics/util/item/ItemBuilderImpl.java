@@ -149,40 +149,22 @@ public class ItemBuilderImpl implements ItemBuilder {
     }
 
     @Override
-    public ItemBuilderImpl setDisplayName(@Nullable String displayName) {
-        return modifyItemMeta(meta -> {
-            if (displayName != null) {
-                meta.setItemName(displayName);
-            }
-        });
-    }
-
-    @Override
-    public String getDisplayName() {
+    public Component getDisplayName() {
         ItemMeta itemMeta = itemStack.getItemMeta();
 
         if (itemMeta != null && itemMeta.hasDisplayName()) {
-            return itemMeta.getDisplayName();
-        }
-        return "";
-    }
-
-    @Override
-    public Component getDisplayNameComponent() {
-        String displayName = getDisplayName();
-        if (!displayName.isEmpty()) {
-            return SERIALIZER.deserialize(displayName);
+            return SERIALIZER.deserialize(itemMeta.getDisplayName());
         }
         return Component.empty();
     }
 
     @Override
-    public ItemBuilderImpl setLoreComponent(@Nullable List<Component> lore) {
+    public ItemBuilderImpl setLore(@Nullable List<Component> lines) {
         return modifyItemMeta(meta -> {
-            if (lore != null) {
+            if (lines != null && !lines.isEmpty()) {
                 List<String> processedLore = new ArrayList<>();
 
-                for (Component component : lore) {
+                for (Component component : lines) {
                     processedLore.add(SERIALIZER.serialize(component));
                 }
                 meta.setLore(processedLore);
@@ -193,21 +175,20 @@ public class ItemBuilderImpl implements ItemBuilder {
     }
 
     @Override
-    public ItemBuilderImpl addLore(Component loreLine) {
-        List<Component> currentLore = new ArrayList<>(getLoreComponents());
-        currentLore.add(loreLine);
-        return setLoreComponent(currentLore);
+    public ItemBuilderImpl addLore(Component line) {
+        List<Component> currentLore = new ArrayList<>(getLore());
+        currentLore.add(line);
+        return setLore(currentLore);
     }
 
     @Override
-    public ItemBuilderImpl addLore(List<Component> loreLines) {
-        List<Component> currentLore = new ArrayList<>(getLoreComponents());
-        currentLore.addAll(loreLines);
-        return setLoreComponent(currentLore);
+    public ItemBuilderImpl addLore(List<Component> lines) {
+        List<Component> currentLore = new ArrayList<>(getLore());
+        currentLore.addAll(lines);
+        return setLore(currentLore);
     }
 
-    @Override
-    public List<String> getLore() {
+    private List<String> getLoreList() {
         ItemMeta itemMeta = itemStack.getItemMeta();
 
         if (itemMeta != null && itemMeta.hasLore()) {
@@ -218,8 +199,8 @@ public class ItemBuilderImpl implements ItemBuilder {
     }
 
     @Override
-    public List<Component> getLoreComponents() {
-        List<String> lore = getLore();
+    public List<Component> getLore() {
+        List<String> lore = getLoreList();
 
         if (!lore.isEmpty()) {
             List<Component> components = new ArrayList<>();
@@ -250,10 +231,15 @@ public class ItemBuilderImpl implements ItemBuilder {
     }
 
     @Override
-    public ItemBuilderImpl setGlintOverride(boolean override) {
+    public ItemBuilderImpl setMaxSize(int amount) {
         return modifyItemMeta(meta -> {
-            meta.setEnchantmentGlintOverride(override);
+            meta.setMaxStackSize(amount);
         });
+    }
+
+    @Override
+    public ItemBuilderImpl setGlintOverride(boolean override) {
+        return modifyItemMeta(meta -> meta.setEnchantmentGlintOverride(override));
     }
 
     @Override

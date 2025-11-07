@@ -117,7 +117,8 @@ public class Squid implements MorphBehavior {
 
             items.add(player.getWorld().dropItem(
                     itemLocation.add(0.0d, 0.2d, 0.0d),
-                    new ItemBuilderImpl(ITEMSTACK).setDisplayName(String.valueOf(ticks)).getItemStack(), item -> {
+                    new ItemBuilderImpl(ITEMSTACK).setMaxSize(1).getItemStack(),
+                    item -> {
                         Vector vector = itemLocation.getDirection().multiply(1.3d);
                         item.setVelocity(vector.add(UP_FORCE));
                         item.setPickupDelay(Integer.MAX_VALUE);

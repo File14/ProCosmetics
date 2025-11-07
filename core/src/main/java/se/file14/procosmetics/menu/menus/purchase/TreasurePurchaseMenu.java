@@ -62,7 +62,7 @@ public class TreasurePurchaseMenu extends MenuImpl {
                 Placeholder.unparsed("name", name),
                 tagResolver
         ));
-        treasureChestItem.setLoreComponent(user.translateList(
+        treasureChestItem.setLore(user.translateList(
                 "menu.purchase.treasure_chest.item.desc",
                 Placeholder.unparsed("name", name),
                 Placeholder.unparsed("amount", String.valueOf(amount)),
@@ -98,7 +98,7 @@ public class TreasurePurchaseMenu extends MenuImpl {
                 Placeholder.unparsed("cost", String.valueOf(cost)),
                 Placeholder.unparsed("amount", String.valueOf(amount))
         ));
-        acceptPurchase.setLoreComponent(user.translateList(
+        acceptPurchase.setLore(user.translateList(
                 "menu.purchase.treasure_chest.accept.desc",
                 Placeholder.unparsed("name", name),
                 Placeholder.unparsed("cost", String.valueOf(cost)),
@@ -144,7 +144,7 @@ public class TreasurePurchaseMenu extends MenuImpl {
         // Deny purchase button
         ItemBuilder denyPurchase = new ItemBuilderImpl(config, "menu.purchase.treasure_chest.items.deny");
         denyPurchase.setDisplayName(user.translate("menu.purchase.treasure_chest.deny.name"));
-        denyPurchase.setLoreComponent(user.translateList(
+        denyPurchase.setLore(user.translateList(
                 "menu.purchase.treasure_chest.deny.desc",
                 Placeholder.unparsed("name", name),
                 tagResolver

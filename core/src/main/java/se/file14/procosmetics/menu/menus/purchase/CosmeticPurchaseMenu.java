@@ -62,7 +62,7 @@ public class CosmeticPurchaseMenu extends MenuImpl {
                 Placeholder.unparsed("name", name),
                 tagResolver
         ));
-        cosmeticItem.setLoreComponent(user.translateList(
+        cosmeticItem.setLore(user.translateList(
                 "menu." + category.getKey() + "." + cosmeticType.getKey() + ".desc",
                 Placeholder.unparsed("name", name),
                 tagResolver
@@ -73,7 +73,7 @@ public class CosmeticPurchaseMenu extends MenuImpl {
 
         ItemBuilderImpl acceptPurchase = new ItemBuilderImpl(config, "menu.purchase.cosmetic.items.accept");
         acceptPurchase.setDisplayName(user.translate("menu.purchase.cosmetic.accept.name"));
-        acceptPurchase.setLoreComponent(user.translateList(
+        acceptPurchase.setLore(user.translateList(
                 "menu.purchase.cosmetic.accept.desc",
                 Placeholder.unparsed("name", name),
                 tagResolver
@@ -117,7 +117,7 @@ public class CosmeticPurchaseMenu extends MenuImpl {
         // Deny purchase button
         ItemBuilderImpl denyPurchase = new ItemBuilderImpl(config, "menu.purchase.cosmetic.items.deny");
         denyPurchase.setDisplayName(user.translate("menu.purchase.cosmetic.deny.name"));
-        denyPurchase.setLoreComponent(user.translateList(
+        denyPurchase.setLore(user.translateList(
                 "menu.purchase.cosmetic.deny.desc",
                 Placeholder.unparsed("name", name),
                 tagResolver

@@ -92,29 +92,11 @@ public interface ItemBuilder {
     ItemBuilder setDisplayName(@Nullable Component displayName);
 
     /**
-     * Sets the display name of the item using a legacy string.
-     * <p>
-     * Passing null will clear the display name.
-     * </p>
-     *
-     * @param displayName the display name string, or null to clear
-     * @return this builder instance for chaining
-     */
-    ItemBuilder setDisplayName(@Nullable String displayName);
-
-    /**
-     * Retrieves the current display name as a legacy string.
-     *
-     * @return the display name, or an empty string if none exists
-     */
-    String getDisplayName();
-
-    /**
      * Retrieves the current display name as a Component.
      *
      * @return the display name component, or an empty component if none exists
      */
-    Component getDisplayNameComponent();
+    Component getDisplayName();
 
     /**
      * Sets the lore of the item using a list of Components.
@@ -123,40 +105,33 @@ public interface ItemBuilder {
      * Passing null will clear the lore.
      * </p>
      *
-     * @param lore the lore components, or null to clear
+     * @param lines the lore components, or null to clear
      * @return this builder instance for chaining
      */
-    ItemBuilder setLoreComponent(@Nullable List<Component> lore);
+    ItemBuilder setLore(@Nullable List<Component> lines);
 
     /**
      * Appends a single line to the item's lore.
      *
-     * @param loreLine the component to add to the lore
+     * @param line the component to add to the lore
      * @return this builder instance for chaining
      */
-    ItemBuilder addLore(Component loreLine);
+    ItemBuilder addLore(Component line);
 
     /**
      * Appends multiple lines to the item's lore.
      *
-     * @param loreLines the components to add to the lore
+     * @param lines the components to add to the lore
      * @return this builder instance for chaining
      */
-    ItemBuilder addLore(List<Component> loreLines);
-
-    /**
-     * Retrieves the current lore as a list of legacy strings.
-     *
-     * @return the lore lines, or an empty list if none exists
-     */
-    List<String> getLore();
+    ItemBuilder addLore(List<Component> lines);
 
     /**
      * Retrieves the current lore as a list of Components.
      *
      * @return the lore components, or an empty list if none exists
      */
-    List<Component> getLoreComponents();
+    List<Component> getLore();
 
     /**
      * Makes the item unbreakable and hides the unbreakable flag.
@@ -176,6 +151,14 @@ public interface ItemBuilder {
      * @return this builder instance for chaining
      */
     ItemBuilder setUnbreakable(boolean unbreakable);
+
+    /**
+     * Sets the maximum stack size for the item.
+     *
+     * @param amount the maximum stack size to apply
+     * @return this builder instance for chaining
+     */
+    ItemBuilder setMaxSize(int amount);
 
     /**
      * Overrides the enchantment glint visibility for the item.

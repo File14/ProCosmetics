@@ -77,7 +77,7 @@ public class CoinPartyBomb implements GadgetBehavior, Listener {
             plugin = context.getPlugin();
         }
         CosmeticType<?, ?> type = context.getType();
-        pickupReward = type.getCategory().getConfig().getInt(type.getCategory().getKey() + ".cosmetics." + type.getKey() + ".pickup_reward");
+        pickupReward = type.getCategory().getConfig().getInt("cosmetics." + type.getKey() + ".pickup_reward");
     }
 
     @Override
@@ -143,18 +143,18 @@ public class CoinPartyBomb implements GadgetBehavior, Listener {
         if (tick % 3 == 0) {
             Location location = nmsEntity.getPreviousLocation();
 
-            items.add(location.getWorld().dropItem(location, new ItemBuilderImpl(context.getType().getItemStack().getType())
-                    .setDisplayName(String.valueOf(MathUtil.THREAD_LOCAL_RANDOM.nextDouble()))
-                    .getItemStack(), entity -> {
-                float angle = ROTATION_PER_TICK * tick;
-                float x = FastMathUtil.cos(angle);
-                float z = FastMathUtil.sin(angle);
+            items.add(location.getWorld().dropItem(location,
+                    new ItemBuilderImpl(context.getType().getItemStack().getType()).setMaxSize(1).getItemStack(),
+                    entity -> {
+                        float angle = ROTATION_PER_TICK * tick;
+                        float x = FastMathUtil.cos(angle);
+                        float z = FastMathUtil.sin(angle);
 
-                entity.setVelocity(new Vector(x, MathUtil.randomRange(-3.0d, 0.1d), z));
-                entity.setPickupDelay(20);
+                        entity.setVelocity(new Vector(x, MathUtil.randomRange(-3.0d, 0.1d), z));
+                        entity.setPickupDelay(20);
 
-                MetadataUtil.setCustomEntity(entity);
-            }));
+                        MetadataUtil.setCustomEntity(entity);
+                    }));
 
             location.getWorld().spawn(location, Firework.class, entity -> {
                 FireworkMeta meta = entity.getFireworkMeta();

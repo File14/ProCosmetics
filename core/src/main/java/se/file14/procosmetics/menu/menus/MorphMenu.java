@@ -42,7 +42,7 @@ public class MorphMenu extends CosmeticMenuImpl<MorphType> {
             ItemBuilder itemBuilder = new ItemBuilderImpl(category.getConfig(), "menu.items.toggle_self_view");
             String path = user.hasSelfViewMorph() ? "disable" : "enable";
             itemBuilder.setDisplayName(user.translate("menu.morphs.toggle_self_view." + path + ".name"));
-            itemBuilder.setLoreComponent(user.translateList("menu.morphs.toggle_self_view." + path + ".desc"));
+            itemBuilder.setLore(user.translateList("menu.morphs.toggle_self_view." + path + ".desc"));
 
             if (user.hasSelfViewMorph()) {
                 itemBuilder.setGlintOverride(true);

@@ -234,6 +234,6 @@ public class CosmeticItemListener implements Listener {
     public ItemBuilder getCosmeticItem(User user) {
         return COSMETIC_ID.apply(new ItemBuilderImpl(config, "cosmetic_item")
                 .setDisplayName(user.translate("item.cosmetic.name"))
-                .setLoreComponent(user.translateList("item.cosmetic.desc")));
+                .setLore(user.translateList("item.cosmetic.desc")));
     }
 }

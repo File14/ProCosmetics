@@ -63,7 +63,7 @@ public class AmmoPurchaseMenu extends MenuImpl {
                 Placeholder.unparsed("name", name),
                 tagResolver
         ));
-        cosmeticItem.setLoreComponent(user.translateList(
+        cosmeticItem.setLore(user.translateList(
                 "menu." + category.getKey() + "." + gadgetType.getKey() + ".desc",
                 Placeholder.unparsed("name", name),
                 tagResolver
@@ -74,7 +74,7 @@ public class AmmoPurchaseMenu extends MenuImpl {
 
         ItemBuilder acceptPurchase = new ItemBuilderImpl(config, "menu.purchase.gadget_ammo.items.accept");
         acceptPurchase.setDisplayName(user.translate("menu.purchase.gadget_ammo.accept.name"));
-        acceptPurchase.setLoreComponent(user.translateList(
+        acceptPurchase.setLore(user.translateList(
                 "menu.purchase.gadget_ammo.accept.desc",
                 tagResolver
         ));
@@ -126,7 +126,7 @@ public class AmmoPurchaseMenu extends MenuImpl {
         // Deny purchase button
         ItemBuilderImpl denyPurchase = new ItemBuilderImpl(config, "menu.purchase.gadget_ammo.items.deny");
         denyPurchase.setDisplayName(user.translate("menu.purchase.gadget_ammo.deny.name"));
-        denyPurchase.setLoreComponent(user.translateList(
+        denyPurchase.setLore(user.translateList(
                 "menu.purchase.gadget_ammo.deny.desc",
                 tagResolver
         ));
