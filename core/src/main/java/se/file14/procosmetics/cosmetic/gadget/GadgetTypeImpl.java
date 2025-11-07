@@ -82,7 +82,7 @@ public class GadgetTypeImpl extends CosmeticTypeImpl<GadgetType, GadgetBehavior>
                 super.getResolvers(user),
                 Placeholder.unparsed("ammo", String.valueOf(user.getAmmo(this))),
                 Placeholder.unparsed("ammo_cost", String.valueOf(ammoCost)),
-                Placeholder.unparsed("ammo_purchase_amount", String.valueOf(purchasableAmmo))
+                Placeholder.unparsed("ammo_purchase_amount", String.valueOf(purchaseAmount))
         );
     }
 
