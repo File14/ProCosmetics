@@ -22,36 +22,70 @@ import se.file14.procosmetics.ProCosmeticsPlugin;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.List;
+import java.nio.file.Path;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
 public class ResourceExporter {
 
-    private static final List<String> FILE_TYPES = List.of("json", "nbs");
+    private static final Set<String> EXPORT_DIRECTORIES = Set.of(
+            "songs/",
+            "data/",
+            "structures/",
+            "lang/"
+    );
+
+    private static final Set<String> EXPORT_FILES = Set.of(
+            "languages.json"
+    );
 
     public static void export(ProCosmeticsPlugin plugin) {
-        try (InputStream inputStream = plugin.getClass().getProtectionDomain().getCodeSource().getLocation().openStream();
+        try (InputStream inputStream = plugin.getClass()
+                .getProtectionDomain()
+                .getCodeSource()
+                .getLocation()
+                .openStream();
              ZipInputStream zip = new ZipInputStream(inputStream)) {
-            ZipEntry zipEntry;
+            ZipEntry entry;
+            Path dataFolderPath = plugin.getDataFolder().toPath().toAbsolutePath().normalize();
 
-            while ((zipEntry = zip.getNextEntry()) != null) {
-                String name = zipEntry.getName();
-
-                for (String fileType : FILE_TYPES) {
-                    if (name.endsWith(fileType)) {
-                        File file = new File(plugin.getDataFolder().toPath().toString(), name);
-
-                        if (!file.exists()) {
-                            plugin.saveResource(name, false);
-                            break;
-                        }
-                    }
+            while ((entry = zip.getNextEntry()) != null) {
+                if (!shouldExportEntry(entry)) {
+                    zip.closeEntry();
+                    continue;
                 }
+                String entryName = entry.getName();
+                Path targetPath = dataFolderPath.resolve(entryName).normalize();
+
+                if (!targetPath.startsWith(dataFolderPath)) {
+                    zip.closeEntry();
+                    continue;
+                }
+                File targetFile = targetPath.toFile();
+
+                if (!targetFile.exists()) {
+                    plugin.saveResource(entryName, false);
+                }
+                zip.closeEntry();
             }
         } catch (IOException e) {
-            plugin.getLogger().log(Level.WARNING, "Failed to export a resource.", e);
+            plugin.getLogger().log(Level.SEVERE, "Failed to export resources.", e);
         }
+    }
+
+    private static boolean shouldExportEntry(ZipEntry entry) {
+        if (entry.isDirectory()) {
+            return false;
+        }
+        String name = entry.getName().toLowerCase();
+
+        for (String whitelistedDir : EXPORT_DIRECTORIES) {
+            if (name.startsWith(whitelistedDir)) {
+                return true;
+            }
+        }
+        return EXPORT_FILES.contains(name);
     }
 }
