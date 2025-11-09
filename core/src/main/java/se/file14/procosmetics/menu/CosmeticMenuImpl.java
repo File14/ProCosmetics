@@ -133,6 +133,7 @@ public class CosmeticMenuImpl<T extends CosmeticType<T, ?>> extends PaginatedMen
         if (goBackItem != null) {
             String path = "menu.items.go_back.on_click.";
             String command = category.getConfig().getString(path + "command")
+                    .replace("<player>", player.getName())
                     .replace("<player_name>", player.getName())
                     .replace("<player_uuid>", player.getUniqueId().toString());
 
