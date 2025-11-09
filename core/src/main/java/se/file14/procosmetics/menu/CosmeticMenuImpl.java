@@ -133,8 +133,8 @@ public class CosmeticMenuImpl<T extends CosmeticType<T, ?>> extends PaginatedMen
         if (goBackItem != null) {
             String path = "menu.items.go_back.on_click.";
             String command = category.getConfig().getString(path + "command")
-                    .replace("<player>", player.getName())
-                    .replace("<uuid>", player.getUniqueId().toString());
+                    .replace("<player_name>", player.getName())
+                    .replace("<player_uuid>", player.getUniqueId().toString());
 
             goBackItem.setDisplayName(user.translate("menu." + category.getKey() + ".go_back.name"));
             goBackItem.setLore(user.translateList(
@@ -297,7 +297,10 @@ public class CosmeticMenuImpl<T extends CosmeticType<T, ?>> extends PaginatedMen
                     player.playSound(player, Sound.ITEM_ARMOR_EQUIP_LEATHER, 0.5f, 0.8f);
                 };
             } else if (!locked) {
-                return event -> cosmeticType.equip(user, false, true);
+                return event -> {
+                    cosmeticType.equip(user, false, true);
+                    player.playSound(player, Sound.ITEM_ARMOR_EQUIP_LEATHER, 0.5f, 0.8f);
+                };
             } else {
                 return event -> {
                     if (cosmeticType.isPurchasable() && cosmeticType.hasPurchasePermission(player)) {

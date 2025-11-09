@@ -76,6 +76,7 @@ public class TreasureChestMenu extends MenuImpl {
                         if (keys < 1 || event.isRightClick()) {
                             if (treasureChest.isPurchasable() && treasureChest.hasPurchasePermission(player)) {
                                 new TreasurePurchaseMenu(plugin, user, treasureChest).open();
+                                playClickSound();
                             } else {
                                 playDenySound();
                             }
@@ -90,6 +91,7 @@ public class TreasureChestMenu extends MenuImpl {
 
                             if (platform.isInUse()) {
                                 user.sendMessage(user.translate("treasure_chest.already_in_use"));
+                                playDenySound();
                                 return;
                             }
                             platform.setUser(user);
@@ -113,6 +115,7 @@ public class TreasureChestMenu extends MenuImpl {
                                 } else {
                                     user.sendMessage(user.translate("generic.error.database"));
                                     platform.setUser(null);
+                                    playDenySound();
                                 }
                             }, plugin.getSyncExecutor());
                         }

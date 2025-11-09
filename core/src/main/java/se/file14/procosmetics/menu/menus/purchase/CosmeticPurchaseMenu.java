@@ -20,6 +20,7 @@ package se.file14.procosmetics.menu.menus.purchase;
 import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
 import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
 import org.bukkit.Server;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import se.file14.procosmetics.api.ProCosmetics;
 import se.file14.procosmetics.api.config.Config;
@@ -100,13 +101,12 @@ public class CosmeticPurchaseMenu extends MenuImpl {
 
             economy.removeCoinsAsync(user, cost).thenAcceptAsync(result -> {
                 if (result.booleanValue()) {
-                    server.dispatchCommand(server.getConsoleSender(), config.getString("settings.permission_add_command")
-                            .replace("<player>", player.getName())
-                            .replace("<permission>", cosmeticType.getPermission())
-                    );
+                    grantCosmeticPermission(plugin, player, cosmeticType);
                     server.getPluginManager().callEvent(new PlayerPurchaseCosmeticEventImpl(plugin, user, player, cosmeticType));
+                    // TODO: The permission might not yet have been added to the player causing it to not equip
                     cosmeticType.equip(user, false, true);
                     plugin.getJavaPlugin().getLogger().log(Level.INFO, "[COSMETIC] " + user + " bought " + cosmeticType.getKey() + " for " + cost + ".");
+                    playSuccessSound();
                 } else {
                     economy.sendInsufficientCoinsMessage(user, cost);
                     playDenySound();
@@ -135,5 +135,18 @@ public class CosmeticPurchaseMenu extends MenuImpl {
             return null;
         }
         return new ItemBuilderImpl(config, "menu.purchase.cosmetic.items.fill_empty_slots").getItemStack();
+    }
+
+    public static void grantCosmeticPermission(ProCosmetics plugin, Player player, CosmeticType<?, ?> cosmeticType) {
+        Server server = plugin.getJavaPlugin().getServer();
+
+        server.dispatchCommand(server.getConsoleSender(),
+                plugin.getConfigManager().getMainConfig().getString("settings.permission_add_command")
+                        .replace("<player>", player.getName()) // Keep this to be consistent with translation keys
+                        .replace("<player_name>", player.getName())
+                        .replace("<player_uuid>", player.getUniqueId().toString())
+                        .replace("<cosmetic_key>", cosmeticType.getKey())
+                        .replace("<cosmetic_permission>", cosmeticType.getPermission())
+        );
     }
 }

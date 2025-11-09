@@ -54,7 +54,8 @@ public class CustomLootImpl extends LootTableImpl<CustomLoot> implements CustomL
         for (String command : commands) {
             PLUGIN.getServer().dispatchCommand(
                     PLUGIN.getServer().getConsoleSender(),
-                    command.replace("<player>", player.getName())
+                    command.replace("<player_name>", player.getName())
+                            .replace("<player_uuid>", player.getUniqueId().toString())
                             .replace("<rarity>", lootEntry.getRarity().getName(user))
                             .replace("<rarity_primary_color>", lootEntry.getRarity().getPrimaryColor())
                             .replace("<rarity_secondary_color>", lootEntry.getRarity().getSecondaryColor())

@@ -44,6 +44,7 @@ menu:
       slot: -5
       on_click:
         # If the command is empty, players will be returned to the main menu.
+        # Placeholders: <player_name>, <player_uuid>
         command: ""
         execute_as_player: false
 
@@ -57,91 +58,10 @@ menu:
       # This specifies if another item should replace the original cosmetic item while it is locked.
       # This is useful to easily visualize which cosmetics the player has access to or not.
       enable: true
-      item: "minecraft:gray_dye"
+      item: "minecraft:firework_star"
       count: 1
 
 cosmetics:
-  infernal_horror:
-    enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
-    item: "minecraft:bone"
-    count: 1
-
-  glacial_steed:
-    enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
-    item: "minecraft:packed_ice"
-    count: 1
-
-  lovely_sheep:
-    enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
-    item: "minecraft:pink_stained_glass"
-    count: 1
-
-  frosty_snowman:
-    enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
-    item: "minecraft:snowball"
-    count: 1
-
-  slime:
-    enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
-    item: "minecraft:slime_block"
-    count: 1
-
-  molten_snake:
-    enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
-    item: "minecraft:netherrack"
-    count: 1
-
-  ethereal_dragon:
-    enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
-    item: "minecraft:dragon_egg[!minecraft:rarity]"
-    count: 1
-
-  hype_train:
-    enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
-    item: "minecraft:minecart"
-    count: 1
-
-  pirate_ship:
-    enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
-    item: "minecraft:oak_boat"
-    count: 1
-
   baby_reindeer:
     enable: true
     obtainable: true
@@ -169,6 +89,15 @@ cosmetics:
     item: "minecraft:chest"
     count: 1
 
+  crazy_chicken:
+    enable: true
+    obtainable: true
+    rarity: "RARE"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:egg"
+    count: 1
+
   decrepit_warhorse:
     enable: true
     obtainable: true
@@ -176,6 +105,78 @@ cosmetics:
     purchasable: true
     cost: 2000
     item: "minecraft:rotten_flesh"
+    count: 1
+
+  ethereal_dragon:
+    enable: true
+    obtainable: true
+    rarity: "RARE"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:dragon_egg[!minecraft:rarity]"
+    count: 1
+
+  frosty_snowman:
+    enable: true
+    obtainable: true
+    rarity: "RARE"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:snowball"
+    count: 1
+
+  glacial_steed:
+    enable: true
+    obtainable: true
+    rarity: "RARE"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:packed_ice"
+    count: 1
+
+  hype_train:
+    enable: true
+    obtainable: true
+    rarity: "RARE"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:minecart"
+    count: 1
+
+  infernal_horror:
+    enable: true
+    obtainable: true
+    rarity: "RARE"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:bone"
+    count: 1
+
+  lovely_sheep:
+    enable: true
+    obtainable: true
+    rarity: "RARE"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:pink_stained_glass"
+    count: 1
+
+  molten_snake:
+    enable: true
+    obtainable: true
+    rarity: "RARE"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:netherrack"
+    count: 1
+
+  pirate_ship:
+    enable: true
+    obtainable: true
+    rarity: "RARE"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:oak_boat"
     count: 1
 
   rudolf:
@@ -187,6 +188,15 @@ cosmetics:
     item: "minecraft:dead_bush"
     count: 1
 
+  slime:
+    enable: true
+    obtainable: true
+    rarity: "RARE"
+    purchasable: true
+    cost: 2000
+    item: "minecraft:slime_block"
+    count: 1
+
   unicorn:
     enable: true
     obtainable: true
@@ -194,15 +204,6 @@ cosmetics:
     purchasable: true
     cost: 2000
     item: "minecraft:blaze_rod"
-    count: 1
-
-  crazy_chicken:
-    enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
-    item: "minecraft:egg"
     count: 1
 
 # Do not edit this!

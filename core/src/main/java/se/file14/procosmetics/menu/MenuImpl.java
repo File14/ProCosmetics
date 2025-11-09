@@ -147,6 +147,11 @@ public abstract class MenuImpl implements Menu {
     }
 
     @Override
+    public void playSuccessSound() {
+        player.playSound(player, Sound.ENTITY_PLAYER_LEVELUP, 0.5f, 1.0f);
+    }
+
+    @Override
     public void playDenySound() {
         player.playSound(player, Sound.ENTITY_ITEM_BREAK, 0.5f, 0.5f);
     }

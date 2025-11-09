@@ -38,6 +38,7 @@ menu:
       slot: -5
       on_click:
         # If the command is empty, players will be returned to the main menu.
+        # Placeholders: <player_name>, <player_uuid>
         command: ""
         execute_as_player: false
 
@@ -51,7 +52,7 @@ menu:
       # This specifies if another item should replace the original cosmetic item while it is locked.
       # This is useful to easily visualize which cosmetics the player has access to or not.
       enable: true
-      item: "minecraft:gray_dye"
+      item: "minecraft:firework_star"
       count: 1
 
 # A music bundle with around 35 songs and a pre-configured music.yml file can be found at:
@@ -61,7 +62,7 @@ menu:
 #
 # The default songs listed below are safe to use as they are non-copyrighted.
 cosmetics:
-  in_the_hall_of_the_mountain_king:
+  fur_elise:
     enable: true
     obtainable: true
     rarity: "COMMON"
@@ -70,7 +71,7 @@ cosmetics:
     item: "minecraft:paper"
     count: 1
 
-  fur_elise:
+  in_the_hall_of_the_mountain_king:
     enable: true
     obtainable: true
     rarity: "COMMON"

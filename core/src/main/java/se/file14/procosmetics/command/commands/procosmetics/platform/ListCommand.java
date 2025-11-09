@@ -19,6 +19,7 @@ package se.file14.procosmetics.command.commands.procosmetics.platform;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
+import net.kyori.adventure.text.event.ClickEvent;
 import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
 import org.bukkit.Location;
 import org.bukkit.command.CommandSender;
@@ -26,6 +27,8 @@ import se.file14.procosmetics.ProCosmeticsPlugin;
 import se.file14.procosmetics.api.locale.Translator;
 import se.file14.procosmetics.command.SubCommand;
 import se.file14.procosmetics.treasure.TreasureChestPlatformImpl;
+
+import java.util.List;
 
 public class ListCommand extends SubCommand<CommandSender> {
 
@@ -43,19 +46,24 @@ public class ListCommand extends SubCommand<CommandSender> {
                 Placeholder.unparsed("amount", String.valueOf(plugin.getTreasureChestManager().getPlatforms().size()))
         ));
         TextComponent.Builder builder = Component.text();
+        List<TreasureChestPlatformImpl> platforms = plugin.getTreasureChestManager().getPlatforms();
 
-        for (TreasureChestPlatformImpl platform : plugin.getTreasureChestManager().getPlatforms()) {
+        for (int i = 0; i < platforms.size(); i++) {
+            TreasureChestPlatformImpl platform = platforms.get(i);
             Location center = platform.getCenter();
 
-            builder.append(Component.newline(),
-                    translator.translate(
-                            "command.platform.list.entry",
-                            Placeholder.unparsed("id", String.valueOf(platform.getId())),
-                            Placeholder.unparsed("x", String.valueOf(center.getBlock())),
-                            Placeholder.unparsed("y", String.valueOf(center.getBlockY())),
-                            Placeholder.unparsed("z", String.valueOf(center.getBlockZ())),
-                            Placeholder.unparsed("world", center.getWorld().getName())
-                    ));
+            builder.append(translator.translate(
+                    "command.platform.list.entry",
+                    Placeholder.unparsed("id", String.valueOf(platform.getId())),
+                    Placeholder.unparsed("x", String.valueOf(center.getBlockX())),
+                    Placeholder.unparsed("y", String.valueOf(center.getBlockY())),
+                    Placeholder.unparsed("z", String.valueOf(center.getBlockZ())),
+                    Placeholder.unparsed("world", center.getWorld().getName())
+            ).clickEvent(ClickEvent.runCommand("/pc platform teleport " + platform.getId())));
+
+            if (i < platforms.size() - 1) {
+                builder.append(Component.newline());
+            }
         }
         audience(sender).sendMessage(builder);
     }

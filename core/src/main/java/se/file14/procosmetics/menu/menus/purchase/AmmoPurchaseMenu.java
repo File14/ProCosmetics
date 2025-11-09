@@ -19,7 +19,6 @@ package se.file14.procosmetics.menu.menus.purchase;
 
 import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
 import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
-import org.bukkit.Sound;
 import org.bukkit.inventory.ItemStack;
 import se.file14.procosmetics.api.ProCosmetics;
 import se.file14.procosmetics.api.config.Config;
@@ -101,7 +100,6 @@ public class AmmoPurchaseMenu extends MenuImpl {
                     plugin.getDatabase().addGadgetAmmoAsync(user, gadgetType, gadgetType.getPurchaseAmount()).thenAcceptAsync(result2 -> {
                         if (result2.leftBoolean()) {
                             plugin.getJavaPlugin().getServer().getPluginManager().callEvent(new PlayerPurchaseGadgetAmmoEventImpl(plugin, user, player, gadgetType));
-                            player.playSound(player, Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.0f);
 
                             GadgetImpl gadget = (GadgetImpl) user.getCosmetic(plugin.getCategoryRegistries().gadgets());
 
@@ -109,6 +107,7 @@ public class AmmoPurchaseMenu extends MenuImpl {
                             if (gadget != null && gadget.isEquipped()) {
                                 gadget.setGadgetItemInInventory();
                             }
+                            playSuccessSound();
                             plugin.getJavaPlugin().getLogger().log(Level.INFO, "[AMMO] " + user + " bought " + gadgetType.getPurchaseAmount() + " " + gadgetType.getKey() + " ammo for " + cost + ".");
                         } else {
                             // Failed, refund the coins

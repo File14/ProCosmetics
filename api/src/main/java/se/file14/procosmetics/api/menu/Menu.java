@@ -93,6 +93,11 @@ public interface Menu {
     void playClickSound();
 
     /**
+     * Plays the successful sound for the player.
+     */
+    void playSuccessSound();
+
+    /**
      * Plays the deny sound for the player.
      */
     void playDenySound();

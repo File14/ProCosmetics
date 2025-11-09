@@ -23,6 +23,7 @@ import org.bukkit.entity.Player;
 import se.file14.procosmetics.api.cosmetic.CosmeticType;
 import se.file14.procosmetics.api.treasure.loot.CosmeticLoot;
 import se.file14.procosmetics.api.user.User;
+import se.file14.procosmetics.menu.menus.purchase.CosmeticPurchaseMenu;
 
 import java.util.List;
 
@@ -42,7 +43,7 @@ public class CosmeticLootImpl extends LootTableImpl<CosmeticType<?, ?>> implemen
 
     @Override
     public void give(Player player, User user, CosmeticType<?, ?> lootEntry) {
-        givePermission(player, lootEntry.getPermission());
+        CosmeticPurchaseMenu.grantCosmeticPermission(PLUGIN, player, lootEntry);
 
         PLUGIN.getTreasureChestManager().getLootBroadcaster().broadcastMessage(
                 player,
@@ -56,15 +57,6 @@ public class CosmeticLootImpl extends LootTableImpl<CosmeticType<?, ?>> implemen
                         Placeholder.parsed("rarity_primary_color", lootEntry.getRarity().getPrimaryColor()),
                         Placeholder.parsed("rarity_secondary_color", lootEntry.getRarity().getSecondaryColor())
                 });
-    }
-
-    private void givePermission(Player player, String permission) {
-        PLUGIN.getServer().dispatchCommand(
-                PLUGIN.getServer().getConsoleSender(),
-                PLUGIN.getConfigManager().getMainConfig().getString("settings.permission_add_command")
-                        .replace("<player>", player.getName())
-                        .replace("<permission>", permission)
-        );
     }
 
     @Override

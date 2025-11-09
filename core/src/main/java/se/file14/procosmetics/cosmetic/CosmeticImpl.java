@@ -19,7 +19,6 @@ package se.file14.procosmetics.cosmetic;
 
 import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
 import org.bukkit.Server;
-import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
@@ -74,7 +73,6 @@ public abstract class CosmeticImpl<T extends CosmeticType<T, B>,
         player.closeInventory();
 
         if (!cosmeticType.hasPermission(player)) {
-            player.playSound(player, Sound.ENTITY_ITEM_BREAK, 1.0f, 0.6f);
             unequip(false, true);
             return;
         }

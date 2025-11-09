@@ -35,6 +35,7 @@ menu:
       slot: -5
       on_click:
         # If the command is empty, players will be returned to the main menu.
+        # Placeholders: <player_name>, <player_uuid>
         command: ""
         execute_as_player: false
 
@@ -48,7 +49,7 @@ menu:
       # This specifies if another item should replace the original cosmetic item while it is locked.
       # This is useful to easily visualize which cosmetics the player has access to or not.
       enable: true
-      item: "minecraft:gray_dye"
+      item: "minecraft:firework_star"
       count: 1
 
 cosmetics:

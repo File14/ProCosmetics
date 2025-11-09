@@ -38,6 +38,7 @@ menu:
       slot: -5
       on_click:
         # If the command is empty, players will be returned to the main menu.
+        # Placeholders: <player_name>, <player_uuid>
         command: ""
         execute_as_player: false
 
@@ -51,70 +52,10 @@ menu:
       # This specifies if another item should replace the original cosmetic item while it is locked.
       # This is useful to easily visualize which cosmetics the player has access to or not.
       enable: true
-      item: "minecraft:gray_dye"
+      item: "minecraft:firework_star"
       count: 1
 
 cosmetics:
-  ethereal_pearl:
-    enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
-    cooldown: 5.0
-    ammo:
-      purchasable: true
-      purchase_amount: 30
-      cost: 250
-      infinity: false
-    item: "minecraft:ender_pearl"
-    count: 1
-
-  fireworks:
-    enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
-    cooldown: 1.0
-    ammo:
-      purchasable: true
-      purchase_amount: 30
-      cost: 150
-      infinity: false
-    item: "minecraft:firework_rocket[!minecraft:fireworks]"
-    count: 1
-
-  tnt:
-    enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
-    cooldown: 3.0
-    ammo:
-      purchasable: true
-      purchase_amount: 10
-      cost: 250
-      infinity: false
-    item: "minecraft:tnt"
-    count: 1
-
-  paintball:
-    enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
-    cooldown: 0.3
-    ammo:
-      purchasable: true
-      purchase_amount: 30
-      cost: 100
-      infinity: false
-    item: "minecraft:golden_horse_armor[!minecraft:attribute_modifiers]"
-    count: 1
-
   bat_blaster:
     enable: true
     obtainable: true
@@ -131,35 +72,35 @@ cosmetics:
     item: "minecraft:iron_horse_armor[!minecraft:attribute_modifiers]"
     count: 1
 
-  confetti:
+  cannon:
     enable: true
     obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
-    cooldown: 0.3
-    ammo:
-      purchasable: true
-      purchase_amount: 50
-      cost: 100
-      infinity: false
-    item: "minecraft:blaze_rod"
-    count: 1
-
-  party_popper:
-    enable: true
-    obtainable: true
-    rarity: "COMMON"
+    rarity: "RARE"
     purchasable: true
     cost: 2000
     cooldown: 20.0
-    duration: 12.0
+    duration: 10.0
     ammo:
       purchasable: true
       purchase_amount: 10
-      cost: 300
+      cost: 200
       infinity: false
-    item: "minecraft:cake"
+    item: "minecraft:coal"
+    count: 1
+
+  chicken_parachute:
+    enable: true
+    obtainable: true
+    rarity: "RARE"
+    purchasable: true
+    cost: 2000
+    cooldown: 20.0
+    ammo:
+      purchasable: true
+      purchase_amount: 10
+      cost: 250
+      infinity: false
+    item: "minecraft:feather"
     count: 1
 
   coin_party_bomb:
@@ -180,51 +121,49 @@ cosmetics:
     item: "minecraft:sunflower"
     count: 1
 
-  merry_go_round:
+  confetti:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    cooldown: 0.3
+    ammo:
+      purchasable: true
+      purchase_amount: 50
+      cost: 100
+      infinity: false
+    item: "minecraft:blaze_rod"
+    count: 1
+
+  cowboy:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    cooldown: 15.0
+    ammo:
+      purchasable: true
+      purchase_amount: 30
+      cost: 100
+      infinity: false
+    item: "minecraft:saddle"
+    count: 1
+
+  detonator:
     enable: true
     obtainable: true
     rarity: "LEGENDARY"
     purchasable: true
     cost: 2000
-    cooldown: 80.0
-    duration: 60.0
-    ammo:
-      purchasable: true
-      purchase_amount: 5
-      cost: 600
-      infinity: false
-    item: "minecraft:minecart"
-    count: 1
-
-  rocket:
-    enable: true
-    obtainable: true
-    rarity: "LEGENDARY"
-    purchasable: true
-    cost: 2000
-    cooldown: 30.0
-    ammo:
-      purchasable: true
-      purchase_amount: 5
-      cost: 500
-      infinity: false
-    item: "minecraft:iron_block"
-    count: 1
-
-  trampoline:
-    enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
-    cooldown: 40.0
-    duration: 35.0
+    cooldown: 8.0
     ammo:
       purchasable: true
       purchase_amount: 10
-      cost: 500
+      cost: 300
       infinity: false
-    item: "minecraft:black_wool"
+    item: "minecraft:lever"
     count: 1
 
   disco_ball:
@@ -243,49 +182,35 @@ cosmetics:
     item: "minecraft:blue_stained_glass"
     count: 1
 
-  melon_launcher:
-    enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
-    cooldown: 4.0
-    ammo:
-      purchasable: true
-      purchase_amount: 20
-      cost: 150
-      infinity: false
-    item: "minecraft:melon"
-    count: 1
-
-  grappling_hook:
+  diving_board:
     enable: true
     obtainable: true
     rarity: "RARE"
     purchasable: true
     cost: 2000
-    cooldown: 1.0
-    ammo:
-      purchasable: true
-      purchase_amount: 50
-      cost: 300
-      infinity: false
-    item: "minecraft:fishing_rod"
-    count: 1
-
-  detonator:
-    enable: true
-    obtainable: true
-    rarity: "LEGENDARY"
-    purchasable: true
-    cost: 2000
-    cooldown: 8.0
+    cooldown: 80.0
+    duration: 60.0
     ammo:
       purchasable: true
       purchase_amount: 10
-      cost: 300
+      cost: 200
       infinity: false
-    item: "minecraft:lever"
+    item: "minecraft:white_carpet"
+    count: 1
+
+  ethereal_pearl:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    cooldown: 5.0
+    ammo:
+      purchasable: true
+      purchase_amount: 30
+      cost: 250
+      infinity: false
+    item: "minecraft:ender_pearl"
     count: 1
 
   explosive_sheep:
@@ -304,6 +229,22 @@ cosmetics:
     item: "minecraft:red_wool"
     count: 1
 
+  flame_thrower:
+    enable: true
+    obtainable: true
+    rarity: "RARE"
+    purchasable: true
+    cost: 2000
+    cooldown: 30.0
+    duration: 10.0
+    ammo:
+      purchasable: true
+      purchase_amount: 10
+      cost: 200
+      infinity: false
+    item: "minecraft:blaze_powder"
+    count: 1
+
   flesh_hook:
     enable: true
     obtainable: true
@@ -319,50 +260,191 @@ cosmetics:
     item: "minecraft:tripwire_hook"
     count: 1
 
-  wither_missile:
+  fireworks:
     enable: true
     obtainable: true
     rarity: "COMMON"
     purchasable: true
     cost: 2000
-    cooldown: 15.0
-    duration: 10.0
+    cooldown: 1.0
     ammo:
       purchasable: true
-      purchase_amount: 15
-      cost: 300
+      purchase_amount: 30
+      cost: 150
       infinity: false
-    item: "minecraft:wither_skeleton_skull"
+    item: "minecraft:firework_rocket[!minecraft:fireworks]"
     count: 1
 
-  chicken_parachute:
+  grappling_hook:
     enable: true
     obtainable: true
     rarity: "RARE"
     purchasable: true
     cost: 2000
-    cooldown: 20.0
+    cooldown: 1.0
+    ammo:
+      purchasable: true
+      purchase_amount: 50
+      cost: 300
+      infinity: false
+    item: "minecraft:fishing_rod"
+    count: 1
+
+  hot_air_balloon:
+    enable: true
+    obtainable: true
+    rarity: "RARE"
+    purchasable: true
+    cost: 2000
+    cooldown: 60.0
+    duration: 40.0
     ammo:
       purchasable: true
       purchase_amount: 10
-      cost: 250
+      cost: 200
       infinity: false
-    item: "minecraft:feather"
+    item: "minecraft:campfire"
     count: 1
 
-  cowboy:
+  hot_tub:
+    enable: true
+    obtainable: true
+    rarity: "RARE"
+    purchasable: true
+    cost: 2000
+    cooldown: 80.0
+    duration: 60.0
+    ammo:
+      purchasable: true
+      purchase_amount: 10
+      cost: 200
+      infinity: false
+    item: "minecraft:magma_block"
+    count: 1
+
+  melon_launcher:
     enable: true
     obtainable: true
     rarity: "COMMON"
     purchasable: true
     cost: 2000
-    cooldown: 15.0
+    cooldown: 4.0
+    ammo:
+      purchasable: true
+      purchase_amount: 20
+      cost: 150
+      infinity: false
+    item: "minecraft:melon"
+    count: 1
+
+  merry_go_round:
+    enable: true
+    obtainable: true
+    rarity: "LEGENDARY"
+    purchasable: true
+    cost: 2000
+    cooldown: 80.0
+    duration: 60.0
+    ammo:
+      purchasable: true
+      purchase_amount: 5
+      cost: 600
+      infinity: false
+    item: "minecraft:minecart"
+    count: 1
+
+  paintball:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    cooldown: 0.3
     ammo:
       purchasable: true
       purchase_amount: 30
       cost: 100
       infinity: false
-    item: "minecraft:saddle"
+    item: "minecraft:golden_horse_armor[!minecraft:attribute_modifiers]"
+    count: 1
+
+  parkour_spiral:
+    enable: true
+    obtainable: true
+    rarity: "RARE"
+    purchasable: true
+    cost: 2000
+    cooldown: 80.0
+    duration: 60.0
+    ammo:
+      purchasable: true
+      purchase_amount: 10
+      cost: 200
+      infinity: false
+    item: "minecraft:lime_concrete"
+    count: 1
+
+  party_popper:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    cooldown: 20.0
+    duration: 12.0
+    ammo:
+      purchasable: true
+      purchase_amount: 10
+      cost: 300
+      infinity: false
+    item: "minecraft:cake"
+    count: 1
+
+  rocket:
+    enable: true
+    obtainable: true
+    rarity: "LEGENDARY"
+    purchasable: true
+    cost: 2000
+    cooldown: 30.0
+    ammo:
+      purchasable: true
+      purchase_amount: 5
+      cost: 500
+      infinity: false
+    item: "minecraft:iron_block"
+    count: 1
+
+  shower:
+    enable: true
+    obtainable: true
+    rarity: "RARE"
+    purchasable: true
+    cost: 2000
+    cooldown: 80.0
+    duration: 60.0
+    ammo:
+      purchasable: true
+      purchase_amount: 10
+      cost: 200
+      infinity: false
+    item: "minecraft:water_bucket"
+    count: 1
+
+  slide:
+    enable: true
+    obtainable: true
+    rarity: "RARE"
+    purchasable: true
+    cost: 2000
+    cooldown: 80.0
+    duration: 60.0
+    ammo:
+      purchasable: true
+      purchase_amount: 10
+      cost: 200
+      infinity: false
+    item: "minecraft:warped_stairs"
     count: 1
 
   soccer_ball:
@@ -397,132 +479,35 @@ cosmetics:
     item: "minecraft:string"
     count: 1
 
-  slide:
+  tnt:
     enable: true
     obtainable: true
-    rarity: "RARE"
+    rarity: "COMMON"
     purchasable: true
     cost: 2000
-    cooldown: 80.0
-    duration: 60.0
+    cooldown: 3.0
     ammo:
       purchasable: true
       purchase_amount: 10
-      cost: 200
+      cost: 250
       infinity: false
-    item: "minecraft:warped_stairs"
+    item: "minecraft:tnt"
     count: 1
 
-  shower:
+  trampoline:
     enable: true
     obtainable: true
     rarity: "RARE"
     purchasable: true
     cost: 2000
-    cooldown: 80.0
-    duration: 60.0
+    cooldown: 40.0
+    duration: 35.0
     ammo:
       purchasable: true
       purchase_amount: 10
-      cost: 200
+      cost: 500
       infinity: false
-    item: "minecraft:water_bucket"
-    count: 1
-
-  hot_tub:
-    enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
-    cooldown: 80.0
-    duration: 60.0
-    ammo:
-      purchasable: true
-      purchase_amount: 10
-      cost: 200
-      infinity: false
-    item: "minecraft:magma_block"
-    count: 1
-
-  hot_air_balloon:
-    enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
-    cooldown: 60.0
-    duration: 40.0
-    ammo:
-      purchasable: true
-      purchase_amount: 10
-      cost: 200
-      infinity: false
-    item: "minecraft:campfire"
-    count: 1
-
-  cannon:
-    enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
-    cooldown: 20.0
-    duration: 10.0
-    ammo:
-      purchasable: true
-      purchase_amount: 10
-      cost: 200
-      infinity: false
-    item: "minecraft:coal"
-    count: 1
-
-  diving_board:
-    enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
-    cooldown: 80.0
-    duration: 60.0
-    ammo:
-      purchasable: true
-      purchase_amount: 10
-      cost: 200
-      infinity: false
-    item: "minecraft:white_carpet"
-    count: 1
-
-  flame_thrower:
-    enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
-    cooldown: 30.0
-    duration: 10.0
-    ammo:
-      purchasable: true
-      purchase_amount: 10
-      cost: 200
-      infinity: false
-    item: "minecraft:blaze_powder"
-    count: 1
-
-  parkour_spiral:
-    enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
-    cooldown: 80.0
-    duration: 60.0
-    ammo:
-      purchasable: true
-      purchase_amount: 10
-      cost: 200
-      infinity: false
-    item: "minecraft:lime_concrete"
+    item: "minecraft:black_wool"
     count: 1
 
   water_gun:
@@ -538,6 +523,22 @@ cosmetics:
       cost: 200
       infinity: false
     item: "minecraft:soul_lantern"
+    count: 1
+
+  wither_missile:
+    enable: true
+    obtainable: true
+    rarity: "COMMON"
+    purchasable: true
+    cost: 2000
+    cooldown: 15.0
+    duration: 10.0
+    ammo:
+      purchasable: true
+      purchase_amount: 15
+      cost: 300
+      infinity: false
+    item: "minecraft:wither_skeleton_skull"
     count: 1
 
 # Do not edit this!

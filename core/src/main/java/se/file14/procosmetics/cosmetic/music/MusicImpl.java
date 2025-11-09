@@ -50,7 +50,6 @@ import se.file14.procosmetics.util.material.Materials;
 public class MusicImpl extends CosmeticImpl<MusicType, MusicBehavior> implements Music, Listener {
 
     private static final ItemStack DJ_HAND = new ItemStack(Material.MUSIC_DISC_CHIRP);
-    private static final ItemStack DISC = new ItemStack(Material.MUSIC_DISC_13);
     private static final ItemStack DISCO_BALL = Heads.DISCO_BALL.getSkull();
     private static final ItemStack DISCO_FLOOR_BOTTOM_BLOCK = new ItemStack(Material.BLACK_CONCRETE);
 
@@ -66,7 +65,6 @@ public class MusicImpl extends CosmeticImpl<MusicType, MusicBehavior> implements
     private static final float DJ_MOVEMENT_SPEED = ANGLE_1 * 35.0f;
     private static final int DISCO_BALL_BEAM_LENGTH = 8;
     private static final float DISCO_BALL_ROTATION_SPEED = 6.0f;
-    private static final float DISC_ROTATION_SPEED = 18.0f;
     private static final double DISCO_FLOOR_SIZE = 2.5d;
     private int tick;
 
@@ -79,7 +77,6 @@ public class MusicImpl extends CosmeticImpl<MusicType, MusicBehavior> implements
     private PositionSongPlayer songPlayer;
     private final EntityTracker tracker = new EntityTrackerImpl();
     private NMSEntity armorStand;
-    private NMSEntity cd;
     private NMSEntity jukebox;
     private NMSEntity discoBall;
     private int step;
@@ -131,7 +128,6 @@ public class MusicImpl extends CosmeticImpl<MusicType, MusicBehavior> implements
         location.add(location.getDirection().multiply(1.0d));
         createJukebox(location);
         createDiscoBall(location);
-        createDJDisc(location);
         spawnFirework(location);
         tracker.startTracking();
 
@@ -148,7 +144,6 @@ public class MusicImpl extends CosmeticImpl<MusicType, MusicBehavior> implements
             return;
         }
         updateDJ();
-        updateDisc();
         updateDiscoBall();
 
         if (step % 4 == 0) {
@@ -275,6 +270,14 @@ public class MusicImpl extends CosmeticImpl<MusicType, MusicBehavior> implements
 
         if (jukebox.getBukkitEntity() instanceof BlockDisplay blockDisplay) {
             blockDisplay.setBlock(Material.JUKEBOX.createBlockData());
+
+            Matrix4f transformationMatrix = new Matrix4f();
+            transformationMatrix.identity()
+                    //.scale(scale)
+                    //.rotateY(radians)
+                    .translate(-0.5f, 0.0f, -0.5f);
+            blockDisplay.setTransformationMatrix(transformationMatrix);
+            blockDisplay.setTeleportDuration(1);
         }
     }
 
@@ -292,26 +295,6 @@ public class MusicImpl extends CosmeticImpl<MusicType, MusicBehavior> implements
             itemDisplay.setTeleportDuration(1);
         }
         discoBall.setPositionRotation(location.clone().add(0.0d, 4.0d, 0.0d));
-    }
-
-    private void createDJDisc(Location location) {
-        double x = location.getX() + 0.3d;
-        float angle = -FastMathUtil.toRadians(location.getYaw());
-        Location target = location.clone();
-        target.setX(x);
-        Location loc = location.clone().add(
-                MathUtil.rotateAroundAxisY(target.toVector().subtract(location.toVector()), angle));
-        loc.add(0.0d, 0.2d, 0.0d);
-
-        // TODO: Replace with item display
-        cd = plugin.getNMSManager().createEntity(location.getWorld(), EntityType.ARMOR_STAND, tracker);
-        cd.setMainHand(DISC);
-        cd.setPositionRotation(loc);
-
-        if (cd.getBukkitEntity() instanceof ArmorStand armorStand) {
-            armorStand.setInvisible(true);
-            armorStand.setArms(true);
-        }
     }
 
     private void spawnFirework(Location location) {
@@ -365,16 +348,6 @@ public class MusicImpl extends CosmeticImpl<MusicType, MusicBehavior> implements
         armorStand.sendEntityMetadataPacket();
     }
 
-    private void updateDisc() {
-        // TODO: Replace with item display
-        cd.setRightArmPose(
-                0.0f,
-                tick * DISC_ROTATION_SPEED,
-                0.0f
-        );
-        cd.sendEntityMetadataPacket();
-    }
-
     private void updateDiscoBall() {
         Location loc = discoBall.getPreviousLocation().clone();
         loc.setYaw(tick * DISCO_BALL_ROTATION_SPEED);
@@ -398,12 +371,23 @@ public class MusicImpl extends CosmeticImpl<MusicType, MusicBehavior> implements
     }
 
     private void spawnParticles(Location location) {
-        location.getWorld().spawnParticle(Particle.NOTE, location.clone()
-                .add(0.0d, 1.0d, MathUtil.randomRange(-0.5d, 0.3d)), 0, MathUtil.randomRange(0, 24) / 24.0d, 0.0f, 0.0f, 0.0f);
-
-        location.getWorld().spawnParticle(Particle.FIREWORK, location.clone().add(MathUtil.randomRange(-3.0d, 3.0d), MathUtil.randomRange(2.0d, 5.0d), MathUtil.randomRange(-3.0d, 3.0d)),
-                2, 0.0d, 0.0d, 0.0d, 0.0d
+        double offset = 1.0d + MathUtil.randomRange(-0.3d, 0.3d);
+        location.add(0.0d, offset, 0.0d);
+        location.getWorld().spawnParticle(Particle.NOTE,
+                location,
+                0,
+                MathUtil.randomRange(0.0d, 24.0d),
+                0.0d,
+                0.0d
         );
+        location.subtract(0.0d, offset, 0.0d);
+
+        double offsetX = MathUtil.randomRange(-3.0d, 3.0d);
+        double offsetY = 3.0d + MathUtil.randomRange(-3.0d, 3.0d);
+        double offsetZ = MathUtil.randomRange(-3.0d, 3.0d);
+        location.add(offsetX, offsetY, offsetZ);
+        location.getWorld().spawnParticle(Particle.FIREWORK, location, 1, 0.0d, 0.0d, 0.0d, 0.0d);
+        location.subtract(offsetX, offsetY, offsetZ);
     }
 
     public Location getLocation() {

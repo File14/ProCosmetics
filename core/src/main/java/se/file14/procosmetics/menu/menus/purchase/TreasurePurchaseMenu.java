@@ -19,7 +19,6 @@ package se.file14.procosmetics.menu.menus.purchase;
 
 import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
 import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
-import org.bukkit.Sound;
 import org.bukkit.inventory.ItemStack;
 import se.file14.procosmetics.api.ProCosmetics;
 import se.file14.procosmetics.api.config.Config;
@@ -29,6 +28,7 @@ import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.api.util.item.ItemBuilder;
 import se.file14.procosmetics.event.PlayerPurchaseTreasureChestEventImpl;
 import se.file14.procosmetics.menu.MenuImpl;
+import se.file14.procosmetics.menu.menus.TreasureChestMenu;
 import se.file14.procosmetics.util.item.ItemBuilderImpl;
 
 import java.util.logging.Level;
@@ -125,13 +125,15 @@ public class TreasurePurchaseMenu extends MenuImpl {
                 if (result.booleanValue()) {
                     plugin.getDatabase().addTreasureChestsAsync(user, treasureChest, amount).thenAcceptAsync(result2 -> {
                         if (result2.leftBoolean()) {
-                            player.playSound(player, Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.0f);
+                            playSuccessSound();
                             plugin.getJavaPlugin().getServer().getPluginManager().callEvent(new PlayerPurchaseTreasureChestEventImpl(plugin, user, player, treasureChest, amount));
                             plugin.getJavaPlugin().getLogger().log(Level.INFO, "[TREASURE CHEST] " + user + " bought " + amount + " " + treasureChest.getKey() + " for " + cost + ".");
+                            new TreasureChestMenu(plugin, user).open();
                         } else {
                             // Failed, refund the coins
                             economy.addCoinsAsync(user, cost);
                             user.sendMessage(user.translate("generic.error.database"));
+                            playDenySound();
                         }
                     }, plugin.getSyncExecutor());
                 } else {

@@ -26,6 +26,7 @@ import se.file14.procosmetics.api.cosmetic.registry.CosmeticCategory;
 import se.file14.procosmetics.api.locale.Translator;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.command.SubCommand;
+import se.file14.procosmetics.menu.menus.purchase.CosmeticPurchaseMenu;
 
 import java.util.stream.Collectors;
 
@@ -74,12 +75,7 @@ public class AddCosmeticCommand extends SubCommand<CommandSender> {
             ));
             return;
         }
-        plugin.getServer().dispatchCommand(
-                plugin.getServer().getConsoleSender(),
-                plugin.getConfigManager().getMainConfig().getString("settings.permission_add_command")
-                        .replace("<player>", target.getName())
-                        .replace("<permission>", cosmeticType.getPermission())
-        );
+        CosmeticPurchaseMenu.grantCosmeticPermission(plugin, target, cosmeticType);
 
         audience(sender).sendMessage(translator.translate(
                 "command.add.cosmetic",
