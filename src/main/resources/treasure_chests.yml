@@ -87,6 +87,8 @@ treasure_chests:
         weight: 5
       statuses:
         weight: 0
+      # You can add as many custom rewards as you want. Placeholders: <player_name>, <player_uuid>
+      # To disable them completely, set this section to: custom: []
       custom:
         small_coin_bag:
           enable: true
@@ -145,6 +147,8 @@ treasure_chests:
         weight: 15
       statuses:
         weight: 10
+      # You can add as many custom rewards as you want. Placeholders: <player_name>, <player_uuid>
+      # To disable them completely, set this section to: custom: []
       custom:
         medium_coin_bag:
           enable: true
@@ -203,6 +207,8 @@ treasure_chests:
         weight: 25
       statuses:
         weight: 14
+      # You can add as many custom rewards as you want. Placeholders: <player_name>, <player_uuid>
+      # To disable them completely, set this section to: custom: []
       custom:
         large_coin_bag:
           enable: true
