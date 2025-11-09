@@ -258,7 +258,7 @@ public class ProCosmeticsPlugin extends JavaPlugin implements ProCosmetics {
         }
 
         if (worldGuardManager != null) {
-            worldGuardManager.registerHandler();
+            worldGuardManager.register(this);
         }
     }
 
