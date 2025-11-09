@@ -41,7 +41,7 @@ public class EntityTrackerImpl extends AbstractRunnable implements EntityTracker
     private long updateInterval = DEFAULT_UPDATE_INTERVAL;
     private long startDelay = DEFAULT_START_DELAY;
 
-    private final Set<NMSEntity> entities = new HashSet<>();
+    private final Set<NMSEntity> entities = new LinkedHashSet<>();
     private final Set<Player> viewers = new HashSet<>();
     private final Set<UUID> antiViewers = new HashSet<>();
 
