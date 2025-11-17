@@ -28,6 +28,7 @@ import se.file14.procosmetics.api.cosmetic.registry.CosmeticCategory;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.cosmetic.CosmeticTypeImpl;
 
+import java.util.List;
 import java.util.function.Supplier;
 
 public class MountTypeImpl extends CosmeticTypeImpl<MountType, MountBehavior> implements MountType {
@@ -38,13 +39,13 @@ public class MountTypeImpl extends CosmeticTypeImpl<MountType, MountBehavior> im
                          CosmeticCategory<MountType, MountBehavior, ?> category,
                          Supplier<MountBehavior> behaviorFactory,
                          boolean enabled,
-                         boolean findable,
                          boolean purchasable,
                          int cost,
                          CosmeticRarity rarity,
                          ItemStack itemStack,
+                         List<String> treasureChests,
                          EntityType entityType) {
-        super(key, category, behaviorFactory, enabled, findable, purchasable, cost, rarity, itemStack);
+        super(key, category, behaviorFactory, enabled, purchasable, cost, rarity, itemStack, treasureChests);
         this.entityType = entityType;
     }
 
@@ -82,11 +83,11 @@ public class MountTypeImpl extends CosmeticTypeImpl<MountType, MountBehavior> im
                     category,
                     factory,
                     enabled,
-                    findable,
                     purchasable,
                     cost,
                     rarity,
                     itemStack,
+                    treasureChests,
                     entityType
             );
         }

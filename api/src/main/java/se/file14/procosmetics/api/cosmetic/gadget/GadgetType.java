@@ -19,7 +19,10 @@ package se.file14.procosmetics.api.cosmetic.gadget;
 
 import org.jetbrains.annotations.Nullable;
 import se.file14.procosmetics.api.cosmetic.CosmeticType;
+import se.file14.procosmetics.api.treasure.loot.number.IntProvider;
 import se.file14.procosmetics.api.util.structure.StructureData;
+
+import java.util.Map;
 
 /**
  * Represents a type of gadget cosmetic.
@@ -50,20 +53,13 @@ public interface GadgetType extends CosmeticType<GadgetType, GadgetBehavior> {
     long getDurationInTicks();
 
     /**
-     * Gets the number of uses included when this gadget is purchased.
-     * This determines how much ammunition the player receives per purchase.
+     * Gets the structure data for this gadget.
+     * Some gadgets spawn structures when activated.
      *
-     * @return the number of uses per purchase
+     * @return the structure data, or null if this gadget doesn't use structures
      */
-    int getPurchaseAmount();
-
-    /**
-     * Gets the ammunition cost per use of this gadget.
-     * Each activation of the gadget consumes this amount of ammunition.
-     *
-     * @return the ammunition cost per use
-     */
-    int getAmmoCost();
+    @Nullable
+    StructureData getStructure();
 
     /**
      * Checks if this gadget has infinite ammunition.
@@ -82,13 +78,31 @@ public interface GadgetType extends CosmeticType<GadgetType, GadgetBehavior> {
     boolean hasPurchasableAmmo();
 
     /**
-     * Gets the structure data for this gadget.
-     * Some gadgets spawn structures when activated.
+     * Gets the number of uses included when this gadget is purchased.
+     * This determines how much ammunition the player receives per purchase.
      *
-     * @return the structure data, or null if this gadget doesn't use structures
+     * @return the number of uses per purchase
      */
-    @Nullable
-    StructureData getStructure();
+    int getAmmoPurchaseAmount();
+
+    /**
+     * Gets the ammunition cost per use of this gadget.
+     * Each activation of the gadget consumes this amount of ammunition.
+     *
+     * @return the ammunition cost per use
+     */
+    int getAmmoCost();
+
+    /**
+     * Gets the ammunition amount providers for each treasure chest type.
+     * <p>
+     * When this gadget is looted from a treasure chest, the corresponding IntProvider
+     * determines how much ammo is awarded alongside it. Only treasure chest types present
+     * in this map can contain this gadget as loot.
+     *
+     * @return map of chest type to ammo provider
+     */
+    Map<String, IntProvider> getAmmoLoot();
 
     /**
      * Builder interface for constructing gadget type instances.
@@ -112,20 +126,12 @@ public interface GadgetType extends CosmeticType<GadgetType, GadgetBehavior> {
         Builder duration(double duration);
 
         /**
-         * Sets the number of uses included per purchase.
+         * Sets the structure data for this gadget.
          *
-         * @param purchaseAmount the number of uses per purchase
+         * @param structure the structure data, or null if not applicable
          * @return this builder for method chaining
          */
-        Builder purchaseAmount(int purchaseAmount);
-
-        /**
-         * Sets the ammunition cost per use.
-         *
-         * @param ammoCost the ammunition cost per use
-         * @return this builder for method chaining
-         */
-        Builder ammoCost(int ammoCost);
+        Builder structure(StructureData structure);
 
         /**
          * Sets whether this gadget has infinite ammunition.
@@ -144,12 +150,31 @@ public interface GadgetType extends CosmeticType<GadgetType, GadgetBehavior> {
         Builder purchasableAmmo(boolean purchasableAmmo);
 
         /**
-         * Sets the structure data for this gadget.
+         * Sets the number of uses included per purchase.
          *
-         * @param structure the structure data, or null if not applicable
+         * @param ammoPurchaseAmount the number of uses per purchase
          * @return this builder for method chaining
          */
-        Builder structure(StructureData structure);
+        Builder ammoPurchaseAmount(int ammoPurchaseAmount);
+
+        /**
+         * Sets the ammunition cost per use.
+         *
+         * @param ammoCost the ammunition cost per use
+         * @return this builder for method chaining
+         */
+        Builder ammoCost(int ammoCost);
+
+        /**
+         * Sets the ammo loot for treasure chests.
+         * <p>
+         * Only treasure chest types present in this map can contain this gadget as loot.
+         * Each provider determines how much gadget ammo is awarded.
+         *
+         * @param ammoLoot map of chest type to ammo provider
+         * @return this builder for method chaining
+         */
+        Builder ammoLoot(Map<String, IntProvider> ammoLoot);
 
         /**
          * Builds and returns the configured gadget type instance.

@@ -99,7 +99,8 @@ public interface EconomyProvider {
         int missing = cost - getCoins(user);
         user.sendMessage(user.translate(
                 "player.not_enough_money",
-                Placeholder.unparsed("amount", String.valueOf(missing))
+                Placeholder.unparsed("amount", String.valueOf(missing)),
+                Placeholder.unparsed("currency", user.translateRaw("generic.currency"))
         ));
     }
 

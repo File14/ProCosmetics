@@ -17,8 +17,8 @@
   "cosmetic.gadgets.equip": "<gray>You equipped <yellow><cosmetic></yellow>.</gray>",
   "cosmetic.gadgets.equip.remove_item": "<red>Please remove your current item from the <slot>th slot to equip this gadget!</red>",
   "cosmetic.gadgets.unequip": "<gray>You unequipped <yellow><cosmetic></yellow>.</gray>",
-  "cosmetic.gadgets.cooldown": "<gadget> <white><cooldown_bar></white> <white><cooldown_duration>s</white>",
-  "cosmetic.gadgets.cooldown.ready": "<yellow><gadget></yellow> <gray>is now recharged!</gray>",
+  "cosmetic.gadgets.cooldown": "<green><gadget></green> <white><cooldown_bar></white> <white><cooldown_duration>s</white>",
+  "cosmetic.gadgets.cooldown.ready": "<green><gadget></green> <gray>is now recharged!</gray>",
 
   "cosmetic.miniatures.equip": "<gray>You spawned <yellow><cosmetic></yellow>.</gray>",
   "cosmetic.miniatures.unequip": "<gray>You despawned <yellow><cosmetic></yellow>.</gray>",
@@ -48,8 +48,8 @@
   "cosmetic.statuses.equip": "<gray>You equipped <yellow><cosmetic></yellow>.</gray>",
   "cosmetic.statuses.unequip": "<gray>You unequipped <yellow><cosmetic></yellow>.</gray>",
 
-  "treasure_chest.open.broadcast": "<yellow><player></yellow> <gray>is opening a <aqua><treasure_chest></aqua>!</gray>",
-  "treasure_chest.open.title": "<aqua><treasure_chest></aqua>",
+  "treasure_chest.open.broadcast": "<yellow><player></yellow> <gray>is opening a <green><treasure_chest></green>!</gray>",
+  "treasure_chest.open.title": "<green><treasure_chest></green>",
   "treasure_chest.open.subtitle": "Choose <yellow><amount></yellow> to open!",
   "treasure_chest.already_in_use": "<red>This platform is already in use!</red>",
 
@@ -59,7 +59,7 @@
   "cosmetic.equip.deny.space": "<red>There is not enough space to use this cosmetic here!</red>",
   "cosmetic.equip.deny.ground": "<red>You must stand on the ground to use this cosmetic!</red>",
 
-  "player.not_enough_money": "<red>You don't have enough coins! You are missing <amount> coins!</red>",
+  "player.not_enough_money": "<red>You don't have enough <currency>! You are missing <amount> <currency>!</red>",
   "player.not_permission": "<red>You don't have permission to do this!</red>",
 
   "category.not_found": "<red>Could not find a cosmetic category by that name!</red>",
@@ -77,26 +77,26 @@
   "command.toggleselfview.not_equipped": "<red>You don't have any cosmetic equipped in that category!</red>",
 
   "command.add.ammo": "<green>Added <yellow><amount> <gadget> ammo</yellow> to <yellow><player></yellow>!",
-  "command.add.coins": "<green>Added <yellow><amount> coins</yellow> to <yellow><player></yellow>!",
+  "command.add.coins": "<green>Added <yellow><amount> <currency></yellow> to <yellow><player></yellow>!",
   "command.add.cosmetic": "<green>Gave <yellow><cosmetic></yellow> to <yellow><player></yellow>!",
   "command.add.cosmetic.already_owned": "<red><player> already owns that cosmetic!</red>",
   "command.add.treasure_chest": "<green>Added <yellow><amount> <treasure_chest> treasure chest(s)</yellow> to <yellow><player></yellow>!",
 
   "command.get.ammo": "<yellow><player></yellow> has <yellow><amount> <gadget> ammo</yellow>.",
-  "command.get.coins": "<yellow><player></yellow> has <yellow><amount> coins</yellow>.",
+  "command.get.coins": "<yellow><player></yellow> has <yellow><amount> <currency></yellow>.",
   "command.get.treasure_chest": "<yellow><player></yellow> has <yellow><amount> <treasure_chest> treasure chest(s)</yellow>.",
 
   "command.addall.ammo": "<green>Added <yellow><amount> <gadget> ammo</yellow> to <green><player_count> players</green>!",
-  "command.addall.coins": "<green>Added <yellow><amount> coins</yellow> to <green><player_count> players</green>!",
+  "command.addall.coins": "<green>Added <yellow><amount> <currency></yellow> to <green><player_count> players</green>!",
   "command.addall.cosmetic": "<green>Gave <yellow><cosmetic></yellow> to <green><player_count> players</green>!",
   "command.addall.treasure_chest": "<green>Added <yellow><amount> <treasure_chest> treasure chest(s)</yellow> to <green><player_count> players</green>!",
 
   "command.set.ammo": "<green>Set <yellow><player></yellow>’s <gadget> ammo to <yellow><amount></yellow>!",
-  "command.set.coins": "<green>Set <yellow><player></yellow>’s coins to <yellow><amount></yellow>!",
+  "command.set.coins": "<green>Set <yellow><player></yellow>’s <currency> to <yellow><amount></yellow>!",
   "command.set.treasure_chest": "<green>Set <yellow><player></yellow>’s <treasure_chest> treasure chest(s) to <yellow><amount></yellow>!",
 
   "command.remove.ammo": "<red>Removed <yellow><amount> <gadget> ammo</yellow> from <yellow><player></yellow>!",
-  "command.remove.coins": "<red>Removed <yellow><amount> coins</yellow> from <yellow><player></yellow>!",
+  "command.remove.coins": "<red>Removed <yellow><amount> <currency></yellow> from <yellow><player></yellow>!",
   "command.remove.treasure_chest": "<red>Removed <yellow><amount> <treasure_chest> treasure chest(s)</yellow> from <yellow><player></yellow>!",
 
   "generic.error.player_data": "<red>An error occurred! Please contact an administrator!</red>",
@@ -104,6 +104,8 @@
   "generic.error.database": "<red>An error occurred with the database! Please contact an administrator!</red>",
   "generic.player_offline": "<red>That player is offline!</red>",
   "generic.player_not_found": "<red>Could not find any player by that name!</red>",
+  "generic.currency": "coins",
+  "generic.decimal_separator": ".",
 
   "command.platform.create.not_on_chest": "<red>You are not standing on a chest!</red>",
   "command.platform.create.already_exists": "<red>There is already a platform here!</red>",
@@ -133,7 +135,7 @@
   "command.info.status.enable": "<green>✔</green>",
   "command.info.status.disable": "<red>❌</red>",
   "command.info.treasure_chests.header": "Treasure Chests:",
-  "command.info.treasure_chests.entry": "• <treasure_chest>: <amount></green>",
+  "command.info.treasure_chests.entry": "• <treasure_chest>: <green><amount></green>",
   "command.info.equipped_cosmetics.header": "Equipped Cosmetics:",
   "command.info.equipped_cosmetics.entry": "• <category>: <yellow><cosmetic></yellow>",
   "command.info.ammo.header": "Gadget Ammo:",
@@ -148,14 +150,16 @@
 
   "item.cosmetic.name": "<green>Cosmetics</green> <gray>(Right Click)</gray>",
   "item.cosmetic.desc": [],
-  "item.gadget.name": "<aqua><ammo> <name></aqua> <gray>(Click to use)</gray>",
+  "item.gadget.name": "<green><ammo> <name></green> <gray>(Click to use)</gray>",
   "item.gadget.desc": "",
 
   "rarity.common": "Common",
+  "rarity.uncommon": "Uncommon",
   "rarity.rare": "Rare",
   "rarity.legendary": "Legendary",
+  "rarity.limited": "Limited/event",
 
-  "treasure_chest.category.money": "Coins",
+  "treasure_chest.category.coins": "Coins",
   "treasure_chest.category.ammo": "Gadget Ammo",
   "treasure_chest.category.arrow_effects": "Arrow Effect",
   "treasure_chest.category.balloons": "Balloon",
@@ -170,29 +174,29 @@
   "treasure_chest.category.particle_effects": "Particle Effect",
   "treasure_chest.category.pets": "Pet",
   "treasure_chest.category.statuses": "Status",
-  "treasure_chest.category.custom": "",
+  "treasure_chest.category.coin_bag": "Coin Bag",
 
-  "treasure_chest.loot.money": "<amount>",
+  "treasure_chest.loot.coins": "<amount>",
   "treasure_chest.loot.ammo": "<amount> <ammo>",
-  "treasure_chest.loot.custom.small_coin_bag": "Small Coin Bag",
-  "treasure_chest.loot.custom.medium_coin_bag": "Medium Coin Bag",
-  "treasure_chest.loot.custom.large_coin_bag": "Large Coin Bag",
+  "treasure_chest.loot.coin_bag.small_coin_bag": "Small Coin Bag",
+  "treasure_chest.loot.coin_bag.medium_coin_bag": "Medium Coin Bag",
+  "treasure_chest.loot.coin_bag.large_coin_bag": "Large Coin Bag",
 
-  "treasure_chest.loot.money.broadcast": "<yellow><player></yellow> <gray>found <yellow><amount> coins</yellow>!</gray>",
-  "treasure_chest.loot.ammo.broadcast": "<yellow><player></yellow> <gray>found <rarity_primary_color><rarity><amount> <cosmetic>!</gray>",
-  "treasure_chest.loot.arrow_effects.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <cosmetic></gray> (<aqua><category></aqua>)!",
-  "treasure_chest.loot.balloons.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <cosmetic></gray> (<aqua><category></aqua>)!",
-  "treasure_chest.loot.banners.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <cosmetic></gray> (<aqua><category></aqua>)!",
-  "treasure_chest.loot.death_effects.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <cosmetic></gray> (<aqua><category></aqua>)!",
-  "treasure_chest.loot.emotes.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <cosmetic></gray> (<aqua><category></aqua>)!",
-  "treasure_chest.loot.gadgets.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <cosmetic></gray> (<aqua><category></aqua>)!",
-  "treasure_chest.loot.miniatures.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <cosmetic></gray> (<aqua><category></aqua>)!",
-  "treasure_chest.loot.morphs.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <cosmetic></gray> (<aqua><category></aqua>)!",
-  "treasure_chest.loot.mounts.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <cosmetic></gray> (<aqua><category></aqua>)!",
-  "treasure_chest.loot.music.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <cosmetic></gray> (<aqua><category></aqua>)!",
-  "treasure_chest.loot.particle_effects.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <cosmetic></gray> (<aqua><category></aqua>)!",
-  "treasure_chest.loot.pets.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <cosmetic></gray> (<aqua><category></aqua>)!",
-  "treasure_chest.loot.statuses.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <cosmetic></gray> (<aqua><category></aqua>)!",
+  "treasure_chest.loot.coins.broadcast": "<yellow><player></yellow> <gray>found <yellow><amount> <currency></yellow>!</gray>",
+  "treasure_chest.loot.ammo.broadcast": "<yellow><player></yellow> <gray>found <rarity_primary_color><rarity><amount> <loot>!</gray>",
+  "treasure_chest.loot.arrow_effects.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot> <dark_gray>(<category>)</dark_gray>!</gray>",
+  "treasure_chest.loot.balloons.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot> <dark_gray>(<category>)</dark_gray>!</gray>",
+  "treasure_chest.loot.banners.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot> <dark_gray>(<category>)</dark_gray>!</gray>",
+  "treasure_chest.loot.death_effects.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot> <dark_gray>(<category>)</dark_gray>!</gray>",
+  "treasure_chest.loot.emotes.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot> <dark_gray>(<category>)</dark_gray>!</gray>",
+  "treasure_chest.loot.gadgets.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot> <dark_gray>(<category>)</dark_gray>!</gray>",
+  "treasure_chest.loot.miniatures.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot> <dark_gray>(<category>)</dark_gray>!</gray>",
+  "treasure_chest.loot.morphs.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot> <dark_gray>(<category>)</dark_gray>!</gray>",
+  "treasure_chest.loot.mounts.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot> <dark_gray>(<category>)</dark_gray>!</gray>",
+  "treasure_chest.loot.music.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot> <dark_gray>(<category>)</dark_gray>!</gray>",
+  "treasure_chest.loot.particle_effects.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot> <dark_gray>(<category>)</dark_gray>!</gray>",
+  "treasure_chest.loot.pets.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot> <dark_gray>(<category>)</dark_gray>!</gray>",
+  "treasure_chest.loot.statuses.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot> <dark_gray>(<category>)</dark_gray>!</gray>",
   "treasure_chest.loot.custom.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity><loot>!</gray>",
 
   "treasure_chest.platform.hologram": [
@@ -209,76 +213,145 @@
   "treasure_chest.mythical": "Mythical Chest",
   "treasure_chest.legendary": "Legendary Chest",
 
+  "menu.treasure_chest.loot_categories.title": "<name> loot",
+  "menu.treasure_chest.loot_categories.category.name": "<green><name></green>",
+  "menu.treasure_chest.loot_categories.category.desc": [
+    "<gray>Possible drops:</gray> <yellow><amount></yellow>",
+    "",
+    "<yellow>Click to view drops!</yellow>"
+  ],
+  "menu.treasure_chest.loot_categories.information.name": "<green>Chances</green>",
+  "menu.treasure_chest.loot_categories.information.desc": [
+    "<gray>A rarity is rolled based on chance,</gray>",
+    "<gray>then you get a random item from it.</gray>",
+    "",
+    "<gray>Rarity Chances:</gray>"
+  ],
+  "menu.treasure_chest.loot_categories.information.desc.entry": "<rarity_primary_color><rarity><gray>:</gray> <yellow><chance>%</yellow>",
+  "menu.treasure_chest.loot_categories.next_page.name": "<green>Next Page</green>",
+  "menu.treasure_chest.loot_categories.next_page.desc": [
+    "<gray>Page <page>/<pages></gray>"
+  ],
+  "menu.treasure_chest.loot_categories.previous_page.name": "<green>Previous Page</green>",
+  "menu.treasure_chest.loot_categories.previous_page.desc": [
+    "<gray>Page <page>/<pages></gray>"
+  ],
+  "menu.treasure_chest.loot_categories.go_back.name": "<red>Go back</red>",
+  "menu.treasure_chest.loot_categories.go_back.desc": [
+    "<yellow>Click to go back to <menu>!</yellow>"
+  ],
+
+  "menu.treasure_chest.loot_entries.title": "<name> loot",
+  "menu.treasure_chest.loot_entries.entry.name": "<green><name></green>",
+  "menu.treasure_chest.loot_entries.entry.desc": [
+    "<gray>Chance:</gray> <yellow><chance>%</yellow>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>"
+  ],
+  "menu.treasure_chest.loot_entries.next_page.name": "<green>Next Page</green>",
+  "menu.treasure_chest.loot_entries.next_page.desc": [
+    "<gray>Page <page>/<pages></gray>"
+  ],
+  "menu.treasure_chest.loot_entries.previous_page.name": "<green>Previous Page</green>",
+  "menu.treasure_chest.loot_entries.previous_page.desc": [
+    "<gray>Page <page>/<pages></gray>"
+  ],
+  "menu.treasure_chest.loot_entries.go_back.name": "<red>Go back</red>",
+  "menu.treasure_chest.loot_entries.go_back.desc": [
+    "<yellow>Click to go back to <menu>!</yellow>"
+  ],
+
   "menu.treasure_chests.title": "Treasure Chests",
   "menu.treasure_chests.common.purchasable.name": "<green><name></green>",
   "menu.treasure_chests.common.purchasable.desc": [
     "<gray>You own: <green><current></green></gray>",
     "",
-    "<yellow>Left Click to open one!</yellow>",
-    "<yellow>Right Click to purchase more for <cost> coins!</yellow>"
+    "<gray>Cost:</gray> <yellow><cost> <currency></yellow>",
+    "",
+    "<yellow>Left Click to open!</yellow>",
+    "<yellow>Right Click to purchase!</yellow>",
+    "<yellow>Shift Click to view loot!</yellow>"
   ],
   "menu.treasure_chests.common.purchase_disabled.name": "<green><name></green>",
   "menu.treasure_chests.common.purchase_disabled.desc": [
     "<gray>You own: <green><current></green></gray>",
     "",
-    "<yellow>Left Click to open one!</yellow>",
-    "<red>This treasure chest cannot be purchased!</red>"
+    "<red>Cannot be purchased!</red>",
+    "",
+    "<yellow>Left Click to open!</yellow>",
+    "<yellow>Shift Click to view loot!</yellow>"
   ],
   "menu.treasure_chests.common.purchase_no_permission.name": "<green><name></green>",
   "menu.treasure_chests.common.purchase_no_permission.desc": [
     "<gray>You own: <green><current></green></gray>",
     "",
-    "<yellow>Left Click to open one!</yellow>",
-    "<red>You do not have permission to purchase this treasure chest!</red>"
+    "<red>No permission to purchase!</red>",
+    "",
+    "<yellow>Left Click to open!</yellow>",
+    "<yellow>Shift Click to view loot!</yellow>"
   ],
   "menu.treasure_chests.mythical.purchasable.name": "<green><name></green>",
   "menu.treasure_chests.mythical.purchasable.desc": [
     "<gray>You own: <green><current></green></gray>",
     "",
-    "<yellow>Left Click to open one!</yellow>",
-    "<yellow>Right Click to purchase more for <cost> coins!</yellow>"
+    "<gray>Cost:</gray> <yellow><cost> <currency></yellow>",
+    "",
+    "<yellow>Left Click to open!</yellow>",
+    "<yellow>Right Click to purchase!</yellow>",
+    "<yellow>Shift Click to view loot!</yellow>"
   ],
   "menu.treasure_chests.mythical.purchase_disabled.name": "<green><name></green>",
   "menu.treasure_chests.mythical.purchase_disabled.desc": [
     "<gray>You own: <green><current></green></gray>",
     "",
-    "<yellow>Left Click to open one!</yellow>",
-    "<red>This treasure chest cannot be purchased!</red>"
+    "<red>Cannot be purchased!</red>",
+    "",
+    "<yellow>Left Click to open!</yellow>",
+    "<yellow>Shift Click to view loot!</yellow>"
   ],
   "menu.treasure_chests.mythical.purchase_no_permission.name": "<green><name></green>",
   "menu.treasure_chests.mythical.purchase_no_permission.desc": [
     "<gray>You own: <green><current></green></gray>",
     "",
-    "<yellow>Left Click to open one!</yellow>",
-    "<red>You do not have permission to purchase this treasure chest!</red>"
+    "<red>No permission to purchase!</red>",
+    "",
+    "<yellow>Left Click to open!</yellow>",
+    "<yellow>Shift Click to view loot!</yellow>"
   ],
   "menu.treasure_chests.legendary.purchasable.name": "<green><name></green>",
   "menu.treasure_chests.legendary.purchasable.desc": [
     "<gray>You own: <green><current></green></gray>",
     "",
-    "<yellow>Left Click to open one!</yellow>",
-    "<yellow>Right Click to purchase more for <cost> coins!</yellow>"
+    "<gray>Cost:</gray> <yellow><cost> <currency></yellow>",
+    "",
+    "<yellow>Left Click to open!</yellow>",
+    "<yellow>Right Click to purchase!</yellow>",
+    "<yellow>Shift Click to view loot!</yellow>"
   ],
   "menu.treasure_chests.legendary.purchase_disabled.name": "<green><name></green>",
   "menu.treasure_chests.legendary.purchase_disabled.desc": [
     "<gray>You own: <green><current></green></gray>",
     "",
-    "<yellow>Left Click to open one!</yellow>",
-    "<red>This treasure chest cannot be purchased!</red>"
+    "<red>Cannot be purchased!</red>",
+    "",
+    "<yellow>Left Click to open!</yellow>",
+    "<yellow>Shift Click to view loot!</yellow>"
   ],
   "menu.treasure_chests.legendary.purchase_no_permission.name": "<green><name></green>",
   "menu.treasure_chests.legendary.purchase_no_permission.desc": [
     "<gray>You own: <green><current></green></gray>",
     "",
-    "<yellow>Left Click to open one!</yellow>",
-    "<red>You do not have permission to purchase this treasure chest!</red>"
+    "<red>No permission to purchase!</red>",
+    "",
+    "<yellow>Left Click to open!</yellow>",
+    "<yellow>Shift Click to view loot!</yellow>"
   ],
 
   "menu.purchase.cosmetic.title": "Confirm Purchase",
   "menu.purchase.cosmetic.accept.name": "<green>Confirm</green>",
   "menu.purchase.cosmetic.accept.desc": [
-        "<yellow>Click to purchase <name></yellow>",
-        "<yellow>for <cost> coins!</yellow>"
+    "<gray>Cost:</gray> <yellow><cost> <currency></yellow>",
+    "",
+    "<green>Click to purchase <name>!</green>"
   ],
   "menu.purchase.cosmetic.deny.name": "<red>Cancel</red>",
   "menu.purchase.cosmetic.deny.desc": [
@@ -287,23 +360,25 @@
   "menu.purchase.gadget_ammo.title": "Confirm Purchase",
   "menu.purchase.gadget_ammo.accept.name": "<green>Confirm</green>",
   "menu.purchase.gadget_ammo.accept.desc": [
-    "<yellow>Click to purchase <ammo_purchase_amount> ammo</yellow>",
-    "<yellow>for <ammo_cost> coins!</yellow>"
+    "<gray>Cost:</gray> <yellow><ammo_cost> <currency></yellow>",
+    "",
+    "<green>Click to purchase <ammo_purchase_amount> ammo!</green>"
   ],
   "menu.purchase.gadget_ammo.deny.name": "<red>Cancel</red>",
   "menu.purchase.gadget_ammo.deny.desc": [
     "<yellow>Click to cancel!</yellow>"
   ],
   "menu.purchase.treasure_chest.title": "Confirm Purchase",
-  "menu.purchase.treasure_chest.item.name": "<aqua><name></aqua>",
+  "menu.purchase.treasure_chest.item.name": "<green><name></green>",
   "menu.purchase.treasure_chest.item.desc": [
     "<yellow>Left Click to increase the amount!</yellow>",
     "<yellow>Right Click to decrease the amount!</yellow>"
   ],
   "menu.purchase.treasure_chest.accept.name": "<green>Confirm</green>",
   "menu.purchase.treasure_chest.accept.desc": [
-    "<yellow>Click to purchase <amount> <name></yellow>",
-    "<yellow>for <cost> coins!</yellow>"
+    "<gray>Cost:</gray> <yellow><cost> <currency></yellow>",
+    "",
+    "<green>Click to purchase <amount> <name>!</green>"
   ],
   "menu.purchase.treasure_chest.deny.name": "<red>Cancel</red>",
   "menu.purchase.treasure_chest.deny.desc": [
@@ -315,7 +390,7 @@
   "menu.main.unequip_all.desc": [
     "<yellow>Click to unequip your cosmetics!</yellow>"
   ],
-  "menu.main.coins.name": "<green>You have <yellow><coins> coins</yellow></green>",
+  "menu.main.coins.name": "<green>You have <yellow><coins> <currency></yellow></green>",
   "menu.main.coins.desc": [
     "<yellow>Click to open the store to</yellow>",
     "<yellow>purchase more!</yellow>"
@@ -495,28 +570,38 @@
   "menu.arrow_effects.purchasable.name": "<red><name></red>",
   "menu.arrow_effects.purchasable.desc": [
     "",
-    "<green>Click to purchase for <yellow><cost> coins</yellow>!</green>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Cost:</gray> <yellow><cost> <currency></yellow>",
+    "",
+    "<green>Click to purchase!</green>"
   ],
   "menu.arrow_effects.purchase_disabled.name": "<red><name></red>",
   "menu.arrow_effects.purchase_disabled.desc": [
     "",
-    "<red>This cosmetic cannot be purchased!</red>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<red>Cannot be purchased!</red>"
   ],
   "menu.arrow_effects.purchase_no_permission.name": "<red><name></red>",
   "menu.arrow_effects.purchase_no_permission.desc": [
     "",
-    "<red>You do not have permission to</red>",
-    "<red>purchase this cosmetic!</red>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<red>No permission to purchase!</red>"
   ],
   "menu.arrow_effects.unequipped.name": "<green><name></green>",
   "menu.arrow_effects.unequipped.desc": [
+    "",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
     "",
     "<yellow>Click to equip!</yellow>"
   ],
   "menu.arrow_effects.equipped.name": "<green><name></green>",
   "menu.arrow_effects.equipped.desc": [
     "",
-    "<yellow>Click to unequip!</yellow>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<yellow>Click to equip!</yellow>"
   ],
 
   "menu.arrow_effects.bloody_arrows.name": "<name>",
@@ -678,28 +763,40 @@
   "menu.balloons.purchasable.name": "<red><name></red>",
   "menu.balloons.purchasable.desc": [
     "",
-    "<green>Click to purchase for <yellow><cost> coins</yellow>!</green>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Cost:</gray> <yellow><cost> <currency></yellow>",
+    "",
+    "<green>Click to purchase!</green>"
   ],
   "menu.balloons.purchase_disabled.name": "<red><name></red>",
   "menu.balloons.purchase_disabled.desc": [
     "",
-    "<red>This cosmetic cannot be purchased!</red>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<red>Cannot be purchased!</red>"
   ],
   "menu.balloons.purchase_no_permission.name": "<red><name></red>",
   "menu.balloons.purchase_no_permission.desc": [
     "",
-    "<red>You do not have permission to</red>",
-    "<red>purchase this cosmetic!</red>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<red>No permission to purchase!</red>"
   ],
   "menu.balloons.unequipped.name": "<green><name></green>",
   "menu.balloons.unequipped.desc": [
+    "",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
     "",
     "<yellow>Click to equip!</yellow>"
   ],
   "menu.balloons.equipped.name": "<green><name></green>",
   "menu.balloons.equipped.desc": [
     "",
-    "<yellow>Click to unequip!</yellow>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<yellow>Click to equip!</yellow>"
   ],
   "menu.balloons.beach_ball.name": "<name>",
   "menu.balloons.beach_ball.desc": [
@@ -948,28 +1045,38 @@
   "menu.banners.purchasable.name": "<red><name></red>",
   "menu.banners.purchasable.desc": [
     "",
-    "<green>Click to purchase for <yellow><cost> coins</yellow>!</green>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Cost:</gray> <yellow><cost> <currency></yellow>",
+    "",
+    "<green>Click to purchase!</green>"
   ],
   "menu.banners.purchase_disabled.name": "<red><name></red>",
   "menu.banners.purchase_disabled.desc": [
     "",
-    "<red>This cosmetic cannot be purchased!</red>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<red>Cannot be purchased!</red>"
   ],
   "menu.banners.purchase_no_permission.name": "<red><name></red>",
   "menu.banners.purchase_no_permission.desc": [
     "",
-    "<red>You do not have permission to</red>",
-    "<red>purchase this cosmetic!</red>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<red>No permission to purchase!</red>"
   ],
   "menu.banners.unequipped.name": "<green><name></green>",
   "menu.banners.unequipped.desc": [
+    "",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
     "",
     "<yellow>Click to equip!</yellow>"
   ],
   "menu.banners.equipped.name": "<green><name></green>",
   "menu.banners.equipped.desc": [
     "",
-    "<yellow>Click to unequip!</yellow>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<yellow>Click to equip!</yellow>"
   ],
 
   "menu.banners.candy_cane.name": "<name>",
@@ -1125,28 +1232,38 @@
   "menu.death_effects.purchasable.name": "<red><name></red>",
   "menu.death_effects.purchasable.desc": [
     "",
-    "<green>Click to purchase for <yellow><cost> coins</yellow>!</green>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Cost:</gray> <yellow><cost> <currency></yellow>",
+    "",
+    "<green>Click to purchase!</green>"
   ],
   "menu.death_effects.purchase_disabled.name": "<red><name></red>",
   "menu.death_effects.purchase_disabled.desc": [
     "",
-    "<red>This cosmetic cannot be purchased!</red>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<red>Cannot be purchased!</red>"
   ],
   "menu.death_effects.purchase_no_permission.name": "<red><name></red>",
   "menu.death_effects.purchase_no_permission.desc": [
     "",
-    "<red>You do not have permission to</red>",
-    "<red>purchase this cosmetic!</red>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<red>No permission to purchase!</red>"
   ],
   "menu.death_effects.unequipped.name": "<green><name></green>",
   "menu.death_effects.unequipped.desc": [
+    "",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
     "",
     "<yellow>Click to equip!</yellow>"
   ],
   "menu.death_effects.equipped.name": "<green><name></green>",
   "menu.death_effects.equipped.desc": [
     "",
-    "<yellow>Click to unequip!</yellow>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<yellow>Click to equip!</yellow>"
   ],
 
   "menu.death_effects.bloody_death.name": "<name>",
@@ -1264,28 +1381,38 @@
   "menu.emotes.purchasable.name": "<red><name></red>",
   "menu.emotes.purchasable.desc": [
     "",
-    "<green>Click to purchase for <yellow><cost> coins</yellow>!</green>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Cost:</gray> <yellow><cost> <currency></yellow>",
+    "",
+    "<green>Click to purchase!</green>"
   ],
   "menu.emotes.purchase_disabled.name": "<red><name></red>",
   "menu.emotes.purchase_disabled.desc": [
     "",
-    "<red>This cosmetic cannot be purchased!</red>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<red>Cannot be purchased!</red>"
   ],
   "menu.emotes.purchase_no_permission.name": "<red><name></red>",
   "menu.emotes.purchase_no_permission.desc": [
     "",
-    "<red>You do not have permission to</red>",
-    "<red>purchase this cosmetic!</red>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<red>No permission to purchase!</red>"
   ],
   "menu.emotes.unequipped.name": "<green><name></green>",
   "menu.emotes.unequipped.desc": [
+    "",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
     "",
     "<yellow>Click to equip!</yellow>"
   ],
   "menu.emotes.equipped.name": "<green><name></green>",
   "menu.emotes.equipped.desc": [
     "",
-    "<yellow>Click to unequip!</yellow>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<yellow>Click to equip!</yellow>"
   ],
 
   "menu.emotes.cheeky.name": "<name>",
@@ -1405,258 +1532,210 @@
   "menu.gadgets.purchasable.name": "<red><name></red>",
   "menu.gadgets.purchasable.desc": [
     "",
-    "<green>Click to purchase for <yellow><cost> coins</yellow>!</green>"
+    "<gray>Ammo: <green><ammo></green></gray>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Cost:</gray> <yellow><cost> <currency></yellow>",
+    "",
+    "<green>Click to purchase!</green>"
   ],
   "menu.gadgets.purchase_disabled.name": "<red><name></red>",
   "menu.gadgets.purchase_disabled.desc": [
     "",
-    "<red>This cosmetic cannot be purchased!</red>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<red>Cannot be purchased!</red>"
   ],
   "menu.gadgets.purchase_no_permission.name": "<red><name></red>",
   "menu.gadgets.purchase_no_permission.desc": [
     "",
-    "<red>You do not have permission to</red>",
-    "<red>purchase this cosmetic!</red>"
+    "<gray>Ammo: <green><ammo></green></gray>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<red>No permission to purchase!</red>"
   ],
   "menu.gadgets.unequipped.name": "<green><name></green>",
   "menu.gadgets.unequipped.desc": [
+    "",
+    "<gray>Ammo: <green><ammo></green></gray>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
     "",
     "<yellow>Click to equip!</yellow>"
   ],
   "menu.gadgets.equipped.name": "<green><name></green>",
   "menu.gadgets.equipped.desc": [
     "",
-    "<yellow>Click to unequip!</yellow>"
+    "<gray>Ammo: <green><ammo></green></gray>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<yellow>Click to equip!</yellow>"
   ],
 
   "menu.gadgets.bat_blaster.name": "<name>",
   "menu.gadgets.bat_blaster.desc": [
     "<gray>Summon a terrifying swarm of</gray>",
     "<gray>bats to overwhelm your foes</gray>",
-    "<gray>with spooky chaos!</gray>",
-    "",
-    "<gray>Ammo: <green><ammo></green></gray>"
+    "<gray>with spooky chaos!</gray>"
   ],
   "menu.gadgets.cannon.name": "<name>",
   "menu.gadgets.cannon.desc": [
     "<gray>Load yourself into this mighty</gray>",
-    "<gray>cannon and fire away!</gray>",
-    "",
-    "<gray>Ammo: <green><ammo></green></gray>"
+    "<gray>cannon and fire away!</gray>"
   ],
   "menu.gadgets.chicken_parachute.name": "<name>",
   "menu.gadgets.chicken_parachute.desc": [
     "<gray>Float gracefully to safety</gray>",
     "<gray>with feathered friends as</gray>",
-    "<gray>your parachute!</gray>",
-    "",
-    "<gray>Ammo: <green><ammo></green></gray>"
+    "<gray>your parachute!</gray>"
   ],
   "menu.gadgets.coin_party_bomb.name": "<name>",
   "menu.gadgets.coin_party_bomb.desc": [
     "<gray>Become everyone's best friend</gray>",
     "<gray>with this coin party bomb</gray>",
-    "<gray>of generosity!</gray>",
-    "",
-    "<gray>Ammo: <green><ammo></green></gray>"
+    "<gray>of generosity!</gray>"
   ],
   "menu.gadgets.confetti.name": "<name>",
   "menu.gadgets.confetti.desc": [
     "<gray>Shower your friends with a</gray>",
     "<gray>rainbow burst of festive</gray>",
-    "<gray>celebration confetti!</gray>",
-    "",
-    "<gray>Ammo: <green><ammo></green></gray>"
+    "<gray>celebration confetti!</gray>"
   ],
   "menu.gadgets.cowboy.name": "<name>",
   "menu.gadgets.cowboy.desc": [
     "<gray>Yee-haw! Saddle up and ride</gray>",
     "<gray>other players like a true</gray>",
-    "<gray>cowboy!</gray>",
-    "",
-    "<gray>Ammo: <green><ammo></green></gray>"
+    "<gray>cowboy!</gray>"
   ],
   "menu.gadgets.detonator.name": "<name>",
   "menu.gadgets.detonator.desc": [
     "<gray>Master of explosions! Control</gray>",
-    "<gray>up to 3 TNT detonations!</gray>",
-    "",
-    "<gray>Ammo: <green><ammo></green></gray>"
+    "<gray>up to 3 TNT detonations!</gray>"
   ],
   "menu.gadgets.disco_ball.name": "<name>",
   "menu.gadgets.disco_ball.desc": [
     "<gray>Turn anywhere into a dance</gray>",
-    "<gray>floor with groovy lights!</gray>",
-    "",
-    "<gray>Ammo: <green><ammo></green></gray>"
+    "<gray>floor with groovy lights!</gray>"
   ],
   "menu.gadgets.diving_board.name": "<name>",
   "menu.gadgets.diving_board.desc": [
     "<gray>Take the perfect dive with</gray>",
-    "<gray>style and splash!</gray>",
-    "",
-    "<gray>Ammo: <green><ammo></green></gray>"
+    "<gray>style and splash!</gray>"
   ],
   "menu.gadgets.ethereal_pearl.name": "<name>",
   "menu.gadgets.ethereal_pearl.desc": [
     "<gray>Harness the power of teleportation</gray>",
     "<gray>with these mystical pearls stolen</gray>",
-    "<gray>from the End dimension!</gray>",
-    "",
-    "<gray>Ammo: <green><ammo></green></gray>"
+    "<gray>from the End dimension!</gray>"
   ],
   "menu.gadgets.explosive_sheep.name": "<name>",
   "menu.gadgets.explosive_sheep.desc": [
     "<gray>One explosive sheep becomes</gray>",
-    "<gray>a fluffy army of chaos!</gray>",
-    "",
-    "<gray>Ammo: <green><ammo></green></gray>"
+    "<gray>a fluffy army of chaos!</gray>"
   ],
   "menu.gadgets.fireworks.name": "<name>",
   "menu.gadgets.fireworks.desc": [
     "<gray>Light up the sky with dazzling</gray>",
     "<gray>explosions of color and joy!</gray>",
-    "<gray>Perfect for any celebration!</gray>",
-    "",
-    "<gray>Ammo: <green><ammo></green></gray>"
+    "<gray>Perfect for any celebration!</gray>"
   ],
   "menu.gadgets.flame_thrower.name": "<name>",
   "menu.gadgets.flame_thrower.desc": [
     "<gray>Unleash scorching flames and</gray>",
-    "<gray>burn through any obstacle!</gray>",
-    "",
-    "<gray>Ammo: <green><ammo></green></gray>"
+    "<gray>burn through any obstacle!</gray>"
   ],
   "menu.gadgets.flesh_hook.name": "<name>",
   "menu.gadgets.flesh_hook.desc": [
-    "<gray>Drag players towards you!</gray>",
-    "",
-    "<gray>Ammo: <green><ammo></green></gray>"
+    "<gray>Drag players towards you!</gray>"
   ],
   "menu.gadgets.grappling_hook.name": "<name>",
   "menu.gadgets.grappling_hook.desc": [
     "<gray>Swing like a superhero!</gray>",
-    "<gray>Hook, pull, and soar!</gray>",
-    "",
-    "<gray>Ammo: <green><ammo></green></gray>"
+    "<gray>Hook, pull, and soar!</gray>"
   ],
   "menu.gadgets.hot_air_balloon.name": "<name>",
   "menu.gadgets.hot_air_balloon.desc": [
     "<gray>Soar high above the clouds</gray>",
-    "<gray>in this majestic balloon!</gray>",
-    "",
-    "<gray>Ammo: <green><ammo></green></gray>"
+    "<gray>in this majestic balloon!</gray>"
   ],
   "menu.gadgets.hot_tub.name": "<name>",
   "menu.gadgets.hot_tub.desc": [
     "<gray>Relax in bubbling hot water</gray>",
-    "<gray>with friends! Pool party time!</gray>",
-    "",
-    "<gray>Ammo: <green><ammo></green></gray>"
+    "<gray>with friends! Pool party time!</gray>"
   ],
   "menu.gadgets.melon_launcher.name": "<name>",
   "menu.gadgets.melon_launcher.desc": [
     "<gray>Launch juicy melons for speed</gray>",
-    "<gray>boosts and fruity fun!</gray>",
-    "",
-    "<gray>Ammo: <green><ammo></green></gray>"
+    "<gray>boosts and fruity fun!</gray>"
   ],
   "menu.gadgets.merry_go_round.name": "<name>",
   "menu.gadgets.merry_go_round.desc": [
     "<gray>Round and round we go! Spin</gray>",
     "<gray>with friends on this magical</gray>",
-    "<gray>carnival ride!</gray>",
-    "",
-    "<gray>Ammo: <green><ammo></green></gray>"
+    "<gray>carnival ride!</gray>"
   ],
   "menu.gadgets.paintball.name": "<name>",
   "menu.gadgets.paintball.desc": [
     "<gray>Transform the world into your</gray>",
     "<gray>personal canvas! Splash vibrant</gray>",
-    "<gray>colors everywhere you go!</gray>",
-    "",
-    "<gray>Ammo: <green><ammo></green></gray>"
+    "<gray>colors everywhere you go!</gray>"
   ],
   "menu.gadgets.parkour_spiral.name": "<name>",
   "menu.gadgets.parkour_spiral.desc": [
     "<gray>Test your jumping skills on</gray>",
-    "<gray>this spiraling challenge!</gray>",
-    "",
-    "<gray>Ammo: <green><ammo></green></gray>"
+    "<gray>this spiraling challenge!</gray>"
   ],
   "menu.gadgets.party_popper.name": "<name>",
   "menu.gadgets.party_popper.desc": [
     "<gray>Instant party starter! Pop</gray>",
-    "<gray>and watch the fun explode!</gray>",
-    "",
-    "<gray>Ammo: <green><ammo></green></gray>"
+    "<gray>and watch the fun explode!</gray>"
   ],
   "menu.gadgets.rocket.name": "<name>",
   "menu.gadgets.rocket.desc": [
     "<gray>Blast off to new heights!</gray>",
     "<gray>Experience the ultimate</gray>",
-    "<gray>sky-high adventure!</gray>",
-    "",
-    "<gray>Ammo: <green><ammo></green></gray>"
+    "<gray>sky-high adventure!</gray>"
   ],
   "menu.gadgets.shower.name": "<name>",
   "menu.gadgets.shower.desc": [
     "<gray>Time for a refreshing wash!</gray>",
-    "<gray>Clean up and feel fresh!</gray>",
-    "",
-    "<gray>Ammo: <green><ammo></green></gray>"
+    "<gray>Clean up and feel fresh!</gray>"
   ],
   "menu.gadgets.slide.name": "<name>",
   "menu.gadgets.slide.desc": [
     "<gray>Wheee! Race down the slide</gray>",
-    "<gray>with friends for pure joy!</gray>",
-    "",
-    "<gray>Ammo: <green><ammo></green></gray>"
+    "<gray>with friends for pure joy!</gray>"
   ],
   "menu.gadgets.soccer_ball.name": "<name>",
   "menu.gadgets.soccer_ball.desc": [
     "<gray>Score goals and kick around</gray>",
     "<gray>with friends in an epic</gray>",
-    "<gray>soccer match!</gray>",
-    "",
-    "<gray>Ammo: <green><ammo></green></gray>"
+    "<gray>soccer match!</gray>"
   ],
   "menu.gadgets.swing.name": "<name>",
   "menu.gadgets.swing.desc": [
     "<gray>Relax and sway back and forth</gray>",
     "<gray>on the ultimate playground</gray>",
-    "<gray>swing!</gray>",
-    "",
-    "<gray>Ammo: <green><ammo></green></gray>"
+    "<gray>swing!</gray>"
   ],
   "menu.gadgets.tnt.name": "<name>",
   "menu.gadgets.tnt.desc": [
     "<gray>Explosive surprise delivery!</gray>",
     "<gray>Watch your targets scatter</gray>",
-    "<gray>when this goes BOOM!</gray>",
-    "",
-    "<gray>Ammo: <green><ammo></green></gray>"
+    "<gray>when this goes BOOM!</gray>"
   ],
   "menu.gadgets.trampoline.name": "<name>",
   "menu.gadgets.trampoline.desc": [
     "<gray>Bounce to incredible heights!</gray>",
-    "<gray>Defy gravity with friends!</gray>",
-    "",
-    "<gray>Ammo: <green><ammo></green></gray>"
+    "<gray>Defy gravity with friends!</gray>"
   ],
   "menu.gadgets.water_gun.name": "<name>",
   "menu.gadgets.water_gun.desc": [
     "<gray>Splash your friends in the</gray>",
-    "<gray>ultimate water battle!</gray>",
-    "",
-    "<gray>Ammo: <green><ammo></green></gray>"
+    "<gray>ultimate water battle!</gray>"
   ],
   "menu.gadgets.wither_missile.name": "<name>",
   "menu.gadgets.wither_missile.desc": [
     "<gray>Ride the skull of destruction</gray>",
-    "<gray>through the skies!</gray>",
-    "",
-    "<gray>Ammo: <green><ammo></green></gray>"
+    "<gray>through the skies!</gray>"
   ],
 
   "cosmetic.miniatures.astronaut": "Astronaut",
@@ -1718,28 +1797,38 @@
   "menu.miniatures.purchasable.name": "<red><name></red>",
   "menu.miniatures.purchasable.desc": [
     "",
-    "<green>Click to purchase for <yellow><cost> coins</yellow>!</green>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Cost:</gray> <yellow><cost> <currency></yellow>",
+    "",
+    "<green>Click to purchase!</green>"
   ],
   "menu.miniatures.purchase_disabled.name": "<red><name></red>",
   "menu.miniatures.purchase_disabled.desc": [
     "",
-    "<red>This cosmetic cannot be purchased!</red>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<red>Cannot be purchased!</red>"
   ],
   "menu.miniatures.purchase_no_permission.name": "<red><name></red>",
   "menu.miniatures.purchase_no_permission.desc": [
     "",
-    "<red>You do not have permission to</red>",
-    "<red>purchase this cosmetic!</red>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<red>No permission to purchase!</red>"
   ],
   "menu.miniatures.unequipped.name": "<green><name></green>",
   "menu.miniatures.unequipped.desc": [
+    "",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
     "",
     "<yellow>Click to equip!</yellow>"
   ],
   "menu.miniatures.equipped.name": "<green><name></green>",
   "menu.miniatures.equipped.desc": [
     "",
-    "<yellow>Click to unequip!</yellow>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<yellow>Click to equip!</yellow>"
   ],
 
   "menu.miniatures.astronaut.name": "<name>",
@@ -1971,28 +2060,38 @@
   "menu.morphs.purchasable.name": "<red><name></red>",
   "menu.morphs.purchasable.desc": [
     "",
-    "<green>Click to purchase for <yellow><cost> coins</yellow>!</green>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Cost:</gray> <yellow><cost> <currency></yellow>",
+    "",
+    "<green>Click to purchase!</green>"
   ],
   "menu.morphs.purchase_disabled.name": "<red><name></red>",
   "menu.morphs.purchase_disabled.desc": [
     "",
-    "<red>This cosmetic cannot be purchased!</red>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<red>Cannot be purchased!</red>"
   ],
   "menu.morphs.purchase_no_permission.name": "<red><name></red>",
   "menu.morphs.purchase_no_permission.desc": [
     "",
-    "<red>You do not have permission to</red>",
-    "<red>purchase this cosmetic!</red>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<red>No permission to purchase!</red>"
   ],
   "menu.morphs.unequipped.name": "<green><name></green>",
   "menu.morphs.unequipped.desc": [
+    "",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
     "",
     "<yellow>Click to equip!</yellow>"
   ],
   "menu.morphs.equipped.name": "<green><name></green>",
   "menu.morphs.equipped.desc": [
     "",
-    "<yellow>Click to unequip!</yellow>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<yellow>Click to equip!</yellow>"
   ],
 
   "menu.morphs.bat.name": "<name>",
@@ -2237,28 +2336,38 @@
   "menu.mounts.purchasable.name": "<red><name></red>",
   "menu.mounts.purchasable.desc": [
     "",
-    "<green>Click to purchase for <yellow><cost> coins</yellow>!</green>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Cost:</gray> <yellow><cost> <currency></yellow>",
+    "",
+    "<green>Click to purchase!</green>"
   ],
   "menu.mounts.purchase_disabled.name": "<red><name></red>",
   "menu.mounts.purchase_disabled.desc": [
     "",
-    "<red>This cosmetic cannot be purchased!</red>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<red>Cannot be purchased!</red>"
   ],
   "menu.mounts.purchase_no_permission.name": "<red><name></red>",
   "menu.mounts.purchase_no_permission.desc": [
     "",
-    "<red>You do not have permission to</red>",
-    "<red>purchase this cosmetic!</red>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<red>No permission to purchase!</red>"
   ],
   "menu.mounts.unequipped.name": "<green><name></green>",
   "menu.mounts.unequipped.desc": [
+    "",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
     "",
     "<yellow>Click to equip!</yellow>"
   ],
   "menu.mounts.equipped.name": "<green><name></green>",
   "menu.mounts.equipped.desc": [
     "",
-    "<yellow>Click to unequip!</yellow>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<yellow>Click to equip!</yellow>"
   ],
 
   "menu.mounts.baby_reindeer.name": "<name>",
@@ -2386,28 +2495,38 @@
   "menu.music.purchasable.name": "<red><name></red>",
   "menu.music.purchasable.desc": [
     "",
-    "<green>Click to purchase for <yellow><cost> coins</yellow>!</green>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Cost:</gray> <yellow><cost> <currency></yellow>",
+    "",
+    "<green>Click to purchase!</green>"
   ],
   "menu.music.purchase_disabled.name": "<red><name></red>",
   "menu.music.purchase_disabled.desc": [
     "",
-    "<red>This cosmetic cannot be purchased!</red>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<red>Cannot be purchased!</red>"
   ],
   "menu.music.purchase_no_permission.name": "<red><name></red>",
   "menu.music.purchase_no_permission.desc": [
     "",
-    "<red>You do not have permission to</red>",
-    "<red>purchase this cosmetic!</red>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<red>No permission to purchase!</red>"
   ],
   "menu.music.unequipped.name": "<green><name></green>",
   "menu.music.unequipped.desc": [
+    "",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
     "",
     "<yellow>Click to equip!</yellow>"
   ],
   "menu.music.equipped.name": "<green><name></green>",
   "menu.music.equipped.desc": [
     "",
-    "<yellow>Click to unequip!</yellow>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<yellow>Click to equip!</yellow>"
   ],
 
   "menu.music.fur_elise.name": "<name>",
@@ -2489,29 +2608,39 @@
   "menu.particle_effects.purchasable.name": "<red><name></red>",
   "menu.particle_effects.purchasable.desc": [
     "",
-    "<green>Click to purchase for <yellow><cost> coins</yellow>!</green>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Cost:</gray> <yellow><cost> <currency></yellow>",
+    "",
+    "<green>Click to purchase!</green>"
   ],
   "menu.particle_effects.purchase_disabled.name": "<red><name></red>",
   "menu.particle_effects.purchase_disabled.desc": [
     "",
-    "<red>This cosmetic cannot be purchased!</red>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<red>Cannot be purchased!</red>"
   ],
   "menu.particle_effects.purchase_no_permission.name": "<red><name></red>",
   "menu.particle_effects.purchase_no_permission.desc": [
     "",
-    "<red>You do not have permission to</red>",
-    "<red>purchase this cosmetic!</red>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<red>No permission to purchase!</red>"
   ],
 
   "menu.particle_effects.unequipped.name": "<green><name></green>",
   "menu.particle_effects.unequipped.desc": [
+    "",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
     "",
     "<yellow>Click to equip!</yellow>"
   ],
   "menu.particle_effects.equipped.name": "<green><name></green>",
   "menu.particle_effects.equipped.desc": [
     "",
-    "<yellow>Click to unequip!</yellow>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<yellow>Click to equip!</yellow>"
   ],
 
   "menu.particle_effects.angel_wings.name": "<name>",
@@ -2761,28 +2890,38 @@
   "menu.pets.purchasable.name": "<red><name></red>",
   "menu.pets.purchasable.desc": [
     "",
-    "<green>Click to purchase for <yellow><cost> coins</yellow>!</green>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Cost:</gray> <yellow><cost> <currency></yellow>",
+    "",
+    "<green>Click to purchase!</green>"
   ],
   "menu.pets.purchase_disabled.name": "<red><name></red>",
   "menu.pets.purchase_disabled.desc": [
     "",
-    "<red>This cosmetic cannot be purchased!</red>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<red>Cannot be purchased!</red>"
   ],
   "menu.pets.purchase_no_permission.name": "<red><name></red>",
   "menu.pets.purchase_no_permission.desc": [
     "",
-    "<red>You do not have permission to</red>",
-    "<red>purchase this cosmetic!</red>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<red>No permission to purchase!</red>"
   ],
   "menu.pets.unequipped.name": "<green><name></green>",
   "menu.pets.unequipped.desc": [
+    "",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
     "",
     "<yellow>Click to equip!</yellow>"
   ],
   "menu.pets.equipped.name": "<green><name></green>",
   "menu.pets.equipped.desc": [
     "",
-    "<yellow>Click to unequip!</yellow>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<yellow>Click to equip!</yellow>"
   ],
 
   "menu.pets.allay.name": "<name>",
@@ -2978,28 +3117,38 @@
   "menu.statuses.purchasable.name": "<red><name></red>",
   "menu.statuses.purchasable.desc": [
     "",
-    "<green>Click to purchase for <yellow><cost> coins</yellow>!</green>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Cost:</gray> <yellow><cost> <currency></yellow>",
+    "",
+    "<green>Click to purchase!</green>"
   ],
   "menu.statuses.purchase_disabled.name": "<red><name></red>",
   "menu.statuses.purchase_disabled.desc": [
     "",
-    "<red>This cosmetic cannot be purchased!</red>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<red>Cannot be purchased!</red>"
   ],
   "menu.statuses.purchase_no_permission.name": "<red><name></red>",
   "menu.statuses.purchase_no_permission.desc": [
     "",
-    "<red>You do not have permission to</red>",
-    "<red>purchase this cosmetic!</red>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<red>No permission to purchase!</red>"
   ],
   "menu.statuses.unequipped.name": "<green><name></green>",
   "menu.statuses.unequipped.desc": [
+    "",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
     "",
     "<yellow>Click to equip!</yellow>"
   ],
   "menu.statuses.equipped.name": "<green><name></green>",
   "menu.statuses.equipped.desc": [
     "",
-    "<yellow>Click to unequip!</yellow>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "",
+    "<yellow>Click to equip!</yellow>"
   ],
 
   "menu.statuses.afk.name": "<name>",

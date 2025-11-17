@@ -27,6 +27,7 @@ import se.file14.procosmetics.api.cosmetic.registry.CosmeticCategory;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.cosmetic.CosmeticTypeImpl;
 
+import java.util.List;
 import java.util.function.Supplier;
 
 public class MiniatureTypeImpl extends CosmeticTypeImpl<MiniatureType, MiniatureBehavior> implements MiniatureType {
@@ -38,14 +39,14 @@ public class MiniatureTypeImpl extends CosmeticTypeImpl<MiniatureType, Miniature
                              CosmeticCategory<MiniatureType, MiniatureBehavior, ?> category,
                              Supplier<MiniatureBehavior> behaviorFactory,
                              boolean enabled,
-                             boolean findable,
                              boolean purchasable,
                              int cost,
                              CosmeticRarity rarity,
                              ItemStack itemStack,
+                             List<String> treasureChests,
                              boolean invisible,
                              boolean arms) {
-        super(key, category, behaviorFactory, enabled, findable, purchasable, cost, rarity, itemStack);
+        super(key, category, behaviorFactory, enabled, purchasable, cost, rarity, itemStack, treasureChests);
         this.invisible = invisible;
         this.arms = arms;
     }
@@ -97,11 +98,11 @@ public class MiniatureTypeImpl extends CosmeticTypeImpl<MiniatureType, Miniature
                     category,
                     factory,
                     enabled,
-                    findable,
                     purchasable,
                     cost,
                     rarity,
                     itemStack,
+                    treasureChests,
                     invisible,
                     arms
             );

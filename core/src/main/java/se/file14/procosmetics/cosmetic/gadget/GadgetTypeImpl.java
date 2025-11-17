@@ -27,48 +27,56 @@ import se.file14.procosmetics.api.cosmetic.gadget.Gadget;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetBehavior;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetType;
 import se.file14.procosmetics.api.cosmetic.registry.CosmeticCategory;
+import se.file14.procosmetics.api.treasure.loot.number.IntProvider;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.api.util.structure.StructureData;
 import se.file14.procosmetics.cosmetic.CosmeticTypeImpl;
+import se.file14.procosmetics.treasure.loot.number.RangedIntProviderImpl;
 import se.file14.procosmetics.util.structure.StructureReader;
 
 import javax.annotation.Nullable;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.function.Supplier;
 
 public class GadgetTypeImpl extends CosmeticTypeImpl<GadgetType, GadgetBehavior> implements GadgetType {
 
     private final double cooldown;
     private final double duration;
-    private final int purchaseAmount;
-    private final int ammoCost;
+    private final StructureData structure;
     private final boolean infinityAmmo;
     private final boolean purchasableAmmo;
-    private final StructureData structure;
+    private final int ammoPurchaseAmount;
+    private final int ammoCost;
+    private final Map<String, IntProvider> ammoLoot;
 
     public GadgetTypeImpl(String key,
                           CosmeticCategory<GadgetType, GadgetBehavior, ?> category,
                           Supplier<GadgetBehavior> behaviourFactory,
                           boolean enabled,
-                          boolean findable,
                           boolean purchasable,
                           int cost,
                           CosmeticRarity rarity,
                           ItemStack itemStack,
+                          List<String> treasureChests,
                           double cooldown,
                           double duration,
-                          int purchaseAmount,
-                          int ammoCost,
+                          StructureData structure,
                           boolean infinityAmmo,
                           boolean purchasableAmmo,
-                          StructureData structure) {
-        super(key, category, behaviourFactory, enabled, findable, purchasable, cost, rarity, itemStack);
+                          int ammoPurchaseAmount,
+                          int ammoCost,
+                          Map<String, IntProvider> ammoLoot) {
+        super(key, category, behaviourFactory, enabled, purchasable, cost, rarity, itemStack, treasureChests);
         this.cooldown = cooldown;
         this.duration = duration;
-        this.purchaseAmount = purchaseAmount;
-        this.ammoCost = ammoCost;
+        this.structure = structure;
         this.infinityAmmo = infinityAmmo;
         this.purchasableAmmo = purchasableAmmo;
-        this.structure = structure;
+        this.ammoPurchaseAmount = ammoPurchaseAmount;
+        this.ammoCost = ammoCost;
+        this.ammoLoot = new HashMap<>(ammoLoot);
     }
 
     @Override
@@ -82,7 +90,7 @@ public class GadgetTypeImpl extends CosmeticTypeImpl<GadgetType, GadgetBehavior>
                 super.getResolvers(user),
                 Placeholder.unparsed("ammo", String.valueOf(user.getAmmo(this))),
                 Placeholder.unparsed("ammo_cost", String.valueOf(ammoCost)),
-                Placeholder.unparsed("ammo_purchase_amount", String.valueOf(purchaseAmount))
+                Placeholder.unparsed("ammo_purchase_amount", String.valueOf(ammoPurchaseAmount))
         );
     }
 
@@ -102,13 +110,8 @@ public class GadgetTypeImpl extends CosmeticTypeImpl<GadgetType, GadgetBehavior>
     }
 
     @Override
-    public int getPurchaseAmount() {
-        return purchaseAmount;
-    }
-
-    @Override
-    public int getAmmoCost() {
-        return ammoCost;
+    public @Nullable StructureData getStructure() {
+        return structure;
     }
 
     @Override
@@ -122,19 +125,30 @@ public class GadgetTypeImpl extends CosmeticTypeImpl<GadgetType, GadgetBehavior>
     }
 
     @Override
-    public @Nullable StructureData getStructure() {
-        return structure;
+    public int getAmmoPurchaseAmount() {
+        return ammoPurchaseAmount;
+    }
+
+    @Override
+    public int getAmmoCost() {
+        return ammoCost;
+    }
+
+    @Override
+    public Map<String, IntProvider> getAmmoLoot() {
+        return ammoLoot;
     }
 
     public static class BuilderImpl extends CosmeticTypeImpl.BuilderImpl<GadgetType, GadgetBehavior, GadgetType.Builder> implements GadgetType.Builder {
 
         private double cooldown;
         private double duration;
-        private int purchaseAmount;
-        private int ammoCost;
+        private StructureData structure;
         private boolean infinityAmmo;
         private boolean purchasableAmmo;
-        private StructureData structure;
+        private int ammoPurchaseAmount;
+        private int ammoCost;
+        private Map<String, IntProvider> ammoLoot = new HashMap<>();
 
         public BuilderImpl(String key, CosmeticCategory<GadgetType, GadgetBehavior, ?> category) {
             super(key, category);
@@ -154,12 +168,28 @@ public class GadgetTypeImpl extends CosmeticTypeImpl<GadgetType, GadgetBehavior>
 
             cooldown = Math.max(0.1d, config.getDouble(path + "cooldown"));
             duration = Math.min(cooldown, config.getDouble(path + "duration", false));
-            purchaseAmount = Math.max(0, config.getInt(path + "ammo.purchase_amount"));
-            ammoCost = Math.max(0, config.getInt(path + "ammo.cost"));
-            infinityAmmo = config.getBoolean(path + "ammo.infinity");
-            purchasableAmmo = config.getBoolean(path + "ammo.purchasable");
+
             structure = StructureReader.loadStructure(key);
 
+            // Ammo
+            infinityAmmo = config.getBoolean(path + "ammo.infinity");
+            purchasableAmmo = config.getBoolean(path + "ammo.purchasable.enable");
+            ammoPurchaseAmount = Math.max(0, config.getInt(path + "ammo.purchasable.amount"));
+            ammoCost = Math.max(0, config.getInt(path + "ammo.purchasable.cost"));
+
+            String ammoWeightsPath = path + "ammo.treasure_chests";
+            if (config.getConfigurationSection(ammoWeightsPath) != null) {
+                for (String chestKey : config.getConfigurationSection(ammoWeightsPath).getKeys(false)) {
+                    String chestPath = ammoWeightsPath + "." + chestKey + ".";
+                    int minAmount = config.getInt(chestPath + "minimum_amount");
+                    int maxAmount = config.getInt(chestPath + "maximum_amount");
+
+                    if (minAmount > 0 && maxAmount > 0) {
+                        IntProvider intProvider = new RangedIntProviderImpl(minAmount, maxAmount);
+                        ammoLoot.put(chestKey, intProvider);
+                    }
+                }
+            }
             return self();
         }
 
@@ -176,14 +206,8 @@ public class GadgetTypeImpl extends CosmeticTypeImpl<GadgetType, GadgetBehavior>
         }
 
         @Override
-        public GadgetType.Builder purchaseAmount(int purchaseAmount) {
-            this.purchaseAmount = purchaseAmount;
-            return this;
-        }
-
-        @Override
-        public GadgetType.Builder ammoCost(int ammoCost) {
-            this.ammoCost = ammoCost;
+        public GadgetType.Builder structure(StructureData structure) {
+            this.structure = structure;
             return this;
         }
 
@@ -200,8 +224,20 @@ public class GadgetTypeImpl extends CosmeticTypeImpl<GadgetType, GadgetBehavior>
         }
 
         @Override
-        public GadgetType.Builder structure(StructureData structure) {
-            this.structure = structure;
+        public GadgetType.Builder ammoPurchaseAmount(int ammoPurchaseAmount) {
+            this.ammoPurchaseAmount = ammoPurchaseAmount;
+            return this;
+        }
+
+        @Override
+        public GadgetType.Builder ammoCost(int ammoCost) {
+            this.ammoCost = ammoCost;
+            return this;
+        }
+
+        @Override
+        public GadgetType.Builder ammoLoot(Map<String, IntProvider> ammoLoot) {
+            this.ammoLoot = new HashMap<>(ammoLoot);
             return this;
         }
 
@@ -211,18 +247,19 @@ public class GadgetTypeImpl extends CosmeticTypeImpl<GadgetType, GadgetBehavior>
                     category,
                     factory,
                     enabled,
-                    findable,
                     purchasable,
                     cost,
                     rarity,
                     itemStack,
+                    treasureChests,
                     cooldown,
                     duration,
-                    purchaseAmount,
-                    ammoCost,
+                    structure,
                     infinityAmmo,
                     purchasableAmmo,
-                    structure
+                    ammoPurchaseAmount,
+                    ammoCost,
+                    ammoLoot
             );
         }
     }

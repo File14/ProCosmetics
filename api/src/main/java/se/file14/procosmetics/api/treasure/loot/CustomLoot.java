@@ -17,29 +17,14 @@
  */
 package se.file14.procosmetics.api.treasure.loot;
 
-import org.bukkit.inventory.ItemStack;
-import se.file14.procosmetics.api.cosmetic.CosmeticRarity;
-
 import java.util.List;
 
 /**
- * Represents a loot table that with custom rewards.
+ * Represents a loot entry that rewards the player with custom loot.
+ *
+ * @see LootEntry
  */
-public interface CustomLoot extends LootTable<CustomLoot>, LootEntry {
-
-    /**
-     * Gets the item stack representation of this custom loot.
-     *
-     * @return the item stack to display
-     */
-    ItemStack getItemStack();
-
-    /**
-     * Gets the rarity of this custom loot.
-     *
-     * @return the rarity level
-     */
-    CosmeticRarity getRarity();
+public interface CustomLoot extends LootEntry {
 
     /**
      * Gets the list of commands to execute when this loot is rewarded.

@@ -19,6 +19,7 @@ package se.file14.procosmetics.treasure;
 
 import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
 import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import se.file14.procosmetics.ProCosmeticsPlugin;
@@ -30,25 +31,36 @@ import se.file14.procosmetics.api.cosmetic.registry.CosmeticCategory;
 import se.file14.procosmetics.api.locale.Translator;
 import se.file14.procosmetics.api.treasure.TreasureChest;
 import se.file14.procosmetics.api.treasure.animation.AnimationType;
+import se.file14.procosmetics.api.treasure.loot.LootCategory;
+import se.file14.procosmetics.api.treasure.loot.LootEntry;
+import se.file14.procosmetics.api.treasure.loot.LootTable;
+import se.file14.procosmetics.api.treasure.loot.number.ConstantIntProvider;
+import se.file14.procosmetics.api.treasure.loot.number.IntProvider;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.api.util.item.ItemBuilder;
 import se.file14.procosmetics.api.util.structure.StructureData;
-import se.file14.procosmetics.treasure.loot.*;
+import se.file14.procosmetics.treasure.loot.LootCategoryImpl;
+import se.file14.procosmetics.treasure.loot.LootTableImpl;
+import se.file14.procosmetics.treasure.loot.number.ConstantIntProviderImpl;
+import se.file14.procosmetics.treasure.loot.number.RangedIntProviderImpl;
+import se.file14.procosmetics.treasure.loot.type.AmmoLootImpl;
+import se.file14.procosmetics.treasure.loot.type.CoinsLootImpl;
+import se.file14.procosmetics.treasure.loot.type.CosmeticLootImpl;
+import se.file14.procosmetics.treasure.loot.type.CustomLootImpl;
 import se.file14.procosmetics.util.EnumUtil;
 import se.file14.procosmetics.util.item.ItemBuilderImpl;
 import se.file14.procosmetics.util.structure.StructureDataImpl;
 import se.file14.procosmetics.util.structure.StructureReader;
 
-import javax.annotation.Nullable;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-import java.util.Random;
+import java.util.Map;
 import java.util.logging.Level;
 
 public class TreasureChestImpl implements TreasureChest {
 
-    private static final Random RANDOM = new Random();
-
+    private final ProCosmeticsPlugin plugin;
     private final String key;
     private final boolean enabled;
     private final boolean purchasable;
@@ -56,25 +68,26 @@ public class TreasureChestImpl implements TreasureChest {
     private final int cost;
     private final int chestsToOpen;
     private final AnimationType chestAnimationType;
-    private final List<StructureData> structures = new ArrayList<>();
     private final boolean openingBroadcast;
     private final ItemBuilder itemBuilder;
-
-    private int totalWeight;
-    private final List<LootTableImpl<?>> lootEntries = new ArrayList<>();
+    private final List<StructureData> structures = new ArrayList<>();
+    private final LootTable lootTable;
 
     public TreasureChestImpl(ProCosmeticsPlugin plugin, String key) {
+        this.plugin = plugin;
         this.key = key;
 
         Config config = plugin.getConfigManager().getConfig("treasure_chests");
 
         String path = "treasure_chests." + key;
-        enabled = config.getBoolean(path + ".enable");
-        purchasable = config.getBoolean(path + ".purchasable");
+        enabled = config.getBoolean(path + ".enabled");
+        purchasable = config.getBoolean(path + ".purchasable.enabled");
         purchasePermission = "procosmetics.purchase.treasure_chest." + key;
-        cost = config.getInt(path + ".cost");
+        cost = config.getInt(path + ".purchasable.cost");
         chestsToOpen = config.getInt(path + ".chests_to_open");
         chestAnimationType = EnumUtil.getType(AnimationType.class, config.getString(path + ".chest_animation"));
+        openingBroadcast = config.getBoolean(path + ".opening_broadcast");
+        itemBuilder = new ItemBuilderImpl(config, path);
 
         for (String layout : config.getStringList(path + ".animation_layouts")) {
             StructureDataImpl structureData = StructureReader.loadStructure(layout);
@@ -85,108 +98,141 @@ public class TreasureChestImpl implements TreasureChest {
             }
             structures.add(structureData);
         }
-        openingBroadcast = config.getBoolean(path + ".opening_broadcast");
-        itemBuilder = new ItemBuilderImpl(config, path);
+        // Load rarity weights
+        Map<CosmeticRarity, Integer> rarityWeights = loadRarityWeights(config, path);
 
-        // GADGET AMMO
-        List<GadgetType> ammo = new ArrayList<>();
+        // Build loot entries
+        List<LootEntry> entries = new ArrayList<>();
+        loadCosmeticLoot(entries);
+        loadGadgetAmmoLoot(entries);
+        loadCoinLoot(config, path, entries);
+        loadCustomLoot(config, path, entries);
 
-        for (GadgetType ammoType : plugin.getCategoryRegistries().gadgets().getCosmeticRegistry().getEnabledTypes()) {
-            if (ammoType.isFindable()) {
-                ammo.add(ammoType);
+        this.lootTable = new LootTableImpl(entries, rarityWeights);
+    }
+
+    private Map<CosmeticRarity, Integer> loadRarityWeights(Config config, String path) {
+        Map<CosmeticRarity, Integer> weights = new HashMap<>();
+        String rarityWeightsPath = path + ".rarity_weights";
+
+        if (config.getConfigurationSection(rarityWeightsPath) != null) {
+            for (String rarityKey : config.getConfigurationSection(rarityWeightsPath).getKeys(false)) {
+                CosmeticRarity rarity = plugin.getCosmeticRarityRegistry().getSafely(rarityKey);
+                int weight = config.getInt(rarityWeightsPath + "." + rarityKey);
+                weights.put(rarity, weight);
             }
         }
-        String ammoPath = path + ".loot.ammo.";
-        int weight = config.getInt(ammoPath + "weight");
-        if (weight > 0) {
-            totalWeight += weight;
-            lootEntries.add(new AmmoLootImpl("ammo",
-                    weight,
-                    config.getInt(ammoPath + "minimum_amount"),
-                    config.getInt(ammoPath + "maximum_amount"),
-                    ammo)
-            );
-        }
+        return weights;
+    }
 
-        // MONEY
-        String moneyPath = path + ".loot.money.";
-        weight = config.getInt(moneyPath + "weight");
-        if (weight > 0) {
-            totalWeight += weight;
-            lootEntries.add(new MoneyLootImpl("money",
-                    weight,
-                    config.getInt(moneyPath + "minimum_amount"),
-                    config.getInt(moneyPath + "maximum_amount"))
-            );
-        }
+    private void loadCosmeticLoot(List<LootEntry> entries) {
+        ConstantIntProvider ONE_PROVIDER = new ConstantIntProviderImpl(1);
 
-        // COSMETICS
         for (CosmeticCategory<?, ?, ?> cosmeticCategory : plugin.getCategoryRegistries().getCategories()) {
-            String cosmeticPath = path + ".loot." + cosmeticCategory.getKey() + ".";
-            weight = config.getInt(cosmeticPath + "weight");
+            LootCategory category = new LootCategoryImpl(cosmeticCategory.getKey(), cosmeticCategory.getMenuItem());
 
-            if (weight > 0) {
-                List<CosmeticType<?, ?>> cosmeticTypes = new ArrayList<>();
-
-                for (CosmeticType<?, ?> cosmeticType : cosmeticCategory.getCosmeticRegistry().getEnabledTypes()) {
-                    if (cosmeticType.isFindable()) {
-                        cosmeticTypes.add(cosmeticType);
-                    }
-                }
-
-                if (!cosmeticTypes.isEmpty()) {
-                    totalWeight += weight;
-                    lootEntries.add(new CosmeticLootImpl(cosmeticCategory.getKey(), weight, cosmeticTypes));
+            for (CosmeticType<?, ?> cosmeticType : cosmeticCategory.getCosmeticRegistry().getEnabledTypes()) {
+                if (cosmeticType.getTreasureChests().contains(key)) {
+                    entries.add(new CosmeticLootImpl(ONE_PROVIDER, category, cosmeticType));
                 }
             }
-        }
-        // CUSTOM LOOT
-        String customLootPath = path + ".loot.custom";
-        if (config.getConfigurationSection(customLootPath) != null) {
-            for (String customKey : config.getConfigurationSection(customLootPath).getKeys(false)) {
-                String path1 = customLootPath + "." + customKey + ".";
-                CosmeticRarity rarity = plugin.getCosmeticRarityRegistry().getSafely(config.getString(path1 + "rarity"));
-                weight = config.getInt(path1 + "weight");
-
-                if (weight > 0 && config.getBoolean(path1 + "enable")) {
-                    totalWeight += weight;
-                    ItemBuilderImpl customItemBuilder = new ItemBuilderImpl(config, path1);
-
-                    lootEntries.add(new CustomLootImpl(
-                            customKey,
-                            weight,
-                            customItemBuilder.getItemStack(),
-                            rarity,
-                            config.getStringList(path1 + "commands")
-                    ));
-                }
-            }
-        }
-        List<String> chances = new ArrayList<>();
-
-        for (LootTableImpl<?> lootTable : lootEntries) {
-            if (lootTable.getWeight() == 0) {
-                continue;
-            }
-            double percentage = (double) lootTable.getWeight() / totalWeight * 100;
-            //chances.add(ChatColor.GRAY + String.format("%s: %.2f%%", lootTable.getMenuCategory(), percentage));
         }
     }
 
-    @Override
-    @Nullable
-    public LootTableImpl<?> getRandomLootTable() {
-        int randomValue = RANDOM.nextInt(totalWeight);
-        int currentWeight = 0;
+    private void loadGadgetAmmoLoot(List<LootEntry> entries) {
+        LootCategory category = new LootCategoryImpl("ammo", plugin.getCategoryRegistries().gadgets().getMenuItem());
 
-        for (LootTableImpl<?> item : lootEntries) {
-            currentWeight += item.getWeight();
+        for (GadgetType gadgetType : plugin.getCategoryRegistries().gadgets().getCosmeticRegistry().getEnabledTypes()) {
+            Map<String, IntProvider> ammoLoot = gadgetType.getAmmoLoot();
 
-            if (randomValue < currentWeight) {
-                return item;
+            if (ammoLoot.containsKey(key)) {
+                entries.add(new AmmoLootImpl(
+                        ammoLoot.get(key),
+                        category,
+                        gadgetType
+                ));
             }
         }
-        return null;
+    }
+
+    private void loadCoinLoot(Config config, String path, List<LootEntry> entries) {
+        String coinsPath = path + ".coins.";
+
+        if (!config.getBoolean(coinsPath + "enabled")) {
+            return;
+        }
+        CosmeticRarity rarity = plugin.getCosmeticRarityRegistry().getSafely(config.getString(coinsPath + "rarity"));
+        LootCategory category = new LootCategoryImpl("coins", new ItemBuilderImpl(new ItemStack(Material.SUNFLOWER)));
+
+        int min = config.getInt(coinsPath + "minimum_amount");
+        int max = config.getInt(coinsPath + "maximum_amount");
+        IntProvider intProvider = (max > min)
+                ? new RangedIntProviderImpl(min, max)
+                : new ConstantIntProviderImpl(min);
+
+        entries.add(new CoinsLootImpl(intProvider, category, rarity));
+    }
+
+    private void loadCustomLoot(Config config, String path, List<LootEntry> entries) {
+        // Load custom categories
+        Map<String, LootCategory> customCategories = loadCustomCategories(config, path);
+
+        // Load custom loot entries
+        String customLootPath = path + ".custom.loot";
+        if (config.getConfigurationSection(customLootPath) == null) {
+            return;
+        }
+        ConstantIntProvider ONE_PROVIDER = new ConstantIntProviderImpl(1);
+
+        for (String customKey : config.getConfigurationSection(customLootPath).getKeys(false)) {
+            String customPath = customLootPath + "." + customKey + ".";
+
+            if (!config.getBoolean(customPath + "enabled")) {
+                continue;
+            }
+
+            CosmeticRarity rarity = plugin.getCosmeticRarityRegistry().getSafely(config.getString(customPath + "rarity"));
+            String categoryKey = config.getString(customPath + "category");
+            LootCategory category = customCategories.get(categoryKey);
+
+            if (category == null) {
+                plugin.getLogger().warning("Could not find category " + categoryKey + " for " + customKey + ".");
+                continue;
+            }
+
+            ItemBuilderImpl customItemBuilder = new ItemBuilderImpl(config, customPath);
+            entries.add(new CustomLootImpl(
+                    ONE_PROVIDER,
+                    category,
+                    customKey,
+                    customItemBuilder.getItemStack(),
+                    rarity,
+                    config.getStringList(customPath + "commands")
+            ));
+        }
+    }
+
+    private Map<String, LootCategory> loadCustomCategories(Config config, String path) {
+        Map<String, LootCategory> customCategories = new HashMap<>();
+        String customCategoriesPath = path + ".custom.categories";
+
+        if (config.getConfigurationSection(customCategoriesPath) == null) {
+            return customCategories;
+        }
+
+        for (String categoryKey : config.getConfigurationSection(customCategoriesPath).getKeys(false)) {
+            String categoryPath = customCategoriesPath + "." + categoryKey + ".";
+            ItemBuilderImpl categoryItem = new ItemBuilderImpl(config, categoryPath);
+            customCategories.put(categoryKey, new LootCategoryImpl(categoryKey, categoryItem));
+        }
+
+        return customCategories;
+    }
+
+
+    @Override
+    public LootTable getLootTable() {
+        return lootTable;
     }
 
     @Override
@@ -208,7 +254,8 @@ public class TreasureChestImpl implements TreasureChest {
     public TagResolver getResolvers(User user) {
         return TagResolver.resolver(
                 Placeholder.unparsed("current", String.valueOf(user.getTreasureChests(this))),
-                Placeholder.unparsed("cost", String.valueOf(cost))
+                Placeholder.unparsed("cost", String.valueOf(cost)),
+                Placeholder.unparsed("currency", user.translateRaw("generic.currency"))
         );
     }
 

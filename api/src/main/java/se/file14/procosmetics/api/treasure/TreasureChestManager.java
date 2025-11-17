@@ -19,6 +19,8 @@ package se.file14.procosmetics.api.treasure;
 
 import org.bukkit.Location;
 import org.jetbrains.annotations.Nullable;
+import se.file14.procosmetics.api.util.broadcaster.Broadcaster;
+import se.file14.procosmetics.api.util.broadcaster.LootBroadcaster;
 
 import java.util.List;
 
@@ -60,6 +62,20 @@ public interface TreasureChestManager {
      */
     @Nullable
     TreasureChest getTreasureChest(@Nullable String key);
+
+    /**
+     * Gets the broadcaster responsible for announcing treasure chest openings.
+     *
+     * @return the {@link Broadcaster} for treasure chest opening announcements
+     */
+    Broadcaster getOpeningBroadcaster();
+
+    /**
+     * Gets the loot broadcaster responsible for announcing treasure chest rewards.
+     *
+     * @return the {@link LootBroadcaster} for treasure chest loot announcements
+     */
+    LootBroadcaster getLootBroadcaster();
 
     /**
      * Gets a list of all loaded treasure chests.

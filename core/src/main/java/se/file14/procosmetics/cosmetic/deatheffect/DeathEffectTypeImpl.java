@@ -27,6 +27,7 @@ import se.file14.procosmetics.api.cosmetic.registry.CosmeticCategory;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.cosmetic.CosmeticTypeImpl;
 
+import java.util.List;
 import java.util.function.Supplier;
 
 public class DeathEffectTypeImpl extends CosmeticTypeImpl<DeathEffectType, DeathEffectBehavior> implements DeathEffectType {
@@ -35,12 +36,12 @@ public class DeathEffectTypeImpl extends CosmeticTypeImpl<DeathEffectType, Death
                                CosmeticCategory<DeathEffectType, DeathEffectBehavior, ?> category,
                                Supplier<DeathEffectBehavior> behaviorFactory,
                                boolean enabled,
-                               boolean findable,
                                boolean purchasable,
                                int cost,
                                CosmeticRarity rarity,
-                               ItemStack itemStack) {
-        super(key, category, behaviorFactory, enabled, findable, purchasable, cost, rarity, itemStack);
+                               ItemStack itemStack,
+                               List<String> treasureChests) {
+        super(key, category, behaviorFactory, enabled, purchasable, cost, rarity, itemStack, treasureChests);
     }
 
     @Override
@@ -65,11 +66,11 @@ public class DeathEffectTypeImpl extends CosmeticTypeImpl<DeathEffectType, Death
                     category,
                     factory,
                     enabled,
-                    findable,
                     purchasable,
                     cost,
                     rarity,
-                    itemStack
+                    itemStack,
+                    treasureChests
             );
         }
     }

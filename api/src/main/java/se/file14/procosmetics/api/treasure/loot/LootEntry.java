@@ -17,12 +17,10 @@
  */
 package se.file14.procosmetics.api.treasure.loot;
 
-import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
 import org.bukkit.inventory.ItemStack;
 import se.file14.procosmetics.api.cosmetic.CosmeticRarity;
-import se.file14.procosmetics.api.locale.Translator;
-import se.file14.procosmetics.api.user.User;
+import se.file14.procosmetics.api.treasure.loot.number.IntProvider;
+import se.file14.procosmetics.api.util.ResolvableName;
 
 /**
  * Represents an individual loot entry within a treasure chest loot pool.
@@ -34,42 +32,31 @@ import se.file14.procosmetics.api.user.User;
  * @see se.file14.procosmetics.api.treasure.TreasureChest
  * @see CosmeticRarity
  */
-public interface LootEntry {
+public interface LootEntry extends ResolvableName {
 
     /**
-     * Gets the translation key used to localize the name of this loot entry.
+     * Generates the actual loot based on this entry's configuration.
+     * <p>
+     * This method creates a {@link GeneratedLoot} instance which contains
+     * the specific quantity and details of the reward to be given to the player.
      *
-     * @return the translation key for this loot entry’s name
+     * @return the generated loot instance
      */
-    String getNameTranslationKey();
+    GeneratedLoot generate();
 
     /**
-     * Gets the localized name of this loot entry.
+     * Gets the {@link IntProvider} that determines the quantity of this loot.
      *
-     * @param translator the translator used to localize the name
-     * @return the localized loot name
+     * @return the {@link IntProvider} for quantity calculation
      */
-    default String getName(Translator translator) {
-        return translator.translateRaw(getNameTranslationKey());
-    }
+    IntProvider getIntProvider();
 
     /**
-     * Gets the tag resolvers for this loot entry to use with MiniMessage formatting.
+     * Gets the category this loot entry belongs to.
      *
-     * @param user the user to use for the resolvers
-     * @return the tag resolver for this loot entry
+     * @return the loot category
      */
-    TagResolver getResolvers(User user);
-
-    /**
-     * Gets the fully resolved name of this loot entry.
-     *
-     * @param user the user context used for translation and resolver application
-     * @return the fully resolved display name as a {@link Component}
-     */
-    default Component getResolvedName(User user) {
-        return user.translate(getNameTranslationKey(), getResolvers(user));
-    }
+    LootCategory getCategory();
 
     /**
      * Gets the rarity associated with this loot entry.

@@ -15,18 +15,20 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package se.file14.procosmetics.api.treasure.loot;
+package se.file14.procosmetics.treasure.loot.number;
 
-/**
- * Represents a loot entry containing money.
- */
-public interface MoneyLootEntry extends LootEntry {
+import se.file14.procosmetics.api.treasure.loot.number.ConstantIntProvider;
 
-    /**
-     * Gets the amount of money.
-     *
-     * @return the money amount
-     */
-    int getAmount();
+public class ConstantIntProviderImpl extends IntProviderImpl implements ConstantIntProvider {
 
+    private final int value;
+
+    public ConstantIntProviderImpl(int value) {
+        this.value = Math.max(value, 1);
+    }
+
+    @Override
+    public int get() {
+        return value;
+    }
 }

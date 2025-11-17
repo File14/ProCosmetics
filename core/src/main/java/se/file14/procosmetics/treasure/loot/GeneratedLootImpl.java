@@ -19,23 +19,26 @@ package se.file14.procosmetics.treasure.loot;
 
 import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
 import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
-import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
-import se.file14.procosmetics.ProCosmeticsPlugin;
-import se.file14.procosmetics.api.ProCosmetics;
 import se.file14.procosmetics.api.cosmetic.CosmeticRarity;
-import se.file14.procosmetics.api.treasure.loot.MoneyLootEntry;
+import se.file14.procosmetics.api.treasure.loot.GeneratedLoot;
+import se.file14.procosmetics.api.treasure.loot.LootCategory;
+import se.file14.procosmetics.api.treasure.loot.LootEntry;
 import se.file14.procosmetics.api.user.User;
 
-public class MoneyLootEntryImpl implements MoneyLootEntry {
+public abstract class GeneratedLootImpl<T extends LootEntry> implements GeneratedLoot {
 
-    private static final ProCosmetics PLUGIN = ProCosmeticsPlugin.getPlugin();
-    private static final ItemStack ITEM_STACK = new ItemStack(Material.SUNFLOWER);
+    protected final T entry;
+    protected final int amount;
 
-    private final int amount;
-
-    public MoneyLootEntryImpl(int amount) {
+    public GeneratedLootImpl(T entry, int amount) {
+        this.entry = entry;
         this.amount = amount;
+    }
+
+    @Override
+    public T getEntry() {
+        return entry;
     }
 
     @Override
@@ -44,24 +47,35 @@ public class MoneyLootEntryImpl implements MoneyLootEntry {
     }
 
     @Override
+    public String getKey() {
+        return entry.getKey();
+    }
+
+    @Override
     public String getNameTranslationKey() {
-        return "treasure_chest.loot.money";
+        return entry.getNameTranslationKey();
     }
 
     @Override
     public TagResolver getResolvers(User user) {
         return TagResolver.resolver(
+                entry.getResolvers(user),
                 Placeholder.unparsed("amount", String.valueOf(amount))
         );
     }
 
     @Override
-    public CosmeticRarity getRarity() {
-        return PLUGIN.getCosmeticRarityRegistry().getFallbackRarity();
+    public ItemStack getItemStack() {
+        return entry.getItemStack();
     }
 
     @Override
-    public ItemStack getItemStack() {
-        return ITEM_STACK;
+    public CosmeticRarity getRarity() {
+        return entry.getRarity();
+    }
+
+    @Override
+    public LootCategory getCategory() {
+        return entry.getCategory();
     }
 }

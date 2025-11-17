@@ -70,7 +70,7 @@ public class Mythical extends TreasureChestAnimation {
                 Location location = getLocation(angle);
                 location.setY(platform.getCenter().getY() + Y_OFFSET);
 
-                NMSEntity nmsEntity = spawnChestArmorstand(Material.CHEST, location);
+                NMSEntity nmsEntity = spawnChest(Material.CHEST, location);
                 movingChests.add(new MovingChest(nmsEntity, chests));
 
                 chests++;

@@ -97,7 +97,7 @@ public class AmmoPurchaseMenu extends MenuImpl {
             }
             economy.removeCoinsAsync(user, cost).thenAcceptAsync(result -> {
                 if (result.booleanValue()) {
-                    plugin.getDatabase().addGadgetAmmoAsync(user, gadgetType, gadgetType.getPurchaseAmount()).thenAcceptAsync(result2 -> {
+                    plugin.getDatabase().addGadgetAmmoAsync(user, gadgetType, gadgetType.getAmmoPurchaseAmount()).thenAcceptAsync(result2 -> {
                         if (result2.leftBoolean()) {
                             plugin.getJavaPlugin().getServer().getPluginManager().callEvent(new PlayerPurchaseGadgetAmmoEventImpl(plugin, user, player, gadgetType));
 
@@ -108,7 +108,7 @@ public class AmmoPurchaseMenu extends MenuImpl {
                                 gadget.setGadgetItemInInventory();
                             }
                             playSuccessSound();
-                            plugin.getJavaPlugin().getLogger().log(Level.INFO, "[AMMO] " + user + " bought " + gadgetType.getPurchaseAmount() + " " + gadgetType.getKey() + " ammo for " + cost + ".");
+                            plugin.getJavaPlugin().getLogger().log(Level.INFO, "[AMMO] " + user + " bought " + gadgetType.getAmmoPurchaseAmount() + " " + gadgetType.getKey() + " ammo for " + cost + ".");
                         } else {
                             // Failed, refund the coins
                             economy.addCoinsAsync(user, cost);

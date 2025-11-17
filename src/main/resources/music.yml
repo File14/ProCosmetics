@@ -64,30 +64,42 @@ menu:
 cosmetics:
   fur_elise:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:paper"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   in_the_hall_of_the_mountain_king:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:paper"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   sweden:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:paper"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
 # Do not edit this!
 config_version: 1

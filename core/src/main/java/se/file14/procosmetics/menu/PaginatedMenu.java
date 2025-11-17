@@ -84,7 +84,6 @@ public abstract class PaginatedMenu<T extends PaginatedItem> extends MenuImpl {
             items.sort(sorting);
             sorted = true;
         }
-
         List<List<T>> pages = Lists.partition(items, getContainerSize());
         page = Math.max(1, Math.min(pages.size(), page));
         List<T> pageContent = pages.isEmpty() ? Collections.emptyList() : pages.get(page - 1);

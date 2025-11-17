@@ -23,17 +23,18 @@ import org.bukkit.entity.Player;
 import se.file14.procosmetics.ProCosmeticsPlugin;
 import se.file14.procosmetics.api.config.Config;
 import se.file14.procosmetics.api.user.User;
+import se.file14.procosmetics.api.util.broadcaster.Broadcaster;
 import se.file14.procosmetics.util.EnumUtil;
 
 import java.util.function.Function;
 
-public class Broadcaster {
+public class BroadcasterImpl implements Broadcaster {
 
     private static final ProCosmeticsPlugin PLUGIN = ProCosmeticsPlugin.getPlugin();
 
     private final Mode mode;
 
-    public Broadcaster(Config config, String path) {
+    public BroadcasterImpl(Config config, String path) {
         this.mode = EnumUtil.getType(Mode.class, config.getString(path + ".mode"));
     }
 
@@ -78,19 +79,21 @@ public class Broadcaster {
             user.sendMessage(user.translate(key, resolverFunction.apply(user)));
         });
 
-        private final TriConsumer<Player, String, Function<User, TagResolver[]>> broadcaster;
+        private final TriConsumer<Player, String, Function<User, TagResolver>> broadcaster;
 
-        Mode(TriConsumer<Player, String, Function<User, TagResolver[]>> broadcaster) {
+        Mode(TriConsumer<Player, String, Function<User, TagResolver>> broadcaster) {
             this.broadcaster = broadcaster;
         }
     }
 
-    public void broadcastMessage(Player player, String key, Function<User, TagResolver[]> resolverFunction) {
+    @Override
+    public void broadcastMessage(Player player, String key, Function<User, TagResolver> resolverFunction) {
         mode.broadcaster.accept(player, key, resolverFunction);
     }
 
+    @Override
     public void broadcastMessage(Player player, String key, TagResolver... resolvers) {
-        broadcastMessage(player, key, user -> resolvers);
+        broadcastMessage(player, key, user -> TagResolver.resolver(resolvers));
     }
 
     @FunctionalInterface

@@ -29,6 +29,7 @@ import se.file14.procosmetics.api.cosmetic.status.StatusType;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.cosmetic.CosmeticTypeImpl;
 
+import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.Supplier;
 
@@ -41,14 +42,14 @@ public class StatusTypeImpl extends CosmeticTypeImpl<StatusType, StatusBehavior>
                           CosmeticCategory<StatusType, StatusBehavior, ?> category,
                           Supplier<StatusBehavior> behaviorFactory,
                           boolean enabled,
-                          boolean findable,
                           boolean purchasable,
                           int cost,
                           CosmeticRarity rarity,
                           ItemStack itemStack,
+                          List<String> treasureChests,
                           long refreshInterval,
                           BiFunction<StatusType, User, Component> textProvider) {
-        super(key, category, behaviorFactory, enabled, findable, purchasable, cost, rarity, itemStack);
+        super(key, category, behaviorFactory, enabled, purchasable, cost, rarity, itemStack, treasureChests);
         this.refreshInterval = refreshInterval;
         this.textProvider = textProvider;
     }
@@ -112,11 +113,11 @@ public class StatusTypeImpl extends CosmeticTypeImpl<StatusType, StatusBehavior>
                     category,
                     factory,
                     enabled,
-                    findable,
                     purchasable,
                     cost,
                     rarity,
                     itemStack,
+                    treasureChests,
                     refreshInterval,
                     textProvider
             );

@@ -19,17 +19,17 @@ package se.file14.procosmetics.api.treasure.loot;
 
 import se.file14.procosmetics.api.cosmetic.CosmeticType;
 
-import java.util.List;
-
 /**
- * Represents a loot table that rewards cosmetic items.
+ * Represents a loot entry that rewards the player with a cosmetic.
+ *
+ * @see LootEntry
  */
-public interface CosmeticLoot extends LootTable<CosmeticType<?, ?>> {
+public interface CosmeticLoot extends LootEntry {
 
     /**
-     * Gets the list of cosmetic types that can be rewarded from this loot table.
+     * Gets the cosmetic type that will be unlocked when this loot is received.
      *
-     * @return the list of available cosmetic types
+     * @return the cosmetic type
      */
-    List<CosmeticType<?, ?>> getCosmeticTypes();
+    CosmeticType<?, ?> getCosmeticType();
 }

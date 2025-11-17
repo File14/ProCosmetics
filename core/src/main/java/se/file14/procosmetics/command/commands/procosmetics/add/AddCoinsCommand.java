@@ -52,7 +52,8 @@ public class AddCoinsCommand extends SubCommand<CommandSender> {
                             "command.add.coins",
                             Placeholder.unparsed("amount", String.valueOf(amount)),
                             Placeholder.unparsed("player", user.getName()),
-                            Placeholder.unparsed("coins", String.valueOf(user.getCoins()))
+                            Placeholder.unparsed("coins", String.valueOf(user.getCoins())),
+                            Placeholder.unparsed("currency", translator.translateRaw("generic.currency"))
                     ));
                 } else {
                     audience(sender).sendMessage(translator.translate("generic.error.database"));

@@ -58,129 +58,185 @@ menu:
 cosmetics:
   bloody_death:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:redstone"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   candy_cane_remains:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:sugar"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   confetti_death:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:melon_seeds"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   enchanted_death:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:book"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   fall_of_the_frost_lord:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:snowball"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   flame_death:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:blaze_powder"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   last_love:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:poppy"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   lightning_death:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:poppy"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   lava_death:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:lava_bucket"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   magical_death:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:purple_dye"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   musical_death:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:note_block"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   shadow_death:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:coal"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   sparkly_death:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:firework_rocket[!minecraft:fireworks]"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   wet_death:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:water_bucket"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
 # Do not edit this!
 config_version: 1

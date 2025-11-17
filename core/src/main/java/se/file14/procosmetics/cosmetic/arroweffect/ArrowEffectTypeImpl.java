@@ -27,6 +27,7 @@ import se.file14.procosmetics.api.cosmetic.registry.CosmeticCategory;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.cosmetic.CosmeticTypeImpl;
 
+import java.util.List;
 import java.util.function.Supplier;
 
 public class ArrowEffectTypeImpl extends CosmeticTypeImpl<ArrowEffectType, ArrowEffectBehavior> implements ArrowEffectType {
@@ -35,12 +36,12 @@ public class ArrowEffectTypeImpl extends CosmeticTypeImpl<ArrowEffectType, Arrow
                                CosmeticCategory<ArrowEffectType, ArrowEffectBehavior, ?> category,
                                Supplier<ArrowEffectBehavior> behaviorFactory,
                                boolean enabled,
-                               boolean findable,
                                boolean purchasable,
                                int cost,
                                CosmeticRarity rarity,
-                               ItemStack itemStack) {
-        super(key, category, behaviorFactory, enabled, findable, purchasable, cost, rarity, itemStack);
+                               ItemStack itemStack,
+                               List<String> treasureChests) {
+        super(key, category, behaviorFactory, enabled, purchasable, cost, rarity, itemStack, treasureChests);
     }
 
     @Override
@@ -65,11 +66,11 @@ public class ArrowEffectTypeImpl extends CosmeticTypeImpl<ArrowEffectType, Arrow
                     category,
                     factory,
                     enabled,
-                    findable,
                     purchasable,
                     cost,
                     rarity,
-                    itemStack
+                    itemStack,
+                    treasureChests
             );
         }
     }

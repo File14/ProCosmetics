@@ -28,12 +28,12 @@ import se.file14.procosmetics.cosmetic.CosmeticRarityImpl;
 import se.file14.procosmetics.util.EnumUtil;
 
 import javax.annotation.Nullable;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class CosmeticRarityRegistryImpl implements CosmeticRarityRegistry {
 
     private final Map<String, CosmeticRarity> rarities = new HashMap<>();
+    private final List<CosmeticRarity> sortedRarities = new ArrayList<>();
     private final ProCosmeticsPlugin plugin;
     private CosmeticRarity fallbackRarity;
 
@@ -89,6 +89,10 @@ public class CosmeticRarityRegistryImpl implements CosmeticRarityRegistry {
     @Override
     public void register(CosmeticRarity rarity) {
         rarities.put(rarity.getKey().toLowerCase(), rarity);
+
+        sortedRarities.remove(rarity);
+        sortedRarities.add(rarity);
+        sortedRarities.sort(Comparator.comparingInt(CosmeticRarity::getPriority));
     }
 
     @Override
@@ -105,5 +109,10 @@ public class CosmeticRarityRegistryImpl implements CosmeticRarityRegistry {
     @Override
     public CosmeticRarity getFallbackRarity() {
         return fallbackRarity;
+    }
+
+    @Override
+    public List<CosmeticRarity> getRarities() {
+        return sortedRarities;
     }
 }

@@ -58,488 +58,953 @@ menu:
 cosmetics:
   bat_blaster:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     cooldown: 5.0
     duration: 4.0
-    ammo:
-      purchasable: true
-      purchase_amount: 15
-      cost: 250
-      infinity: false
     item: "minecraft:iron_horse_armor[!minecraft:attribute_modifiers]"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+    ammo:
+      infinity: false
+      purchasable:
+        enable: true
+        amount: 15
+        cost: 250
+      treasure_chests:
+        common:
+          minimum_amount: 3
+          maximum_amount: 10
+        mythical:
+          minimum_amount: 5
+          maximum_amount: 15
+        legendary:
+          minimum_amount: 10
+          maximum_amount: 20
 
   cannon:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     cooldown: 20.0
     duration: 10.0
-    ammo:
-      purchasable: true
-      purchase_amount: 10
-      cost: 200
-      infinity: false
     item: "minecraft:coal"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+    ammo:
+      infinity: false
+      purchasable:
+        enable: true
+        amount: 10
+        cost: 200
+      treasure_chests:
+        common:
+          minimum_amount: 2
+          maximum_amount: 8
+        mythical:
+          minimum_amount: 4
+          maximum_amount: 12
+        legendary:
+          minimum_amount: 8
+          maximum_amount: 15
 
   chicken_parachute:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     cooldown: 20.0
-    ammo:
-      purchasable: true
-      purchase_amount: 10
-      cost: 250
-      infinity: false
     item: "minecraft:feather"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+    ammo:
+      infinity: false
+      purchasable:
+        enable: true
+        amount: 10
+        cost: 250
+      treasure_chests:
+        common:
+          minimum_amount: 2
+          maximum_amount: 8
+        mythical:
+          minimum_amount: 4
+          maximum_amount: 12
+        legendary:
+          minimum_amount: 8
+          maximum_amount: 15
 
   coin_party_bomb:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 20000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     cooldown: 50.0
     duration: 30.0
-    ammo:
-      purchasable: true
-      purchase_amount: 1
-      cost: 500
-      infinity: false
     # Specifies the number of coins a player receives for each coin collected. Coins drop at a rate of 20 per second.
     pickup_reward: 10
     item: "minecraft:sunflower"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+    ammo:
+      infinity: false
+      purchasable:
+        enable: true
+        amount: 1
+        cost: 500
+      treasure_chests:
+        common:
+          minimum_amount: 1
+          maximum_amount: 1
+        mythical:
+          minimum_amount: 1
+          maximum_amount: 1
+        legendary:
+          minimum_amount: 1
+          maximum_amount: 1
 
   confetti:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     cooldown: 0.3
-    ammo:
-      purchasable: true
-      purchase_amount: 50
-      cost: 100
-      infinity: false
     item: "minecraft:blaze_rod"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+    ammo:
+      infinity: false
+      purchasable:
+        enable: true
+        amount: 50
+        cost: 100
+      treasure_chests:
+        common:
+          minimum_amount: 10
+          maximum_amount: 30
+        mythical:
+          minimum_amount: 20
+          maximum_amount: 50
+        legendary:
+          minimum_amount: 40
+          maximum_amount: 80
 
   cowboy:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     cooldown: 15.0
-    ammo:
-      purchasable: true
-      purchase_amount: 30
-      cost: 100
-      infinity: false
     item: "minecraft:saddle"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+    ammo:
+      infinity: false
+      purchasable:
+        enable: true
+        amount: 30
+        cost: 100
+      treasure_chests:
+        common:
+          minimum_amount: 5
+          maximum_amount: 20
+        mythical:
+          minimum_amount: 10
+          maximum_amount: 30
+        legendary:
+          minimum_amount: 20
+          maximum_amount: 50
 
   detonator:
     enable: true
-    obtainable: true
-    rarity: "LEGENDARY"
-    purchasable: true
-    cost: 2000
+    rarity: "legendary"
+    purchasable:
+      enable: true
+      cost: 2000
     cooldown: 8.0
-    ammo:
-      purchasable: true
-      purchase_amount: 10
-      cost: 300
-      infinity: false
     item: "minecraft:lever"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+    ammo:
+      infinity: false
+      purchasable:
+        enable: true
+        amount: 10
+        cost: 300
+      treasure_chests:
+        common:
+          minimum_amount: 2
+          maximum_amount: 6
+        mythical:
+          minimum_amount: 4
+          maximum_amount: 10
+        legendary:
+          minimum_amount: 8
+          maximum_amount: 15
 
   disco_ball:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     cooldown: 50.0
     duration: 15.0
-    ammo:
-      purchasable: true
-      purchase_amount: 5
-      cost: 250
-      infinity: false
     item: "minecraft:blue_stained_glass"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+    ammo:
+      infinity: false
+      purchasable:
+        enable: true
+        amount: 5
+        cost: 250
+      treasure_chests:
+        common:
+          minimum_amount: 2
+          maximum_amount: 6
+        mythical:
+          minimum_amount: 4
+          maximum_amount: 10
+        legendary:
+          minimum_amount: 8
+          maximum_amount: 15
 
   diving_board:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     cooldown: 80.0
     duration: 60.0
-    ammo:
-      purchasable: true
-      purchase_amount: 10
-      cost: 200
-      infinity: false
     item: "minecraft:white_carpet"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+    ammo:
+      infinity: false
+      purchasable:
+        enable: true
+        amount: 10
+        cost: 200
+      treasure_chests:
+        common:
+          minimum_amount: 2
+          maximum_amount: 8
+        mythical:
+          minimum_amount: 4
+          maximum_amount: 12
+        legendary:
+          minimum_amount: 8
+          maximum_amount: 15
 
   ethereal_pearl:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     cooldown: 5.0
-    ammo:
-      purchasable: true
-      purchase_amount: 30
-      cost: 250
-      infinity: false
     item: "minecraft:ender_pearl"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+    ammo:
+      infinity: false
+      purchasable:
+        enable: true
+        amount: 30
+        cost: 250
+      treasure_chests:
+        common:
+          minimum_amount: 5
+          maximum_amount: 20
+        mythical:
+          minimum_amount: 10
+          maximum_amount: 30
+        legendary:
+          minimum_amount: 20
+          maximum_amount: 50
 
   explosive_sheep:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     cooldown: 18.0
     duration: 6.0
-    ammo:
-      purchasable: true
-      purchase_amount: 30
-      cost: 450
-      infinity: false
     item: "minecraft:red_wool"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+    ammo:
+      infinity: false
+      purchasable:
+        enable: true
+        amount: 30
+        cost: 450
+      treasure_chests:
+        common:
+          minimum_amount: 5
+          maximum_amount: 20
+        mythical:
+          minimum_amount: 10
+          maximum_amount: 30
+        legendary:
+          minimum_amount: 20
+          maximum_amount: 50
 
   flame_thrower:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     cooldown: 30.0
     duration: 10.0
-    ammo:
-      purchasable: true
-      purchase_amount: 10
-      cost: 200
-      infinity: false
     item: "minecraft:blaze_powder"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+    ammo:
+      infinity: false
+      purchasable:
+        enable: true
+        amount: 10
+        cost: 200
+      treasure_chests:
+        common:
+          minimum_amount: 2
+          maximum_amount: 8
+        mythical:
+          minimum_amount: 4
+          maximum_amount: 12
+        legendary:
+          minimum_amount: 8
+          maximum_amount: 15
 
   flesh_hook:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     cooldown: 2.0
-    ammo:
-      purchasable: true
-      purchase_amount: 30
-      cost: 350
-      infinity: false
     item: "minecraft:tripwire_hook"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+    ammo:
+      infinity: false
+      purchasable:
+        enable: true
+        amount: 30
+        cost: 350
+      treasure_chests:
+        common:
+          minimum_amount: 5
+          maximum_amount: 20
+        mythical:
+          minimum_amount: 10
+          maximum_amount: 30
+        legendary:
+          minimum_amount: 20
+          maximum_amount: 50
 
   fireworks:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     cooldown: 1.0
-    ammo:
-      purchasable: true
-      purchase_amount: 30
-      cost: 150
-      infinity: false
     item: "minecraft:firework_rocket[!minecraft:fireworks]"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+    ammo:
+      infinity: false
+      purchasable:
+        enable: true
+        amount: 30
+        cost: 150
+      treasure_chests:
+        common:
+          minimum_amount: 5
+          maximum_amount: 20
+        mythical:
+          minimum_amount: 10
+          maximum_amount: 30
+        legendary:
+          minimum_amount: 20
+          maximum_amount: 50
 
   grappling_hook:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     cooldown: 1.0
-    ammo:
-      purchasable: true
-      purchase_amount: 50
-      cost: 300
-      infinity: false
     item: "minecraft:fishing_rod"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+    ammo:
+      infinity: false
+      purchasable:
+        enable: true
+        amount: 50
+        cost: 300
+      treasure_chests:
+        common:
+          minimum_amount: 10
+          maximum_amount: 30
+        mythical:
+          minimum_amount: 20
+          maximum_amount: 50
+        legendary:
+          minimum_amount: 40
+          maximum_amount: 80
 
   hot_air_balloon:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     cooldown: 60.0
     duration: 40.0
-    ammo:
-      purchasable: true
-      purchase_amount: 10
-      cost: 200
-      infinity: false
     item: "minecraft:campfire"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+    ammo:
+      infinity: false
+      purchasable:
+        enable: true
+        amount: 10
+        cost: 200
+      treasure_chests:
+        common:
+          minimum_amount: 2
+          maximum_amount: 8
+        mythical:
+          minimum_amount: 4
+          maximum_amount: 12
+        legendary:
+          minimum_amount: 8
+          maximum_amount: 15
 
   hot_tub:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     cooldown: 80.0
     duration: 60.0
-    ammo:
-      purchasable: true
-      purchase_amount: 10
-      cost: 200
-      infinity: false
     item: "minecraft:magma_block"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+    ammo:
+      infinity: false
+      purchasable:
+        enable: true
+        amount: 10
+        cost: 200
+      treasure_chests:
+        common:
+          minimum_amount: 2
+          maximum_amount: 8
+        mythical:
+          minimum_amount: 4
+          maximum_amount: 12
+        legendary:
+          minimum_amount: 8
+          maximum_amount: 15
 
   melon_launcher:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     cooldown: 4.0
-    ammo:
-      purchasable: true
-      purchase_amount: 20
-      cost: 150
-      infinity: false
     item: "minecraft:melon"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+    ammo:
+      infinity: false
+      purchasable:
+        enable: true
+        amount: 20
+        cost: 150
+      treasure_chests:
+        common:
+          minimum_amount: 4
+          maximum_amount: 15
+        mythical:
+          minimum_amount: 8
+          maximum_amount: 25
+        legendary:
+          minimum_amount: 15
+          maximum_amount: 40
 
   merry_go_round:
     enable: true
-    obtainable: true
-    rarity: "LEGENDARY"
-    purchasable: true
-    cost: 2000
+    rarity: "legendary"
+    purchasable:
+      enable: true
+      cost: 2000
     cooldown: 80.0
     duration: 60.0
-    ammo:
-      purchasable: true
-      purchase_amount: 5
-      cost: 600
-      infinity: false
     item: "minecraft:minecart"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+    ammo:
+      infinity: false
+      purchasable:
+        enable: true
+        amount: 5
+        cost: 600
+      treasure_chests:
+        common:
+          minimum_amount: 1
+          maximum_amount: 3
+        mythical:
+          minimum_amount: 2
+          maximum_amount: 5
+        legendary:
+          minimum_amount: 4
+          maximum_amount: 8
 
   paintball:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     cooldown: 0.3
-    ammo:
-      purchasable: true
-      purchase_amount: 30
-      cost: 100
-      infinity: false
     item: "minecraft:golden_horse_armor[!minecraft:attribute_modifiers]"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+    ammo:
+      infinity: false
+      purchasable:
+        enable: true
+        amount: 30
+        cost: 100
+      treasure_chests:
+        common:
+          minimum_amount: 5
+          maximum_amount: 20
+        mythical:
+          minimum_amount: 10
+          maximum_amount: 30
+        legendary:
+          minimum_amount: 20
+          maximum_amount: 50
 
   parkour_spiral:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     cooldown: 80.0
     duration: 60.0
-    ammo:
-      purchasable: true
-      purchase_amount: 10
-      cost: 200
-      infinity: false
     item: "minecraft:lime_concrete"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+    ammo:
+      infinity: false
+      purchasable:
+        enable: true
+        amount: 10
+        cost: 200
+      treasure_chests:
+        common:
+          minimum_amount: 2
+          maximum_amount: 8
+        mythical:
+          minimum_amount: 4
+          maximum_amount: 12
+        legendary:
+          minimum_amount: 8
+          maximum_amount: 15
 
   party_popper:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     cooldown: 20.0
     duration: 12.0
-    ammo:
-      purchasable: true
-      purchase_amount: 10
-      cost: 300
-      infinity: false
     item: "minecraft:cake"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+    ammo:
+      infinity: false
+      purchasable:
+        enable: true
+        amount: 10
+        cost: 300
+      treasure_chests:
+        common:
+          minimum_amount: 2
+          maximum_amount: 8
+        mythical:
+          minimum_amount: 4
+          maximum_amount: 12
+        legendary:
+          minimum_amount: 8
+          maximum_amount: 15
 
   rocket:
     enable: true
-    obtainable: true
-    rarity: "LEGENDARY"
-    purchasable: true
-    cost: 2000
+    rarity: "legendary"
+    purchasable:
+      enable: true
+      cost: 2000
     cooldown: 30.0
-    ammo:
-      purchasable: true
-      purchase_amount: 5
-      cost: 500
-      infinity: false
     item: "minecraft:iron_block"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+    ammo:
+      infinity: false
+      purchasable:
+        enable: true
+        amount: 5
+        cost: 500
+      treasure_chests:
+        common:
+          minimum_amount: 1
+          maximum_amount: 3
+        mythical:
+          minimum_amount: 2
+          maximum_amount: 5
+        legendary:
+          minimum_amount: 4
+          maximum_amount: 8
 
   shower:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     cooldown: 80.0
     duration: 60.0
-    ammo:
-      purchasable: true
-      purchase_amount: 10
-      cost: 200
-      infinity: false
     item: "minecraft:water_bucket"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+    ammo:
+      infinity: false
+      purchasable:
+        enable: true
+        amount: 10
+        cost: 200
+      treasure_chests:
+        common:
+          minimum_amount: 2
+          maximum_amount: 8
+        mythical:
+          minimum_amount: 4
+          maximum_amount: 12
+        legendary:
+          minimum_amount: 8
+          maximum_amount: 15
 
   slide:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     cooldown: 80.0
     duration: 60.0
-    ammo:
-      purchasable: true
-      purchase_amount: 10
-      cost: 200
-      infinity: false
     item: "minecraft:warped_stairs"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+    ammo:
+      infinity: false
+      purchasable:
+        enable: true
+        amount: 10
+        cost: 200
+      treasure_chests:
+        common:
+          minimum_amount: 2
+          maximum_amount: 8
+        mythical:
+          minimum_amount: 4
+          maximum_amount: 12
+        legendary:
+          minimum_amount: 8
+          maximum_amount: 15
 
   soccer_ball:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     cooldown: 70.0
     duration: 60.0
-    ammo:
-      purchasable: true
-      purchase_amount: 20
-      cost: 200
-      infinity: false
     item: "minecraft:slime_block"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+    ammo:
+      infinity: false
+      purchasable:
+        enable: true
+        amount: 20
+        cost: 200
+      treasure_chests:
+        common:
+          minimum_amount: 4
+          maximum_amount: 15
+        mythical:
+          minimum_amount: 8
+          maximum_amount: 25
+        legendary:
+          minimum_amount: 15
+          maximum_amount: 40
 
   swing:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     cooldown: 80.0
     duration: 60.0
-    ammo:
-      purchasable: true
-      purchase_amount: 10
-      cost: 200
-      infinity: false
     item: "minecraft:string"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+    ammo:
+      infinity: false
+      purchasable:
+        enable: true
+        amount: 10
+        cost: 200
+      treasure_chests:
+        common:
+          minimum_amount: 2
+          maximum_amount: 8
+        mythical:
+          minimum_amount: 4
+          maximum_amount: 12
+        legendary:
+          minimum_amount: 8
+          maximum_amount: 15
 
   tnt:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     cooldown: 3.0
-    ammo:
-      purchasable: true
-      purchase_amount: 10
-      cost: 250
-      infinity: false
     item: "minecraft:tnt"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+    ammo:
+      infinity: false
+      purchasable:
+        enable: true
+        amount: 10
+        cost: 250
+      treasure_chests:
+        common:
+          minimum_amount: 2
+          maximum_amount: 8
+        mythical:
+          minimum_amount: 4
+          maximum_amount: 12
+        legendary:
+          minimum_amount: 8
+          maximum_amount: 15
 
   trampoline:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     cooldown: 40.0
     duration: 35.0
-    ammo:
-      purchasable: true
-      purchase_amount: 10
-      cost: 500
-      infinity: false
     item: "minecraft:black_wool"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+    ammo:
+      infinity: false
+      purchasable:
+        enable: true
+        amount: 10
+        cost: 500
+      treasure_chests:
+        common:
+          minimum_amount: 2
+          maximum_amount: 8
+        mythical:
+          minimum_amount: 4
+          maximum_amount: 12
+        legendary:
+          minimum_amount: 8
+          maximum_amount: 15
 
   water_gun:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     cooldown: 1.5
-    ammo:
-      purchasable: true
-      purchase_amount: 10
-      cost: 200
-      infinity: false
     item: "minecraft:soul_lantern"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+    ammo:
+      infinity: false
+      purchasable:
+        enable: true
+        amount: 10
+        cost: 200
+      treasure_chests:
+        common:
+          minimum_amount: 2
+          maximum_amount: 8
+        mythical:
+          minimum_amount: 4
+          maximum_amount: 12
+        legendary:
+          minimum_amount: 8
+          maximum_amount: 15
 
   wither_missile:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     cooldown: 15.0
     duration: 10.0
-    ammo:
-      purchasable: true
-      purchase_amount: 15
-      cost: 300
-      infinity: false
     item: "minecraft:wither_skeleton_skull"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+    ammo:
+      infinity: false
+      purchasable:
+        enable: true
+        amount: 15
+        cost: 300
+      treasure_chests:
+        common:
+          minimum_amount: 3
+          maximum_amount: 10
+        mythical:
+          minimum_amount: 5
+          maximum_amount: 15
+        legendary:
+          minimum_amount: 10
+          maximum_amount: 20
 
 # Do not edit this!
 config_version: 1

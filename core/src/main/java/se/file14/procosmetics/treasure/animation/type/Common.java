@@ -44,7 +44,7 @@ public class Common extends TreasureChestAnimation {
                 Location location = platform.getChestLocations().get(chests++).clone().add(0.0d, 3.0d, 0.0d);
                 location.setDirection(platform.getCenter().toVector().subtract(location.toVector()));
 
-                spawnChestArmorstand(Material.CHEST, location);
+                spawnChest(Material.CHEST, location);
             } else {
                 animationState = AnimationState.BUILT;
             }
@@ -54,7 +54,7 @@ public class Common extends TreasureChestAnimation {
     @Override
     public void onTickUpdate() {
         if (animationState == AnimationState.SPAWNING_CHESTS || animationState == AnimationState.BUILT) {
-            Iterator<NMSEntity> iterator = armorStandChests.iterator();
+            Iterator<NMSEntity> iterator = blockDisplayChests.iterator();
 
             while (iterator.hasNext()) {
                 NMSEntity nmsEntity = iterator.next();

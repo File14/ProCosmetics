@@ -113,6 +113,8 @@ public interface CategoryRegistries {
     // --- Built-in category accessors ---
 
     /**
+     * Gets the arrow effects cosmetic category.
+     *
      * @return the built-in {@code arrow_effects} category, or {@code null} if not registered
      */
     default CosmeticCategory<ArrowEffectType, ArrowEffectBehavior, ArrowEffectType.Builder> arrowEffects() {
@@ -120,6 +122,8 @@ public interface CategoryRegistries {
     }
 
     /**
+     * Gets the balloons cosmetic category.
+     *
      * @return the built-in {@code balloons} category, or {@code null} if not registered
      */
     default CosmeticCategory<BalloonType, BalloonBehavior, BalloonType.Builder> balloons() {
@@ -127,6 +131,8 @@ public interface CategoryRegistries {
     }
 
     /**
+     * Gets the banners cosmetic category.
+     *
      * @return the built-in {@code banners} category, or {@code null} if not registered
      */
     default CosmeticCategory<BannerType, BannerBehavior, BannerType.Builder> banners() {
@@ -134,6 +140,8 @@ public interface CategoryRegistries {
     }
 
     /**
+     * Gets the death effects cosmetic category.
+     *
      * @return the built-in {@code death_effects} category, or {@code null} if not registered
      */
     default CosmeticCategory<DeathEffectType, DeathEffectBehavior, DeathEffectType.Builder> deathEffects() {
@@ -141,6 +149,8 @@ public interface CategoryRegistries {
     }
 
     /**
+     * Gets the emotes cosmetic category.
+     *
      * @return the built-in {@code emotes} category, or {@code null} if not registered
      */
     default CosmeticCategory<EmoteType, EmoteBehavior, EmoteType.Builder> emotes() {
@@ -148,6 +158,8 @@ public interface CategoryRegistries {
     }
 
     /**
+     * Gets the gadgets cosmetic category.
+     *
      * @return the built-in {@code gadgets} category, or {@code null} if not registered
      */
     default CosmeticCategory<GadgetType, GadgetBehavior, GadgetType.Builder> gadgets() {
@@ -155,6 +167,8 @@ public interface CategoryRegistries {
     }
 
     /**
+     * Gets the miniatures cosmetic category.
+     *
      * @return the built-in {@code miniatures} category, or {@code null} if not registered
      */
     default CosmeticCategory<MiniatureType, MiniatureBehavior, MiniatureType.Builder> miniatures() {
@@ -162,6 +176,8 @@ public interface CategoryRegistries {
     }
 
     /**
+     * Gets the morphs cosmetic category.
+     *
      * @return the built-in {@code morphs} category, or {@code null} if not registered
      */
     default CosmeticCategory<MorphType, MorphBehavior, MorphType.Builder> morphs() {
@@ -169,6 +185,8 @@ public interface CategoryRegistries {
     }
 
     /**
+     * Gets the mounts cosmetic category.
+     *
      * @return the built-in {@code mounts} category, or {@code null} if not registered
      */
     default CosmeticCategory<MountType, MountBehavior, MountType.Builder> mounts() {
@@ -176,6 +194,8 @@ public interface CategoryRegistries {
     }
 
     /**
+     * Gets the music cosmetic category.
+     *
      * @return the built-in {@code music} category, or {@code null} if not registered
      */
     default CosmeticCategory<MusicType, MusicBehavior, MusicType.Builder> music() {
@@ -183,6 +203,8 @@ public interface CategoryRegistries {
     }
 
     /**
+     * Gets the particle effects cosmetic category.
+     *
      * @return the built-in {@code particle_effects} category, or {@code null} if not registered
      */
     default CosmeticCategory<ParticleEffectType, ParticleEffectBehavior, ParticleEffectType.Builder> particleEffects() {
@@ -190,6 +212,8 @@ public interface CategoryRegistries {
     }
 
     /**
+     * Gets the pets cosmetic category.
+     *
      * @return the built-in {@code pets} category, or {@code null} if not registered
      */
     default CosmeticCategory<PetType, PetBehavior, PetType.Builder> pets() {
@@ -197,6 +221,8 @@ public interface CategoryRegistries {
     }
 
     /**
+     * Gets the statuses cosmetic category.
+     *
      * @return the built-in {@code statuses} category, or {@code null} if not registered
      */
     default CosmeticCategory<StatusType, StatusBehavior, StatusType.Builder> statuses() {

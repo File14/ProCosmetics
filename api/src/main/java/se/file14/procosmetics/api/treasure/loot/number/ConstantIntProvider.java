@@ -15,26 +15,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package se.file14.procosmetics.api.treasure.loot;
-
-import se.file14.procosmetics.api.cosmetic.gadget.GadgetType;
+package se.file14.procosmetics.api.treasure.loot.number;
 
 /**
- * Represents a loot entry containing gadget ammunition.
+ * An {@link IntProvider} that always returns the same constant value.
+ *
+ * @see IntProvider
  */
-public interface AmmoLootEntry extends LootEntry {
+public interface ConstantIntProvider extends IntProvider {
 
-    /**
-     * Gets the gadget type that this ammo is for.
-     *
-     * @return the gadget type receiving ammunition
-     */
-    GadgetType getAmmo();
-
-    /**
-     * Gets the amount of ammunition.
-     *
-     * @return the ammo amount
-     */
-    int getAmount();
 }

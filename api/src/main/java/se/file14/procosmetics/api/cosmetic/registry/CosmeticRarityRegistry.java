@@ -17,8 +17,11 @@
  */
 package se.file14.procosmetics.api.cosmetic.registry;
 
+import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.Nullable;
 import se.file14.procosmetics.api.cosmetic.CosmeticRarity;
+
+import java.util.List;
 
 /**
  * Manages all registered {@link CosmeticRarity} instances.
@@ -28,6 +31,7 @@ public interface CosmeticRarityRegistry {
     /**
      * Loads all rarities from the configuration.
      */
+    @ApiStatus.Internal
     void load();
 
     /**
@@ -60,4 +64,11 @@ public interface CosmeticRarityRegistry {
      * @return the fallback rarity
      */
     CosmeticRarity getFallbackRarity();
+
+    /**
+     * Gets the list of current rarities in sorted from lowest to highest priority.
+     *
+     * @return the rarities
+     */
+    List<CosmeticRarity> getRarities();
 }

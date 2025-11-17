@@ -68,311 +68,423 @@ menu:
 cosmetics:
   bat:
     enable: true
-    obtainable: true
-    rarity: "LEGENDARY"
-    purchasable: true
-    cost: 2000
+    rarity: "legendary"
+    purchasable:
+      enable: true
+      cost: 2000
     ability: true
     cooldown: 1.0
     item: "minecraft:bat_spawn_egg"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   blaze:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     ability: true
     cooldown: 5.0
     item: "minecraft:blaze_powder"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   block:
     enable: true
-    obtainable: true
-    rarity: "LEGENDARY"
-    purchasable: true
-    cost: 2000
+    rarity: "legendary"
+    purchasable:
+      enable: true
+      cost: 2000
     ability: true
     cooldown: 5.0
     item: "minecraft:emerald_block"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   bunny:
     enable: true
-    obtainable: true
-    rarity: "LEGENDARY"
-    purchasable: true
-    cost: 2000
+    rarity: "legendary"
+    purchasable:
+      enable: true
+      cost: 2000
     ability: true
     cooldown: 0.0
     item: "minecraft:egg"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   cat:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     ability: true
     cooldown: 2.0
     item: "minecraft:tropical_fish"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   cave_spider:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     ability: true
     cooldown: 10.0
     item: "minecraft:spider_eye"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   chicken:
     enable: true
-    obtainable: true
-    rarity: "LEGENDARY"
-    purchasable: true
-    cost: 2000
+    rarity: "legendary"
+    purchasable:
+      enable: true
+      cost: 2000
     ability: true
     cooldown: 2.0
     item: "minecraft:feather"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   cow:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     ability: true
     cooldown: 2.0
     item: "minecraft:leather"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   creeper:
     enable: true
-    obtainable: true
-    rarity: "LEGENDARY"
-    purchasable: true
-    cost: 2000
+    rarity: "legendary"
+    purchasable:
+      enable: true
+      cost: 2000
     ability: true
     cooldown: 20.0
     item: "minecraft:creeper_head[!minecraft:rarity]"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   dog:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     ability: true
     cooldown: 2.0
     item: "minecraft:bone"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   donkey:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     ability: true
     cooldown: 2.0
     item: "minecraft:lead"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   elder_guardian:
     enable: true
-    obtainable: true
-    rarity: "LEGENDARY"
-    purchasable: true
-    cost: 2000
+    rarity: "legendary"
+    purchasable:
+      enable: true
+      cost: 2000
     ability: true
     cooldown: 30.0
     item: "minecraft:prismarine_shard"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   enderman:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     ability: true
     cooldown: 8.0
     item: "minecraft:ender_pearl"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   iron_golem:
     enable: true
-    obtainable: true
-    rarity: "LEGENDARY"
-    purchasable: true
-    cost: 2000
+    rarity: "legendary"
+    purchasable:
+      enable: true
+      cost: 2000
     ability: true
     cooldown: 15.0
     item: "minecraft:iron_block"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   magma_cube:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     ability: true
     cooldown: 0.0
     item: "minecraft:netherrack"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   mushroom_cow:
     enable: true
-    obtainable: true
-    rarity: "LEGENDARY"
-    purchasable: true
-    cost: 2000
+    rarity: "legendary"
+    purchasable:
+      enable: true
+      cost: 2000
     ability: true
     cooldown: 2.0
     item: "minecraft:red_mushroom"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   olaf:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     ability: true
     cooldown: 8.0
     item: "minecraft:snowball"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   pig:
     enable: true
-    obtainable: true
-    rarity: "LEGENDARY"
-    purchasable: true
-    cost: 2000
+    rarity: "legendary"
+    purchasable:
+      enable: true
+      cost: 2000
     ability: true
     cooldown: 2.0
     item: "minecraft:porkchop"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   piglin:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     ability: true
     cooldown: 2.0
     item: "minecraft:golden_sword"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   sheep:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     ability: true
     cooldown: 2.0
     item: "minecraft:white_wool"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   skeleton:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     ability: true
     cooldown: 10.0
     item: "minecraft:arrow"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   slime:
     enable: true
-    obtainable: true
-    rarity: "LEGENDARY"
-    purchasable: true
-    cost: 2000
+    rarity: "legendary"
+    purchasable:
+      enable: true
+      cost: 2000
     ability: true
     cooldown: 10.0
     item: "minecraft:slime_block"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   spider:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     ability: true
     cooldown: 20.0
     item: "minecraft:cobweb"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   squid:
     enable: true
-    obtainable: true
-    rarity: "LEGENDARY"
-    purchasable: true
-    cost: 2000
+    rarity: "legendary"
+    purchasable:
+      enable: true
+      cost: 2000
     ability: true
     cooldown: 20.0
     item: "minecraft:ink_sac"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   villager:
     enable: true
-    obtainable: true
-    rarity: "LEGENDARY"
-    purchasable: true
-    cost: 2000
+    rarity: "legendary"
+    purchasable:
+      enable: true
+      cost: 2000
     ability: true
     cooldown: 2.0
     item: "minecraft:emerald"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   witch:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     ability: true
     cooldown: 5.0
     item: "minecraft:potion[!minecraft:potion_contents]"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   wither:
     enable: true
-    obtainable: true
-    rarity: "LEGENDARY"
-    purchasable: true
-    cost: 2000
+    rarity: "legendary"
+    purchasable:
+      enable: true
+      cost: 2000
     ability: true
     cooldown: 12.0
     item: "minecraft:wither_skeleton_skull[!minecraft:rarity]"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   zombie:
     enable: true
-    obtainable: true
-    rarity: "LEGENDARY"
-    purchasable: true
-    cost: 2000
+    rarity: "legendary"
+    purchasable:
+      enable: true
+      cost: 2000
     ability: true
     cooldown: 20.0
     item: "minecraft:zombie_head[!minecraft:rarity]"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
 # Do not edit this!
 config_version: 1

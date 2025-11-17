@@ -34,6 +34,8 @@ import se.file14.procosmetics.api.cosmetic.registry.CosmeticCategory;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.util.item.ItemBuilderImpl;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Supplier;
 import java.util.logging.Level;
 
@@ -54,16 +56,21 @@ public abstract class CosmeticTypeImpl<T extends CosmeticType<T, B>,
     private final String legacyPermission;
     private final String purchasePermission;
     private final boolean enabled;
-    private boolean findable;
     private boolean purchasable;
     private int cost;
     private final CosmeticRarity rarity;
     protected ItemBuilderImpl itemBuilder;
+    protected List<String> treasureChests;
 
-    public CosmeticTypeImpl(String key, CosmeticCategory<T, B, ?> category,
+    public CosmeticTypeImpl(String key,
+                            CosmeticCategory<T, B, ?> category,
                             Supplier<B> behaviorFactory,
-                            boolean enabled, boolean findable, boolean purchasable, int cost,
-                            CosmeticRarity rarity, ItemStack itemStack) {
+                            boolean enabled,
+                            boolean purchasable,
+                            int cost,
+                            CosmeticRarity rarity,
+                            ItemStack itemStack,
+                            List<String> treasureChests) {
         this.key = key;
         this.category = category;
         this.behaviorFactory = behaviorFactory;
@@ -71,11 +78,11 @@ public abstract class CosmeticTypeImpl<T extends CosmeticType<T, B>,
         this.legacyPermission = permission.replace("_", "-");
         this.purchasePermission = "procosmetics.purchase." + category.getKey() + "." + key;
         this.enabled = enabled;
-        this.findable = findable;
         this.purchasable = purchasable;
         this.cost = cost;
         this.rarity = rarity;
         this.itemBuilder = new ItemBuilderImpl(itemStack).setUnbreakable();
+        this.treasureChests = new ArrayList<>(treasureChests);
     }
 
     protected abstract Cosmetic<T, B> createInstance(ProCosmeticsPlugin plugin, User user, B behavior);
@@ -105,7 +112,9 @@ public abstract class CosmeticTypeImpl<T extends CosmeticType<T, B>,
     @Override
     public TagResolver getResolvers(User user) {
         return TagResolver.resolver(
-                Placeholder.unparsed("cost", String.valueOf(cost))
+                Placeholder.unparsed("cost", String.valueOf(cost)),
+                Placeholder.unparsed("currency", user.translateRaw("generic.currency")),
+                rarity.getResolvers(user)
         );
     }
 
@@ -138,15 +147,6 @@ public abstract class CosmeticTypeImpl<T extends CosmeticType<T, B>,
     }
 
     @Override
-    public void setFindable(boolean findable) {
-        this.findable = findable;
-    }
-
-    public boolean isFindable() {
-        return findable;
-    }
-
-    @Override
     public void setPurchasable(boolean purchasable) {
         this.purchasable = purchasable;
     }
@@ -167,6 +167,11 @@ public abstract class CosmeticTypeImpl<T extends CosmeticType<T, B>,
     }
 
     @Override
+    public CosmeticRarity getRarity() {
+        return rarity;
+    }
+
+    @Override
     public ItemStack getItemStack() {
         return itemBuilder.getItemStack();
     }
@@ -176,8 +181,8 @@ public abstract class CosmeticTypeImpl<T extends CosmeticType<T, B>,
     }
 
     @Override
-    public CosmeticRarity getRarity() {
-        return rarity;
+    public List<String> getTreasureChests() {
+        return treasureChests;
     }
 
     public static abstract class BuilderImpl<T extends CosmeticType<T, B>,
@@ -191,9 +196,9 @@ public abstract class CosmeticTypeImpl<T extends CosmeticType<T, B>,
         protected ItemStack itemStack;
         protected CosmeticRarity rarity;
         protected boolean enabled = true;
-        protected boolean findable = true;
         protected boolean purchasable = true;
         protected int cost = 0;
+        protected List<String> treasureChests = new ArrayList<>();
         protected Supplier<B> factory;
 
         public BuilderImpl(String key, CosmeticCategory<T, B, ?> category) {
@@ -245,11 +250,11 @@ public abstract class CosmeticTypeImpl<T extends CosmeticType<T, B>,
             String path = getPath();
 
             this.enabled = config.getBoolean(path + "enable");
-            this.findable = config.getBoolean(path + "obtainable");
-            this.purchasable = config.getBoolean(path + "purchasable");
-            this.cost = config.getInt(path + "cost");
+            this.purchasable = config.getBoolean(path + "purchasable.enable");
+            this.cost = config.getInt(path + "purchasable.cost");
             this.rarity = PLUGIN.getCosmeticRarityRegistry().getSafely(config.getString(path + "rarity"));
             this.itemStack = new ItemBuilderImpl(config, path).getItemStack();
+            this.treasureChests = config.getStringList(path + "treasure_chests");
 
             return self();
         }
@@ -273,12 +278,6 @@ public abstract class CosmeticTypeImpl<T extends CosmeticType<T, B>,
         }
 
         @Override
-        public S findable(boolean findable) {
-            this.findable = findable;
-            return self();
-        }
-
-        @Override
         public S purchasable(boolean purchasable) {
             this.purchasable = purchasable;
             return self();
@@ -287,6 +286,12 @@ public abstract class CosmeticTypeImpl<T extends CosmeticType<T, B>,
         @Override
         public S cost(int cost) {
             this.cost = cost;
+            return self();
+        }
+
+        @Override
+        public S treasureChests(List<String> chests) {
+            this.treasureChests = new ArrayList<>(chests);
             return self();
         }
 

@@ -55,10 +55,10 @@ menu:
 cosmetics:
   allay:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     entity: "ALLAY"
     baby: false
     scale: 1.0
@@ -68,13 +68,17 @@ cosmetics:
       item: "minecraft:diamond"
     item: "minecraft:ghast_tear"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   armadillo:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     entity: "ARMADILLO"
     baby: true
     scale: 1.0
@@ -84,13 +88,17 @@ cosmetics:
       item: "minecraft:diamond"
     item: "minecraft:armadillo_scute"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   axolotl:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     entity: "AXOLOTL"
     baby: true
     scale: 1.0
@@ -100,13 +108,17 @@ cosmetics:
       item: "minecraft:diamond"
     item: "minecraft:axolotl_bucket"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   bee:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     entity: "BEE"
     baby: true
     scale: 1.0
@@ -116,13 +128,17 @@ cosmetics:
       item: "minecraft:honeycomb"
     item: "minecraft:honeycomb"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   body_guard:
     enable: true
-    obtainable: true
-    rarity: "LEGENDARY"
-    purchasable: true
-    cost: 2000
+    rarity: "legendary"
+    purchasable:
+      enable: true
+      cost: 2000
     entity: "IRON_GOLEM"
     baby: false
     scale: 1.0
@@ -132,13 +148,17 @@ cosmetics:
       item: "minecraft:iron_ingot"
     item: "minecraft:poppy"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   calf:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     entity: "COW"
     baby: true
     scale: 1.0
@@ -148,13 +168,17 @@ cosmetics:
       item: "minecraft:milk_bucket"
     item: "minecraft:milk_bucket"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   camel:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     entity: "CAMEL"
     baby: true
     scale: 1.0
@@ -164,13 +188,17 @@ cosmetics:
       item: "minecraft:diamond"
     item: "minecraft:sand"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   cave_spider:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     entity: "CAVE_SPIDER"
     baby: false
     scale: 1.0
@@ -180,13 +208,17 @@ cosmetics:
       item: "minecraft:cobweb"
     item: "minecraft:spider_eye"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   chicken:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     entity: "CHICKEN"
     baby: true
     scale: 1.0
@@ -196,13 +228,17 @@ cosmetics:
       item: "minecraft:egg"
     item: "minecraft:feather"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   colorful_lamb:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     entity: "SHEEP"
     baby: true
     scale: 1.0
@@ -212,13 +248,17 @@ cosmetics:
       item: "minecraft:white_wool"
     item: "minecraft:white_wool"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   easter_bunny:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     entity: "RABBIT"
     baby: true
     scale: 1.0
@@ -228,13 +268,17 @@ cosmetics:
       item: "minecraft:egg"
     item: "minecraft:carrot"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   elf:
     enable: true
-    obtainable: true
-    rarity: "LEGENDARY"
-    purchasable: true
-    cost: 2000
+    rarity: "legendary"
+    purchasable:
+      enable: true
+      cost: 2000
     entity: "ZOMBIE"
     baby: true
     scale: 1.0
@@ -244,13 +288,17 @@ cosmetics:
       item: "minecraft:diamond"
     item: "minecraft:emerald"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   endermite:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     entity: "ENDERMITE"
     baby: true
     scale: 1.0
@@ -260,13 +308,17 @@ cosmetics:
       item: "minecraft:diamond"
     item: "minecraft:ender_pearl"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   fox:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     entity: "FOX"
     baby: true
     scale: 1.0
@@ -276,13 +328,17 @@ cosmetics:
       item: "minecraft:diamond"
     item: "minecraft:orange_dye"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   frog:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     entity: "FROG"
     baby: true
     scale: 1.0
@@ -292,13 +348,17 @@ cosmetics:
       item: "minecraft:diamond"
     item: "minecraft:slime_ball"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   goat:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     entity: "GOAT"
     baby: true
     scale: 1.0
@@ -308,13 +368,17 @@ cosmetics:
       item: "minecraft:diamond"
     item: "minecraft:milk_bucket"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   hoglin:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     entity: "HOGLIN"
     baby: true
     scale: 1.0
@@ -324,13 +388,17 @@ cosmetics:
       item: "minecraft:diamond"
     item: "minecraft:raw_gold"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   kitten:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     entity: "CAT"
     baby: true
     scale: 1.0
@@ -340,13 +408,17 @@ cosmetics:
       item: "minecraft:tropical_fish"
     item: "minecraft:cod"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   llama:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     entity: "LLAMA"
     baby: true
     scale: 1.0
@@ -356,13 +428,17 @@ cosmetics:
       item: "minecraft:diamond"
     item: "minecraft:lead"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   mushroom_calf:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     entity: "MOOSHROOM"
     baby: true
     scale: 1.0
@@ -372,13 +448,17 @@ cosmetics:
       item: "minecraft:red_mushroom"
     item: "minecraft:red_mushroom"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   panda:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     entity: "PANDA"
     baby: true
     scale: 1.0
@@ -388,13 +468,17 @@ cosmetics:
       item: "minecraft:bamboo"
     item: "minecraft:bamboo"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   parrot:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     entity: "PARROT"
     baby: false
     scale: 1.0
@@ -404,13 +488,17 @@ cosmetics:
       item: "minecraft:diamond"
     item: "minecraft:feather"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   piggy:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     entity: "PIG"
     baby: true
     scale: 1.0
@@ -420,13 +508,17 @@ cosmetics:
       item: "minecraft:porkchop"
     item: "minecraft:porkchop"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   piglin:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     entity: "PIGLIN"
     baby: true
     scale: 1.0
@@ -436,13 +528,17 @@ cosmetics:
       item: "minecraft:diamond"
     item: "minecraft:gold_ingot"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   polar_bear:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     entity: "POLAR_BEAR"
     baby: true
     scale: 1.0
@@ -452,13 +548,17 @@ cosmetics:
       item: "minecraft:diamond"
     item: "minecraft:packed_ice"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   puppy:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     entity: "WOLF"
     baby: true
     scale: 1.0
@@ -468,13 +568,17 @@ cosmetics:
       item: "minecraft:bone"
     item: "minecraft:bone"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   santa_claus:
     enable: true
-    obtainable: true
-    rarity: "LEGENDARY"
-    purchasable: true
-    cost: 2000
+    rarity: "legendary"
+    purchasable:
+      enable: true
+      cost: 2000
     entity: "ZOMBIE"
     baby: false
     scale: 1.0
@@ -484,13 +588,17 @@ cosmetics:
       item: "minecraft:diamond"
     item: "minecraft:redstone"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   silverfish:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     entity: "SILVERFISH"
     baby: false
     scale: 1.0
@@ -500,13 +608,17 @@ cosmetics:
       item: "minecraft:diamond"
     item: "minecraft:stone_button"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   sniffer:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     entity: "SNIFFER"
     baby: true
     scale: 1.0
@@ -516,13 +628,17 @@ cosmetics:
       item: "minecraft:diamond"
     item: "minecraft:sniffer_egg[!minecraft:rarity]"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   turtle:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     entity: "TURTLE"
     baby: false
     scale: 1.0
@@ -532,13 +648,17 @@ cosmetics:
       item: "minecraft:diamond"
     item: "minecraft:turtle_helmet[!minecraft:attribute_modifiers]"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   villager:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     entity: "VILLAGER"
     baby: true
     scale: 1.0
@@ -548,13 +668,17 @@ cosmetics:
       item: "minecraft:emerald"
     item: "minecraft:emerald"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   zombie_villager:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     entity: "ZOMBIE_VILLAGER"
     baby: true
     scale: 1.0
@@ -564,6 +688,10 @@ cosmetics:
       item: "minecraft:rotten_flesh"
     item: "minecraft:rotten_flesh"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
 # Do not edit this!
 config_version: 1

@@ -20,7 +20,6 @@ package se.file14.procosmetics.api.treasure;
 import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import org.jetbrains.annotations.Nullable;
 import se.file14.procosmetics.api.locale.Translator;
 import se.file14.procosmetics.api.treasure.animation.AnimationType;
 import se.file14.procosmetics.api.treasure.loot.LootTable;
@@ -39,12 +38,11 @@ import java.util.List;
 public interface TreasureChest {
 
     /**
-     * Retrieves a random loot table associated with this treasure chest.
+     * Gets the loot table for this treasure chest.
      *
-     * @return a randomly selected {@link LootTable}, or {@code null} if none is available
+     * @return the loot table
      */
-    @Nullable
-    LootTable<?> getRandomLootTable();
+    LootTable getLootTable();
 
     /**
      * Checks if the player has permission to purchase this treasure chest.
@@ -113,13 +111,6 @@ public interface TreasureChest {
     AnimationType getChestAnimationType();
 
     /**
-     * Gets the structures used for this treasure chest’s layout.
-     *
-     * @return a list of {@link StructureData} representing the structure
-     */
-    List<StructureData> getStructures();
-
-    /**
      * Checks whether a broadcast message should be sent when a player opens this chest.
      *
      * @return {@code true} if an opening broadcast should be sent, otherwise {@code false}
@@ -139,4 +130,11 @@ public interface TreasureChest {
      * @return the chest’s {@link ItemStack}
      */
     ItemStack getItemStack();
+
+    /**
+     * Gets the structures used for this treasure chest’s layout.
+     *
+     * @return a list of {@link StructureData} representing the structure
+     */
+    List<StructureData> getStructures();
 }

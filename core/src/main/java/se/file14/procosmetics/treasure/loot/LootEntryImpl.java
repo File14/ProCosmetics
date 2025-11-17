@@ -19,56 +19,50 @@ package se.file14.procosmetics.treasure.loot;
 
 import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
 import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
-import org.bukkit.inventory.ItemStack;
 import se.file14.procosmetics.ProCosmeticsPlugin;
-import se.file14.procosmetics.api.ProCosmetics;
-import se.file14.procosmetics.api.cosmetic.CosmeticRarity;
-import se.file14.procosmetics.api.cosmetic.gadget.GadgetType;
-import se.file14.procosmetics.api.treasure.loot.AmmoLootEntry;
+import se.file14.procosmetics.api.treasure.loot.LootCategory;
+import se.file14.procosmetics.api.treasure.loot.LootEntry;
+import se.file14.procosmetics.api.treasure.loot.number.IntProvider;
 import se.file14.procosmetics.api.user.User;
 
-public class AmmoLootEntryImpl implements AmmoLootEntry {
+public abstract class LootEntryImpl implements LootEntry {
 
-    private static final ProCosmetics PLUGIN = ProCosmeticsPlugin.getPlugin();
+    protected static ProCosmeticsPlugin PLUGIN = ProCosmeticsPlugin.getPlugin();
 
-    private final GadgetType ammo;
-    private final int amount;
+    protected final IntProvider intProvider;
+    protected final LootCategory category;
 
-    public AmmoLootEntryImpl(GadgetType ammo, int amount) {
-        this.ammo = ammo;
-        this.amount = amount;
-    }
-
-    @Override
-    public GadgetType getAmmo() {
-        return ammo;
-    }
-
-    @Override
-    public int getAmount() {
-        return amount;
-    }
-
-    @Override
-    public String getNameTranslationKey() {
-        return "treasure_chest.loot.ammo";
+    public LootEntryImpl(IntProvider intProvider, LootCategory category) {
+        this.intProvider = intProvider;
+        this.category = category;
     }
 
     @Override
     public TagResolver getResolvers(User user) {
         return TagResolver.resolver(
-                Placeholder.unparsed("ammo", ammo.getName(user)),
-                Placeholder.unparsed("amount", String.valueOf(amount))
+                Placeholder.unparsed("loot", getName(user)),
+                Placeholder.unparsed("category", category.getName(user)),
+                getRarity().getResolvers(user)
         );
     }
 
     @Override
-    public CosmeticRarity getRarity() {
-        return PLUGIN.getCosmeticRarityRegistry().getFallbackRarity();
+    public String getKey() {
+        return category.getKey();
     }
 
     @Override
-    public ItemStack getItemStack() {
-        return ammo.getItemStack();
+    public String getNameTranslationKey() {
+        return "treasure_chest.loot." + getKey();
+    }
+
+    @Override
+    public IntProvider getIntProvider() {
+        return intProvider;
+    }
+
+    @Override
+    public LootCategory getCategory() {
+        return category;
     }
 }

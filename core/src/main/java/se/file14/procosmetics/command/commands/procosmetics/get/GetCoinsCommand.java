@@ -49,7 +49,8 @@ public class GetCoinsCommand extends SubCommand<CommandSender> {
                     audience(sender).sendMessage(translator.translate(
                             "command.get.coins",
                             Placeholder.unparsed("player", user.getName()),
-                            Placeholder.unparsed("amount", String.valueOf(result.rightInt()))
+                            Placeholder.unparsed("amount", String.valueOf(result.rightInt())),
+                            Placeholder.unparsed("currency", translator.translateRaw("generic.currency"))
                     ));
                 } else {
                     audience(sender).sendMessage(translator.translate("generic.error.database"));

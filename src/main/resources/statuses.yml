@@ -66,76 +66,105 @@ menu:
       count: 1
       slot: -2
 
+# Note: refresh_interval is defined in ticks (20 ticks = 1 second), -1 = no update (static text)
 cosmetics:
   afk:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:name_tag"
     count: 1
     refresh_interval: -1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   coins:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:name_tag"
     count: 1
     refresh_interval: 120
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   do_not_disturb:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:name_tag"
     count: 1
     refresh_interval: -1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   just_chilling:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:name_tag"
     count: 1
     refresh_interval: -1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   looking_to_chat:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:name_tag"
     count: 1
     refresh_interval: -1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   looking_to_team_up:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:name_tag"
     count: 1
     refresh_interval: -1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   ping:
     enable: true
-    obtainable: true
-    rarity: "LEGENDARY"
-    purchasable: true
-    cost: 2000
+    rarity: "legendary"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:name_tag"
     count: 1
     refresh_interval: 120
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
 # Do not edit this!
 config_version: 1

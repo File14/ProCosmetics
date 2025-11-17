@@ -58,318 +58,458 @@ menu:
 cosmetics:
   angel_wings:
     enable: true
-    obtainable: true
-    rarity: "LEGENDARY"
-    purchasable: true
-    cost: 2000
+    rarity: "legendary"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:light_gray_dye"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   aura_of_flame:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:gold_nugget"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   big_heart:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:poppy"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   black_hole:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:coal_block"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   blood_helix:
     enable: true
-    obtainable: true
-    rarity: "LEGENDARY"
-    purchasable: true
-    cost: 2000
+    rarity: "legendary"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:redstone"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   bunny:
     enable: true
-    obtainable: true
-    rarity: "LEGENDARY"
-    purchasable: true
-    cost: 2000
+    rarity: "legendary"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:rabbit_spawn_egg"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   christmas_tree:
     enable: true
-    obtainable: true
-    rarity: "LEGENDARY"
-    purchasable: true
-    cost: 2000
+    rarity: "legendary"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:spruce_sapling"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   colorful_trail:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:magenta_dye"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   confetti:
     enable: true
-    obtainable: true
-    rarity: "LEGENDARY"
-    purchasable: true
-    cost: 2000
+    rarity: "legendary"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:blaze_rod"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   crushed_candy_cane:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:sugar"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   demon_twist:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:charcoal"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   emerald_twirl:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:emerald"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   enchanted:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:book"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   flame_flairy:
     enable: true
-    obtainable: true
-    rarity: "LEGENDARY"
-    purchasable: true
-    cost: 2000
+    rarity: "legendary"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:blaze_powder"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   flame_of_magic:
     enable: true
-    obtainable: true
-    rarity: "LEGENDARY"
-    purchasable: true
-    cost: 2000
+    rarity: "legendary"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:blaze_rod"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   flame_of_the_demons:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:blaze_powder"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   flame_rings:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:orange_dye"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   frost_lord:
     enable: true
-    obtainable: true
-    rarity: "LEGENDARY"
-    purchasable: true
-    cost: 2000
+    rarity: "legendary"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:snowball"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   in_love:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:poppy"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   jack_o_lantern:
     enable: true
-    obtainable: true
-    rarity: "LEGENDARY"
-    purchasable: true
-    cost: 2000
+    rarity: "legendary"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:jack_o_lantern"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   legendary_aura:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:ender_eye"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   music:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:note_block"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   party_time:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:purple_dye"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   protective_shield:
     enable: true
-    obtainable: true
-    rarity: "LEGENDARY"
-    purchasable: true
-    cost: 2000
+    rarity: "legendary"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:cyan_dye"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   rain_cloud:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:lapis_lazuli"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   rainbow_wings:
     enable: true
-    obtainable: true
-    rarity: "LEGENDARY"
-    purchasable: true
-    cost: 2000
+    rarity: "legendary"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:yellow_dye"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   shadow_walk:
     enable: true
-    obtainable: true
-    rarity: "COMMON"
-    purchasable: true
-    cost: 2000
+    rarity: "common"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:coal"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   skull:
     enable: true
-    obtainable: true
-    rarity: "LEGENDARY"
-    purchasable: true
-    cost: 2000
+    rarity: "legendary"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:skeleton_skull[!minecraft:rarity]"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   snow_cloud:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:snow"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   snowflake:
     enable: true
-    obtainable: true
-    rarity: "LEGENDARY"
-    purchasable: true
-    cost: 2000
+    rarity: "legendary"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:nether_star[!minecraft:rarity]"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   star:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:nether_star[!minecraft:rarity]"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   tornado:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:cobweb"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   umbrella:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:hopper"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   vampire_wings:
     enable: true
-    obtainable: true
-    rarity: "LEGENDARY"
-    purchasable: true
-    cost: 2000
+    rarity: "legendary"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:firework_star"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   yin_and_yang:
     enable: true
-    obtainable: true
-    rarity: "LEGENDARY"
-    purchasable: true
-    cost: 2000
+    rarity: "legendary"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:melon_seeds"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
 # Do not edit this!
 config_version: 1

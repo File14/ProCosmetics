@@ -17,6 +17,7 @@
  */
 package se.file14.procosmetics.api.cosmetic;
 
+import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
 import org.bukkit.FireworkEffect;
 import se.file14.procosmetics.api.locale.Translator;
 
@@ -43,6 +44,14 @@ public interface CosmeticRarity extends Comparable<CosmeticRarity> {
     String getName(Translator translator);
 
     /**
+     * Gets the tag resolvers for this rarity's placeholders.
+     *
+     * @param translator the {@link Translator} used for localization
+     * @return the tag resolver containing rarity placeholders
+     */
+    TagResolver getResolvers(Translator translator);
+
+    /**
      * Gets the priority/weight of this rarity.
      * Higher values indicate rarer/more valuable items.
      *
@@ -50,8 +59,18 @@ public interface CosmeticRarity extends Comparable<CosmeticRarity> {
      */
     int getPriority();
 
+    /**
+     * Gets the primary color code for this rarity.
+     *
+     * @return the primary color code
+     */
     String getPrimaryColor();
 
+    /**
+     * Gets the secondary color code for this rarity.
+     *
+     * @return the secondary color code
+     */
     String getSecondaryColor();
 
     /**

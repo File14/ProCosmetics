@@ -15,24 +15,26 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package se.file14.procosmetics.api.treasure.loot;
+package se.file14.procosmetics.api.treasure.loot.number;
 
 /**
- * Represents a loot table that generates money rewards within a specific range.
+ * An {@link IntProvider} that returns a random value within a specified range.
+ *
+ * @see IntProvider
  */
-public interface MoneyLoot extends LootTable<MoneyLootEntry> {
+public interface RangedIntProvider extends IntProvider {
 
     /**
-     * Gets the minimum amount of money.
+     * Gets the minimum value (inclusive) that can be returned.
      *
-     * @return the minimum money amount
+     * @return the minimum value
      */
     int getMin();
 
     /**
-     * Gets the maximum amount of money.
+     * Gets the maximum value (inclusive) that can be returned.
      *
-     * @return the maximum money amount
+     * @return the maximum value
      */
     int getMax();
 }

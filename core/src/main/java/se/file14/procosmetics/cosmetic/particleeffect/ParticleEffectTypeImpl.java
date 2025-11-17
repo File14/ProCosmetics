@@ -27,6 +27,7 @@ import se.file14.procosmetics.api.cosmetic.registry.CosmeticCategory;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.cosmetic.CosmeticTypeImpl;
 
+import java.util.List;
 import java.util.function.Supplier;
 
 public class ParticleEffectTypeImpl extends CosmeticTypeImpl<ParticleEffectType, ParticleEffectBehavior> implements ParticleEffectType {
@@ -37,13 +38,13 @@ public class ParticleEffectTypeImpl extends CosmeticTypeImpl<ParticleEffectType,
                                   CosmeticCategory<ParticleEffectType, ParticleEffectBehavior, ?> category,
                                   Supplier<ParticleEffectBehavior> behaviorFactory,
                                   boolean enabled,
-                                  boolean findable,
                                   boolean purchasable,
                                   int cost,
                                   CosmeticRarity rarity,
                                   ItemStack itemStack,
+                                  List<String> treasureChests,
                                   int repeatDelay) {
-        super(key, category, behaviorFactory, enabled, findable, purchasable, cost, rarity, itemStack);
+        super(key, category, behaviorFactory, enabled, purchasable, cost, rarity, itemStack, treasureChests);
         this.repeatDelay = repeatDelay;
     }
 
@@ -82,11 +83,11 @@ public class ParticleEffectTypeImpl extends CosmeticTypeImpl<ParticleEffectType,
                     category,
                     factory,
                     enabled,
-                    findable,
                     purchasable,
                     cost,
                     rarity,
                     itemStack,
+                    treasureChests,
                     repeatDelay
             );
         }

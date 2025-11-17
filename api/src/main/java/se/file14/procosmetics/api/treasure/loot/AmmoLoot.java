@@ -19,31 +19,17 @@ package se.file14.procosmetics.api.treasure.loot;
 
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetType;
 
-import java.util.List;
-
 /**
- * Represents a loot table that rewards gadget ammunition within a specific range.
+ * Represents a loot entry that rewards the player with gadget ammo.
+ *
+ * @see LootEntry
  */
-public interface AmmoLoot extends LootTable<AmmoLootEntry> {
+public interface AmmoLoot extends LootEntry {
 
     /**
-     * Gets the minimum amount of ammo.
+     * Gets the gadget type this ammo is for.
      *
-     * @return the minimum ammo amount
+     * @return the gadget type
      */
-    int getMin();
-
-    /**
-     * Gets the maximum amount of ammo.
-     *
-     * @return the maximum ammo amount
-     */
-    int getMax();
-
-    /**
-     * Gets the list of gadget types that can receive ammo from this loot table.
-     *
-     * @return the list of gadget types that can receive ammo
-     */
-    List<GadgetType> getAmmo();
+    GadgetType getGadgetType();
 }

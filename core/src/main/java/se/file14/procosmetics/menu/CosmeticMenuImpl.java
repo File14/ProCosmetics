@@ -250,7 +250,10 @@ public class CosmeticMenuImpl<T extends CosmeticType<T, ?>> extends PaginatedMen
                                 tagResolver
                         ))
                         .setLore(lore)
-                        .addLore(user.translateList("menu." + category.getKey() + ".equipped.desc"))
+                        .addLore(user.translateList(
+                                "menu." + category.getKey() + ".equipped.desc",
+                                tagResolver
+                        ))
                         .setGlintOverride(true);
             } else if (!locked) {
                 itemBuilder.setDisplayName(user.translate(
@@ -259,7 +262,10 @@ public class CosmeticMenuImpl<T extends CosmeticType<T, ?>> extends PaginatedMen
                                 tagResolver
                         ))
                         .setLore(lore)
-                        .addLore(user.translateList("menu." + category.getKey() + ".unequipped.desc"));
+                        .addLore(user.translateList(
+                                "menu." + category.getKey() + ".unequipped.desc",
+                                tagResolver
+                        ));
             } else {
                 if (lockedItem != null) {
                     itemBuilder = ItemBuilderImpl.of(lockedItem.getItemStack());

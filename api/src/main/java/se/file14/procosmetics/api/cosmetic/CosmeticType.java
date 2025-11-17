@@ -20,9 +20,10 @@ package se.file14.procosmetics.api.cosmetic;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import se.file14.procosmetics.api.cosmetic.registry.CosmeticCategory;
-import se.file14.procosmetics.api.treasure.loot.LootEntry;
 import se.file14.procosmetics.api.user.User;
+import se.file14.procosmetics.api.util.ResolvableName;
 
+import java.util.List;
 import java.util.function.Supplier;
 
 /**
@@ -32,7 +33,7 @@ import java.util.function.Supplier;
  * @param <T> the specific cosmetic type implementation
  * @param <B> the behavior associated with this cosmetic type
  */
-public interface CosmeticType<T extends CosmeticType<T, B>, B extends CosmeticBehavior<T>> extends LootEntry {
+public interface CosmeticType<T extends CosmeticType<T, B>, B extends CosmeticBehavior<T>> extends ResolvableName {
 
     /**
      * Equips this cosmetic type to the specified user.
@@ -88,20 +89,6 @@ public interface CosmeticType<T extends CosmeticType<T, B>, B extends CosmeticBe
     boolean isEnabled();
 
     /**
-     * Sets whether this cosmetic can be found in treasures.
-     *
-     * @param findable true to make the cosmetic findable, false otherwise
-     */
-    void setFindable(boolean findable);
-
-    /**
-     * Checks if this cosmetic can be found in loot sources.
-     *
-     * @return true if findable, false otherwise
-     */
-    boolean isFindable();
-
-    /**
      * Sets whether this cosmetic can be purchased.
      *
      * @param purchasable true to make the cosmetic purchasable, false otherwise
@@ -144,6 +131,13 @@ public interface CosmeticType<T extends CosmeticType<T, B>, B extends CosmeticBe
     CosmeticRarity getRarity();
 
     /**
+     * Gets the treasure chests this cosmetic can appear in.
+     *
+     * @return a list of treasure chest keys
+     */
+    List<String> getTreasureChests();
+
+    /**
      * Builder interface for constructing cosmetic type instances.
      *
      * @param <T> the specific cosmetic type implementation
@@ -184,14 +178,6 @@ public interface CosmeticType<T extends CosmeticType<T, B>, B extends CosmeticBe
         S enabled(boolean enabled);
 
         /**
-         * Sets whether this cosmetic can be found in loot sources.
-         *
-         * @param findable true if findable, false otherwise
-         * @return this builder for method chaining
-         */
-        S findable(boolean findable);
-
-        /**
          * Sets whether this cosmetic can be purchased.
          *
          * @param purchasable true if purchasable, false otherwise
@@ -206,6 +192,14 @@ public interface CosmeticType<T extends CosmeticType<T, B>, B extends CosmeticBe
          * @return this builder for method chaining
          */
         S cost(int cost);
+
+        /**
+         * Sets the treasure chests this cosmetic can appear in.
+         *
+         * @param chests the list of treasure chest keys
+         * @return this builder for method chaining
+         */
+        S treasureChests(List<String> chests);
 
         /**
          * Sets the factory for creating behavior instances.

@@ -33,10 +33,13 @@ import se.file14.procosmetics.api.treasure.TreasureChest;
 import se.file14.procosmetics.api.treasure.TreasureChestManager;
 import se.file14.procosmetics.api.treasure.TreasureChestPlatform;
 import se.file14.procosmetics.api.user.User;
+import se.file14.procosmetics.api.util.broadcaster.Broadcaster;
+import se.file14.procosmetics.api.util.broadcaster.LootBroadcaster;
+import se.file14.procosmetics.event.PluginReloadEventImpl;
 import se.file14.procosmetics.menu.menus.TreasureChestMenu;
 import se.file14.procosmetics.util.LocationUtil;
-import se.file14.procosmetics.util.broadcaster.Broadcaster;
-import se.file14.procosmetics.util.broadcaster.LootBroadcaster;
+import se.file14.procosmetics.util.broadcaster.BroadcasterImpl;
+import se.file14.procosmetics.util.broadcaster.LootBroadcasterImpl;
 import se.file14.procosmetics.util.structure.NamedStructureData;
 import se.file14.procosmetics.util.structure.StructureDataImpl;
 import se.file14.procosmetics.util.structure.StructureReader;
@@ -51,8 +54,8 @@ public class TreasureChestManagerImpl implements TreasureChestManager {
     private final ProCosmeticsPlugin plugin;
     private final Config treasureChestsConfig;
     private final Config platformsConfig;
-    private final Broadcaster openingTreasureBroadcaster;
-    private final LootBroadcaster lootBroadcaster;
+    private final Broadcaster openingBroadcaster;
+    private final LootBroadcasterImpl lootBroadcaster;
     private final List<TreasureChest> treasuresChests = new ArrayList<>();
     private final List<TreasureChestPlatformImpl> platforms = new ArrayList<>();
 
@@ -61,18 +64,19 @@ public class TreasureChestManagerImpl implements TreasureChestManager {
 
         this.treasureChestsConfig = plugin.getConfigManager().register("treasure_chests");
         this.platformsConfig = plugin.getConfigManager().register("data/treasure_chest_platforms");
-        this.openingTreasureBroadcaster = new Broadcaster(treasureChestsConfig, "broadcast_opening_treasure");
-        this.lootBroadcaster = new LootBroadcaster(plugin, treasureChestsConfig, "broadcast_loot");
+        this.openingBroadcaster = new BroadcasterImpl(treasureChestsConfig, "broadcast_opening_treasure");
+        this.lootBroadcaster = new LootBroadcasterImpl(plugin, treasureChestsConfig, "broadcast_loot");
 
         loadTreasureChests();
     }
 
     private void loadTreasureChests() {
-        String mainPath = "treasure_chests";
+        String path = "treasure_chests";
 
-        if (treasureChestsConfig.hasKey(mainPath)) {
-            treasureChestsConfig.getConfigurationSection(mainPath).getKeys(false).forEach(key ->
-                    treasuresChests.add(new TreasureChestImpl(plugin, key)));
+        if (treasureChestsConfig.hasKey(path)) {
+            for (String key : treasureChestsConfig.getConfigurationSection(path).getKeys(false)) {
+                treasuresChests.add(new TreasureChestImpl(plugin, key.toLowerCase()));
+            }
         }
     }
 
@@ -169,6 +173,11 @@ public class TreasureChestManagerImpl implements TreasureChestManager {
         }
 
         @EventHandler
+        public void onPluginReload(PluginReloadEventImpl event) {
+            loadPlatforms();
+        }
+
+        @EventHandler
         public void onChestClick(PlayerInteractEvent event) {
             Player player = event.getPlayer();
             Block block = event.getClickedBlock();
@@ -229,10 +238,12 @@ public class TreasureChestManagerImpl implements TreasureChestManager {
         return null;
     }
 
-    public Broadcaster getOpeningTreasureBroadcaster() {
-        return openingTreasureBroadcaster;
+    @Override
+    public Broadcaster getOpeningBroadcaster() {
+        return openingBroadcaster;
     }
 
+    @Override
     public LootBroadcaster getLootBroadcaster() {
         return lootBroadcaster;
     }

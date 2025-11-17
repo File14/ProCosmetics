@@ -46,7 +46,8 @@ public class AddAllCoinsCommand extends SubCommand<CommandSender> {
         audience(sender).sendMessage(translator.translate(
                 "command.addall.coins",
                 Placeholder.unparsed("amount", String.valueOf(amount)),
-                Placeholder.unparsed("player_count", String.valueOf(players))
+                Placeholder.unparsed("player_count", String.valueOf(players)),
+                Placeholder.unparsed("currency", translator.translateRaw("generic.currency"))
         ));
     }
 }

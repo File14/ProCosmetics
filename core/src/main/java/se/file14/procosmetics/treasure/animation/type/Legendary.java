@@ -47,7 +47,7 @@ public class Legendary extends TreasureChestAnimation {
     public void onSecondUpdate() {
         if (animationState == AnimationState.SPAWNING_CHESTS) {
             for (int i = 0; i < platform.getChestLocations().size(); i++) {
-                spawnChestArmorstand(Material.ENDER_CHEST, platform.getCenter());
+                spawnChest(Material.ENDER_CHEST, platform.getCenter());
             }
             animationState = AnimationState.BUILT;
         }
@@ -61,8 +61,8 @@ public class Legendary extends TreasureChestAnimation {
 
             location.getWorld().playSound(location, Sound.ENTITY_HORSE_LAND, 0.2f, (radius / 2));
 
-            for (int i = 0; i < armorStandChests.size(); i++) {
-                NMSEntity nmsEntity = armorStandChests.get(i);
+            for (int i = 0; i < blockDisplayChests.size(); i++) {
+                NMSEntity nmsEntity = blockDisplayChests.get(i);
                 float angle = FastMathUtil.toRadians(i * anglePerChest + ticks * SPEED);
                 Location loc = MathUtil.getLocationAroundCircle(platform.getCenter(), radius, angle);
 
@@ -74,7 +74,7 @@ public class Legendary extends TreasureChestAnimation {
                 for (Location chestLocation : platform.getChestLocations()) {
                     setChestBlock(Material.ENDER_CHEST, chestLocation);
                 }
-                despawnChestArmorstands();
+                despawnChest();
                 animationState = AnimationState.DONE;
             }
         }

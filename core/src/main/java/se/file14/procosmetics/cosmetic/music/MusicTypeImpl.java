@@ -31,6 +31,7 @@ import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.cosmetic.CosmeticTypeImpl;
 
 import java.io.File;
+import java.util.List;
 import java.util.function.Supplier;
 import java.util.logging.Level;
 
@@ -42,13 +43,13 @@ public class MusicTypeImpl extends CosmeticTypeImpl<MusicType, MusicBehavior> im
                          CosmeticCategory<MusicType, MusicBehavior, ?> category,
                          Supplier<MusicBehavior> behaviorFactory,
                          boolean enabled,
-                         boolean findable,
                          boolean purchasable,
                          int cost,
                          CosmeticRarity rarity,
                          ItemStack itemStack,
+                         List<String> treasureChests,
                          Song song) {
-        super(key, category, behaviorFactory, enabled, findable, purchasable, cost, rarity, itemStack);
+        super(key, category, behaviorFactory, enabled, purchasable, cost, rarity, itemStack, treasureChests);
         this.song = song;
     }
 
@@ -105,11 +106,11 @@ public class MusicTypeImpl extends CosmeticTypeImpl<MusicType, MusicBehavior> im
                     category,
                     factory,
                     enabled,
-                    findable,
                     purchasable,
                     cost,
                     rarity,
                     itemStack,
+                    treasureChests,
                     song
             );
         }

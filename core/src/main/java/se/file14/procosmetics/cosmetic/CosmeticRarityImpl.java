@@ -17,6 +17,8 @@
  */
 package se.file14.procosmetics.cosmetic;
 
+import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
+import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
 import org.bukkit.FireworkEffect;
 import se.file14.procosmetics.api.cosmetic.CosmeticRarity;
 import se.file14.procosmetics.api.locale.Translator;
@@ -25,7 +27,7 @@ public class CosmeticRarityImpl implements CosmeticRarity {
 
     private final String key;
     private final int priority;
-    private final String mainColor;
+    private final String primaryColor;
     private final String secondaryColor;
     private final int detonations;
     private final int tickInterval;
@@ -33,14 +35,14 @@ public class CosmeticRarityImpl implements CosmeticRarity {
 
     public CosmeticRarityImpl(String key,
                               int priority,
-                              String mainColor,
+                              String primaryColor,
                               String secondaryColor,
                               int detonations,
                               int tickInterval,
                               FireworkEffect fireworkEffect) {
         this.key = key.toLowerCase();
         this.priority = priority;
-        this.mainColor = mainColor;
+        this.primaryColor = primaryColor;
         this.secondaryColor = secondaryColor;
         this.detonations = detonations;
         this.tickInterval = tickInterval;
@@ -58,13 +60,22 @@ public class CosmeticRarityImpl implements CosmeticRarity {
     }
 
     @Override
+    public TagResolver getResolvers(Translator translator) {
+        return TagResolver.resolver(
+                Placeholder.unparsed("rarity", getName(translator)),
+                Placeholder.parsed("rarity_primary_color", getPrimaryColor()),
+                Placeholder.parsed("rarity_secondary_color", getSecondaryColor())
+        );
+    }
+
+    @Override
     public int getPriority() {
         return priority;
     }
 
     @Override
     public String getPrimaryColor() {
-        return mainColor;
+        return primaryColor;
     }
 
     @Override

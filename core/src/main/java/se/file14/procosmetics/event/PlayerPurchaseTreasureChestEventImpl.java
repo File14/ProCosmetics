@@ -18,36 +18,24 @@
 package se.file14.procosmetics.event;
 
 import org.bukkit.entity.Player;
-import org.bukkit.event.Event;
-import org.bukkit.event.HandlerList;
 import se.file14.procosmetics.api.ProCosmetics;
 import se.file14.procosmetics.api.event.PlayerPurchaseTreasureChestEvent;
 import se.file14.procosmetics.api.treasure.TreasureChest;
 import se.file14.procosmetics.api.user.User;
 
-import javax.annotation.Nonnull;
+public class PlayerPurchaseTreasureChestEventImpl extends ProCosmeticsEventImpl implements PlayerPurchaseTreasureChestEvent {
 
-public class PlayerPurchaseTreasureChestEventImpl extends Event implements PlayerPurchaseTreasureChestEvent {
-
-    private static final HandlerList HANDLER_LIST = new HandlerList();
-
-    private final ProCosmetics plugin;
     private final User user;
     private final Player player;
     private final TreasureChest treasureChest;
     private final int amount;
 
     public PlayerPurchaseTreasureChestEventImpl(ProCosmetics plugin, User user, Player player, TreasureChest treasureChest, int amount) {
-        this.plugin = plugin;
+        super(plugin);
         this.user = user;
         this.player = player;
         this.treasureChest = treasureChest;
         this.amount = amount;
-    }
-
-    @Override
-    public ProCosmetics getPlugin() {
-        return plugin;
     }
 
     @Override
@@ -68,15 +56,5 @@ public class PlayerPurchaseTreasureChestEventImpl extends Event implements Playe
     @Override
     public int getAmount() {
         return amount;
-    }
-
-    @Nonnull
-    @Override
-    public HandlerList getHandlers() {
-        return HANDLER_LIST;
-    }
-
-    public static HandlerList getHandlerList() {
-        return HANDLER_LIST;
     }
 }

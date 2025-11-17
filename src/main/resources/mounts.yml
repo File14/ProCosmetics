@@ -64,147 +64,211 @@ menu:
 cosmetics:
   baby_reindeer:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:snow_block"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   cave_spider:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:spider_eye"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   clumsy_mule:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:chest"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   crazy_chicken:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:egg"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   decrepit_warhorse:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:rotten_flesh"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   ethereal_dragon:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:dragon_egg[!minecraft:rarity]"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   frosty_snowman:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:snowball"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   glacial_steed:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:packed_ice"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   hype_train:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:minecart"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   infernal_horror:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:bone"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   lovely_sheep:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:pink_stained_glass"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   molten_snake:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:netherrack"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   pirate_ship:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:oak_boat"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   rudolf:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:dead_bush"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   slime:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:slime_block"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
   unicorn:
     enable: true
-    obtainable: true
-    rarity: "RARE"
-    purchasable: true
-    cost: 2000
+    rarity: "rare"
+    purchasable:
+      enable: true
+      cost: 2000
     item: "minecraft:blaze_rod"
     count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
 # Do not edit this!
 config_version: 1

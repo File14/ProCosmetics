@@ -61,11 +61,13 @@ public class MainMenu extends MenuImpl {
             ItemBuilder itemBuilder = new ItemBuilderImpl(config, "menu.main.items.coins");
             itemBuilder.setDisplayName(user.translate(
                     "menu.main.coins.name",
-                    Placeholder.unparsed("coins", String.valueOf(coins))
+                    Placeholder.unparsed("coins", String.valueOf(coins)),
+                    Placeholder.unparsed("currency", user.translateRaw("generic.currency"))
             ));
             itemBuilder.setLore(user.translateList(
                     "menu.main.coins.desc",
-                    Placeholder.unparsed("coins", String.valueOf(coins))
+                    Placeholder.unparsed("coins", String.valueOf(coins)),
+                    Placeholder.unparsed("currency", user.translateRaw("generic.currency"))
             ));
 
             setItem(itemBuilder.getSlot(), itemBuilder.getItemStack(), event -> {

@@ -29,21 +29,21 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.FireworkMeta;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
+import org.joml.Matrix4f;
 import se.file14.procosmetics.api.ProCosmetics;
 import se.file14.procosmetics.api.cosmetic.CosmeticRarity;
 import se.file14.procosmetics.api.nms.NMSEntity;
 import se.file14.procosmetics.api.treasure.TreasureChest;
 import se.file14.procosmetics.api.treasure.TreasureChestPlatform;
+import se.file14.procosmetics.api.treasure.loot.GeneratedLoot;
 import se.file14.procosmetics.api.treasure.loot.LootEntry;
 import se.file14.procosmetics.api.treasure.loot.LootTable;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.api.util.structure.StructureData;
 import se.file14.procosmetics.event.PlayerOpenTreasureChestEventImpl;
-import se.file14.procosmetics.treasure.TreasureChestManagerImpl;
 import se.file14.procosmetics.treasure.TreasureChestPlatformImpl;
 import se.file14.procosmetics.util.LocationUtil;
 import se.file14.procosmetics.util.MathUtil;
@@ -66,7 +66,7 @@ public abstract class TreasureChestAnimation extends BukkitRunnable implements L
     protected User user;
     protected Player player;
 
-    protected List<NMSEntity> armorStandChests = new ArrayList<>();
+    protected List<NMSEntity> blockDisplayChests = new ArrayList<>();
     protected List<NMSEntity> texts = new ArrayList<>();
     protected List<NMSEntity> items = new ArrayList<>();
     protected List<Location> openedChests = new ArrayList<>();
@@ -89,8 +89,7 @@ public abstract class TreasureChestAnimation extends BukkitRunnable implements L
         this.platform.getHologram().despawn();
 
         if (treasureChest.isOpeningBroadcast()) {
-            // TODO: Remove cast
-            ((TreasureChestManagerImpl) plugin.getTreasureChestManager()).getOpeningTreasureBroadcaster().broadcastMessage(
+            plugin.getTreasureChestManager().getOpeningBroadcaster().broadcastMessage(
                     player,
                     "treasure_chest.open.broadcast",
                     Placeholder.unparsed("player", player.getName()),
@@ -110,7 +109,7 @@ public abstract class TreasureChestAnimation extends BukkitRunnable implements L
         Server server = plugin.getJavaPlugin().getServer();
         server.getPluginManager().callEvent(new PlayerOpenTreasureChestEventImpl(plugin, user, player, treasureChest));
         server.getPluginManager().registerEvents(this, plugin.getJavaPlugin());
-        server.getLogger().log(Level.INFO, "[TREASURE CHEST] " + user + " is opening a " + treasureChest.getKey() + " treasure chest.");
+        plugin.getJavaPlugin().getLogger().log(Level.INFO, "[TREASURE CHEST] " + user + " is opening a " + treasureChest.getKey() + " treasure chest.");
         runTaskTimer(plugin.getJavaPlugin(), 0L, 1L);
     }
 
@@ -124,6 +123,7 @@ public abstract class TreasureChestAnimation extends BukkitRunnable implements L
     }
 
     public enum AnimationState {
+
         BUILDING,
         SPAWNING_CHESTS,
         BUILT,
@@ -158,39 +158,42 @@ public abstract class TreasureChestAnimation extends BukkitRunnable implements L
     public abstract void onTickUpdate();
 
     private void registerOpenedChest(Location location) {
-        openedChests.add(location);
+        openedChests.add(location.clone());
 
         if (openedChests.size() >= treasureChest.getChestsToOpen()) {
             plugin.getJavaPlugin().getServer().getScheduler().runTaskLater(plugin.getJavaPlugin(), this::reset, 100L);
         }
     }
 
+    private boolean isChestOpened(Location location) {
+        return openedChests.contains(location);
+    }
+
     private void openChest(Block block) {
         Location blockLocation = block.getLocation().add(0.5d, 0.0d, 0.5d);
 
-        if (openedChests.size() >= treasureChest.getChestsToOpen() || openedChests.contains(blockLocation)) {
+        if (openedChests.size() >= treasureChest.getChestsToOpen() || isChestOpened(blockLocation)) {
             return;
         }
         registerOpenedChest(blockLocation);
-        Location location = blockLocation.clone().add(0.0d, 0.7d, 0.0d);
-        LootTable<?> lootTable = treasureChest.getRandomLootTable();
+        Location location = blockLocation.add(0.0d, 0.7d, 0.0d);
+        LootTable lootTable = treasureChest.getLootTable();
+        giveRandomLoot(lootTable, location);
 
-        if (lootTable != null) {
-            giveRandomLoot(lootTable, location);
-        }
         location.getWorld().playSound(location, Sound.BLOCK_CHEST_OPEN, 0.4f, 0.0f);
         plugin.getNMSManager().getNMSUtil().playChestAnimation(block, true);
     }
 
-    private <T extends LootEntry> T giveRandomLoot(LootTable<T> lootTable, Location location) {
-        T lootEntry = lootTable.getRandomLoot();
-        lootTable.give(player, user, lootEntry);
+    private void giveRandomLoot(LootTable lootTable, Location location) {
+        LootEntry lootEntry = lootTable.rollLoot();
+        GeneratedLoot generatedLoot = lootEntry.generate();
+        generatedLoot.give(player, user);
 
-        CosmeticRarity rarity = lootEntry.getRarity();
+        CosmeticRarity rarity = generatedLoot.getRarity();
         spawnFirework(location, rarity);
 
         NMSEntity nmsEntity = plugin.getNMSManager().createEntity(location.getWorld(), EntityType.ITEM);
-        nmsEntity.setEntityItemStack(lootEntry.getItemStack());
+        nmsEntity.setEntityItemStack(generatedLoot.getItemStack());
         nmsEntity.setVelocity(0.0d, 0.2d, 0.0d);
         nmsEntity.setPositionRotation(location);
         nmsEntity.getTracker().startTracking();
@@ -201,10 +204,9 @@ public abstract class TreasureChestAnimation extends BukkitRunnable implements L
         if (text.getBukkitEntity() instanceof TextDisplay textDisplay) {
             textDisplay.setText(SERIALIZER.serialize(user.translate(
                     "treasure_chest.open.hologram",
-                    Placeholder.unparsed("category", lootTable.getCategory(user)),
-                    Placeholder.component("loot", lootEntry.getResolvedName(user)),
-                    Placeholder.parsed("rarity_primary_color", rarity.getPrimaryColor()),
-                    Placeholder.parsed("rarity_secondary_color", rarity.getSecondaryColor())
+                    Placeholder.unparsed("category", generatedLoot.getCategory().getName(user)),
+                    Placeholder.component("loot", generatedLoot.getResolvedName(user)),
+                    rarity.getResolvers(user)
             )));
             textDisplay.setBillboard(TextDisplay.Billboard.CENTER);
             textDisplay.setTeleportDuration(1);
@@ -212,8 +214,6 @@ public abstract class TreasureChestAnimation extends BukkitRunnable implements L
         text.setPositionRotation(location.clone().add(0.0d, 1.0d, 0.0d));
         text.getTracker().startTracking();
         texts.add(text);
-
-        return lootEntry;
     }
 
     private void spawnFirework(Location location, CosmeticRarity rarity) {
@@ -258,29 +258,30 @@ public abstract class TreasureChestAnimation extends BukkitRunnable implements L
         location.getWorld().playSound(block.getLocation(), Sound.ENTITY_GENERIC_EXPLODE, 0.4f, 1.0f);
     }
 
-    protected void despawnChestArmorstands() {
-        for (NMSEntity removeArmorStand : armorStandChests) {
-            removeArmorStand.getTracker().destroy();
+    protected void despawnChest() {
+        for (NMSEntity nmsEntity : blockDisplayChests) {
+            nmsEntity.getTracker().destroy();
         }
-        armorStandChests.clear();
+        blockDisplayChests.clear();
     }
 
-    protected NMSEntity spawnChestArmorstand(Material material, Location location) {
-        NMSEntity nmsEntity = spawnNMSArmorstand(location);
-        nmsEntity.setHelmet(new ItemStack(material));
-        nmsEntity.getTracker().startTracking();
-        armorStandChests.add(nmsEntity);
-        return nmsEntity;
-    }
+    protected NMSEntity spawnChest(Material material, Location location) {
+        NMSEntity nmsEntity = plugin.getNMSManager().createEntity(location.getWorld(), EntityType.BLOCK_DISPLAY);
 
-    private NMSEntity spawnNMSArmorstand(Location location) {
-        NMSEntity nmsEntity = plugin.getNMSManager().createEntity(location.getWorld(), EntityType.ARMOR_STAND);
+        if (nmsEntity.getBukkitEntity() instanceof BlockDisplay blockDisplay) {
+            blockDisplay.setBlock(material.createBlockData());
+            blockDisplay.setTeleportDuration(1);
 
-        if (nmsEntity.getBukkitEntity() instanceof ArmorStand armorStand) {
-            armorStand.setInvisible(true);
-            armorStand.setSmall(true);
+            Matrix4f transformationMatrix = new Matrix4f();
+            transformationMatrix.identity()
+                    //.scale(scale)
+                    //.rotateY(radians)
+                    .translate(-0.5f, 0.0f, -0.5f);
+            blockDisplay.setTransformationMatrix(transformationMatrix);
         }
         nmsEntity.setPositionRotation(location);
+        nmsEntity.getTracker().startTracking();
+        blockDisplayChests.add(nmsEntity);
 
         return nmsEntity;
     }
@@ -304,7 +305,7 @@ public abstract class TreasureChestAnimation extends BukkitRunnable implements L
             block.getWorld().playEffect(block.getLocation(), Effect.STEP_SOUND, block.getType());
             block.setType(Material.AIR);
         }
-        despawnChestArmorstands();
+        despawnChest();
 
         items.forEach(entity -> entity.getTracker().destroy());
         items.clear();
@@ -315,7 +316,7 @@ public abstract class TreasureChestAnimation extends BukkitRunnable implements L
         plugin = null;
         platform = null;
         treasureChest = null;
-        armorStandChests = null;
+        blockDisplayChests = null;
         items = null;
         openedChests = null;
         texts = null;

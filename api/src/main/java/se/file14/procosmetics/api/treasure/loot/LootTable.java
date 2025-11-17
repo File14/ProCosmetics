@@ -17,51 +17,59 @@
  */
 package se.file14.procosmetics.api.treasure.loot;
 
-import org.bukkit.entity.Player;
-import se.file14.procosmetics.api.user.User;
+import org.jetbrains.annotations.Nullable;
+import se.file14.procosmetics.api.cosmetic.CosmeticRarity;
+
+import java.util.List;
+import java.util.Map;
 
 /**
- * Represents a loot table that can generate random loot entries.
- *
- * @param <T> the type of loot entry this table produces
+ * Represents a loot table containing all possible loot entries for a treasure chest.
  */
-public interface LootTable<T extends LootEntry> {
+public interface LootTable {
 
     /**
-     * Generates a random loot entry from this loot table.
+     * Rolls for a random loot entry based on weighted random selection.
      *
-     * @return a randomly selected loot entry
+     * @return a randomly selected loot entry, or null if no entries are available
      */
-    T getRandomLoot();
+    @Nullable
+    LootEntry rollLoot();
 
     /**
-     * Gives the specified loot entry to a player.
+     * Calculates the percentage chance of obtaining a specific loot entry.
      *
-     * @param player    the player to receive the loot
-     * @param user      the user representation of the player
-     * @param lootEntry the loot entry to give
+     * @param entry the loot entry to calculate chance for
+     * @return the percentage chance (0.0 - 100.0)
      */
-    void give(Player player, User user, T lootEntry);
+    double getEntryChance(LootEntry entry);
 
     /**
-     * Gets the translated category name for this loot table.
+     * Calculates the percentage chance of a rarity.
      *
-     * @param user the user to get the translation for
-     * @return the translated category name
+     * @param rarity the rarity to calculate chance for
+     * @return the percentage chance (0.0 - 100.0)
      */
-    String getCategory(User user);
+    double getRarityChance(CosmeticRarity rarity);
 
     /**
-     * Gets the unique key identifier for this loot table.
+     * Gets all loot entries in this table.
      *
-     * @return the loot table key
+     * @return an immutable list of all loot entries
      */
-    String getKey();
+    List<LootEntry> getEntries();
 
     /**
-     * Gets the weight of this loot table for weighted random selection.
+     * Gets all loot entries organized by their categories.
      *
-     * @return the weight value
+     * @return a map of categories to their loot entries
      */
-    int getWeight();
+    Map<LootCategory, List<LootEntry>> getEntriesByCategory();
+
+    /**
+     * Gets the total weight of all entries in this loot table.
+     *
+     * @return the total weight
+     */
+    int getTotalWeight();
 }

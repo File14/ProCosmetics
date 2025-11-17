@@ -22,6 +22,7 @@ import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
 import org.bukkit.inventory.ItemStack;
 import se.file14.procosmetics.api.ProCosmetics;
 import se.file14.procosmetics.api.config.Config;
+import se.file14.procosmetics.api.menu.Menu;
 import se.file14.procosmetics.api.treasure.TreasureChest;
 import se.file14.procosmetics.api.treasure.TreasureChestPlatform;
 import se.file14.procosmetics.api.user.User;
@@ -73,6 +74,14 @@ public class TreasureChestMenu extends MenuImpl {
             ));
 
             setItem(itemBuilder.getSlot(), itemBuilder.getItemStack(), event -> {
+                        if (event.isShiftClick() && plugin.getConfigManager().getConfig("treasure_chests").getBoolean("loot_categories.enabled")) {
+                            Menu menu = new LootCategoriesMenu(plugin, user, treasureChest);
+                            menu.setPreviousMenu(this);
+                            menu.open();
+                            playClickSound();
+                            return;
+                        }
+
                         if (keys < 1 || event.isRightClick()) {
                             if (treasureChest.isPurchasable() && treasureChest.hasPurchasePermission(player)) {
                                 new TreasurePurchaseMenu(plugin, user, treasureChest).open();
@@ -98,6 +107,7 @@ public class TreasureChestMenu extends MenuImpl {
 
                             plugin.getDatabase().removeTreasureChestsAsync(user, treasureChest, 1).thenAcceptAsync(result -> {
                                 if (result.leftBoolean()) {
+                                    // TODO: Rework in the future
                                     switch (treasureChest.getChestAnimationType()) {
                                         case COMMON: {
                                             new Common(plugin, platform, treasureChest, user);
@@ -128,7 +138,7 @@ public class TreasureChestMenu extends MenuImpl {
     public ItemStack getFillEmptySlotsItem() {
         Config config = plugin.getConfigManager().getConfig("treasure_chests");
 
-        if (!config.getBoolean("menu.items.fill_empty_slots.enable")) {
+        if (!config.getBoolean("menu.items.fill_empty_slots.enabled")) {
             return null;
         }
         return new ItemBuilderImpl(config, "menu.items.fill_empty_slots").getItemStack();

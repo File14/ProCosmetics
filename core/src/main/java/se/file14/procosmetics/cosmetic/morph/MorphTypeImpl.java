@@ -30,6 +30,7 @@ import se.file14.procosmetics.api.cosmetic.registry.CosmeticCategory;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.cosmetic.CosmeticTypeImpl;
 
+import java.util.List;
 import java.util.function.Supplier;
 
 public class MorphTypeImpl extends CosmeticTypeImpl<MorphType, MorphBehavior> implements MorphType {
@@ -42,15 +43,15 @@ public class MorphTypeImpl extends CosmeticTypeImpl<MorphType, MorphBehavior> im
                          CosmeticCategory<MorphType, MorphBehavior, ?> category,
                          Supplier<MorphBehavior> behaviorFactory,
                          boolean enabled,
-                         boolean findable,
                          boolean purchasable,
                          int cost,
                          CosmeticRarity rarity,
                          ItemStack itemStack,
+                         List<String> treasureChests,
                          double cooldown,
                          EntityType entityType,
                          boolean ability) {
-        super(key, category, behaviorFactory, enabled, findable, purchasable, cost, rarity, itemStack);
+        super(key, category, behaviorFactory, enabled, purchasable, cost, rarity, itemStack, treasureChests);
         this.cooldown = cooldown;
         this.entityType = entityType;
         this.ability = ability;
@@ -128,11 +129,11 @@ public class MorphTypeImpl extends CosmeticTypeImpl<MorphType, MorphBehavior> im
                     category,
                     factory,
                     enabled,
-                    findable,
                     purchasable,
                     cost,
                     rarity,
                     itemStack,
+                    treasureChests,
                     cooldown,
                     entityType,
                     ability
