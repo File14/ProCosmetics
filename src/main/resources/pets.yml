@@ -1,6 +1,6 @@
 # Enable/disable this entire category.
 # When disabled, players cannot equip any cosmetics from this category as they will NOT be loaded into cache.
-enable: true
+enabled: true
 
 menu:
   rows: 6
@@ -14,7 +14,7 @@ menu:
   # For more information: https://minecraft.wiki/w/Data_component_format
   items:
     fill_empty_slots:
-      enable: true
+      enabled: true
       item: "minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]"
       count: 1
 
@@ -29,7 +29,7 @@ menu:
       slot: -7
 
     go_back:
-      enable: true
+      enabled: true
       item: "minecraft:red_bed"
       count: 1
       slot: -5
@@ -40,7 +40,7 @@ menu:
         execute_as_player: false
 
     sorting:
-      enable: true
+      enabled: true
       item: "minecraft:hopper"
       count: 1
       slot: -1
@@ -48,16 +48,16 @@ menu:
     locked_cosmetic:
       # This specifies if another item should replace the original cosmetic item while it is locked.
       # This is useful to easily visualize which cosmetics the player has access to or not.
-      enable: true
+      enabled: true
       item: "minecraft:firework_star"
       count: 1
 
 cosmetics:
   allay:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     entity: "ALLAY"
     baby: false
@@ -74,10 +74,10 @@ cosmetics:
       - legendary
 
   armadillo:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     entity: "ARMADILLO"
     baby: true
@@ -94,10 +94,10 @@ cosmetics:
       - legendary
 
   axolotl:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     entity: "AXOLOTL"
     baby: true
@@ -114,17 +114,17 @@ cosmetics:
       - legendary
 
   bee:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     entity: "BEE"
     baby: true
     scale: 1.0
     spawn_sound: "ENTITY_BEE_LOOP"
     toss_item:
-      enable: true
+      enabled: true
       item: "minecraft:honeycomb"
     item: "minecraft:honeycomb"
     count: 1
@@ -134,10 +134,10 @@ cosmetics:
       - legendary
 
   body_guard:
-    enable: true
+    enabled: true
     rarity: "legendary"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     entity: "IRON_GOLEM"
     baby: false
@@ -154,17 +154,17 @@ cosmetics:
       - legendary
 
   calf:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     entity: "COW"
     baby: true
     scale: 1.0
     spawn_sound: "ENTITY_COW_AMBIENT"
     toss_item:
-      enable: true
+      enabled: true
       item: "minecraft:milk_bucket"
     item: "minecraft:milk_bucket"
     count: 1
@@ -174,10 +174,10 @@ cosmetics:
       - legendary
 
   camel:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     entity: "CAMEL"
     baby: true
@@ -194,17 +194,17 @@ cosmetics:
       - legendary
 
   cave_spider:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     entity: "CAVE_SPIDER"
     baby: false
     scale: 1.0
     spawn_sound: "ENTITY_SPIDER_AMBIENT"
     toss_item:
-      enable: true
+      enabled: true
       item: "minecraft:cobweb"
     item: "minecraft:spider_eye"
     count: 1
@@ -214,17 +214,17 @@ cosmetics:
       - legendary
 
   chicken:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     entity: "CHICKEN"
     baby: true
     scale: 1.0
     spawn_sound: "ENTITY_CHICKEN_AMBIENT"
     toss_item:
-      enable: true
+      enabled: true
       item: "minecraft:egg"
     item: "minecraft:feather"
     count: 1
@@ -234,10 +234,10 @@ cosmetics:
       - legendary
 
   colorful_lamb:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     entity: "SHEEP"
     baby: true
@@ -254,17 +254,17 @@ cosmetics:
       - legendary
 
   easter_bunny:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     entity: "RABBIT"
     baby: true
     scale: 1.0
     spawn_sound: "ENTITY_RABBIT_AMBIENT"
     toss_item:
-      enable: true
+      enabled: true
       item: "minecraft:egg"
     item: "minecraft:carrot"
     count: 1
@@ -274,10 +274,10 @@ cosmetics:
       - legendary
 
   elf:
-    enable: true
+    enabled: true
     rarity: "legendary"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     entity: "ZOMBIE"
     baby: true
@@ -294,10 +294,10 @@ cosmetics:
       - legendary
 
   endermite:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     entity: "ENDERMITE"
     baby: true
@@ -314,10 +314,10 @@ cosmetics:
       - legendary
 
   fox:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     entity: "FOX"
     baby: true
@@ -334,10 +334,10 @@ cosmetics:
       - legendary
 
   frog:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     entity: "FROG"
     baby: true
@@ -354,10 +354,10 @@ cosmetics:
       - legendary
 
   goat:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     entity: "GOAT"
     baby: true
@@ -374,10 +374,10 @@ cosmetics:
       - legendary
 
   hoglin:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     entity: "HOGLIN"
     baby: true
@@ -394,17 +394,17 @@ cosmetics:
       - legendary
 
   kitten:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     entity: "CAT"
     baby: true
     scale: 1.0
     spawn_sound: "ENTITY_CAT_AMBIENT"
     toss_item:
-      enable: true
+      enabled: true
       item: "minecraft:tropical_fish"
     item: "minecraft:cod"
     count: 1
@@ -414,10 +414,10 @@ cosmetics:
       - legendary
 
   llama:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     entity: "LLAMA"
     baby: true
@@ -434,17 +434,17 @@ cosmetics:
       - legendary
 
   mushroom_calf:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     entity: "MOOSHROOM"
     baby: true
     scale: 1.0
     spawn_sound: "ENTITY_COW_AMBIENT"
     toss_item:
-      enable: true
+      enabled: true
       item: "minecraft:red_mushroom"
     item: "minecraft:red_mushroom"
     count: 1
@@ -454,17 +454,17 @@ cosmetics:
       - legendary
 
   panda:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     entity: "PANDA"
     baby: true
     scale: 1.0
     spawn_sound: "ENTITY_PANDA_AMBIENT"
     toss_item:
-      enable: true
+      enabled: true
       item: "minecraft:bamboo"
     item: "minecraft:bamboo"
     count: 1
@@ -474,10 +474,10 @@ cosmetics:
       - legendary
 
   parrot:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     entity: "PARROT"
     baby: false
@@ -494,17 +494,17 @@ cosmetics:
       - legendary
 
   piggy:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     entity: "PIG"
     baby: true
     scale: 1.0
     spawn_sound: "ENTITY_PIG_AMBIENT"
     toss_item:
-      enable: true
+      enabled: true
       item: "minecraft:porkchop"
     item: "minecraft:porkchop"
     count: 1
@@ -514,10 +514,10 @@ cosmetics:
       - legendary
 
   piglin:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     entity: "PIGLIN"
     baby: true
@@ -534,10 +534,10 @@ cosmetics:
       - legendary
 
   polar_bear:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     entity: "POLAR_BEAR"
     baby: true
@@ -554,17 +554,17 @@ cosmetics:
       - legendary
 
   puppy:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     entity: "WOLF"
     baby: true
     scale: 1.0
     spawn_sound: "ENTITY_WOLF_AMBIENT"
     toss_item:
-      enable: true
+      enabled: true
       item: "minecraft:bone"
     item: "minecraft:bone"
     count: 1
@@ -574,10 +574,10 @@ cosmetics:
       - legendary
 
   santa_claus:
-    enable: true
+    enabled: true
     rarity: "legendary"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     entity: "ZOMBIE"
     baby: false
@@ -594,10 +594,10 @@ cosmetics:
       - legendary
 
   silverfish:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     entity: "SILVERFISH"
     baby: false
@@ -614,10 +614,10 @@ cosmetics:
       - legendary
 
   sniffer:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     entity: "SNIFFER"
     baby: true
@@ -634,10 +634,10 @@ cosmetics:
       - legendary
 
   turtle:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     entity: "TURTLE"
     baby: false
@@ -654,10 +654,10 @@ cosmetics:
       - legendary
 
   villager:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     entity: "VILLAGER"
     baby: true
@@ -674,17 +674,17 @@ cosmetics:
       - legendary
 
   zombie_villager:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     entity: "ZOMBIE_VILLAGER"
     baby: true
     scale: 1.0
     spawn_sound: "ENTITY_ZOMBIE_AMBIENT"
     toss_item:
-      enable: true
+      enabled: true
       item: "minecraft:rotten_flesh"
     item: "minecraft:rotten_flesh"
     count: 1

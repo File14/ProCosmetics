@@ -173,7 +173,7 @@ public class GadgetTypeImpl extends CosmeticTypeImpl<GadgetType, GadgetBehavior>
 
             // Ammo
             infinityAmmo = config.getBoolean(path + "ammo.infinity");
-            purchasableAmmo = config.getBoolean(path + "ammo.purchasable.enable");
+            purchasableAmmo = config.getBoolean(path + "ammo.purchasable.enabled");
             ammoPurchaseAmount = Math.max(0, config.getInt(path + "ammo.purchasable.amount"));
             ammoCost = Math.max(0, config.getInt(path + "ammo.purchasable.cost"));
 

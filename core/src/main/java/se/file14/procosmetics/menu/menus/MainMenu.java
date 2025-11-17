@@ -43,7 +43,7 @@ public class MainMenu extends MenuImpl {
         Player player = getPlayer();
         Config config = plugin.getConfigManager().getMainConfig();
 
-        if (config.getBoolean("menu.main.items.unequip_all.enable")) {
+        if (config.getBoolean("menu.main.items.unequip_all.enabled")) {
             ItemBuilder itemBuilder = new ItemBuilderImpl(config, "menu.main.items.unequip_all");
             itemBuilder.setDisplayName(user.translate("menu.main.unequip_all.name"));
             itemBuilder.setLore(user.translateList("menu.main.unequip_all.desc"));
@@ -55,7 +55,7 @@ public class MainMenu extends MenuImpl {
             );
         }
 
-        if (config.getBoolean("menu.main.items.coins.enable")) {
+        if (config.getBoolean("menu.main.items.coins.enabled")) {
             int coins = plugin.getEconomyManager().getEconomyProvider().getCoins(user);
 
             ItemBuilder itemBuilder = new ItemBuilderImpl(config, "menu.main.items.coins");
@@ -111,7 +111,7 @@ public class MainMenu extends MenuImpl {
     public ItemStack getFillEmptySlotsItem() {
         Config config = plugin.getConfigManager().getMainConfig();
 
-        if (!config.getBoolean("menu.main.items.fill_empty_slots.enable")) {
+        if (!config.getBoolean("menu.main.items.fill_empty_slots.enabled")) {
             return null;
         }
         return new ItemBuilderImpl(config, "menu.main.items.fill_empty_slots").getItemStack();

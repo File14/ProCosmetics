@@ -131,7 +131,7 @@ public class CosmeticPurchaseMenu extends MenuImpl {
 
     @Override
     public ItemStack getFillEmptySlotsItem() {
-        if (!config.getBoolean("menu.purchase.cosmetic.items.fill_empty_slots.enable")) {
+        if (!config.getBoolean("menu.purchase.cosmetic.items.fill_empty_slots.enabled")) {
             return null;
         }
         return new ItemBuilderImpl(config, "menu.purchase.cosmetic.items.fill_empty_slots").getItemStack();

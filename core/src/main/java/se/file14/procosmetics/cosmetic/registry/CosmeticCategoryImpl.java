@@ -58,7 +58,7 @@ public class CosmeticCategoryImpl<T extends CosmeticType<T, B>,
         this.key = key.toLowerCase();
         this.registry = new CosmeticRegistryImpl<>(this, builderFactory);
         this.config = PLUGIN.getConfigManager().register(key);
-        this.enabled = config.getBoolean("enable");
+        this.enabled = config.getBoolean("enabled");
         this.permission = "procosmetics.cosmetic." + key + ".*";
         this.purchasePermission = "procosmetics.purchase." + key + ".*";
         this.menuItem = new ItemBuilderImpl(PLUGIN.getConfigManager().getMainConfig(), "menu.main.items." + key);

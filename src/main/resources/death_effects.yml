@@ -1,6 +1,6 @@
 # Enable/disable this entire category.
 # When disabled, players cannot equip any cosmetics from this category as they will NOT be loaded into cache.
-enable: true
+enabled: true
 
 # This option allows you to turn death effects into kill effects. Please note you will have to correct the description texts by yourself.
 kill_effects: false
@@ -17,7 +17,7 @@ menu:
   # For more information: https://minecraft.wiki/w/Data_component_format
   items:
     fill_empty_slots:
-      enable: true
+      enabled: true
       item: "minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]"
       count: 1
 
@@ -32,7 +32,7 @@ menu:
       slot: -7
 
     go_back:
-      enable: true
+      enabled: true
       item: "minecraft:red_bed"
       count: 1
       slot: -5
@@ -43,7 +43,7 @@ menu:
         execute_as_player: false
 
     sorting:
-      enable: true
+      enabled: true
       item: "minecraft:hopper"
       count: 1
       slot: -1
@@ -51,16 +51,16 @@ menu:
     locked_cosmetic:
       # This specifies if another item should replace the original cosmetic item while it is locked.
       # This is useful to easily visualize which cosmetics the player has access to or not.
-      enable: true
+      enabled: true
       item: "minecraft:firework_star"
       count: 1
 
 cosmetics:
   bloody_death:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:redstone"
     count: 1
@@ -70,10 +70,10 @@ cosmetics:
       - legendary
 
   candy_cane_remains:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:sugar"
     count: 1
@@ -83,10 +83,10 @@ cosmetics:
       - legendary
 
   confetti_death:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:melon_seeds"
     count: 1
@@ -96,10 +96,10 @@ cosmetics:
       - legendary
 
   enchanted_death:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:book"
     count: 1
@@ -109,10 +109,10 @@ cosmetics:
       - legendary
 
   fall_of_the_frost_lord:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:snowball"
     count: 1
@@ -122,10 +122,10 @@ cosmetics:
       - legendary
 
   flame_death:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:blaze_powder"
     count: 1
@@ -135,10 +135,10 @@ cosmetics:
       - legendary
 
   last_love:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:poppy"
     count: 1
@@ -148,10 +148,10 @@ cosmetics:
       - legendary
 
   lightning_death:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:poppy"
     count: 1
@@ -161,10 +161,10 @@ cosmetics:
       - legendary
 
   lava_death:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:lava_bucket"
     count: 1
@@ -174,10 +174,10 @@ cosmetics:
       - legendary
 
   magical_death:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:purple_dye"
     count: 1
@@ -187,10 +187,10 @@ cosmetics:
       - legendary
 
   musical_death:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:note_block"
     count: 1
@@ -200,10 +200,10 @@ cosmetics:
       - legendary
 
   shadow_death:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:coal"
     count: 1
@@ -213,10 +213,10 @@ cosmetics:
       - legendary
 
   sparkly_death:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:firework_rocket[!minecraft:fireworks]"
     count: 1
@@ -226,10 +226,10 @@ cosmetics:
       - legendary
 
   wet_death:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:water_bucket"
     count: 1

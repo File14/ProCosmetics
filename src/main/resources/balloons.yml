@@ -1,6 +1,6 @@
 # Enable/disable this entire category.
 # When disabled, players cannot equip any cosmetics from this category as they will NOT be loaded into cache.
-enable: true
+enabled: true
 
 menu:
   rows: 6
@@ -14,7 +14,7 @@ menu:
   # For more information: https://minecraft.wiki/w/Data_component_format
   items:
     fill_empty_slots:
-      enable: true
+      enabled: true
       item: "minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]"
       count: 1
 
@@ -29,7 +29,7 @@ menu:
       slot: -7
 
     go_back:
-      enable: true
+      enabled: true
       item: "minecraft:red_bed"
       count: 1
       slot: -5
@@ -40,7 +40,7 @@ menu:
         execute_as_player: false
 
     sorting:
-      enable: true
+      enabled: true
       item: "minecraft:hopper"
       count: 1
       slot: -1
@@ -48,16 +48,16 @@ menu:
     locked_cosmetic:
       # This specifies if another item should replace the original cosmetic item while it is locked.
       # This is useful to easily visualize which cosmetics the player has access to or not.
-      enable: true
+      enabled: true
       item: "minecraft:firework_star"
       count: 1
 
 cosmetics:
   beach_ball:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzVhNWFiMDVlYTI1NGMzMmUzYzQ4ZjNmZGNmOWZkOWQ3N2QzY2JhMDRlNmI1ZWMyZTY4YjNjYmRjZmFjM2ZkIn19fQ=='}]},!minecraft:rarity]"
     count: 1
@@ -70,10 +70,10 @@ cosmetics:
       - legendary
 
   bee:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzE4NzQ3ODdlMzYxNTllNGQ3NGRiNWUyNWJhYmE5ODdiNjY1ZGNjODkwYmU5ZjI2MmJiMGNiY2Y1ZDAxYjgyYjYifX19'}]},!minecraft:rarity]"
     count: 1
@@ -86,10 +86,10 @@ cosmetics:
       - legendary
 
   belgium:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2M4ZTBlMGRlNzA1ZDM2NmJhNTk1MDZiM2ZiMWEwNGZkM2Q1MWFmZjkwZTVjZmI0ZWJiZWE2NmVhNTk3NmMwZmYifX19'}]},!minecraft:rarity]"
     count: 1
@@ -102,10 +102,10 @@ cosmetics:
       - legendary
 
   bunny:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2U4YTRmYjI1YWZiYzZiN2FlYzE1YWJlODcyZmNlYWQxZTViMzNjMWFiMTI1MjUxNDFkNzdiZmQyOThmYzMyZDkifX19'}]},!minecraft:rarity]"
     count: 1
@@ -118,10 +118,10 @@ cosmetics:
       - legendary
 
   burger:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzRlMWI1ODVhYmRkNjQ3N2Y1OTRiY2ZjZWY4NDc3MWFhMmQ0MmFiODVkZDRjMjJhNGNjNDBjMjczNjA1MDhjOCJ9fX0='}]},!minecraft:rarity]"
     count: 1
@@ -134,10 +134,10 @@ cosmetics:
       - legendary
 
   cake:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:cake"
     count: 1
@@ -150,10 +150,10 @@ cosmetics:
       - legendary
 
   calf:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:milk_bucket"
     count: 1
@@ -166,10 +166,10 @@ cosmetics:
       - legendary
 
   canada:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2YyNDFhNjk3ZjZkZmIxYzU3Y2RhMzI3YmFhNjczMmE3ODI4YzM5OGJlNGViZmRiZDE2NmMyMzJiY2FlMmIifX19'}]},!minecraft:rarity]"
     count: 1
@@ -182,10 +182,10 @@ cosmetics:
       - legendary
 
   china:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzdmOWJjMDM1Y2RjODBmMWFiNWUxMTk4ZjI5ZjNhZDNmZGQyYjQyZDlhNjlhZWI2NGRlOTkwNjgxODAwYjk4ZGMifX19'}]},!minecraft:rarity]"
     count: 1
@@ -198,10 +198,10 @@ cosmetics:
       - legendary
 
   denmark:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzEwYzIzMDU1YzM5MjYwNmY3ZTUzMWRhYTI2NzZlYmUyZTM0ODk4ODgxMGMxNWYxNWRjNWIzNzMzOTk4MjMyIn19fQ=='}]},!minecraft:rarity]"
     count: 1
@@ -214,10 +214,10 @@ cosmetics:
       - legendary
 
   disco:
-    enable: true
+    enabled: true
     rarity: "legendary"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:blue_stained_glass"
     count: 1
@@ -230,10 +230,10 @@ cosmetics:
       - legendary
 
   earth:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2M2OTE5NmIzMzBjNmI4OTYyZjIzYWQ1NjI3ZmI2ZWNjZTQ3MmVhZjVjOWQ0NGY3OTFmNjcwOWM3ZDBmNGRlY2UifX19'}]},!minecraft:rarity]"
     count: 1
@@ -246,10 +246,10 @@ cosmetics:
       - legendary
 
   egg:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:dragon_egg[!minecraft:rarity]"
     count: 1
@@ -262,10 +262,10 @@ cosmetics:
       - legendary
 
   emerald:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:emerald_block"
     count: 1
@@ -278,10 +278,10 @@ cosmetics:
       - legendary
 
   explosive:
-    enable: true
+    enabled: true
     rarity: "legendary"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:tnt"
     count: 1
@@ -294,10 +294,10 @@ cosmetics:
       - legendary
 
   finland:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzU5ZjIzNDk3MjlhN2VjOGQ0YjE0NzhhZGZlNWNhOGFmOTY0NzllOTgzZmJhZDIzOGNjYmQ4MTQwOWI0ZWQifX19'}]},!minecraft:rarity]"
     count: 1
@@ -310,10 +310,10 @@ cosmetics:
       - legendary
 
   france:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzUxMjY5YTA2N2VlMzdlNjM2MzVjYTFlNzIzYjY3NmYxMzlkYzJkYmRkZmY5NmJiZmVmOTlkOGIzNWM5OTZiYyJ9fX0='}]},!minecraft:rarity]"
     count: 1
@@ -326,10 +326,10 @@ cosmetics:
       - legendary
 
   germany:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzVlNzg5OWI0ODA2ODU4Njk3ZTI4M2YwODRkOTE3M2ZlNDg3ODg2NDUzNzc0NjI2YjI0YmQ4Y2ZlY2M3N2IzZiJ9fX0='}]},!minecraft:rarity]"
     count: 1
@@ -342,10 +342,10 @@ cosmetics:
       - legendary
 
   ghost:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzY4ZDIxODM2NDAyMThhYjMzMGFjNTZkMmFhYjdlMjlhOTc5MGE1NDVmNjkxNjE5ZTM4NTc4ZWE0YTY5YWUwYjYifX19'}]},!minecraft:rarity]"
     count: 1
@@ -358,10 +358,10 @@ cosmetics:
       - legendary
 
   greece:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzE1MTRkZTZkZDJiNzY4MmIxZDNlYmNkMTAyOTFhZTFmMDIxZTMwMTJiNWM4YmVmZmViNzViMTgxOWViNDI1OWQifX19'}]},!minecraft:rarity]"
     count: 1
@@ -374,10 +374,10 @@ cosmetics:
       - legendary
 
   guardian:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:prismarine_shard"
     count: 1
@@ -390,10 +390,10 @@ cosmetics:
       - legendary
 
   italy:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzg1Y2U4OTIyM2ZhNDJmZTA2YWQ2NWQ4ZDQ0Y2E0MTJhZTg5OWM4MzEzMDlkNjg5MjRkZmUwZDE0MmZkYmVlYTQifX19'}]},!minecraft:rarity]"
     count: 1
@@ -406,10 +406,10 @@ cosmetics:
       - legendary
 
   japan:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Q2NDBhZTQ2NjE2MmE0N2QzZWUzM2M0MDc2ZGYxY2FiOTZmMTE4NjBmMDdlZGIxZjA4MzJjNTI1YTllMzMzMjMifX19'}]},!minecraft:rarity]"
     count: 1
@@ -422,10 +422,10 @@ cosmetics:
       - legendary
 
   kitten:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:cod"
     count: 1
@@ -438,10 +438,10 @@ cosmetics:
       - legendary
 
   mini_pig:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:cooked_porkchop"
     count: 1
@@ -454,10 +454,10 @@ cosmetics:
       - legendary
 
   money_bag:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2UzNmU5NGY2YzM0YTM1NDY1ZmNlNGE5MGYyZTI1OTc2Mzg5ZWI5NzA5YTEyMjczNTc0ZmY3MGZkNGRhYTY4NTIifX19'}]},!minecraft:rarity]"
     count: 1
@@ -470,10 +470,10 @@ cosmetics:
       - legendary
 
   mouse:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzg3NmZlZDE2Yzg1MTRjMDYzNDMyZDQ0NzFhYTIzMjQ3NTY4OGFiNGRmODYwODYxM2QyYjY2M2IzZTZmMTUxNWEifX19'}]},!minecraft:rarity]"
     count: 1
@@ -486,10 +486,10 @@ cosmetics:
       - legendary
 
   mushroom_cow:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:red_mushroom"
     count: 1
@@ -502,10 +502,10 @@ cosmetics:
       - legendary
 
   norway:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZkYTA0OGJjMTUzYjM4NDY3ZTc2YTMzNDdmMzgzOTY4NjBhOGJjNjg2MDM5MzFlOTFmN2FmNThiZWM1NzM4M2QifX19'}]},!minecraft:rarity]"
     count: 1
@@ -518,10 +518,10 @@ cosmetics:
       - legendary
 
   pigeon:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2I3ZWE0YzAxN2UzNDU2Y2YwOWE1YzI2M2YzNGQzY2M1ZjQxNTc3Yjc0ZDYwZjZmODE5NmM2MGUwN2Y4YzVhOTYifX19'}]},!minecraft:rarity]"
     count: 1
@@ -534,10 +534,10 @@ cosmetics:
       - legendary
 
   poland:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzkyMWIyYWY4ZDIzMjIyODJmY2U0YTFhYTRmMjU3YTUyYjY4ZTI3ZWIzMzRmNGExODFmZDk3NmJhZTZkOGViIn19fQ=='}]},!minecraft:rarity]"
     count: 1
@@ -550,10 +550,10 @@ cosmetics:
       - legendary
 
   police_car:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2RmMTBhZGUzYTMwYzhmNTgyZjhhY2Q3ZjM0NGUxMzQ4YzU3MGUwZjQzOGNhM2Y1YzMzZTJjOWE5M2JlNzhmMGMifX19'}]},!minecraft:rarity]"
     count: 1
@@ -566,10 +566,10 @@ cosmetics:
       - legendary
 
   portugal:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ViZDUxZjQ2OTNhZjE3NGU2ZmUxOTc5MjMzZDIzYTQwYmI5ODczOThlMzg5MTY2NWZhZmQyYmE1NjdiNWE1M2EifX19'}]},!minecraft:rarity]"
     count: 1
@@ -582,10 +582,10 @@ cosmetics:
       - legendary
 
   present:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzUxMmU5NDUxY2RiMTk2Yjc4MTk1YThmMGE0YjljMWMwYTA0ZjU4Mjc4ODc5MjdiNmE4MmFhZDM5Y2FiMmY0MzAifX19'}]},!minecraft:rarity]"
     count: 1
@@ -598,10 +598,10 @@ cosmetics:
       - legendary
 
   pride:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzIxYzhjNTg2YjRiOTc2MWQ4Yjc4ZjE2ZWI1NzM1ODMzNzRlNTJmMWEyODczNTc2NzRlMzFmZDJhODM4MiJ9fX0='}]},!minecraft:rarity]"
     count: 1
@@ -614,10 +614,10 @@ cosmetics:
       - legendary
 
   pumpkin:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:pumpkin"
     count: 1
@@ -630,10 +630,10 @@ cosmetics:
       - legendary
 
   puppy:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:bone"
     count: 1
@@ -646,10 +646,10 @@ cosmetics:
       - legendary
 
   rabbit:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:carrot"
     count: 1
@@ -662,10 +662,10 @@ cosmetics:
       - legendary
 
   soccer_ball:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzhlNGE3MGI3YmJjZDdhOGMzMjJkNTIyNTIwNDkxYTI3ZWE2YjgzZDYwZWNmOTYxZDJiNGVmYmJmOWY2MDVkIn19fQ=='}]},!minecraft:rarity]"
     count: 1
@@ -678,10 +678,10 @@ cosmetics:
       - legendary
 
   spain:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzMyYmQ0NTIxOTgzMzA5ZTBhZDc2YzFlZTI5ODc0Mjg3OTU3ZWMzZDk2ZjhkODg5MzI0ZGE4Yzg4N2U0ODVlYTgifX19'}]},!minecraft:rarity]"
     count: 1
@@ -694,10 +694,10 @@ cosmetics:
       - legendary
 
   sun:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2I4OTA0MjA4MmJiN2E3NjE4Yjc4NGVlNzYwNWExMzRjNTg4MzRlMjFlMzc0Yzg4ODkzNzE2MTA1N2Y2YzcifX19'}]},!minecraft:rarity]"
     count: 1
@@ -710,10 +710,10 @@ cosmetics:
       - legendary
 
   sweden:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzdkODYyNDJiMGQ5N2VjZTk5OTQ2NjBmMzk3NGQ3MmRmN2I4ODdmNjMwYTQ1MzBkYWRjNWIxYWI3YzIxMzRhZWMifX19'}]},!minecraft:rarity]"
     count: 1
@@ -726,10 +726,10 @@ cosmetics:
       - legendary
 
   tiny_villager:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:emerald"
     count: 1
@@ -742,10 +742,10 @@ cosmetics:
       - legendary
 
   truck:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Q4ZDFhZGQwYjZhY2I2OTk1Y2Y5NzA5ZjJkYzViMGUzYzEwNGM0N2M4MWMzN2M1NDgyMWJiNzdhOWY4NmM3In19fQ=='}]},!minecraft:rarity]"
     count: 1
@@ -758,10 +758,10 @@ cosmetics:
       - legendary
 
   turkey:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzk4NTJiOWFiYTM0ODIzNDg1MTRjMTAzNGQwYWZmZTczNTQ1YzlkZTY3OWFlNDY0N2Y5OTU2MmI1ZTVmNDdkMDkifX19'}]},!minecraft:rarity]"
     count: 1
@@ -774,10 +774,10 @@ cosmetics:
       - legendary
 
   united_kingdom:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2E5ZWRjZGQ3YjA2MTczZDdkMjIxYzcyNzRjODZjYmEzNTczMDE3MDc4OGJiNmExZGIwOWNjNjgxMDQzNWI5MmMifX19'}]},!minecraft:rarity]"
     count: 1
@@ -790,10 +790,10 @@ cosmetics:
       - legendary
 
   united_states_of_america:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzRjYWM5Nzc0ZGExMjE3MjQ4NTMyY2UxNDdmNzgzMWY2N2ExMmZkY2NhMWNmMGNiNGIzODQ4ZGU2YmM5NGI0In19fQ=='}]},!minecraft:rarity]"
     count: 1
@@ -806,10 +806,10 @@ cosmetics:
       - legendary
 
   zombie:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:rotten_flesh"
     count: 1

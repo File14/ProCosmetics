@@ -37,7 +37,7 @@ public class StatusMenu extends CosmeticMenuImpl<StatusType> {
 
     @Override
     protected void addCustomItems() {
-        if (category.getConfig().getBoolean("menu.items.toggle_self_view.enable")) {
+        if (category.getConfig().getBoolean("menu.items.toggle_self_view.enabled")) {
             Player player = getPlayer();
             ItemBuilder itemBuilder = new ItemBuilderImpl(category.getConfig(), "menu.items.toggle_self_view");
             String path = user.hasSelfViewStatus() ? "disable" : "enable";

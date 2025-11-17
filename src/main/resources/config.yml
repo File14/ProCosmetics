@@ -16,7 +16,7 @@ multi_world:
 
 # World Guard Support
 world_guard:
-  enable: true
+  enabled: true
   # This feature allows players to automatically equip their previous cosmetics
   # when they leave a restricted region where cosmetics are disabled.
   restore_cosmetics: true
@@ -178,94 +178,94 @@ menu:
     # For more information: https://minecraft.wiki/w/Data_component_format
     items:
       fill_empty_slots:
-        enable: true
+        enabled: true
         item: "minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]"
         count: 1
       arrow_effects:
         # Specifies whenever or not this category should be visible in the main menu.
-        enable: true
+        enabled: true
         item: "minecraft:tipped_arrow[!minecraft:potion_contents]"
         count: 1
         slot: 11
       balloons:
         # Specifies whenever or not this category should be visible in the main menu.
-        enable: true
+        enabled: true
         item: "minecraft:lead"
         count: 1
         slot: 12
       banners:
         # Specifies whenever or not this category should be visible in the main menu.
-        enable: true
+        enabled: true
         item: "minecraft:light_blue_banner"
         count: 1
         slot: 13
       death_effects:
         # Specifies whenever or not this category should be visible in the main menu.
-        enable: true
+        enabled: true
         item: "minecraft:skeleton_skull[!minecraft:rarity]"
         count: 1
         slot: 14
       emotes:
         # Specifies whenever or not this category should be visible in the main menu.
-        enable: true
+        enabled: true
         item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ3M2U3MmNjMzcxZGUyNWYzMzA1NjY1NzY5ZGQ3ZTlmZjExNjE2OTUyNTJlNzk5NjEyNTgwZGVlZWRkMyJ9fX0='}]},!minecraft:rarity]"
         count: 1
         slot: 15
       gadgets:
         # Specifies whenever or not this category should be visible in the main menu.
-        enable: true
+        enabled: true
         item: "minecraft:piston"
         count: 1
         slot: 20
       miniatures:
         # Specifies whenever or not this category should be visible in the main menu.
-        enable: true
+        enabled: true
         item: "minecraft:zombie_head[!minecraft:rarity]"
         count: 1
         slot: 21
       morphs:
         # Specifies whenever or not this category should be visible in the main menu.
-        enable: true
+        enabled: true
         item: "minecraft:carved_pumpkin"
         count: 1
         slot: 22
       mounts:
         # Specifies whenever or not this category should be visible in the main menu.
-        enable: true
+        enabled: true
         item: "minecraft:saddle"
         count: 1
         slot: 23
       music:
         # Specifies whenever or not this category should be visible in the main menu.
-        enable: true
+        enabled: true
         item: "minecraft:music_disc_mall[!minecraft:jukebox_playable, !minecraft:rarity]"
         count: 1
         slot: 24
       particle_effects:
         # Specifies whenever or not this category should be visible in the main menu.
-        enable: true
+        enabled: true
         item: "minecraft:nether_star[!minecraft:rarity]"
         count: 1
         slot: 30
       pets:
         # Specifies whenever or not this category should be visible in the main menu.
-        enable: true
+        enabled: true
         item: "minecraft:bone"
         count: 1
         slot: 31
       statuses:
         # Specifies whenever or not this category should be visible in the main menu.
-        enable: true
+        enabled: true
         item: "minecraft:name_tag"
         count: 1
         slot: 32
       unequip_all:
-        enable: true
+        enabled: true
         item: "minecraft:barrier"
         count: 1
         slot: -1
       coins:
-        enable: true
+        enabled: true
         item: "minecraft:sunflower"
         count: 1
         slot: -5
@@ -275,7 +275,7 @@ menu:
       rows: 3
       items:
         fill_empty_slots:
-          enable: true
+          enabled: true
           item: "minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]"
           count: 1
         accept:
@@ -290,7 +290,7 @@ menu:
       rows: 3
       items:
         fill_empty_slots:
-          enable: true
+          enabled: true
           item: "minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]"
           count: 1
         accept:
@@ -305,7 +305,7 @@ menu:
       rows: 3
       items:
         fill_empty_slots:
-          enable: true
+          enabled: true
           item: "minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]"
           count: 1
         accept:

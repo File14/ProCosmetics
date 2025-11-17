@@ -139,7 +139,7 @@ public class AmmoPurchaseMenu extends MenuImpl {
     public ItemStack getFillEmptySlotsItem() {
         Config config = plugin.getConfigManager().getMainConfig();
 
-        if (!config.getBoolean("menu.purchase.gadget_ammo.items.fill_empty_slots.enable")) {
+        if (!config.getBoolean("menu.purchase.gadget_ammo.items.fill_empty_slots.enabled")) {
             return null;
         }
         return new ItemBuilderImpl(config, "menu.purchase.gadget_ammo.items.fill_empty_slots").getItemStack();

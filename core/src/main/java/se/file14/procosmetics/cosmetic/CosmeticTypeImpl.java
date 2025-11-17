@@ -249,8 +249,8 @@ public abstract class CosmeticTypeImpl<T extends CosmeticType<T, B>,
             Config config = category.getConfig();
             String path = getPath();
 
-            this.enabled = config.getBoolean(path + "enable");
-            this.purchasable = config.getBoolean(path + "purchasable.enable");
+            this.enabled = config.getBoolean(path + "enabled");
+            this.purchasable = config.getBoolean(path + "purchasable.enabled");
             this.cost = config.getInt(path + "purchasable.cost");
             this.rarity = PLUGIN.getCosmeticRarityRegistry().getSafely(config.getString(path + "rarity"));
             this.itemStack = new ItemBuilderImpl(config, path).getItemStack();

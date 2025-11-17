@@ -86,15 +86,15 @@ public class CosmeticMenuImpl<T extends CosmeticType<T, ?>> extends PaginatedMen
                         )).getItemStack()
         );
 
-        if (config.getBoolean("menu.items.go_back.enable")) {
+        if (config.getBoolean("menu.items.go_back.enabled")) {
             this.goBackItem = new ItemBuilderImpl(category.getConfig(), "menu.items.go_back");
         }
 
-        if (config.getBoolean("menu.items.sorting.enable")) {
+        if (config.getBoolean("menu.items.sorting.enabled")) {
             this.sortingItem = new ItemBuilderImpl(category.getConfig(), "menu.items.sorting");
         }
 
-        if (config.getBoolean("menu.items.locked_cosmetic.enable")) {
+        if (config.getBoolean("menu.items.locked_cosmetic.enabled")) {
             this.lockedItem = new ItemBuilderImpl(category.getConfig(), "menu.items.locked_cosmetic");
         }
 
@@ -204,7 +204,7 @@ public class CosmeticMenuImpl<T extends CosmeticType<T, ?>> extends PaginatedMen
 
     @Override
     public ItemStack getFillEmptySlotsItem() {
-        if (!category.getConfig().getBoolean("menu.items.fill_empty_slots.enable")) {
+        if (!category.getConfig().getBoolean("menu.items.fill_empty_slots.enabled")) {
             return null;
         }
         return new ItemBuilderImpl(category.getConfig(), "menu.items.fill_empty_slots").getItemStack();

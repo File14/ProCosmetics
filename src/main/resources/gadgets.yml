@@ -1,6 +1,6 @@
 # Enable/disable this entire category.
 # When disabled, players cannot equip any cosmetics from this category as they will NOT be loaded into cache.
-enable: true
+enabled: true
 
 # This feature allows you to set the slot for the gadget item in your inventory.
 slot: 6
@@ -17,7 +17,7 @@ menu:
   # For more information: https://minecraft.wiki/w/Data_component_format
   items:
     fill_empty_slots:
-      enable: true
+      enabled: true
       item: "minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]"
       count: 1
 
@@ -32,7 +32,7 @@ menu:
       slot: -7
 
     go_back:
-      enable: true
+      enabled: true
       item: "minecraft:red_bed"
       count: 1
       slot: -5
@@ -43,7 +43,7 @@ menu:
         execute_as_player: false
 
     sorting:
-      enable: true
+      enabled: true
       item: "minecraft:hopper"
       count: 1
       slot: -1
@@ -51,16 +51,16 @@ menu:
     locked_cosmetic:
       # This specifies if another item should replace the original cosmetic item while it is locked.
       # This is useful to easily visualize which cosmetics the player has access to or not.
-      enable: true
+      enabled: true
       item: "minecraft:firework_star"
       count: 1
 
 cosmetics:
   bat_blaster:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     cooldown: 5.0
     duration: 4.0
@@ -73,7 +73,7 @@ cosmetics:
     ammo:
       infinity: false
       purchasable:
-        enable: true
+        enabled: true
         amount: 15
         cost: 250
       treasure_chests:
@@ -88,10 +88,10 @@ cosmetics:
           maximum_amount: 20
 
   cannon:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     cooldown: 20.0
     duration: 10.0
@@ -104,7 +104,7 @@ cosmetics:
     ammo:
       infinity: false
       purchasable:
-        enable: true
+        enabled: true
         amount: 10
         cost: 200
       treasure_chests:
@@ -119,10 +119,10 @@ cosmetics:
           maximum_amount: 15
 
   chicken_parachute:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     cooldown: 20.0
     item: "minecraft:feather"
@@ -134,7 +134,7 @@ cosmetics:
     ammo:
       infinity: false
       purchasable:
-        enable: true
+        enabled: true
         amount: 10
         cost: 250
       treasure_chests:
@@ -149,10 +149,10 @@ cosmetics:
           maximum_amount: 15
 
   coin_party_bomb:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     cooldown: 50.0
     duration: 30.0
@@ -167,7 +167,7 @@ cosmetics:
     ammo:
       infinity: false
       purchasable:
-        enable: true
+        enabled: true
         amount: 1
         cost: 500
       treasure_chests:
@@ -182,10 +182,10 @@ cosmetics:
           maximum_amount: 1
 
   confetti:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     cooldown: 0.3
     item: "minecraft:blaze_rod"
@@ -197,7 +197,7 @@ cosmetics:
     ammo:
       infinity: false
       purchasable:
-        enable: true
+        enabled: true
         amount: 50
         cost: 100
       treasure_chests:
@@ -212,10 +212,10 @@ cosmetics:
           maximum_amount: 80
 
   cowboy:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     cooldown: 15.0
     item: "minecraft:saddle"
@@ -227,7 +227,7 @@ cosmetics:
     ammo:
       infinity: false
       purchasable:
-        enable: true
+        enabled: true
         amount: 30
         cost: 100
       treasure_chests:
@@ -242,10 +242,10 @@ cosmetics:
           maximum_amount: 50
 
   detonator:
-    enable: true
+    enabled: true
     rarity: "legendary"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     cooldown: 8.0
     item: "minecraft:lever"
@@ -257,7 +257,7 @@ cosmetics:
     ammo:
       infinity: false
       purchasable:
-        enable: true
+        enabled: true
         amount: 10
         cost: 300
       treasure_chests:
@@ -272,10 +272,10 @@ cosmetics:
           maximum_amount: 15
 
   disco_ball:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     cooldown: 50.0
     duration: 15.0
@@ -288,7 +288,7 @@ cosmetics:
     ammo:
       infinity: false
       purchasable:
-        enable: true
+        enabled: true
         amount: 5
         cost: 250
       treasure_chests:
@@ -303,10 +303,10 @@ cosmetics:
           maximum_amount: 15
 
   diving_board:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     cooldown: 80.0
     duration: 60.0
@@ -319,7 +319,7 @@ cosmetics:
     ammo:
       infinity: false
       purchasable:
-        enable: true
+        enabled: true
         amount: 10
         cost: 200
       treasure_chests:
@@ -334,10 +334,10 @@ cosmetics:
           maximum_amount: 15
 
   ethereal_pearl:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     cooldown: 5.0
     item: "minecraft:ender_pearl"
@@ -349,7 +349,7 @@ cosmetics:
     ammo:
       infinity: false
       purchasable:
-        enable: true
+        enabled: true
         amount: 30
         cost: 250
       treasure_chests:
@@ -364,10 +364,10 @@ cosmetics:
           maximum_amount: 50
 
   explosive_sheep:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     cooldown: 18.0
     duration: 6.0
@@ -380,7 +380,7 @@ cosmetics:
     ammo:
       infinity: false
       purchasable:
-        enable: true
+        enabled: true
         amount: 30
         cost: 450
       treasure_chests:
@@ -395,10 +395,10 @@ cosmetics:
           maximum_amount: 50
 
   flame_thrower:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     cooldown: 30.0
     duration: 10.0
@@ -411,7 +411,7 @@ cosmetics:
     ammo:
       infinity: false
       purchasable:
-        enable: true
+        enabled: true
         amount: 10
         cost: 200
       treasure_chests:
@@ -426,10 +426,10 @@ cosmetics:
           maximum_amount: 15
 
   flesh_hook:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     cooldown: 2.0
     item: "minecraft:tripwire_hook"
@@ -441,7 +441,7 @@ cosmetics:
     ammo:
       infinity: false
       purchasable:
-        enable: true
+        enabled: true
         amount: 30
         cost: 350
       treasure_chests:
@@ -456,10 +456,10 @@ cosmetics:
           maximum_amount: 50
 
   fireworks:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     cooldown: 1.0
     item: "minecraft:firework_rocket[!minecraft:fireworks]"
@@ -471,7 +471,7 @@ cosmetics:
     ammo:
       infinity: false
       purchasable:
-        enable: true
+        enabled: true
         amount: 30
         cost: 150
       treasure_chests:
@@ -486,10 +486,10 @@ cosmetics:
           maximum_amount: 50
 
   grappling_hook:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     cooldown: 1.0
     item: "minecraft:fishing_rod"
@@ -501,7 +501,7 @@ cosmetics:
     ammo:
       infinity: false
       purchasable:
-        enable: true
+        enabled: true
         amount: 50
         cost: 300
       treasure_chests:
@@ -516,10 +516,10 @@ cosmetics:
           maximum_amount: 80
 
   hot_air_balloon:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     cooldown: 60.0
     duration: 40.0
@@ -532,7 +532,7 @@ cosmetics:
     ammo:
       infinity: false
       purchasable:
-        enable: true
+        enabled: true
         amount: 10
         cost: 200
       treasure_chests:
@@ -547,10 +547,10 @@ cosmetics:
           maximum_amount: 15
 
   hot_tub:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     cooldown: 80.0
     duration: 60.0
@@ -563,7 +563,7 @@ cosmetics:
     ammo:
       infinity: false
       purchasable:
-        enable: true
+        enabled: true
         amount: 10
         cost: 200
       treasure_chests:
@@ -578,10 +578,10 @@ cosmetics:
           maximum_amount: 15
 
   melon_launcher:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     cooldown: 4.0
     item: "minecraft:melon"
@@ -593,7 +593,7 @@ cosmetics:
     ammo:
       infinity: false
       purchasable:
-        enable: true
+        enabled: true
         amount: 20
         cost: 150
       treasure_chests:
@@ -608,10 +608,10 @@ cosmetics:
           maximum_amount: 40
 
   merry_go_round:
-    enable: true
+    enabled: true
     rarity: "legendary"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     cooldown: 80.0
     duration: 60.0
@@ -624,7 +624,7 @@ cosmetics:
     ammo:
       infinity: false
       purchasable:
-        enable: true
+        enabled: true
         amount: 5
         cost: 600
       treasure_chests:
@@ -639,10 +639,10 @@ cosmetics:
           maximum_amount: 8
 
   paintball:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     cooldown: 0.3
     item: "minecraft:golden_horse_armor[!minecraft:attribute_modifiers]"
@@ -654,7 +654,7 @@ cosmetics:
     ammo:
       infinity: false
       purchasable:
-        enable: true
+        enabled: true
         amount: 30
         cost: 100
       treasure_chests:
@@ -669,10 +669,10 @@ cosmetics:
           maximum_amount: 50
 
   parkour_spiral:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     cooldown: 80.0
     duration: 60.0
@@ -685,7 +685,7 @@ cosmetics:
     ammo:
       infinity: false
       purchasable:
-        enable: true
+        enabled: true
         amount: 10
         cost: 200
       treasure_chests:
@@ -700,10 +700,10 @@ cosmetics:
           maximum_amount: 15
 
   party_popper:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     cooldown: 20.0
     duration: 12.0
@@ -716,7 +716,7 @@ cosmetics:
     ammo:
       infinity: false
       purchasable:
-        enable: true
+        enabled: true
         amount: 10
         cost: 300
       treasure_chests:
@@ -731,10 +731,10 @@ cosmetics:
           maximum_amount: 15
 
   rocket:
-    enable: true
+    enabled: true
     rarity: "legendary"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     cooldown: 30.0
     item: "minecraft:iron_block"
@@ -746,7 +746,7 @@ cosmetics:
     ammo:
       infinity: false
       purchasable:
-        enable: true
+        enabled: true
         amount: 5
         cost: 500
       treasure_chests:
@@ -761,10 +761,10 @@ cosmetics:
           maximum_amount: 8
 
   shower:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     cooldown: 80.0
     duration: 60.0
@@ -777,7 +777,7 @@ cosmetics:
     ammo:
       infinity: false
       purchasable:
-        enable: true
+        enabled: true
         amount: 10
         cost: 200
       treasure_chests:
@@ -792,10 +792,10 @@ cosmetics:
           maximum_amount: 15
 
   slide:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     cooldown: 80.0
     duration: 60.0
@@ -808,7 +808,7 @@ cosmetics:
     ammo:
       infinity: false
       purchasable:
-        enable: true
+        enabled: true
         amount: 10
         cost: 200
       treasure_chests:
@@ -823,10 +823,10 @@ cosmetics:
           maximum_amount: 15
 
   soccer_ball:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     cooldown: 70.0
     duration: 60.0
@@ -839,7 +839,7 @@ cosmetics:
     ammo:
       infinity: false
       purchasable:
-        enable: true
+        enabled: true
         amount: 20
         cost: 200
       treasure_chests:
@@ -854,10 +854,10 @@ cosmetics:
           maximum_amount: 40
 
   swing:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     cooldown: 80.0
     duration: 60.0
@@ -870,7 +870,7 @@ cosmetics:
     ammo:
       infinity: false
       purchasable:
-        enable: true
+        enabled: true
         amount: 10
         cost: 200
       treasure_chests:
@@ -885,10 +885,10 @@ cosmetics:
           maximum_amount: 15
 
   tnt:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     cooldown: 3.0
     item: "minecraft:tnt"
@@ -900,7 +900,7 @@ cosmetics:
     ammo:
       infinity: false
       purchasable:
-        enable: true
+        enabled: true
         amount: 10
         cost: 250
       treasure_chests:
@@ -915,10 +915,10 @@ cosmetics:
           maximum_amount: 15
 
   trampoline:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     cooldown: 40.0
     duration: 35.0
@@ -931,7 +931,7 @@ cosmetics:
     ammo:
       infinity: false
       purchasable:
-        enable: true
+        enabled: true
         amount: 10
         cost: 500
       treasure_chests:
@@ -946,10 +946,10 @@ cosmetics:
           maximum_amount: 15
 
   water_gun:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     cooldown: 1.5
     item: "minecraft:soul_lantern"
@@ -961,7 +961,7 @@ cosmetics:
     ammo:
       infinity: false
       purchasable:
-        enable: true
+        enabled: true
         amount: 10
         cost: 200
       treasure_chests:
@@ -976,10 +976,10 @@ cosmetics:
           maximum_amount: 15
 
   wither_missile:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     cooldown: 15.0
     duration: 10.0
@@ -992,7 +992,7 @@ cosmetics:
     ammo:
       infinity: false
       purchasable:
-        enable: true
+        enabled: true
         amount: 15
         cost: 300
       treasure_chests:

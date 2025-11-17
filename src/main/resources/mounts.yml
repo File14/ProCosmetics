@@ -1,6 +1,6 @@
 # Enable/disable this entire category.
 # When disabled, players cannot equip any cosmetics from this category as they will NOT be loaded into cache.
-enable: true
+enabled: true
 
 # This feature makes some entities toss items in different directions.
 tossing_items: true
@@ -23,7 +23,7 @@ menu:
   # For more information: https://minecraft.wiki/w/Data_component_format
   items:
     fill_empty_slots:
-      enable: true
+      enabled: true
       item: "minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]"
       count: 1
 
@@ -38,7 +38,7 @@ menu:
       slot: -7
 
     go_back:
-      enable: true
+      enabled: true
       item: "minecraft:red_bed"
       count: 1
       slot: -5
@@ -49,7 +49,7 @@ menu:
         execute_as_player: false
 
     sorting:
-      enable: true
+      enabled: true
       item: "minecraft:hopper"
       count: 1
       slot: -1
@@ -57,16 +57,16 @@ menu:
     locked_cosmetic:
       # This specifies if another item should replace the original cosmetic item while it is locked.
       # This is useful to easily visualize which cosmetics the player has access to or not.
-      enable: true
+      enabled: true
       item: "minecraft:firework_star"
       count: 1
 
 cosmetics:
   baby_reindeer:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:snow_block"
     count: 1
@@ -76,10 +76,10 @@ cosmetics:
       - legendary
 
   cave_spider:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:spider_eye"
     count: 1
@@ -89,10 +89,10 @@ cosmetics:
       - legendary
 
   clumsy_mule:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:chest"
     count: 1
@@ -102,10 +102,10 @@ cosmetics:
       - legendary
 
   crazy_chicken:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:egg"
     count: 1
@@ -115,10 +115,10 @@ cosmetics:
       - legendary
 
   decrepit_warhorse:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:rotten_flesh"
     count: 1
@@ -128,10 +128,10 @@ cosmetics:
       - legendary
 
   ethereal_dragon:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:dragon_egg[!minecraft:rarity]"
     count: 1
@@ -141,10 +141,10 @@ cosmetics:
       - legendary
 
   frosty_snowman:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:snowball"
     count: 1
@@ -154,10 +154,10 @@ cosmetics:
       - legendary
 
   glacial_steed:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:packed_ice"
     count: 1
@@ -167,10 +167,10 @@ cosmetics:
       - legendary
 
   hype_train:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:minecart"
     count: 1
@@ -180,10 +180,10 @@ cosmetics:
       - legendary
 
   infernal_horror:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:bone"
     count: 1
@@ -193,10 +193,10 @@ cosmetics:
       - legendary
 
   lovely_sheep:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:pink_stained_glass"
     count: 1
@@ -206,10 +206,10 @@ cosmetics:
       - legendary
 
   molten_snake:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:netherrack"
     count: 1
@@ -219,10 +219,10 @@ cosmetics:
       - legendary
 
   pirate_ship:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:oak_boat"
     count: 1
@@ -232,10 +232,10 @@ cosmetics:
       - legendary
 
   rudolf:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:dead_bush"
     count: 1
@@ -245,10 +245,10 @@ cosmetics:
       - legendary
 
   slime:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:slime_block"
     count: 1
@@ -258,10 +258,10 @@ cosmetics:
       - legendary
 
   unicorn:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:blaze_rod"
     count: 1

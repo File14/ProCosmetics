@@ -207,7 +207,7 @@ public class ProCosmeticsPlugin extends JavaPlugin implements ProCosmetics {
     }
 
     private void initializeRedis() {
-        if (configManager.getMainConfig().getBoolean("redis.enable")) {
+        if (configManager.getMainConfig().getBoolean("redis.enabled")) {
             redisManager = new RedisManager(this);
         }
     }
@@ -231,7 +231,7 @@ public class ProCosmeticsPlugin extends JavaPlugin implements ProCosmetics {
     private void preHookPlugins() {
         PluginManager pluginManager = getServer().getPluginManager();
 
-        if (pluginManager.getPlugin("WorldGuard") != null && configManager.getMainConfig().getBoolean("world_guard.enable")) {
+        if (pluginManager.getPlugin("WorldGuard") != null && configManager.getMainConfig().getBoolean("world_guard.enabled")) {
             logger.info("Hooking into WorldGuard...");
             this.worldGuardManager = new WorldGuardManager(this);
         }

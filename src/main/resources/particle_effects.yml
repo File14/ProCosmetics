@@ -1,6 +1,6 @@
 # Enable/disable this entire category.
 # When disabled, players cannot equip any cosmetics from this category as they will NOT be loaded into cache.
-enable: true
+enabled: true
 
 # This feature allows you to temporary pause the particle effects while holding sneak.
 sneak_to_pause: false
@@ -17,7 +17,7 @@ menu:
   # For more information: https://minecraft.wiki/w/Data_component_format
   items:
     fill_empty_slots:
-      enable: true
+      enabled: true
       item: "minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]"
       count: 1
 
@@ -32,7 +32,7 @@ menu:
       slot: -7
 
     go_back:
-      enable: true
+      enabled: true
       item: "minecraft:red_bed"
       count: 1
       slot: -5
@@ -43,7 +43,7 @@ menu:
         execute_as_player: false
 
     sorting:
-      enable: true
+      enabled: true
       item: "minecraft:hopper"
       count: 1
       slot: -1
@@ -51,16 +51,16 @@ menu:
     locked_cosmetic:
       # This specifies if another item should replace the original cosmetic item while it is locked.
       # This is useful to easily visualize which cosmetics the player has access to or not.
-      enable: true
+      enabled: true
       item: "minecraft:firework_star"
       count: 1
 
 cosmetics:
   angel_wings:
-    enable: true
+    enabled: true
     rarity: "legendary"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:light_gray_dye"
     count: 1
@@ -70,10 +70,10 @@ cosmetics:
       - legendary
 
   aura_of_flame:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:gold_nugget"
     count: 1
@@ -83,10 +83,10 @@ cosmetics:
       - legendary
 
   big_heart:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:poppy"
     count: 1
@@ -96,10 +96,10 @@ cosmetics:
       - legendary
 
   black_hole:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:coal_block"
     count: 1
@@ -109,10 +109,10 @@ cosmetics:
       - legendary
 
   blood_helix:
-    enable: true
+    enabled: true
     rarity: "legendary"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:redstone"
     count: 1
@@ -122,10 +122,10 @@ cosmetics:
       - legendary
 
   bunny:
-    enable: true
+    enabled: true
     rarity: "legendary"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:rabbit_spawn_egg"
     count: 1
@@ -135,10 +135,10 @@ cosmetics:
       - legendary
 
   christmas_tree:
-    enable: true
+    enabled: true
     rarity: "legendary"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:spruce_sapling"
     count: 1
@@ -148,10 +148,10 @@ cosmetics:
       - legendary
 
   colorful_trail:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:magenta_dye"
     count: 1
@@ -161,10 +161,10 @@ cosmetics:
       - legendary
 
   confetti:
-    enable: true
+    enabled: true
     rarity: "legendary"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:blaze_rod"
     count: 1
@@ -174,10 +174,10 @@ cosmetics:
       - legendary
 
   crushed_candy_cane:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:sugar"
     count: 1
@@ -187,10 +187,10 @@ cosmetics:
       - legendary
 
   demon_twist:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:charcoal"
     count: 1
@@ -200,10 +200,10 @@ cosmetics:
       - legendary
 
   emerald_twirl:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:emerald"
     count: 1
@@ -213,10 +213,10 @@ cosmetics:
       - legendary
 
   enchanted:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:book"
     count: 1
@@ -226,10 +226,10 @@ cosmetics:
       - legendary
 
   flame_flairy:
-    enable: true
+    enabled: true
     rarity: "legendary"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:blaze_powder"
     count: 1
@@ -239,10 +239,10 @@ cosmetics:
       - legendary
 
   flame_of_magic:
-    enable: true
+    enabled: true
     rarity: "legendary"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:blaze_rod"
     count: 1
@@ -252,10 +252,10 @@ cosmetics:
       - legendary
 
   flame_of_the_demons:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:blaze_powder"
     count: 1
@@ -265,10 +265,10 @@ cosmetics:
       - legendary
 
   flame_rings:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:orange_dye"
     count: 1
@@ -278,10 +278,10 @@ cosmetics:
       - legendary
 
   frost_lord:
-    enable: true
+    enabled: true
     rarity: "legendary"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:snowball"
     count: 1
@@ -291,10 +291,10 @@ cosmetics:
       - legendary
 
   in_love:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:poppy"
     count: 1
@@ -304,10 +304,10 @@ cosmetics:
       - legendary
 
   jack_o_lantern:
-    enable: true
+    enabled: true
     rarity: "legendary"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:jack_o_lantern"
     count: 1
@@ -317,10 +317,10 @@ cosmetics:
       - legendary
 
   legendary_aura:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:ender_eye"
     count: 1
@@ -330,10 +330,10 @@ cosmetics:
       - legendary
 
   music:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:note_block"
     count: 1
@@ -343,10 +343,10 @@ cosmetics:
       - legendary
 
   party_time:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:purple_dye"
     count: 1
@@ -356,10 +356,10 @@ cosmetics:
       - legendary
 
   protective_shield:
-    enable: true
+    enabled: true
     rarity: "legendary"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:cyan_dye"
     count: 1
@@ -369,10 +369,10 @@ cosmetics:
       - legendary
 
   rain_cloud:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:lapis_lazuli"
     count: 1
@@ -382,10 +382,10 @@ cosmetics:
       - legendary
 
   rainbow_wings:
-    enable: true
+    enabled: true
     rarity: "legendary"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:yellow_dye"
     count: 1
@@ -395,10 +395,10 @@ cosmetics:
       - legendary
 
   shadow_walk:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:coal"
     count: 1
@@ -408,10 +408,10 @@ cosmetics:
       - legendary
 
   skull:
-    enable: true
+    enabled: true
     rarity: "legendary"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:skeleton_skull[!minecraft:rarity]"
     count: 1
@@ -421,10 +421,10 @@ cosmetics:
       - legendary
 
   snow_cloud:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:snow"
     count: 1
@@ -434,10 +434,10 @@ cosmetics:
       - legendary
 
   snowflake:
-    enable: true
+    enabled: true
     rarity: "legendary"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:nether_star[!minecraft:rarity]"
     count: 1
@@ -447,10 +447,10 @@ cosmetics:
       - legendary
 
   star:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:nether_star[!minecraft:rarity]"
     count: 1
@@ -460,10 +460,10 @@ cosmetics:
       - legendary
 
   tornado:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:cobweb"
     count: 1
@@ -473,10 +473,10 @@ cosmetics:
       - legendary
 
   umbrella:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:hopper"
     count: 1
@@ -486,10 +486,10 @@ cosmetics:
       - legendary
 
   vampire_wings:
-    enable: true
+    enabled: true
     rarity: "legendary"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:firework_star"
     count: 1
@@ -499,10 +499,10 @@ cosmetics:
       - legendary
 
   yin_and_yang:
-    enable: true
+    enabled: true
     rarity: "legendary"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:melon_seeds"
     count: 1

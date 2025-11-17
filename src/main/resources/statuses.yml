@@ -1,6 +1,6 @@
 # Enable/disable this entire category.
 # When disabled, players cannot equip any cosmetics from this category as they will NOT be loaded into cache.
-enable: true
+enabled: true
 
 # This allows you to adjust the height of the status tag.
 # Above player name-tag: 0.525
@@ -22,7 +22,7 @@ menu:
   # For more information: https://minecraft.wiki/w/Data_component_format
   items:
     fill_empty_slots:
-      enable: true
+      enabled: true
       item: "minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]"
       count: 1
 
@@ -37,7 +37,7 @@ menu:
       slot: -7
 
     go_back:
-      enable: true
+      enabled: true
       item: "minecraft:red_bed"
       count: 1
       slot: -5
@@ -48,7 +48,7 @@ menu:
         execute_as_player: false
 
     sorting:
-      enable: true
+      enabled: true
       item: "minecraft:hopper"
       count: 1
       slot: -1
@@ -56,12 +56,12 @@ menu:
     locked_cosmetic:
       # This specifies if another item should replace the original cosmetic item while it is locked.
       # This is useful to easily visualize which cosmetics the player has access to or not.
-      enable: true
+      enabled: true
       item: "minecraft:firework_star"
       count: 1
 
     toggle_self_view:
-      enable: true
+      enabled: true
       item: "minecraft:book"
       count: 1
       slot: -2
@@ -69,10 +69,10 @@ menu:
 # Note: refresh_interval is defined in ticks (20 ticks = 1 second), -1 = no update (static text)
 cosmetics:
   afk:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:name_tag"
     count: 1
@@ -83,10 +83,10 @@ cosmetics:
       - legendary
 
   coins:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:name_tag"
     count: 1
@@ -97,10 +97,10 @@ cosmetics:
       - legendary
 
   do_not_disturb:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:name_tag"
     count: 1
@@ -111,10 +111,10 @@ cosmetics:
       - legendary
 
   just_chilling:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:name_tag"
     count: 1
@@ -125,10 +125,10 @@ cosmetics:
       - legendary
 
   looking_to_chat:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:name_tag"
     count: 1
@@ -139,10 +139,10 @@ cosmetics:
       - legendary
 
   looking_to_team_up:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:name_tag"
     count: 1
@@ -153,10 +153,10 @@ cosmetics:
       - legendary
 
   ping:
-    enable: true
+    enabled: true
     rarity: "legendary"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:name_tag"
     count: 1

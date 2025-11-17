@@ -1,6 +1,6 @@
 # Enable/disable this entire category.
 # When disabled, players cannot equip any cosmetics from this category as they will NOT be loaded into cache.
-enable: true
+enabled: true
 
 menu:
   rows: 4
@@ -14,7 +14,7 @@ menu:
   # For more information: https://minecraft.wiki/w/Data_component_format
   items:
     fill_empty_slots:
-      enable: true
+      enabled: true
       item: "minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]"
       count: 1
 
@@ -29,7 +29,7 @@ menu:
       slot: -7
 
     go_back:
-      enable: true
+      enabled: true
       item: "minecraft:red_bed"
       count: 1
       slot: -5
@@ -40,7 +40,7 @@ menu:
         execute_as_player: false
 
     sorting:
-      enable: true
+      enabled: true
       item: "minecraft:hopper"
       count: 1
       slot: -1
@@ -48,16 +48,16 @@ menu:
     locked_cosmetic:
       # This specifies if another item should replace the original cosmetic item while it is locked.
       # This is useful to easily visualize which cosmetics the player has access to or not.
-      enable: true
+      enabled: true
       item: "minecraft:firework_star"
       count: 1
 
 cosmetics:
   cheeky:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzk5NzcyMjI5MzgyOWUxM2QyYmE3YmE1NzVjZTc4YTVkN2VlYjVlNzQ1ZTZlMjk1OTYxMzQ4ZDU1Y2M3ZmU3In19fQ=='}]},!minecraft:rarity]"
     count: 1
@@ -107,10 +107,10 @@ cosmetics:
         duration: 1
 
   cool:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzc2NmIzZWVmM2M3MjZlY2I4MTZjNDM4MzkxODllZWI4ZTM2MzgyZTNlNWZlNDExMjgzNzI3ODUxODVhMzIyIn19fQ=='}]},!minecraft:rarity]"
     count: 1
@@ -130,10 +130,10 @@ cosmetics:
         duration: 1
 
   deal_with_it:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZhM2Y3ZjJmNjk3MGQzMmRiMjg0MjYxNTIwYzhjNDQxZmU0YjMyNjhhYzBjOTlhZWI0YTUyNDg2NTZiZCJ9fX0='}]},!minecraft:rarity]"
     count: 1
@@ -167,10 +167,10 @@ cosmetics:
         duration: 1
 
   dizzy:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2JhMTUxYTU1ZWJhNzM0ZjFjNjUxYmJjN2U3MTdjYzhhN2ZmNTU3NWQ2ODA0ZjEzN2QxY2QyMTYxMzE0OTg5ZiJ9fX0='}]},!minecraft:rarity]"
     count: 1
@@ -214,10 +214,10 @@ cosmetics:
         duration: 1
 
   happy:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzAxYjlkZWY1NTg3NmM0MWMxN2M4MTVmODgxMTVmMDJjOTVmODk2MjBmYmVkNmE2Y2IyZDM4ZDQ2ZmUwNSJ9fX0='}]},!minecraft:rarity]"
     count: 1
@@ -243,10 +243,10 @@ cosmetics:
         duration: 6
 
   in_love:
-    enable: true
+    enabled: true
     rarity: "legendary"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzk2ZmJiNTJhNGQwYzYyZDhlNmNhZThjNDg1ZTU1MWIzN2ZlYzY4ZTZkYWFiMjNkODVmMmZmNTJmYWE0YzQifX19'}]},!minecraft:rarity]"
     count: 1
@@ -278,10 +278,10 @@ cosmetics:
         duration: 1
 
   rage:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Q4MjczOGZjODJiZWRhZjMwMjk2MTJmMWVjOTJmZTBjZjg0OGU1NDFjOGUzMGRjZjQxZWZjMDRiZWEzMGJhIn19fQ=='}]},!minecraft:rarity]"
     count: 1
@@ -339,10 +339,10 @@ cosmetics:
         duration: 1
 
   rip:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQzOWMzZGY3YTYyOGFmOGQ3NTFlY2NhMTk3NjQyY2RjMWEwN2MzMGUzMjg5YjJkMzI2MWY3YTY1Y2YzOTViIn19fQ=='}]},!minecraft:rarity]"
     count: 1
@@ -366,10 +366,10 @@ cosmetics:
         duration: 13
 
   sad:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzczMmZlMTIxYTYzZWFhYmQ5OWNlZDZkMWFjYzkxNzk4NjUyZDFlZTgwODRkMmY5MTI3ZDhhMzE1Y2FkNWNlNCJ9fX0='}]},!minecraft:rarity]"
     count: 1
@@ -441,10 +441,10 @@ cosmetics:
         duration: 1
 
   sleepy:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzg2MjljNmJmNTc1ZGVlNjU3NjI2YTg0Yjg4N2ExZTcxNDcxNGM5OTRmMjc4MmRlYjk2ODE4Y2MzODI5ZTdjNjkifX19'}]},!minecraft:rarity]"
     count: 1
@@ -496,10 +496,10 @@ cosmetics:
         duration: 1
 
   spicy:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzg4MTFlYzM2MThkZmMwNzU4MThhZjhhN2ZkYTUyZWU1NmMwYmIyMDNlNGQyNzgyMWUxNzg2ZjJhZjU1YjlkIn19fQ=='}]},!minecraft:rarity]"
     count: 1
@@ -555,10 +555,10 @@ cosmetics:
         duration: 1
 
   sun_tan:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzE1ZTExMjJjODM3YTg3Y2UxOGQ1MWU3OTc5ODNkYTZhZDM4NDc5M2ZkZDlmNzcyNTM3NjNhZTliNmQ5YTEifX19'}]},!minecraft:rarity]"
     count: 1
@@ -612,10 +612,10 @@ cosmetics:
         duration: 1
 
   surprised:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzRjM2IwODllNDQ2ZjA2NWRkOTA1OTUxOWM4NWM0NWFlYmI1Mzg5MWJlM2MzYTdlZDViNWViNjFhOTY3NDcifX19'}]},!minecraft:rarity]"
     count: 1
@@ -643,10 +643,10 @@ cosmetics:
         duration: 1
 
   wink:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ3M2U3MmNjMzcxZGUyNWYzMzA1NjY1NzY5ZGQ3ZTlmZjExNjE2OTUyNTJlNzk5NjEyNTgwZGVlZWRkMyJ9fX0='}]},!minecraft:rarity]"
     count: 1

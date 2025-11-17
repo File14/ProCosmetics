@@ -128,7 +128,7 @@ public class PetTypeImpl extends CosmeticTypeImpl<PetType, PetBehavior> implemen
 
             String itemPath = path + "toss_item";
 
-            if (config.getBoolean(itemPath + ".enable")) {
+            if (config.getBoolean(itemPath + ".enabled")) {
                 tossItem = new ItemBuilderImpl(config, itemPath).getItemStack();
             }
             return this;

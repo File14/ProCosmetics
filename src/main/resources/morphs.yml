@@ -1,6 +1,6 @@
 # Enable/disable this entire category.
 # When disabled, players cannot equip any cosmetics from this category as they will NOT be loaded into cache.
-enable: true
+enabled: true
 
 # Some morphs allow flying. This option enables/disables their fly ability.
 flyable: true
@@ -21,7 +21,7 @@ menu:
   # For more information: https://minecraft.wiki/w/Data_component_format
   items:
     fill_empty_slots:
-      enable: true
+      enabled: true
       item: "minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]"
       count: 1
 
@@ -36,7 +36,7 @@ menu:
       slot: -7
 
     go_back:
-      enable: true
+      enabled: true
       item: "minecraft:red_bed"
       count: 1
       slot: -5
@@ -47,7 +47,7 @@ menu:
         execute_as_player: false
 
     sorting:
-      enable: true
+      enabled: true
       item: "minecraft:hopper"
       count: 1
       slot: -1
@@ -55,22 +55,22 @@ menu:
     locked_cosmetic:
       # This specifies if another item should replace the original cosmetic item while it is locked.
       # This is useful to easily visualize which cosmetics the player has access to or not.
-      enable: true
+      enabled: true
       item: "minecraft:firework_star"
       count: 1
 
     toggle_self_view:
-      enable: true
+      enabled: true
       item: "minecraft:saddle"
       count: 1
       slot: -2
 
 cosmetics:
   bat:
-    enable: true
+    enabled: true
     rarity: "legendary"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     ability: true
     cooldown: 1.0
@@ -82,10 +82,10 @@ cosmetics:
       - legendary
 
   blaze:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     ability: true
     cooldown: 5.0
@@ -97,10 +97,10 @@ cosmetics:
       - legendary
 
   block:
-    enable: true
+    enabled: true
     rarity: "legendary"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     ability: true
     cooldown: 5.0
@@ -112,10 +112,10 @@ cosmetics:
       - legendary
 
   bunny:
-    enable: true
+    enabled: true
     rarity: "legendary"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     ability: true
     cooldown: 0.0
@@ -127,10 +127,10 @@ cosmetics:
       - legendary
 
   cat:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     ability: true
     cooldown: 2.0
@@ -142,10 +142,10 @@ cosmetics:
       - legendary
 
   cave_spider:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     ability: true
     cooldown: 10.0
@@ -157,10 +157,10 @@ cosmetics:
       - legendary
 
   chicken:
-    enable: true
+    enabled: true
     rarity: "legendary"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     ability: true
     cooldown: 2.0
@@ -172,10 +172,10 @@ cosmetics:
       - legendary
 
   cow:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     ability: true
     cooldown: 2.0
@@ -187,10 +187,10 @@ cosmetics:
       - legendary
 
   creeper:
-    enable: true
+    enabled: true
     rarity: "legendary"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     ability: true
     cooldown: 20.0
@@ -202,10 +202,10 @@ cosmetics:
       - legendary
 
   dog:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     ability: true
     cooldown: 2.0
@@ -217,10 +217,10 @@ cosmetics:
       - legendary
 
   donkey:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     ability: true
     cooldown: 2.0
@@ -232,10 +232,10 @@ cosmetics:
       - legendary
 
   elder_guardian:
-    enable: true
+    enabled: true
     rarity: "legendary"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     ability: true
     cooldown: 30.0
@@ -247,10 +247,10 @@ cosmetics:
       - legendary
 
   enderman:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     ability: true
     cooldown: 8.0
@@ -262,10 +262,10 @@ cosmetics:
       - legendary
 
   iron_golem:
-    enable: true
+    enabled: true
     rarity: "legendary"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     ability: true
     cooldown: 15.0
@@ -277,10 +277,10 @@ cosmetics:
       - legendary
 
   magma_cube:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     ability: true
     cooldown: 0.0
@@ -292,10 +292,10 @@ cosmetics:
       - legendary
 
   mushroom_cow:
-    enable: true
+    enabled: true
     rarity: "legendary"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     ability: true
     cooldown: 2.0
@@ -307,10 +307,10 @@ cosmetics:
       - legendary
 
   olaf:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     ability: true
     cooldown: 8.0
@@ -322,10 +322,10 @@ cosmetics:
       - legendary
 
   pig:
-    enable: true
+    enabled: true
     rarity: "legendary"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     ability: true
     cooldown: 2.0
@@ -337,10 +337,10 @@ cosmetics:
       - legendary
 
   piglin:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     ability: true
     cooldown: 2.0
@@ -352,10 +352,10 @@ cosmetics:
       - legendary
 
   sheep:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     ability: true
     cooldown: 2.0
@@ -367,10 +367,10 @@ cosmetics:
       - legendary
 
   skeleton:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     ability: true
     cooldown: 10.0
@@ -382,10 +382,10 @@ cosmetics:
       - legendary
 
   slime:
-    enable: true
+    enabled: true
     rarity: "legendary"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     ability: true
     cooldown: 10.0
@@ -397,10 +397,10 @@ cosmetics:
       - legendary
 
   spider:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     ability: true
     cooldown: 20.0
@@ -412,10 +412,10 @@ cosmetics:
       - legendary
 
   squid:
-    enable: true
+    enabled: true
     rarity: "legendary"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     ability: true
     cooldown: 20.0
@@ -427,10 +427,10 @@ cosmetics:
       - legendary
 
   villager:
-    enable: true
+    enabled: true
     rarity: "legendary"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     ability: true
     cooldown: 2.0
@@ -442,10 +442,10 @@ cosmetics:
       - legendary
 
   witch:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     ability: true
     cooldown: 5.0
@@ -457,10 +457,10 @@ cosmetics:
       - legendary
 
   wither:
-    enable: true
+    enabled: true
     rarity: "legendary"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     ability: true
     cooldown: 12.0
@@ -472,10 +472,10 @@ cosmetics:
       - legendary
 
   zombie:
-    enable: true
+    enabled: true
     rarity: "legendary"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     ability: true
     cooldown: 20.0

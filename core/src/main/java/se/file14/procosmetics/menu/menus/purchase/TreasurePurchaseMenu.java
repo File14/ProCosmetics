@@ -162,7 +162,7 @@ public class TreasurePurchaseMenu extends MenuImpl {
     public ItemStack getFillEmptySlotsItem() {
         Config config = plugin.getConfigManager().getMainConfig();
 
-        if (!config.getBoolean("menu.purchase.treasure_chest.items.fill_empty_slots.enable")) {
+        if (!config.getBoolean("menu.purchase.treasure_chest.items.fill_empty_slots.enabled")) {
             return null;
         }
         return new ItemBuilderImpl(config, "menu.purchase.treasure_chest.items.fill_empty_slots").getItemStack();

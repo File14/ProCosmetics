@@ -1,6 +1,6 @@
 # Enable/disable this entire category.
 # When disabled, players cannot equip any cosmetics from this category as they will NOT be loaded into cache.
-enable: true
+enabled: true
 
 menu:
   rows: 6
@@ -14,7 +14,7 @@ menu:
   # For more information: https://minecraft.wiki/w/Data_component_format
   items:
     fill_empty_slots:
-      enable: true
+      enabled: true
       item: "minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]"
       count: 1
 
@@ -29,7 +29,7 @@ menu:
       slot: -7
 
     go_back:
-      enable: true
+      enabled: true
       item: "minecraft:red_bed"
       count: 1
       slot: -5
@@ -40,7 +40,7 @@ menu:
         execute_as_player: false
 
     sorting:
-      enable: true
+      enabled: true
       item: "minecraft:hopper"
       count: 1
       slot: -1
@@ -48,16 +48,16 @@ menu:
     locked_cosmetic:
       # This specifies if another item should replace the original cosmetic item while it is locked.
       # This is useful to easily visualize which cosmetics the player has access to or not.
-      enable: true
+      enabled: true
       item: "minecraft:firework_star"
       count: 1
 
 cosmetics:
   candy_cane:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: >-
       minecraft:red_banner[minecraft:banner_patterns=[{color: 'white', pattern: 'minecraft:triangle_top'},
@@ -74,10 +74,10 @@ cosmetics:
       - legendary
 
   crown:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: >-
       minecraft:yellow_banner[minecraft:banner_patterns=[{color: 'black', pattern: 'minecraft:triangle_top'},
@@ -92,10 +92,10 @@ cosmetics:
       - legendary
 
   disco:
-    enable: true
+    enabled: true
     rarity: "rare"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: "minecraft:light_blue_banner"
     count: 1
@@ -131,10 +131,10 @@ cosmetics:
       - legendary
 
   ender_dragon:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: >-
       minecraft:white_banner[minecraft:banner_patterns=[{color: 'black', pattern: 'minecraft:curly_border'},
@@ -151,10 +151,10 @@ cosmetics:
       - legendary
 
   fire:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: >-
       minecraft:black_banner[minecraft:banner_patterns=[{color: 'orange', pattern: 'minecraft:mojang'},
@@ -171,10 +171,10 @@ cosmetics:
       - legendary
 
   fox:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: >-
       minecraft:white_banner[minecraft:banner_patterns=[{color: 'black', pattern: 'minecraft:rhombus'},
@@ -190,10 +190,10 @@ cosmetics:
       - legendary
 
   goose:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: >-
       minecraft:black_banner[minecraft:banner_patterns=[{color: 'orange', pattern: 'minecraft:mojang'},
@@ -210,10 +210,10 @@ cosmetics:
       - legendary
 
   happy_sheep:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: >-
       minecraft:light_blue_banner[minecraft:banner_patterns=[{color: 'lime', pattern: 'minecraft:stripe_bottom'},
@@ -228,10 +228,10 @@ cosmetics:
       - legendary
 
   heart:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: >-
       minecraft:black_banner[minecraft:banner_patterns=[{color: 'red', pattern: 'minecraft:rhombus'},
@@ -246,10 +246,10 @@ cosmetics:
       - legendary
 
   octopus:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: >-
       minecraft:gray_banner[minecraft:banner_patterns=[{color: 'blue', pattern: 'minecraft:triangle_bottom'},
@@ -266,10 +266,10 @@ cosmetics:
       - legendary
 
   panda:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: >-
       minecraft:white_banner[minecraft:banner_patterns=[{color: 'black', pattern: 'minecraft:flower'},
@@ -286,10 +286,10 @@ cosmetics:
       - legendary
 
   pineapple:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: >-
       minecraft:orange_banner[minecraft:banner_patterns=[{color: 'yellow', pattern: 'minecraft:bricks'},
@@ -306,10 +306,10 @@ cosmetics:
       - legendary
 
   pirate_skull:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: >-
       minecraft:light_blue_banner[minecraft:banner_patterns=[{color: 'black', pattern: 'minecraft:circle'},
@@ -325,10 +325,10 @@ cosmetics:
       - legendary
 
   present:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: >-
       minecraft:white_banner[minecraft:banner_patterns=[{color: 'red', pattern: 'minecraft:stripe_bottom'},
@@ -345,10 +345,10 @@ cosmetics:
       - legendary
 
   pug:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: >-
       minecraft:orange_banner[minecraft:banner_patterns=[{color: 'white', pattern: 'minecraft:bricks'},
@@ -370,10 +370,10 @@ cosmetics:
       - legendary
 
   rabbit:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: >-
       minecraft:white_banner[minecraft:banner_patterns=[{color: 'black', pattern: 'minecraft:circle'},
@@ -390,10 +390,10 @@ cosmetics:
       - legendary
 
   rose:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: >-
       minecraft:white_banner[minecraft:banner_patterns=[{color: 'lime', pattern: 'minecraft:mojang'},
@@ -410,10 +410,10 @@ cosmetics:
       - legendary
 
   santa_hat:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: >-
       minecraft:green_banner[minecraft:banner_patterns=[{color: 'white', pattern: 'minecraft:border'},
@@ -429,10 +429,10 @@ cosmetics:
       - legendary
 
   snowflake:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: >-
       minecraft:blue_banner[minecraft:banner_patterns=[{color: 'light_blue', pattern: 'minecraft:gradient_up'},
@@ -447,10 +447,10 @@ cosmetics:
       - legendary
 
   snowy_tree:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: >-
       minecraft:white_banner[minecraft:banner_patterns=[{color: 'green', pattern: 'minecraft:bricks'},
@@ -472,10 +472,10 @@ cosmetics:
       - legendary
 
   speech_bubble:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: >-
       minecraft:white_banner[minecraft:banner_patterns=[{color: 'light_blue', pattern: 'minecraft:stripe_bottom'},
@@ -491,10 +491,10 @@ cosmetics:
       - legendary
 
   sun_flower:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: >-
       minecraft:light_blue_banner[minecraft:banner_patterns=[{color: 'lime', pattern: 'minecraft:triangles_bottom'},
@@ -512,10 +512,10 @@ cosmetics:
       - legendary
 
   sweden:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: >-
       minecraft:blue_banner[minecraft:banner_patterns=[{color: 'yellow', pattern: 'minecraft:stripe_middle'},
@@ -528,10 +528,10 @@ cosmetics:
       - legendary
 
   sword:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: >-
       minecraft:black_banner[minecraft:banner_patterns=[{color: 'yellow', pattern: 'minecraft:flower'},
@@ -548,10 +548,10 @@ cosmetics:
       - legendary
 
   taco:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: >-
       minecraft:black_banner[minecraft:banner_patterns=[{color: 'red', pattern: 'minecraft:skull'},
@@ -567,10 +567,10 @@ cosmetics:
       - legendary
 
   united_states_of_america:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: >-
       minecraft:white_banner[minecraft:banner_patterns=[{color: 'red', pattern: 'minecraft:small_stripes'},
@@ -583,10 +583,10 @@ cosmetics:
       - legendary
 
   wither:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: >-
       minecraft:white_banner[minecraft:banner_patterns=[{color: 'black', pattern: 'minecraft:straight_cross'},
@@ -601,10 +601,10 @@ cosmetics:
       - legendary
 
   wreath:
-    enable: true
+    enabled: true
     rarity: "common"
     purchasable:
-      enable: true
+      enabled: true
       cost: 2000
     item: >-
       minecraft:light_blue_banner[minecraft:banner_patterns=[{color: 'yellow', pattern: 'minecraft:creeper'},
