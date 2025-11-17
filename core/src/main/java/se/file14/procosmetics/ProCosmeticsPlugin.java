@@ -148,7 +148,7 @@ public class ProCosmeticsPlugin extends JavaPlugin implements ProCosmetics {
         hookPlugins();
         checkUpdate();
 
-        NoteBlockAPI.initializeAPI(this);
+        NoteBlockAPI.init(this);
 
         userManager.loadOnlinePlayers();
         if (redisManager != null) {
@@ -203,7 +203,7 @@ public class ProCosmeticsPlugin extends JavaPlugin implements ProCosmetics {
             adventure.close();
             adventure = null;
         }
-        NoteBlockAPI.getAPI().onDisable(this);
+        NoteBlockAPI.getAPI().shutdown();
     }
 
     private void initializeRedis() {

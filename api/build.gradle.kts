@@ -29,8 +29,7 @@ dependencies {
     compileOnly("org.jetbrains:annotations:26.0.2-1")
 
     // NoteBlockAPI
-    // compileOnly("com.github.koca2000:NoteBlockAPI:1.6.3") // temporarily disabled
-    compileOnly("com.github.ashtton:NoteBlockAPI:78f2966ccd")
+    compileOnly("com.github.File14:NoteBlockAPI:1c5500b038")
 }
 
 publishing {

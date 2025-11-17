@@ -7,8 +7,7 @@ dependencies {
     implementation(project(":api"))
 
     // Runtime libraries (will be shaded)
-    //implementation("com.github.koca2000:NoteBlockAPI:1.6.3") temporarily disabled
-    implementation("com.github.ashtton:NoteBlockAPI:78f2966ccd")
+    implementation("com.github.File14:NoteBlockAPI:1c5500b038")
     implementation("org.mongodb:mongodb-driver-sync:5.6.1")
     implementation("com.zaxxer:HikariCP:7.0.2")
     {

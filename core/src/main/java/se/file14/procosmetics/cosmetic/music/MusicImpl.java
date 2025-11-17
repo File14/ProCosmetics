@@ -18,7 +18,6 @@
 package se.file14.procosmetics.cosmetic.music;
 
 import com.xxmicloxx.NoteBlockAPI.event.SongEndEvent;
-import com.xxmicloxx.NoteBlockAPI.model.SoundCategory;
 import com.xxmicloxx.NoteBlockAPI.songplayer.PositionSongPlayer;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
