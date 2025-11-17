@@ -29,7 +29,7 @@ import se.file14.procosmetics.api.cosmetic.gadget.GadgetBehavior;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetType;
 import se.file14.procosmetics.api.nms.NMSEntity;
 import se.file14.procosmetics.util.MetadataUtil;
-import se.file14.procosmetics.util.structure.type.FallingBlocksStructure;
+import se.file14.procosmetics.util.structure.type.FallingBlockStructure;
 
 import javax.annotation.Nullable;
 
@@ -38,7 +38,7 @@ public class HotAirBalloon implements GadgetBehavior {
     private static final double MAX_SPEED = 0.075d;
     private static final double ACCELERATION = 0.001d;
 
-    private FallingBlocksStructure structure;
+    private FallingBlockStructure structure;
     private Location center;
     private Location seatLocation;
     private NMSEntity seat;
@@ -47,7 +47,7 @@ public class HotAirBalloon implements GadgetBehavior {
     @Override
     public void onEquip(CosmeticContext<GadgetType> context) {
         if (structure == null) {
-            structure = new FallingBlocksStructure(context.getType().getStructure());
+            structure = new FallingBlockStructure(context.getType().getStructure());
         }
     }
 

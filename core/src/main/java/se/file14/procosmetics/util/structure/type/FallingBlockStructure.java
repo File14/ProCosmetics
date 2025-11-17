@@ -31,12 +31,12 @@ import se.file14.procosmetics.util.structure.Structure;
 
 import java.util.Map;
 
-public class FallingBlocksStructure extends Structure<NMSEntity> {
+public class FallingBlockStructure extends Structure<NMSEntity> {
 
     private static final ProCosmeticsPlugin PLUGIN = ProCosmeticsPlugin.getPlugin();
     private final EntityTracker tracker = new EntityTrackerImpl();
 
-    public FallingBlocksStructure(StructureData data) {
+    public FallingBlockStructure(StructureData data) {
         super(data, block -> block.isPassable() && !block.isLiquid());
     }
 
@@ -51,7 +51,7 @@ public class FallingBlocksStructure extends Structure<NMSEntity> {
             rotate(blockData, location.getYaw());
 
             NMSEntity nmsFallingBlock = PLUGIN.getNMSManager().createFallingBlock(location.getWorld(), blockData, tracker);
-            if (nmsFallingBlock instanceof FallingBlock fallingBlock) {
+            if (nmsFallingBlock.getBukkitEntity() instanceof FallingBlock fallingBlock) {
                 fallingBlock.setGravity(false);
             }
             location.add(vector);

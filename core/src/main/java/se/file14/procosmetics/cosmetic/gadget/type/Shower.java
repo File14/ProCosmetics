@@ -27,7 +27,7 @@ import se.file14.procosmetics.api.cosmetic.CosmeticContext;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetBehavior;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetType;
 import se.file14.procosmetics.util.MathUtil;
-import se.file14.procosmetics.util.structure.type.FallingBlocksStructure;
+import se.file14.procosmetics.util.structure.type.FallingBlockStructure;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;
@@ -37,7 +37,7 @@ public class Shower implements GadgetBehavior {
 
     private static final double DRIP_HEIGHT = 3.15d;
 
-    private FallingBlocksStructure structure;
+    private FallingBlockStructure structure;
     private Location center;
     private Location shower;
     private Location eyeLocation;
@@ -46,7 +46,7 @@ public class Shower implements GadgetBehavior {
     @Override
     public void onEquip(CosmeticContext<GadgetType> context) {
         if (structure == null) {
-            structure = new FallingBlocksStructure(context.getType().getStructure());
+            structure = new FallingBlockStructure(context.getType().getStructure());
         }
     }
 
