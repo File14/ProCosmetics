@@ -82,6 +82,12 @@ subprojects {
     }
     val javaVersion = findProperty("javaVersion")?.toString()?.toIntOrNull() ?: 21
 
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(javaVersion))
+        }
+    }
+
     tasks.withType<JavaCompile>().configureEach {
         javaCompiler.set(javaToolchains.compilerFor {
             languageVersion.set(JavaLanguageVersion.of(javaVersion))
