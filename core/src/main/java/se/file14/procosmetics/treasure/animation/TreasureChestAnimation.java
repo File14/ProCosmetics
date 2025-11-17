@@ -276,7 +276,7 @@ public abstract class TreasureChestAnimation extends BukkitRunnable implements L
             transformationMatrix.identity()
                     //.scale(scale)
                     //.rotateY(radians)
-                    .translate(-0.5f, 0.0f, -0.5f);
+                    .translate(-0.5f, -0.5f, -0.5f);
             blockDisplay.setTransformationMatrix(transformationMatrix);
         }
         nmsEntity.setPositionRotation(location);
