@@ -20,6 +20,7 @@ package se.file14.procosmetics.util;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Entity;
 import org.bukkit.metadata.FixedMetadataValue;
+import org.jetbrains.annotations.Nullable;
 import se.file14.procosmetics.ProCosmeticsPlugin;
 
 public class MetadataUtil {
@@ -32,8 +33,8 @@ public class MetadataUtil {
     private static final FixedMetadataValue ENTITY_METADATA_VALUE = new FixedMetadataValue(PLUGIN, ENTITY_METADATA);
     private static final FixedMetadataValue BLOCK_METADATA_VALUE = new FixedMetadataValue(PLUGIN, BLOCK_METADATA);
 
-    public static boolean isCustomEntity(Entity entity) {
-        return entity.hasMetadata(ENTITY_METADATA);
+    public static boolean isCustomEntity(@Nullable Entity entity) {
+        return entity != null && entity.hasMetadata(ENTITY_METADATA);
     }
 
     public static void setCustomEntity(Entity entity) {

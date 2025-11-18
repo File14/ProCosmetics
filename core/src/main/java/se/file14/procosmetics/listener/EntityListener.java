@@ -70,16 +70,14 @@ public class EntityListener implements Listener {
 
     @EventHandler(ignoreCancelled = true)
     public void onTarget(EntityTargetEvent event) {
-        Entity target = event.getTarget();
-
-        if (target != null && MetadataUtil.isCustomEntity(target)) {
+        if (MetadataUtil.isCustomEntity(event.getEntity()) || MetadataUtil.isCustomEntity(event.getTarget())) {
             event.setCancelled(true);
         }
     }
 
     @EventHandler(ignoreCancelled = true)
     public void onTargetLivingEntity(EntityTargetLivingEntityEvent event) {
-        if (MetadataUtil.isCustomEntity(event.getEntity())) {
+        if (MetadataUtil.isCustomEntity(event.getEntity()) || MetadataUtil.isCustomEntity(event.getTarget())) {
             event.setCancelled(true);
         }
     }
