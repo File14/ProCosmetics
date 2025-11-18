@@ -18,8 +18,10 @@
 package se.file14.procosmetics.cosmetic.miniature;
 
 import org.bukkit.Location;
-import org.bukkit.entity.ArmorStand;
-import org.bukkit.entity.EntityType;
+import org.bukkit.attribute.Attribute;
+import org.bukkit.attribute.AttributeInstance;
+import org.bukkit.entity.*;
+import org.joml.Matrix4f;
 import se.file14.procosmetics.ProCosmeticsPlugin;
 import se.file14.procosmetics.api.cosmetic.miniature.Miniature;
 import se.file14.procosmetics.api.cosmetic.miniature.MiniatureBehavior;
@@ -31,11 +33,15 @@ import se.file14.procosmetics.util.FastMathUtil;
 
 public class MiniatureImpl extends CosmeticImpl<MiniatureType, MiniatureBehavior> implements Miniature {
 
+    private static final float DEGREES_180 = FastMathUtil.toRadians(180.0f);
     private static final double MAX_DISTANCE_SQUARED_BEFORE_TELEPORT = 256.0d;
     private static final double DISTANCE_SQUARED_BEFORE_MOVE_TOWARDS_PLAYER = 3.5d;
+    private static final double ACCELERATION = 0.15d;
 
-    protected NMSEntity nmsEntity;
+    protected NMSEntity entity;
     protected int tick;
+    private double currentSpeedX;
+    private double currentSpeedZ;
 
     private final Location playerLocation = new Location(null, 0.0d, 0.0d, 0.0d);
     private final Location entityLocation = new Location(null, 0.0d, 0.0d, 0.0d);
@@ -53,7 +59,7 @@ public class MiniatureImpl extends CosmeticImpl<MiniatureType, MiniatureBehavior
     @Override
     public void onUpdate() {
         player.getLocation(playerLocation);
-        nmsEntity.getPreviousLocation(entityLocation);
+        entity.getPreviousLocation(entityLocation);
 
         if (entityLocation.getWorld() != playerLocation.getWorld()) {
             return;
@@ -61,7 +67,7 @@ public class MiniatureImpl extends CosmeticImpl<MiniatureType, MiniatureBehavior
         double distanceSquared = playerLocation.distanceSquared(entityLocation);
 
         if (distanceSquared > MAX_DISTANCE_SQUARED_BEFORE_TELEPORT) {
-            nmsEntity.sendPositionRotationPacket(playerLocation);
+            entity.sendPositionRotationPacket(playerLocation);
             return;
         }
         double yOffset = 0.3d * FastMathUtil.cos(FastMathUtil.toRadians(tick * 6));
@@ -75,42 +81,89 @@ public class MiniatureImpl extends CosmeticImpl<MiniatureType, MiniatureBehavior
 
         if (distanceSquared > DISTANCE_SQUARED_BEFORE_MOVE_TOWARDS_PLAYER) {
             float angle = FastMathUtil.toRadians(entityLocation.getYaw());
-            double speed = distanceSquared / 32.0d;
-            double x = -FastMathUtil.sin(angle) * speed;
-            double z = FastMathUtil.cos(angle) * speed;
-            entityLocation.add(x, 0.0d, z);
+            double targetSpeed = distanceSquared * 0.02d;
+            double targetX = -FastMathUtil.sin(angle) * targetSpeed;
+            double targetZ = FastMathUtil.cos(angle) * targetSpeed;
+
+            // Smooth acceleration/deceleration
+            currentSpeedX += (targetX - currentSpeedX) * ACCELERATION;
+            currentSpeedZ += (targetZ - currentSpeedZ) * ACCELERATION;
+        } else {
+            // Smoothly decelerate to zero when close to player
+            currentSpeedX *= (1.0d - ACCELERATION);
+            currentSpeedZ *= (1.0d - ACCELERATION);
         }
-        nmsEntity.sendPositionRotationPacket(entityLocation);
-        nmsEntity.setHeadPose(entityLocation.getPitch(), 0.0f, 0.0f);
-        nmsEntity.sendEntityMetadataPacket();
+        entityLocation.add(currentSpeedX, 0.0d, currentSpeedZ);
+        entity.sendPositionRotationPacket(entityLocation);
+        entity.setHeadPose(entityLocation.getPitch(), 0.0f, 0.0f);
+        entity.sendEntityMetadataPacket();
 
         if (++tick >= 360) {
             tick = 0;
         }
-        behavior.onUpdate(this, nmsEntity, tick);
+        behavior.onUpdate(this, entity, tick);
     }
 
     @Override
     protected void onUnequip() {
-        if (nmsEntity != null) {
-            nmsEntity.getTracker().destroy();
-            nmsEntity = null;
+        if (entity != null) {
+            entity.getTracker().destroy();
+            entity = null;
         }
     }
 
     private void spawnEntity() {
-        nmsEntity = plugin.getNMSManager().createEntity(player.getWorld(), EntityType.ARMOR_STAND);
-        nmsEntity.setPositionRotation(getSpawnLocation());
-        nmsEntity.setHelmet(cosmeticType.getItemStack());
+        entity = plugin.getNMSManager().createEntity(player.getWorld(), cosmeticType.getEntityType());
+        entity.setPositionRotation(getSpawnLocation());
+        Entity bukkitEntity = entity.getBukkitEntity();
 
-        if (nmsEntity.getBukkitEntity() instanceof ArmorStand armorStand) {
-            armorStand.setInvisible(cosmeticType.hasInvisibility());
-            armorStand.setBasePlate(false);
-            armorStand.setSmall(true);
-            armorStand.setArms(cosmeticType.hasArms());
+        applyEntityScale(bukkitEntity);
+
+        if (cosmeticType.isBaby() && bukkitEntity instanceof Ageable ageable) {
+            ageable.setBaby();
         }
-        behavior.setupEntity(this, nmsEntity);
-        nmsEntity.getTracker().startTracking();
+
+        if (entity.getBukkitEntity() instanceof ArmorStand armorStand) {
+            armorStand.setBasePlate(false);
+            armorStand.setSmall(cosmeticType.isBaby());
+            armorStand.setArms(true);
+            entity.setHelmet(cosmeticType.getItemStack());
+        } else if (entity.getBukkitEntity() instanceof Display display) {
+            configureDisplayEntity(display);
+        }
+        behavior.setupEntity(this, entity);
+        entity.getTracker().startTracking();
+    }
+
+    private void applyEntityScale(Entity bukkitEntity) {
+        if (bukkitEntity instanceof LivingEntity livingEntity) {
+            AttributeInstance attribute = livingEntity.getAttribute(Attribute.SCALE);
+
+            if (attribute != null) {
+                attribute.setBaseValue(cosmeticType.getScale());
+            }
+        }
+    }
+
+    private void configureDisplayEntity(Display display) {
+        float scale = (float) cosmeticType.getScale();
+        Matrix4f transformationMatrix = new Matrix4f();
+
+        if (display instanceof ItemDisplay itemDisplay) {
+            itemDisplay.setItemStack(cosmeticType.getItemStack());
+            transformationMatrix.identity()
+                    .scale(scale)
+                    .rotateY(DEGREES_180)
+                    .translate(0.0f, 0.5f, 0.0f);
+        } else if (display instanceof BlockDisplay blockDisplay) {
+            blockDisplay.setBlock(cosmeticType.getItemStack().getType().createBlockData());
+            transformationMatrix.identity()
+                    .scale(scale)
+                    .rotateY(DEGREES_180)
+                    .translate(-0.5f, 0.0f, -0.5f);
+        }
+        display.setTransformationMatrix(transformationMatrix);
+        display.setTeleportDuration(1);
     }
 
     private Location getSpawnLocation() {
@@ -124,6 +177,6 @@ public class MiniatureImpl extends CosmeticImpl<MiniatureType, MiniatureBehavior
 
     @Override
     public NMSEntity getNMSEntity() {
-        return nmsEntity;
+        return entity;
     }
 }

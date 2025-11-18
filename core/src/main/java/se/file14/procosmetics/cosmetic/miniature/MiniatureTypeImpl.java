@@ -17,8 +17,10 @@
  */
 package se.file14.procosmetics.cosmetic.miniature;
 
+import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.ItemStack;
 import se.file14.procosmetics.ProCosmeticsPlugin;
+import se.file14.procosmetics.api.config.Config;
 import se.file14.procosmetics.api.cosmetic.CosmeticRarity;
 import se.file14.procosmetics.api.cosmetic.miniature.Miniature;
 import se.file14.procosmetics.api.cosmetic.miniature.MiniatureBehavior;
@@ -32,8 +34,9 @@ import java.util.function.Supplier;
 
 public class MiniatureTypeImpl extends CosmeticTypeImpl<MiniatureType, MiniatureBehavior> implements MiniatureType {
 
-    private final boolean invisible;
-    private final boolean arms;
+    private final EntityType entityType;
+    private final boolean baby;
+    private final double scale;
 
     public MiniatureTypeImpl(String key,
                              CosmeticCategory<MiniatureType, MiniatureBehavior, ?> category,
@@ -44,11 +47,13 @@ public class MiniatureTypeImpl extends CosmeticTypeImpl<MiniatureType, Miniature
                              CosmeticRarity rarity,
                              ItemStack itemStack,
                              List<String> treasureChests,
-                             boolean invisible,
-                             boolean arms) {
+                             EntityType entityType,
+                             boolean baby,
+                             double scale) {
         super(key, category, behaviorFactory, enabled, purchasable, cost, rarity, itemStack, treasureChests);
-        this.invisible = invisible;
-        this.arms = arms;
+        this.entityType = entityType;
+        this.baby = baby;
+        this.scale = scale;
     }
 
     @Override
@@ -57,19 +62,25 @@ public class MiniatureTypeImpl extends CosmeticTypeImpl<MiniatureType, Miniature
     }
 
     @Override
-    public boolean hasInvisibility() {
-        return invisible;
+    public EntityType getEntityType() {
+        return entityType;
     }
 
     @Override
-    public boolean hasArms() {
-        return arms;
+    public boolean isBaby() {
+        return baby;
+    }
+
+    @Override
+    public double getScale() {
+        return scale;
     }
 
     public static class BuilderImpl extends CosmeticTypeImpl.BuilderImpl<MiniatureType, MiniatureBehavior, MiniatureType.Builder> implements MiniatureType.Builder {
 
-        private boolean invisible = false;
-        private boolean arms = true;
+        private EntityType entityType;
+        private boolean baby;
+        private double scale = 1.0d;
 
         public BuilderImpl(String key, CosmeticCategory<MiniatureType, MiniatureBehavior, ?> category) {
             super(key, category);
@@ -81,14 +92,34 @@ public class MiniatureTypeImpl extends CosmeticTypeImpl<MiniatureType, Miniature
         }
 
         @Override
-        public MiniatureType.Builder invisible(boolean invisible) {
-            this.invisible = invisible;
+        public MiniatureType.Builder readFromConfig() {
+            super.readFromConfig();
+
+            Config config = category.getConfig();
+            String path = getPath();
+
+            entityType = parseEntity(path + "entity");
+            baby = config.getBoolean(path + "baby");
+            scale = config.getDouble(path + "scale");
+
             return this;
         }
 
         @Override
-        public MiniatureType.Builder arms(boolean arms) {
-            this.arms = arms;
+        public MiniatureType.Builder entityType(EntityType entityType) {
+            this.entityType = entityType;
+            return this;
+        }
+
+        @Override
+        public MiniatureType.Builder baby(boolean baby) {
+            this.baby = baby;
+            return this;
+        }
+
+        @Override
+        public MiniatureType.Builder scale(double scale) {
+            this.scale = scale;
             return this;
         }
 
@@ -103,8 +134,9 @@ public class MiniatureTypeImpl extends CosmeticTypeImpl<MiniatureType, Miniature
                     rarity,
                     itemStack,
                     treasureChests,
-                    invisible,
-                    arms
+                    entityType,
+                    baby,
+                    scale
             );
         }
     }

@@ -20,6 +20,7 @@ package se.file14.procosmetics.cosmetic.miniature.type;
 import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.Particle;
+import org.bukkit.entity.ArmorStand;
 import org.bukkit.inventory.ItemStack;
 import se.file14.procosmetics.api.cosmetic.CosmeticContext;
 import se.file14.procosmetics.api.cosmetic.miniature.MiniatureBehavior;
@@ -40,6 +41,10 @@ public class Ghost implements MiniatureBehavior {
     @Override
     public void setupEntity(CosmeticContext<MiniatureType> context, NMSEntity nmsEntity) {
         nmsEntity.setChestplate(CHESTPLATE_ITEM);
+
+        if (nmsEntity.getBukkitEntity() instanceof ArmorStand armorStand) {
+            armorStand.setInvisible(true);
+        }
     }
 
     @Override

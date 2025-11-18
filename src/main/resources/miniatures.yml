@@ -59,6 +59,9 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 2000
+    entity: "ARMOR_STAND"
+    baby: true
+    scale: 1.0
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzk1ZTNlNzg1MTI3NDhiYTg1M2E4MjBjYjU2NzE2Zjc4ZmFhYzE2MWU0M2M2MWQ5MjQxYmE1NDljZTc0MGQ1Y2YifX19'}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -72,6 +75,9 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 2000
+    entity: "ARMOR_STAND"
+    baby: true
+    scale: 1.0
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzJkNmVlNjdjMzUyYWRiZjZlY2VmZDg5NWJiODc3Zjg4NDY3MGQzYzdiYWQ5OGFmNDdiZmQyMmE0ZWJhYWE5ZCJ9fX0='}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -85,6 +91,9 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 2000
+    entity: "ARMOR_STAND"
+    baby: true
+    scale: 1.0
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2U4YTRmYjI1YWZiYzZiN2FlYzE1YWJlODcyZmNlYWQxZTViMzNjMWFiMTI1MjUxNDFkNzdiZmQyOThmYzMyZDkifX19'}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -98,6 +107,9 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 2000
+    entity: "ARMOR_STAND"
+    baby: true
+    scale: 1.0
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzFkMTdlNDhjOTI1M2U2NzQ3MzNjZWI3YmMzZGE3ZjUyMTUxZTUyODlkMDIxMmM4ZjJkZDcxZTQxNmU0ZWU2NSJ9fX0='}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -111,6 +123,9 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 2000
+    entity: "ARMOR_STAND"
+    baby: true
+    scale: 1.0
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzdkZmEwYWMzN2JhYmEyYWEyOTBlNGZhZWU0MTlhNjEzY2Q2MTE3ZmE1NjhlNzA5ZDkwMzc0NzUzYzAzMmRjYjAifX19'}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -124,6 +139,9 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 2000
+    entity: "ARMOR_STAND"
+    baby: true
+    scale: 1.0
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzlkYTM5MjY5ZWY0NWY4MjVlYzYxYmI0ZjhhYTA5YmQzY2YwNzk5NmZiNmZhYzMzOGE2ZTkxZDY2OTlhZTQyNSJ9fX0='}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -137,6 +155,9 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 2000
+    entity: "ARMOR_STAND"
+    baby: true
+    scale: 1.0
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2EzOWU0M2RiODNhOTY2YzViNmY2YzAzYTE3ZDdjNmRhNGJhMWI2MjJlNjdjMjhjZTYwMTc2MDc2ODlmNmUyMzIifX19'}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -150,6 +171,9 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 2000
+    entity: "ARMOR_STAND"
+    baby: true
+    scale: 1.0
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzhlOTY4OGI5NTBkODgwYjU1YjdhYTJjZmNkNzZlNWEwZmE5NGFhYzZkMTZmNzhlODMzZjc0NDNlYTI5ZmVkMyJ9fX0='}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -163,6 +187,9 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 2000
+    entity: "ARMOR_STAND"
+    baby: true
+    scale: 1.0
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2IwNDgxZTUyZGFmMGI1MzYzNDY5YzBmMmNjOWM4YmEyMmM2YmI4MjVlMTI2MTc4ZTk5MjRiNDI4NDk5NzU2In19fQ=='}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -176,6 +203,9 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 2000
+    entity: "ARMOR_STAND"
+    baby: true
+    scale: 1.0
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzI1Y2U3NjJiYzhlN2FkNWUxNmIzNTM1NGY3ZDkzNDFjYmNjZDJkZTYxNzkxYTdhNjg4MmFjNDNjMzhjYzhlIn19fQ=='}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -189,6 +219,9 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 2000
+    entity: "ARMOR_STAND"
+    baby: true
+    scale: 1.0
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ1NDMyNmU3ZDJmYTBhNDM0YmU1MjU4NTUxMTBjMjZhMjQzYmI5NjcyNTIyZTk3NjNjYjk4ZDU4ZTExMmEzIn19fQ=='}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -202,6 +235,9 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 2000
+    entity: "ARMOR_STAND"
+    baby: true
+    scale: 1.0
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2JhZTIxNjMwNWI1NGY3Yjk4ZmI1ODllNGM5NGVkZmE3MGQwODViZjM4MmNmNWU4Y2EyMzRmNDE5NDk1YzdmOGEifX19'}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -215,6 +251,9 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 2000
+    entity: "ARMOR_STAND"
+    baby: true
+    scale: 1.0
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzY4ZDIxODM2NDAyMThhYjMzMGFjNTZkMmFhYjdlMjlhOTc5MGE1NDVmNjkxNjE5ZTM4NTc4ZWE0YTY5YWUwYjYifX19'}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -228,6 +267,9 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 2000
+    entity: "ARMOR_STAND"
+    baby: true
+    scale: 1.0
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzg5MDkxZDc5ZWEwZjU5ZWY3ZWY5NGQ3YmJhNmU1ZjE3ZjJmN2Q0NTcyYzQ0ZjkwZjc2YzQ4MTlhNzE0In19fQ=='}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -241,6 +283,9 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 2000
+    entity: "ARMOR_STAND"
+    baby: true
+    scale: 1.0
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzVmOGQ2ZTg2ODJjNTkyYTFmOTQwMzIxZWQ4MTE5ZDk2NzU4ZmM2N2I5NDcwZmIzZGFkYzVkZGM4ZGVjMTAxYzEifX19'}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -254,6 +299,9 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 2000
+    entity: "ITEM_DISPLAY"
+    baby: false
+    scale: 0.8
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2YwZjQyODhhZTA4YTM4ZDJhYjljZjM0MzE0MTY0N2U0ZjNiZTE2YzVhOTI3ZTcyMjRhM2IxZGVjYWNmZjI1OSJ9fX0='}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -267,6 +315,9 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 2000
+    entity: "ARMOR_STAND"
+    baby: true
+    scale: 1.0
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzIxZTk5MzM3ZGRjMmM4ZDE0Y2Y5ZjUyN2U5NzIyODUxMzM1NThjOTUzNzY1ZGU0ZGQ1ZDdhOTE5YTk4ODgyIn19fQ=='}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -280,6 +331,9 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 2000
+    entity: "ITEM_DISPLAY"
+    baby: false
+    scale: 0.8
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Q4Y2RkNGYyODU2MzJjMjVkNzYyZWNlMjVmNDE5M2I5NjZjMjY0MWIxNWQ5YmRiYzBhMTEzMDIzZGU3NmFiIn19fQ=='}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -293,6 +347,9 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 2000
+    entity: "ITEM_DISPLAY"
+    baby: false
+    scale: 0.8
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2MxMzVmNTgzOGU1MTU4NWUxNTk0MmU4ZjJmMWNjMzZkYTk2MzA3MGRkZDViYTM1YWY5NWVkMzdlYjZjMyJ9fX0='}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -306,6 +363,9 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 2000
+    entity: "ARMOR_STAND"
+    baby: true
+    scale: 1.0
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzJkNjFjY2JmZGNkZjg5NDFhZGFmNzZjNmMwZTAxODJkMmM4YmJiNWRjMThmMzc0ODk1NjUyYmM2NjFiNmVkIn19fQ=='}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -319,6 +379,9 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 2000
+    entity: "ARMOR_STAND"
+    baby: true
+    scale: 1.0
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2E5NGFlNDMzYjMwMWM3ZmI3YzY4Y2JhNjI1YjBiZDM2YjBiMTQxOTBmMjBlMzRhN2M4ZWUwZDlkZTA2ZDUzYjkifX19'}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -332,6 +395,9 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 2000
+    entity: "ARMOR_STAND"
+    baby: true
+    scale: 1.0
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2YzMWY5Y2NjNmIzZTMyZWNmMTNiOGExMWFjMjljZDMzZDE4Yzk1ZmM3M2RiOGE2NmM1ZDY1N2NjYjhiZTcwIn19fQ=='}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -345,6 +411,9 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 2000
+    entity: "ARMOR_STAND"
+    baby: true
+    scale: 1.0
     item: "minecraft:skeleton_skull[!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -358,6 +427,9 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 2000
+    entity: "ITEM_DISPLAY"
+    baby: false
+    scale: 0.8
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzE1ZTJlNTliYTY3OGFkZTBhODBiMWQ0MmEyMTJiN2NmNGVjOTYzYjQ5NGY4ZWFlYWI5ZjY0M2UyY2FhYTkxIn19fQ=='}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -371,6 +443,9 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 2000
+    entity: "ARMOR_STAND"
+    baby: true
+    scale: 1.0
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2EyM2Y5NzgxMTY4ODUzMDVkMmYwMDI4NjYyYjM5MzYyY2ZmN2RmMDBjNjMxYjMzNzc0NmZmYmY1YmZjNzBiZWMifX19'}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -384,6 +459,9 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 2000
+    entity: "ARMOR_STAND"
+    baby: true
+    scale: 1.0
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2NkNTQxNTQxZGFhZmY1MDg5NmNkMjU4YmRiZGQ0Y2Y4MGMzYmE4MTY3MzU3MjYwNzhiZmUzOTM5MjdlNTdmMSJ9fX0='}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -397,6 +475,9 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 2000
+    entity: "ARMOR_STAND"
+    baby: true
+    scale: 1.0
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZjNDI2Mzg3NDQ5MjJiNWZjZjYyY2Q5YmYyN2VlYWI5MWIyZTcyZDZjNzBlODZjYzVhYTM4ODM5OTNlOWQ4NCJ9fX0='}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -410,6 +491,9 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 2000
+    entity: "ARMOR_STAND"
+    baby: true
+    scale: 1.0
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZmZTkxMTcwOWQ4YzFhNzllMDFjZDA1ODhiYWJmNTFlNmNkY2IwOTE4YjdjZWNlNzM2NjkwOGNhMjU4ZjAyZiJ9fX0='}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -423,6 +507,9 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 2000
+    entity: "ITEM_DISPLAY"
+    baby: false
+    scale: 0.8
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzEyZTU0ODQwOGFiNzVkN2RmOGU2ZDVkMjQ0NmQ5MGI2ZWM2MmFhNGY3ZmViNzkzMGQxZWU3MWVlZmRkZjYxODkifX19'}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -436,6 +523,9 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 2000
+    entity: "ARMOR_STAND"
+    baby: true
+    scale: 1.0
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzhkNDQ3NTZlMGI0ZWNlOGQ3NDYyOTZhM2Q1ZTI5N2UxNDE1ZjRiYTE3NjQ3ZmZlMjI4Mzg1MzgzZDE2MWE5In19fQ=='}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -449,6 +539,9 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 2000
+    entity: "ARMOR_STAND"
+    baby: true
+    scale: 1.0
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzJlMTM5MTMwZDdlZmQ0MWZiYWQ1MzczNWY2NGY4YWZmMjY1YmQ3YzU0OTc3MTg5YzAyYmFiYmVjNGIwZDA3YiJ9fX0='}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -462,6 +555,9 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 2000
+    entity: "ARMOR_STAND"
+    baby: true
+    scale: 1.0
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Y3NGJjZTk3ODFlMzg1MTk3Y2YzOWE5NjE5M2U5YzI0M2RmYjE0ZmVlZjcyMmM4N2JlYWNkNmI5OTMyOWIxNTUifX19'}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -475,6 +571,9 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 2000
+    entity: "ARMOR_STAND"
+    baby: true
+    scale: 1.0
     item: "minecraft:zombie_head[!minecraft:rarity]"
     count: 1
     treasure_chests:

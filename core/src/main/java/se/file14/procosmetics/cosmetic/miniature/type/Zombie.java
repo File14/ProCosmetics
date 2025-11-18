@@ -19,7 +19,9 @@ package se.file14.procosmetics.cosmetic.miniature.type;
 
 import org.bukkit.Color;
 import org.bukkit.Material;
+import org.bukkit.entity.ArmorStand;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.util.EulerAngle;
 import se.file14.procosmetics.api.cosmetic.CosmeticContext;
 import se.file14.procosmetics.api.cosmetic.miniature.MiniatureBehavior;
 import se.file14.procosmetics.api.cosmetic.miniature.MiniatureType;
@@ -32,6 +34,11 @@ public class Zombie implements MiniatureBehavior {
     private static final ItemStack CHESTPLATE_ITEM;
     private static final ItemStack LEGGINGS_ITEM;
     private static final ItemStack BOOTS_ITEM;
+    private static final EulerAngle ANGLE = new EulerAngle(
+            Math.toRadians(-90),  // Pitch
+            Math.toRadians(0),     // Yaw
+            Math.toRadians(0)      // Roll
+    );
 
     static {
         Color color = Color.fromBGR(80, 160, 130);
@@ -50,6 +57,11 @@ public class Zombie implements MiniatureBehavior {
         nmsEntity.setChestplate(CHESTPLATE_ITEM);
         nmsEntity.setLeggings(LEGGINGS_ITEM);
         nmsEntity.setBoots(BOOTS_ITEM);
+
+        if (nmsEntity.getBukkitEntity() instanceof ArmorStand armorStand) {
+            armorStand.setLeftArmPose(ANGLE);
+            armorStand.setRightArmPose(ANGLE);
+        }
     }
 
     @Override

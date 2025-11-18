@@ -17,6 +17,7 @@
  */
 package se.file14.procosmetics.api.cosmetic.miniature;
 
+import org.bukkit.entity.EntityType;
 import se.file14.procosmetics.api.cosmetic.CosmeticType;
 
 /**
@@ -25,21 +26,26 @@ import se.file14.procosmetics.api.cosmetic.CosmeticType;
 public interface MiniatureType extends CosmeticType<MiniatureType, MiniatureBehavior> {
 
     /**
-     * Checks if this miniature's base entity is invisible.
-     * When true, only the equipped items or models on the miniature are visible,
-     * making the base armor stand invisible.
+     * Gets the entity type used for this pet.
      *
-     * @return true if the base entity is invisible, false otherwise
+     * @return the entity type that represents this pet
      */
-    boolean hasInvisibility();
+    EntityType getEntityType();
 
     /**
-     * Checks if this miniature displays arms.
-     * Relevant for armor stand entities where arms can be shown or hidden.
+     * Checks if this pet uses the baby variant of the entity.
      *
-     * @return true if the miniature has visible arms, false otherwise
+     * @return true if the pet is a baby entity, false otherwise
      */
-    boolean hasArms();
+    boolean isBaby();
+
+    /**
+     * Gets the scale multiplier for this pet's size.
+     * A scale of 1.0 represents normal size.
+     *
+     * @return the scale multiplier for the pet
+     */
+    double getScale();
 
     /**
      * Builder interface for constructing miniature type instances.
@@ -47,20 +53,28 @@ public interface MiniatureType extends CosmeticType<MiniatureType, MiniatureBeha
     interface Builder extends CosmeticType.Builder<MiniatureType, MiniatureBehavior, Builder> {
 
         /**
-         * Sets whether the miniature's base entity is invisible.
+         * Sets the entity type to be used for this pet.
          *
-         * @param invisible true to make the base entity invisible, false for visible
+         * @param entityType the entity type for the pet
          * @return this builder for method chaining
          */
-        Builder invisible(boolean invisible);
+        MiniatureType.Builder entityType(EntityType entityType);
 
         /**
-         * Sets whether the miniature displays arms.
+         * Sets whether this pet should use the baby variant of the entity.
          *
-         * @param arms true to show arms, false to hide arms
+         * @param baby true to use baby variant, false for adult variant
          * @return this builder for method chaining
          */
-        Builder arms(boolean arms);
+        MiniatureType.Builder baby(boolean baby);
+
+        /**
+         * Sets the scale multiplier for this pet's size.
+         *
+         * @param scale the scale multiplier (1.0 = normal size)
+         * @return this builder for method chaining
+         */
+        MiniatureType.Builder scale(double scale);
 
         /**
          * Builds and returns the configured miniature type instance.
