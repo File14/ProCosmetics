@@ -26,24 +26,24 @@ import se.file14.procosmetics.api.cosmetic.CosmeticType;
 public interface MiniatureType extends CosmeticType<MiniatureType, MiniatureBehavior> {
 
     /**
-     * Gets the entity type used for this pet.
+     * Gets the entity type used for this miniature.
      *
-     * @return the entity type that represents this pet
+     * @return the entity type that represents this miniature
      */
     EntityType getEntityType();
 
     /**
-     * Checks if this pet uses the baby variant of the entity.
+     * Checks if this miniature uses the baby variant of the entity.
      *
-     * @return true if the pet is a baby entity, false otherwise
+     * @return true if the miniature is a baby entity, false otherwise
      */
     boolean isBaby();
 
     /**
-     * Gets the scale multiplier for this pet's size.
+     * Gets the scale multiplier for this miniature's size.
      * A scale of 1.0 represents normal size.
      *
-     * @return the scale multiplier for the pet
+     * @return the scale multiplier for the miniature
      */
     double getScale();
 
@@ -53,15 +53,15 @@ public interface MiniatureType extends CosmeticType<MiniatureType, MiniatureBeha
     interface Builder extends CosmeticType.Builder<MiniatureType, MiniatureBehavior, Builder> {
 
         /**
-         * Sets the entity type to be used for this pet.
+         * Sets the entity type to be used for this miniature.
          *
-         * @param entityType the entity type for the pet
+         * @param entityType the entity type for the miniature
          * @return this builder for method chaining
          */
         MiniatureType.Builder entityType(EntityType entityType);
 
         /**
-         * Sets whether this pet should use the baby variant of the entity.
+         * Sets whether this miniature should use the baby variant of the entity.
          *
          * @param baby true to use baby variant, false for adult variant
          * @return this builder for method chaining
@@ -69,7 +69,7 @@ public interface MiniatureType extends CosmeticType<MiniatureType, MiniatureBeha
         MiniatureType.Builder baby(boolean baby);
 
         /**
-         * Sets the scale multiplier for this pet's size.
+         * Sets the scale multiplier for this miniature's size.
          *
          * @param scale the scale multiplier (1.0 = normal size)
          * @return this builder for method chaining
