@@ -2987,11 +2987,14 @@
   "cosmetic.pets.axolotl": "Axolotl",
   "cosmetic.pets.bee": "Bee",
   "cosmetic.pets.body_guard": "Body Guard",
+  "cosmetic.pets.breeze": "Breeze",
   "cosmetic.pets.calf": "Calf",
   "cosmetic.pets.camel": "Camel",
   "cosmetic.pets.cave_spider": "Cave Spider",
   "cosmetic.pets.chicken": "Chicken",
   "cosmetic.pets.colorful_lamb": "Colorful Lamb",
+  "cosmetic.pets.copper_golem": "Copper Golem",
+  "cosmetic.pets.creaking": "Creaking",
   "cosmetic.pets.easter_bunny": "Easter Bunny",
   "cosmetic.pets.elf": "Elf",
   "cosmetic.pets.endermite": "Endermite",
@@ -3013,6 +3016,7 @@
   "cosmetic.pets.sniffer": "Sniffer",
   "cosmetic.pets.turtle": "Turtle",
   "cosmetic.pets.villager": "Villager",
+  "cosmetic.pets.warden": "Warden",
   "cosmetic.pets.zombie_villager": "Zombie Villager",
 
   "menu.pets.title": "Pets",
@@ -3096,6 +3100,11 @@
     "<gray>Follows you around with a</gray>",
     "<gray>rose in his hand.</gray>"
   ],
+  "menu.pets.breeze.name": "<name>",
+  "menu.pets.breeze.desc": [
+    "<gray>A playful creature carried</gray>",
+    "<gray>by swirling winds.</gray>"
+  ],
   "menu.pets.calf.name": "<name>",
   "menu.pets.calf.desc": [
     "<gray>He wants a lot of grass</gray>",
@@ -3118,6 +3127,16 @@
   "menu.pets.colorful_lamb.desc": [
     "<gray>Who said sheep cannot change</gray>",
     "<gray>their wool color?</gray>"
+  ],
+  "menu.pets.copper_golem.name": "<name>",
+  "menu.pets.copper_golem.desc": [
+    "<gray>A tiny mechanical friend</gray>",
+    "<gray>with a copper spark.</gray>"
+  ],
+  "menu.pets.creaking.name": "<name>",
+  "menu.pets.creaking.desc": [
+    "<gray>A mysterious wooden spirit</gray>",
+    "<gray>that creaks behind you.</gray>"
   ],
   "menu.pets.easter_bunny.name": "<name>",
   "menu.pets.easter_bunny.desc": [
@@ -3209,6 +3228,11 @@
   "menu.pets.villager.name": "<name>",
   "menu.pets.villager.desc": [
     "<gray>Your smallest trader ever.</gray>"
+  ],
+  "menu.pets.warden.name": "<name>",
+  "menu.pets.warden.desc": [
+    "<gray>A calm but powerful creature</gray>",
+    "<gray>from the deep dark.</gray>"
   ],
   "menu.pets.zombie_villager.name": "<name>",
   "menu.pets.zombie_villager.desc": [

@@ -52,6 +52,9 @@ menu:
       item: "minecraft:firework_star"
       count: 1
 
+# You can add as many custom pet cosmetics as you like!
+# Simply follow the format of any existing pet below.
+# Don't forget to add the corresponding language translations for your pets.
 cosmetics:
   allay:
     enabled: true
@@ -64,9 +67,9 @@ cosmetics:
     scale: 1.0
     spawn_sound: "ENTITY_ALLAY_AMBIENT_WITHOUT_ITEM"
     toss_item:
-      enable: false
+      enabled: false
       item: "minecraft:diamond"
-    item: "minecraft:ghast_tear"
+    item: "minecraft:allay_spawn_egg"
     count: 1
     treasure_chests:
       - common
@@ -84,7 +87,7 @@ cosmetics:
     scale: 1.0
     spawn_sound: "ENTITY_ARMADILLO_AMBIENT"
     toss_item:
-      enable: false
+      enabled: false
       item: "minecraft:diamond"
     item: "minecraft:armadillo_scute"
     count: 1
@@ -104,7 +107,7 @@ cosmetics:
     scale: 1.0
     spawn_sound: "ENTITY_AXOLOTL_SWIM"
     toss_item:
-      enable: false
+      enabled: false
       item: "minecraft:diamond"
     item: "minecraft:axolotl_bucket"
     count: 1
@@ -126,7 +129,7 @@ cosmetics:
     toss_item:
       enabled: true
       item: "minecraft:honeycomb"
-    item: "minecraft:honeycomb"
+    item: "minecraft:bee_spawn_egg"
     count: 1
     treasure_chests:
       - common
@@ -141,12 +144,12 @@ cosmetics:
       cost: 2000
     entity: "IRON_GOLEM"
     baby: false
-    scale: 1.0
+    scale: 0.5
     spawn_sound: "ENTITY_SNOW_GOLEM_AMBIENT"
     toss_item:
-      enable: false
+      enabled: false
       item: "minecraft:iron_ingot"
-    item: "minecraft:poppy"
+    item: "minecraft:iron_golem_spawn_egg"
     count: 1
     treasure_chests:
       - common
@@ -166,7 +169,7 @@ cosmetics:
     toss_item:
       enabled: true
       item: "minecraft:milk_bucket"
-    item: "minecraft:milk_bucket"
+    item: "minecraft:cow_spawn_egg"
     count: 1
     treasure_chests:
       - common
@@ -184,9 +187,9 @@ cosmetics:
     scale: 1.0
     spawn_sound: "ENTITY_CAMEL_AMBIENT"
     toss_item:
-      enable: false
-      item: "minecraft:diamond"
-    item: "minecraft:sand"
+      enabled: false
+      item: "minecraft:sand"
+    item: "minecraft:camel_spawn_egg"
     count: 1
     treasure_chests:
       - common
@@ -206,7 +209,7 @@ cosmetics:
     toss_item:
       enabled: true
       item: "minecraft:cobweb"
-    item: "minecraft:spider_eye"
+    item: "minecraft:cave_spider_spawn_egg"
     count: 1
     treasure_chests:
       - common
@@ -226,7 +229,7 @@ cosmetics:
     toss_item:
       enabled: true
       item: "minecraft:egg"
-    item: "minecraft:feather"
+    item: "minecraft:chicken_spawn_egg"
     count: 1
     treasure_chests:
       - common
@@ -244,9 +247,9 @@ cosmetics:
     scale: 1.0
     spawn_sound: "ENTITY_SHEEP_AMBIENT"
     toss_item:
-      enable: false
+      enabled: false
       item: "minecraft:white_wool"
-    item: "minecraft:white_wool"
+    item: "minecraft:sheep_spawn_egg"
     count: 1
     treasure_chests:
       - common
@@ -266,7 +269,7 @@ cosmetics:
     toss_item:
       enabled: true
       item: "minecraft:egg"
-    item: "minecraft:carrot"
+    item: "minecraft:rabbit_spawn_egg"
     count: 1
     treasure_chests:
       - common
@@ -284,8 +287,8 @@ cosmetics:
     scale: 1.0
     spawn_sound: "ENTITY_WITCH_CELEBRATE"
     toss_item:
-      enable: false
-      item: "minecraft:diamond"
+      enabled: false
+      item: "minecraft:emerald"
     item: "minecraft:emerald"
     count: 1
     treasure_chests:
@@ -304,9 +307,9 @@ cosmetics:
     scale: 1.0
     spawn_sound: "ENTITY_ENDERMITE_AMBIENT"
     toss_item:
-      enable: false
-      item: "minecraft:diamond"
-    item: "minecraft:ender_pearl"
+      enabled: false
+      item: "minecraft:endermite_spawn_egg"
+    item: "minecraft:endermite_spawn_egg"
     count: 1
     treasure_chests:
       - common
@@ -324,9 +327,9 @@ cosmetics:
     scale: 1.0
     spawn_sound: "ENTITY_FOX_AMBIENT"
     toss_item:
-      enable: false
-      item: "minecraft:diamond"
-    item: "minecraft:orange_dye"
+      enabled: false
+      item: "minecraft:tropical_fish"
+    item: "minecraft:fox_spawn_egg"
     count: 1
     treasure_chests:
       - common
@@ -344,9 +347,9 @@ cosmetics:
     scale: 1.0
     spawn_sound: "ENTITY_FROG_AMBIENT"
     toss_item:
-      enable: false
-      item: "minecraft:diamond"
-    item: "minecraft:slime_ball"
+      enabled: false
+      item: "minecraft:slime_ball"
+    item: "minecraft:frog_spawn_egg"
     count: 1
     treasure_chests:
       - common
@@ -364,9 +367,9 @@ cosmetics:
     scale: 1.0
     spawn_sound: "ENTITY_GOAT_AMBIENT"
     toss_item:
-      enable: false
-      item: "minecraft:diamond"
-    item: "minecraft:milk_bucket"
+      enabled: false
+      item: "minecraft:short_grass"
+    item: "minecraft:goat_spawn_egg"
     count: 1
     treasure_chests:
       - common
@@ -381,12 +384,12 @@ cosmetics:
       cost: 2000
     entity: "HOGLIN"
     baby: true
-    scale: 1.0
+    scale: 0.8
     spawn_sound: "ENTITY_HOGLIN_AMBIENT"
     toss_item:
-      enable: false
-      item: "minecraft:diamond"
-    item: "minecraft:raw_gold"
+      enabled: false
+      item: "minecraft:raw_gold"
+    item: "minecraft:hoglin_spawn_egg"
     count: 1
     treasure_chests:
       - common
@@ -406,7 +409,7 @@ cosmetics:
     toss_item:
       enabled: true
       item: "minecraft:tropical_fish"
-    item: "minecraft:cod"
+    item: "minecraft:cat_spawn_egg"
     count: 1
     treasure_chests:
       - common
@@ -424,9 +427,9 @@ cosmetics:
     scale: 1.0
     spawn_sound: "ENTITY_LLAMA_AMBIENT"
     toss_item:
-      enable: false
+      enabled: false
       item: "minecraft:diamond"
-    item: "minecraft:lead"
+    item: "minecraft:llama_spawn_egg"
     count: 1
     treasure_chests:
       - common
@@ -466,7 +469,7 @@ cosmetics:
     toss_item:
       enabled: true
       item: "minecraft:bamboo"
-    item: "minecraft:bamboo"
+    item: "minecraft:panda_spawn_egg"
     count: 1
     treasure_chests:
       - common
@@ -484,9 +487,9 @@ cosmetics:
     scale: 1.0
     spawn_sound: "ENTITY_PARROT_AMBIENT"
     toss_item:
-      enable: false
-      item: "minecraft:diamond"
-    item: "minecraft:feather"
+      enabled: false
+      item: "minecraft:feather"
+    item: "minecraft:parrot_spawn_egg"
     count: 1
     treasure_chests:
       - common
@@ -506,7 +509,7 @@ cosmetics:
     toss_item:
       enabled: true
       item: "minecraft:porkchop"
-    item: "minecraft:porkchop"
+    item: "minecraft:pig_spawn_egg"
     count: 1
     treasure_chests:
       - common
@@ -524,9 +527,9 @@ cosmetics:
     scale: 1.0
     spawn_sound: "ENTITY_PIGLIN_AMBIENT"
     toss_item:
-      enable: false
-      item: "minecraft:diamond"
-    item: "minecraft:gold_ingot"
+      enabled: false
+      item: "minecraft:gold_ingot"
+    item: "minecraft:piglin_spawn_egg"
     count: 1
     treasure_chests:
       - common
@@ -544,9 +547,9 @@ cosmetics:
     scale: 1.0
     spawn_sound: "ENTITY_POLAR_BEAR_AMBIENT"
     toss_item:
-      enable: false
-      item: "minecraft:diamond"
-    item: "minecraft:packed_ice"
+      enabled: false
+      item: "minecraft:packed_ice"
+    item: "minecraft:polar_bear_spawn_egg"
     count: 1
     treasure_chests:
       - common
@@ -584,7 +587,7 @@ cosmetics:
     scale: 1.0
     spawn_sound: "ENTITY_WITCH_CELEBRATE"
     toss_item:
-      enable: false
+      enabled: false
       item: "minecraft:diamond"
     item: "minecraft:redstone"
     count: 1
@@ -604,9 +607,9 @@ cosmetics:
     scale: 1.0
     spawn_sound: "ENTITY_SILVERFISH_AMBIENT"
     toss_item:
-      enable: false
-      item: "minecraft:diamond"
-    item: "minecraft:stone_button"
+      enabled: false
+      item: "minecraft:stone_button"
+    item: "minecraft:silverfish_spawn_egg"
     count: 1
     treasure_chests:
       - common
@@ -624,9 +627,9 @@ cosmetics:
     scale: 1.0
     spawn_sound: "ENTITY_SNIFFER_SNIFFING"
     toss_item:
-      enable: false
-      item: "minecraft:diamond"
-    item: "minecraft:sniffer_egg[!minecraft:rarity]"
+      enabled: false
+      item: "minecraft:sniffer_egg[!minecraft:rarity]"
+    item: "minecraft:sniffer_spawn_egg"
     count: 1
     treasure_chests:
       - common
@@ -640,13 +643,13 @@ cosmetics:
       enabled: true
       cost: 2000
     entity: "TURTLE"
-    baby: false
-    scale: 1.0
+    baby: true
+    scale: 3.0
     spawn_sound: "ENTITY_TURTLE_EGG_HATCH"
     toss_item:
-      enable: false
+      enabled: false
       item: "minecraft:diamond"
-    item: "minecraft:turtle_helmet[!minecraft:attribute_modifiers]"
+    item: "minecraft:turtle_spawn_egg"
     count: 1
     treasure_chests:
       - common
@@ -664,9 +667,9 @@ cosmetics:
     scale: 1.0
     spawn_sound: "ENTITY_VILLAGER_YES"
     toss_item:
-      enable: false
+      enabled: false
       item: "minecraft:emerald"
-    item: "minecraft:emerald"
+    item: "minecraft:villager_spawn_egg"
     count: 1
     treasure_chests:
       - common
@@ -681,12 +684,92 @@ cosmetics:
       cost: 2000
     entity: "ZOMBIE_VILLAGER"
     baby: true
-    scale: 1.0
+    scale: 0.8
     spawn_sound: "ENTITY_ZOMBIE_AMBIENT"
     toss_item:
       enabled: true
       item: "minecraft:rotten_flesh"
-    item: "minecraft:rotten_flesh"
+    item: "minecraft:zombie_villager_spawn_egg"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+
+  breeze:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: true
+      cost: 2000
+    entity: "BREEZE"
+    baby: false
+    scale: 0.6
+    spawn_sound: "ENTITY_BREEZE_CHARGE"
+    toss_item:
+      enabled: true
+      item: "minecraft:wind_charge"
+    item: "minecraft:breeze_spawn_egg"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+
+  creaking:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: true
+      cost: 2000
+    entity: "CREAKING"
+    baby: false
+    scale: 0.5
+    spawn_sound: "ENTITY_CREAKING_AMBIENT"
+    toss_item:
+      enabled: true
+      item: "minecraft:creaking_heart"
+    item: "minecraft:creaking_spawn_egg"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+
+  warden:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: true
+      cost: 2000
+    entity: "WARDEN"
+    baby: false
+    scale: 0.3
+    spawn_sound: "ENTITY_WARDEN_AMBIENT"
+    toss_item:
+      enabled: true
+      item: "minecraft:disc_fragment_5"
+    item: "minecraft:warden_spawn_egg"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+
+  copper_golem:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: true
+      cost: 2000
+    entity: "COPPER_GOLEM"
+    baby: false
+    scale: 0.8
+    spawn_sound: "ENTITY_COPPER_GOLEM_SPAWN"
+    toss_item:
+      enabled: true
+      item: "minecraft:copper_nugget"
+    item: "minecraft:copper_golem_spawn_egg"
     count: 1
     treasure_chests:
       - common

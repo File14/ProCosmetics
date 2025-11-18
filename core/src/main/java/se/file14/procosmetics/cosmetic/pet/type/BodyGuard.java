@@ -44,7 +44,6 @@ public class BodyGuard implements PetBehavior {
         if (tick % 5 == 0) {
             entity.getLocation(location);
             location.getWorld().spawnParticle(Particle.HEART, location, 2, 0.6f, 1.0f, 0.6f, 0.1f);
-            location.getWorld().spawnParticle(Particle.FIREWORK, location, 2, 1.0f, 1.0f, 1.0f, 0.3f);
 
             if (tick % 15 == 0) {
                 entity.playEffect(EntityEffect.IRON_GOLEM_ROSE);
