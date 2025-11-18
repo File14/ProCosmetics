@@ -68,7 +68,7 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 2000
-    item: "minecraft:paper"
+    item: "minecraft:music_disc_13"
     count: 1
     treasure_chests:
       - common
@@ -81,7 +81,7 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 2000
-    item: "minecraft:paper"
+    item: "minecraft:music_disc_strad"
     count: 1
     treasure_chests:
       - common
@@ -94,7 +94,7 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 2000
-    item: "minecraft:paper"
+    item: "minecraft:music_disc_wait"
     count: 1
     treasure_chests:
       - common
