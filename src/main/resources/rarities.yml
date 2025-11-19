@@ -7,7 +7,7 @@
 #
 # You can customize existing rarities and add new ones as needed.
 # IMPORTANT:
-# If you rename a default rarity (e.g., "common" and not name: "common"), remember to update all references to it in the cosmetics config files.
+# If you rename a default rarity (e.g., "common"), remember to update all references to it in the cosmetics config files.
 # Use the replace-all function to simplify this process.
 #
 # Useful links:

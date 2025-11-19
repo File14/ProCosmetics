@@ -52,9 +52,10 @@ menu:
       item: "minecraft:firework_star"
       count: 1
 
-# You can add as many custom pet cosmetics as you like!
-# Simply follow the format of any existing pet below.
-# Don't forget to add the corresponding language translations for your pets.
+# You can add as many custom pets as you like!
+# Simply follow the format of any existing below.
+# Don't forget to add the corresponding language translations for the ones you add.
+# List of entity types: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/EntityType.html
 cosmetics:
   allay:
     enabled: true

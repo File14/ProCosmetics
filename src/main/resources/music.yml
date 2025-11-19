@@ -55,10 +55,15 @@ menu:
       item: "minecraft:firework_star"
       count: 1
 
-# A music bundle with around 35 songs and a pre-configured music.yml file can be found at:
+# You can add as many custom songs as you like!
+# Simply follow the format of any existing below.
+# Don't forget to add the corresponding language translations for the ones you add.
+#
+# More songs can be found at:
 # https://github.com/File14/ProCosmetics/wiki/Creating-Custom-Cosmetics#creating-music
 # Note: This bundle is not included by default in the plugin due to copyright restrictions.
-# Please be aware of copyright laws and use the songs at your own risk. Do not sell the copyrighted music through your server store.
+# Please be aware of copyright laws and use the songs at your own risk.
+# Do not sell the copyrighted music through your server store.
 #
 # The default songs listed below are safe to use as they are non-copyrighted.
 cosmetics:

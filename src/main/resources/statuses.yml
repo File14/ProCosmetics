@@ -66,7 +66,13 @@ menu:
       count: 1
       slot: -2
 
+# You can add as many custom statuses as you like!
+# Simply follow the format of any existing below.
+# Don't forget to add the corresponding language translations for the ones you add.
 # Note: refresh_interval is defined in ticks (20 ticks = 1 second), -1 = no update (static text)
+#
+# PlaceholderAPI is supported!
+# List of placeholders: https://wiki.placeholderapi.com/users/placeholder-list
 cosmetics:
   afk:
     enabled: true

@@ -52,9 +52,9 @@ menu:
       item: "minecraft:firework_star"
       count: 1
 
-# You can add as many custom banner cosmetics as you like!
-# Simply follow the format of any existing banner below.
-# Don't forget to add the corresponding language translations for your banners.
+# You can add as many custom banners as you like!
+# Simply follow the format of any existing below.
+# Don't forget to add the corresponding language translations for the ones you add.
 cosmetics:
   anchor:
     enabled: true
