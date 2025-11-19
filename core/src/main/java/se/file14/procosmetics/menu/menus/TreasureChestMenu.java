@@ -38,7 +38,7 @@ public class TreasureChestMenu extends MenuImpl {
 
     public TreasureChestMenu(ProCosmetics plugin, User user) {
         super(plugin, user, user.translate("menu.treasure_chests.title"),
-                plugin.getConfigManager().getConfig("treasure_chests").getInt("menu.rows")
+                plugin.getTreasureChestManager().getTreasureChestsConfig().getInt("menu.rows")
         );
     }
 
@@ -74,7 +74,7 @@ public class TreasureChestMenu extends MenuImpl {
             ));
 
             setItem(itemBuilder.getSlot(), itemBuilder.getItemStack(), event -> {
-                        if (event.isShiftClick() && plugin.getConfigManager().getConfig("treasure_chests").getBoolean("loot_categories.enabled")) {
+                        if (event.isShiftClick() && plugin.getTreasureChestManager().getTreasureChestsConfig().getBoolean("loot_categories.enabled")) {
                             Menu menu = new LootCategoriesMenu(plugin, user, treasureChest);
                             menu.setPreviousMenu(this);
                             menu.open();
@@ -136,7 +136,7 @@ public class TreasureChestMenu extends MenuImpl {
 
     @Override
     public ItemStack getFillEmptySlotsItem() {
-        Config config = plugin.getConfigManager().getConfig("treasure_chests");
+        Config config = plugin.getTreasureChestManager().getTreasureChestsConfig();
 
         if (!config.getBoolean("menu.items.fill_empty_slots.enabled")) {
             return null;

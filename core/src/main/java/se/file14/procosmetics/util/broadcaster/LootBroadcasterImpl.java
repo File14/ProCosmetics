@@ -36,7 +36,7 @@ public class LootBroadcasterImpl extends BroadcasterImpl implements LootBroadcas
     public LootBroadcasterImpl(ProCosmetics plugin, Config config, String path) {
         super(config, path);
 
-        for (String key : config.getStringList(path + ".excludes", true)) {
+        for (String key : config.getStringList(path + ".excludes")) {
             CosmeticRarity rarity = plugin.getCosmeticRarityRegistry().get(key);
 
             // Ignore unknown rarities

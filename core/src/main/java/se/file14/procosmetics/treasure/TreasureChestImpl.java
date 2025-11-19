@@ -73,11 +73,9 @@ public class TreasureChestImpl implements TreasureChest {
     private final List<StructureData> structures = new ArrayList<>();
     private final LootTable lootTable;
 
-    public TreasureChestImpl(ProCosmeticsPlugin plugin, String key) {
+    public TreasureChestImpl(ProCosmeticsPlugin plugin, Config config, String key) {
         this.plugin = plugin;
         this.key = key;
-
-        Config config = plugin.getConfigManager().getConfig("treasure_chests");
 
         String path = "treasure_chests." + key;
         enabled = config.getBoolean(path + ".enabled");
@@ -115,12 +113,10 @@ public class TreasureChestImpl implements TreasureChest {
         Map<CosmeticRarity, Integer> weights = new HashMap<>();
         String rarityWeightsPath = path + ".rarity_weights";
 
-        if (config.getConfigurationSection(rarityWeightsPath) != null) {
-            for (String rarityKey : config.getConfigurationSection(rarityWeightsPath).getKeys(false)) {
-                CosmeticRarity rarity = plugin.getCosmeticRarityRegistry().getSafely(rarityKey);
-                int weight = config.getInt(rarityWeightsPath + "." + rarityKey);
-                weights.put(rarity, weight);
-            }
+        for (String rarityKey : config.getSectionKeys(rarityWeightsPath)) {
+            CosmeticRarity rarity = plugin.getCosmeticRarityRegistry().getSafely(rarityKey);
+            int weight = config.getInt(rarityWeightsPath + "." + rarityKey);
+            weights.put(rarity, weight);
         }
         return weights;
     }
@@ -179,18 +175,14 @@ public class TreasureChestImpl implements TreasureChest {
 
         // Load custom loot entries
         String customLootPath = path + ".custom.loot";
-        if (config.getConfigurationSection(customLootPath) == null) {
-            return;
-        }
         ConstantIntProvider ONE_PROVIDER = new ConstantIntProviderImpl(1);
 
-        for (String customKey : config.getConfigurationSection(customLootPath).getKeys(false)) {
+        for (String customKey : config.getSectionKeys(customLootPath)) {
             String customPath = customLootPath + "." + customKey + ".";
 
             if (!config.getBoolean(customPath + "enabled")) {
                 continue;
             }
-
             CosmeticRarity rarity = plugin.getCosmeticRarityRegistry().getSafely(config.getString(customPath + "rarity"));
             String categoryKey = config.getString(customPath + "category");
             LootCategory category = customCategories.get(categoryKey);
@@ -199,7 +191,6 @@ public class TreasureChestImpl implements TreasureChest {
                 plugin.getLogger().warning("Could not find category " + categoryKey + " for " + customKey + ".");
                 continue;
             }
-
             ItemBuilderImpl customItemBuilder = new ItemBuilderImpl(config, customPath);
             entries.add(new CustomLootImpl(
                     ONE_PROVIDER,
@@ -216,19 +207,13 @@ public class TreasureChestImpl implements TreasureChest {
         Map<String, LootCategory> customCategories = new HashMap<>();
         String customCategoriesPath = path + ".custom.categories";
 
-        if (config.getConfigurationSection(customCategoriesPath) == null) {
-            return customCategories;
-        }
-
-        for (String categoryKey : config.getConfigurationSection(customCategoriesPath).getKeys(false)) {
+        for (String categoryKey : config.getSectionKeys(customCategoriesPath)) {
             String categoryPath = customCategoriesPath + "." + categoryKey + ".";
             ItemBuilderImpl categoryItem = new ItemBuilderImpl(config, categoryPath);
             customCategories.put(categoryKey, new LootCategoryImpl(categoryKey, categoryItem));
         }
-
         return customCategories;
     }
-
 
     @Override
     public LootTable getLootTable() {

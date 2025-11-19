@@ -167,7 +167,7 @@ public class GadgetTypeImpl extends CosmeticTypeImpl<GadgetType, GadgetBehavior>
             String path = getPath();
 
             cooldown = Math.max(0.1d, config.getDouble(path + "cooldown"));
-            duration = Math.min(cooldown, config.getDouble(path + "duration", false));
+            duration = Math.min(cooldown, config.getDouble(path + "duration"));
 
             structure = StructureReader.loadStructure(key);
 
@@ -178,16 +178,14 @@ public class GadgetTypeImpl extends CosmeticTypeImpl<GadgetType, GadgetBehavior>
             ammoCost = Math.max(0, config.getInt(path + "ammo.purchasable.cost"));
 
             String ammoWeightsPath = path + "ammo.treasure_chests";
-            if (config.getConfigurationSection(ammoWeightsPath) != null) {
-                for (String chestKey : config.getConfigurationSection(ammoWeightsPath).getKeys(false)) {
-                    String chestPath = ammoWeightsPath + "." + chestKey + ".";
-                    int minAmount = config.getInt(chestPath + "minimum_amount");
-                    int maxAmount = config.getInt(chestPath + "maximum_amount");
+            for (String chestKey : config.getSectionKeys(ammoWeightsPath)) {
+                String chestPath = ammoWeightsPath + "." + chestKey + ".";
+                int minAmount = config.getInt(chestPath + "minimum_amount");
+                int maxAmount = config.getInt(chestPath + "maximum_amount");
 
-                    if (minAmount > 0 && maxAmount > 0) {
-                        IntProvider intProvider = new RangedIntProviderImpl(minAmount, maxAmount);
-                        ammoLoot.put(chestKey, intProvider);
-                    }
+                if (minAmount > 0 && maxAmount > 0) {
+                    IntProvider intProvider = new RangedIntProviderImpl(minAmount, maxAmount);
+                    ammoLoot.put(chestKey, intProvider);
                 }
             }
             return self();

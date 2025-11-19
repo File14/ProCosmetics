@@ -19,7 +19,6 @@ package se.file14.procosmetics.storage.connection.hikari;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
-import org.bukkit.configuration.ConfigurationSection;
 import se.file14.procosmetics.ProCosmeticsPlugin;
 import se.file14.procosmetics.api.config.Config;
 import se.file14.procosmetics.storage.connection.ConnectionProvider;
@@ -94,10 +93,7 @@ public abstract class HikariConnectionProvider implements ConnectionProvider {
         setDefaultProperties(properties);
 
         // Override with custom properties from config
-        ConfigurationSection section = config.getConfigurationSection("storage.hikari.properties");
-        if (section != null) {
-            properties.putAll(section.getValues(false));
-        }
+        properties.putAll(config.getSectionValues("storage.hikari.properties"));
 
         // Apply all properties to HikariConfig
         for (Map.Entry<String, Object> property : properties.entrySet()) {

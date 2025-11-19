@@ -17,20 +17,13 @@
  */
 package se.file14.procosmetics.api.config;
 
-import org.bukkit.configuration.ConfigurationSection;
-import org.bukkit.configuration.file.YamlConfiguration;
-
 import java.io.File;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Represents a configuration file with typed accessors.
- * This interface provides convenient methods for retrieving configuration values
- * with default fallbacks.
- *
- * <p>All getter methods return safe defaults if keys are not found, preventing
- * null pointer exceptions while optionally logging missing keys for debugging.</p>
  */
 public interface Config {
 
@@ -44,134 +37,95 @@ public interface Config {
 
     /**
      * Gets a boolean value from the configuration.
+     * Looks in main config first, then default config, then returns false.
      *
      * @param key The configuration key
-     * @return The boolean value, or false if not found
+     * @return The boolean value from config, default config, or false if not found in either
      */
     boolean getBoolean(String key);
 
     /**
      * Gets a string value from the configuration.
+     * Looks in main config first, then default config, then returns "missing-string".
      *
      * @param key The configuration key
-     * @return The processed string value, or "missing-string" if not found
+     * @return The processed string value from config, default config, or "missing-string" if not found in either
      */
     String getString(String key);
 
     /**
-     * Gets a string value from the configuration.
-     *
-     * @param key        The configuration key
-     * @param logMissing Whether to log missing keys
-     * @return The processed string value, or "missing-string" if not found
-     */
-    String getString(String key, boolean logMissing);
-
-    /**
      * Gets an integer value from the configuration.
+     * Looks in main config first, then default config, then returns 1.
      *
      * @param key The configuration key
-     * @return The integer value, or 1 if not found
+     * @return The integer value from config, default config, or 1 if not found in either
      */
     int getInt(String key);
 
     /**
-     * Gets an integer value from the configuration.
-     *
-     * @param key        The configuration key
-     * @param logMissing Whether to log missing keys
-     * @return The integer value, or 1 if not found
-     */
-    int getInt(String key, boolean logMissing);
-
-    /**
      * Gets a double value from the configuration.
+     * Looks in main config first, then default config, then returns 1.0.
      *
      * @param key The configuration key
-     * @return The double value, or 1.0 if not found
+     * @return The double value from config, default config, or 1.0 if not found in either
      */
     double getDouble(String key);
 
     /**
-     * Gets a double value from the configuration
-     *
-     * @param key        The configuration key
-     * @param logMissing Whether to log missing keys
-     * @return The double value, or 1.0 if not found
-     */
-    double getDouble(String key, boolean logMissing);
-
-    /**
      * Gets a list of strings from the configuration.
+     * Looks in main config first, then default config, then returns empty list.
      *
      * @param key The configuration key
-     * @return The string list, or empty list if not found
+     * @return The string list from config, default config, or empty list if not found in either
      */
     List<String> getStringList(String key);
 
     /**
-     * Gets a list of strings from the configuration.
-     *
-     * @param key        The configuration key
-     * @param logMissing Whether to log missing keys
-     * @return The string list, or empty list if not found
-     */
-    List<String> getStringList(String key, boolean logMissing);
-
-    /**
      * Gets a generic list from the configuration.
+     * Looks in main config first, then default config, then returns empty list.
      *
      * @param key The configuration key
-     * @param <T> The type of the list elements
-     * @return The generic list, or empty list if not found
+     * @return The generic list from config, default config, or empty list if not found in either
      */
-    <T> List<T> getGenericList(String key);
-
-    /**
-     * Gets a generic value from the configuration.
-     *
-     * @param key          The configuration key
-     * @param defaultValue The default value to return if key is not found
-     * @param logMissing   Whether to log missing keys
-     * @param <T>          The type of the value
-     * @return The value, or defaultValue if not found
-     */
-    <T> T getGeneric(String key, T defaultValue, boolean logMissing);
+    List<?> getGenericList(String key);
 
     /**
      * Gets a list of maps from the configuration.
+     * Looks in main config first, then default config, then returns empty list.
      *
      * @param key The configuration key
-     * @return The list of maps, or empty list if not found
+     * @return The list of maps from config, default config, or empty list if not found in either
      */
     List<Map<?, ?>> getMapList(String key);
 
     /**
-     * Gets a list of maps from the configuration.
-     *
-     * @param key        The configuration key
-     * @param logMissing Whether to log missing keys
-     * @return The list of maps, or empty list if not found
-     */
-    List<Map<?, ?>> getMapList(String key, boolean logMissing);
-
-    /**
-     * Gets a configuration section.
+     * Gets the keys of a configuration section.
+     * Looks in main config first, then default config, then returns null.
      *
      * @param key The configuration key
-     * @return The configuration section, or null if not found
+     * @return The configuration section keys from config, default config, or null if not found in either
      */
-    ConfigurationSection getConfigurationSection(String key);
+    Set<String> getSectionKeys(String key);
 
     /**
-     * Gets the underlying YamlConfiguration.
+     * Gets the values of a configuration section as a map.
+     * Looks in main config first, then default config, then returns null.
      *
-     * @return The YamlConfiguration instance
+     * @param key The configuration key
+     * @return The configuration section values from config, default config, or null if not found in either
      */
-    YamlConfiguration getConfiguration();
+    Map<String, Object> getSectionValues(String key);
 
     /**
-     * Gets the file.
+     * Sets a configuration value.
+     *
+     * @param key   The configuration key
+     * @param value The value to set
+     */
+    void set(String key, Object value);
+
+    /**
+     * Gets the configuration file.
      *
      * @return The file of the config instance
      */

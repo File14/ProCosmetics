@@ -94,23 +94,17 @@ public class BannerTypeImpl extends CosmeticTypeImpl<BannerType, BannerBehavior>
             Config config = category.getConfig();
             String path = getPath();
 
-            tickInterval = config.getInt(path + "tick_interval", false);
+            tickInterval = config.getInt(path + "tick_interval");
 
             if (config.hasKey(path + "frames")) {
-                List<?> animationList = config.getGenericList(path + "frames");
+                List<Map<?, ?>> animationList = config.getMapList(path + "frames");
 
-                if (animationList != null) {
-                    for (Object animation : animationList) {
-                        if (animation instanceof Map) {
-                            @SuppressWarnings("unchecked")
-                            Map<String, Object> frameMap = (Map<String, Object>) animation;
-                            String item = (String) frameMap.get("item");
-                            int duration = (int) frameMap.get("duration");
+                for (Map<?, ?> animation : animationList) {
+                    String item = (String) animation.get("item");
+                    int duration = (int) animation.get("duration");
 
-                            if (item != null && duration > 0) {
-                                addFrame(AnimationFrame.of(new ItemBuilderImpl(item).getItemStack(), duration));
-                            }
-                        }
+                    if (item != null && duration > 0) {
+                        addFrame(AnimationFrame.of(new ItemBuilderImpl(item).getItemStack(), duration));
                     }
                 }
             }

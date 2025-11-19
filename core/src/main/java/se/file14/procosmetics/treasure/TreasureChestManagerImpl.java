@@ -19,7 +19,6 @@ package se.file14.procosmetics.treasure;
 
 import org.bukkit.Location;
 import org.bukkit.block.Block;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -71,12 +70,8 @@ public class TreasureChestManagerImpl implements TreasureChestManager {
     }
 
     private void loadTreasureChests() {
-        String path = "treasure_chests";
-
-        if (treasureChestsConfig.hasKey(path)) {
-            for (String key : treasureChestsConfig.getConfigurationSection(path).getKeys(false)) {
-                treasuresChests.add(new TreasureChestImpl(plugin, key.toLowerCase()));
-            }
+        for (String key : treasureChestsConfig.getSectionKeys("treasure_chests")) {
+            treasuresChests.add(new TreasureChestImpl(plugin, treasureChestsConfig, key.toLowerCase()));
         }
     }
 
@@ -87,11 +82,7 @@ public class TreasureChestManagerImpl implements TreasureChestManager {
     private void loadPlatforms() {
         String mainPath = "platforms";
 
-        if (!platformsConfig.hasKey(mainPath)) {
-            return;
-        }
-
-        for (String name : platformsConfig.getConfigurationSection(mainPath).getKeys(false)) {
+        for (String name : platformsConfig.getSectionKeys(mainPath)) {
             String path = mainPath + "." + name + ".";
             int id;
 
@@ -125,14 +116,10 @@ public class TreasureChestManagerImpl implements TreasureChestManager {
     }
 
     private void savePlatform(TreasureChestPlatformImpl platform) {
-        FileConfiguration configuration = platformsConfig.getConfiguration();
         String path = "platforms." + platform.getId();
 
-        if (!platformsConfig.hasKey(path)) {
-            configuration.createSection(path);
-        }
-        configuration.set(path + ".location", LocationUtil.getStringFromLocation(platform.getCenter()));
-        configuration.set(path + ".layout", platform.getNamedStructureData().name());
+        platformsConfig.set(path + ".location", LocationUtil.getStringFromLocation(platform.getCenter()));
+        platformsConfig.set(path + ".layout", platform.getNamedStructureData().name());
 
         platformsConfig.save();
     }
@@ -140,8 +127,7 @@ public class TreasureChestManagerImpl implements TreasureChestManager {
     public void deletePlatform(TreasureChestPlatformImpl platform) {
         platform.destroy();
 
-        FileConfiguration configuration = platformsConfig.getConfiguration();
-        configuration.set("platforms." + platform.getId(), null);
+        platformsConfig.set("platforms." + platform.getId(), null);
         platformsConfig.save();
 
         platforms.remove(platform);
@@ -236,6 +222,16 @@ public class TreasureChestManagerImpl implements TreasureChestManager {
             }
         }
         return null;
+    }
+
+    @Override
+    public Config getTreasureChestsConfig() {
+        return treasureChestsConfig;
+    }
+
+    @Override
+    public Config getPlatformsConfig() {
+        return platformsConfig;
     }
 
     @Override

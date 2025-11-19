@@ -23,7 +23,6 @@ import se.file14.procosmetics.ProCosmeticsPlugin;
 import se.file14.procosmetics.api.config.Config;
 import se.file14.procosmetics.api.cosmetic.CosmeticRarity;
 import se.file14.procosmetics.api.cosmetic.registry.CosmeticRarityRegistry;
-import se.file14.procosmetics.config.YmlConfig;
 import se.file14.procosmetics.cosmetic.CosmeticRarityImpl;
 import se.file14.procosmetics.util.EnumUtil;
 
@@ -47,9 +46,9 @@ public class CosmeticRarityRegistryImpl implements CosmeticRarityRegistry {
         rarities.clear();
         fallbackRarity = null;
 
-        Config config = new YmlConfig(plugin, "rarities");
+        Config config = plugin.getConfigManager().register("rarities");
 
-        for (String key : config.getConfigurationSection("rarities").getKeys(false)) {
+        for (String key : config.getSectionKeys("rarities")) {
             String path = "rarities." + key + ".";
             int priority = config.getInt(path + "priority");
             String mainColor = config.getString(path + "colors.primary");

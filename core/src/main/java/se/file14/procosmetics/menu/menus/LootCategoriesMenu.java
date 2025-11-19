@@ -55,7 +55,7 @@ public class LootCategoriesMenu extends PaginatedMenu<LootCategoriesMenu.Categor
                         Placeholder.unparsed("name", treasureChest.getName(user)),
                         treasureChest.getResolvers(user)
                 ),
-                plugin.getConfigManager().getConfig("treasure_chests").getInt("loot_categories.rows"),
+                plugin.getTreasureChestManager().getTreasureChestsConfig().getInt("loot_categories.rows"),
                 1);
         this.treasureChest = treasureChest;
 
@@ -63,7 +63,7 @@ public class LootCategoriesMenu extends PaginatedMenu<LootCategoriesMenu.Categor
         symbols.setDecimalSeparator(user.translateRaw("generic.decimal_separator").charAt(0));
         decimalFormat = new DecimalFormat("0.00", symbols);
 
-        Config config = plugin.getConfigManager().getConfig("treasure_chests");
+        Config config = plugin.getTreasureChestManager().getTreasureChestsConfig();
 
         // Next page item
         nextPageItem = new ItemBuilderImpl(config, "loot_categories.items.next_page");
@@ -151,7 +151,7 @@ public class LootCategoriesMenu extends PaginatedMenu<LootCategoriesMenu.Categor
 
     @Override
     public @Nullable ItemStack getFillEmptySlotsItem() {
-        Config config = plugin.getConfigManager().getConfig("treasure_chests");
+        Config config = plugin.getTreasureChestManager().getTreasureChestsConfig();
         if (!config.getBoolean("loot_categories.items.fill_empty_slots.enabled")) {
             return null;
         }
@@ -187,7 +187,7 @@ public class LootCategoriesMenu extends PaginatedMenu<LootCategoriesMenu.Categor
 
         @Override
         public ClickableItem getClickHandler() {
-            if (plugin.getConfigManager().getConfig("treasure_chests").getBoolean("loot_entries.enabled")) {
+            if (plugin.getTreasureChestManager().getTreasureChestsConfig().getBoolean("loot_entries.enabled")) {
                 return event -> {
                     Menu menu = new LootEntriesMenu(plugin, user, treasureChest, category, entries, decimalFormat);
                     menu.setPreviousMenu(LootCategoriesMenu.this);

@@ -87,7 +87,7 @@ public class StatusTypeImpl extends CosmeticTypeImpl<StatusType, StatusBehavior>
         public StatusType.Builder readFromConfig() {
             super.readFromConfig();
 
-            refreshInterval = category.getConfig().getInt("refresh_interval", false);
+            refreshInterval = category.getConfig().getInt("refresh_interval");
             textProvider = (statusType, user) -> user.translate(
                     "cosmetic." + category.getKey() + "." + key + ".tag",
                     Placeholder.unparsed("name", statusType.getName(user))

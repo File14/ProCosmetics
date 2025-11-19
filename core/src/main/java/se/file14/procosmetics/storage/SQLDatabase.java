@@ -75,7 +75,7 @@ public abstract class SQLDatabase extends DatabaseImpl {
         connectionProvider.initialize(plugin);
 
         Config config = plugin.getConfigManager().getMainConfig();
-        String tablePrefix = config.getString("storage." + connectionProvider.getConfigKey() + ".table_prefix", true);
+        String tablePrefix = config.getString("storage." + connectionProvider.getConfigKey() + ".table_prefix");
 
         usersTable = tablePrefix + "_users";
         cosmeticsTable = tablePrefix + "_cosmetics";

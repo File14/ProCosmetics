@@ -52,13 +52,13 @@ public class LootEntriesMenu extends PaginatedMenu<LootEntriesMenu.EntryPaginate
                         Placeholder.unparsed("name", treasureChest.getName(user)),
                         treasureChest.getResolvers(user)
                 ),
-                plugin.getConfigManager().getConfig("treasure_chests").getInt("loot_entries.rows"),
+                plugin.getTreasureChestManager().getTreasureChestsConfig().getInt("loot_entries.rows"),
                 1);
         this.treasureChest = treasureChest;
         this.category = category;
         this.decimalFormat = decimalFormat;
 
-        Config config = plugin.getConfigManager().getConfig("treasure_chests");
+        Config config = plugin.getTreasureChestManager().getTreasureChestsConfig();
 
         // Next page item
         nextPageItem = new ItemBuilderImpl(config, "loot_entries.items.next_page");
@@ -122,7 +122,7 @@ public class LootEntriesMenu extends PaginatedMenu<LootEntriesMenu.EntryPaginate
 
     @Override
     public @Nullable ItemStack getFillEmptySlotsItem() {
-        Config config = plugin.getConfigManager().getConfig("treasure_chests");
+        Config config = plugin.getTreasureChestManager().getTreasureChestsConfig();
         if (!config.getBoolean("loot_entries.items.fill_empty_slots.enabled")) {
             return null;
         }

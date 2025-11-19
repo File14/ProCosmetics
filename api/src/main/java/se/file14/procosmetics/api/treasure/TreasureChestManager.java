@@ -19,6 +19,7 @@ package se.file14.procosmetics.api.treasure;
 
 import org.bukkit.Location;
 import org.jetbrains.annotations.Nullable;
+import se.file14.procosmetics.api.config.Config;
 import se.file14.procosmetics.api.util.broadcaster.Broadcaster;
 import se.file14.procosmetics.api.util.broadcaster.LootBroadcaster;
 
@@ -62,6 +63,20 @@ public interface TreasureChestManager {
      */
     @Nullable
     TreasureChest getTreasureChest(@Nullable String key);
+
+    /**
+     * Gets the configuration for treasure chests.
+     *
+     * @return the treasure chests {@link Config}
+     */
+    Config getTreasureChestsConfig();
+
+    /**
+     * Gets the configuration for treasure platforms.
+     *
+     * @return the platforms {@link Config}
+     */
+    Config getPlatformsConfig();
 
     /**
      * Gets the broadcaster responsible for announcing treasure chest openings.

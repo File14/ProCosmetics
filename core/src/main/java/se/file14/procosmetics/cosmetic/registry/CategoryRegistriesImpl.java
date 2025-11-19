@@ -142,14 +142,14 @@ public class CategoryRegistriesImpl implements CategoryRegistries {
         arrowEffects.register(arrowEffects.builder("sparkly_arrows").readFromConfig().factory(SparklyArrows::new).build());
 
         CosmeticRegistry<BalloonType, BalloonBehavior, BalloonType.Builder> balloons = balloons().getCosmeticRegistry();
-        for (String key : balloons().getConfig().getConfigurationSection("cosmetics").getKeys(false)) {
+        for (String key : balloons().getConfig().getSectionKeys("cosmetics")) {
             if (!balloons.isRegistered(key)) {
                 balloons.register(balloons.builder(key).readFromConfig().factory(DefaultBalloon::new).build());
             }
         }
 
         CosmeticRegistry<BannerType, BannerBehavior, BannerType.Builder> banners = banners().getCosmeticRegistry();
-        for (String key : banners().getConfig().getConfigurationSection("cosmetics").getKeys(false)) {
+        for (String key : banners().getConfig().getSectionKeys("cosmetics")) {
             if (!banners.isRegistered(key)) {
                 banners.register(banners.builder(key).readFromConfig().factory(DefaultBanner::new).build());
             }
@@ -176,7 +176,7 @@ public class CategoryRegistriesImpl implements CategoryRegistries {
         emotes.register(emotes.builder("rage").readFromConfig().factory(Rage::new).build());
         emotes.register(emotes.builder("sad").readFromConfig().factory(Sad::new).build());
         emotes.register(emotes.builder("wink").readFromConfig().factory(Wink::new).build());
-        for (String key : emotes().getConfig().getConfigurationSection("cosmetics").getKeys(false)) {
+        for (String key : emotes().getConfig().getSectionKeys("cosmetics")) {
             if (!emotes.isRegistered(key)) {
                 emotes.register(emotes.builder(key).readFromConfig().factory(DefaultEmote::new).build());
             }
@@ -299,7 +299,7 @@ public class CategoryRegistriesImpl implements CategoryRegistries {
         mounts.register(mounts.builder("unicorn").entityType(EntityType.HORSE).readFromConfig().factory(Unicorn::new).build());
 
         CosmeticRegistry<MusicType, MusicBehavior, MusicType.Builder> music = music().getCosmeticRegistry();
-        for (String key : music().getConfig().getConfigurationSection("cosmetics").getKeys(false)) {
+        for (String key : music().getConfig().getSectionKeys("cosmetics")) {
             if (!music.isRegistered(key)) {
                 music.register(music.builder(key).readFromConfig().factory(DefaultMusic::new).build());
             }
@@ -348,14 +348,14 @@ public class CategoryRegistriesImpl implements CategoryRegistries {
         pets.register(pets.builder("elf").readFromConfig().factory(Elf::new).build());
         pets.register(pets.builder("santa_claus").readFromConfig().factory(SantaClaus::new).build());
         pets.register(pets.builder("villager").readFromConfig().factory(Villager::new).build());
-        for (String key : pets().getConfig().getConfigurationSection("cosmetics").getKeys(false)) {
+        for (String key : pets().getConfig().getSectionKeys("cosmetics")) {
             if (!pets.isRegistered(key)) {
                 pets.register(pets.builder(key).readFromConfig().factory(DefaultPet::new).build());
             }
         }
 
         CosmeticRegistry<StatusType, StatusBehavior, StatusType.Builder> statuses = statuses().getCosmeticRegistry();
-        for (String key : statuses().getConfig().getConfigurationSection("cosmetics").getKeys(false)) {
+        for (String key : statuses().getConfig().getSectionKeys("cosmetics")) {
             if (!statuses.isRegistered(key)) {
                 statuses.register(statuses.builder(key).readFromConfig().factory(DefaultStatus::new).build());
             }

@@ -7,6 +7,11 @@ dependencies {
     implementation(project(":api"))
 
     // Runtime libraries (will be shaded)
+    implementation("org.jetbrains:annotations:26.0.2-1")
+    implementation("dev.dejvokep:boosted-yaml:1.3.7")
+    {
+        exclude(group = "org.jetbrains.annotations")
+    }
     implementation("com.github.File14:NoteBlockAPI:1c5500b038")
     implementation("org.mongodb:mongodb-driver-sync:5.6.1")
     implementation("com.zaxxer:HikariCP:7.0.2")

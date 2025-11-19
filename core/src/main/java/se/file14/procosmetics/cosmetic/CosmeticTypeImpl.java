@@ -75,7 +75,7 @@ public abstract class CosmeticTypeImpl<T extends CosmeticType<T, B>,
         this.category = category;
         this.behaviorFactory = behaviorFactory;
         this.permission = "procosmetics.cosmetic." + category.getKey() + "." + key;
-        this.legacyPermission = permission.replace("_", "-");
+        this.legacyPermission = permission.replace("cosmetic.", "").replace("_", "-");
         this.purchasePermission = "procosmetics.purchase." + category.getKey() + "." + key;
         this.enabled = enabled;
         this.purchasable = purchasable;

@@ -38,11 +38,7 @@ public class ConfigManagerImpl implements ConfigManager {
 
     private void load() {
         configs.clear();
-
         mainConfig = register("config");
-        register("treasure_chests");
-        register("rarities");
-        register("data/treasure_chest_platforms");
     }
 
     @Override
@@ -52,7 +48,7 @@ public class ConfigManagerImpl implements ConfigManager {
         if (config != null) {
             return config;
         }
-        config = new YmlConfig(plugin, resourcePath);
+        config = new BoostedYmlConfig(plugin, resourcePath);
         configs.put(resourcePath.toLowerCase(), config);
         return config;
     }

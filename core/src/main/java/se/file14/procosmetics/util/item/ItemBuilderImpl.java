@@ -79,7 +79,10 @@ public class ItemBuilderImpl implements ItemBuilder {
     }
 
     public ItemBuilderImpl(Config config, String path) {
-        String item = config.getString(path + ".item");
+        if (!path.endsWith(".")) {
+            path = path + ".";
+        }
+        String item = config.getString(path + "item");
         ItemStack itemStack = new ItemStack(Material.BARRIER);
 
         try {
@@ -88,8 +91,8 @@ public class ItemBuilderImpl implements ItemBuilder {
             LogUtil.log("Failed to parse item " + item + " [Path: " + path + " Config: " + config.getFile().getName() + "]. This appears to be an issue with YOUR configuration. Delete the " + config.getFile().getName() + " file and RESTART your server before requesting support.");
         }
         this.itemStack = itemStack;
-        this.slot = config.getInt(path + ".slot", false);
-        int count = config.getInt(path + ".count", false);
+        this.slot = config.getInt(path + "slot");
+        int count = config.getInt(path + "count");
 
         if (count > 0) {
             setAmount(count);
