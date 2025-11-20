@@ -102,7 +102,7 @@ public class TreasureChestImpl implements TreasureChest {
         // Build loot entries
         List<LootEntry> entries = new ArrayList<>();
         loadCosmeticLoot(entries);
-        loadGadgetAmmoLoot(entries);
+        loadGadgetAmmoLoot(config, entries);
         loadCoinLoot(config, path, entries);
         loadCustomLoot(config, path, entries);
 
@@ -135,8 +135,8 @@ public class TreasureChestImpl implements TreasureChest {
         }
     }
 
-    private void loadGadgetAmmoLoot(List<LootEntry> entries) {
-        LootCategory category = new LootCategoryImpl("ammo", plugin.getCategoryRegistries().gadgets().getMenuItem());
+    private void loadGadgetAmmoLoot(Config config, List<LootEntry> entries) {
+        LootCategory category = new LootCategoryImpl("ammo", new ItemBuilderImpl(config, "loot_categories.items.ammo"));
 
         for (GadgetType gadgetType : plugin.getCategoryRegistries().gadgets().getCosmeticRegistry().getEnabledTypes()) {
             Map<String, IntProvider> ammoLoot = gadgetType.getAmmoLoot();
