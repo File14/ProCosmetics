@@ -52,7 +52,7 @@ public class AmmoLootImpl extends LootEntryImpl implements AmmoLoot {
 
     @Override
     public CosmeticRarity getRarity() {
-        return PLUGIN.getCosmeticRarityRegistry().getFallbackRarity();
+        return gadgetType.getAmmoRarity();
     }
 
     @Override

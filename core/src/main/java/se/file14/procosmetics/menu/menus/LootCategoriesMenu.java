@@ -47,7 +47,7 @@ public class LootCategoriesMenu extends PaginatedMenu<LootCategoriesMenu.Categor
     private final ItemBuilderImpl previousPageItem;
     private ItemBuilderImpl goBackItem;
     private ItemBuilderImpl informationItem;
-    private DecimalFormat decimalFormat;
+    private final DecimalFormat decimalFormat;
 
     public LootCategoriesMenu(ProCosmetics plugin, User user, TreasureChest treasureChest) {
         super(plugin, user,

@@ -71,6 +71,7 @@ cosmetics:
       - mythical
       - legendary
     ammo:
+      rarity: "common"
       infinity: false
       purchasable:
         enabled: true
@@ -102,6 +103,7 @@ cosmetics:
       - mythical
       - legendary
     ammo:
+      rarity: "common"
       infinity: false
       purchasable:
         enabled: true
@@ -132,6 +134,7 @@ cosmetics:
       - mythical
       - legendary
     ammo:
+      rarity: "common"
       infinity: false
       purchasable:
         enabled: true
@@ -165,6 +168,7 @@ cosmetics:
       - mythical
       - legendary
     ammo:
+      rarity: "common"
       infinity: false
       purchasable:
         enabled: true
@@ -195,6 +199,7 @@ cosmetics:
       - mythical
       - legendary
     ammo:
+      rarity: "common"
       infinity: false
       purchasable:
         enabled: true
@@ -225,6 +230,7 @@ cosmetics:
       - mythical
       - legendary
     ammo:
+      rarity: "common"
       infinity: false
       purchasable:
         enabled: true
@@ -255,6 +261,7 @@ cosmetics:
       - mythical
       - legendary
     ammo:
+      rarity: "common"
       infinity: false
       purchasable:
         enabled: true
@@ -286,6 +293,7 @@ cosmetics:
       - mythical
       - legendary
     ammo:
+      rarity: "common"
       infinity: false
       purchasable:
         enabled: true
@@ -317,6 +325,7 @@ cosmetics:
       - mythical
       - legendary
     ammo:
+      rarity: "common"
       infinity: false
       purchasable:
         enabled: true
@@ -347,6 +356,7 @@ cosmetics:
       - mythical
       - legendary
     ammo:
+      rarity: "common"
       infinity: false
       purchasable:
         enabled: true
@@ -378,6 +388,7 @@ cosmetics:
       - mythical
       - legendary
     ammo:
+      rarity: "common"
       infinity: false
       purchasable:
         enabled: true
@@ -409,6 +420,7 @@ cosmetics:
       - mythical
       - legendary
     ammo:
+      rarity: "common"
       infinity: false
       purchasable:
         enabled: true
@@ -439,6 +451,7 @@ cosmetics:
       - mythical
       - legendary
     ammo:
+      rarity: "common"
       infinity: false
       purchasable:
         enabled: true
@@ -469,6 +482,7 @@ cosmetics:
       - mythical
       - legendary
     ammo:
+      rarity: "common"
       infinity: false
       purchasable:
         enabled: true
@@ -499,6 +513,7 @@ cosmetics:
       - mythical
       - legendary
     ammo:
+      rarity: "common"
       infinity: false
       purchasable:
         enabled: true
@@ -530,6 +545,7 @@ cosmetics:
       - mythical
       - legendary
     ammo:
+      rarity: "common"
       infinity: false
       purchasable:
         enabled: true
@@ -561,6 +577,7 @@ cosmetics:
       - mythical
       - legendary
     ammo:
+      rarity: "common"
       infinity: false
       purchasable:
         enabled: true
@@ -591,6 +608,7 @@ cosmetics:
       - mythical
       - legendary
     ammo:
+      rarity: "common"
       infinity: false
       purchasable:
         enabled: true
@@ -622,6 +640,7 @@ cosmetics:
       - mythical
       - legendary
     ammo:
+      rarity: "common"
       infinity: false
       purchasable:
         enabled: true
@@ -652,6 +671,7 @@ cosmetics:
       - mythical
       - legendary
     ammo:
+      rarity: "common"
       infinity: false
       purchasable:
         enabled: true
@@ -683,6 +703,7 @@ cosmetics:
       - mythical
       - legendary
     ammo:
+      rarity: "common"
       infinity: false
       purchasable:
         enabled: true
@@ -714,6 +735,7 @@ cosmetics:
       - mythical
       - legendary
     ammo:
+      rarity: "common"
       infinity: false
       purchasable:
         enabled: true
@@ -744,6 +766,7 @@ cosmetics:
       - mythical
       - legendary
     ammo:
+      rarity: "common"
       infinity: false
       purchasable:
         enabled: true
@@ -775,6 +798,7 @@ cosmetics:
       - mythical
       - legendary
     ammo:
+      rarity: "common"
       infinity: false
       purchasable:
         enabled: true
@@ -806,6 +830,7 @@ cosmetics:
       - mythical
       - legendary
     ammo:
+      rarity: "common"
       infinity: false
       purchasable:
         enabled: true
@@ -837,6 +862,7 @@ cosmetics:
       - mythical
       - legendary
     ammo:
+      rarity: "common"
       infinity: false
       purchasable:
         enabled: true
@@ -868,6 +894,7 @@ cosmetics:
       - mythical
       - legendary
     ammo:
+      rarity: "common"
       infinity: false
       purchasable:
         enabled: true
@@ -898,6 +925,7 @@ cosmetics:
       - mythical
       - legendary
     ammo:
+      rarity: "common"
       infinity: false
       purchasable:
         enabled: true
@@ -929,6 +957,7 @@ cosmetics:
       - mythical
       - legendary
     ammo:
+      rarity: "common"
       infinity: false
       purchasable:
         enabled: true
@@ -959,6 +988,7 @@ cosmetics:
       - mythical
       - legendary
     ammo:
+      rarity: "common"
       infinity: false
       purchasable:
         enabled: true
@@ -990,6 +1020,7 @@ cosmetics:
       - mythical
       - legendary
     ammo:
+      rarity: "common"
       infinity: false
       purchasable:
         enabled: true

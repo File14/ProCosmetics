@@ -18,6 +18,7 @@
 package se.file14.procosmetics.api.cosmetic.gadget;
 
 import org.jetbrains.annotations.Nullable;
+import se.file14.procosmetics.api.cosmetic.CosmeticRarity;
 import se.file14.procosmetics.api.cosmetic.CosmeticType;
 import se.file14.procosmetics.api.treasure.loot.number.IntProvider;
 import se.file14.procosmetics.api.util.structure.StructureData;
@@ -60,6 +61,13 @@ public interface GadgetType extends CosmeticType<GadgetType, GadgetBehavior> {
      */
     @Nullable
     StructureData getStructure();
+
+    /**
+     * Gets the ammo rarity for this gadget.
+     *
+     * @return the ammo rarity
+     */
+    CosmeticRarity getAmmoRarity();
 
     /**
      * Checks if this gadget has infinite ammunition.
@@ -132,6 +140,14 @@ public interface GadgetType extends CosmeticType<GadgetType, GadgetBehavior> {
          * @return this builder for method chaining
          */
         Builder structure(StructureData structure);
+
+        /**
+         * Sets the ammo rarity for this gadget.
+         *
+         * @param rarity the ammo rarity
+         * @return this builder for method chaining
+         */
+        Builder ammoRarity(CosmeticRarity rarity);
 
         /**
          * Sets whether this gadget has infinite ammunition.

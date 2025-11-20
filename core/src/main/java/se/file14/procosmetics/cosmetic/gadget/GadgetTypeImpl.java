@@ -45,6 +45,7 @@ public class GadgetTypeImpl extends CosmeticTypeImpl<GadgetType, GadgetBehavior>
     private final double cooldown;
     private final double duration;
     private final StructureData structure;
+    private final CosmeticRarity ammoRarity;
     private final boolean infinityAmmo;
     private final boolean purchasableAmmo;
     private final int ammoPurchaseAmount;
@@ -63,6 +64,7 @@ public class GadgetTypeImpl extends CosmeticTypeImpl<GadgetType, GadgetBehavior>
                           double cooldown,
                           double duration,
                           StructureData structure,
+                          CosmeticRarity ammoRarity,
                           boolean infinityAmmo,
                           boolean purchasableAmmo,
                           int ammoPurchaseAmount,
@@ -72,6 +74,7 @@ public class GadgetTypeImpl extends CosmeticTypeImpl<GadgetType, GadgetBehavior>
         this.cooldown = cooldown;
         this.duration = duration;
         this.structure = structure;
+        this.ammoRarity = ammoRarity;
         this.infinityAmmo = infinityAmmo;
         this.purchasableAmmo = purchasableAmmo;
         this.ammoPurchaseAmount = ammoPurchaseAmount;
@@ -115,6 +118,11 @@ public class GadgetTypeImpl extends CosmeticTypeImpl<GadgetType, GadgetBehavior>
     }
 
     @Override
+    public CosmeticRarity getAmmoRarity() {
+        return ammoRarity;
+    }
+
+    @Override
     public boolean hasInfinityAmmo() {
         return infinityAmmo;
     }
@@ -144,6 +152,7 @@ public class GadgetTypeImpl extends CosmeticTypeImpl<GadgetType, GadgetBehavior>
         private double cooldown;
         private double duration;
         private StructureData structure;
+        private CosmeticRarity ammoRarity;
         private boolean infinityAmmo;
         private boolean purchasableAmmo;
         private int ammoPurchaseAmount;
@@ -172,6 +181,7 @@ public class GadgetTypeImpl extends CosmeticTypeImpl<GadgetType, GadgetBehavior>
             structure = StructureReader.loadStructure(key);
 
             // Ammo
+            ammoRarity = PLUGIN.getCosmeticRarityRegistry().getSafely(config.getString(path + "ammo.rarity"));
             infinityAmmo = config.getBoolean(path + "ammo.infinity");
             purchasableAmmo = config.getBoolean(path + "ammo.purchasable.enabled");
             ammoPurchaseAmount = Math.max(0, config.getInt(path + "ammo.purchasable.amount"));
@@ -206,6 +216,12 @@ public class GadgetTypeImpl extends CosmeticTypeImpl<GadgetType, GadgetBehavior>
         @Override
         public GadgetType.Builder structure(StructureData structure) {
             this.structure = structure;
+            return this;
+        }
+
+        @Override
+        public GadgetType.Builder ammoRarity(CosmeticRarity rarity) {
+            this.ammoRarity = rarity;
             return this;
         }
 
@@ -253,6 +269,7 @@ public class GadgetTypeImpl extends CosmeticTypeImpl<GadgetType, GadgetBehavior>
                     cooldown,
                     duration,
                     structure,
+                    ammoRarity,
                     infinityAmmo,
                     purchasableAmmo,
                     ammoPurchaseAmount,
