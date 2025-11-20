@@ -57,15 +57,16 @@ public class CosmeticPurchaseMenu extends MenuImpl {
         CosmeticCategory<?, ?, ?> category = cosmeticType.getCategory();
         ItemBuilder cosmeticItem = new ItemBuilderImpl(cosmeticType.getItemStack());
         String name = cosmeticType.getName(user);
-        TagResolver tagResolver = cosmeticType.getResolvers(user);
+        TagResolver tagResolver = TagResolver.resolver(
+                cosmeticType.getResolvers(user),
+                Placeholder.unparsed("name", name)
+        );
         cosmeticItem.setDisplayName(user.translate(
                 "menu." + category.getKey() + "." + cosmeticType.getKey() + ".name",
-                Placeholder.unparsed("name", name),
                 tagResolver
         ));
         cosmeticItem.setLore(user.translateList(
                 "menu." + category.getKey() + "." + cosmeticType.getKey() + ".desc",
-                Placeholder.unparsed("name", name),
                 tagResolver
         ));
 
@@ -73,10 +74,12 @@ public class CosmeticPurchaseMenu extends MenuImpl {
         });
 
         ItemBuilderImpl acceptPurchase = new ItemBuilderImpl(config, "menu.purchase.cosmetic.items.accept");
-        acceptPurchase.setDisplayName(user.translate("menu.purchase.cosmetic.accept.name"));
+        acceptPurchase.setDisplayName(user.translate(
+                "menu.purchase.cosmetic.accept.name",
+                tagResolver)
+        );
         acceptPurchase.setLore(user.translateList(
                 "menu.purchase.cosmetic.accept.desc",
-                Placeholder.unparsed("name", name),
                 tagResolver
         ));
         Server server = plugin.getJavaPlugin().getServer();
@@ -116,10 +119,12 @@ public class CosmeticPurchaseMenu extends MenuImpl {
 
         // Deny purchase button
         ItemBuilderImpl denyPurchase = new ItemBuilderImpl(config, "menu.purchase.cosmetic.items.deny");
-        denyPurchase.setDisplayName(user.translate("menu.purchase.cosmetic.deny.name"));
+        denyPurchase.setDisplayName(user.translate(
+                "menu.purchase.cosmetic.deny.name",
+                tagResolver
+        ));
         denyPurchase.setLore(user.translateList(
                 "menu.purchase.cosmetic.deny.desc",
-                Placeholder.unparsed("name", name),
                 tagResolver
         ));
 

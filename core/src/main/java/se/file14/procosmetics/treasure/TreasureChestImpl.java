@@ -162,11 +162,8 @@ public class TreasureChestImpl implements TreasureChest {
 
         int min = config.getInt(coinsPath + "minimum_amount");
         int max = config.getInt(coinsPath + "maximum_amount");
-        IntProvider intProvider = (max > min)
-                ? new RangedIntProviderImpl(min, max)
-                : new ConstantIntProviderImpl(min);
 
-        entries.add(new CoinsLootImpl(intProvider, category, rarity));
+        entries.add(new CoinsLootImpl(new RangedIntProviderImpl(min, max), category, rarity));
     }
 
     private void loadCustomLoot(Config config, String path, List<LootEntry> entries) {

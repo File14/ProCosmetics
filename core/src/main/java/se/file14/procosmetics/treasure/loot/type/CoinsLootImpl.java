@@ -25,16 +25,16 @@ import se.file14.procosmetics.api.cosmetic.CosmeticRarity;
 import se.file14.procosmetics.api.treasure.loot.CoinsLoot;
 import se.file14.procosmetics.api.treasure.loot.GeneratedLoot;
 import se.file14.procosmetics.api.treasure.loot.LootCategory;
-import se.file14.procosmetics.api.treasure.loot.number.IntProvider;
+import se.file14.procosmetics.api.treasure.loot.number.RangedIntProvider;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.treasure.loot.GeneratedLootImpl;
 import se.file14.procosmetics.treasure.loot.LootEntryImpl;
 
-public class CoinsLootImpl extends LootEntryImpl implements CoinsLoot {
+public class CoinsLootImpl extends LootEntryImpl<RangedIntProvider> implements CoinsLoot {
 
     private final CosmeticRarity rarity;
 
-    public CoinsLootImpl(IntProvider intProvider, LootCategory category, CosmeticRarity rarity) {
+    public CoinsLootImpl(RangedIntProvider intProvider, LootCategory category, CosmeticRarity rarity) {
         super(intProvider, category);
         this.rarity = rarity;
     }
@@ -45,9 +45,17 @@ public class CoinsLootImpl extends LootEntryImpl implements CoinsLoot {
     }
 
     @Override
+    public String getNameTranslationKey() {
+        return "treasure_chest.loot." + getKey() + ".name";
+    }
+
+    @Override
     public TagResolver getResolvers(User user) {
-        return TagResolver.resolver(super.getResolvers(user),
-                Placeholder.unparsed("currency", user.translateRaw("generic.currency"))
+        return TagResolver.resolver(
+                super.getResolvers(user),
+                Placeholder.unparsed("currency", user.translateRaw("generic.currency")),
+                Placeholder.unparsed("min", String.valueOf(intProvider.getMin())),
+                Placeholder.unparsed("max", String.valueOf(intProvider.getMax()))
         );
     }
 
@@ -65,6 +73,11 @@ public class CoinsLootImpl extends LootEntryImpl implements CoinsLoot {
 
         public GeneratedCoinsLoot(CoinsLoot entry, int amount) {
             super(entry, amount);
+        }
+
+        @Override
+        public String getNameTranslationKey() {
+            return "treasure_chest.loot." + getKey();
         }
 
         @Override

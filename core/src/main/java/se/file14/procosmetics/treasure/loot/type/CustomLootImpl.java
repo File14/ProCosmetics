@@ -32,7 +32,7 @@ import se.file14.procosmetics.treasure.loot.LootEntryImpl;
 
 import java.util.List;
 
-public class CustomLootImpl extends LootEntryImpl implements CustomLoot {
+public class CustomLootImpl extends LootEntryImpl<IntProvider> implements CustomLoot {
 
     private final String key;
     private final ItemStack itemStack;

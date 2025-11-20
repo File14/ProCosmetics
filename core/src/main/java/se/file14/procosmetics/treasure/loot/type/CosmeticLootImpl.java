@@ -32,7 +32,7 @@ import se.file14.procosmetics.menu.menus.purchase.CosmeticPurchaseMenu;
 import se.file14.procosmetics.treasure.loot.GeneratedLootImpl;
 import se.file14.procosmetics.treasure.loot.LootEntryImpl;
 
-public class CosmeticLootImpl extends LootEntryImpl implements CosmeticLoot {
+public class CosmeticLootImpl extends LootEntryImpl<ConstantIntProvider> implements CosmeticLoot {
 
     private final CosmeticType<?, ?> cosmeticType;
 

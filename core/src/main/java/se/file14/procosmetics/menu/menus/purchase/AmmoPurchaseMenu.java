@@ -56,15 +56,16 @@ public class AmmoPurchaseMenu extends MenuImpl {
         CosmeticCategory<?, ?, ?> category = gadgetType.getCategory();
         ItemBuilder cosmeticItem = new ItemBuilderImpl(gadgetType.getItemStack());
         String name = gadgetType.getName(user);
-        TagResolver tagResolver = gadgetType.getResolvers(user);
+        TagResolver tagResolver = TagResolver.resolver(
+                gadgetType.getResolvers(user),
+                Placeholder.unparsed("name", name)
+        );
         cosmeticItem.setDisplayName(user.translate(
                 "menu." + category.getKey() + "." + gadgetType.getKey() + ".name",
-                Placeholder.unparsed("name", name),
                 tagResolver
         ));
         cosmeticItem.setLore(user.translateList(
                 "menu." + category.getKey() + "." + gadgetType.getKey() + ".desc",
-                Placeholder.unparsed("name", name),
                 tagResolver
         ));
 
@@ -72,7 +73,10 @@ public class AmmoPurchaseMenu extends MenuImpl {
         });
 
         ItemBuilder acceptPurchase = new ItemBuilderImpl(config, "menu.purchase.gadget_ammo.items.accept");
-        acceptPurchase.setDisplayName(user.translate("menu.purchase.gadget_ammo.accept.name"));
+        acceptPurchase.setDisplayName(user.translate(
+                "menu.purchase.gadget_ammo.accept.name",
+                tagResolver
+        ));
         acceptPurchase.setLore(user.translateList(
                 "menu.purchase.gadget_ammo.accept.desc",
                 tagResolver
@@ -124,7 +128,10 @@ public class AmmoPurchaseMenu extends MenuImpl {
 
         // Deny purchase button
         ItemBuilderImpl denyPurchase = new ItemBuilderImpl(config, "menu.purchase.gadget_ammo.items.deny");
-        denyPurchase.setDisplayName(user.translate("menu.purchase.gadget_ammo.deny.name"));
+        denyPurchase.setDisplayName(user.translate(
+                "menu.purchase.gadget_ammo.deny.name",
+                tagResolver
+        ));
         denyPurchase.setLore(user.translateList(
                 "menu.purchase.gadget_ammo.deny.desc",
                 tagResolver

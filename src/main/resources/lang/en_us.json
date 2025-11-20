@@ -176,6 +176,7 @@
   "treasure_chest.category.statuses": "Status",
   "treasure_chest.category.coin_bag": "Coin Bag",
 
+  "treasure_chest.loot.coins.name": "<gold><min>-<max></gold> <yellow><currency></yellow>",
   "treasure_chest.loot.coins": "<amount>",
   "treasure_chest.loot.ammo": "<amount> <ammo>",
   "treasure_chest.loot.coin_bag.small_coin_bag": "Small Coin Bag",

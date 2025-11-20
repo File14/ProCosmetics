@@ -31,7 +31,7 @@ import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.treasure.loot.GeneratedLootImpl;
 import se.file14.procosmetics.treasure.loot.LootEntryImpl;
 
-public class AmmoLootImpl extends LootEntryImpl implements AmmoLoot {
+public class AmmoLootImpl extends LootEntryImpl<IntProvider> implements AmmoLoot {
 
     private final GadgetType gadgetType;
 

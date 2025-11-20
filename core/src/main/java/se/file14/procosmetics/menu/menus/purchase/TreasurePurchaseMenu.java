@@ -55,17 +55,20 @@ public class TreasurePurchaseMenu extends MenuImpl {
         // Treasure item
         ItemBuilder treasureChestItem = new ItemBuilderImpl(treasureChest.getItemStack());
         String name = treasureChest.getName(user);
-        TagResolver tagResolver = treasureChest.getResolvers(user);
+        int cost = treasureChest.getCost() * amount;
+        TagResolver tagResolver = TagResolver.resolver(
+                treasureChest.getResolvers(user),
+                Placeholder.unparsed("name", name),
+                Placeholder.unparsed("cost", String.valueOf(cost)),
+                Placeholder.unparsed("amount", String.valueOf(amount))
+        );
 
         treasureChestItem.setDisplayName(user.translate(
                 "menu.purchase.treasure_chest.item.name",
-                Placeholder.unparsed("name", name),
                 tagResolver
         ));
         treasureChestItem.setLore(user.translateList(
                 "menu.purchase.treasure_chest.item.desc",
-                Placeholder.unparsed("name", name),
-                Placeholder.unparsed("amount", String.valueOf(amount)),
                 tagResolver
         ));
         treasureChestItem.setAmount(amount);
@@ -89,20 +92,15 @@ public class TreasurePurchaseMenu extends MenuImpl {
                 }
             }
         });
-        int cost = treasureChest.getCost() * amount;
 
         ItemBuilder acceptPurchase = new ItemBuilderImpl(config, "menu.purchase.treasure_chest.items.accept");
         acceptPurchase.setDisplayName(user.translate(
                 "menu.purchase.treasure_chest.accept.name",
-                Placeholder.unparsed("name", name),
-                Placeholder.unparsed("cost", String.valueOf(cost)),
-                Placeholder.unparsed("amount", String.valueOf(amount))
+                tagResolver
         ));
         acceptPurchase.setLore(user.translateList(
                 "menu.purchase.treasure_chest.accept.desc",
-                Placeholder.unparsed("name", name),
-                Placeholder.unparsed("cost", String.valueOf(cost)),
-                Placeholder.unparsed("amount", String.valueOf(amount))
+                tagResolver
         ));
         player.setCooldown(acceptPurchase.getItemStack(), COOLDOWN);
 
@@ -145,10 +143,12 @@ public class TreasurePurchaseMenu extends MenuImpl {
 
         // Deny purchase button
         ItemBuilder denyPurchase = new ItemBuilderImpl(config, "menu.purchase.treasure_chest.items.deny");
-        denyPurchase.setDisplayName(user.translate("menu.purchase.treasure_chest.deny.name"));
+        denyPurchase.setDisplayName(user.translate(
+                "menu.purchase.treasure_chest.deny.name",
+                tagResolver
+        ));
         denyPurchase.setLore(user.translateList(
                 "menu.purchase.treasure_chest.deny.desc",
-                Placeholder.unparsed("name", name),
                 tagResolver
         ));
 

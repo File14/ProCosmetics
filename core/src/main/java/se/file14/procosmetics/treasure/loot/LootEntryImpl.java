@@ -25,14 +25,14 @@ import se.file14.procosmetics.api.treasure.loot.LootEntry;
 import se.file14.procosmetics.api.treasure.loot.number.IntProvider;
 import se.file14.procosmetics.api.user.User;
 
-public abstract class LootEntryImpl implements LootEntry {
+public abstract class LootEntryImpl<T extends IntProvider> implements LootEntry {
 
     protected static ProCosmeticsPlugin PLUGIN = ProCosmeticsPlugin.getPlugin();
 
-    protected final IntProvider intProvider;
+    protected final T intProvider;
     protected final LootCategory category;
 
-    public LootEntryImpl(IntProvider intProvider, LootCategory category) {
+    public LootEntryImpl(T intProvider, LootCategory category) {
         this.intProvider = intProvider;
         this.category = category;
     }
@@ -57,7 +57,7 @@ public abstract class LootEntryImpl implements LootEntry {
     }
 
     @Override
-    public IntProvider getIntProvider() {
+    public T getIntProvider() {
         return intProvider;
     }
 
