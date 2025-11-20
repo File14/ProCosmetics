@@ -7,6 +7,10 @@
 #   - Commands - Perfect for server stores, rank rewards, or vote rewards
 #   - Custom integration with other plugins
 #
+# Treasure Chests can be purchased using permissions:
+#   - Allow purchase of all treasure chests: procosmetics.purchase.treasure_chest.*
+#   - Allow purchase of a specific treasure chest: procosmetics.purchase.treasure_chest.<treasure_chest>
+#
 # Create a treasure chest platform using:
 #   /pc platform create <platform_name>
 # The default platform is "default_platform"

@@ -46,7 +46,7 @@ public abstract class CosmeticTypeImpl<T extends CosmeticType<T, B>,
     private static final ProCosmeticsPlugin PLUGIN = ProCosmeticsPlugin.getPlugin();
 
     public static final String PERMISSION_ALL_COSMETICS = "procosmetics.cosmetic.*";
-    public static final String PERMISSION_PURCHASE_ALL_COSMETICS = "procosmetics.purchase.*";
+    public static final String PERMISSION_PURCHASE_ALL_COSMETICS = "procosmetics.purchase.cosmetic.*";
 
     protected final String key;
     protected final CosmeticCategory<T, B, ?> category;
@@ -76,7 +76,7 @@ public abstract class CosmeticTypeImpl<T extends CosmeticType<T, B>,
         this.behaviorFactory = behaviorFactory;
         this.permission = "procosmetics.cosmetic." + category.getKey() + "." + key;
         this.legacyPermission = permission.replace("cosmetic.", "").replace("_", "-");
-        this.purchasePermission = "procosmetics.purchase." + category.getKey() + "." + key;
+        this.purchasePermission = "procosmetics.purchase.cosmetic." + category.getKey() + "." + key;
         this.enabled = enabled;
         this.purchasable = purchasable;
         this.cost = cost;
