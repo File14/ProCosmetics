@@ -134,7 +134,10 @@ public class LootCategoriesMenu extends PaginatedMenu<LootCategoriesMenu.Categor
 
         if (informationItem != null) {
             informationItem.setDisplayName(user.translate("menu.treasure_chest.loot_categories.information.name"));
-            informationItem.setLore(user.translateList("menu.treasure_chest.loot_categories.information.desc"));
+            informationItem.setLore(user.translateList(
+                    "menu.treasure_chest.loot_categories.information.desc",
+                    Placeholder.unparsed("chest_count", String.valueOf(treasureChest.getChestsToOpen()))
+            ));
 
             for (CosmeticRarity rarity : plugin.getCosmeticRarityRegistry().getRarities()) {
                 double chance = treasureChest.getLootTable().getRarityChance(rarity);

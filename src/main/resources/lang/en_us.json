@@ -224,9 +224,9 @@
   ],
   "menu.treasure_chest.loot_categories.information.name": "<green>Chances</green>",
   "menu.treasure_chest.loot_categories.information.desc": [
-    "<gray>Opening a treasure chest gives <amount> rolls,</gray>",
-    "<gray>and each roll uses the rarity</gray>",
-    "<gray>chances below.</gray>",
+    "<gray>Opening this treasure chest gives</gray>",
+    "<gray><yellow><chest_count> rolls</yellow>, and each roll uses the</gray>",
+    "<gray>rarity chances listed below.</gray>",
     "",
     "<gray>Rarity Chances:</gray>"
   ],
