@@ -151,7 +151,7 @@
   "item.cosmetic.name": "<green>Cosmetics</green> <gray>(Right Click)</gray>",
   "item.cosmetic.desc": [],
   "item.gadget.name": "<green><ammo> <name></green> <gray>(Click to use)</gray>",
-  "item.gadget.desc": "",
+  "item.gadget.desc": [],
 
   "rarity.common": "Common",
   "rarity.uncommon": "Uncommon",
