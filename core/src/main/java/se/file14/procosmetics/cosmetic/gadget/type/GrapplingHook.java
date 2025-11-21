@@ -82,8 +82,9 @@ public class GrapplingHook implements GadgetBehavior, Listener {
 
     @EventHandler
     public void onFish(PlayerFishEvent event) {
+
         if (event.getPlayer() != player
-                || !GadgetImpl.GADGET_ID.is(event.getPlayer().getItemInUse())
+                || !GadgetImpl.GADGET_ID.is(event.getPlayer().getInventory().getItemInMainHand())
                 || event.getState() == PlayerFishEvent.State.BITE
                 || event.getState() == PlayerFishEvent.State.FAILED_ATTEMPT) {
             return;
