@@ -58,10 +58,10 @@ menu:
 cosmetics:
   cheeky:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzk5NzcyMjI5MzgyOWUxM2QyYmE3YmE1NzVjZTc4YTVkN2VlYjVlNzQ1ZTZlMjk1OTYxMzQ4ZDU1Y2M3ZmU3In19fQ=='}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -111,10 +111,10 @@ cosmetics:
 
   cool:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzc2NmIzZWVmM2M3MjZlY2I4MTZjNDM4MzkxODllZWI4ZTM2MzgyZTNlNWZlNDExMjgzNzI3ODUxODVhMzIyIn19fQ=='}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -137,7 +137,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZhM2Y3ZjJmNjk3MGQzMmRiMjg0MjYxNTIwYzhjNDQxZmU0YjMyNjhhYzBjOTlhZWI0YTUyNDg2NTZiZCJ9fX0='}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -171,10 +171,10 @@ cosmetics:
 
   dizzy:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2JhMTUxYTU1ZWJhNzM0ZjFjNjUxYmJjN2U3MTdjYzhhN2ZmNTU3NWQ2ODA0ZjEzN2QxY2QyMTYxMzE0OTg5ZiJ9fX0='}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -218,10 +218,10 @@ cosmetics:
 
   happy:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzAxYjlkZWY1NTg3NmM0MWMxN2M4MTVmODgxMTVmMDJjOTVmODk2MjBmYmVkNmE2Y2IyZDM4ZDQ2ZmUwNSJ9fX0='}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -247,10 +247,10 @@ cosmetics:
 
   in_love:
     enabled: true
-    rarity: "legendary"
+    rarity: "epic"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 20000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzk2ZmJiNTJhNGQwYzYyZDhlNmNhZThjNDg1ZTU1MWIzN2ZlYzY4ZTZkYWFiMjNkODVmMmZmNTJmYWE0YzQifX19'}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -285,7 +285,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Q4MjczOGZjODJiZWRhZjMwMjk2MTJmMWVjOTJmZTBjZjg0OGU1NDFjOGUzMGRjZjQxZWZjMDRiZWEzMGJhIn19fQ=='}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -346,7 +346,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQzOWMzZGY3YTYyOGFmOGQ3NTFlY2NhMTk3NjQyY2RjMWEwN2MzMGUzMjg5YjJkMzI2MWY3YTY1Y2YzOTViIn19fQ=='}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -370,10 +370,10 @@ cosmetics:
 
   sad:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzczMmZlMTIxYTYzZWFhYmQ5OWNlZDZkMWFjYzkxNzk4NjUyZDFlZTgwODRkMmY5MTI3ZDhhMzE1Y2FkNWNlNCJ9fX0='}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -445,10 +445,10 @@ cosmetics:
 
   sleepy:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzg2MjljNmJmNTc1ZGVlNjU3NjI2YTg0Yjg4N2ExZTcxNDcxNGM5OTRmMjc4MmRlYjk2ODE4Y2MzODI5ZTdjNjkifX19'}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -503,7 +503,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzg4MTFlYzM2MThkZmMwNzU4MThhZjhhN2ZkYTUyZWU1NmMwYmIyMDNlNGQyNzgyMWUxNzg2ZjJhZjU1YjlkIn19fQ=='}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -559,10 +559,10 @@ cosmetics:
 
   sun_tan:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzE1ZTExMjJjODM3YTg3Y2UxOGQ1MWU3OTc5ODNkYTZhZDM4NDc5M2ZkZDlmNzcyNTM3NjNhZTliNmQ5YTEifX19'}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -616,10 +616,10 @@ cosmetics:
 
   surprised:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzRjM2IwODllNDQ2ZjA2NWRkOTA1OTUxOWM4NWM0NWFlYmI1Mzg5MWJlM2MzYTdlZDViNWViNjFhOTY3NDcifX19'}]},!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -647,10 +647,10 @@ cosmetics:
 
   wink:
     enabled: true
-    rarity: "common"
+    rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ3M2U3MmNjMzcxZGUyNWYzMzA1NjY1NzY5ZGQ3ZTlmZjExNjE2OTUyNTJlNzk5NjEyNTgwZGVlZWRkMyJ9fX0='}]},!minecraft:rarity]"
     count: 1
     treasure_chests:

@@ -55,10 +55,10 @@ menu:
 cosmetics:
   bloody_arrows:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: "minecraft:redstone"
     count: 1
     treasure_chests:
@@ -68,10 +68,10 @@ cosmetics:
 
   candy_cane_arrows:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: "minecraft:sugar"
     count: 1
     treasure_chests:
@@ -81,10 +81,10 @@ cosmetics:
 
   confetti_arrows:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: "minecraft:melon_seeds"
     count: 1
     treasure_chests:
@@ -94,10 +94,10 @@ cosmetics:
 
   enchanted_arrows:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: "minecraft:book"
     count: 1
     treasure_chests:
@@ -107,10 +107,10 @@ cosmetics:
 
   flame_arrows:
     enabled: true
-    rarity: "common"
+    rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     item: "minecraft:blaze_powder"
     count: 1
     treasure_chests:
@@ -120,10 +120,10 @@ cosmetics:
 
   frost_lord_arrows:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: "minecraft:snowball"
     count: 1
     treasure_chests:
@@ -133,10 +133,10 @@ cosmetics:
 
   green_arrows:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: "minecraft:emerald"
     count: 1
     treasure_chests:
@@ -146,10 +146,10 @@ cosmetics:
 
   lava_arrows:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: "minecraft:lava_bucket"
     count: 1
     treasure_chests:
@@ -159,10 +159,10 @@ cosmetics:
 
   love_arrows:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: "minecraft:poppy"
     count: 1
     treasure_chests:
@@ -172,10 +172,10 @@ cosmetics:
 
   magical_arrows:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: "minecraft:purple_dye"
     count: 1
     treasure_chests:
@@ -185,10 +185,10 @@ cosmetics:
 
   music_arrows:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: "minecraft:note_block"
     count: 1
     treasure_chests:
@@ -198,10 +198,10 @@ cosmetics:
 
   rain_arrows:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: "minecraft:water_bucket"
     count: 1
     treasure_chests:
@@ -211,10 +211,10 @@ cosmetics:
 
   shadow_arrows:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: "minecraft:coal"
     count: 1
     treasure_chests:
@@ -224,10 +224,10 @@ cosmetics:
 
   sparkly_arrows:
     enabled: true
-    rarity: "common"
+    rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     item: "minecraft:firework_rocket[!minecraft:fireworks]"
     count: 1
     treasure_chests:

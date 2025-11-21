@@ -61,7 +61,7 @@ cosmetics:
     rarity: "legendary"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 50000
     item: "minecraft:light_gray_dye"
     count: 1
     treasure_chests:
@@ -71,10 +71,10 @@ cosmetics:
 
   aura_of_flame:
     enabled: true
-    rarity: "common"
+    rarity: "epic"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 20000
     item: "minecraft:gold_nugget"
     count: 1
     treasure_chests:
@@ -84,10 +84,10 @@ cosmetics:
 
   big_heart:
     enabled: true
-    rarity: "rare"
+    rarity: "epic"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 20000
     item: "minecraft:poppy"
     count: 1
     treasure_chests:
@@ -97,10 +97,10 @@ cosmetics:
 
   black_hole:
     enabled: true
-    rarity: "rare"
+    rarity: "epic"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 20000
     item: "minecraft:coal_block"
     count: 1
     treasure_chests:
@@ -110,10 +110,10 @@ cosmetics:
 
   blood_helix:
     enabled: true
-    rarity: "legendary"
+    rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     item: "minecraft:redstone"
     count: 1
     treasure_chests:
@@ -123,10 +123,10 @@ cosmetics:
 
   bunny:
     enabled: true
-    rarity: "legendary"
+    rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     item: "minecraft:rabbit_spawn_egg"
     count: 1
     treasure_chests:
@@ -136,10 +136,10 @@ cosmetics:
 
   christmas_tree:
     enabled: true
-    rarity: "legendary"
+    rarity: "epic"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 20000
     item: "minecraft:spruce_sapling"
     count: 1
     treasure_chests:
@@ -149,10 +149,10 @@ cosmetics:
 
   colorful_trail:
     enabled: true
-    rarity: "rare"
+    rarity: "epic"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 20000
     item: "minecraft:magenta_dye"
     count: 1
     treasure_chests:
@@ -162,10 +162,10 @@ cosmetics:
 
   confetti:
     enabled: true
-    rarity: "legendary"
+    rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     item: "minecraft:blaze_rod"
     count: 1
     treasure_chests:
@@ -175,10 +175,10 @@ cosmetics:
 
   crushed_candy_cane:
     enabled: true
-    rarity: "common"
+    rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     item: "minecraft:sugar"
     count: 1
     treasure_chests:
@@ -191,7 +191,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     item: "minecraft:charcoal"
     count: 1
     treasure_chests:
@@ -204,7 +204,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     item: "minecraft:emerald"
     count: 1
     treasure_chests:
@@ -214,10 +214,10 @@ cosmetics:
 
   enchanted:
     enabled: true
-    rarity: "common"
+    rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     item: "minecraft:book"
     count: 1
     treasure_chests:
@@ -230,7 +230,7 @@ cosmetics:
     rarity: "legendary"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 50000
     item: "minecraft:blaze_powder"
     count: 1
     treasure_chests:
@@ -240,10 +240,10 @@ cosmetics:
 
   flame_of_magic:
     enabled: true
-    rarity: "legendary"
+    rarity: "epic"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 20000
     item: "minecraft:blaze_rod"
     count: 1
     treasure_chests:
@@ -253,10 +253,10 @@ cosmetics:
 
   flame_of_the_demons:
     enabled: true
-    rarity: "rare"
+    rarity: "epic"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 20000
     item: "minecraft:blaze_powder"
     count: 1
     treasure_chests:
@@ -266,10 +266,10 @@ cosmetics:
 
   flame_rings:
     enabled: true
-    rarity: "common"
+    rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     item: "minecraft:orange_dye"
     count: 1
     treasure_chests:
@@ -279,10 +279,10 @@ cosmetics:
 
   frost_lord:
     enabled: true
-    rarity: "legendary"
+    rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     item: "minecraft:snowball"
     count: 1
     treasure_chests:
@@ -292,10 +292,10 @@ cosmetics:
 
   in_love:
     enabled: true
-    rarity: "common"
+    rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     item: "minecraft:poppy"
     count: 1
     treasure_chests:
@@ -305,10 +305,10 @@ cosmetics:
 
   jack_o_lantern:
     enabled: true
-    rarity: "legendary"
+    rarity: "epic"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 20000
     item: "minecraft:jack_o_lantern"
     count: 1
     treasure_chests:
@@ -318,10 +318,10 @@ cosmetics:
 
   legendary_aura:
     enabled: true
-    rarity: "common"
+    rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     item: "minecraft:ender_eye"
     count: 1
     treasure_chests:
@@ -334,7 +334,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     item: "minecraft:note_block"
     count: 1
     treasure_chests:
@@ -347,7 +347,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     item: "minecraft:purple_dye"
     count: 1
     treasure_chests:
@@ -357,10 +357,10 @@ cosmetics:
 
   protective_shield:
     enabled: true
-    rarity: "legendary"
+    rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     item: "minecraft:cyan_dye"
     count: 1
     treasure_chests:
@@ -370,10 +370,10 @@ cosmetics:
 
   rain_cloud:
     enabled: true
-    rarity: "common"
+    rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     item: "minecraft:lapis_lazuli"
     count: 1
     treasure_chests:
@@ -383,10 +383,10 @@ cosmetics:
 
   rainbow_wings:
     enabled: true
-    rarity: "legendary"
+    rarity: "epic"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 20000
     item: "minecraft:yellow_dye"
     count: 1
     treasure_chests:
@@ -396,10 +396,10 @@ cosmetics:
 
   shadow_walk:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: "minecraft:coal"
     count: 1
     treasure_chests:
@@ -409,10 +409,10 @@ cosmetics:
 
   skull:
     enabled: true
-    rarity: "legendary"
+    rarity: "epic"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 20000
     item: "minecraft:skeleton_skull[!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -425,7 +425,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     item: "minecraft:snow"
     count: 1
     treasure_chests:
@@ -438,7 +438,7 @@ cosmetics:
     rarity: "legendary"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 50000
     item: "minecraft:nether_star[!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -448,10 +448,10 @@ cosmetics:
 
   star:
     enabled: true
-    rarity: "rare"
+    rarity: "epic"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 20000
     item: "minecraft:nether_star[!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -461,10 +461,10 @@ cosmetics:
 
   tornado:
     enabled: true
-    rarity: "rare"
+    rarity: "epic"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 20000
     item: "minecraft:cobweb"
     count: 1
     treasure_chests:
@@ -477,7 +477,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     item: "minecraft:hopper"
     count: 1
     treasure_chests:
@@ -487,10 +487,10 @@ cosmetics:
 
   vampire_wings:
     enabled: true
-    rarity: "legendary"
+    rarity: "epic"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 20000
     item: "minecraft:firework_star"
     count: 1
     treasure_chests:
@@ -503,7 +503,7 @@ cosmetics:
     rarity: "legendary"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 50000
     item: "minecraft:melon_seeds"
     count: 1
     treasure_chests:

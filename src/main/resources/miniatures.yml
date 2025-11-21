@@ -55,10 +55,10 @@ menu:
 cosmetics:
   astronaut:
     enabled: true
-    rarity: "legendary"
+    rarity: "epic"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 20000
     entity: "ARMOR_STAND"
     baby: true
     scale: 1.0
@@ -71,10 +71,10 @@ cosmetics:
 
   brown_bear:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "ARMOR_STAND"
     baby: true
     scale: 1.0
@@ -87,10 +87,10 @@ cosmetics:
 
   bunny:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "ARMOR_STAND"
     baby: true
     scale: 1.0
@@ -103,10 +103,10 @@ cosmetics:
 
   chicken:
     enabled: true
-    rarity: "rare"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "ARMOR_STAND"
     baby: true
     scale: 1.0
@@ -119,10 +119,10 @@ cosmetics:
 
   cow:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "ARMOR_STAND"
     baby: true
     scale: 1.0
@@ -138,7 +138,7 @@ cosmetics:
     rarity: "legendary"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 50000
     entity: "ARMOR_STAND"
     baby: true
     scale: 1.0
@@ -151,10 +151,10 @@ cosmetics:
 
   doge:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "ARMOR_STAND"
     baby: true
     scale: 1.0
@@ -167,10 +167,10 @@ cosmetics:
 
   dolphin:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "ARMOR_STAND"
     baby: true
     scale: 1.0
@@ -183,10 +183,10 @@ cosmetics:
 
   dwarf:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "ARMOR_STAND"
     baby: true
     scale: 1.0
@@ -199,10 +199,10 @@ cosmetics:
 
   elephant:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "ARMOR_STAND"
     baby: true
     scale: 1.0
@@ -218,7 +218,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     entity: "ARMOR_STAND"
     baby: true
     scale: 1.0
@@ -231,10 +231,10 @@ cosmetics:
 
   fox:
     enabled: true
-    rarity: "rare"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "ARMOR_STAND"
     baby: true
     scale: 1.0
@@ -250,7 +250,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     entity: "ARMOR_STAND"
     baby: true
     scale: 1.0
@@ -266,7 +266,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     entity: "ARMOR_STAND"
     baby: true
     scale: 1.0
@@ -279,10 +279,10 @@ cosmetics:
 
   koala_bear:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "ARMOR_STAND"
     baby: true
     scale: 1.0
@@ -295,10 +295,10 @@ cosmetics:
 
   ladybug:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "ITEM_DISPLAY"
     baby: false
     scale: 0.8
@@ -311,10 +311,10 @@ cosmetics:
 
   monkey:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "ARMOR_STAND"
     baby: true
     scale: 1.0
@@ -327,10 +327,10 @@ cosmetics:
 
   panda:
     enabled: true
-    rarity: "rare"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "ITEM_DISPLAY"
     baby: false
     scale: 0.8
@@ -343,10 +343,10 @@ cosmetics:
 
   parrot:
     enabled: true
-    rarity: "rare"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "ITEM_DISPLAY"
     baby: false
     scale: 0.8
@@ -359,10 +359,10 @@ cosmetics:
 
   santa_claus:
     enabled: true
-    rarity: "rare"
+    rarity: "epic"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 20000
     entity: "ARMOR_STAND"
     baby: true
     scale: 1.0
@@ -375,10 +375,10 @@ cosmetics:
 
   shark:
     enabled: true
-    rarity: "rare"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "ARMOR_STAND"
     baby: true
     scale: 1.0
@@ -391,10 +391,10 @@ cosmetics:
 
   sheep:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "ARMOR_STAND"
     baby: true
     scale: 1.0
@@ -410,7 +410,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     entity: "ARMOR_STAND"
     baby: true
     scale: 1.0
@@ -423,10 +423,10 @@ cosmetics:
 
   snail:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "ITEM_DISPLAY"
     baby: false
     scale: 0.8
@@ -442,7 +442,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     entity: "ARMOR_STAND"
     baby: true
     scale: 1.0
@@ -455,10 +455,10 @@ cosmetics:
 
   spider:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "ARMOR_STAND"
     baby: true
     scale: 1.0
@@ -471,10 +471,10 @@ cosmetics:
 
   tiger:
     enabled: true
-    rarity: "rare"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "ARMOR_STAND"
     baby: true
     scale: 1.0
@@ -490,7 +490,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     entity: "ARMOR_STAND"
     baby: true
     scale: 1.0
@@ -503,10 +503,10 @@ cosmetics:
 
   turtle:
     enabled: true
-    rarity: "rare"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "ITEM_DISPLAY"
     baby: false
     scale: 0.8
@@ -522,7 +522,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     entity: "ARMOR_STAND"
     baby: true
     scale: 1.0
@@ -538,7 +538,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     entity: "ARMOR_STAND"
     baby: true
     scale: 1.0
@@ -551,10 +551,10 @@ cosmetics:
 
   zebra:
     enabled: true
-    rarity: "rare"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "ARMOR_STAND"
     baby: true
     scale: 1.0
@@ -570,7 +570,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     entity: "ARMOR_STAND"
     baby: true
     scale: 1.0

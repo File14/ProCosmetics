@@ -76,10 +76,10 @@ menu:
 cosmetics:
   afk:
     enabled: true
-    rarity: "rare"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: "minecraft:name_tag"
     count: 1
     refresh_interval: -1
@@ -93,7 +93,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     item: "minecraft:name_tag"
     count: 1
     refresh_interval: 120
@@ -104,10 +104,10 @@ cosmetics:
 
   do_not_disturb:
     enabled: true
-    rarity: "rare"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: "minecraft:name_tag"
     count: 1
     refresh_interval: -1
@@ -118,10 +118,10 @@ cosmetics:
 
   just_chilling:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: "minecraft:name_tag"
     count: 1
     refresh_interval: -1
@@ -132,10 +132,10 @@ cosmetics:
 
   looking_to_chat:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: "minecraft:name_tag"
     count: 1
     refresh_interval: -1
@@ -146,10 +146,10 @@ cosmetics:
 
   looking_to_team_up:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: "minecraft:name_tag"
     count: 1
     refresh_interval: -1
@@ -160,10 +160,10 @@ cosmetics:
 
   ping:
     enabled: true
-    rarity: "legendary"
+    rarity: "epic"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 20000
     item: "minecraft:name_tag"
     count: 1
     refresh_interval: 120

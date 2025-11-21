@@ -165,9 +165,11 @@ treasure_chests:
     # Higher weight = higher chance
     # After rarity is determined, a random item from that rarity pool is chosen
     rarity_weights:
-      common: 40
-      rare: 9
-      legendary: 1
+      common: 83
+      uncommon: 15
+      rare: 2
+      epic: 0
+      legendary: 0
     coins:
       enabled: true
       rarity: "common"
@@ -211,10 +213,11 @@ treasure_chests:
     # Higher weight = higher chance
     # After rarity is determined, a random item from that rarity pool is chosen
     rarity_weights:
-      common: 20
-      rare: 15
-      mythical: 5
-      legendary: 1
+      common: 50
+      uncommon: 32
+      rare: 10
+      epic: 6
+      legendary: 2
     coins:
       enabled: true
       rarity: "RARE"
@@ -244,7 +247,7 @@ treasure_chests:
     purchasable:
       enabled: true
       cost: 10000
-    chests_to_open: 4
+    chests_to_open: 3
     chest_animation: "LEGENDARY"
     animation_layouts:
       - "legendary_1"
@@ -258,9 +261,11 @@ treasure_chests:
     # Higher weight = higher chance
     # After rarity is determined, a random item from that rarity pool is chosen
     rarity_weights:
-      rare: 12
-      mythical: 8
-      legendary: 4
+      common: 15
+      uncommon: 35
+      rare: 25
+      epic: 17
+      legendary: 8
     coins:
       enabled: true
       rarity: "LEGENDARY"

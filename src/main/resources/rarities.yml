@@ -54,8 +54,21 @@ rarities:
       fade: 0x66e0ff
       flicker: false
       trail: false
-  legendary:
+  epic:
     priority: 30
+    colors:
+      primary: "<color:#ff99ff>"     # Bright purple
+      secondary: "<color:#ffb3ff>"   # Dark purple
+    firework:
+      detonations: 5
+      tick_interval: 5
+      type: BALL_LARGE
+      color: 0xb36b00
+      fade: 0xcc8800
+      flicker: false
+      trail: true
+  legendary:
+    priority: 40
     colors:
       primary: "<color:#b36b00>"     # Gold / orange
       secondary: "<color:#cc8800>"   # Stronger orange
@@ -68,7 +81,7 @@ rarities:
       flicker: false
       trail: true
   limited:
-    priority: 40
+    priority: 50
     colors:
       primary: "<color:#aa00aa>"     # Purple
       secondary: "<color:#ff66ff>"   # Deep purple

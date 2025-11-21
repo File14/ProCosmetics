@@ -67,7 +67,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     item: "minecraft:snow_block"
     count: 1
     treasure_chests:
@@ -80,7 +80,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     item: "minecraft:spider_eye"
     count: 1
     treasure_chests:
@@ -93,7 +93,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     item: "minecraft:chest"
     count: 1
     treasure_chests:
@@ -106,7 +106,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     item: "minecraft:egg"
     count: 1
     treasure_chests:
@@ -119,7 +119,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     item: "minecraft:rotten_flesh"
     count: 1
     treasure_chests:
@@ -129,10 +129,10 @@ cosmetics:
 
   ethereal_dragon:
     enabled: true
-    rarity: "rare"
+    rarity: "legendary"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 50000
     item: "minecraft:dragon_egg[!minecraft:rarity]"
     count: 1
     treasure_chests:
@@ -145,7 +145,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     item: "minecraft:snowball"
     count: 1
     treasure_chests:
@@ -158,7 +158,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     item: "minecraft:packed_ice"
     count: 1
     treasure_chests:
@@ -168,10 +168,10 @@ cosmetics:
 
   hype_train:
     enabled: true
-    rarity: "rare"
+    rarity: "epic"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 20000
     item: "minecraft:minecart"
     count: 1
     treasure_chests:
@@ -184,7 +184,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     item: "minecraft:bone"
     count: 1
     treasure_chests:
@@ -197,7 +197,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     item: "minecraft:pink_stained_glass"
     count: 1
     treasure_chests:
@@ -207,10 +207,10 @@ cosmetics:
 
   molten_snake:
     enabled: true
-    rarity: "rare"
+    rarity: "epic"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 20000
     item: "minecraft:netherrack"
     count: 1
     treasure_chests:
@@ -223,7 +223,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     item: "minecraft:oak_boat"
     count: 1
     treasure_chests:
@@ -236,7 +236,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     item: "minecraft:dead_bush"
     count: 1
     treasure_chests:
@@ -249,7 +249,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     item: "minecraft:slime_block"
     count: 1
     treasure_chests:
@@ -262,7 +262,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     item: "minecraft:blaze_rod"
     count: 1
     treasure_chests:

@@ -58,10 +58,10 @@ menu:
 cosmetics:
   anchor:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:white_banner[minecraft:banner_patterns=[{color: 'blue', pattern: 'minecraft:creeper'},
       {color: 'blue', pattern: 'minecraft:piglin'},
@@ -78,10 +78,10 @@ cosmetics:
 
   candy_cane:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:red_banner[minecraft:banner_patterns=[{color: 'white', pattern: 'minecraft:triangle_top'},
       {color: 'red', pattern: 'minecraft:rhombus'},
@@ -98,10 +98,10 @@ cosmetics:
 
   castle:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:gray_banner[minecraft:banner_patterns=[{color: 'green', pattern: 'minecraft:circle'},
       {color: 'light_gray', pattern: 'minecraft:bricks'},
@@ -117,10 +117,10 @@ cosmetics:
 
   cat:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:gray_banner[minecraft:banner_patterns=[{color: 'light_blue', pattern: 'minecraft:triangles_top'},
       {color: 'light_blue', pattern: 'minecraft:square_top_left'},
@@ -137,10 +137,10 @@ cosmetics:
 
   chicken:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:white_banner[minecraft:banner_patterns=[{color: 'black', pattern: 'minecraft:stripe_top'},
       {color: 'white', pattern: 'minecraft:straight_cross'},
@@ -157,10 +157,10 @@ cosmetics:
 
   christmas_creeper:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:lime_banner[minecraft:banner_patterns=[{color: 'red', pattern: 'minecraft:stripe_top'},
       {color: 'black', pattern: 'minecraft:creeper'},
@@ -177,10 +177,10 @@ cosmetics:
 
   creeper:
     enabled: true
-    rarity: "common"
+    rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     item: >-
       minecraft:lime_banner[minecraft:banner_patterns=[{color: 'black', pattern: 'minecraft:small_stripes'},
       {color: 'lime', pattern: 'minecraft:small_stripes'},
@@ -197,10 +197,10 @@ cosmetics:
 
   crown:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:yellow_banner[minecraft:banner_patterns=[{color: 'black', pattern: 'minecraft:triangle_top'},
       {color: 'yellow', pattern: 'minecraft:rhombus'},
@@ -215,10 +215,10 @@ cosmetics:
 
   crying_creeper:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:lime_banner[minecraft:banner_patterns=[{color: 'light_blue', pattern: 'minecraft:small_stripes'},
       {color: 'lime', pattern: 'minecraft:stripe_center'},
@@ -234,10 +234,10 @@ cosmetics:
 
   demon:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:red_banner[minecraft:banner_patterns=[{color: 'black', pattern: 'minecraft:small_stripes'},
       {color: 'black', pattern: 'minecraft:creeper'},
@@ -253,10 +253,10 @@ cosmetics:
 
   disco:
     enabled: true
-    rarity: "rare"
+    rarity: "epic"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 20000
     item: "minecraft:light_blue_banner"
     count: 1
     tick_interval: 5
@@ -292,10 +292,10 @@ cosmetics:
 
   duck:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:black_banner[minecraft:banner_patterns=[{color: 'yellow', pattern: 'minecraft:stripe_center'},
       {color: 'orange', pattern: 'minecraft:half_horizontal_bottom'},
@@ -312,10 +312,10 @@ cosmetics:
 
   ender_dragon:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:white_banner[minecraft:banner_patterns=[{color: 'black', pattern: 'minecraft:curly_border'},
       {color: 'white', pattern: 'minecraft:stripe_right'},
@@ -332,10 +332,10 @@ cosmetics:
 
   enderman:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:purple_banner[minecraft:banner_patterns=[{color: 'magenta', pattern: 'minecraft:small_stripes'},
       {color: 'magenta', pattern: 'minecraft:border'},
@@ -352,10 +352,10 @@ cosmetics:
 
   fire:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:black_banner[minecraft:banner_patterns=[{color: 'orange', pattern: 'minecraft:mojang'},
       {color: 'black', pattern: 'minecraft:bricks'},
@@ -372,10 +372,10 @@ cosmetics:
 
   fox:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:white_banner[minecraft:banner_patterns=[{color: 'black', pattern: 'minecraft:rhombus'},
       {color: 'orange', pattern: 'minecraft:curly_border'},
@@ -391,10 +391,10 @@ cosmetics:
 
   goose:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:black_banner[minecraft:banner_patterns=[{color: 'orange', pattern: 'minecraft:mojang'},
       {color: 'white', pattern: 'minecraft:curly_border'},
@@ -411,10 +411,10 @@ cosmetics:
 
   halloween_creeper:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:orange_banner[minecraft:banner_patterns=[{color: 'brown', pattern: 'minecraft:gradient'},
       {color: 'orange', pattern: 'minecraft:small_stripes'},
@@ -430,10 +430,10 @@ cosmetics:
 
   happy_ghast:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:white_banner[minecraft:banner_patterns=[{color: 'black', pattern: 'minecraft:creeper'},
       {color: 'black', pattern: 'minecraft:stripe_bottom'},
@@ -450,10 +450,10 @@ cosmetics:
 
   happy_sheep:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:light_blue_banner[minecraft:banner_patterns=[{color: 'lime', pattern: 'minecraft:stripe_bottom'},
       {color: 'white', pattern: 'minecraft:circle'},
@@ -468,10 +468,10 @@ cosmetics:
 
   heart:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:black_banner[minecraft:banner_patterns=[{color: 'red', pattern: 'minecraft:rhombus'},
       {color: 'red', pattern: 'minecraft:rhombus'},
@@ -486,10 +486,10 @@ cosmetics:
 
   ice_cream:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:pink_banner[minecraft:banner_patterns=[{color: 'black', pattern: 'minecraft:rhombus'},
       {color: 'orange', pattern: 'minecraft:rhombus'},
@@ -506,10 +506,10 @@ cosmetics:
 
   iron_golem:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:black_banner[minecraft:banner_patterns=[{color: 'red', pattern: 'minecraft:rhombus'},
       {color: 'white', pattern: 'minecraft:stripe_bottom'},
@@ -526,10 +526,10 @@ cosmetics:
 
   lightning:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:yellow_banner[minecraft:banner_patterns=[{color: 'light_blue', pattern: 'minecraft:stripe_left'},
       {color: 'light_blue', pattern: 'minecraft:stripe_right'},
@@ -546,10 +546,10 @@ cosmetics:
 
   llama:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:white_banner[minecraft:banner_patterns=[{color: 'black', pattern: 'minecraft:creeper'},
       {color: 'white', pattern: 'minecraft:circle'},
@@ -566,10 +566,10 @@ cosmetics:
 
   mirror:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:white_banner[minecraft:banner_patterns=[{color: 'white', pattern: 'minecraft:circle'},
       {color: 'light_blue', pattern: 'minecraft:gradient'},
@@ -586,10 +586,10 @@ cosmetics:
 
   moon:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:black_banner[minecraft:banner_patterns=[{color: 'white', pattern: 'minecraft:mojang'},
       {color: 'black', pattern: 'minecraft:flower'},
@@ -605,10 +605,10 @@ cosmetics:
 
   mountain:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:light_blue_banner[minecraft:banner_patterns=[{color: 'yellow', pattern: 'minecraft:gradient_up'},
       {color: 'orange', pattern: 'minecraft:circle'},
@@ -624,10 +624,10 @@ cosmetics:
 
   nether_portal:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:purple_banner[minecraft:banner_patterns=[{color: 'magenta', pattern: 'minecraft:small_stripes'},
       {color: 'purple', pattern: 'minecraft:bricks'},
@@ -642,10 +642,10 @@ cosmetics:
 
   octopus:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:gray_banner[minecraft:banner_patterns=[{color: 'blue', pattern: 'minecraft:triangle_bottom'},
       {color: 'gray', pattern: 'minecraft:small_stripes'},
@@ -662,10 +662,10 @@ cosmetics:
 
   ominous:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:white_banner[minecraft:banner_patterns=[{color: 'cyan', pattern: 'minecraft:rhombus'},
       {color: 'light_gray', pattern: 'minecraft:stripe_bottom'},
@@ -682,10 +682,10 @@ cosmetics:
 
   panda:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:white_banner[minecraft:banner_patterns=[{color: 'black', pattern: 'minecraft:flower'},
       {color: 'white', pattern: 'minecraft:half_horizontal_bottom'},
@@ -702,10 +702,10 @@ cosmetics:
 
   pig:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:white_banner[minecraft:banner_patterns=[{color: 'black', pattern: 'minecraft:border'},
       {color: 'pink', pattern: 'minecraft:stripe_middle'},
@@ -722,10 +722,10 @@ cosmetics:
 
   pineapple:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:orange_banner[minecraft:banner_patterns=[{color: 'yellow', pattern: 'minecraft:bricks'},
       {color: 'light_blue', pattern: 'minecraft:half_horizontal'},
@@ -742,10 +742,10 @@ cosmetics:
 
   pirate_skull:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:light_blue_banner[minecraft:banner_patterns=[{color: 'black', pattern: 'minecraft:circle'},
       {color: 'white', pattern: 'minecraft:skull'},
@@ -761,10 +761,10 @@ cosmetics:
 
   potion:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:black_banner[minecraft:banner_patterns=[{color: 'white', pattern: 'minecraft:cross'},
       {color: 'brown', pattern: 'minecraft:triangle_top'},
@@ -781,10 +781,10 @@ cosmetics:
 
   present:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:white_banner[minecraft:banner_patterns=[{color: 'red', pattern: 'minecraft:stripe_bottom'},
       {color: 'yellow', pattern: 'minecraft:straight_cross'},
@@ -801,10 +801,10 @@ cosmetics:
 
   pug:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:orange_banner[minecraft:banner_patterns=[{color: 'white', pattern: 'minecraft:bricks'},
       {color: 'brown', pattern: 'minecraft:stripe_bottom'},
@@ -826,10 +826,10 @@ cosmetics:
 
   rabbit:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:white_banner[minecraft:banner_patterns=[{color: 'black', pattern: 'minecraft:circle'},
       {color: 'white', pattern: 'minecraft:flower'},
@@ -846,10 +846,10 @@ cosmetics:
 
   rat:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:white_banner[minecraft:banner_patterns=[{color: 'light_gray', pattern: 'minecraft:triangle_bottom'},
       {color: 'gray', pattern: 'minecraft:rhombus'},
@@ -865,10 +865,10 @@ cosmetics:
 
   rose:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:white_banner[minecraft:banner_patterns=[{color: 'lime', pattern: 'minecraft:mojang'},
       {color: 'green', pattern: 'minecraft:flower'},
@@ -885,10 +885,10 @@ cosmetics:
 
   santa_hat:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:green_banner[minecraft:banner_patterns=[{color: 'white', pattern: 'minecraft:border'},
       {color: 'green', pattern: 'minecraft:diagonal_left'},
@@ -904,10 +904,10 @@ cosmetics:
 
   smile:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:white_banner[minecraft:banner_patterns=[{color: 'blue', pattern: 'minecraft:half_horizontal'},
       {color: 'white', pattern: 'minecraft:small_stripes'},
@@ -924,10 +924,10 @@ cosmetics:
 
   snowflake:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:blue_banner[minecraft:banner_patterns=[{color: 'light_blue', pattern: 'minecraft:gradient_up'},
       {color: 'white', pattern: 'minecraft:rhombus'},
@@ -942,10 +942,10 @@ cosmetics:
 
   snowy_tree:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:white_banner[minecraft:banner_patterns=[{color: 'green', pattern: 'minecraft:bricks'},
       {color: 'light_blue', pattern: 'minecraft:triangle_bottom'},
@@ -967,10 +967,10 @@ cosmetics:
 
   speech_bubble:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:white_banner[minecraft:banner_patterns=[{color: 'light_blue', pattern: 'minecraft:stripe_bottom'},
       {color: 'light_blue', pattern: 'minecraft:border'},
@@ -986,10 +986,10 @@ cosmetics:
 
   sun_flower:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:light_blue_banner[minecraft:banner_patterns=[{color: 'lime', pattern: 'minecraft:triangles_bottom'},
       {color: 'lime', pattern: 'minecraft:stripe_center'},
@@ -1007,10 +1007,10 @@ cosmetics:
 
   sunrise:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:light_blue_banner[minecraft:banner_patterns=[{color: 'orange', pattern: 'minecraft:flower'},
       {color: 'lime', pattern: 'minecraft:stripe_bottom'},
@@ -1025,10 +1025,10 @@ cosmetics:
 
   sweden:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:blue_banner[minecraft:banner_patterns=[{color: 'yellow', pattern: 'minecraft:stripe_middle'},
       {color: 'yellow', pattern: 'minecraft:straight_cross'}],
@@ -1041,10 +1041,10 @@ cosmetics:
 
   sword:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:black_banner[minecraft:banner_patterns=[{color: 'yellow', pattern: 'minecraft:flower'},
       {color: 'black', pattern: 'minecraft:half_horizontal'},
@@ -1061,10 +1061,10 @@ cosmetics:
 
   taco:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:black_banner[minecraft:banner_patterns=[{color: 'red', pattern: 'minecraft:skull'},
       {color: 'lime', pattern: 'minecraft:flower'},
@@ -1080,10 +1080,10 @@ cosmetics:
 
   united_states_of_america:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:white_banner[minecraft:banner_patterns=[{color: 'red', pattern: 'minecraft:small_stripes'},
       {color: 'blue', pattern: 'minecraft:square_bottom_left'}],
@@ -1096,10 +1096,10 @@ cosmetics:
 
   white_flower:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:green_banner[minecraft:banner_patterns=[{color: 'lime', pattern: 'minecraft:gradient'},
       {color: 'lime', pattern: 'minecraft:straight_cross'},
@@ -1116,10 +1116,10 @@ cosmetics:
 
   wither:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:white_banner[minecraft:banner_patterns=[{color: 'black', pattern: 'minecraft:straight_cross'},
       {color: 'white', pattern: 'minecraft:half_horizontal'},
@@ -1134,10 +1134,10 @@ cosmetics:
 
   wolf:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:white_banner[minecraft:banner_patterns=[{color: 'black', pattern: 'minecraft:rhombus'},
       {color: 'light_gray', pattern: 'minecraft:curly_border'},
@@ -1154,10 +1154,10 @@ cosmetics:
 
   wreath:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:light_blue_banner[minecraft:banner_patterns=[{color: 'yellow', pattern: 'minecraft:creeper'},
       {color: 'red', pattern: 'minecraft:skull'},
@@ -1172,10 +1172,10 @@ cosmetics:
 
   yellow_flower:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: >-
       minecraft:light_blue_banner[minecraft:banner_patterns=[{color: 'lime', pattern: 'minecraft:stripe_center'},
       {color: 'lime', pattern: 'minecraft:triangles_bottom'},

@@ -156,6 +156,7 @@
   "rarity.common": "Common",
   "rarity.uncommon": "Uncommon",
   "rarity.rare": "Rare",
+  "rarity.epic": "Epic",
   "rarity.legendary": "Legendary",
   "rarity.limited": "Limited/event",
 
@@ -223,8 +224,9 @@
   ],
   "menu.treasure_chest.loot_categories.information.name": "<green>Chances</green>",
   "menu.treasure_chest.loot_categories.information.desc": [
-    "<gray>A rarity is rolled based on chance,</gray>",
-    "<gray>then you get a random item from it.</gray>",
+    "<gray>Opening a treasure chest gives <amount> rolls,</gray>",
+    "<gray>and each roll uses the rarity</gray>",
+    "<gray>chances below.</gray>",
     "",
     "<gray>Rarity Chances:</gray>"
   ],

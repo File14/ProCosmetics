@@ -59,10 +59,10 @@ menu:
 cosmetics:
   allay:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "ALLAY"
     baby: false
     scale: 1.0
@@ -79,10 +79,10 @@ cosmetics:
 
   armadillo:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "ARMADILLO"
     baby: true
     scale: 1.0
@@ -99,10 +99,10 @@ cosmetics:
 
   axolotl:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "AXOLOTL"
     baby: true
     scale: 1.0
@@ -119,10 +119,10 @@ cosmetics:
 
   bee:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "BEE"
     baby: true
     scale: 1.0
@@ -142,7 +142,7 @@ cosmetics:
     rarity: "legendary"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 50000
     entity: "IRON_GOLEM"
     baby: false
     scale: 0.5
@@ -157,12 +157,32 @@ cosmetics:
       - mythical
       - legendary
 
-  calf:
+  breeze:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
+    entity: "BREEZE"
+    baby: false
+    scale: 0.6
+    spawn_sound: "ENTITY_BREEZE_CHARGE"
+    toss_item:
+      enabled: true
+      item: "minecraft:wind_charge"
+    item: "minecraft:breeze_spawn_egg"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+
+  calf:
+    enabled: true
+    rarity: "uncommon"
+    purchasable:
+      enabled: true
+      cost: 2500
     entity: "COW"
     baby: true
     scale: 1.0
@@ -179,10 +199,10 @@ cosmetics:
 
   camel:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "CAMEL"
     baby: true
     scale: 1.0
@@ -199,10 +219,10 @@ cosmetics:
 
   cave_spider:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "CAVE_SPIDER"
     baby: false
     scale: 1.0
@@ -219,10 +239,10 @@ cosmetics:
 
   chicken:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "CHICKEN"
     baby: true
     scale: 1.0
@@ -239,10 +259,10 @@ cosmetics:
 
   colorful_lamb:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "SHEEP"
     baby: true
     scale: 1.0
@@ -257,12 +277,52 @@ cosmetics:
       - mythical
       - legendary
 
-  easter_bunny:
+  copper_golem:
     enabled: true
-    rarity: "common"
+    rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
+    entity: "COPPER_GOLEM"
+    baby: false
+    scale: 0.8
+    spawn_sound: "ENTITY_COPPER_GOLEM_SPAWN"
+    toss_item:
+      enabled: true
+      item: "minecraft:copper_nugget"
+    item: "minecraft:copper_golem_spawn_egg"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+
+  creaking:
+    enabled: true
+    rarity: "rare"
+    purchasable:
+      enabled: true
+      cost: 10000
+    entity: "CREAKING"
+    baby: false
+    scale: 0.5
+    spawn_sound: "ENTITY_CREAKING_AMBIENT"
+    toss_item:
+      enabled: true
+      item: "minecraft:creaking_heart"
+    item: "minecraft:creaking_spawn_egg"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+
+  easter_bunny:
+    enabled: true
+    rarity: "uncommon"
+    purchasable:
+      enabled: true
+      cost: 2500
     entity: "RABBIT"
     baby: true
     scale: 1.0
@@ -279,10 +339,10 @@ cosmetics:
 
   elf:
     enabled: true
-    rarity: "legendary"
+    rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     entity: "ZOMBIE"
     baby: true
     scale: 1.0
@@ -299,10 +359,10 @@ cosmetics:
 
   endermite:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "ENDERMITE"
     baby: true
     scale: 1.0
@@ -319,10 +379,10 @@ cosmetics:
 
   fox:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "FOX"
     baby: true
     scale: 1.0
@@ -339,10 +399,10 @@ cosmetics:
 
   frog:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "FROG"
     baby: true
     scale: 1.0
@@ -359,10 +419,10 @@ cosmetics:
 
   goat:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "GOAT"
     baby: true
     scale: 1.0
@@ -379,10 +439,10 @@ cosmetics:
 
   hoglin:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "HOGLIN"
     baby: true
     scale: 0.8
@@ -399,10 +459,10 @@ cosmetics:
 
   kitten:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "CAT"
     baby: true
     scale: 1.0
@@ -419,10 +479,10 @@ cosmetics:
 
   llama:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "LLAMA"
     baby: true
     scale: 1.0
@@ -439,10 +499,10 @@ cosmetics:
 
   mushroom_calf:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "MOOSHROOM"
     baby: true
     scale: 1.0
@@ -459,10 +519,10 @@ cosmetics:
 
   panda:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "PANDA"
     baby: true
     scale: 1.0
@@ -479,10 +539,10 @@ cosmetics:
 
   parrot:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "PARROT"
     baby: false
     scale: 1.0
@@ -499,10 +559,10 @@ cosmetics:
 
   piggy:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "PIG"
     baby: true
     scale: 1.0
@@ -519,10 +579,10 @@ cosmetics:
 
   piglin:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "PIGLIN"
     baby: true
     scale: 1.0
@@ -539,10 +599,10 @@ cosmetics:
 
   polar_bear:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "POLAR_BEAR"
     baby: true
     scale: 1.0
@@ -559,10 +619,10 @@ cosmetics:
 
   puppy:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "WOLF"
     baby: true
     scale: 1.0
@@ -579,10 +639,10 @@ cosmetics:
 
   santa_claus:
     enabled: true
-    rarity: "legendary"
+    rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     entity: "ZOMBIE"
     baby: false
     scale: 1.0
@@ -599,10 +659,10 @@ cosmetics:
 
   silverfish:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "SILVERFISH"
     baby: false
     scale: 1.0
@@ -619,10 +679,10 @@ cosmetics:
 
   sniffer:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "SNIFFER"
     baby: true
     scale: 1.0
@@ -639,10 +699,10 @@ cosmetics:
 
   turtle:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "TURTLE"
     baby: true
     scale: 3.0
@@ -659,10 +719,10 @@ cosmetics:
 
   villager:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     entity: "VILLAGER"
     baby: true
     scale: 1.0
@@ -677,72 +737,12 @@ cosmetics:
       - mythical
       - legendary
 
-  zombie_villager:
-    enabled: true
-    rarity: "common"
-    purchasable:
-      enabled: true
-      cost: 2000
-    entity: "ZOMBIE_VILLAGER"
-    baby: true
-    scale: 0.8
-    spawn_sound: "ENTITY_ZOMBIE_AMBIENT"
-    toss_item:
-      enabled: true
-      item: "minecraft:rotten_flesh"
-    item: "minecraft:zombie_villager_spawn_egg"
-    count: 1
-    treasure_chests:
-      - common
-      - mythical
-      - legendary
-
-  breeze:
-    enabled: true
-    rarity: "common"
-    purchasable:
-      enabled: true
-      cost: 2000
-    entity: "BREEZE"
-    baby: false
-    scale: 0.6
-    spawn_sound: "ENTITY_BREEZE_CHARGE"
-    toss_item:
-      enabled: true
-      item: "minecraft:wind_charge"
-    item: "minecraft:breeze_spawn_egg"
-    count: 1
-    treasure_chests:
-      - common
-      - mythical
-      - legendary
-
-  creaking:
-    enabled: true
-    rarity: "common"
-    purchasable:
-      enabled: true
-      cost: 2000
-    entity: "CREAKING"
-    baby: false
-    scale: 0.5
-    spawn_sound: "ENTITY_CREAKING_AMBIENT"
-    toss_item:
-      enabled: true
-      item: "minecraft:creaking_heart"
-    item: "minecraft:creaking_spawn_egg"
-    count: 1
-    treasure_chests:
-      - common
-      - mythical
-      - legendary
-
   warden:
     enabled: true
-    rarity: "common"
+    rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     entity: "WARDEN"
     baby: false
     scale: 0.3
@@ -757,20 +757,20 @@ cosmetics:
       - mythical
       - legendary
 
-  copper_golem:
+  zombie_villager:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
-    entity: "COPPER_GOLEM"
-    baby: false
+      cost: 2500
+    entity: "ZOMBIE_VILLAGER"
+    baby: true
     scale: 0.8
-    spawn_sound: "ENTITY_COPPER_GOLEM_SPAWN"
+    spawn_sound: "ENTITY_ZOMBIE_AMBIENT"
     toss_item:
       enabled: true
-      item: "minecraft:copper_nugget"
-    item: "minecraft:copper_golem_spawn_egg"
+      item: "minecraft:rotten_flesh"
+    item: "minecraft:zombie_villager_spawn_egg"
     count: 1
     treasure_chests:
       - common

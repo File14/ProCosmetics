@@ -58,10 +58,10 @@ menu:
 cosmetics:
   bat_blaster:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     cooldown: 5.0
     duration: 4.0
     item: "minecraft:iron_horse_armor[!minecraft:attribute_modifiers]"
@@ -79,21 +79,21 @@ cosmetics:
         cost: 250
       treasure_chests:
         common:
-          minimum_amount: 3
-          maximum_amount: 10
+          minimum_amount: 2
+          maximum_amount: 8
         mythical:
-          minimum_amount: 5
-          maximum_amount: 15
+          minimum_amount: 8
+          maximum_amount: 16
         legendary:
-          minimum_amount: 10
-          maximum_amount: 20
+          minimum_amount: 16
+          maximum_amount: 32
 
   cannon:
     enabled: true
-    rarity: "rare"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     cooldown: 20.0
     duration: 10.0
     item: "minecraft:coal"
@@ -114,18 +114,18 @@ cosmetics:
           minimum_amount: 2
           maximum_amount: 8
         mythical:
-          minimum_amount: 4
-          maximum_amount: 12
-        legendary:
           minimum_amount: 8
-          maximum_amount: 15
+          maximum_amount: 16
+        legendary:
+          minimum_amount: 16
+          maximum_amount: 32
 
   chicken_parachute:
     enabled: true
-    rarity: "rare"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     cooldown: 20.0
     item: "minecraft:feather"
     count: 1
@@ -145,18 +145,18 @@ cosmetics:
           minimum_amount: 2
           maximum_amount: 8
         mythical:
-          minimum_amount: 4
-          maximum_amount: 12
-        legendary:
           minimum_amount: 8
-          maximum_amount: 15
+          maximum_amount: 16
+        legendary:
+          minimum_amount: 16
+          maximum_amount: 32
 
   coin_party_bomb:
     enabled: true
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     cooldown: 50.0
     duration: 30.0
     # Specifies the number of coins a player receives for each coin collected. Coins drop at a rate of 20 per second.
@@ -168,7 +168,7 @@ cosmetics:
       - mythical
       - legendary
     ammo:
-      rarity: "common"
+      rarity: "uncommon"
       infinity: false
       purchasable:
         enabled: true
@@ -180,17 +180,17 @@ cosmetics:
           maximum_amount: 1
         mythical:
           minimum_amount: 1
-          maximum_amount: 1
+          maximum_amount: 2
         legendary:
           minimum_amount: 1
-          maximum_amount: 1
+          maximum_amount: 3
 
   confetti:
     enabled: true
-    rarity: "common"
+    rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     cooldown: 0.3
     item: "minecraft:blaze_rod"
     count: 1
@@ -207,21 +207,21 @@ cosmetics:
         cost: 100
       treasure_chests:
         common:
-          minimum_amount: 10
-          maximum_amount: 30
+          minimum_amount: 2
+          maximum_amount: 8
         mythical:
-          minimum_amount: 20
-          maximum_amount: 50
+          minimum_amount: 8
+          maximum_amount: 16
         legendary:
-          minimum_amount: 40
-          maximum_amount: 80
+          minimum_amount: 16
+          maximum_amount: 32
 
   cowboy:
     enabled: true
-    rarity: "common"
+    rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     cooldown: 15.0
     item: "minecraft:saddle"
     count: 1
@@ -238,21 +238,21 @@ cosmetics:
         cost: 100
       treasure_chests:
         common:
-          minimum_amount: 5
-          maximum_amount: 20
+          minimum_amount: 2
+          maximum_amount: 8
         mythical:
-          minimum_amount: 10
-          maximum_amount: 30
+          minimum_amount: 8
+          maximum_amount: 16
         legendary:
-          minimum_amount: 20
-          maximum_amount: 50
+          minimum_amount: 16
+          maximum_amount: 32
 
   detonator:
     enabled: true
-    rarity: "legendary"
+    rarity: "epic"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 20000
     cooldown: 8.0
     item: "minecraft:lever"
     count: 1
@@ -270,20 +270,20 @@ cosmetics:
       treasure_chests:
         common:
           minimum_amount: 2
-          maximum_amount: 6
+          maximum_amount: 8
         mythical:
-          minimum_amount: 4
-          maximum_amount: 10
-        legendary:
           minimum_amount: 8
-          maximum_amount: 15
+          maximum_amount: 16
+        legendary:
+          minimum_amount: 16
+          maximum_amount: 32
 
   disco_ball:
     enabled: true
-    rarity: "common"
+    rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     cooldown: 50.0
     duration: 15.0
     item: "minecraft:blue_stained_glass"
@@ -302,20 +302,20 @@ cosmetics:
       treasure_chests:
         common:
           minimum_amount: 2
-          maximum_amount: 6
+          maximum_amount: 8
         mythical:
-          minimum_amount: 4
-          maximum_amount: 10
-        legendary:
           minimum_amount: 8
-          maximum_amount: 15
+          maximum_amount: 16
+        legendary:
+          minimum_amount: 16
+          maximum_amount: 32
 
   diving_board:
     enabled: true
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     cooldown: 80.0
     duration: 60.0
     item: "minecraft:white_carpet"
@@ -336,18 +336,18 @@ cosmetics:
           minimum_amount: 2
           maximum_amount: 8
         mythical:
-          minimum_amount: 4
-          maximum_amount: 12
-        legendary:
           minimum_amount: 8
-          maximum_amount: 15
+          maximum_amount: 16
+        legendary:
+          minimum_amount: 16
+          maximum_amount: 32
 
   ethereal_pearl:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     cooldown: 5.0
     item: "minecraft:ender_pearl"
     count: 1
@@ -364,21 +364,21 @@ cosmetics:
         cost: 250
       treasure_chests:
         common:
-          minimum_amount: 5
-          maximum_amount: 20
+          minimum_amount: 2
+          maximum_amount: 8
         mythical:
-          minimum_amount: 10
-          maximum_amount: 30
+          minimum_amount: 8
+          maximum_amount: 16
         legendary:
-          minimum_amount: 20
-          maximum_amount: 50
+          minimum_amount: 16
+          maximum_amount: 32
 
   explosive_sheep:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     cooldown: 18.0
     duration: 6.0
     item: "minecraft:red_wool"
@@ -396,21 +396,21 @@ cosmetics:
         cost: 450
       treasure_chests:
         common:
-          minimum_amount: 5
-          maximum_amount: 20
+          minimum_amount: 2
+          maximum_amount: 8
         mythical:
-          minimum_amount: 10
-          maximum_amount: 30
+          minimum_amount: 8
+          maximum_amount: 16
         legendary:
-          minimum_amount: 20
-          maximum_amount: 50
+          minimum_amount: 16
+          maximum_amount: 32
 
   flame_thrower:
     enabled: true
-    rarity: "rare"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     cooldown: 30.0
     duration: 10.0
     item: "minecraft:blaze_powder"
@@ -431,18 +431,18 @@ cosmetics:
           minimum_amount: 2
           maximum_amount: 8
         mythical:
-          minimum_amount: 4
-          maximum_amount: 12
-        legendary:
           minimum_amount: 8
-          maximum_amount: 15
+          maximum_amount: 16
+        legendary:
+          minimum_amount: 16
+          maximum_amount: 32
 
   flesh_hook:
     enabled: true
-    rarity: "common"
+    rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     cooldown: 2.0
     item: "minecraft:tripwire_hook"
     count: 1
@@ -459,21 +459,21 @@ cosmetics:
         cost: 350
       treasure_chests:
         common:
-          minimum_amount: 5
-          maximum_amount: 20
+          minimum_amount: 2
+          maximum_amount: 8
         mythical:
-          minimum_amount: 10
-          maximum_amount: 30
+          minimum_amount: 8
+          maximum_amount: 16
         legendary:
-          minimum_amount: 20
-          maximum_amount: 50
+          minimum_amount: 16
+          maximum_amount: 32
 
   fireworks:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     cooldown: 1.0
     item: "minecraft:firework_rocket[!minecraft:fireworks]"
     count: 1
@@ -490,21 +490,21 @@ cosmetics:
         cost: 150
       treasure_chests:
         common:
-          minimum_amount: 5
-          maximum_amount: 20
+          minimum_amount: 2
+          maximum_amount: 8
         mythical:
-          minimum_amount: 10
-          maximum_amount: 30
+          minimum_amount: 8
+          maximum_amount: 16
         legendary:
-          minimum_amount: 20
-          maximum_amount: 50
+          minimum_amount: 16
+          maximum_amount: 32
 
   grappling_hook:
     enabled: true
-    rarity: "rare"
+    rarity: "epic"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 20000
     cooldown: 1.0
     item: "minecraft:fishing_rod"
     count: 1
@@ -521,21 +521,21 @@ cosmetics:
         cost: 300
       treasure_chests:
         common:
-          minimum_amount: 10
-          maximum_amount: 30
+          minimum_amount: 2
+          maximum_amount: 8
         mythical:
-          minimum_amount: 20
-          maximum_amount: 50
+          minimum_amount: 8
+          maximum_amount: 16
         legendary:
-          minimum_amount: 40
-          maximum_amount: 80
+          minimum_amount: 16
+          maximum_amount: 32
 
   hot_air_balloon:
     enabled: true
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     cooldown: 60.0
     duration: 40.0
     item: "minecraft:campfire"
@@ -556,18 +556,18 @@ cosmetics:
           minimum_amount: 2
           maximum_amount: 8
         mythical:
-          minimum_amount: 4
-          maximum_amount: 12
-        legendary:
           minimum_amount: 8
-          maximum_amount: 15
+          maximum_amount: 16
+        legendary:
+          minimum_amount: 16
+          maximum_amount: 32
 
   hot_tub:
     enabled: true
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     cooldown: 80.0
     duration: 60.0
     item: "minecraft:magma_block"
@@ -588,18 +588,18 @@ cosmetics:
           minimum_amount: 2
           maximum_amount: 8
         mythical:
-          minimum_amount: 4
-          maximum_amount: 12
-        legendary:
           minimum_amount: 8
-          maximum_amount: 15
+          maximum_amount: 16
+        legendary:
+          minimum_amount: 16
+          maximum_amount: 32
 
   melon_launcher:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     cooldown: 4.0
     item: "minecraft:melon"
     count: 1
@@ -616,21 +616,21 @@ cosmetics:
         cost: 150
       treasure_chests:
         common:
-          minimum_amount: 4
-          maximum_amount: 15
+          minimum_amount: 2
+          maximum_amount: 8
         mythical:
           minimum_amount: 8
-          maximum_amount: 25
+          maximum_amount: 16
         legendary:
-          minimum_amount: 15
-          maximum_amount: 40
+          minimum_amount: 16
+          maximum_amount: 32
 
   merry_go_round:
     enabled: true
     rarity: "legendary"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 50000
     cooldown: 80.0
     duration: 60.0
     item: "minecraft:minecart"
@@ -648,21 +648,21 @@ cosmetics:
         cost: 600
       treasure_chests:
         common:
-          minimum_amount: 1
-          maximum_amount: 3
-        mythical:
           minimum_amount: 2
-          maximum_amount: 5
-        legendary:
-          minimum_amount: 4
           maximum_amount: 8
+        mythical:
+          minimum_amount: 8
+          maximum_amount: 16
+        legendary:
+          minimum_amount: 16
+          maximum_amount: 32
 
   paintball:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     cooldown: 0.3
     item: "minecraft:golden_horse_armor[!minecraft:attribute_modifiers]"
     count: 1
@@ -679,21 +679,21 @@ cosmetics:
         cost: 100
       treasure_chests:
         common:
-          minimum_amount: 5
-          maximum_amount: 20
+          minimum_amount: 2
+          maximum_amount: 8
         mythical:
-          minimum_amount: 10
-          maximum_amount: 30
+          minimum_amount: 8
+          maximum_amount: 16
         legendary:
-          minimum_amount: 20
-          maximum_amount: 50
+          minimum_amount: 16
+          maximum_amount: 32
 
   parkour_spiral:
     enabled: true
-    rarity: "rare"
+    rarity: "epic"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 20000
     cooldown: 80.0
     duration: 60.0
     item: "minecraft:lime_concrete"
@@ -714,18 +714,18 @@ cosmetics:
           minimum_amount: 2
           maximum_amount: 8
         mythical:
-          minimum_amount: 4
-          maximum_amount: 12
-        legendary:
           minimum_amount: 8
-          maximum_amount: 15
+          maximum_amount: 16
+        legendary:
+          minimum_amount: 16
+          maximum_amount: 32
 
   party_popper:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     cooldown: 20.0
     duration: 12.0
     item: "minecraft:cake"
@@ -746,18 +746,18 @@ cosmetics:
           minimum_amount: 2
           maximum_amount: 8
         mythical:
-          minimum_amount: 4
-          maximum_amount: 12
-        legendary:
           minimum_amount: 8
-          maximum_amount: 15
+          maximum_amount: 16
+        legendary:
+          minimum_amount: 16
+          maximum_amount: 32
 
   rocket:
     enabled: true
     rarity: "legendary"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 50000
     cooldown: 30.0
     item: "minecraft:iron_block"
     count: 1
@@ -774,21 +774,21 @@ cosmetics:
         cost: 500
       treasure_chests:
         common:
-          minimum_amount: 1
-          maximum_amount: 3
-        mythical:
           minimum_amount: 2
-          maximum_amount: 5
-        legendary:
-          minimum_amount: 4
           maximum_amount: 8
+        mythical:
+          minimum_amount: 8
+          maximum_amount: 16
+        legendary:
+          minimum_amount: 16
+          maximum_amount: 32
 
   shower:
     enabled: true
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     cooldown: 80.0
     duration: 60.0
     item: "minecraft:water_bucket"
@@ -809,18 +809,18 @@ cosmetics:
           minimum_amount: 2
           maximum_amount: 8
         mythical:
-          minimum_amount: 4
-          maximum_amount: 12
-        legendary:
           minimum_amount: 8
-          maximum_amount: 15
+          maximum_amount: 16
+        legendary:
+          minimum_amount: 16
+          maximum_amount: 32
 
   slide:
     enabled: true
-    rarity: "rare"
+    rarity: "epic"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 20000
     cooldown: 80.0
     duration: 60.0
     item: "minecraft:warped_stairs"
@@ -841,18 +841,18 @@ cosmetics:
           minimum_amount: 2
           maximum_amount: 8
         mythical:
-          minimum_amount: 4
-          maximum_amount: 12
-        legendary:
           minimum_amount: 8
-          maximum_amount: 15
+          maximum_amount: 16
+        legendary:
+          minimum_amount: 16
+          maximum_amount: 32
 
   soccer_ball:
     enabled: true
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     cooldown: 70.0
     duration: 60.0
     item: "minecraft:slime_block"
@@ -870,21 +870,21 @@ cosmetics:
         cost: 200
       treasure_chests:
         common:
-          minimum_amount: 4
-          maximum_amount: 15
+          minimum_amount: 2
+          maximum_amount: 8
         mythical:
           minimum_amount: 8
-          maximum_amount: 25
+          maximum_amount: 16
         legendary:
-          minimum_amount: 15
-          maximum_amount: 40
+          minimum_amount: 16
+          maximum_amount: 32
 
   swing:
     enabled: true
-    rarity: "rare"
+    rarity: "epic"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 20000
     cooldown: 80.0
     duration: 60.0
     item: "minecraft:string"
@@ -905,18 +905,18 @@ cosmetics:
           minimum_amount: 2
           maximum_amount: 8
         mythical:
-          minimum_amount: 4
-          maximum_amount: 12
-        legendary:
           minimum_amount: 8
-          maximum_amount: 15
+          maximum_amount: 16
+        legendary:
+          minimum_amount: 16
+          maximum_amount: 32
 
   tnt:
     enabled: true
-    rarity: "common"
+    rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     cooldown: 3.0
     item: "minecraft:tnt"
     count: 1
@@ -936,18 +936,18 @@ cosmetics:
           minimum_amount: 2
           maximum_amount: 8
         mythical:
-          minimum_amount: 4
-          maximum_amount: 12
-        legendary:
           minimum_amount: 8
-          maximum_amount: 15
+          maximum_amount: 16
+        legendary:
+          minimum_amount: 16
+          maximum_amount: 32
 
   trampoline:
     enabled: true
-    rarity: "rare"
+    rarity: "epic"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 20000
     cooldown: 40.0
     duration: 35.0
     item: "minecraft:black_wool"
@@ -968,18 +968,18 @@ cosmetics:
           minimum_amount: 2
           maximum_amount: 8
         mythical:
-          minimum_amount: 4
-          maximum_amount: 12
-        legendary:
           minimum_amount: 8
-          maximum_amount: 15
+          maximum_amount: 16
+        legendary:
+          minimum_amount: 16
+          maximum_amount: 32
 
   water_gun:
     enabled: true
-    rarity: "rare"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     cooldown: 1.5
     item: "minecraft:soul_lantern"
     count: 1
@@ -999,18 +999,18 @@ cosmetics:
           minimum_amount: 2
           maximum_amount: 8
         mythical:
-          minimum_amount: 4
-          maximum_amount: 12
-        legendary:
           minimum_amount: 8
-          maximum_amount: 15
+          maximum_amount: 16
+        legendary:
+          minimum_amount: 16
+          maximum_amount: 32
 
   wither_missile:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     cooldown: 15.0
     duration: 10.0
     item: "minecraft:wither_skeleton_skull"
@@ -1028,14 +1028,14 @@ cosmetics:
         cost: 300
       treasure_chests:
         common:
-          minimum_amount: 3
-          maximum_amount: 10
+          minimum_amount: 2
+          maximum_amount: 8
         mythical:
-          minimum_amount: 5
-          maximum_amount: 15
+          minimum_amount: 8
+          maximum_amount: 16
         legendary:
-          minimum_amount: 10
-          maximum_amount: 20
+          minimum_amount: 16
+          maximum_amount: 32
 
 # Do not edit this!
 config_version: 1

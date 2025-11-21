@@ -68,10 +68,10 @@ menu:
 cosmetics:
   bat:
     enabled: true
-    rarity: "legendary"
+    rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     ability: true
     cooldown: 1.0
     item: "minecraft:bat_spawn_egg"
@@ -86,7 +86,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     ability: true
     cooldown: 5.0
     item: "minecraft:blaze_powder"
@@ -101,7 +101,7 @@ cosmetics:
     rarity: "legendary"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 50000
     ability: true
     cooldown: 5.0
     item: "minecraft:emerald_block"
@@ -113,10 +113,10 @@ cosmetics:
 
   bunny:
     enabled: true
-    rarity: "legendary"
+    rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     ability: true
     cooldown: 0.0
     item: "minecraft:egg"
@@ -131,7 +131,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     ability: true
     cooldown: 2.0
     item: "minecraft:tropical_fish"
@@ -146,7 +146,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     ability: true
     cooldown: 10.0
     item: "minecraft:spider_eye"
@@ -158,10 +158,10 @@ cosmetics:
 
   chicken:
     enabled: true
-    rarity: "legendary"
+    rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     ability: true
     cooldown: 2.0
     item: "minecraft:feather"
@@ -173,10 +173,10 @@ cosmetics:
 
   cow:
     enabled: true
-    rarity: "common"
+    rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     ability: true
     cooldown: 2.0
     item: "minecraft:leather"
@@ -191,7 +191,7 @@ cosmetics:
     rarity: "legendary"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 50000
     ability: true
     cooldown: 20.0
     item: "minecraft:creeper_head[!minecraft:rarity]"
@@ -206,7 +206,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     ability: true
     cooldown: 2.0
     item: "minecraft:bone"
@@ -221,7 +221,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     ability: true
     cooldown: 2.0
     item: "minecraft:lead"
@@ -236,7 +236,7 @@ cosmetics:
     rarity: "legendary"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 50000
     ability: true
     cooldown: 30.0
     item: "minecraft:prismarine_shard"
@@ -251,7 +251,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     ability: true
     cooldown: 8.0
     item: "minecraft:ender_pearl"
@@ -263,10 +263,10 @@ cosmetics:
 
   iron_golem:
     enabled: true
-    rarity: "legendary"
+    rarity: "epic"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 20000
     ability: true
     cooldown: 15.0
     item: "minecraft:iron_block"
@@ -281,7 +281,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     ability: true
     cooldown: 0.0
     item: "minecraft:netherrack"
@@ -293,10 +293,10 @@ cosmetics:
 
   mushroom_cow:
     enabled: true
-    rarity: "legendary"
+    rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     ability: true
     cooldown: 2.0
     item: "minecraft:red_mushroom"
@@ -311,7 +311,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     ability: true
     cooldown: 8.0
     item: "minecraft:snowball"
@@ -323,10 +323,10 @@ cosmetics:
 
   pig:
     enabled: true
-    rarity: "legendary"
+    rarity: "epic"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 20000
     ability: true
     cooldown: 2.0
     item: "minecraft:porkchop"
@@ -341,7 +341,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     ability: true
     cooldown: 2.0
     item: "minecraft:golden_sword"
@@ -356,7 +356,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     ability: true
     cooldown: 2.0
     item: "minecraft:white_wool"
@@ -368,10 +368,10 @@ cosmetics:
 
   skeleton:
     enabled: true
-    rarity: "common"
+    rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     ability: true
     cooldown: 10.0
     item: "minecraft:arrow"
@@ -383,10 +383,10 @@ cosmetics:
 
   slime:
     enabled: true
-    rarity: "legendary"
+    rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     ability: true
     cooldown: 10.0
     item: "minecraft:slime_block"
@@ -401,7 +401,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     ability: true
     cooldown: 20.0
     item: "minecraft:cobweb"
@@ -413,10 +413,10 @@ cosmetics:
 
   squid:
     enabled: true
-    rarity: "legendary"
+    rarity: "epic"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 20000
     ability: true
     cooldown: 20.0
     item: "minecraft:ink_sac"
@@ -428,10 +428,10 @@ cosmetics:
 
   villager:
     enabled: true
-    rarity: "legendary"
+    rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     ability: true
     cooldown: 2.0
     item: "minecraft:emerald"
@@ -446,7 +446,7 @@ cosmetics:
     rarity: "rare"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 10000
     ability: true
     cooldown: 5.0
     item: "minecraft:potion[!minecraft:potion_contents]"
@@ -461,7 +461,7 @@ cosmetics:
     rarity: "legendary"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 50000
     ability: true
     cooldown: 12.0
     item: "minecraft:wither_skeleton_skull[!minecraft:rarity]"
@@ -473,10 +473,10 @@ cosmetics:
 
   zombie:
     enabled: true
-    rarity: "legendary"
+    rarity: "epic"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 20000
     ability: true
     cooldown: 20.0
     item: "minecraft:zombie_head[!minecraft:rarity]"

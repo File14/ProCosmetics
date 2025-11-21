@@ -69,10 +69,10 @@ menu:
 cosmetics:
   fur_elise:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: "minecraft:music_disc_13"
     count: 1
     treasure_chests:
@@ -82,10 +82,10 @@ cosmetics:
 
   in_the_hall_of_the_mountain_king:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: "minecraft:music_disc_strad"
     count: 1
     treasure_chests:
@@ -95,10 +95,10 @@ cosmetics:
 
   sweden:
     enabled: true
-    rarity: "common"
+    rarity: "uncommon"
     purchasable:
       enabled: true
-      cost: 2000
+      cost: 2500
     item: "minecraft:music_disc_wait"
     count: 1
     treasure_chests:
