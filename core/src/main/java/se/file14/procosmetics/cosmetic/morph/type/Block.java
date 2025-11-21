@@ -61,10 +61,10 @@ public class Block implements MorphBehavior {
                 currentMaterial = block.getType();
                 Player player = context.getPlayer();
 
-                if (nmsEntity instanceof BlockDisplay blockDisplay) {
+                if (nmsEntity.getBukkitEntity() instanceof BlockDisplay blockDisplay) {
                     blockDisplay.setBlock(currentMaterial.createBlockData());
+                    nmsEntity.sendEntityMetadataPacket();
                 }
-                nmsEntity.sendEntityEquipmentPacket();
 
                 player.getWorld().playSound(
                         player,
