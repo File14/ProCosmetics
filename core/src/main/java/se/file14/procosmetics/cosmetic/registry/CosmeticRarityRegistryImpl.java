@@ -58,8 +58,8 @@ public class CosmeticRarityRegistryImpl implements CosmeticRarityRegistry {
 
             FireworkEffect fireworkEffect = FireworkEffect.builder()
                     .with(EnumUtil.getType(FireworkEffect.Type.class, config.getString(path + "firework.type")))
-                    .withColor(Color.fromRGB(config.getInt(path + "firework.color")))
-                    .withFade(Color.fromRGB(config.getInt(path + "firework.fade")))
+                    .withColor(parseColor(config.getString(path + "firework.color")))
+                    .withFade(parseColor(config.getString(path + "firework.fade")))
                     .flicker(config.getBoolean(path + "firework.flicker"))
                     .trail(config.getBoolean(path + "firework.trail"))
                     .build();
@@ -113,5 +113,12 @@ public class CosmeticRarityRegistryImpl implements CosmeticRarityRegistry {
     @Override
     public List<CosmeticRarity> getRarities() {
         return sortedRarities;
+    }
+
+    private static Color parseColor(String colorString) {
+        if (colorString.startsWith("0x")) {
+            return Color.fromRGB(Integer.parseInt(colorString.substring(2), 16));
+        }
+        return Color.fromRGB(Integer.parseInt(colorString));
     }
 }

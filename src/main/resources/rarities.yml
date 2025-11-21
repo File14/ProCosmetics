@@ -63,8 +63,8 @@ rarities:
       detonations: 5
       tick_interval: 5
       type: BALL_LARGE
-      color: 0xb36b00
-      fade: 0xcc8800
+      color: ff99ff
+      fade: ffb3ff
       flicker: false
       trail: true
   legendary:
