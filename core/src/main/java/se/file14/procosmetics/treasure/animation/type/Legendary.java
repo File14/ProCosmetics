@@ -34,7 +34,7 @@ public class Legendary extends TreasureChestAnimation {
 
     private static final double SPEED = 15.0d;
     private static final float RADIUS_INCREASE_PER_TICK = 0.03f;
-    private static final double GOAL_RADIUS = 3.5d;
+    private static final double GOAL_RADIUS = 3.3d;
 
     private final double anglePerChest = 360.0d / platform.getChestLocations().size();
     private float radius;

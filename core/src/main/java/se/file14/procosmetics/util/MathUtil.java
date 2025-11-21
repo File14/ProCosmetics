@@ -295,4 +295,9 @@ public class MathUtil {
         }
         return list.get(THREAD_LOCAL_RANDOM.nextInt(list.size()));
     }
+
+    public static void snapToCardinalDirection(Location location) {
+        float yaw = location.getYaw();
+        location.setYaw(Math.round(yaw / 90.0f) * 90.0f);
+    }
 }
