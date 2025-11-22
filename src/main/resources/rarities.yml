@@ -58,7 +58,7 @@ rarities:
       primary: "#ff80ff"     # Bright purple
       secondary: "#cc00cc"   # Darker purple
     firework:
-      detonations: 6
+      detonations: 4
       tick_interval: 3
       type: BALL
       color: "#ff80ff"
