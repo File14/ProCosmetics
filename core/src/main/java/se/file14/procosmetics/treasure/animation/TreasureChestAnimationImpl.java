@@ -44,12 +44,12 @@ import se.file14.procosmetics.api.treasure.loot.LootEntry;
 import se.file14.procosmetics.api.treasure.loot.LootTable;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.api.util.structure.StructureData;
+import se.file14.procosmetics.api.util.structure.type.BlockStructure;
 import se.file14.procosmetics.event.PlayerOpenTreasureChestEventImpl;
-import se.file14.procosmetics.treasure.TreasureChestPlatformImpl;
 import se.file14.procosmetics.util.LocationUtil;
 import se.file14.procosmetics.util.MathUtil;
 import se.file14.procosmetics.util.MetadataUtil;
-import se.file14.procosmetics.util.structure.type.BlockStructure;
+import se.file14.procosmetics.util.structure.type.BlockStructureImpl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,7 +62,7 @@ public abstract class TreasureChestAnimationImpl extends BukkitRunnable implemen
     public static final int MAX_TIME_BEFORE_FORCE_OPEN = 1000;
 
     protected ProCosmetics plugin;
-    protected TreasureChestPlatformImpl platform;
+    protected TreasureChestPlatform platform;
     protected TreasureChest treasureChest;
     protected User user;
     protected Player player;
@@ -80,14 +80,13 @@ public abstract class TreasureChestAnimationImpl extends BukkitRunnable implemen
 
     public TreasureChestAnimationImpl(ProCosmetics plugin, TreasureChestPlatform platform, TreasureChest treasureChest, User user) {
         this.plugin = plugin;
-        this.platform = (TreasureChestPlatformImpl) platform; // TODO: Remove cast in the future
+        this.platform = platform;
         this.treasureChest = treasureChest;
         this.user = user;
         this.player = user.getPlayer();
         this.location = LocationUtil.center(platform.getCenter().clone());
 
-        this.platform.destroyChest();
-        this.platform.getHologram().despawn();
+        platform.hideDisplay();
 
         if (treasureChest.isOpeningBroadcast()) {
             plugin.getTreasureChestManager().getOpeningBroadcaster().broadcastMessage(
@@ -136,7 +135,7 @@ public abstract class TreasureChestAnimationImpl extends BukkitRunnable implemen
             if (animationState == AnimationState.BUILDING) {
                 if (buildingStates < treasureChest.getStructures().size()) {
                     StructureData structureData = treasureChest.getStructures().get(buildingStates++);
-                    BlockStructure blockStructure = new BlockStructure(structureData);
+                    BlockStructure blockStructure = new BlockStructureImpl(structureData);
                     blockStructure.spawn(platform.getCenter(), true);
                 } else {
                     animationState = AnimationState.SPAWNING_CHESTS;

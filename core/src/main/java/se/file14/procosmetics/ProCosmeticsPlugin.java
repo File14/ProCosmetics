@@ -32,6 +32,7 @@ import se.file14.procosmetics.api.config.Config;
 import se.file14.procosmetics.api.cosmetic.registry.CategoryRegistries;
 import se.file14.procosmetics.api.cosmetic.registry.CosmeticRarityRegistry;
 import se.file14.procosmetics.api.storage.Database;
+import se.file14.procosmetics.api.treasure.TreasureChestPlatform;
 import se.file14.procosmetics.api.treasure.animation.TreasureChestAnimationRegistry;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.command.CommandBase;
@@ -53,7 +54,6 @@ import se.file14.procosmetics.placeholder.PlaceholderManager;
 import se.file14.procosmetics.redis.RedisManager;
 import se.file14.procosmetics.storage.DatabaseTypeProvider;
 import se.file14.procosmetics.treasure.TreasureChestManagerImpl;
-import se.file14.procosmetics.treasure.TreasureChestPlatformImpl;
 import se.file14.procosmetics.treasure.animation.TreasureChestAnimationRegistryImpl;
 import se.file14.procosmetics.user.UserManagerImpl;
 import se.file14.procosmetics.util.LogUtil;
@@ -197,8 +197,8 @@ public class ProCosmeticsPlugin extends JavaPlugin implements ProCosmetics {
         }
         database.shutdown();
 
-        for (TreasureChestPlatformImpl platform : treasureChestManager.getPlatforms()) {
-            platform.getHologram().despawn();
+        for (TreasureChestPlatform platform : treasureChestManager.getPlatforms()) {
+            platform.hideDisplay();
         }
         HandlerList.unregisterAll(this);
         getServer().getScheduler().cancelTasks(this);

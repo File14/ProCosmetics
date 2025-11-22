@@ -23,9 +23,9 @@ import org.bukkit.Sound;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import se.file14.procosmetics.ProCosmeticsPlugin;
+import se.file14.procosmetics.api.treasure.TreasureChestPlatform;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.command.SubCommand;
-import se.file14.procosmetics.treasure.TreasureChestPlatformImpl;
 
 public class DeleteCommand extends SubCommand<CommandSender> {
 
@@ -45,7 +45,7 @@ public class DeleteCommand extends SubCommand<CommandSender> {
         }
         Location location = player.getLocation();
         Location treasureChestLocation = new Location(location.getWorld(), location.getBlockX(), location.getBlockY(), location.getBlockZ());
-        TreasureChestPlatformImpl platform = plugin.getTreasureChestManager().getPlatform(treasureChestLocation);
+        TreasureChestPlatform platform = plugin.getTreasureChestManager().getPlatform(treasureChestLocation);
 
         if (platform == null) {
             user.sendMessage(user.translate("command.platform.delete.not_found"));

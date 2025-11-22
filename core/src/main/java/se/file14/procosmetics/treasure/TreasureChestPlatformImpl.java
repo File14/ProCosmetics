@@ -24,10 +24,11 @@ import se.file14.procosmetics.ProCosmeticsPlugin;
 import se.file14.procosmetics.api.locale.LanguageManager;
 import se.file14.procosmetics.api.treasure.TreasureChestPlatform;
 import se.file14.procosmetics.api.user.User;
+import se.file14.procosmetics.api.util.structure.type.BlockStructure;
 import se.file14.procosmetics.hologram.Hologram;
 import se.file14.procosmetics.hologram.Spacing;
 import se.file14.procosmetics.util.structure.NamedStructureData;
-import se.file14.procosmetics.util.structure.type.BlockStructure;
+import se.file14.procosmetics.util.structure.type.BlockStructureImpl;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -56,7 +57,7 @@ public class TreasureChestPlatformImpl implements TreasureChestPlatform {
         this.id = id;
         this.center = center;
         this.namedStructureData = structureData;
-        this.blockStructure = new BlockStructure(structureData.structureData());
+        this.blockStructure = new BlockStructureImpl(structureData.structureData());
 
         // We need to do this because the center can have a yaw set
         Location chestLocation = center.clone();
@@ -97,7 +98,13 @@ public class TreasureChestPlatformImpl implements TreasureChestPlatform {
         hologram.despawn();
     }
 
-    public void destroyChest() {
+    @Override
+    public void hideDisplay() {
+        destroyChest();
+        hologram.despawn();
+    }
+
+    private void destroyChest() {
         for (Block block : blockStructure.getPlacedEntries()) {
             if (CHEST_TYPES.contains(block.getType())) {
                 block.setType(Material.AIR);
@@ -123,6 +130,7 @@ public class TreasureChestPlatformImpl implements TreasureChestPlatform {
         return namedStructureData;
     }
 
+    @Override
     public BlockStructure getBlockStructure() {
         return blockStructure;
     }

@@ -20,6 +20,7 @@ package se.file14.procosmetics.api.treasure;
 import org.bukkit.Location;
 import org.jetbrains.annotations.ApiStatus;
 import se.file14.procosmetics.api.user.User;
+import se.file14.procosmetics.api.util.structure.type.BlockStructure;
 
 import java.util.List;
 
@@ -35,19 +36,25 @@ import java.util.List;
 public interface TreasureChestPlatform {
 
     /**
-     * Builds the treasure platform structure in the world.
+     * Builds the treasure chest platform structure.
      */
     @ApiStatus.Internal
     void build();
 
     /**
-     * Destroys or removes the treasure platform from the world.
+     * Destroys the treasure chest platform.
      */
     @ApiStatus.Internal
     void destroy();
 
     /**
-     * Gets the unique numeric identifier of this treasure platform.
+     * Despawns the hologram and chest from the treasure chest platform.
+     */
+    @ApiStatus.Internal
+    void hideDisplay();
+
+    /**
+     * Gets the unique numeric identifier of this treasure chest platform.
      * <p>
      * Each platform has a distinct ID used to track and retrieve it
      * through the {@link TreasureChestManager}.
@@ -57,21 +64,28 @@ public interface TreasureChestPlatform {
     int getId();
 
     /**
-     * Gets the central location of the treasure platform.
+     * Gets the central location of this treasure chest platform.
      *
      * @return the center {@link Location}
      */
     Location getCenter();
 
     /**
-     * Gets all world locations where treasure chests are placed on this platform.
+     * Gets the block structure of this treasure chest platform.
+     *
+     * @return the {@link BlockStructure}
+     */
+    BlockStructure getBlockStructure();
+
+    /**
+     * Gets all world locations where chests are placed on this platform.
      *
      * @return a list of chest {@link Location} positions
      */
     List<Location> getChestLocations();
 
     /**
-     * Gets the user currently using this treasure platform.
+     * Gets the user currently using this treasure chest platform.
      *
      * @return the {@link User} associated with this platform, or {@code null} if unused
      */

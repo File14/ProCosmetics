@@ -24,6 +24,7 @@ import org.bukkit.block.data.BlockData;
 import org.bukkit.block.data.Directional;
 import org.bukkit.block.data.MultipleFacing;
 import org.bukkit.util.Vector;
+import se.file14.procosmetics.api.util.structure.Structure;
 import se.file14.procosmetics.api.util.structure.StructureData;
 import se.file14.procosmetics.util.FastMathUtil;
 import se.file14.procosmetics.util.LocationUtil;
@@ -34,17 +35,18 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Predicate;
 
-public abstract class Structure<T> {
+public abstract class StructureImpl<T> implements Structure<T> {
 
     protected final StructureData data;
     protected final List<T> placedEntries = new ArrayList<>();
     protected Predicate<Block> blockCheckPredicate;
 
-    public Structure(StructureData data, Predicate<Block> blockCheckPredicate) {
+    public StructureImpl(StructureData data, Predicate<Block> blockCheckPredicate) {
         this.data = data;
         this.blockCheckPredicate = blockCheckPredicate;
     }
 
+    @Override
     public boolean isEnoughSpace(Location location) {
         double angle = calculateAngle(location);
 
@@ -109,14 +111,12 @@ public abstract class Structure<T> {
         return original;
     }
 
-    public abstract double spawn(Location location);
-
-    public abstract void remove();
-
+    @Override
     public StructureData getData() {
         return data;
     }
 
+    @Override
     public List<T> getPlacedEntries() {
         return placedEntries;
     }

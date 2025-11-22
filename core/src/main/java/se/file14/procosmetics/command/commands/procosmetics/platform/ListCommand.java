@@ -25,8 +25,8 @@ import org.bukkit.Location;
 import org.bukkit.command.CommandSender;
 import se.file14.procosmetics.ProCosmeticsPlugin;
 import se.file14.procosmetics.api.locale.Translator;
+import se.file14.procosmetics.api.treasure.TreasureChestPlatform;
 import se.file14.procosmetics.command.SubCommand;
-import se.file14.procosmetics.treasure.TreasureChestPlatformImpl;
 
 import java.util.List;
 
@@ -46,10 +46,10 @@ public class ListCommand extends SubCommand<CommandSender> {
                 Placeholder.unparsed("amount", String.valueOf(plugin.getTreasureChestManager().getPlatforms().size()))
         ));
         TextComponent.Builder builder = Component.text();
-        List<TreasureChestPlatformImpl> platforms = plugin.getTreasureChestManager().getPlatforms();
+        List<TreasureChestPlatform> platforms = plugin.getTreasureChestManager().getPlatforms();
 
         for (int i = 0; i < platforms.size(); i++) {
-            TreasureChestPlatformImpl platform = platforms.get(i);
+            TreasureChestPlatform platform = platforms.get(i);
             Location center = platform.getCenter();
 
             builder.append(translator.translate(

@@ -29,8 +29,9 @@ import se.file14.procosmetics.api.cosmetic.CosmeticContext;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetBehavior;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetType;
 import se.file14.procosmetics.api.nms.NMSEntity;
+import se.file14.procosmetics.api.util.structure.type.ParentBlockDisplayStructure;
 import se.file14.procosmetics.util.MetadataUtil;
-import se.file14.procosmetics.util.structure.type.BlockDisplayParentStructure;
+import se.file14.procosmetics.util.structure.type.ParentBlockDisplayStructureImpl;
 
 import javax.annotation.Nullable;
 
@@ -40,7 +41,7 @@ public class HotAirBalloon implements GadgetBehavior {
     private static final double ACCELERATION = 0.001d;
     private static final float HEIGHT_OFFSET = 1.3f;
 
-    private BlockDisplayParentStructure structure;
+    private ParentBlockDisplayStructure structure;
     private Location seatLocation;
     private NMSEntity seat;
     private double speed;
@@ -48,7 +49,7 @@ public class HotAirBalloon implements GadgetBehavior {
     @Override
     public void onEquip(CosmeticContext<GadgetType> context) {
         if (structure == null) {
-            structure = new BlockDisplayParentStructure(context.getType().getStructure());
+            structure = new ParentBlockDisplayStructureImpl(context.getType().getStructure());
         }
     }
 

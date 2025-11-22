@@ -27,8 +27,9 @@ import se.file14.procosmetics.api.cosmetic.CosmeticContext;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetBehavior;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetType;
 import se.file14.procosmetics.api.nms.NMSEntity;
+import se.file14.procosmetics.api.util.structure.type.ParentBlockDisplayStructure;
 import se.file14.procosmetics.util.MetadataUtil;
-import se.file14.procosmetics.util.structure.type.BlockDisplayParentStructure;
+import se.file14.procosmetics.util.structure.type.ParentBlockDisplayStructureImpl;
 
 import javax.annotation.Nullable;
 
@@ -40,7 +41,7 @@ public class Rocket implements GadgetBehavior {
     private static final double ACCELERATION = 0.01d;
     private static final float HEIGHT_OFFSET = 3.5f;
 
-    private BlockDisplayParentStructure structure;
+    private ParentBlockDisplayStructure structure;
     private NMSEntity seat;
     private boolean launching;
     private int tick;
@@ -50,7 +51,7 @@ public class Rocket implements GadgetBehavior {
     @Override
     public void onEquip(CosmeticContext<GadgetType> context) {
         if (structure == null) {
-            structure = new BlockDisplayParentStructure(context.getType().getStructure());
+            structure = new ParentBlockDisplayStructureImpl(context.getType().getStructure());
         }
     }
 

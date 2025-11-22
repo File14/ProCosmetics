@@ -29,18 +29,19 @@ import se.file14.procosmetics.ProCosmeticsPlugin;
 import se.file14.procosmetics.api.nms.EntityTracker;
 import se.file14.procosmetics.api.nms.NMSEntity;
 import se.file14.procosmetics.api.util.structure.StructureData;
+import se.file14.procosmetics.api.util.structure.type.ParentBlockDisplayStructure;
 import se.file14.procosmetics.nms.EntityTrackerImpl;
 import se.file14.procosmetics.util.MathUtil;
-import se.file14.procosmetics.util.structure.Structure;
+import se.file14.procosmetics.util.structure.StructureImpl;
 
 import java.util.Map;
 
-public class BlockDisplayParentStructure extends Structure<NMSEntity> {
+public class ParentBlockDisplayStructureImpl extends StructureImpl<NMSEntity> implements ParentBlockDisplayStructure {
 
     private static final ProCosmeticsPlugin PLUGIN = ProCosmeticsPlugin.getPlugin();
     private final EntityTracker tracker = new EntityTrackerImpl();
 
-    public BlockDisplayParentStructure(StructureData data) {
+    public ParentBlockDisplayStructureImpl(StructureData data) {
         super(data, block -> block.isPassable() && !block.isLiquid());
     }
 

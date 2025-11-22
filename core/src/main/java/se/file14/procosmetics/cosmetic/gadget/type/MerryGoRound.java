@@ -32,12 +32,13 @@ import se.file14.procosmetics.api.cosmetic.gadget.GadgetBehavior;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetType;
 import se.file14.procosmetics.api.nms.EntityTracker;
 import se.file14.procosmetics.api.nms.NMSEntity;
+import se.file14.procosmetics.api.util.structure.type.BlockStructure;
 import se.file14.procosmetics.nms.EntityTrackerImpl;
 import se.file14.procosmetics.util.FastMathUtil;
 import se.file14.procosmetics.util.MathUtil;
 import se.file14.procosmetics.util.MetadataUtil;
 import se.file14.procosmetics.util.RGBFade;
-import se.file14.procosmetics.util.structure.type.BlockStructure;
+import se.file14.procosmetics.util.structure.type.BlockStructureImpl;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;
@@ -68,7 +69,7 @@ public class MerryGoRound implements GadgetBehavior {
     @Override
     public void onEquip(CosmeticContext<GadgetType> context) {
         if (structure == null) {
-            structure = new BlockStructure(context.getType().getStructure());
+            structure = new BlockStructureImpl(context.getType().getStructure());
         }
     }
 

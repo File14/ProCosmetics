@@ -93,6 +93,13 @@ public interface TreasureChestManager {
     LootBroadcaster getLootBroadcaster();
 
     /**
+     * Gets the current treasure chest platforms.
+     *
+     * @return the list of {@link TreasureChestPlatform}
+     */
+    List<TreasureChestPlatform> getPlatforms();
+
+    /**
      * Gets a list of all loaded treasure chests.
      *
      * @return a list of all {@link TreasureChest} instances

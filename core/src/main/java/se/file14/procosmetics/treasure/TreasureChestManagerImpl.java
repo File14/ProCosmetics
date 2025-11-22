@@ -56,7 +56,7 @@ public class TreasureChestManagerImpl implements TreasureChestManager {
     private final Broadcaster openingBroadcaster;
     private final LootBroadcasterImpl lootBroadcaster;
     private final List<TreasureChest> treasuresChests = new ArrayList<>();
-    private final List<TreasureChestPlatformImpl> platforms = new ArrayList<>();
+    private final List<TreasureChestPlatform> platforms = new ArrayList<>();
 
     public TreasureChestManagerImpl(ProCosmeticsPlugin plugin) {
         this.plugin = plugin;
@@ -124,7 +124,7 @@ public class TreasureChestManagerImpl implements TreasureChestManager {
         platformsConfig.save();
     }
 
-    public void deletePlatform(TreasureChestPlatformImpl platform) {
+    public void deletePlatform(TreasureChestPlatform platform) {
         platform.destroy();
 
         platformsConfig.set("platforms." + platform.getId(), null);
@@ -187,11 +187,11 @@ public class TreasureChestManagerImpl implements TreasureChestManager {
 
     @Override
     @Nullable
-    public TreasureChestPlatformImpl getPlatform(Location location) {
+    public TreasureChestPlatform getPlatform(Location location) {
         if (location == null) {
             return null;
         }
-        for (TreasureChestPlatformImpl platform : platforms) {
+        for (TreasureChestPlatform platform : platforms) {
             if (location.equals(platform.getCenter().getBlock().getLocation())) {
                 return platform;
             }
@@ -201,8 +201,8 @@ public class TreasureChestManagerImpl implements TreasureChestManager {
 
     @Override
     @Nullable
-    public TreasureChestPlatformImpl getPlatform(int id) {
-        for (TreasureChestPlatformImpl platform : platforms) {
+    public TreasureChestPlatform getPlatform(int id) {
+        for (TreasureChestPlatform platform : platforms) {
             if (id == platform.getId()) {
                 return platform;
             }
@@ -244,7 +244,8 @@ public class TreasureChestManagerImpl implements TreasureChestManager {
         return lootBroadcaster;
     }
 
-    public List<TreasureChestPlatformImpl> getPlatforms() {
+    @Override
+    public List<TreasureChestPlatform> getPlatforms() {
         return platforms;
     }
 

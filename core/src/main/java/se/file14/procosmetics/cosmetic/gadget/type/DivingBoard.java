@@ -26,8 +26,9 @@ import se.file14.procosmetics.api.cosmetic.CosmeticContext;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetBehavior;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetType;
 import se.file14.procosmetics.api.user.User;
+import se.file14.procosmetics.api.util.structure.type.BlockStructure;
 import se.file14.procosmetics.util.MathUtil;
-import se.file14.procosmetics.util.structure.type.BlockStructure;
+import se.file14.procosmetics.util.structure.type.BlockStructureImpl;
 
 import javax.annotation.Nullable;
 
@@ -41,7 +42,7 @@ public class DivingBoard implements GadgetBehavior {
     @Override
     public void onEquip(CosmeticContext<GadgetType> context) {
         if (structure == null) {
-            structure = new BlockStructure(context.getType().getStructure());
+            structure = new BlockStructureImpl(context.getType().getStructure());
         }
     }
 

@@ -29,12 +29,13 @@ import se.file14.procosmetics.api.cosmetic.CosmeticContext;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetBehavior;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetType;
 import se.file14.procosmetics.api.nms.NMSEntity;
+import se.file14.procosmetics.api.util.structure.type.BlockDisplayStructure;
 import se.file14.procosmetics.nms.EntityTrackerImpl;
 import se.file14.procosmetics.util.FastMathUtil;
 import se.file14.procosmetics.util.LocationUtil;
 import se.file14.procosmetics.util.MathUtil;
 import se.file14.procosmetics.util.MetadataUtil;
-import se.file14.procosmetics.util.structure.type.BlockDisplayStructure;
+import se.file14.procosmetics.util.structure.type.BlockDisplayStructureImpl;
 
 import javax.annotation.Nullable;
 
@@ -57,7 +58,7 @@ public class Swing implements GadgetBehavior {
     @Override
     public void onEquip(CosmeticContext<GadgetType> context) {
         if (structure == null) {
-            structure = new BlockDisplayStructure(context.getType().getStructure());
+            structure = new BlockDisplayStructureImpl(context.getType().getStructure());
         }
     }
 

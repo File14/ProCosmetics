@@ -19,37 +19,31 @@ package se.file14.procosmetics.util.structure.type;
 
 import org.bukkit.Location;
 import org.bukkit.block.data.BlockData;
-import org.bukkit.entity.BlockDisplay;
-import org.bukkit.entity.EntityType;
+import org.bukkit.entity.FallingBlock;
 import org.bukkit.util.Vector;
-import org.joml.Matrix4f;
 import se.file14.procosmetics.ProCosmeticsPlugin;
 import se.file14.procosmetics.api.nms.EntityTracker;
 import se.file14.procosmetics.api.nms.NMSEntity;
 import se.file14.procosmetics.api.util.structure.StructureData;
+import se.file14.procosmetics.api.util.structure.type.FallingBlockStructure;
 import se.file14.procosmetics.nms.EntityTrackerImpl;
 import se.file14.procosmetics.util.MathUtil;
-import se.file14.procosmetics.util.structure.Structure;
+import se.file14.procosmetics.util.structure.StructureImpl;
 
 import java.util.Map;
 
-public class BlockDisplayStructure extends Structure<NMSEntity> {
+public class FallingBlockStructureImpl extends StructureImpl<NMSEntity> implements FallingBlockStructure {
 
     private static final ProCosmeticsPlugin PLUGIN = ProCosmeticsPlugin.getPlugin();
     private final EntityTracker tracker = new EntityTrackerImpl();
 
-    public BlockDisplayStructure(StructureData data) {
+    public FallingBlockStructureImpl(StructureData data) {
         super(data, block -> block.isPassable() && !block.isLiquid());
     }
 
     @Override
     public double spawn(Location location) {
         double angle = calculateAngle(location);
-        Matrix4f transformationMatrix = new Matrix4f();
-        transformationMatrix.identity()
-                //.scale(scale)
-                //.rotateY(radians)
-                .translate(-0.5f, -0.5f, -0.5f);
 
         for (Map.Entry<Vector, BlockData> entry : data.getPlacement().entrySet()) {
             Vector vector = MathUtil.rotateAroundAxisY(entry.getKey().clone(), angle);
@@ -57,11 +51,9 @@ public class BlockDisplayStructure extends Structure<NMSEntity> {
 
             rotate(blockData, location.getYaw());
 
-            NMSEntity nmsFallingBlock = PLUGIN.getNMSManager().createEntity(location.getWorld(), EntityType.BLOCK_DISPLAY, tracker);
-            if (nmsFallingBlock.getBukkitEntity() instanceof BlockDisplay blockDisplay) {
-                blockDisplay.setBlock(blockData);
-                blockDisplay.setTeleportDuration(1);
-                blockDisplay.setTransformationMatrix(transformationMatrix);
+            NMSEntity nmsFallingBlock = PLUGIN.getNMSManager().createFallingBlock(location.getWorld(), blockData, tracker);
+            if (nmsFallingBlock.getBukkitEntity() instanceof FallingBlock fallingBlock) {
+                fallingBlock.setGravity(false);
             }
             location.add(vector);
             nmsFallingBlock.setPositionRotation(location);
