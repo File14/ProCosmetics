@@ -96,7 +96,6 @@ public class ProCosmeticsPlugin extends JavaPlugin implements ProCosmetics {
     private RedisManager redisManager;
     private Database database;
     private WorldGuardManager worldGuardManager;
-    private boolean disabling;
 
     @Override
     public void onLoad() {
@@ -104,7 +103,6 @@ public class ProCosmeticsPlugin extends JavaPlugin implements ProCosmetics {
         logger = getLogger();
         syncExecutor = runnable -> getServer().getScheduler().runTask(this, runnable);
         ayncExecutor = runnable -> getServer().getScheduler().runTaskAsynchronously(this, runnable);
-        disabling = false;
 
         if (!VersionUtil.isSupported()) {
             LogUtil.printUnsupported();
@@ -186,8 +184,6 @@ public class ProCosmeticsPlugin extends JavaPlugin implements ProCosmetics {
             LogUtil.printUnsupported();
             return;
         }
-        disabling = true;
-
         if (redisManager != null) {
             redisManager.shutdown();
         }
@@ -419,9 +415,5 @@ public class ProCosmeticsPlugin extends JavaPlugin implements ProCosmetics {
 
     public WorldGuardManager getWorldGuardManager() {
         return worldGuardManager;
-    }
-
-    public boolean isDisabling() {
-        return disabling;
     }
 }
