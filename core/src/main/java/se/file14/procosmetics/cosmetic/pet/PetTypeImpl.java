@@ -31,7 +31,8 @@ import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.cosmetic.CosmeticTypeImpl;
 import se.file14.procosmetics.util.item.ItemBuilderImpl;
 
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
+
 import java.util.List;
 import java.util.function.Supplier;
 

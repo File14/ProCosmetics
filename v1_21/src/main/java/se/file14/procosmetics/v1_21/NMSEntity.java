@@ -54,7 +54,8 @@ import se.file14.procosmetics.api.nms.EntityTracker;
 import se.file14.procosmetics.nms.NMSEntityImpl;
 import se.file14.procosmetics.nms.entitytype.CachedEntityType;
 
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;

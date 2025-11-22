@@ -22,7 +22,8 @@ import se.file14.procosmetics.ProCosmeticsPlugin;
 import se.file14.procosmetics.util.ReflectionUtil;
 import se.file14.procosmetics.util.mapping.MappingRegistry;
 
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
+
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Optional;

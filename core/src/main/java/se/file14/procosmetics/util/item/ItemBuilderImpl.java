@@ -40,7 +40,8 @@ import se.file14.procosmetics.util.LogUtil;
 import se.file14.procosmetics.util.mapping.Mapping;
 import se.file14.procosmetics.util.mapping.MappingType;
 
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
+
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.util.*;

@@ -44,7 +44,8 @@ import se.file14.procosmetics.util.structure.NamedStructureData;
 import se.file14.procosmetics.util.structure.StructureDataImpl;
 import se.file14.procosmetics.util.structure.StructureReader;
 
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
+
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;

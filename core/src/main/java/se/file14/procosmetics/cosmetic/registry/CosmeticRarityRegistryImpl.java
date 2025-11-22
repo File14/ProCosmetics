@@ -29,7 +29,8 @@ import se.file14.procosmetics.api.cosmetic.registry.CosmeticRarityRegistry;
 import se.file14.procosmetics.cosmetic.CosmeticRarityImpl;
 import se.file14.procosmetics.util.EnumUtil;
 
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
+
 import java.util.*;
 
 public class CosmeticRarityRegistryImpl implements CosmeticRarityRegistry {

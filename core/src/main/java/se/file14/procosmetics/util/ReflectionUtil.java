@@ -24,7 +24,9 @@ import se.file14.procosmetics.util.mapping.MappingType;
 import se.file14.procosmetics.util.version.VersionUtil;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+
+import org.jetbrains.annotations.Nullable;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;

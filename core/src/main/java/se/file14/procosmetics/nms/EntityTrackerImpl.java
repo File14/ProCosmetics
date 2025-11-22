@@ -25,7 +25,8 @@ import se.file14.procosmetics.api.nms.EntityTracker;
 import se.file14.procosmetics.api.nms.NMSEntity;
 import se.file14.procosmetics.util.AbstractRunnable;
 
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
+
 import java.util.*;
 import java.util.function.BiPredicate;
 import java.util.function.Predicate;
