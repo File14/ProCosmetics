@@ -60,18 +60,18 @@ public interface CosmeticRarity extends Comparable<CosmeticRarity> {
     int getPriority();
 
     /**
-     * Gets the primary color code for this rarity.
+     * Returns the primary color tag resolver for this rarity.
      *
-     * @return the primary color code
+     * @return the primary color tag resolver
      */
-    String getPrimaryColor();
+    TagResolver getPrimaryColor();
 
     /**
-     * Gets the secondary color code for this rarity.
+     * Returns the secondary color tag resolver for this rarity.
      *
-     * @return the secondary color code
+     * @return the secondary color tag resolver
      */
-    String getSecondaryColor();
+    TagResolver getSecondaryColor();
 
     /**
      * Gets the number of detonations for the firework effect associated with this rarity.

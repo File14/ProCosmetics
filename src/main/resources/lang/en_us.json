@@ -185,21 +185,21 @@
   "treasure_chest.loot.coin_bag.large_coin_bag": "Large Coin Bag",
 
   "treasure_chest.loot.coins.broadcast": "<yellow><player></yellow> <gray>found <yellow><amount> <currency></yellow>!</gray>",
-  "treasure_chest.loot.ammo.broadcast": "<yellow><player></yellow> <gray>found <rarity_primary_color><rarity><amount> <loot>!</gray>",
-  "treasure_chest.loot.arrow_effects.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot> <dark_gray>(<rarity_secondary_color><category><dark_gray>)</dark_gray>!</gray>",
-  "treasure_chest.loot.balloons.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot> <dark_gray>(<rarity_secondary_color><category><dark_gray>)</dark_gray>!</gray>",
-  "treasure_chest.loot.banners.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot> <dark_gray>(<rarity_secondary_color><category><dark_gray>)</dark_gray>!</gray>",
-  "treasure_chest.loot.death_effects.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot> <dark_gray>(<rarity_secondary_color><category><dark_gray>)</dark_gray>!</gray>",
-  "treasure_chest.loot.emotes.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot> <dark_gray>(<rarity_secondary_color><category><dark_gray>)</dark_gray>!</gray>",
-  "treasure_chest.loot.gadgets.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot> <dark_gray>(<rarity_secondary_color><category><dark_gray>)</dark_gray>!</gray>",
-  "treasure_chest.loot.miniatures.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot> <dark_gray>(<rarity_secondary_color><category><dark_gray>)</dark_gray>!</gray>",
-  "treasure_chest.loot.morphs.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot> <dark_gray>(<rarity_secondary_color><category><dark_gray>)</dark_gray>!</gray>",
-  "treasure_chest.loot.mounts.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot> <dark_gray>(<rarity_secondary_color><category><dark_gray>)</dark_gray>!</gray>",
-  "treasure_chest.loot.music.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot> <dark_gray>(<rarity_secondary_color><category><dark_gray>)</dark_gray>!</gray>",
-  "treasure_chest.loot.particle_effects.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot> <dark_gray>(<rarity_secondary_color><category><dark_gray>)</dark_gray>!</gray>",
-  "treasure_chest.loot.pets.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot> <dark_gray>(<rarity_secondary_color><category><dark_gray>)</dark_gray>!</gray>",
-  "treasure_chest.loot.statuses.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot> <dark_gray>(<rarity_secondary_color><category><dark_gray>)</dark_gray>!</gray>",
-  "treasure_chest.loot.custom.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity><loot> <dark_gray>(<rarity_secondary_color><category><dark_gray>)</dark_gray>!</gray>",
+  "treasure_chest.loot.ammo.broadcast": "<yellow><player></yellow> <gray>found <rarity_primary_color><rarity><amount> <loot></rarity_primary_color>!</gray>",
+  "treasure_chest.loot.arrow_effects.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot></rarity_primary_color> (<rarity_secondary_color><category></rarity_secondary_color>)!</gray>",
+  "treasure_chest.loot.balloons.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot></rarity_primary_color> (<rarity_secondary_color><category></rarity_secondary_color>)!</gray>",
+  "treasure_chest.loot.banners.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot></rarity_primary_color> (<rarity_secondary_color><category></rarity_secondary_color>)!</gray>",
+  "treasure_chest.loot.death_effects.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot></rarity_primary_color> (<rarity_secondary_color><category></rarity_secondary_color>)!</gray>",
+  "treasure_chest.loot.emotes.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot></rarity_primary_color> (<rarity_secondary_color><category></rarity_secondary_color>)!</gray>",
+  "treasure_chest.loot.gadgets.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot></rarity_primary_color> (<rarity_secondary_color><category></rarity_secondary_color>)!</gray>",
+  "treasure_chest.loot.miniatures.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot></rarity_primary_color> (<rarity_secondary_color><category></rarity_secondary_color>)!</gray>",
+  "treasure_chest.loot.morphs.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot></rarity_primary_color> (<rarity_secondary_color><category></rarity_secondary_color>)!</gray>",
+  "treasure_chest.loot.mounts.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot></rarity_primary_color> (<rarity_secondary_color><category></rarity_secondary_color>)!</gray>",
+  "treasure_chest.loot.music.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot></rarity_primary_color> (<rarity_secondary_color><category></rarity_secondary_color>)!</gray>",
+  "treasure_chest.loot.particle_effects.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot></rarity_primary_color> (<rarity_secondary_color><category></rarity_secondary_color>)!</gray>",
+  "treasure_chest.loot.pets.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot></rarity_primary_color> (<rarity_secondary_color><category></rarity_secondary_color>)!</gray>",
+  "treasure_chest.loot.statuses.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot></rarity_primary_color> (<rarity_secondary_color><category></rarity_secondary_color>)!</gray>",
+  "treasure_chest.loot.custom.broadcast": "<yellow><player></yellow> <gray>found a <rarity_primary_color><rarity> <loot></rarity_primary_color> (<rarity_secondary_color><category></rarity_secondary_color>)!</gray>",
 
   "treasure_chest.platform.hologram": [
     "<yellow>More treasure chests available on our store!</yellow>",
@@ -207,8 +207,8 @@
     "<green>Open treasure chest</green>"
   ],
   "treasure_chest.open.hologram": [
-    "<rarity_secondary_color><category>",
-    "<rarity_primary_color><loot>"
+    "<rarity_secondary_color><rarity> <category></rarity_secondary_color>",
+    "<rarity_primary_color><loot></rarity_primary_color>"
   ],
 
   "treasure_chest.common": "Common Chest",
@@ -230,7 +230,7 @@
     "",
     "<gray>Rarity Chances:</gray>"
   ],
-  "menu.treasure_chest.loot_categories.information.desc.entry": "<rarity_primary_color><rarity><gray>:</gray> <yellow><chance>%</yellow>",
+  "menu.treasure_chest.loot_categories.information.desc.entry": "<rarity_primary_color><rarity></rarity_primary_color><gray>:</gray> <yellow><chance>%</yellow>",
   "menu.treasure_chest.loot_categories.next_page.name": "<green>Next Page</green>",
   "menu.treasure_chest.loot_categories.next_page.desc": [
     "<gray>Page <page>/<pages></gray>"
@@ -248,7 +248,7 @@
   "menu.treasure_chest.loot_entries.entry.name": "<green><name></green>",
   "menu.treasure_chest.loot_entries.entry.desc": [
     "<gray>Chance:</gray> <yellow><chance>%</yellow>",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>"
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>"
   ],
   "menu.treasure_chest.loot_entries.next_page.name": "<green>Next Page</green>",
   "menu.treasure_chest.loot_entries.next_page.desc": [
@@ -573,7 +573,7 @@
   "menu.arrow_effects.purchasable.name": "<red><name></red>",
   "menu.arrow_effects.purchasable.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "<gray>Cost:</gray> <yellow><cost> <currency></yellow>",
     "",
     "<green>Click to purchase!</green>"
@@ -581,28 +581,28 @@
   "menu.arrow_effects.purchase_disabled.name": "<red><name></red>",
   "menu.arrow_effects.purchase_disabled.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<red>Cannot be purchased!</red>"
   ],
   "menu.arrow_effects.purchase_no_permission.name": "<red><name></red>",
   "menu.arrow_effects.purchase_no_permission.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<red>No permission to purchase!</red>"
   ],
   "menu.arrow_effects.unequipped.name": "<green><name></green>",
   "menu.arrow_effects.unequipped.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<yellow>Click to equip!</yellow>"
   ],
   "menu.arrow_effects.equipped.name": "<green><name></green>",
   "menu.arrow_effects.equipped.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<yellow>Click to equip!</yellow>"
   ],
@@ -766,7 +766,7 @@
   "menu.balloons.purchasable.name": "<red><name></red>",
   "menu.balloons.purchasable.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "<gray>Cost:</gray> <yellow><cost> <currency></yellow>",
     "",
     "<green>Click to purchase!</green>"
@@ -774,30 +774,28 @@
   "menu.balloons.purchase_disabled.name": "<red><name></red>",
   "menu.balloons.purchase_disabled.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
-    "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<red>Cannot be purchased!</red>"
   ],
   "menu.balloons.purchase_no_permission.name": "<red><name></red>",
   "menu.balloons.purchase_no_permission.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<red>No permission to purchase!</red>"
   ],
   "menu.balloons.unequipped.name": "<green><name></green>",
   "menu.balloons.unequipped.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<yellow>Click to equip!</yellow>"
   ],
   "menu.balloons.equipped.name": "<green><name></green>",
   "menu.balloons.equipped.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<yellow>Click to equip!</yellow>"
   ],
@@ -1078,7 +1076,7 @@
   "menu.banners.purchasable.name": "<red><name></red>",
   "menu.banners.purchasable.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "<gray>Cost:</gray> <yellow><cost> <currency></yellow>",
     "",
     "<green>Click to purchase!</green>"
@@ -1086,28 +1084,28 @@
   "menu.banners.purchase_disabled.name": "<red><name></red>",
   "menu.banners.purchase_disabled.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<red>Cannot be purchased!</red>"
   ],
   "menu.banners.purchase_no_permission.name": "<red><name></red>",
   "menu.banners.purchase_no_permission.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<red>No permission to purchase!</red>"
   ],
   "menu.banners.unequipped.name": "<green><name></green>",
   "menu.banners.unequipped.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<yellow>Click to equip!</yellow>"
   ],
   "menu.banners.equipped.name": "<green><name></green>",
   "menu.banners.equipped.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<yellow>Click to equip!</yellow>"
   ],
@@ -1385,7 +1383,7 @@
   "menu.death_effects.purchasable.name": "<red><name></red>",
   "menu.death_effects.purchasable.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "<gray>Cost:</gray> <yellow><cost> <currency></yellow>",
     "",
     "<green>Click to purchase!</green>"
@@ -1393,28 +1391,28 @@
   "menu.death_effects.purchase_disabled.name": "<red><name></red>",
   "menu.death_effects.purchase_disabled.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<red>Cannot be purchased!</red>"
   ],
   "menu.death_effects.purchase_no_permission.name": "<red><name></red>",
   "menu.death_effects.purchase_no_permission.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<red>No permission to purchase!</red>"
   ],
   "menu.death_effects.unequipped.name": "<green><name></green>",
   "menu.death_effects.unequipped.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<yellow>Click to equip!</yellow>"
   ],
   "menu.death_effects.equipped.name": "<green><name></green>",
   "menu.death_effects.equipped.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<yellow>Click to equip!</yellow>"
   ],
@@ -1534,7 +1532,7 @@
   "menu.emotes.purchasable.name": "<red><name></red>",
   "menu.emotes.purchasable.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "<gray>Cost:</gray> <yellow><cost> <currency></yellow>",
     "",
     "<green>Click to purchase!</green>"
@@ -1542,28 +1540,28 @@
   "menu.emotes.purchase_disabled.name": "<red><name></red>",
   "menu.emotes.purchase_disabled.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<red>Cannot be purchased!</red>"
   ],
   "menu.emotes.purchase_no_permission.name": "<red><name></red>",
   "menu.emotes.purchase_no_permission.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<red>No permission to purchase!</red>"
   ],
   "menu.emotes.unequipped.name": "<green><name></green>",
   "menu.emotes.unequipped.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<yellow>Click to equip!</yellow>"
   ],
   "menu.emotes.equipped.name": "<green><name></green>",
   "menu.emotes.equipped.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<yellow>Click to equip!</yellow>"
   ],
@@ -1686,7 +1684,7 @@
   "menu.gadgets.purchasable.desc": [
     "",
     "<gray>Ammo: <green><ammo></green></gray>",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "<gray>Cost:</gray> <yellow><cost> <currency></yellow>",
     "",
     "<green>Click to purchase!</green>"
@@ -1694,7 +1692,7 @@
   "menu.gadgets.purchase_disabled.name": "<red><name></red>",
   "menu.gadgets.purchase_disabled.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<red>Cannot be purchased!</red>"
   ],
@@ -1702,7 +1700,7 @@
   "menu.gadgets.purchase_no_permission.desc": [
     "",
     "<gray>Ammo: <green><ammo></green></gray>",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<red>No permission to purchase!</red>"
   ],
@@ -1710,7 +1708,7 @@
   "menu.gadgets.unequipped.desc": [
     "",
     "<gray>Ammo: <green><ammo></green></gray>",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<yellow>Click to equip!</yellow>"
   ],
@@ -1718,7 +1716,7 @@
   "menu.gadgets.equipped.desc": [
     "",
     "<gray>Ammo: <green><ammo></green></gray>",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<yellow>Click to equip!</yellow>"
   ],
@@ -1950,7 +1948,7 @@
   "menu.miniatures.purchasable.name": "<red><name></red>",
   "menu.miniatures.purchasable.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "<gray>Cost:</gray> <yellow><cost> <currency></yellow>",
     "",
     "<green>Click to purchase!</green>"
@@ -1958,28 +1956,28 @@
   "menu.miniatures.purchase_disabled.name": "<red><name></red>",
   "menu.miniatures.purchase_disabled.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<red>Cannot be purchased!</red>"
   ],
   "menu.miniatures.purchase_no_permission.name": "<red><name></red>",
   "menu.miniatures.purchase_no_permission.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<red>No permission to purchase!</red>"
   ],
   "menu.miniatures.unequipped.name": "<green><name></green>",
   "menu.miniatures.unequipped.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<yellow>Click to equip!</yellow>"
   ],
   "menu.miniatures.equipped.name": "<green><name></green>",
   "menu.miniatures.equipped.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<yellow>Click to equip!</yellow>"
   ],
@@ -2213,7 +2211,7 @@
   "menu.morphs.purchasable.name": "<red><name></red>",
   "menu.morphs.purchasable.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "<gray>Cost:</gray> <yellow><cost> <currency></yellow>",
     "",
     "<green>Click to purchase!</green>"
@@ -2221,28 +2219,28 @@
   "menu.morphs.purchase_disabled.name": "<red><name></red>",
   "menu.morphs.purchase_disabled.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<red>Cannot be purchased!</red>"
   ],
   "menu.morphs.purchase_no_permission.name": "<red><name></red>",
   "menu.morphs.purchase_no_permission.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<red>No permission to purchase!</red>"
   ],
   "menu.morphs.unequipped.name": "<green><name></green>",
   "menu.morphs.unequipped.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<yellow>Click to equip!</yellow>"
   ],
   "menu.morphs.equipped.name": "<green><name></green>",
   "menu.morphs.equipped.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<yellow>Click to equip!</yellow>"
   ],
@@ -2489,7 +2487,7 @@
   "menu.mounts.purchasable.name": "<red><name></red>",
   "menu.mounts.purchasable.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "<gray>Cost:</gray> <yellow><cost> <currency></yellow>",
     "",
     "<green>Click to purchase!</green>"
@@ -2497,28 +2495,28 @@
   "menu.mounts.purchase_disabled.name": "<red><name></red>",
   "menu.mounts.purchase_disabled.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<red>Cannot be purchased!</red>"
   ],
   "menu.mounts.purchase_no_permission.name": "<red><name></red>",
   "menu.mounts.purchase_no_permission.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<red>No permission to purchase!</red>"
   ],
   "menu.mounts.unequipped.name": "<green><name></green>",
   "menu.mounts.unequipped.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<yellow>Click to equip!</yellow>"
   ],
   "menu.mounts.equipped.name": "<green><name></green>",
   "menu.mounts.equipped.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<yellow>Click to equip!</yellow>"
   ],
@@ -2648,7 +2646,7 @@
   "menu.music.purchasable.name": "<red><name></red>",
   "menu.music.purchasable.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "<gray>Cost:</gray> <yellow><cost> <currency></yellow>",
     "",
     "<green>Click to purchase!</green>"
@@ -2656,28 +2654,28 @@
   "menu.music.purchase_disabled.name": "<red><name></red>",
   "menu.music.purchase_disabled.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<red>Cannot be purchased!</red>"
   ],
   "menu.music.purchase_no_permission.name": "<red><name></red>",
   "menu.music.purchase_no_permission.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<red>No permission to purchase!</red>"
   ],
   "menu.music.unequipped.name": "<green><name></green>",
   "menu.music.unequipped.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<yellow>Click to equip!</yellow>"
   ],
   "menu.music.equipped.name": "<green><name></green>",
   "menu.music.equipped.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<yellow>Click to equip!</yellow>"
   ],
@@ -2761,7 +2759,7 @@
   "menu.particle_effects.purchasable.name": "<red><name></red>",
   "menu.particle_effects.purchasable.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "<gray>Cost:</gray> <yellow><cost> <currency></yellow>",
     "",
     "<green>Click to purchase!</green>"
@@ -2769,14 +2767,14 @@
   "menu.particle_effects.purchase_disabled.name": "<red><name></red>",
   "menu.particle_effects.purchase_disabled.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<red>Cannot be purchased!</red>"
   ],
   "menu.particle_effects.purchase_no_permission.name": "<red><name></red>",
   "menu.particle_effects.purchase_no_permission.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<red>No permission to purchase!</red>"
   ],
@@ -2784,14 +2782,14 @@
   "menu.particle_effects.unequipped.name": "<green><name></green>",
   "menu.particle_effects.unequipped.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<yellow>Click to equip!</yellow>"
   ],
   "menu.particle_effects.equipped.name": "<green><name></green>",
   "menu.particle_effects.equipped.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<yellow>Click to equip!</yellow>"
   ],
@@ -3047,7 +3045,7 @@
   "menu.pets.purchasable.name": "<red><name></red>",
   "menu.pets.purchasable.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "<gray>Cost:</gray> <yellow><cost> <currency></yellow>",
     "",
     "<green>Click to purchase!</green>"
@@ -3055,28 +3053,28 @@
   "menu.pets.purchase_disabled.name": "<red><name></red>",
   "menu.pets.purchase_disabled.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<red>Cannot be purchased!</red>"
   ],
   "menu.pets.purchase_no_permission.name": "<red><name></red>",
   "menu.pets.purchase_no_permission.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<red>No permission to purchase!</red>"
   ],
   "menu.pets.unequipped.name": "<green><name></green>",
   "menu.pets.unequipped.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<yellow>Click to equip!</yellow>"
   ],
   "menu.pets.equipped.name": "<green><name></green>",
   "menu.pets.equipped.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<yellow>Click to equip!</yellow>"
   ],
@@ -3294,7 +3292,7 @@
   "menu.statuses.purchasable.name": "<red><name></red>",
   "menu.statuses.purchasable.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "<gray>Cost:</gray> <yellow><cost> <currency></yellow>",
     "",
     "<green>Click to purchase!</green>"
@@ -3302,28 +3300,28 @@
   "menu.statuses.purchase_disabled.name": "<red><name></red>",
   "menu.statuses.purchase_disabled.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<red>Cannot be purchased!</red>"
   ],
   "menu.statuses.purchase_no_permission.name": "<red><name></red>",
   "menu.statuses.purchase_no_permission.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<red>No permission to purchase!</red>"
   ],
   "menu.statuses.unequipped.name": "<green><name></green>",
   "menu.statuses.unequipped.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<yellow>Click to equip!</yellow>"
   ],
   "menu.statuses.equipped.name": "<green><name></green>",
   "menu.statuses.equipped.desc": [
     "",
-    "<gray>Rarity:</gray> <rarity_primary_color><rarity>",
+    "<gray>Rarity:</gray> <rarity_primary_color><rarity></rarity_primary_color>",
     "",
     "<yellow>Click to equip!</yellow>"
   ],

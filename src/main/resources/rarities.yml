@@ -10,87 +10,85 @@
 # If you rename a default rarity (e.g., "common"), remember to update all references to it in the cosmetics config files.
 # Use the replace-all function to simplify this process.
 #
-# Useful links:
 # FIREWORK TYPES: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/FireworkEffect.Type.html
-# FIREWORK COLORS: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Color.html
 
 rarities:
   common:
     priority: 1
     colors:
-      primary: "<color:#999999>"     # Light gray
-      secondary: "<color:#555555>"   # Dark gray
+      primary: "#999999"     # Light gray
+      secondary: "#555555"   # Dark gray
     firework:
       detonations: 0
       tick_interval: 3
       type: BURST
-      color: 0x999999
-      fade: 0x555555
+      color: 999999
+      fade: 555555
       flicker: false
       trail: false
   uncommon:
     priority: 10
     colors:
-      primary: "<color:#00aa00>"     # Bright green
-      secondary: "<color:#55ff55>"   # Darker green
+      primary: "#33ff33"     # Bright green
+      secondary: "#00b300"   # Darker green
     firework:
       detonations: 1
       tick_interval: 3
       type: BURST
-      color: 0x00aa00
-      fade: 0x55ff55
+      color: "#33ff33"
+      fade: "#00b300"
       flicker: false
       trail: false
   rare:
     priority: 20
     colors:
-      primary: "<color:#00ccff>"     # Bright blue
-      secondary: "<color:#66e0ff>"   # Dark blue
+      primary: "#1ad1ff"     # Bright blue
+      secondary: "#008fb3"   # Darker blue
     firework:
       detonations: 4
       tick_interval: 3
       type: BURST
-      color: 0x00ccff
-      fade: 0x66e0ff
+      color: "#1ad1ff"
+      fade: "#008fb3"
       flicker: false
       trail: false
   epic:
     priority: 30
     colors:
-      primary: "<color:#ff99ff>"     # Bright purple
-      secondary: "<color:#ffb3ff>"   # Dark purple
+      primary: "#ff80ff"     # Bright purple
+      secondary: "#cc00cc"   # Darker purple
     firework:
-      detonations: 5
-      tick_interval: 5
-      type: BALL_LARGE
-      color: ff99ff
-      fade: ffb3ff
+      detonations: 6
+      tick_interval: 3
+      type: BALL
+      color: "#ff80ff"
+      fade: "#cc00cc"
       flicker: false
       trail: true
   legendary:
     priority: 40
     colors:
-      primary: "<color:#b36b00>"     # Gold / orange
-      secondary: "<color:#cc8800>"   # Stronger orange
+      primary: "#e6b800"     # Gold / orange
+      secondary: "#ff9900"   # Darker orange
     firework:
-      detonations: 10
+      detonations: 5
       tick_interval: 10
       type: BALL_LARGE
-      color: 0xb36b00
-      fade: 0xcc8800
+      color: "#e6b800"
+      fade: "#ff9900"
       flicker: false
       trail: true
   limited:
     priority: 50
     colors:
-      primary: "<color:#aa00aa>"     # Purple
-      secondary: "<color:#ff66ff>"   # Deep purple
+      primary: "#e600e6"     # Purple
+      secondary: "#b300b3"   # Darker purple
     firework:
       detonations: 10
       tick_interval: 10
       type: BALL_LARGE
-      color: 0xaa00aa
-      fade: 0xff66ff
+      color: "#e600e6"
+      fade: "#b300b3"
       flicker: true
       trail: true
 

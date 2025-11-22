@@ -17,6 +17,9 @@
  */
 package se.file14.procosmetics.cosmetic.registry;
 
+import net.kyori.adventure.text.format.TextColor;
+import net.kyori.adventure.text.minimessage.tag.Tag;
+import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
 import org.bukkit.Color;
 import org.bukkit.FireworkEffect;
 import se.file14.procosmetics.ProCosmeticsPlugin;
@@ -51,8 +54,8 @@ public class CosmeticRarityRegistryImpl implements CosmeticRarityRegistry {
         for (String key : config.getSectionKeys("rarities")) {
             String path = "rarities." + key + ".";
             int priority = config.getInt(path + "priority");
-            String mainColor = config.getString(path + "colors.primary");
-            String secondaryColor = config.getString(path + "colors.secondary");
+            TagResolver primaryColor = TagResolver.resolver("rarity_primary_color", Tag.styling(TextColor.fromHexString(config.getString(path + "colors.primary"))));
+            TagResolver secondaryColor = TagResolver.resolver("rarity_secondary_color", Tag.styling(TextColor.fromHexString(config.getString(path + "colors.secondary"))));
             int detonations = config.getInt(path + "firework.detonations");
             int tickInterval = config.getInt(path + "firework.tick_interval");
 
@@ -67,7 +70,7 @@ public class CosmeticRarityRegistryImpl implements CosmeticRarityRegistry {
             CosmeticRarityImpl rarity = new CosmeticRarityImpl(
                     key.toUpperCase(),
                     priority,
-                    mainColor,
+                    primaryColor,
                     secondaryColor,
                     detonations,
                     tickInterval,
@@ -81,7 +84,7 @@ public class CosmeticRarityRegistryImpl implements CosmeticRarityRegistry {
         }
 
         if (fallbackRarity == null) {
-            fallbackRarity = new CosmeticRarityImpl("default", 0, "", "", 0, 0, null);
+            fallbackRarity = new CosmeticRarityImpl("default", 0, TagResolver.empty(), TagResolver.empty(), 0, 0, null);
         }
     }
 
@@ -116,9 +119,23 @@ public class CosmeticRarityRegistryImpl implements CosmeticRarityRegistry {
     }
 
     private static Color parseColor(String colorString) {
-        if (colorString.startsWith("0x")) {
-            return Color.fromRGB(Integer.parseInt(colorString.substring(2), 16));
+        if (colorString == null || colorString.isEmpty()) {
+            return Color.BLACK;
         }
-        return Color.fromRGB(Integer.parseInt(colorString));
+        colorString = colorString.trim().toLowerCase();
+
+        try {
+            // Hex with prefix: 0xRRGGBB or #RRGGBB
+            if (colorString.startsWith("0x")) {
+                return Color.fromRGB(Integer.parseInt(colorString.substring(2), 16));
+            }
+            if (colorString.startsWith("#")) {
+                return Color.fromRGB(Integer.parseInt(colorString.substring(1), 16));
+            }
+            // Decimal (fallback)
+            return Color.fromRGB(Integer.parseInt(colorString));
+        } catch (Exception e) {
+            return Color.BLACK;
+        }
     }
 }

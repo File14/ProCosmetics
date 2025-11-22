@@ -27,16 +27,16 @@ public class CosmeticRarityImpl implements CosmeticRarity {
 
     private final String key;
     private final int priority;
-    private final String primaryColor;
-    private final String secondaryColor;
+    private final TagResolver primaryColor;
+    private final TagResolver secondaryColor;
     private final int detonations;
     private final int tickInterval;
     private final FireworkEffect fireworkEffect;
 
     public CosmeticRarityImpl(String key,
                               int priority,
-                              String primaryColor,
-                              String secondaryColor,
+                              TagResolver primaryColor,
+                              TagResolver secondaryColor,
                               int detonations,
                               int tickInterval,
                               FireworkEffect fireworkEffect) {
@@ -63,8 +63,8 @@ public class CosmeticRarityImpl implements CosmeticRarity {
     public TagResolver getResolvers(Translator translator) {
         return TagResolver.resolver(
                 Placeholder.unparsed("rarity", getName(translator)),
-                Placeholder.parsed("rarity_primary_color", getPrimaryColor()),
-                Placeholder.parsed("rarity_secondary_color", getSecondaryColor())
+                primaryColor,
+                secondaryColor
         );
     }
 
@@ -74,12 +74,12 @@ public class CosmeticRarityImpl implements CosmeticRarity {
     }
 
     @Override
-    public String getPrimaryColor() {
+    public TagResolver getPrimaryColor() {
         return primaryColor;
     }
 
     @Override
-    public String getSecondaryColor() {
+    public TagResolver getSecondaryColor() {
         return secondaryColor;
     }
 

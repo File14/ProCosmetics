@@ -97,8 +97,6 @@ public class CustomLootImpl extends LootEntryImpl<IntProvider> implements Custom
                                 .replace("<player_name>", player.getName())
                                 .replace("<player_uuid>", player.getUniqueId().toString())
                                 .replace("<rarity>", getRarity().getName(user))
-                                .replace("<rarity_primary_color>", getRarity().getPrimaryColor())
-                                .replace("<rarity_secondary_color>", getRarity().getSecondaryColor())
                 );
             }
 
