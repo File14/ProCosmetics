@@ -77,6 +77,11 @@ public class AmmoLootImpl extends LootEntryImpl<IntProvider> implements AmmoLoot
         }
 
         @Override
+        public String getNameTranslationKey() {
+            return "treasure_chest.loot.ammo";
+        }
+
+        @Override
         public void give(Player player, User user) {
             PLUGIN.getDatabase().addGadgetAmmoAsync(user, entry.getGadgetType(), amount).thenAccept(result -> {
                 if (result.leftBoolean()) {
