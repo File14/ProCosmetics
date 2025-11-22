@@ -18,11 +18,17 @@
 package se.file14.procosmetics.api.treasure.animation;
 
 /**
- * Represents the different types of animations used for treasure chest openings.
+ * Represents a treasure chest opening animation.
  */
-public enum AnimationType {
+public interface TreasureChestAnimation {
 
-    COMMON,
-    RARE,
-    LEGENDARY
+    /**
+     * Called every second (every 20 ticks) during the animation.
+     */
+    void onSecondUpdate();
+
+    /**
+     * Called every tick during the animation.
+     */
+    void onTickUpdate();
 }

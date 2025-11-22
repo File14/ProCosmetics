@@ -25,12 +25,12 @@ import se.file14.procosmetics.api.nms.NMSEntity;
 import se.file14.procosmetics.api.treasure.TreasureChest;
 import se.file14.procosmetics.api.treasure.TreasureChestPlatform;
 import se.file14.procosmetics.api.user.User;
-import se.file14.procosmetics.treasure.animation.TreasureChestAnimation;
+import se.file14.procosmetics.treasure.animation.TreasureChestAnimationImpl;
 import se.file14.procosmetics.util.MathUtil;
 
 import java.util.Iterator;
 
-public class Common extends TreasureChestAnimation {
+public class Common extends TreasureChestAnimationImpl {
 
     private int chests;
 

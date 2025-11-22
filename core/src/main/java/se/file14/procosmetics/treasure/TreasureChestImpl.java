@@ -30,7 +30,7 @@ import se.file14.procosmetics.api.cosmetic.gadget.GadgetType;
 import se.file14.procosmetics.api.cosmetic.registry.CosmeticCategory;
 import se.file14.procosmetics.api.locale.Translator;
 import se.file14.procosmetics.api.treasure.TreasureChest;
-import se.file14.procosmetics.api.treasure.animation.AnimationType;
+import se.file14.procosmetics.api.treasure.animation.TreasureChestAnimationRegistry;
 import se.file14.procosmetics.api.treasure.loot.LootCategory;
 import se.file14.procosmetics.api.treasure.loot.LootEntry;
 import se.file14.procosmetics.api.treasure.loot.LootTable;
@@ -47,7 +47,6 @@ import se.file14.procosmetics.treasure.loot.type.AmmoLootImpl;
 import se.file14.procosmetics.treasure.loot.type.CoinsLootImpl;
 import se.file14.procosmetics.treasure.loot.type.CosmeticLootImpl;
 import se.file14.procosmetics.treasure.loot.type.CustomLootImpl;
-import se.file14.procosmetics.util.EnumUtil;
 import se.file14.procosmetics.util.item.ItemBuilderImpl;
 import se.file14.procosmetics.util.structure.StructureDataImpl;
 import se.file14.procosmetics.util.structure.StructureReader;
@@ -67,7 +66,7 @@ public class TreasureChestImpl implements TreasureChest {
     private final String purchasePermission;
     private final int cost;
     private final int chestsToOpen;
-    private final AnimationType chestAnimationType;
+    private final TreasureChestAnimationRegistry.AnimationFactory animationFactory;
     private final boolean openingBroadcast;
     private final ItemBuilder itemBuilder;
     private final List<StructureData> structures = new ArrayList<>();
@@ -83,7 +82,7 @@ public class TreasureChestImpl implements TreasureChest {
         purchasePermission = "procosmetics.purchase.treasure_chest." + key;
         cost = config.getInt(path + ".purchasable.cost");
         chestsToOpen = config.getInt(path + ".chests_to_open");
-        chestAnimationType = EnumUtil.getType(AnimationType.class, config.getString(path + ".chest_animation"));
+        animationFactory = plugin.getTreasureChestAnimationRegistry().get(config.getString(path + ".chest_animation"));
         openingBroadcast = config.getBoolean(path + ".opening_broadcast");
         itemBuilder = new ItemBuilderImpl(config, path);
 
@@ -262,8 +261,8 @@ public class TreasureChestImpl implements TreasureChest {
     }
 
     @Override
-    public AnimationType getChestAnimationType() {
-        return chestAnimationType;
+    public TreasureChestAnimationRegistry.AnimationFactory getAnimationFactory() {
+        return animationFactory;
     }
 
     @Override

@@ -27,6 +27,7 @@ import se.file14.procosmetics.api.menu.MenuManager;
 import se.file14.procosmetics.api.nms.NMSManager;
 import se.file14.procosmetics.api.storage.Database;
 import se.file14.procosmetics.api.treasure.TreasureChestManager;
+import se.file14.procosmetics.api.treasure.animation.TreasureChestAnimationRegistry;
 import se.file14.procosmetics.api.user.UserManager;
 
 import java.util.concurrent.Executor;
@@ -102,6 +103,13 @@ public interface ProCosmetics {
      * @return The category registries
      */
     CategoryRegistries getCategoryRegistries();
+
+    /**
+     * Gets the animation registry for treasure chests.
+     *
+     * @return The treasure chest animation registry
+     */
+    TreasureChestAnimationRegistry getTreasureChestAnimationRegistry();
 
     /**
      * Gets the treasure chest manager for loot operations.

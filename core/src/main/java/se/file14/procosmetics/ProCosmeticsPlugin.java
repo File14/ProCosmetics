@@ -32,6 +32,7 @@ import se.file14.procosmetics.api.config.Config;
 import se.file14.procosmetics.api.cosmetic.registry.CategoryRegistries;
 import se.file14.procosmetics.api.cosmetic.registry.CosmeticRarityRegistry;
 import se.file14.procosmetics.api.storage.Database;
+import se.file14.procosmetics.api.treasure.animation.TreasureChestAnimationRegistry;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.command.CommandBase;
 import se.file14.procosmetics.command.SimpleCommand;
@@ -53,6 +54,7 @@ import se.file14.procosmetics.redis.RedisManager;
 import se.file14.procosmetics.storage.DatabaseTypeProvider;
 import se.file14.procosmetics.treasure.TreasureChestManagerImpl;
 import se.file14.procosmetics.treasure.TreasureChestPlatformImpl;
+import se.file14.procosmetics.treasure.animation.TreasureChestAnimationRegistryImpl;
 import se.file14.procosmetics.user.UserManagerImpl;
 import se.file14.procosmetics.util.LogUtil;
 import se.file14.procosmetics.util.ResourceExporter;
@@ -83,6 +85,7 @@ public class ProCosmeticsPlugin extends JavaPlugin implements ProCosmetics {
     private CosmeticRarityRegistryImpl cosmeticRarityRegistry;
     private CategoryRegistriesImpl categoryRegistries;
     private UserManagerImpl userManager;
+    private TreasureChestAnimationRegistry treasureChestAnimationRegistry;
     private TreasureChestManagerImpl treasureChestManager;
     private MenuManagerImpl menuManager;
     private PacketManager packetManager;
@@ -117,6 +120,7 @@ public class ProCosmeticsPlugin extends JavaPlugin implements ProCosmetics {
         cosmeticRarityRegistry = new CosmeticRarityRegistryImpl(this);
         categoryRegistries = new CategoryRegistriesImpl(this);
         userManager = new UserManagerImpl(this);
+        treasureChestAnimationRegistry = new TreasureChestAnimationRegistryImpl();
         treasureChestManager = new TreasureChestManagerImpl(this);
         menuManager = new MenuManagerImpl(this);
         packetManager = new PacketManager(this);
@@ -361,6 +365,11 @@ public class ProCosmeticsPlugin extends JavaPlugin implements ProCosmetics {
     @Override
     public CategoryRegistries getCategoryRegistries() {
         return categoryRegistries;
+    }
+
+    @Override
+    public TreasureChestAnimationRegistry getTreasureChestAnimationRegistry() {
+        return treasureChestAnimationRegistry;
     }
 
     @Override

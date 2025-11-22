@@ -25,7 +25,7 @@ import se.file14.procosmetics.api.nms.NMSEntity;
 import se.file14.procosmetics.api.treasure.TreasureChest;
 import se.file14.procosmetics.api.treasure.TreasureChestPlatform;
 import se.file14.procosmetics.api.user.User;
-import se.file14.procosmetics.treasure.animation.TreasureChestAnimation;
+import se.file14.procosmetics.treasure.animation.TreasureChestAnimationImpl;
 import se.file14.procosmetics.util.FastMathUtil;
 import se.file14.procosmetics.util.MathUtil;
 
@@ -33,7 +33,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class Rare extends TreasureChestAnimation {
+public class Rare extends TreasureChestAnimationImpl {
 
     private static final int ANGLE_OFFSET = 110;
     private static final double SPEED = 6.0d;

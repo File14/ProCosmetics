@@ -26,11 +26,11 @@ import se.file14.procosmetics.api.nms.NMSEntity;
 import se.file14.procosmetics.api.treasure.TreasureChest;
 import se.file14.procosmetics.api.treasure.TreasureChestPlatform;
 import se.file14.procosmetics.api.user.User;
-import se.file14.procosmetics.treasure.animation.TreasureChestAnimation;
+import se.file14.procosmetics.treasure.animation.TreasureChestAnimationImpl;
 import se.file14.procosmetics.util.FastMathUtil;
 import se.file14.procosmetics.util.MathUtil;
 
-public class Legendary extends TreasureChestAnimation {
+public class Legendary extends TreasureChestAnimationImpl {
 
     private static final double SPEED = 15.0d;
     private static final float RADIUS_INCREASE_PER_TICK = 0.03f;

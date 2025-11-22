@@ -38,6 +38,7 @@ import se.file14.procosmetics.api.cosmetic.CosmeticRarity;
 import se.file14.procosmetics.api.nms.NMSEntity;
 import se.file14.procosmetics.api.treasure.TreasureChest;
 import se.file14.procosmetics.api.treasure.TreasureChestPlatform;
+import se.file14.procosmetics.api.treasure.animation.TreasureChestAnimation;
 import se.file14.procosmetics.api.treasure.loot.GeneratedLoot;
 import se.file14.procosmetics.api.treasure.loot.LootEntry;
 import se.file14.procosmetics.api.treasure.loot.LootTable;
@@ -54,7 +55,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 
-public abstract class TreasureChestAnimation extends BukkitRunnable implements Listener {
+public abstract class TreasureChestAnimationImpl extends BukkitRunnable implements TreasureChestAnimation, Listener {
 
     private static final LegacyComponentSerializer SERIALIZER = LegacyComponentSerializer.legacySection();
     private static final Title.Times DEFAULT_TIMES = Title.Times.times(Ticks.duration(5), Ticks.duration(50), Ticks.duration(5));
@@ -77,7 +78,7 @@ public abstract class TreasureChestAnimation extends BukkitRunnable implements L
 
     protected Location location;
 
-    public TreasureChestAnimation(ProCosmetics plugin, TreasureChestPlatform platform, TreasureChest treasureChest, User user) {
+    public TreasureChestAnimationImpl(ProCosmetics plugin, TreasureChestPlatform platform, TreasureChest treasureChest, User user) {
         this.plugin = plugin;
         this.platform = (TreasureChestPlatformImpl) platform; // TODO: Remove cast in the future
         this.treasureChest = treasureChest;
@@ -152,10 +153,6 @@ public abstract class TreasureChestAnimation extends BukkitRunnable implements L
         }
         ticks++;
     }
-
-    public abstract void onSecondUpdate();
-
-    public abstract void onTickUpdate();
 
     private void registerOpenedChest(Location location) {
         openedChests.add(location.clone());

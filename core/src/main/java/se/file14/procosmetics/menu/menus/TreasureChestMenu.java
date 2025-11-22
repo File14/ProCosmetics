@@ -29,9 +29,6 @@ import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.api.util.item.ItemBuilder;
 import se.file14.procosmetics.menu.MenuImpl;
 import se.file14.procosmetics.menu.menus.purchase.TreasurePurchaseMenu;
-import se.file14.procosmetics.treasure.animation.type.Common;
-import se.file14.procosmetics.treasure.animation.type.Legendary;
-import se.file14.procosmetics.treasure.animation.type.Rare;
 import se.file14.procosmetics.util.item.ItemBuilderImpl;
 
 public class TreasureChestMenu extends MenuImpl {
@@ -107,21 +104,7 @@ public class TreasureChestMenu extends MenuImpl {
 
                             plugin.getDatabase().removeTreasureChestsAsync(user, treasureChest, 1).thenAcceptAsync(result -> {
                                 if (result.leftBoolean()) {
-                                    // TODO: Rework in the future
-                                    switch (treasureChest.getChestAnimationType()) {
-                                        case COMMON: {
-                                            new Common(plugin, platform, treasureChest, user);
-                                            break;
-                                        }
-                                        case RARE: {
-                                            new Rare(plugin, platform, treasureChest, user);
-                                            break;
-                                        }
-                                        case LEGENDARY: {
-                                            new Legendary(plugin, platform, treasureChest, user);
-                                            break;
-                                        }
-                                    }
+                                    treasureChest.getAnimationFactory().create(plugin, platform, treasureChest, user);
                                 } else {
                                     user.sendMessage(user.translate("generic.error.database"));
                                     platform.setUser(null);

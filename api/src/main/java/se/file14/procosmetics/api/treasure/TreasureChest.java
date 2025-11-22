@@ -21,7 +21,7 @@ import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import se.file14.procosmetics.api.locale.Translator;
-import se.file14.procosmetics.api.treasure.animation.AnimationType;
+import se.file14.procosmetics.api.treasure.animation.TreasureChestAnimationRegistry;
 import se.file14.procosmetics.api.treasure.loot.LootTable;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.api.util.item.ItemBuilder;
@@ -104,11 +104,11 @@ public interface TreasureChest {
     int getChestsToOpen();
 
     /**
-     * Gets the animation type used when opening this chest.
+     * Gets the animation factory used when opening this chest.
      *
-     * @return the {@link AnimationType} defining the opening animation
+     * @return the {@link TreasureChestAnimationRegistry.AnimationFactory} defining the opening animation
      */
-    AnimationType getChestAnimationType();
+    TreasureChestAnimationRegistry.AnimationFactory getAnimationFactory();
 
     /**
      * Checks whether a broadcast message should be sent when a player opens this chest.
