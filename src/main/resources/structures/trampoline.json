@@ -6,7 +6,7 @@
         "y": 2.0,
         "z": -1.0
       },
-      "material": "BLUE_CARPET"
+      "data": "minecraft:blue_carpet"
     },
     {
       "vector": {
@@ -14,7 +14,7 @@
         "y": 2.0,
         "z": 1.0
       },
-      "material": "BLUE_CARPET"
+      "data": "minecraft:blue_carpet"
     },
     {
       "vector": {
@@ -22,7 +22,7 @@
         "y": 2.0,
         "z": -3.0
       },
-      "material": "BLUE_CARPET"
+      "data": "minecraft:blue_carpet"
     },
     {
       "vector": {
@@ -30,7 +30,7 @@
         "y": 2.0,
         "z": 3.0
       },
-      "material": "BLUE_CARPET"
+      "data": "minecraft:blue_carpet"
     },
     {
       "vector": {
@@ -38,7 +38,7 @@
         "y": 2.0,
         "z": -3.0
       },
-      "material": "BLUE_CARPET"
+      "data": "minecraft:blue_carpet"
     },
     {
       "vector": {
@@ -46,7 +46,7 @@
         "y": 2.0,
         "z": 3.0
       },
-      "material": "BLUE_CARPET"
+      "data": "minecraft:blue_carpet"
     },
     {
       "vector": {
@@ -54,7 +54,7 @@
         "y": 2.0,
         "z": -1.0
       },
-      "material": "BLUE_CARPET"
+      "data": "minecraft:blue_carpet"
     },
     {
       "vector": {
@@ -62,7 +62,7 @@
         "y": 2.0,
         "z": 1.0
       },
-      "material": "BLUE_CARPET"
+      "data": "minecraft:blue_carpet"
     },
     {
       "vector": {
@@ -70,7 +70,7 @@
         "y": 1.0,
         "z": -1.0
       },
-      "material": "BLACK_WOOL"
+      "data": "minecraft:black_wool"
     },
     {
       "vector": {
@@ -78,7 +78,7 @@
         "y": 1.0,
         "z": 1.0
       },
-      "material": "BLACK_WOOL"
+      "data": "minecraft:black_wool"
     },
     {
       "vector": {
@@ -86,7 +86,7 @@
         "y": 1.0,
         "z": -1.0
       },
-      "material": "BLACK_WOOL"
+      "data": "minecraft:black_wool"
     },
     {
       "vector": {
@@ -94,66 +94,15 @@
         "y": 1.0,
         "z": 1.0
       },
-      "material": "BLACK_WOOL"
-    },
-    {
-      "vector": {
-        "x": -3.0,
-        "y": 1.0,
-        "z": -1.0
-      },
-      "material": "BLUE_CONCRETE"
-    },
-    {
-      "vector": {
-        "x": -3.0,
-        "y": 0.0,
-        "z": -2.0
-      },
-      "material": "STONE_BRICK_WALL",
-      "water_logged": false
-    },
-    {
-      "vector": {
-        "x": -3.0,
-        "y": 0.0,
-        "z": 2.0
-      },
-      "material": "STONE_BRICK_WALL",
-      "water_logged": false
-    },
-    {
-      "vector": {
-        "x": 3.0,
-        "y": 0.0,
-        "z": -2.0
-      },
-      "material": "STONE_BRICK_WALL",
-      "water_logged": false
-    },
-    {
-      "vector": {
-        "x": 3.0,
-        "y": 1.0,
-        "z": 1.0
-      },
-      "material": "BLUE_CONCRETE"
+      "data": "minecraft:black_wool"
     },
     {
       "vector": {
         "x": 2.0,
-        "y": 2.0,
+        "y": 0.0,
         "z": -3.0
       },
-      "material": "BLUE_CARPET"
-    },
-    {
-      "vector": {
-        "x": 3.0,
-        "y": 2.0,
-        "z": 0.0
-      },
-      "material": "BLUE_CARPET"
+      "data": "minecraft:stone_brick_wall[east=none,north=none,south=none,up=true,west=none]"
     },
     {
       "vector": {
@@ -161,55 +110,15 @@
         "y": 2.0,
         "z": 3.0
       },
-      "material": "BLUE_CARPET"
-    },
-    {
-      "vector": {
-        "x": -1.0,
-        "y": 1.0,
-        "z": -3.0
-      },
-      "material": "BLUE_CONCRETE"
-    },
-    {
-      "vector": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 3.0
-      },
-      "material": "BLUE_CONCRETE"
-    },
-    {
-      "vector": {
-        "x": 3.0,
-        "y": 2.0,
-        "z": -2.0
-      },
-      "material": "BLUE_CARPET"
+      "data": "minecraft:blue_carpet"
     },
     {
       "vector": {
         "x": -3.0,
-        "y": 1.0,
-        "z": 1.0
-      },
-      "material": "BLUE_CONCRETE"
-    },
-    {
-      "vector": {
-        "x": 3.0,
-        "y": 1.0,
-        "z": -1.0
-      },
-      "material": "BLUE_CONCRETE"
-    },
-    {
-      "vector": {
-        "x": -3.0,
-        "y": 2.0,
+        "y": 0.0,
         "z": -2.0
       },
-      "material": "BLUE_CARPET"
+      "data": "minecraft:stone_brick_wall[east=none,north=none,south=none,up=true,west=none]"
     },
     {
       "vector": {
@@ -217,7 +126,23 @@
         "y": 2.0,
         "z": 0.0
       },
-      "material": "BLUE_CARPET"
+      "data": "minecraft:blue_carpet"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "data": "minecraft:blue_concrete"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 1.0,
+        "z": -1.0
+      },
+      "data": "minecraft:blue_concrete"
     },
     {
       "vector": {
@@ -225,8 +150,167 @@
         "y": 0.0,
         "z": 2.0
       },
-      "material": "STONE_BRICK_WALL",
-      "water_logged": false
+      "data": "minecraft:stone_brick_wall[east=none,north=none,south=none,up=true,west=none]"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 2.0,
+        "z": -3.0
+      },
+      "data": "minecraft:blue_carpet"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 2.0,
+        "z": 3.0
+      },
+      "data": "minecraft:blue_carpet"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 1.0,
+        "z": 3.0
+      },
+      "data": "minecraft:blue_concrete"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": -3.0
+      },
+      "data": "minecraft:blue_concrete"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 2.0,
+        "z": -2.0
+      },
+      "data": "minecraft:blue_carpet"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 2.0,
+        "z": 2.0
+      },
+      "data": "minecraft:blue_carpet"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 2.0,
+        "z": 3.0
+      },
+      "data": "minecraft:blue_carpet"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 1.0,
+        "z": -1.0
+      },
+      "data": "minecraft:blue_concrete"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "data": "minecraft:blue_concrete"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 0.0,
+        "z": 3.0
+      },
+      "data": "minecraft:stone_brick_wall[east=none,north=none,south=none,up=true,west=none]"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 0.0,
+        "z": 2.0
+      },
+      "data": "minecraft:stone_brick_wall[east=none,north=none,south=none,up=true,west=none]"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 2.0,
+        "z": -3.0
+      },
+      "data": "minecraft:blue_carpet"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 0.0,
+        "z": -2.0
+      },
+      "data": "minecraft:stone_brick_wall[east=none,north=none,south=none,up=true,west=none]"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 2.0,
+        "z": 0.0
+      },
+      "data": "minecraft:blue_carpet"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 1.0,
+        "z": -3.0
+      },
+      "data": "minecraft:blue_concrete"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 3.0
+      },
+      "data": "minecraft:blue_concrete"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 2.0,
+        "z": -2.0
+      },
+      "data": "minecraft:blue_carpet"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 0.0,
+        "z": -3.0
+      },
+      "data": "minecraft:stone_brick_wall[east=none,north=none,south=none,up=true,west=none]"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 0.0,
+        "z": 3.0
+      },
+      "data": "minecraft:stone_brick_wall[east=none,north=none,south=none,up=true,west=none]"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 2.0,
+        "z": -3.0
+      },
+      "data": "minecraft:blue_carpet"
     },
     {
       "vector": {
@@ -234,99 +318,15 @@
         "y": 2.0,
         "z": 2.0
       },
-      "material": "BLUE_CARPET"
-    },
-    {
-      "vector": {
-        "x": -2.0,
-        "y": 0.0,
-        "z": -3.0
-      },
-      "material": "STONE_BRICK_WALL",
-      "water_logged": false
-    },
-    {
-      "vector": {
-        "x": 0.0,
-        "y": 2.0,
-        "z": -3.0
-      },
-      "material": "BLUE_CARPET"
+      "data": "minecraft:blue_carpet"
     },
     {
       "vector": {
         "x": 2.0,
-        "y": 0.0,
-        "z": 3.0
-      },
-      "material": "STONE_BRICK_WALL",
-      "water_logged": false
-    },
-    {
-      "vector": {
-        "x": -2.0,
-        "y": 0.0,
-        "z": 3.0
-      },
-      "material": "STONE_BRICK_WALL",
-      "water_logged": false
-    },
-    {
-      "vector": {
-        "x": 3.0,
-        "y": 2.0,
-        "z": 2.0
-      },
-      "material": "BLUE_CARPET"
-    },
-    {
-      "vector": {
-        "x": 0.0,
-        "y": 2.0,
-        "z": 3.0
-      },
-      "material": "BLUE_CARPET"
-    },
-    {
-      "vector": {
-        "x": 2.0,
-        "y": 0.0,
-        "z": -3.0
-      },
-      "material": "STONE_BRICK_WALL",
-      "water_logged": false
-    },
-    {
-      "vector": {
-        "x": -2.0,
-        "y": 2.0,
-        "z": -3.0
-      },
-      "material": "BLUE_CARPET"
-    },
-    {
-      "vector": {
-        "x": 2.0,
-        "y": 2.0,
-        "z": 3.0
-      },
-      "material": "BLUE_CARPET"
-    },
-    {
-      "vector": {
-        "x": -1.0,
         "y": 1.0,
-        "z": 3.0
+        "z": 1.0
       },
-      "material": "BLUE_CONCRETE"
-    },
-    {
-      "vector": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": -3.0
-      },
-      "material": "BLUE_CONCRETE"
+      "data": "minecraft:black_wool"
     },
     {
       "vector": {
@@ -334,95 +334,47 @@
         "y": 1.0,
         "z": 0.0
       },
-      "material": "BLACK_WOOL"
-    },
-    {
-      "vector": {
-        "x": -2.0,
-        "y": 1.0,
-        "z": -1.0
-      },
-      "material": "BLACK_WOOL"
-    },
-    {
-      "vector": {
-        "x": -2.0,
-        "y": 1.0,
-        "z": 1.0
-      },
-      "material": "BLACK_WOOL"
-    },
-    {
-      "vector": {
-        "x": -2.0,
-        "y": 2.0,
-        "z": -2.0
-      },
-      "material": "BLUE_CARPET"
-    },
-    {
-      "vector": {
-        "x": 2.0,
-        "y": 2.0,
-        "z": 2.0
-      },
-      "material": "BLUE_CARPET"
-    },
-    {
-      "vector": {
-        "x": 2.0,
-        "y": 1.0,
-        "z": 1.0
-      },
-      "material": "BLACK_WOOL"
-    },
-    {
-      "vector": {
-        "x": -2.0,
-        "y": 2.0,
-        "z": 2.0
-      },
-      "material": "BLUE_CARPET"
-    },
-    {
-      "vector": {
-        "x": 2.0,
-        "y": 2.0,
-        "z": -2.0
-      },
-      "material": "BLUE_CARPET"
+      "data": "minecraft:black_wool"
     },
     {
       "vector": {
         "x": -1.0,
         "y": 1.0,
-        "z": -2.0
+        "z": 2.0
       },
-      "material": "BLACK_WOOL"
-    },
-    {
-      "vector": {
-        "x": 2.0,
-        "y": 1.0,
-        "z": -1.0
-      },
-      "material": "BLACK_WOOL"
+      "data": "minecraft:black_wool"
     },
     {
       "vector": {
         "x": 1.0,
         "y": 1.0,
-        "z": 2.0
+        "z": -2.0
       },
-      "material": "BLACK_WOOL"
+      "data": "minecraft:black_wool"
     },
     {
       "vector": {
-        "x": -1.0,
+        "x": 0.0,
         "y": 1.0,
-        "z": 2.0
+        "z": 1.0
       },
-      "material": "BLACK_WOOL"
+      "data": "minecraft:black_wool"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 1.0,
+        "z": -1.0
+      },
+      "data": "minecraft:black_wool"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 2.0,
+        "z": -2.0
+      },
+      "data": "minecraft:blue_carpet"
     },
     {
       "vector": {
@@ -430,7 +382,7 @@
         "y": 1.0,
         "z": -1.0
       },
-      "material": "BLACK_WOOL"
+      "data": "minecraft:black_wool"
     },
     {
       "vector": {
@@ -438,31 +390,63 @@
         "y": 1.0,
         "z": 0.0
       },
-      "material": "BLACK_WOOL"
+      "data": "minecraft:black_wool"
     },
     {
       "vector": {
-        "x": 0.0,
+        "x": 2.0,
+        "y": 2.0,
+        "z": 2.0
+      },
+      "data": "minecraft:blue_carpet"
+    },
+    {
+      "vector": {
+        "x": -2.0,
         "y": 1.0,
         "z": 1.0
       },
-      "material": "BLACK_WOOL"
+      "data": "minecraft:black_wool"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 1.0,
+        "z": -1.0
+      },
+      "data": "minecraft:black_wool"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 1.0,
+        "z": -2.0
+      },
+      "data": "minecraft:black_wool"
     },
     {
       "vector": {
         "x": 1.0,
         "y": 1.0,
-        "z": -2.0
+        "z": 2.0
       },
-      "material": "BLACK_WOOL"
+      "data": "minecraft:black_wool"
     },
     {
       "vector": {
-        "x": -3.0,
-        "y": 1.0,
+        "x": -2.0,
+        "y": 2.0,
+        "z": 2.0
+      },
+      "data": "minecraft:blue_carpet"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 2.0,
         "z": -2.0
       },
-      "material": "BLUE_CONCRETE"
+      "data": "minecraft:blue_carpet"
     },
     {
       "vector": {
@@ -470,7 +454,55 @@
         "y": 1.0,
         "z": 0.0
       },
-      "material": "BLUE_CONCRETE"
+      "data": "minecraft:blue_concrete"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 1.0,
+        "z": -2.0
+      },
+      "data": "minecraft:blue_concrete"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 1.0,
+        "z": 2.0
+      },
+      "data": "minecraft:blue_concrete"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 3.0
+      },
+      "data": "minecraft:blue_concrete"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 1.0,
+        "z": 0.0
+      },
+      "data": "minecraft:blue_concrete"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 1.0,
+        "z": 3.0
+      },
+      "data": "minecraft:blue_concrete"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 1.0,
+        "z": -3.0
+      },
+      "data": "minecraft:blue_concrete"
     },
     {
       "vector": {
@@ -478,7 +510,7 @@
         "y": 1.0,
         "z": 2.0
       },
-      "material": "BLUE_CONCRETE"
+      "data": "minecraft:blue_concrete"
     },
     {
       "vector": {
@@ -486,23 +518,7 @@
         "y": 1.0,
         "z": -2.0
       },
-      "material": "BLUE_CONCRETE"
-    },
-    {
-      "vector": {
-        "x": -2.0,
-        "y": 1.0,
-        "z": -3.0
-      },
-      "material": "BLUE_CONCRETE"
-    },
-    {
-      "vector": {
-        "x": -2.0,
-        "y": 1.0,
-        "z": 3.0
-      },
-      "material": "BLUE_CONCRETE"
+      "data": "minecraft:blue_concrete"
     },
     {
       "vector": {
@@ -510,31 +526,15 @@
         "y": 1.0,
         "z": -3.0
       },
-      "material": "BLUE_CONCRETE"
+      "data": "minecraft:blue_concrete"
     },
     {
       "vector": {
-        "x": 0.0,
-        "y": 1.0,
-        "z": 3.0
-      },
-      "material": "BLUE_CONCRETE"
-    },
-    {
-      "vector": {
-        "x": 3.0,
-        "y": 1.0,
-        "z": 0.0
-      },
-      "material": "BLUE_CONCRETE"
-    },
-    {
-      "vector": {
-        "x": 2.0,
+        "x": -2.0,
         "y": 1.0,
         "z": -3.0
       },
-      "material": "BLUE_CONCRETE"
+      "data": "minecraft:blue_concrete"
     },
     {
       "vector": {
@@ -542,123 +542,7 @@
         "y": 1.0,
         "z": 3.0
       },
-      "material": "BLUE_CONCRETE"
-    },
-    {
-      "vector": {
-        "x": 3.0,
-        "y": 1.0,
-        "z": 2.0
-      },
-      "material": "BLUE_CONCRETE"
-    },
-    {
-      "vector": {
-        "x": 0.0,
-        "y": 1.0,
-        "z": 2.0
-      },
-      "material": "BLACK_WOOL"
-    },
-    {
-      "vector": {
-        "x": -2.0,
-        "y": 1.0,
-        "z": -2.0
-      },
-      "material": "BLUE_CONCRETE"
-    },
-    {
-      "vector": {
-        "x": -4.0,
-        "y": 1.0,
-        "z": -1.0
-      },
-      "material": "LADDER",
-      "facing": "WEST",
-      "water_logged": false
-    },
-    {
-      "vector": {
-        "x": 4.0,
-        "y": 1.0,
-        "z": 1.0
-      },
-      "material": "LADDER",
-      "facing": "EAST",
-      "water_logged": false
-    },
-    {
-      "vector": {
-        "x": 2.0,
-        "y": 1.0,
-        "z": -2.0
-      },
-      "material": "BLUE_CONCRETE"
-    },
-    {
-      "vector": {
-        "x": -4.0,
-        "y": 1.0,
-        "z": 1.0
-      },
-      "material": "LADDER",
-      "facing": "WEST",
-      "water_logged": false
-    },
-    {
-      "vector": {
-        "x": 2.0,
-        "y": 1.0,
-        "z": 2.0
-      },
-      "material": "BLUE_CONCRETE"
-    },
-    {
-      "vector": {
-        "x": 4.0,
-        "y": 1.0,
-        "z": -1.0
-      },
-      "material": "LADDER",
-      "facing": "EAST",
-      "water_logged": false
-    },
-    {
-      "vector": {
-        "x": -2.0,
-        "y": 1.0,
-        "z": 0.0
-      },
-      "material": "BLACK_WOOL"
-    },
-    {
-      "vector": {
-        "x": -2.0,
-        "y": 1.0,
-        "z": 2.0
-      },
-      "material": "BLUE_CONCRETE"
-    },
-    {
-      "vector": {
-        "x": -1.0,
-        "y": 1.0,
-        "z": -4.0
-      },
-      "material": "LADDER",
-      "facing": "NORTH",
-      "water_logged": false
-    },
-    {
-      "vector": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 4.0
-      },
-      "material": "LADDER",
-      "facing": "SOUTH",
-      "water_logged": false
+      "data": "minecraft:blue_concrete"
     },
     {
       "vector": {
@@ -666,19 +550,7 @@
         "y": 1.0,
         "z": 4.0
       },
-      "material": "LADDER",
-      "facing": "SOUTH",
-      "water_logged": false
-    },
-    {
-      "vector": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": -4.0
-      },
-      "material": "LADDER",
-      "facing": "NORTH",
-      "water_logged": false
+      "data": "minecraft:ladder[facing=south]"
     },
     {
       "vector": {
@@ -686,7 +558,111 @@
         "y": 1.0,
         "z": 0.0
       },
-      "material": "BLACK_WOOL"
+      "data": "minecraft:black_wool"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 2.0
+      },
+      "data": "minecraft:black_wool"
+    },
+    {
+      "vector": {
+        "x": -4.0,
+        "y": 1.0,
+        "z": -1.0
+      },
+      "data": "minecraft:ladder[facing=west]"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 1.0,
+        "z": 2.0
+      },
+      "data": "minecraft:blue_concrete"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 1.0,
+        "z": -2.0
+      },
+      "data": "minecraft:blue_concrete"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 1.0,
+        "z": -4.0
+      },
+      "data": "minecraft:ladder[facing=north]"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      },
+      "data": "minecraft:white_wool"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 4.0
+      },
+      "data": "minecraft:ladder[facing=south]"
+    },
+    {
+      "vector": {
+        "x": 4.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "data": "minecraft:ladder[facing=east]"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 1.0,
+        "z": -2.0
+      },
+      "data": "minecraft:blue_concrete"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 1.0,
+        "z": 2.0
+      },
+      "data": "minecraft:blue_concrete"
+    },
+    {
+      "vector": {
+        "x": -4.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "data": "minecraft:ladder[facing=west]"
+    },
+    {
+      "vector": {
+        "x": 4.0,
+        "y": 1.0,
+        "z": -1.0
+      },
+      "data": "minecraft:ladder[facing=east]"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 1.0,
+        "z": 0.0
+      },
+      "data": "minecraft:black_wool"
     },
     {
       "vector": {
@@ -694,15 +670,15 @@
         "y": 1.0,
         "z": -2.0
       },
-      "material": "BLACK_WOOL"
+      "data": "minecraft:black_wool"
     },
     {
       "vector": {
-        "x": 0.0,
+        "x": 1.0,
         "y": 1.0,
-        "z": 0.0
+        "z": -4.0
       },
-      "material": "WHITE_WOOL"
+      "data": "minecraft:ladder[facing=north]"
     },
     {
       "vector": {
@@ -710,9 +686,7 @@
         "y": 1.0,
         "z": 0.0
       },
-      "material": "LADDER",
-      "facing": "WEST",
-      "water_logged": false
+      "data": "minecraft:ladder[facing=west]"
     },
     {
       "vector": {
@@ -720,9 +694,7 @@
         "y": 1.0,
         "z": -4.0
       },
-      "material": "LADDER",
-      "facing": "NORTH",
-      "water_logged": false
+      "data": "minecraft:ladder[facing=north]"
     },
     {
       "vector": {
@@ -730,9 +702,7 @@
         "y": 1.0,
         "z": 4.0
       },
-      "material": "LADDER",
-      "facing": "SOUTH",
-      "water_logged": false
+      "data": "minecraft:ladder[facing=south]"
     },
     {
       "vector": {
@@ -740,9 +710,7 @@
         "y": 1.0,
         "z": 0.0
       },
-      "material": "LADDER",
-      "facing": "EAST",
-      "water_logged": false
+      "data": "minecraft:ladder[facing=east]"
     }
   ]
 }

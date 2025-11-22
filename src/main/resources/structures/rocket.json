@@ -6,7 +6,7 @@
         "y": 6.0,
         "z": 0.0
       },
-      "material": "GRAY_STAINED_GLASS"
+      "data": "minecraft:gray_stained_glass"
     },
     {
       "vector": {
@@ -14,7 +14,7 @@
         "y": 3.0,
         "z": -1.0
       },
-      "material": "RED_CONCRETE"
+      "data": "minecraft:red_concrete"
     },
     {
       "vector": {
@@ -22,7 +22,7 @@
         "y": 3.0,
         "z": 1.0
       },
-      "material": "RED_CONCRETE"
+      "data": "minecraft:red_concrete"
     },
     {
       "vector": {
@@ -30,7 +30,7 @@
         "y": 6.0,
         "z": -1.0
       },
-      "material": "GRAY_STAINED_GLASS"
+      "data": "minecraft:gray_stained_glass"
     },
     {
       "vector": {
@@ -38,7 +38,7 @@
         "y": 6.0,
         "z": 1.0
       },
-      "material": "GRAY_STAINED_GLASS"
+      "data": "minecraft:gray_stained_glass"
     },
     {
       "vector": {
@@ -46,8 +46,7 @@
         "y": 12.0,
         "z": 0.0
       },
-      "material": "DIORITE_WALL",
-      "water_logged": false
+      "data": "minecraft:diorite_wall[up=true]"
     },
     {
       "vector": {
@@ -55,7 +54,7 @@
         "y": 3.0,
         "z": -1.0
       },
-      "material": "RED_CONCRETE"
+      "data": "minecraft:red_concrete"
     },
     {
       "vector": {
@@ -63,7 +62,7 @@
         "y": 3.0,
         "z": 1.0
       },
-      "material": "RED_CONCRETE"
+      "data": "minecraft:red_concrete"
     },
     {
       "vector": {
@@ -71,7 +70,7 @@
         "y": 6.0,
         "z": 0.0
       },
-      "material": "GRAY_STAINED_GLASS"
+      "data": "minecraft:gray_stained_glass"
     },
     {
       "vector": {
@@ -79,7 +78,7 @@
         "y": 4.0,
         "z": -1.0
       },
-      "material": "WHITE_CONCRETE"
+      "data": "minecraft:white_concrete"
     },
     {
       "vector": {
@@ -87,7 +86,7 @@
         "y": 4.0,
         "z": 1.0
       },
-      "material": "WHITE_CONCRETE"
+      "data": "minecraft:white_concrete"
     },
     {
       "vector": {
@@ -95,11 +94,7 @@
         "y": 8.0,
         "z": 0.0
       },
-      "material": "QUARTZ_STAIRS",
-      "facing": "EAST",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:quartz_stairs[facing=east]"
     },
     {
       "vector": {
@@ -107,11 +102,7 @@
         "y": 8.0,
         "z": -1.0
       },
-      "material": "QUARTZ_STAIRS",
-      "facing": "SOUTH",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:quartz_stairs[facing=south]"
     },
     {
       "vector": {
@@ -119,11 +110,7 @@
         "y": 8.0,
         "z": 1.0
       },
-      "material": "QUARTZ_STAIRS",
-      "facing": "NORTH",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:quartz_stairs[facing=north]"
     },
     {
       "vector": {
@@ -131,7 +118,7 @@
         "y": 4.0,
         "z": -1.0
       },
-      "material": "WHITE_CONCRETE"
+      "data": "minecraft:white_concrete"
     },
     {
       "vector": {
@@ -139,7 +126,7 @@
         "y": 4.0,
         "z": 1.0
       },
-      "material": "WHITE_CONCRETE"
+      "data": "minecraft:white_concrete"
     },
     {
       "vector": {
@@ -147,11 +134,7 @@
         "y": 8.0,
         "z": 0.0
       },
-      "material": "QUARTZ_STAIRS",
-      "facing": "WEST",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:quartz_stairs[facing=west]"
     },
     {
       "vector": {
@@ -159,7 +142,7 @@
         "y": 3.0,
         "z": 0.0
       },
-      "material": "RED_CONCRETE"
+      "data": "minecraft:red_concrete"
     },
     {
       "vector": {
@@ -167,7 +150,7 @@
         "y": 3.0,
         "z": -1.0
       },
-      "material": "RED_CONCRETE"
+      "data": "minecraft:red_concrete"
     },
     {
       "vector": {
@@ -175,7 +158,7 @@
         "y": 3.0,
         "z": 1.0
       },
-      "material": "RED_CONCRETE"
+      "data": "minecraft:red_concrete"
     },
     {
       "vector": {
@@ -183,7 +166,7 @@
         "y": 3.0,
         "z": 0.0
       },
-      "material": "RED_CONCRETE"
+      "data": "minecraft:red_concrete"
     },
     {
       "vector": {
@@ -191,8 +174,7 @@
         "y": 9.0,
         "z": -1.0
       },
-      "material": "DIORITE_WALL",
-      "water_logged": false
+      "data": "minecraft:diorite_wall[up=true]"
     },
     {
       "vector": {
@@ -200,8 +182,7 @@
         "y": 9.0,
         "z": 1.0
       },
-      "material": "DIORITE_WALL",
-      "water_logged": false
+      "data": "minecraft:diorite_wall[up=true]"
     },
     {
       "vector": {
@@ -209,8 +190,7 @@
         "y": 9.0,
         "z": -1.0
       },
-      "material": "DIORITE_WALL",
-      "water_logged": false
+      "data": "minecraft:diorite_wall[up=true]"
     },
     {
       "vector": {
@@ -218,8 +198,7 @@
         "y": 9.0,
         "z": 1.0
       },
-      "material": "DIORITE_WALL",
-      "water_logged": false
+      "data": "minecraft:diorite_wall[up=true]"
     },
     {
       "vector": {
@@ -227,7 +206,7 @@
         "y": 4.0,
         "z": 0.0
       },
-      "material": "GRAY_STAINED_GLASS"
+      "data": "minecraft:gray_stained_glass"
     },
     {
       "vector": {
@@ -235,7 +214,7 @@
         "y": 2.0,
         "z": -1.0
       },
-      "material": "RED_CONCRETE"
+      "data": "minecraft:red_concrete"
     },
     {
       "vector": {
@@ -243,7 +222,7 @@
         "y": 2.0,
         "z": 1.0
       },
-      "material": "RED_CONCRETE"
+      "data": "minecraft:red_concrete"
     },
     {
       "vector": {
@@ -251,7 +230,7 @@
         "y": 4.0,
         "z": -1.0
       },
-      "material": "GRAY_STAINED_GLASS"
+      "data": "minecraft:gray_stained_glass"
     },
     {
       "vector": {
@@ -259,7 +238,7 @@
         "y": 4.0,
         "z": 1.0
       },
-      "material": "GRAY_STAINED_GLASS"
+      "data": "minecraft:gray_stained_glass"
     },
     {
       "vector": {
@@ -267,7 +246,7 @@
         "y": 8.0,
         "z": 0.0
       },
-      "material": "WHITE_CONCRETE"
+      "data": "minecraft:white_concrete"
     },
     {
       "vector": {
@@ -275,7 +254,7 @@
         "y": 2.0,
         "z": -1.0
       },
-      "material": "RED_CONCRETE"
+      "data": "minecraft:red_concrete"
     },
     {
       "vector": {
@@ -283,7 +262,7 @@
         "y": 2.0,
         "z": 1.0
       },
-      "material": "RED_CONCRETE"
+      "data": "minecraft:red_concrete"
     },
     {
       "vector": {
@@ -291,7 +270,7 @@
         "y": 4.0,
         "z": 0.0
       },
-      "material": "GRAY_STAINED_GLASS"
+      "data": "minecraft:gray_stained_glass"
     },
     {
       "vector": {
@@ -299,8 +278,7 @@
         "y": 9.0,
         "z": 0.0
       },
-      "material": "DIORITE_WALL",
-      "water_logged": false
+      "data": "minecraft:diorite_wall[up=true]"
     },
     {
       "vector": {
@@ -308,8 +286,7 @@
         "y": 9.0,
         "z": -1.0
       },
-      "material": "DIORITE_WALL",
-      "water_logged": false
+      "data": "minecraft:diorite_wall[up=true]"
     },
     {
       "vector": {
@@ -317,8 +294,7 @@
         "y": 9.0,
         "z": 1.0
       },
-      "material": "DIORITE_WALL",
-      "water_logged": false
+      "data": "minecraft:diorite_wall[up=true]"
     },
     {
       "vector": {
@@ -326,8 +302,7 @@
         "y": 9.0,
         "z": 0.0
       },
-      "material": "DIORITE_WALL",
-      "water_logged": false
+      "data": "minecraft:diorite_wall[up=true]"
     },
     {
       "vector": {
@@ -335,8 +310,7 @@
         "y": 1.0,
         "z": -1.0
       },
-      "material": "MANGROVE_SLAB",
-      "water_logged": false
+      "data": "minecraft:mangrove_slab"
     },
     {
       "vector": {
@@ -344,8 +318,7 @@
         "y": 1.0,
         "z": 1.0
       },
-      "material": "MANGROVE_SLAB",
-      "water_logged": false
+      "data": "minecraft:mangrove_slab"
     },
     {
       "vector": {
@@ -353,7 +326,7 @@
         "y": 2.0,
         "z": 0.0
       },
-      "material": "RED_CONCRETE"
+      "data": "minecraft:red_concrete"
     },
     {
       "vector": {
@@ -361,7 +334,7 @@
         "y": 2.0,
         "z": -1.0
       },
-      "material": "RED_CONCRETE"
+      "data": "minecraft:red_concrete"
     },
     {
       "vector": {
@@ -369,7 +342,7 @@
         "y": 2.0,
         "z": 1.0
       },
-      "material": "RED_CONCRETE"
+      "data": "minecraft:red_concrete"
     },
     {
       "vector": {
@@ -377,8 +350,7 @@
         "y": 1.0,
         "z": -1.0
       },
-      "material": "MANGROVE_SLAB",
-      "water_logged": false
+      "data": "minecraft:mangrove_slab"
     },
     {
       "vector": {
@@ -386,8 +358,7 @@
         "y": 1.0,
         "z": 1.0
       },
-      "material": "MANGROVE_SLAB",
-      "water_logged": false
+      "data": "minecraft:mangrove_slab"
     },
     {
       "vector": {
@@ -395,7 +366,7 @@
         "y": 2.0,
         "z": 0.0
       },
-      "material": "RED_CONCRETE"
+      "data": "minecraft:red_concrete"
     },
     {
       "vector": {
@@ -403,7 +374,7 @@
         "y": 7.0,
         "z": -1.0
       },
-      "material": "WHITE_CONCRETE"
+      "data": "minecraft:white_concrete"
     },
     {
       "vector": {
@@ -411,7 +382,7 @@
         "y": 7.0,
         "z": 1.0
       },
-      "material": "WHITE_CONCRETE"
+      "data": "minecraft:white_concrete"
     },
     {
       "vector": {
@@ -419,7 +390,7 @@
         "y": 7.0,
         "z": -1.0
       },
-      "material": "WHITE_CONCRETE"
+      "data": "minecraft:white_concrete"
     },
     {
       "vector": {
@@ -427,7 +398,7 @@
         "y": 7.0,
         "z": 1.0
       },
-      "material": "WHITE_CONCRETE"
+      "data": "minecraft:white_concrete"
     },
     {
       "vector": {
@@ -435,111 +406,7 @@
         "y": 9.0,
         "z": 0.0
       },
-      "material": "WHITE_CONCRETE"
-    },
-    {
-      "vector": {
-        "x": -1.0,
-        "y": 1.0,
-        "z": 0.0
-      },
-      "material": "MANGROVE_SLAB",
-      "water_logged": false
-    },
-    {
-      "vector": {
-        "x": -2.0,
-        "y": 0.0,
-        "z": 0.0
-      },
-      "material": "BLACKSTONE_STAIRS",
-      "facing": "WEST",
-      "water_logged": false,
-      "bisected": "TOP",
-      "shape": "STRAIGHT"
-    },
-    {
-      "vector": {
-        "x": -2.0,
-        "y": 2.0,
-        "z": 0.0
-      },
-      "material": "BLACKSTONE_STAIRS",
-      "facing": "EAST",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
-    },
-    {
-      "vector": {
-        "x": 0.0,
-        "y": 2.0,
-        "z": -2.0
-      },
-      "material": "BLACKSTONE_STAIRS",
-      "facing": "SOUTH",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
-    },
-    {
-      "vector": {
-        "x": 0.0,
-        "y": 2.0,
-        "z": 0.0
-      },
-      "material": "POLISHED_ANDESITE"
-    },
-    {
-      "vector": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": -2.0
-      },
-      "material": "BLACKSTONE_STAIRS",
-      "facing": "NORTH",
-      "water_logged": false,
-      "bisected": "TOP",
-      "shape": "STRAIGHT"
-    },
-    {
-      "vector": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 2.0
-      },
-      "material": "BLACKSTONE_STAIRS",
-      "facing": "SOUTH",
-      "water_logged": false,
-      "bisected": "TOP",
-      "shape": "STRAIGHT"
-    },
-    {
-      "vector": {
-        "x": 0.0,
-        "y": 1.0,
-        "z": -1.0
-      },
-      "material": "MANGROVE_SLAB",
-      "water_logged": false
-    },
-    {
-      "vector": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 0.0
-      },
-      "material": "MANGROVE_SLAB",
-      "water_logged": false
-    },
-    {
-      "vector": {
-        "x": 0.0,
-        "y": 1.0,
-        "z": 1.0
-      },
-      "material": "MANGROVE_SLAB",
-      "water_logged": false
+      "data": "minecraft:white_concrete"
     },
     {
       "vector": {
@@ -547,11 +414,87 @@
         "y": 2.0,
         "z": 2.0
       },
-      "material": "BLACKSTONE_STAIRS",
-      "facing": "NORTH",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:blackstone_stairs[facing=north]"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 1.0,
+        "z": 0.0
+      },
+      "data": "minecraft:mangrove_slab"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 2.0,
+        "z": 0.0
+      },
+      "data": "minecraft:polished_andesite"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 2.0,
+        "z": 0.0
+      },
+      "data": "minecraft:blackstone_stairs[facing=east]"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 2.0,
+        "z": -2.0
+      },
+      "data": "minecraft:blackstone_stairs[facing=south]"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "data": "minecraft:blackstone_stairs[facing=west,half=top]"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -2.0
+      },
+      "data": "minecraft:blackstone_stairs[facing=north,half=top]"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "data": "minecraft:mangrove_slab"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 2.0
+      },
+      "data": "minecraft:blackstone_stairs[facing=south,half=top]"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": -1.0
+      },
+      "data": "minecraft:mangrove_slab"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 0.0
+      },
+      "data": "minecraft:mangrove_slab"
     },
     {
       "vector": {
@@ -559,11 +502,7 @@
         "y": 0.0,
         "z": 0.0
       },
-      "material": "BLACKSTONE_STAIRS",
-      "facing": "EAST",
-      "water_logged": false,
-      "bisected": "TOP",
-      "shape": "STRAIGHT"
+      "data": "minecraft:blackstone_stairs[facing=east,half=top]"
     },
     {
       "vector": {
@@ -571,11 +510,7 @@
         "y": 2.0,
         "z": 0.0
       },
-      "material": "BLACKSTONE_STAIRS",
-      "facing": "WEST",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:blackstone_stairs[facing=west]"
     },
     {
       "vector": {
@@ -583,7 +518,7 @@
         "y": 7.0,
         "z": 0.0
       },
-      "material": "WHITE_CONCRETE"
+      "data": "minecraft:white_concrete"
     },
     {
       "vector": {
@@ -591,7 +526,7 @@
         "y": 7.0,
         "z": -1.0
       },
-      "material": "WHITE_CONCRETE"
+      "data": "minecraft:white_concrete"
     },
     {
       "vector": {
@@ -599,7 +534,7 @@
         "y": 7.0,
         "z": 1.0
       },
-      "material": "WHITE_CONCRETE"
+      "data": "minecraft:white_concrete"
     },
     {
       "vector": {
@@ -607,7 +542,7 @@
         "y": 7.0,
         "z": 0.0
       },
-      "material": "WHITE_CONCRETE"
+      "data": "minecraft:white_concrete"
     },
     {
       "vector": {
@@ -615,7 +550,7 @@
         "y": 5.0,
         "z": -1.0
       },
-      "material": "RED_CONCRETE"
+      "data": "minecraft:red_concrete"
     },
     {
       "vector": {
@@ -623,7 +558,7 @@
         "y": 5.0,
         "z": 1.0
       },
-      "material": "RED_CONCRETE"
+      "data": "minecraft:red_concrete"
     },
     {
       "vector": {
@@ -631,8 +566,7 @@
         "y": 10.0,
         "z": 0.0
       },
-      "material": "DIORITE_WALL",
-      "water_logged": false
+      "data": "minecraft:diorite_wall[up=true]"
     },
     {
       "vector": {
@@ -640,8 +574,7 @@
         "y": 10.0,
         "z": -1.0
       },
-      "material": "DIORITE_WALL",
-      "water_logged": false
+      "data": "minecraft:diorite_wall[up=true]"
     },
     {
       "vector": {
@@ -649,8 +582,7 @@
         "y": 10.0,
         "z": 1.0
       },
-      "material": "DIORITE_WALL",
-      "water_logged": false
+      "data": "minecraft:diorite_wall[up=true]"
     },
     {
       "vector": {
@@ -658,7 +590,7 @@
         "y": 5.0,
         "z": -1.0
       },
-      "material": "RED_CONCRETE"
+      "data": "minecraft:red_concrete"
     },
     {
       "vector": {
@@ -666,7 +598,7 @@
         "y": 5.0,
         "z": 1.0
       },
-      "material": "RED_CONCRETE"
+      "data": "minecraft:red_concrete"
     },
     {
       "vector": {
@@ -674,8 +606,7 @@
         "y": 10.0,
         "z": 0.0
       },
-      "material": "DIORITE_WALL",
-      "water_logged": false
+      "data": "minecraft:diorite_wall[up=true]"
     },
     {
       "vector": {
@@ -683,7 +614,7 @@
         "y": 1.0,
         "z": 0.0
       },
-      "material": "BLACKSTONE"
+      "data": "minecraft:blackstone"
     },
     {
       "vector": {
@@ -691,7 +622,7 @@
         "y": 1.0,
         "z": -2.0
       },
-      "material": "BLACKSTONE"
+      "data": "minecraft:blackstone"
     },
     {
       "vector": {
@@ -699,7 +630,7 @@
         "y": 1.0,
         "z": 0.0
       },
-      "material": "POLISHED_ANDESITE"
+      "data": "minecraft:polished_andesite"
     },
     {
       "vector": {
@@ -707,7 +638,7 @@
         "y": 1.0,
         "z": 2.0
       },
-      "material": "BLACKSTONE"
+      "data": "minecraft:blackstone"
     },
     {
       "vector": {
@@ -715,7 +646,7 @@
         "y": 1.0,
         "z": 0.0
       },
-      "material": "BLACKSTONE"
+      "data": "minecraft:blackstone"
     },
     {
       "vector": {
@@ -723,7 +654,7 @@
         "y": 5.0,
         "z": 0.0
       },
-      "material": "GRAY_STAINED_GLASS"
+      "data": "minecraft:gray_stained_glass"
     },
     {
       "vector": {
@@ -731,7 +662,7 @@
         "y": 5.0,
         "z": -1.0
       },
-      "material": "GRAY_STAINED_GLASS"
+      "data": "minecraft:gray_stained_glass"
     },
     {
       "vector": {
@@ -739,7 +670,7 @@
         "y": 5.0,
         "z": 1.0
       },
-      "material": "GRAY_STAINED_GLASS"
+      "data": "minecraft:gray_stained_glass"
     },
     {
       "vector": {
@@ -747,7 +678,7 @@
         "y": 10.0,
         "z": 0.0
       },
-      "material": "WHITE_CONCRETE"
+      "data": "minecraft:white_concrete"
     },
     {
       "vector": {
@@ -755,7 +686,7 @@
         "y": 5.0,
         "z": 0.0
       },
-      "material": "GRAY_STAINED_GLASS"
+      "data": "minecraft:gray_stained_glass"
     },
     {
       "vector": {
@@ -763,7 +694,7 @@
         "y": 11.0,
         "z": 0.0
       },
-      "material": "WHITE_CONCRETE"
+      "data": "minecraft:white_concrete"
     },
     {
       "vector": {
@@ -771,7 +702,7 @@
         "y": 6.0,
         "z": -1.0
       },
-      "material": "WHITE_CONCRETE"
+      "data": "minecraft:white_concrete"
     },
     {
       "vector": {
@@ -779,7 +710,7 @@
         "y": 6.0,
         "z": 1.0
       },
-      "material": "WHITE_CONCRETE"
+      "data": "minecraft:white_concrete"
     },
     {
       "vector": {
@@ -787,7 +718,7 @@
         "y": 6.0,
         "z": -1.0
       },
-      "material": "WHITE_CONCRETE"
+      "data": "minecraft:white_concrete"
     },
     {
       "vector": {
@@ -795,7 +726,7 @@
         "y": 6.0,
         "z": 1.0
       },
-      "material": "WHITE_CONCRETE"
+      "data": "minecraft:white_concrete"
     },
     {
       "vector": {
@@ -803,11 +734,7 @@
         "y": 8.0,
         "z": -1.0
       },
-      "material": "QUARTZ_STAIRS",
-      "facing": "EAST",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "OUTER_RIGHT"
+      "data": "minecraft:quartz_stairs[facing=east,shape=outer_right]"
     },
     {
       "vector": {
@@ -815,11 +742,7 @@
         "y": 8.0,
         "z": 1.0
       },
-      "material": "QUARTZ_STAIRS",
-      "facing": "EAST",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "OUTER_LEFT"
+      "data": "minecraft:quartz_stairs[facing=east,shape=outer_left]"
     },
     {
       "vector": {
@@ -827,11 +750,7 @@
         "y": 8.0,
         "z": -1.0
       },
-      "material": "QUARTZ_STAIRS",
-      "facing": "SOUTH",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "OUTER_RIGHT"
+      "data": "minecraft:quartz_stairs[facing=south,shape=outer_right]"
     },
     {
       "vector": {
@@ -839,11 +758,7 @@
         "y": 8.0,
         "z": 1.0
       },
-      "material": "QUARTZ_STAIRS",
-      "facing": "NORTH",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "OUTER_LEFT"
+      "data": "minecraft:quartz_stairs[facing=north,shape=outer_left]"
     }
   ]
 }

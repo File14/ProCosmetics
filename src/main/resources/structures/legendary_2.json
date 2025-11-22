@@ -6,11 +6,7 @@
         "y": -1.0,
         "z": -2.0
       },
-      "material": "CRIMSON_STAIRS",
-      "facing": "EAST",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "INNER_RIGHT"
+      "data": "minecraft:crimson_stairs[facing=east,shape=inner_right]"
     },
     {
       "vector": {
@@ -18,7 +14,7 @@
         "y": -1.0,
         "z": 0.0
       },
-      "material": "PURPUR_BLOCK"
+      "data": "minecraft:purpur_block"
     },
     {
       "vector": {
@@ -26,11 +22,7 @@
         "y": -1.0,
         "z": 2.0
       },
-      "material": "CRIMSON_STAIRS",
-      "facing": "EAST",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "INNER_LEFT"
+      "data": "minecraft:crimson_stairs[facing=east,shape=inner_left]"
     },
     {
       "vector": {
@@ -38,7 +30,7 @@
         "y": -1.0,
         "z": -2.0
       },
-      "material": "PURPUR_BLOCK"
+      "data": "minecraft:purpur_block"
     },
     {
       "vector": {
@@ -46,7 +38,7 @@
         "y": -1.0,
         "z": 2.0
       },
-      "material": "PURPUR_BLOCK"
+      "data": "minecraft:purpur_block"
     },
     {
       "vector": {
@@ -54,11 +46,7 @@
         "y": -1.0,
         "z": -2.0
       },
-      "material": "CRIMSON_STAIRS",
-      "facing": "WEST",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "INNER_LEFT"
+      "data": "minecraft:crimson_stairs[facing=west,shape=inner_left]"
     },
     {
       "vector": {
@@ -66,7 +54,7 @@
         "y": -1.0,
         "z": 0.0
       },
-      "material": "PURPUR_BLOCK"
+      "data": "minecraft:purpur_block"
     },
     {
       "vector": {
@@ -74,11 +62,7 @@
         "y": -1.0,
         "z": 2.0
       },
-      "material": "CRIMSON_STAIRS",
-      "facing": "WEST",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "INNER_RIGHT"
+      "data": "minecraft:crimson_stairs[facing=west,shape=inner_right]"
     },
     {
       "vector": {
@@ -86,7 +70,7 @@
         "y": -1.0,
         "z": -1.0
       },
-      "material": "PURPUR_BLOCK"
+      "data": "minecraft:purpur_block"
     },
     {
       "vector": {
@@ -94,7 +78,7 @@
         "y": -1.0,
         "z": 1.0
       },
-      "material": "PURPUR_BLOCK"
+      "data": "minecraft:purpur_block"
     },
     {
       "vector": {
@@ -102,7 +86,7 @@
         "y": -1.0,
         "z": -2.0
       },
-      "material": "PURPUR_BLOCK"
+      "data": "minecraft:purpur_block"
     },
     {
       "vector": {
@@ -110,7 +94,7 @@
         "y": -1.0,
         "z": 2.0
       },
-      "material": "PURPUR_BLOCK"
+      "data": "minecraft:purpur_block"
     },
     {
       "vector": {
@@ -118,7 +102,7 @@
         "y": -1.0,
         "z": -2.0
       },
-      "material": "PURPUR_BLOCK"
+      "data": "minecraft:purpur_block"
     },
     {
       "vector": {
@@ -126,7 +110,7 @@
         "y": -1.0,
         "z": 2.0
       },
-      "material": "PURPUR_BLOCK"
+      "data": "minecraft:purpur_block"
     },
     {
       "vector": {
@@ -134,7 +118,7 @@
         "y": -1.0,
         "z": -1.0
       },
-      "material": "PURPUR_BLOCK"
+      "data": "minecraft:purpur_block"
     },
     {
       "vector": {
@@ -142,7 +126,7 @@
         "y": -1.0,
         "z": 1.0
       },
-      "material": "PURPUR_BLOCK"
+      "data": "minecraft:purpur_block"
     }
   ]
 }

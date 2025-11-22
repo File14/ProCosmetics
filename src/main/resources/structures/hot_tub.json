@@ -6,11 +6,7 @@
         "y": 0.0,
         "z": 5.0
       },
-      "material": "QUARTZ_STAIRS",
-      "facing": "WEST",
-      "water_logged": true,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:quartz_stairs[facing=west,waterlogged=true]"
     },
     {
       "vector": {
@@ -18,11 +14,7 @@
         "y": 0.0,
         "z": 5.0
       },
-      "material": "IRON_TRAPDOOR",
-      "facing": "NORTH",
-      "open": false,
-      "water_logged": true,
-      "bisected": "BOTTOM"
+      "data": "minecraft:iron_trapdoor[facing=north,waterlogged=true]"
     },
     {
       "vector": {
@@ -30,11 +22,7 @@
         "y": 0.0,
         "z": 5.0
       },
-      "material": "QUARTZ_STAIRS",
-      "facing": "EAST",
-      "water_logged": true,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:quartz_stairs[facing=east,waterlogged=true]"
     },
     {
       "vector": {
@@ -42,11 +30,7 @@
         "y": 0.0,
         "z": 4.0
       },
-      "material": "SPRUCE_TRAPDOOR",
-      "facing": "WEST",
-      "open": true,
-      "water_logged": false,
-      "bisected": "BOTTOM"
+      "data": "minecraft:spruce_trapdoor[facing=west,open=true]"
     },
     {
       "vector": {
@@ -54,11 +38,7 @@
         "y": 0.0,
         "z": 6.0
       },
-      "material": "QUARTZ_STAIRS",
-      "facing": "WEST",
-      "water_logged": true,
-      "bisected": "BOTTOM",
-      "shape": "INNER_LEFT"
+      "data": "minecraft:quartz_stairs[facing=west,shape=inner_left,waterlogged=true]"
     },
     {
       "vector": {
@@ -66,11 +46,7 @@
         "y": 0.0,
         "z": 6.0
       },
-      "material": "QUARTZ_STAIRS",
-      "facing": "SOUTH",
-      "water_logged": true,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:quartz_stairs[facing=south,waterlogged=true]"
     },
     {
       "vector": {
@@ -78,11 +54,7 @@
         "y": 0.0,
         "z": 6.0
       },
-      "material": "QUARTZ_STAIRS",
-      "facing": "SOUTH",
-      "water_logged": true,
-      "bisected": "BOTTOM",
-      "shape": "INNER_LEFT"
+      "data": "minecraft:quartz_stairs[facing=south,shape=inner_left,waterlogged=true]"
     },
     {
       "vector": {
@@ -90,11 +62,7 @@
         "y": 0.0,
         "z": 4.0
       },
-      "material": "SPRUCE_TRAPDOOR",
-      "facing": "EAST",
-      "open": true,
-      "water_logged": false,
-      "bisected": "BOTTOM"
+      "data": "minecraft:spruce_trapdoor[facing=east,open=true]"
     },
     {
       "vector": {
@@ -102,11 +70,7 @@
         "y": 0.0,
         "z": 7.0
       },
-      "material": "SPRUCE_TRAPDOOR",
-      "facing": "SOUTH",
-      "open": true,
-      "water_logged": false,
-      "bisected": "BOTTOM"
+      "data": "minecraft:spruce_trapdoor[facing=south,open=true]"
     },
     {
       "vector": {
@@ -114,11 +78,7 @@
         "y": 0.0,
         "z": 7.0
       },
-      "material": "SPRUCE_TRAPDOOR",
-      "facing": "SOUTH",
-      "open": true,
-      "water_logged": false,
-      "bisected": "BOTTOM"
+      "data": "minecraft:spruce_trapdoor[facing=south,open=true]"
     },
     {
       "vector": {
@@ -126,11 +86,7 @@
         "y": 0.0,
         "z": 3.0
       },
-      "material": "SPRUCE_TRAPDOOR",
-      "facing": "WEST",
-      "open": true,
-      "water_logged": false,
-      "bisected": "BOTTOM"
+      "data": "minecraft:spruce_trapdoor[facing=west,open=true]"
     },
     {
       "vector": {
@@ -138,11 +94,7 @@
         "y": 0.0,
         "z": 4.0
       },
-      "material": "QUARTZ_STAIRS",
-      "facing": "WEST",
-      "water_logged": true,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:quartz_stairs[facing=west,waterlogged=true]"
     },
     {
       "vector": {
@@ -150,9 +102,7 @@
         "y": 1.0,
         "z": 2.0
       },
-      "material": "SPRUCE_BUTTON",
-      "facing": "SOUTH",
-      "face_attachable": "FLOOR"
+      "data": "minecraft:spruce_button[face=floor,facing=south]"
     },
     {
       "vector": {
@@ -160,11 +110,7 @@
         "y": 0.0,
         "z": 4.0
       },
-      "material": "IRON_TRAPDOOR",
-      "facing": "NORTH",
-      "open": false,
-      "water_logged": true,
-      "bisected": "BOTTOM"
+      "data": "minecraft:iron_trapdoor[facing=north,waterlogged=true]"
     },
     {
       "vector": {
@@ -172,11 +118,7 @@
         "y": 0.0,
         "z": 4.0
       },
-      "material": "QUARTZ_STAIRS",
-      "facing": "EAST",
-      "water_logged": true,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:quartz_stairs[facing=east,waterlogged=true]"
     },
     {
       "vector": {
@@ -184,11 +126,7 @@
         "y": 0.0,
         "z": 3.0
       },
-      "material": "SPRUCE_TRAPDOOR",
-      "facing": "EAST",
-      "open": true,
-      "water_logged": false,
-      "bisected": "BOTTOM"
+      "data": "minecraft:spruce_trapdoor[facing=east,open=true]"
     },
     {
       "vector": {
@@ -196,11 +134,7 @@
         "y": 0.0,
         "z": 5.0
       },
-      "material": "SPRUCE_TRAPDOOR",
-      "facing": "WEST",
-      "open": true,
-      "water_logged": false,
-      "bisected": "BOTTOM"
+      "data": "minecraft:spruce_trapdoor[facing=west,open=true]"
     },
     {
       "vector": {
@@ -208,11 +142,7 @@
         "y": 0.0,
         "z": 7.0
       },
-      "material": "SPRUCE_TRAPDOOR",
-      "facing": "SOUTH",
-      "open": true,
-      "water_logged": false,
-      "bisected": "BOTTOM"
+      "data": "minecraft:spruce_trapdoor[facing=south,open=true]"
     },
     {
       "vector": {
@@ -220,11 +150,7 @@
         "y": 0.0,
         "z": 7.0
       },
-      "material": "SPRUCE_TRAPDOOR",
-      "facing": "SOUTH",
-      "open": true,
-      "water_logged": false,
-      "bisected": "BOTTOM"
+      "data": "minecraft:spruce_trapdoor[facing=south,open=true]"
     },
     {
       "vector": {
@@ -232,11 +158,7 @@
         "y": 0.0,
         "z": 7.0
       },
-      "material": "SPRUCE_TRAPDOOR",
-      "facing": "SOUTH",
-      "open": true,
-      "water_logged": false,
-      "bisected": "BOTTOM"
+      "data": "minecraft:spruce_trapdoor[facing=south,open=true]"
     },
     {
       "vector": {
@@ -244,11 +166,7 @@
         "y": 0.0,
         "z": 5.0
       },
-      "material": "SPRUCE_TRAPDOOR",
-      "facing": "EAST",
-      "open": true,
-      "water_logged": false,
-      "bisected": "BOTTOM"
+      "data": "minecraft:spruce_trapdoor[facing=east,open=true]"
     },
     {
       "vector": {
@@ -256,11 +174,7 @@
         "y": 0.0,
         "z": 6.0
       },
-      "material": "SPRUCE_TRAPDOOR",
-      "facing": "WEST",
-      "open": true,
-      "water_logged": false,
-      "bisected": "BOTTOM"
+      "data": "minecraft:spruce_trapdoor[facing=west,open=true]"
     },
     {
       "vector": {
@@ -268,11 +182,7 @@
         "y": 0.0,
         "z": 1.0
       },
-      "material": "SPRUCE_STAIRS",
-      "facing": "SOUTH",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:spruce_stairs[facing=south]"
     },
     {
       "vector": {
@@ -280,11 +190,7 @@
         "y": 0.0,
         "z": 1.0
       },
-      "material": "SPRUCE_STAIRS",
-      "facing": "SOUTH",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:spruce_stairs[facing=south]"
     },
     {
       "vector": {
@@ -292,11 +198,7 @@
         "y": 0.0,
         "z": 6.0
       },
-      "material": "SPRUCE_TRAPDOOR",
-      "facing": "EAST",
-      "open": true,
-      "water_logged": false,
-      "bisected": "BOTTOM"
+      "data": "minecraft:spruce_trapdoor[facing=east,open=true]"
     },
     {
       "vector": {
@@ -304,11 +206,7 @@
         "y": 0.0,
         "z": 3.0
       },
-      "material": "IRON_TRAPDOOR",
-      "facing": "NORTH",
-      "open": false,
-      "water_logged": true,
-      "bisected": "BOTTOM"
+      "data": "minecraft:iron_trapdoor[facing=north,waterlogged=true]"
     },
     {
       "vector": {
@@ -316,11 +214,7 @@
         "y": 0.0,
         "z": 3.0
       },
-      "material": "IRON_TRAPDOOR",
-      "facing": "WEST",
-      "open": false,
-      "water_logged": true,
-      "bisected": "BOTTOM"
+      "data": "minecraft:iron_trapdoor[facing=west,waterlogged=true]"
     },
     {
       "vector": {
@@ -328,11 +222,7 @@
         "y": 0.0,
         "z": 1.0
       },
-      "material": "SPRUCE_TRAPDOOR",
-      "facing": "NORTH",
-      "open": true,
-      "water_logged": false,
-      "bisected": "BOTTOM"
+      "data": "minecraft:spruce_trapdoor[facing=north,open=true]"
     },
     {
       "vector": {
@@ -340,11 +230,7 @@
         "y": 0.0,
         "z": 2.0
       },
-      "material": "QUARTZ_STAIRS",
-      "facing": "NORTH",
-      "water_logged": true,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:quartz_stairs[facing=north,waterlogged=true]"
     },
     {
       "vector": {
@@ -352,11 +238,7 @@
         "y": 0.0,
         "z": 1.0
       },
-      "material": "SPRUCE_STAIRS",
-      "facing": "SOUTH",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:spruce_stairs[facing=south]"
     },
     {
       "vector": {
@@ -364,11 +246,7 @@
         "y": 0.0,
         "z": 2.0
       },
-      "material": "QUARTZ_STAIRS",
-      "facing": "NORTH",
-      "water_logged": true,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:quartz_stairs[facing=north,waterlogged=true]"
     },
     {
       "vector": {
@@ -376,11 +254,7 @@
         "y": 0.0,
         "z": 1.0
       },
-      "material": "SPRUCE_TRAPDOOR",
-      "facing": "NORTH",
-      "open": true,
-      "water_logged": false,
-      "bisected": "BOTTOM"
+      "data": "minecraft:spruce_trapdoor[facing=north,open=true]"
     },
     {
       "vector": {
@@ -388,11 +262,7 @@
         "y": 0.0,
         "z": 5.0
       },
-      "material": "IRON_TRAPDOOR",
-      "facing": "NORTH",
-      "open": false,
-      "water_logged": true,
-      "bisected": "BOTTOM"
+      "data": "minecraft:iron_trapdoor[facing=north,waterlogged=true]"
     },
     {
       "vector": {
@@ -400,11 +270,7 @@
         "y": 0.0,
         "z": 5.0
       },
-      "material": "IRON_TRAPDOOR",
-      "facing": "WEST",
-      "open": false,
-      "water_logged": true,
-      "bisected": "BOTTOM"
+      "data": "minecraft:iron_trapdoor[facing=west,waterlogged=true]"
     },
     {
       "vector": {
@@ -412,11 +278,7 @@
         "y": 0.0,
         "z": 2.0
       },
-      "material": "SPRUCE_TRAPDOOR",
-      "facing": "WEST",
-      "open": true,
-      "water_logged": false,
-      "bisected": "BOTTOM"
+      "data": "minecraft:spruce_trapdoor[facing=west,open=true]"
     },
     {
       "vector": {
@@ -424,11 +286,7 @@
         "y": 0.0,
         "z": 3.0
       },
-      "material": "QUARTZ_STAIRS",
-      "facing": "WEST",
-      "water_logged": true,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:quartz_stairs[facing=west,waterlogged=true]"
     },
     {
       "vector": {
@@ -436,11 +294,7 @@
         "y": 0.0,
         "z": 6.0
       },
-      "material": "QUARTZ_STAIRS",
-      "facing": "SOUTH",
-      "water_logged": true,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:quartz_stairs[facing=south,waterlogged=true]"
     },
     {
       "vector": {
@@ -448,11 +302,7 @@
         "y": 0.0,
         "z": 3.0
       },
-      "material": "IRON_TRAPDOOR",
-      "facing": "WEST",
-      "open": false,
-      "water_logged": true,
-      "bisected": "BOTTOM"
+      "data": "minecraft:iron_trapdoor[facing=west,waterlogged=true]"
     },
     {
       "vector": {
@@ -460,11 +310,7 @@
         "y": 0.0,
         "z": 6.0
       },
-      "material": "QUARTZ_STAIRS",
-      "facing": "SOUTH",
-      "water_logged": true,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:quartz_stairs[facing=south,waterlogged=true]"
     },
     {
       "vector": {
@@ -472,11 +318,7 @@
         "y": 0.0,
         "z": 3.0
       },
-      "material": "QUARTZ_STAIRS",
-      "facing": "EAST",
-      "water_logged": true,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:quartz_stairs[facing=east,waterlogged=true]"
     },
     {
       "vector": {
@@ -484,11 +326,7 @@
         "y": 0.0,
         "z": 2.0
       },
-      "material": "SPRUCE_TRAPDOOR",
-      "facing": "EAST",
-      "open": true,
-      "water_logged": false,
-      "bisected": "BOTTOM"
+      "data": "minecraft:spruce_trapdoor[facing=east,open=true]"
     },
     {
       "vector": {
@@ -496,7 +334,7 @@
         "y": 0.0,
         "z": 2.0
       },
-      "material": "QUARTZ_BLOCK"
+      "data": "minecraft:quartz_block"
     },
     {
       "vector": {
@@ -504,11 +342,7 @@
         "y": 0.0,
         "z": 4.0
       },
-      "material": "IRON_TRAPDOOR",
-      "facing": "NORTH",
-      "open": false,
-      "water_logged": true,
-      "bisected": "BOTTOM"
+      "data": "minecraft:iron_trapdoor[facing=north,waterlogged=true]"
     },
     {
       "vector": {
@@ -516,11 +350,7 @@
         "y": 0.0,
         "z": 2.0
       },
-      "material": "QUARTZ_STAIRS",
-      "facing": "NORTH",
-      "water_logged": true,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:quartz_stairs[facing=north,waterlogged=true]"
     },
     {
       "vector": {
@@ -528,11 +358,7 @@
         "y": 0.0,
         "z": 4.0
       },
-      "material": "IRON_TRAPDOOR",
-      "facing": "WEST",
-      "open": false,
-      "water_logged": true,
-      "bisected": "BOTTOM"
+      "data": "minecraft:iron_trapdoor[facing=west,waterlogged=true]"
     },
     {
       "vector": {
@@ -540,11 +366,7 @@
         "y": 0.0,
         "z": 2.0
       },
-      "material": "QUARTZ_STAIRS",
-      "facing": "NORTH",
-      "water_logged": true,
-      "bisected": "BOTTOM",
-      "shape": "INNER_RIGHT"
+      "data": "minecraft:quartz_stairs[facing=north,shape=inner_right,waterlogged=true]"
     }
   ]
 }

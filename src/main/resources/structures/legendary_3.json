@@ -2,15 +2,19 @@
   "blocks": [
     {
       "vector": {
+        "x": -2.0,
+        "y": -1.0,
+        "z": 3.0
+      },
+      "data": "minecraft:crimson_stairs[facing=east]"
+    },
+    {
+      "vector": {
         "x": -3.0,
         "y": -1.0,
         "z": 2.0
       },
-      "material": "CRIMSON_STAIRS",
-      "facing": "NORTH",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:crimson_stairs[facing=north]"
     },
     {
       "vector": {
@@ -18,11 +22,7 @@
         "y": -1.0,
         "z": -2.0
       },
-      "material": "CRIMSON_STAIRS",
-      "facing": "SOUTH",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:crimson_stairs[facing=south]"
     },
     {
       "vector": {
@@ -30,11 +30,7 @@
         "y": -1.0,
         "z": 2.0
       },
-      "material": "CRIMSON_STAIRS",
-      "facing": "NORTH",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:crimson_stairs[facing=north]"
     },
     {
       "vector": {
@@ -42,7 +38,7 @@
         "y": -1.0,
         "z": 0.0
       },
-      "material": "STRIPPED_CRIMSON_HYPHAE"
+      "data": "minecraft:stripped_crimson_hyphae[axis=z]"
     },
     {
       "vector": {
@@ -50,23 +46,15 @@
         "y": -1.0,
         "z": -3.0
       },
-      "material": "CRIMSON_STAIRS",
-      "facing": "EAST",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:crimson_stairs[facing=east]"
     },
     {
       "vector": {
-        "x": -2.0,
+        "x": 2.0,
         "y": -1.0,
         "z": 3.0
       },
-      "material": "CRIMSON_STAIRS",
-      "facing": "EAST",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:crimson_stairs[facing=west]"
     },
     {
       "vector": {
@@ -74,7 +62,7 @@
         "y": -1.0,
         "z": 0.0
       },
-      "material": "STRIPPED_CRIMSON_HYPHAE"
+      "data": "minecraft:stripped_crimson_hyphae[axis=z]"
     },
     {
       "vector": {
@@ -82,7 +70,7 @@
         "y": -1.0,
         "z": -3.0
       },
-      "material": "STRIPPED_CRIMSON_HYPHAE"
+      "data": "minecraft:stripped_crimson_hyphae[axis=x]"
     },
     {
       "vector": {
@@ -90,7 +78,7 @@
         "y": -1.0,
         "z": 3.0
       },
-      "material": "STRIPPED_CRIMSON_HYPHAE"
+      "data": "minecraft:stripped_crimson_hyphae[axis=x]"
     },
     {
       "vector": {
@@ -98,23 +86,7 @@
         "y": -1.0,
         "z": -3.0
       },
-      "material": "CRIMSON_STAIRS",
-      "facing": "WEST",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
-    },
-    {
-      "vector": {
-        "x": 2.0,
-        "y": -1.0,
-        "z": 3.0
-      },
-      "material": "CRIMSON_STAIRS",
-      "facing": "WEST",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:crimson_stairs[facing=west]"
     },
     {
       "vector": {
@@ -122,11 +94,7 @@
         "y": -1.0,
         "z": -2.0
       },
-      "material": "CRIMSON_STAIRS",
-      "facing": "SOUTH",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:crimson_stairs[facing=south]"
     },
     {
       "vector": {
@@ -134,7 +102,7 @@
         "y": -1.0,
         "z": -1.0
       },
-      "material": "STRIPPED_CRIMSON_HYPHAE"
+      "data": "minecraft:stripped_crimson_hyphae[axis=z]"
     },
     {
       "vector": {
@@ -142,7 +110,7 @@
         "y": -1.0,
         "z": 1.0
       },
-      "material": "STRIPPED_CRIMSON_HYPHAE"
+      "data": "minecraft:stripped_crimson_hyphae[axis=z]"
     },
     {
       "vector": {
@@ -150,7 +118,7 @@
         "y": -1.0,
         "z": -3.0
       },
-      "material": "STRIPPED_CRIMSON_HYPHAE"
+      "data": "minecraft:stripped_crimson_hyphae[axis=x]"
     },
     {
       "vector": {
@@ -158,7 +126,7 @@
         "y": -1.0,
         "z": 3.0
       },
-      "material": "STRIPPED_CRIMSON_HYPHAE"
+      "data": "minecraft:stripped_crimson_hyphae[axis=x]"
     },
     {
       "vector": {
@@ -166,7 +134,7 @@
         "y": -1.0,
         "z": -3.0
       },
-      "material": "STRIPPED_CRIMSON_HYPHAE"
+      "data": "minecraft:stripped_crimson_hyphae[axis=x]"
     },
     {
       "vector": {
@@ -174,7 +142,7 @@
         "y": -1.0,
         "z": 3.0
       },
-      "material": "STRIPPED_CRIMSON_HYPHAE"
+      "data": "minecraft:stripped_crimson_hyphae[axis=x]"
     },
     {
       "vector": {
@@ -182,7 +150,7 @@
         "y": -1.0,
         "z": -1.0
       },
-      "material": "STRIPPED_CRIMSON_HYPHAE"
+      "data": "minecraft:stripped_crimson_hyphae[axis=z]"
     },
     {
       "vector": {
@@ -190,7 +158,7 @@
         "y": -1.0,
         "z": 1.0
       },
-      "material": "STRIPPED_CRIMSON_HYPHAE"
+      "data": "minecraft:stripped_crimson_hyphae[axis=z]"
     }
   ]
 }

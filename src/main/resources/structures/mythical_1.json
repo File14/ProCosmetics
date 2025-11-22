@@ -6,7 +6,7 @@
         "y": -1.0,
         "z": -1.0
       },
-      "material": "PRISMARINE_BRICKS"
+      "data": "minecraft:prismarine_bricks"
     },
     {
       "vector": {
@@ -14,7 +14,7 @@
         "y": -1.0,
         "z": 1.0
       },
-      "material": "PRISMARINE_BRICKS"
+      "data": "minecraft:prismarine_bricks"
     },
     {
       "vector": {
@@ -22,7 +22,7 @@
         "y": -1.0,
         "z": 0.0
       },
-      "material": "SEA_LANTERN"
+      "data": "minecraft:sea_lantern"
     },
     {
       "vector": {
@@ -30,7 +30,7 @@
         "y": -1.0,
         "z": -1.0
       },
-      "material": "PRISMARINE_BRICKS"
+      "data": "minecraft:prismarine_bricks"
     },
     {
       "vector": {
@@ -38,7 +38,7 @@
         "y": -1.0,
         "z": 1.0
       },
-      "material": "PRISMARINE_BRICKS"
+      "data": "minecraft:prismarine_bricks"
     },
     {
       "vector": {
@@ -46,11 +46,7 @@
         "y": -1.0,
         "z": 0.0
       },
-      "material": "PRISMARINE_BRICK_STAIRS",
-      "facing": "WEST",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:prismarine_brick_stairs[facing=west]"
     },
     {
       "vector": {
@@ -58,11 +54,7 @@
         "y": -1.0,
         "z": -1.0
       },
-      "material": "PRISMARINE_BRICK_STAIRS",
-      "facing": "NORTH",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:prismarine_brick_stairs[facing=north]"
     },
     {
       "vector": {
@@ -70,11 +62,7 @@
         "y": -1.0,
         "z": 1.0
       },
-      "material": "PRISMARINE_BRICK_STAIRS",
-      "facing": "SOUTH",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:prismarine_brick_stairs[facing=south]"
     },
     {
       "vector": {
@@ -82,11 +70,7 @@
         "y": -1.0,
         "z": 0.0
       },
-      "material": "PRISMARINE_BRICK_STAIRS",
-      "facing": "EAST",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:prismarine_brick_stairs[facing=east]"
     }
   ]
 }

@@ -2,19 +2,19 @@
   "blocks": [
     {
       "vector": {
-        "x": -2.0,
-        "y": 6.0,
-        "z": 1.0
-      },
-      "material": "CYAN_WOOL"
-    },
-    {
-      "vector": {
         "x": -1.0,
         "y": 6.0,
         "z": -2.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 6.0,
+        "z": 1.0
+      },
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -22,7 +22,7 @@
         "y": 6.0,
         "z": 2.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -30,7 +30,7 @@
         "y": 6.0,
         "z": -1.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -38,7 +38,7 @@
         "y": 6.0,
         "z": -1.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -46,7 +46,7 @@
         "y": 6.0,
         "z": 1.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -54,7 +54,7 @@
         "y": 12.0,
         "z": 0.0
       },
-      "material": "WHITE_CONCRETE_POWDER"
+      "data": "minecraft:white_concrete_powder"
     },
     {
       "vector": {
@@ -62,7 +62,7 @@
         "y": 12.0,
         "z": -2.0
       },
-      "material": "WHITE_CONCRETE_POWDER"
+      "data": "minecraft:white_concrete_powder"
     },
     {
       "vector": {
@@ -70,7 +70,7 @@
         "y": 3.0,
         "z": -1.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -78,7 +78,7 @@
         "y": 3.0,
         "z": 1.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -86,7 +86,15 @@
         "y": 3.0,
         "z": 1.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 3.0,
+        "z": -1.0
+      },
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -94,31 +102,15 @@
         "y": 6.0,
         "z": -2.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
-        "x": 1.0,
-        "y": 3.0,
-        "z": -1.0
+        "x": -1.0,
+        "y": 6.0,
+        "z": 2.0
       },
-      "material": "CYAN_WOOL"
-    },
-    {
-      "vector": {
-        "x": 2.0,
-        "y": 12.0,
-        "z": 0.0
-      },
-      "material": "WHITE_CONCRETE_POWDER"
-    },
-    {
-      "vector": {
-        "x": 0.0,
-        "y": 12.0,
-        "z": 0.0
-      },
-      "material": "WHITE_CONCRETE_POWDER"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -126,39 +118,39 @@
         "y": 12.0,
         "z": 2.0
       },
-      "material": "WHITE_CONCRETE_POWDER"
+      "data": "minecraft:white_concrete_powder"
     },
     {
       "vector": {
-        "x": -1.0,
-        "y": 6.0,
-        "z": 2.0
+        "x": 0.0,
+        "y": 12.0,
+        "z": 0.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:white_concrete_powder"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 12.0,
+        "z": 0.0
+      },
+      "data": "minecraft:white_concrete_powder"
     },
     {
       "vector": {
         "x": -2.0,
+        "y": 6.0,
+        "z": 2.0
+      },
+      "data": "minecraft:cyan_wool"
+    },
+    {
+      "vector": {
+        "x": 2.0,
         "y": 6.0,
         "z": -2.0
       },
-      "material": "CYAN_WOOL"
-    },
-    {
-      "vector": {
-        "x": -2.0,
-        "y": 6.0,
-        "z": 0.0
-      },
-      "material": "WHITE_WOOL"
-    },
-    {
-      "vector": {
-        "x": -2.0,
-        "y": 6.0,
-        "z": 2.0
-      },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -166,7 +158,23 @@
         "y": 6.0,
         "z": 2.0
       },
-      "material": "WHITE_WOOL"
+      "data": "minecraft:white_wool"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 6.0,
+        "z": -2.0
+      },
+      "data": "minecraft:cyan_wool"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 6.0,
+        "z": 0.0
+      },
+      "data": "minecraft:white_wool"
     },
     {
       "vector": {
@@ -174,15 +182,7 @@
         "y": 6.0,
         "z": -2.0
       },
-      "material": "WHITE_WOOL"
-    },
-    {
-      "vector": {
-        "x": 2.0,
-        "y": 6.0,
-        "z": -2.0
-      },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:white_wool"
     },
     {
       "vector": {
@@ -190,7 +190,7 @@
         "y": 6.0,
         "z": 0.0
       },
-      "material": "WHITE_WOOL"
+      "data": "minecraft:white_wool"
     },
     {
       "vector": {
@@ -198,7 +198,7 @@
         "y": 6.0,
         "z": 2.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -206,7 +206,7 @@
         "y": 9.0,
         "z": -1.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -214,7 +214,7 @@
         "y": 9.0,
         "z": 1.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -222,7 +222,7 @@
         "y": 9.0,
         "z": -3.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -230,7 +230,7 @@
         "y": 9.0,
         "z": 3.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -238,7 +238,7 @@
         "y": 9.0,
         "z": -3.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -246,7 +246,7 @@
         "y": 9.0,
         "z": 3.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -254,7 +254,7 @@
         "y": 9.0,
         "z": -1.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -262,7 +262,7 @@
         "y": 9.0,
         "z": 1.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -270,9 +270,7 @@
         "y": 3.0,
         "z": 0.0
       },
-      "material": "CAMPFIRE",
-      "facing": "EAST",
-      "water_logged": false
+      "data": "minecraft:campfire[facing=east,lit=true]"
     },
     {
       "vector": {
@@ -280,7 +278,7 @@
         "y": 9.0,
         "z": -3.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -288,7 +286,7 @@
         "y": 9.0,
         "z": -2.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -296,7 +294,7 @@
         "y": 9.0,
         "z": 0.0
       },
-      "material": "WHITE_WOOL"
+      "data": "minecraft:white_wool"
     },
     {
       "vector": {
@@ -304,31 +302,15 @@
         "y": 9.0,
         "z": 2.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
-        "x": -2.0,
+        "x": 0.0,
         "y": 9.0,
         "z": -3.0
       },
-      "material": "CYAN_WOOL"
-    },
-    {
-      "vector": {
-        "x": 3.0,
-        "y": 9.0,
-        "z": 2.0
-      },
-      "material": "CYAN_WOOL"
-    },
-    {
-      "vector": {
-        "x": -2.0,
-        "y": 9.0,
-        "z": 3.0
-      },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:white_wool"
     },
     {
       "vector": {
@@ -336,31 +318,15 @@
         "y": 9.0,
         "z": -2.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
-        "x": 0.0,
+        "x": -2.0,
         "y": 9.0,
         "z": -3.0
       },
-      "material": "WHITE_WOOL"
-    },
-    {
-      "vector": {
-        "x": 0.0,
-        "y": 9.0,
-        "z": 3.0
-      },
-      "material": "WHITE_WOOL"
-    },
-    {
-      "vector": {
-        "x": 3.0,
-        "y": 9.0,
-        "z": 0.0
-      },
-      "material": "WHITE_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -368,7 +334,39 @@
         "y": 9.0,
         "z": 3.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 9.0,
+        "z": 2.0
+      },
+      "data": "minecraft:cyan_wool"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 9.0,
+        "z": 3.0
+      },
+      "data": "minecraft:white_wool"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 9.0,
+        "z": 0.0
+      },
+      "data": "minecraft:white_wool"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 9.0,
+        "z": 3.0
+      },
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -376,7 +374,7 @@
         "y": 7.0,
         "z": -2.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -384,7 +382,7 @@
         "y": 7.0,
         "z": 2.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -392,7 +390,7 @@
         "y": 7.0,
         "z": -2.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -400,7 +398,7 @@
         "y": 7.0,
         "z": 2.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -408,7 +406,7 @@
         "y": 7.0,
         "z": -1.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -416,7 +414,7 @@
         "y": 7.0,
         "z": 1.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -424,7 +422,7 @@
         "y": 7.0,
         "z": -3.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -432,7 +430,7 @@
         "y": 7.0,
         "z": 3.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -440,7 +438,7 @@
         "y": 7.0,
         "z": -3.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -448,7 +446,7 @@
         "y": 7.0,
         "z": 3.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -456,7 +454,7 @@
         "y": 7.0,
         "z": -1.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -464,7 +462,7 @@
         "y": 7.0,
         "z": 1.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -472,7 +470,7 @@
         "y": 11.0,
         "z": -2.0
       },
-      "material": "CYAN_CONCRETE_POWDER"
+      "data": "minecraft:cyan_concrete_powder"
     },
     {
       "vector": {
@@ -480,7 +478,7 @@
         "y": 11.0,
         "z": 2.0
       },
-      "material": "CYAN_CONCRETE_POWDER"
+      "data": "minecraft:cyan_concrete_powder"
     },
     {
       "vector": {
@@ -488,7 +486,7 @@
         "y": 11.0,
         "z": -2.0
       },
-      "material": "CYAN_CONCRETE_POWDER"
+      "data": "minecraft:cyan_concrete_powder"
     },
     {
       "vector": {
@@ -496,7 +494,7 @@
         "y": 11.0,
         "z": 2.0
       },
-      "material": "CYAN_CONCRETE_POWDER"
+      "data": "minecraft:cyan_concrete_powder"
     },
     {
       "vector": {
@@ -504,7 +502,7 @@
         "y": 7.0,
         "z": 0.0
       },
-      "material": "WHITE_WOOL"
+      "data": "minecraft:white_wool"
     },
     {
       "vector": {
@@ -512,7 +510,7 @@
         "y": 7.0,
         "z": -3.0
       },
-      "material": "WHITE_WOOL"
+      "data": "minecraft:white_wool"
     },
     {
       "vector": {
@@ -520,7 +518,7 @@
         "y": 7.0,
         "z": 3.0
       },
-      "material": "WHITE_WOOL"
+      "data": "minecraft:white_wool"
     },
     {
       "vector": {
@@ -528,7 +526,7 @@
         "y": 7.0,
         "z": 0.0
       },
-      "material": "WHITE_WOOL"
+      "data": "minecraft:white_wool"
     },
     {
       "vector": {
@@ -536,7 +534,7 @@
         "y": 11.0,
         "z": -1.0
       },
-      "material": "CYAN_CONCRETE_POWDER"
+      "data": "minecraft:cyan_concrete_powder"
     },
     {
       "vector": {
@@ -544,7 +542,7 @@
         "y": 11.0,
         "z": 1.0
       },
-      "material": "CYAN_CONCRETE_POWDER"
+      "data": "minecraft:cyan_concrete_powder"
     },
     {
       "vector": {
@@ -552,7 +550,7 @@
         "y": 11.0,
         "z": -3.0
       },
-      "material": "CYAN_CONCRETE_POWDER"
+      "data": "minecraft:cyan_concrete_powder"
     },
     {
       "vector": {
@@ -560,7 +558,7 @@
         "y": 11.0,
         "z": 3.0
       },
-      "material": "CYAN_CONCRETE_POWDER"
+      "data": "minecraft:cyan_concrete_powder"
     },
     {
       "vector": {
@@ -568,7 +566,7 @@
         "y": 11.0,
         "z": -3.0
       },
-      "material": "CYAN_CONCRETE_POWDER"
+      "data": "minecraft:cyan_concrete_powder"
     },
     {
       "vector": {
@@ -576,7 +574,7 @@
         "y": 11.0,
         "z": 3.0
       },
-      "material": "CYAN_CONCRETE_POWDER"
+      "data": "minecraft:cyan_concrete_powder"
     },
     {
       "vector": {
@@ -584,7 +582,7 @@
         "y": 11.0,
         "z": -1.0
       },
-      "material": "CYAN_CONCRETE_POWDER"
+      "data": "minecraft:cyan_concrete_powder"
     },
     {
       "vector": {
@@ -592,7 +590,7 @@
         "y": 11.0,
         "z": 1.0
       },
-      "material": "CYAN_CONCRETE_POWDER"
+      "data": "minecraft:cyan_concrete_powder"
     },
     {
       "vector": {
@@ -600,7 +598,7 @@
         "y": 11.0,
         "z": 0.0
       },
-      "material": "WHITE_CONCRETE_POWDER"
+      "data": "minecraft:white_concrete_powder"
     },
     {
       "vector": {
@@ -608,7 +606,7 @@
         "y": 11.0,
         "z": -3.0
       },
-      "material": "WHITE_CONCRETE_POWDER"
+      "data": "minecraft:white_concrete_powder"
     },
     {
       "vector": {
@@ -616,7 +614,7 @@
         "y": 11.0,
         "z": 3.0
       },
-      "material": "WHITE_CONCRETE_POWDER"
+      "data": "minecraft:white_concrete_powder"
     },
     {
       "vector": {
@@ -624,31 +622,7 @@
         "y": 11.0,
         "z": 0.0
       },
-      "material": "WHITE_CONCRETE_POWDER"
-    },
-    {
-      "vector": {
-        "x": -3.0,
-        "y": 8.0,
-        "z": -1.0
-      },
-      "material": "CYAN_WOOL"
-    },
-    {
-      "vector": {
-        "x": -3.0,
-        "y": 8.0,
-        "z": 1.0
-      },
-      "material": "CYAN_WOOL"
-    },
-    {
-      "vector": {
-        "x": -1.0,
-        "y": 8.0,
-        "z": 3.0
-      },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:white_concrete_powder"
     },
     {
       "vector": {
@@ -656,15 +630,7 @@
         "y": 8.0,
         "z": -3.0
       },
-      "material": "CYAN_WOOL"
-    },
-    {
-      "vector": {
-        "x": 1.0,
-        "y": 8.0,
-        "z": -3.0
-      },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -672,7 +638,15 @@
         "y": 8.0,
         "z": 3.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 8.0,
+        "z": 1.0
+      },
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -680,7 +654,7 @@
         "y": 8.0,
         "z": -1.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -688,7 +662,31 @@
         "y": 8.0,
         "z": 1.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 8.0,
+        "z": -1.0
+      },
+      "data": "minecraft:cyan_wool"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 8.0,
+        "z": 3.0
+      },
+      "data": "minecraft:cyan_wool"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 8.0,
+        "z": -3.0
+      },
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -696,7 +694,7 @@
         "y": 4.0,
         "z": -1.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -704,7 +702,7 @@
         "y": 4.0,
         "z": 1.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -712,7 +710,7 @@
         "y": 4.0,
         "z": -1.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -720,87 +718,7 @@
         "y": 4.0,
         "z": 1.0
       },
-      "material": "CYAN_WOOL"
-    },
-    {
-      "vector": {
-        "x": 2.0,
-        "y": 8.0,
-        "z": -3.0
-      },
-      "material": "CYAN_WOOL"
-    },
-    {
-      "vector": {
-        "x": -3.0,
-        "y": 8.0,
-        "z": -2.0
-      },
-      "material": "CYAN_WOOL"
-    },
-    {
-      "vector": {
-        "x": -2.0,
-        "y": 8.0,
-        "z": 3.0
-      },
-      "material": "CYAN_WOOL"
-    },
-    {
-      "vector": {
-        "x": -3.0,
-        "y": 8.0,
-        "z": 0.0
-      },
-      "material": "WHITE_WOOL"
-    },
-    {
-      "vector": {
-        "x": -3.0,
-        "y": 8.0,
-        "z": 2.0
-      },
-      "material": "CYAN_WOOL"
-    },
-    {
-      "vector": {
-        "x": 0.0,
-        "y": 8.0,
-        "z": -3.0
-      },
-      "material": "WHITE_WOOL"
-    },
-    {
-      "vector": {
-        "x": 3.0,
-        "y": 8.0,
-        "z": -2.0
-      },
-      "material": "CYAN_WOOL"
-    },
-    {
-      "vector": {
-        "x": -2.0,
-        "y": 8.0,
-        "z": -3.0
-      },
-      "material": "CYAN_WOOL"
-    },
-    {
-      "vector": {
-        "x": 2.0,
-        "y": 8.0,
-        "z": 3.0
-      },
-      "material": "CYAN_WOOL"
-    },
-    {
-      "vector": {
-        "x": 0.0,
-        "y": 8.0,
-        "z": 3.0
-      },
-      "material": "WHITE_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -808,7 +726,39 @@
         "y": 8.0,
         "z": 2.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 8.0,
+        "z": 2.0
+      },
+      "data": "minecraft:cyan_wool"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 8.0,
+        "z": -2.0
+      },
+      "data": "minecraft:cyan_wool"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 8.0,
+        "z": -3.0
+      },
+      "data": "minecraft:cyan_wool"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 8.0,
+        "z": 3.0
+      },
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -816,7 +766,63 @@
         "y": 8.0,
         "z": 0.0
       },
-      "material": "WHITE_WOOL"
+      "data": "minecraft:white_wool"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 8.0,
+        "z": 3.0
+      },
+      "data": "minecraft:white_wool"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 8.0,
+        "z": -3.0
+      },
+      "data": "minecraft:white_wool"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 8.0,
+        "z": -3.0
+      },
+      "data": "minecraft:cyan_wool"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 8.0,
+        "z": 3.0
+      },
+      "data": "minecraft:cyan_wool"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 8.0,
+        "z": 0.0
+      },
+      "data": "minecraft:white_wool"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 8.0,
+        "z": -2.0
+      },
+      "data": "minecraft:cyan_wool"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 4.0,
+        "z": 1.0
+      },
+      "data": "minecraft:white_wool"
     },
     {
       "vector": {
@@ -824,8 +830,7 @@
         "y": 2.0,
         "z": 1.0
       },
-      "material": "OAK_FENCE",
-      "water_logged": false
+      "data": "minecraft:oak_fence"
     },
     {
       "vector": {
@@ -833,7 +838,23 @@
         "y": 0.0,
         "z": -1.0
       },
-      "material": "OAK_PLANKS"
+      "data": "minecraft:oak_planks"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 4.0,
+        "z": 0.0
+      },
+      "data": "minecraft:white_wool"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "data": "minecraft:oak_planks"
     },
     {
       "vector": {
@@ -841,7 +862,23 @@
         "y": 0.0,
         "z": 1.0
       },
-      "material": "OAK_PLANKS"
+      "data": "minecraft:oak_planks"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "data": "minecraft:oak_planks"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 4.0,
+        "z": 0.0
+      },
+      "data": "minecraft:white_wool"
     },
     {
       "vector": {
@@ -849,8 +886,7 @@
         "y": 2.0,
         "z": -1.0
       },
-      "material": "OAK_FENCE",
-      "water_logged": false
+      "data": "minecraft:oak_fence"
     },
     {
       "vector": {
@@ -858,24 +894,7 @@
         "y": 2.0,
         "z": -1.0
       },
-      "material": "OAK_FENCE",
-      "water_logged": false
-    },
-    {
-      "vector": {
-        "x": -1.0,
-        "y": 4.0,
-        "z": 0.0
-      },
-      "material": "WHITE_WOOL"
-    },
-    {
-      "vector": {
-        "x": 0.0,
-        "y": 4.0,
-        "z": -1.0
-      },
-      "material": "WHITE_WOOL"
+      "data": "minecraft:oak_fence"
     },
     {
       "vector": {
@@ -883,40 +902,15 @@
         "y": 2.0,
         "z": 1.0
       },
-      "material": "OAK_FENCE",
-      "water_logged": false
+      "data": "minecraft:oak_fence"
     },
     {
       "vector": {
         "x": 0.0,
         "y": 4.0,
-        "z": 1.0
-      },
-      "material": "WHITE_WOOL"
-    },
-    {
-      "vector": {
-        "x": 1.0,
-        "y": 0.0,
         "z": -1.0
       },
-      "material": "OAK_PLANKS"
-    },
-    {
-      "vector": {
-        "x": 1.0,
-        "y": 4.0,
-        "z": 0.0
-      },
-      "material": "WHITE_WOOL"
-    },
-    {
-      "vector": {
-        "x": 1.0,
-        "y": 0.0,
-        "z": 1.0
-      },
-      "material": "OAK_PLANKS"
+      "data": "minecraft:white_wool"
     },
     {
       "vector": {
@@ -924,7 +918,7 @@
         "y": 0.0,
         "z": 0.0
       },
-      "material": "OAK_PLANKS"
+      "data": "minecraft:oak_planks"
     },
     {
       "vector": {
@@ -932,7 +926,7 @@
         "y": 1.0,
         "z": -1.0
       },
-      "material": "BIRCH_PLANKS"
+      "data": "minecraft:birch_planks"
     },
     {
       "vector": {
@@ -940,7 +934,7 @@
         "y": 1.0,
         "z": 1.0
       },
-      "material": "BIRCH_PLANKS"
+      "data": "minecraft:birch_planks"
     },
     {
       "vector": {
@@ -948,7 +942,7 @@
         "y": 0.0,
         "z": -1.0
       },
-      "material": "OAK_PLANKS"
+      "data": "minecraft:oak_planks"
     },
     {
       "vector": {
@@ -956,7 +950,7 @@
         "y": 0.0,
         "z": 1.0
       },
-      "material": "OAK_PLANKS"
+      "data": "minecraft:oak_planks"
     },
     {
       "vector": {
@@ -964,7 +958,7 @@
         "y": 0.0,
         "z": 0.0
       },
-      "material": "OAK_PLANKS"
+      "data": "minecraft:oak_planks"
     },
     {
       "vector": {
@@ -972,7 +966,7 @@
         "y": 1.0,
         "z": -1.0
       },
-      "material": "BIRCH_PLANKS"
+      "data": "minecraft:birch_planks"
     },
     {
       "vector": {
@@ -980,7 +974,7 @@
         "y": 1.0,
         "z": 1.0
       },
-      "material": "BIRCH_PLANKS"
+      "data": "minecraft:birch_planks"
     },
     {
       "vector": {
@@ -988,8 +982,7 @@
         "y": 1.0,
         "z": 0.0
       },
-      "material": "BIRCH_SLAB",
-      "water_logged": false
+      "data": "minecraft:birch_slab"
     },
     {
       "vector": {
@@ -997,8 +990,7 @@
         "y": 0.0,
         "z": 0.0
       },
-      "material": "OAK_SLAB",
-      "water_logged": false
+      "data": "minecraft:oak_slab"
     },
     {
       "vector": {
@@ -1006,8 +998,7 @@
         "y": 1.0,
         "z": -1.0
       },
-      "material": "BIRCH_SLAB",
-      "water_logged": false
+      "data": "minecraft:birch_slab"
     },
     {
       "vector": {
@@ -1015,8 +1006,7 @@
         "y": 1.0,
         "z": 1.0
       },
-      "material": "BIRCH_SLAB",
-      "water_logged": false
+      "data": "minecraft:birch_slab"
     },
     {
       "vector": {
@@ -1024,8 +1014,7 @@
         "y": 1.0,
         "z": 0.0
       },
-      "material": "BIRCH_SLAB",
-      "water_logged": false
+      "data": "minecraft:birch_slab"
     },
     {
       "vector": {
@@ -1033,7 +1022,7 @@
         "y": 10.0,
         "z": -1.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -1041,7 +1030,7 @@
         "y": 10.0,
         "z": 1.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -1049,7 +1038,7 @@
         "y": 10.0,
         "z": -3.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -1057,7 +1046,7 @@
         "y": 10.0,
         "z": 3.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -1065,7 +1054,7 @@
         "y": 10.0,
         "z": -3.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -1073,7 +1062,7 @@
         "y": 10.0,
         "z": 3.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -1081,7 +1070,7 @@
         "y": 10.0,
         "z": -1.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -1089,15 +1078,15 @@
         "y": 10.0,
         "z": 1.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
-        "x": 2.0,
+        "x": 0.0,
         "y": 10.0,
-        "z": -3.0
+        "z": 3.0
       },
-      "material": "CYAN_CONCRETE_POWDER"
+      "data": "minecraft:white_wool"
     },
     {
       "vector": {
@@ -1105,7 +1094,39 @@
         "y": 10.0,
         "z": -2.0
       },
-      "material": "CYAN_CONCRETE_POWDER"
+      "data": "minecraft:cyan_concrete_powder"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 10.0,
+        "z": 2.0
+      },
+      "data": "minecraft:cyan_concrete_powder"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 10.0,
+        "z": -3.0
+      },
+      "data": "minecraft:cyan_concrete_powder"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 10.0,
+        "z": 3.0
+      },
+      "data": "minecraft:cyan_concrete_powder"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 10.0,
+        "z": 0.0
+      },
+      "data": "minecraft:white_wool"
     },
     {
       "vector": {
@@ -1113,7 +1134,7 @@
         "y": 10.0,
         "z": 0.0
       },
-      "material": "WHITE_WOOL"
+      "data": "minecraft:white_wool"
     },
     {
       "vector": {
@@ -1121,39 +1142,15 @@
         "y": 10.0,
         "z": 2.0
       },
-      "material": "CYAN_CONCRETE_POWDER"
-    },
-    {
-      "vector": {
-        "x": -2.0,
-        "y": 10.0,
-        "z": -3.0
-      },
-      "material": "CYAN_CONCRETE_POWDER"
-    },
-    {
-      "vector": {
-        "x": 2.0,
-        "y": 10.0,
-        "z": 3.0
-      },
-      "material": "CYAN_CONCRETE_POWDER"
+      "data": "minecraft:cyan_concrete_powder"
     },
     {
       "vector": {
         "x": 3.0,
         "y": 10.0,
-        "z": 2.0
+        "z": -2.0
       },
-      "material": "CYAN_CONCRETE_POWDER"
-    },
-    {
-      "vector": {
-        "x": -2.0,
-        "y": 10.0,
-        "z": 3.0
-      },
-      "material": "CYAN_CONCRETE_POWDER"
+      "data": "minecraft:cyan_concrete_powder"
     },
     {
       "vector": {
@@ -1161,31 +1158,23 @@
         "y": 10.0,
         "z": -3.0
       },
-      "material": "WHITE_WOOL"
+      "data": "minecraft:white_wool"
     },
     {
       "vector": {
-        "x": 3.0,
+        "x": -2.0,
         "y": 10.0,
-        "z": -2.0
+        "z": -3.0
       },
-      "material": "CYAN_CONCRETE_POWDER"
+      "data": "minecraft:cyan_concrete_powder"
     },
     {
       "vector": {
-        "x": 0.0,
+        "x": 2.0,
         "y": 10.0,
         "z": 3.0
       },
-      "material": "WHITE_WOOL"
-    },
-    {
-      "vector": {
-        "x": 3.0,
-        "y": 10.0,
-        "z": 0.0
-      },
-      "material": "WHITE_WOOL"
+      "data": "minecraft:cyan_concrete_powder"
     },
     {
       "vector": {
@@ -1193,7 +1182,7 @@
         "y": 5.0,
         "z": -1.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -1201,7 +1190,7 @@
         "y": 5.0,
         "z": 1.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -1209,7 +1198,7 @@
         "y": 5.0,
         "z": -2.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -1217,7 +1206,7 @@
         "y": 5.0,
         "z": 2.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -1225,7 +1214,7 @@
         "y": 5.0,
         "z": -2.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -1233,7 +1222,7 @@
         "y": 5.0,
         "z": 2.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -1241,7 +1230,7 @@
         "y": 5.0,
         "z": -1.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -1249,7 +1238,7 @@
         "y": 5.0,
         "z": 1.0
       },
-      "material": "CYAN_WOOL"
+      "data": "minecraft:cyan_wool"
     },
     {
       "vector": {
@@ -1257,7 +1246,7 @@
         "y": 12.0,
         "z": -1.0
       },
-      "material": "CYAN_CONCRETE_POWDER"
+      "data": "minecraft:cyan_concrete_powder"
     },
     {
       "vector": {
@@ -1265,7 +1254,7 @@
         "y": 12.0,
         "z": 1.0
       },
-      "material": "CYAN_CONCRETE_POWDER"
+      "data": "minecraft:cyan_concrete_powder"
     },
     {
       "vector": {
@@ -1273,7 +1262,7 @@
         "y": 12.0,
         "z": -1.0
       },
-      "material": "CYAN_CONCRETE_POWDER"
+      "data": "minecraft:cyan_concrete_powder"
     },
     {
       "vector": {
@@ -1281,7 +1270,7 @@
         "y": 12.0,
         "z": 1.0
       },
-      "material": "CYAN_CONCRETE_POWDER"
+      "data": "minecraft:cyan_concrete_powder"
     },
     {
       "vector": {
@@ -1289,7 +1278,7 @@
         "y": 5.0,
         "z": 0.0
       },
-      "material": "WHITE_WOOL"
+      "data": "minecraft:white_wool"
     },
     {
       "vector": {
@@ -1297,7 +1286,7 @@
         "y": 5.0,
         "z": -2.0
       },
-      "material": "WHITE_WOOL"
+      "data": "minecraft:white_wool"
     },
     {
       "vector": {
@@ -1305,7 +1294,7 @@
         "y": 5.0,
         "z": 2.0
       },
-      "material": "WHITE_WOOL"
+      "data": "minecraft:white_wool"
     },
     {
       "vector": {
@@ -1313,55 +1302,7 @@
         "y": 5.0,
         "z": 0.0
       },
-      "material": "WHITE_WOOL"
-    },
-    {
-      "vector": {
-        "x": -2.0,
-        "y": 12.0,
-        "z": 1.0
-      },
-      "material": "CYAN_CONCRETE_POWDER"
-    },
-    {
-      "vector": {
-        "x": -2.0,
-        "y": 12.0,
-        "z": -1.0
-      },
-      "material": "CYAN_CONCRETE_POWDER"
-    },
-    {
-      "vector": {
-        "x": 2.0,
-        "y": 12.0,
-        "z": 1.0
-      },
-      "material": "CYAN_CONCRETE_POWDER"
-    },
-    {
-      "vector": {
-        "x": -1.0,
-        "y": 12.0,
-        "z": -2.0
-      },
-      "material": "CYAN_CONCRETE_POWDER"
-    },
-    {
-      "vector": {
-        "x": 1.0,
-        "y": 12.0,
-        "z": 2.0
-      },
-      "material": "CYAN_CONCRETE_POWDER"
-    },
-    {
-      "vector": {
-        "x": -1.0,
-        "y": 12.0,
-        "z": 0.0
-      },
-      "material": "WHITE_CONCRETE_POWDER"
+      "data": "minecraft:white_wool"
     },
     {
       "vector": {
@@ -1369,15 +1310,39 @@
         "y": 12.0,
         "z": -1.0
       },
-      "material": "CYAN_CONCRETE_POWDER"
+      "data": "minecraft:cyan_concrete_powder"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 12.0,
+        "z": 1.0
+      },
+      "data": "minecraft:cyan_concrete_powder"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 12.0,
+        "z": -1.0
+      },
+      "data": "minecraft:cyan_concrete_powder"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 12.0,
+        "z": 1.0
+      },
+      "data": "minecraft:cyan_concrete_powder"
     },
     {
       "vector": {
         "x": -1.0,
         "y": 12.0,
-        "z": 2.0
+        "z": -2.0
       },
-      "material": "CYAN_CONCRETE_POWDER"
+      "data": "minecraft:cyan_concrete_powder"
     },
     {
       "vector": {
@@ -1385,23 +1350,7 @@
         "y": 12.0,
         "z": -1.0
       },
-      "material": "WHITE_CONCRETE_POWDER"
-    },
-    {
-      "vector": {
-        "x": 0.0,
-        "y": 12.0,
-        "z": 1.0
-      },
-      "material": "WHITE_CONCRETE_POWDER"
-    },
-    {
-      "vector": {
-        "x": 1.0,
-        "y": 12.0,
-        "z": -2.0
-      },
-      "material": "CYAN_CONCRETE_POWDER"
+      "data": "minecraft:white_concrete_powder"
     },
     {
       "vector": {
@@ -1409,7 +1358,47 @@
         "y": 12.0,
         "z": 0.0
       },
-      "material": "WHITE_CONCRETE_POWDER"
+      "data": "minecraft:white_concrete_powder"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 12.0,
+        "z": 2.0
+      },
+      "data": "minecraft:cyan_concrete_powder"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 12.0,
+        "z": 0.0
+      },
+      "data": "minecraft:white_concrete_powder"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 12.0,
+        "z": 1.0
+      },
+      "data": "minecraft:white_concrete_powder"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 12.0,
+        "z": 2.0
+      },
+      "data": "minecraft:cyan_concrete_powder"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 12.0,
+        "z": -2.0
+      },
+      "data": "minecraft:cyan_concrete_powder"
     }
   ]
 }

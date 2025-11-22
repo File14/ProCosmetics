@@ -2,15 +2,19 @@
   "blocks": [
     {
       "vector": {
+        "x": 3.0,
+        "y": -1.0,
+        "z": -2.0
+      },
+      "data": "minecraft:spruce_stairs[facing=south]"
+    },
+    {
+      "vector": {
         "x": -3.0,
         "y": -1.0,
         "z": 2.0
       },
-      "material": "SPRUCE_STAIRS",
-      "facing": "NORTH",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:spruce_stairs[facing=north]"
     },
     {
       "vector": {
@@ -18,11 +22,7 @@
         "y": -1.0,
         "z": -2.0
       },
-      "material": "SPRUCE_STAIRS",
-      "facing": "SOUTH",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:spruce_stairs[facing=south]"
     },
     {
       "vector": {
@@ -30,11 +30,7 @@
         "y": -1.0,
         "z": 2.0
       },
-      "material": "SPRUCE_STAIRS",
-      "facing": "NORTH",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:spruce_stairs[facing=north]"
     },
     {
       "vector": {
@@ -42,7 +38,7 @@
         "y": -1.0,
         "z": 0.0
       },
-      "material": "STRIPPED_SPRUCE_WOOD"
+      "data": "minecraft:stripped_spruce_wood[axis=z]"
     },
     {
       "vector": {
@@ -50,51 +46,39 @@
         "y": -1.0,
         "z": -3.0
       },
-      "material": "SPRUCE_STAIRS",
-      "facing": "EAST",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
-    },
-    {
-      "vector": {
-        "x": -2.0,
-        "y": -1.0,
-        "z": 3.0
-      },
-      "material": "SPRUCE_STAIRS",
-      "facing": "EAST",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
-    },
-    {
-      "vector": {
-        "x": 0.0,
-        "y": -1.0,
-        "z": -3.0
-      },
-      "material": "STRIPPED_SPRUCE_WOOD"
-    },
-    {
-      "vector": {
-        "x": 0.0,
-        "y": -1.0,
-        "z": 3.0
-      },
-      "material": "STRIPPED_SPRUCE_WOOD"
+      "data": "minecraft:spruce_stairs[facing=east]"
     },
     {
       "vector": {
         "x": 2.0,
         "y": -1.0,
+        "z": 3.0
+      },
+      "data": "minecraft:spruce_stairs[facing=west]"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": -1.0,
+        "z": 3.0
+      },
+      "data": "minecraft:spruce_stairs[facing=east]"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": -1.0,
         "z": -3.0
       },
-      "material": "SPRUCE_STAIRS",
-      "facing": "WEST",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:stripped_spruce_wood[axis=x]"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": -1.0,
+        "z": 3.0
+      },
+      "data": "minecraft:stripped_spruce_wood[axis=x]"
     },
     {
       "vector": {
@@ -102,31 +86,15 @@
         "y": -1.0,
         "z": 0.0
       },
-      "material": "STRIPPED_SPRUCE_WOOD"
+      "data": "minecraft:stripped_spruce_wood[axis=z]"
     },
     {
       "vector": {
         "x": 2.0,
         "y": -1.0,
-        "z": 3.0
+        "z": -3.0
       },
-      "material": "SPRUCE_STAIRS",
-      "facing": "WEST",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
-    },
-    {
-      "vector": {
-        "x": 3.0,
-        "y": -1.0,
-        "z": -2.0
-      },
-      "material": "SPRUCE_STAIRS",
-      "facing": "SOUTH",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:spruce_stairs[facing=west]"
     },
     {
       "vector": {
@@ -134,7 +102,7 @@
         "y": -1.0,
         "z": -1.0
       },
-      "material": "STRIPPED_SPRUCE_WOOD"
+      "data": "minecraft:stripped_spruce_wood[axis=z]"
     },
     {
       "vector": {
@@ -142,7 +110,7 @@
         "y": -1.0,
         "z": 1.0
       },
-      "material": "STRIPPED_SPRUCE_WOOD"
+      "data": "minecraft:stripped_spruce_wood[axis=z]"
     },
     {
       "vector": {
@@ -150,7 +118,7 @@
         "y": -1.0,
         "z": -3.0
       },
-      "material": "STRIPPED_SPRUCE_WOOD"
+      "data": "minecraft:stripped_spruce_wood[axis=x]"
     },
     {
       "vector": {
@@ -158,7 +126,7 @@
         "y": -1.0,
         "z": 3.0
       },
-      "material": "STRIPPED_SPRUCE_WOOD"
+      "data": "minecraft:stripped_spruce_wood[axis=x]"
     },
     {
       "vector": {
@@ -166,7 +134,7 @@
         "y": -1.0,
         "z": -3.0
       },
-      "material": "STRIPPED_SPRUCE_WOOD"
+      "data": "minecraft:stripped_spruce_wood[axis=x]"
     },
     {
       "vector": {
@@ -174,7 +142,7 @@
         "y": -1.0,
         "z": 3.0
       },
-      "material": "STRIPPED_SPRUCE_WOOD"
+      "data": "minecraft:stripped_spruce_wood[axis=x]"
     },
     {
       "vector": {
@@ -182,7 +150,7 @@
         "y": -1.0,
         "z": -1.0
       },
-      "material": "STRIPPED_SPRUCE_WOOD"
+      "data": "minecraft:stripped_spruce_wood[axis=z]"
     },
     {
       "vector": {
@@ -190,7 +158,7 @@
         "y": -1.0,
         "z": 1.0
       },
-      "material": "STRIPPED_SPRUCE_WOOD"
+      "data": "minecraft:stripped_spruce_wood[axis=z]"
     }
   ]
 }

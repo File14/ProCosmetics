@@ -6,7 +6,7 @@
         "y": 1.0,
         "z": 3.0
       },
-      "material": "BASALT"
+      "data": "minecraft:basalt"
     },
     {
       "vector": {
@@ -14,8 +14,7 @@
         "y": 0.0,
         "z": 1.0
       },
-      "material": "SPRUCE_SLAB",
-      "water_logged": false
+      "data": "minecraft:spruce_slab"
     },
     {
       "vector": {
@@ -23,9 +22,7 @@
         "y": 1.0,
         "z": 0.0
       },
-      "material": "LEVER",
-      "facing": "NORTH",
-      "face_attachable": "WALL"
+      "data": "minecraft:lever[face=wall,facing=north]"
     },
     {
       "vector": {
@@ -33,7 +30,7 @@
         "y": 1.0,
         "z": 2.0
       },
-      "material": "BASALT"
+      "data": "minecraft:basalt"
     },
     {
       "vector": {
@@ -41,9 +38,7 @@
         "y": 1.0,
         "z": 5.0
       },
-      "material": "POLISHED_BLACKSTONE_BUTTON",
-      "facing": "SOUTH",
-      "face_attachable": "WALL"
+      "data": "minecraft:polished_blackstone_button[face=wall,facing=south]"
     },
     {
       "vector": {
@@ -51,11 +46,7 @@
         "y": 0.0,
         "z": 3.0
       },
-      "material": "SPRUCE_STAIRS",
-      "facing": "NORTH",
-      "water_logged": false,
-      "bisected": "TOP",
-      "shape": "STRAIGHT"
+      "data": "minecraft:spruce_stairs[facing=north,half=top]"
     },
     {
       "vector": {
@@ -63,11 +54,7 @@
         "y": 0.0,
         "z": 1.0
       },
-      "material": "OAK_TRAPDOOR",
-      "facing": "WEST",
-      "open": true,
-      "water_logged": false,
-      "bisected": "TOP"
+      "data": "minecraft:oak_trapdoor[facing=west,half=top,open=true]"
     },
     {
       "vector": {
@@ -75,11 +62,7 @@
         "y": 1.0,
         "z": 2.0
       },
-      "material": "SPRUCE_TRAPDOOR",
-      "facing": "WEST",
-      "open": true,
-      "water_logged": false,
-      "bisected": "BOTTOM"
+      "data": "minecraft:spruce_trapdoor[facing=west,open=true]"
     },
     {
       "vector": {
@@ -87,8 +70,7 @@
         "y": 0.0,
         "z": 2.0
       },
-      "material": "SPRUCE_SLAB",
-      "water_logged": false
+      "data": "minecraft:spruce_slab"
     },
     {
       "vector": {
@@ -96,7 +78,7 @@
         "y": 1.0,
         "z": 1.0
       },
-      "material": "BASALT"
+      "data": "minecraft:basalt"
     },
     {
       "vector": {
@@ -104,7 +86,7 @@
         "y": 1.0,
         "z": 4.0
       },
-      "material": "BASALT"
+      "data": "minecraft:basalt"
     },
     {
       "vector": {
@@ -112,11 +94,7 @@
         "y": 2.0,
         "z": 2.0
       },
-      "material": "SPRUCE_TRAPDOOR",
-      "facing": "NORTH",
-      "open": false,
-      "water_logged": false,
-      "bisected": "BOTTOM"
+      "data": "minecraft:spruce_trapdoor[facing=north]"
     },
     {
       "vector": {
@@ -124,11 +102,7 @@
         "y": 0.0,
         "z": 1.0
       },
-      "material": "OAK_TRAPDOOR",
-      "facing": "EAST",
-      "open": true,
-      "water_logged": false,
-      "bisected": "TOP"
+      "data": "minecraft:oak_trapdoor[facing=east,half=top,open=true]"
     },
     {
       "vector": {
@@ -136,11 +110,7 @@
         "y": 1.0,
         "z": 2.0
       },
-      "material": "SPRUCE_TRAPDOOR",
-      "facing": "EAST",
-      "open": true,
-      "water_logged": false,
-      "bisected": "BOTTOM"
+      "data": "minecraft:spruce_trapdoor[facing=east,open=true]"
     }
   ]
 }

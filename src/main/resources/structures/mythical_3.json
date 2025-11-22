@@ -6,11 +6,7 @@
         "y": -1.0,
         "z": 2.0
       },
-      "material": "WARPED_STAIRS",
-      "facing": "NORTH",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:warped_stairs[facing=north]"
     },
     {
       "vector": {
@@ -18,11 +14,7 @@
         "y": -1.0,
         "z": -2.0
       },
-      "material": "WARPED_STAIRS",
-      "facing": "SOUTH",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:warped_stairs[facing=south]"
     },
     {
       "vector": {
@@ -30,11 +22,7 @@
         "y": -1.0,
         "z": 2.0
       },
-      "material": "WARPED_STAIRS",
-      "facing": "NORTH",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:warped_stairs[facing=north]"
     },
     {
       "vector": {
@@ -42,7 +30,7 @@
         "y": -1.0,
         "z": 0.0
       },
-      "material": "STRIPPED_WARPED_HYPHAE"
+      "data": "minecraft:stripped_warped_hyphae[axis=z]"
     },
     {
       "vector": {
@@ -50,11 +38,15 @@
         "y": -1.0,
         "z": -3.0
       },
-      "material": "WARPED_STAIRS",
-      "facing": "EAST",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:warped_stairs[facing=east]"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": -1.0,
+        "z": 3.0
+      },
+      "data": "minecraft:warped_stairs[facing=west]"
     },
     {
       "vector": {
@@ -62,11 +54,7 @@
         "y": -1.0,
         "z": 3.0
       },
-      "material": "WARPED_STAIRS",
-      "facing": "EAST",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:warped_stairs[facing=east]"
     },
     {
       "vector": {
@@ -74,47 +62,7 @@
         "y": -1.0,
         "z": -3.0
       },
-      "material": "STRIPPED_WARPED_HYPHAE"
-    },
-    {
-      "vector": {
-        "x": 0.0,
-        "y": -1.0,
-        "z": 3.0
-      },
-      "material": "STRIPPED_WARPED_HYPHAE"
-    },
-    {
-      "vector": {
-        "x": 2.0,
-        "y": -1.0,
-        "z": -3.0
-      },
-      "material": "WARPED_STAIRS",
-      "facing": "WEST",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
-    },
-    {
-      "vector": {
-        "x": 3.0,
-        "y": -1.0,
-        "z": 0.0
-      },
-      "material": "STRIPPED_WARPED_HYPHAE"
-    },
-    {
-      "vector": {
-        "x": 2.0,
-        "y": -1.0,
-        "z": 3.0
-      },
-      "material": "WARPED_STAIRS",
-      "facing": "WEST",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:stripped_warped_hyphae[axis=x]"
     },
     {
       "vector": {
@@ -122,11 +70,31 @@
         "y": -1.0,
         "z": -2.0
       },
-      "material": "WARPED_STAIRS",
-      "facing": "SOUTH",
-      "water_logged": false,
-      "bisected": "BOTTOM",
-      "shape": "STRAIGHT"
+      "data": "minecraft:warped_stairs[facing=south]"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": -1.0,
+        "z": 3.0
+      },
+      "data": "minecraft:stripped_warped_hyphae[axis=x]"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": -1.0,
+        "z": 0.0
+      },
+      "data": "minecraft:stripped_warped_hyphae[axis=z]"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": -1.0,
+        "z": -3.0
+      },
+      "data": "minecraft:warped_stairs[facing=west]"
     },
     {
       "vector": {
@@ -134,7 +102,7 @@
         "y": -1.0,
         "z": -1.0
       },
-      "material": "STRIPPED_WARPED_HYPHAE"
+      "data": "minecraft:stripped_warped_hyphae[axis=z]"
     },
     {
       "vector": {
@@ -142,7 +110,7 @@
         "y": -1.0,
         "z": 1.0
       },
-      "material": "STRIPPED_WARPED_HYPHAE"
+      "data": "minecraft:stripped_warped_hyphae[axis=z]"
     },
     {
       "vector": {
@@ -150,7 +118,7 @@
         "y": -1.0,
         "z": -3.0
       },
-      "material": "STRIPPED_WARPED_HYPHAE"
+      "data": "minecraft:stripped_warped_hyphae[axis=x]"
     },
     {
       "vector": {
@@ -158,7 +126,7 @@
         "y": -1.0,
         "z": 3.0
       },
-      "material": "STRIPPED_WARPED_HYPHAE"
+      "data": "minecraft:stripped_warped_hyphae[axis=x]"
     },
     {
       "vector": {
@@ -166,7 +134,7 @@
         "y": -1.0,
         "z": -3.0
       },
-      "material": "STRIPPED_WARPED_HYPHAE"
+      "data": "minecraft:stripped_warped_hyphae[axis=x]"
     },
     {
       "vector": {
@@ -174,7 +142,7 @@
         "y": -1.0,
         "z": 3.0
       },
-      "material": "STRIPPED_WARPED_HYPHAE"
+      "data": "minecraft:stripped_warped_hyphae[axis=x]"
     },
     {
       "vector": {
@@ -182,7 +150,7 @@
         "y": -1.0,
         "z": -1.0
       },
-      "material": "STRIPPED_WARPED_HYPHAE"
+      "data": "minecraft:stripped_warped_hyphae[axis=z]"
     },
     {
       "vector": {
@@ -190,7 +158,7 @@
         "y": -1.0,
         "z": 1.0
       },
-      "material": "STRIPPED_WARPED_HYPHAE"
+      "data": "minecraft:stripped_warped_hyphae[axis=z]"
     }
   ]
 }
