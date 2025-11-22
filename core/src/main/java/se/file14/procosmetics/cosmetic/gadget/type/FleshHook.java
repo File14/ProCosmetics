@@ -24,6 +24,7 @@ import org.bukkit.Sound;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
+import org.bukkit.event.block.Action;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Vector;
 import se.file14.procosmetics.api.cosmetic.CosmeticContext;
@@ -35,7 +36,7 @@ import se.file14.procosmetics.util.MetadataUtil;
 import se.file14.procosmetics.util.version.BukkitVersion;
 import se.file14.procosmetics.util.version.VersionUtil;
 
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 public class FleshHook implements GadgetBehavior {
 
@@ -50,7 +51,7 @@ public class FleshHook implements GadgetBehavior {
     }
 
     @Override
-    public InteractionResult onInteract(CosmeticContext<GadgetType> context, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
+    public InteractionResult onInteract(CosmeticContext<GadgetType> context, Action action, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
         if (item != null) {
             item.remove();
         }
@@ -62,7 +63,7 @@ public class FleshHook implements GadgetBehavior {
 
             MetadataUtil.setCustomEntity(entity);
         });
-        return InteractionResult.SUCCESS;
+        return InteractionResult.success();
     }
 
     @Override

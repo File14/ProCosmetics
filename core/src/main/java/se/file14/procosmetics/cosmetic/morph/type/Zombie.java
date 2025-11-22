@@ -89,7 +89,7 @@ public class Zombie implements MorphBehavior, Listener {
                 }
             }, 160L);
         }
-        return InteractionResult.SUCCESS;
+        return InteractionResult.success();
     }
 
     @Override

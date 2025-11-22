@@ -62,9 +62,9 @@ public class Wither extends FlyableMorph implements Listener {
             player.getWorld().playSound(player, Sound.ENTITY_WITHER_SHOOT, 1.0f, 1.0f);
 
             context.getPlugin().getJavaPlugin().getServer().getScheduler().runTaskLater(context.getPlugin().getJavaPlugin(), this::despawnSkull, 60L);
-            return InteractionResult.SUCCESS;
+            return InteractionResult.success();
         }
-        return InteractionResult.NO_ACTION;
+        return InteractionResult.noAction();
     }
 
     @Override

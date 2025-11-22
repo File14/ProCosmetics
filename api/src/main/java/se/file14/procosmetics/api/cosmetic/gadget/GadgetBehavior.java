@@ -19,8 +19,8 @@ package se.file14.procosmetics.api.cosmetic.gadget;
 
 import org.bukkit.Location;
 import org.bukkit.block.Block;
+import org.bukkit.event.block.Action;
 import org.bukkit.util.Vector;
-import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.Nullable;
 import se.file14.procosmetics.api.cosmetic.CosmeticBehavior;
 import se.file14.procosmetics.api.cosmetic.CosmeticContext;
@@ -37,11 +37,12 @@ public interface GadgetBehavior extends CosmeticBehavior<GadgetType> {
      * Called when a player interacts with their equipped gadget.
      *
      * @param context         the context containing information about the gadget and user
+     * @param action          the interact action the player performed
      * @param clickedBlock    the block the player interacted with, or {@code null} if none
      * @param clickedPosition the clicked position within the block, or {@code null} if none
      * @return an {@link InteractionResult} indicating the outcome of the interaction
      */
-    InteractionResult onInteract(CosmeticContext<GadgetType> context, @Nullable Block clickedBlock, @Nullable Vector clickedPosition);
+    InteractionResult onInteract(CosmeticContext<GadgetType> context, Action action, @Nullable Block clickedBlock, @Nullable Vector clickedPosition);
 
     /**
      * Called every tick while the gadget is equipped.
@@ -75,56 +76,48 @@ public interface GadgetBehavior extends CosmeticBehavior<GadgetType> {
     /**
      * Represents the result of a gadget interaction.
      */
-    enum InteractionResult {
-        /**
-         * Interaction was successful, consume ammo and apply cooldown.
-         */
-        SUCCESS(true, true),
-
-        /**
-         * Interaction was successful but don't consume ammo (e.g., on cooldown check).
-         */
-        SUCCESS_NO_AMMO(true, false),
-
-        /**
-         * Interaction was successful, consume ammo and apply cooldown.
-         */
-        SUCCESS_NO_EVENT_CANCEL(false, true, true),
-
-        /**
-         * Interaction failed, don't consume ammo or apply cooldown.
-         */
-        FAILED(true, false),
-
-        /**
-         * Interaction failed and should not cancel the original event.
-         */
-        FAILED_NO_EVENT_CANCEL(false, false, false),
-
-        /**
-         * Interaction was successful, apply cooldown but don't consume ammo.
-         */
-        SUCCESS_NO_AMMO_WITH_COOLDOWN(true, false, true),
-
-        /**
-         * Interaction was successful, consume ammo but don't apply cooldown.
-         */
-        SUCCESS_NO_COOLDOWN(true, true, false);
+    class InteractionResult {
 
         private final boolean cancelEvent;
         private final boolean consumeAmmo;
         private final boolean applyCooldown;
 
-        @ApiStatus.Internal
-        InteractionResult(boolean cancelEvent, boolean consumeAmmo, boolean applyCooldown) {
+        private InteractionResult(boolean cancelEvent, boolean consumeAmmo, boolean applyCooldown) {
             this.cancelEvent = cancelEvent;
             this.consumeAmmo = consumeAmmo;
             this.applyCooldown = applyCooldown;
         }
 
-        @ApiStatus.Internal
-        InteractionResult(boolean cancelEvent, boolean consumeAmmo) {
-            this(cancelEvent, consumeAmmo, consumeAmmo); // Default: cooldown follows ammo consumption
+        /**
+         * Creates a result indicating successful interaction.
+         * Cancels event, consumes ammo, and applies cooldown.
+         *
+         * @return a successful interaction result
+         */
+        public static InteractionResult success() {
+            return new InteractionResult(true, true, true);
+        }
+
+        /**
+         * Creates a result indicating failed interaction.
+         * Cancels event but doesn't consume ammo or apply cooldown.
+         *
+         * @return a failed interaction result
+         */
+        public static InteractionResult fail() {
+            return new InteractionResult(true, false, false);
+        }
+
+        /**
+         * Creates a custom result with specific behaviors.
+         *
+         * @param cancelEvent   whether to cancel the original interaction event
+         * @param consumeAmmo   whether to consume ammo
+         * @param applyCooldown whether to apply cooldown
+         * @return a custom interaction result
+         */
+        public static InteractionResult of(boolean cancelEvent, boolean consumeAmmo, boolean applyCooldown) {
+            return new InteractionResult(cancelEvent, consumeAmmo, applyCooldown);
         }
 
         /**
@@ -132,7 +125,6 @@ public interface GadgetBehavior extends CosmeticBehavior<GadgetType> {
          *
          * @return {@code true} if the event should be cancelled
          */
-        @ApiStatus.Internal
         public boolean shouldCancelEvent() {
             return cancelEvent;
         }
@@ -142,7 +134,6 @@ public interface GadgetBehavior extends CosmeticBehavior<GadgetType> {
          *
          * @return {@code true} if ammo should be consumed
          */
-        @ApiStatus.Internal
         public boolean shouldConsumeAmmo() {
             return consumeAmmo;
         }
@@ -152,9 +143,38 @@ public interface GadgetBehavior extends CosmeticBehavior<GadgetType> {
          *
          * @return {@code true} if cooldown should be applied
          */
-        @ApiStatus.Internal
         public boolean shouldApplyCooldown() {
             return applyCooldown;
+        }
+
+        /**
+         * Returns a new result with event cancellation modified.
+         *
+         * @param cancel whether to cancel the event
+         * @return a new interaction result with modified event cancellation
+         */
+        public InteractionResult withCancelEvent(boolean cancel) {
+            return new InteractionResult(cancel, this.consumeAmmo, this.applyCooldown);
+        }
+
+        /**
+         * Returns a new result with ammo consumption modified.
+         *
+         * @param consume whether to consume ammo
+         * @return a new interaction result with modified ammo consumption
+         */
+        public InteractionResult withConsumeAmmo(boolean consume) {
+            return new InteractionResult(this.cancelEvent, consume, this.applyCooldown);
+        }
+
+        /**
+         * Returns a new result with cooldown application modified.
+         *
+         * @param cooldown whether to apply cooldown
+         * @return a new interaction result with modified cooldown application
+         */
+        public InteractionResult withApplyCooldown(boolean cooldown) {
+            return new InteractionResult(this.cancelEvent, this.consumeAmmo, cooldown);
         }
     }
 }

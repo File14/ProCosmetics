@@ -26,14 +26,15 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Projectile;
 import org.bukkit.entity.Snowball;
+import org.bukkit.event.block.Action;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Vector;
+import org.jetbrains.annotations.Nullable;
 import se.file14.procosmetics.api.cosmetic.CosmeticContext;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetBehavior;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetType;
 import se.file14.procosmetics.util.MetadataUtil;
 
-import javax.annotation.Nullable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -51,7 +52,7 @@ public class Watergun implements GadgetBehavior {
     }
 
     @Override
-    public InteractionResult onInteract(CosmeticContext<GadgetType> context, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
+    public InteractionResult onInteract(CosmeticContext<GadgetType> context, Action action, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
         Player player = context.getPlayer();
         location = player.getEyeLocation();
 
@@ -69,7 +70,7 @@ public class Watergun implements GadgetBehavior {
         player.getWorld().spawnParticle(Particle.SPLASH, location, 0, vector.getX(), vector.getY(), vector.getZ(), 1.0d);
         location.getWorld().playSound(location, Sound.BLOCK_WATER_AMBIENT, 1.0f, 1.0f);
 
-        return InteractionResult.SUCCESS;
+        return InteractionResult.success();
     }
 
     @Override

@@ -45,13 +45,13 @@ public class Creeper implements MorphBehavior {
 
     @Override
     public InteractionResult onInteract(CosmeticContext<MorphType> context, PlayerInteractEvent event, NMSEntity nmsEntity) {
-        return InteractionResult.NO_ACTION;
+        return InteractionResult.noAction();
     }
 
     @Override
     public InteractionResult onToggleSneak(CosmeticContext<MorphType> context, PlayerToggleSneakEvent event, NMSEntity nmsEntity) {
         if (activated) {
-            return InteractionResult.NO_ACTION;
+            return InteractionResult.noAction();
         }
         Player player = context.getPlayer();
 
@@ -59,7 +59,7 @@ public class Creeper implements MorphBehavior {
         player.getWorld().playSound(player, Sound.ENTITY_CREEPER_PRIMED, 0.5f, charge <= 10 ? charge / 5.0f : 1.0f);
         activated = true;
 
-        return InteractionResult.SUCCESS;
+        return InteractionResult.success();
     }
 
     @Override

@@ -59,9 +59,9 @@ public class Witch implements MorphBehavior, Listener {
             player.getWorld().playSound(player, Sound.ENTITY_WITCH_THROW, 1.0f, 1.0f);
             player.getWorld().playSound(player, Sound.ENTITY_WITCH_AMBIENT, 1.0f, 1.0f);
 
-            return InteractionResult.SUCCESS;
+            return InteractionResult.success();
         }
-        return InteractionResult.NO_ACTION;
+        return InteractionResult.noAction();
     }
 
     @Override

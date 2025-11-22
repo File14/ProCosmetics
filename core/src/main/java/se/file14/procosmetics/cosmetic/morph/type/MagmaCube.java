@@ -46,7 +46,7 @@ public class MagmaCube implements MorphBehavior {
 
     @Override
     public InteractionResult onInteract(CosmeticContext<MorphType> context, PlayerInteractEvent event, NMSEntity nmsEntity) {
-        return InteractionResult.NO_ACTION;
+        return InteractionResult.noAction();
     }
 
     @Override

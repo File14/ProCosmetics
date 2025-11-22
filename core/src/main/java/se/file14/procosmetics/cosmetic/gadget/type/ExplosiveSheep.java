@@ -25,14 +25,15 @@ import org.bukkit.block.Block;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Sheep;
+import org.bukkit.event.block.Action;
 import org.bukkit.util.Vector;
+import org.jetbrains.annotations.Nullable;
 import se.file14.procosmetics.api.cosmetic.CosmeticContext;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetBehavior;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetType;
 import se.file14.procosmetics.util.MathUtil;
 import se.file14.procosmetics.util.MetadataUtil;
 
-import javax.annotation.Nullable;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -51,9 +52,9 @@ public class ExplosiveSheep implements GadgetBehavior {
     }
 
     @Override
-    public InteractionResult onInteract(CosmeticContext<GadgetType> context, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
+    public InteractionResult onInteract(CosmeticContext<GadgetType> context, Action action, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
         if (sheep != null || !babies.isEmpty()) {
-            return InteractionResult.FAILED;
+            return InteractionResult.fail();
         }
         Player player = context.getPlayer();
         location = player.getLocation();
@@ -91,13 +92,13 @@ public class ExplosiveSheep implements GadgetBehavior {
                     MetadataUtil.setCustomEntity(entity);
                 }));
             }
-        }, Long.max(0L, context.getType().getDurationInTicks() - 80L));
+        }, Long.max(0L, context.getType().getDurationTicks() - 80L));
 
         context.getPlugin().getJavaPlugin().getServer().getScheduler().runTaskLater(context.getPlugin().getJavaPlugin(),
                 () -> onUnequip(context),
-                context.getType().getDurationInTicks()
+                context.getType().getDurationTicks()
         );
-        return InteractionResult.SUCCESS;
+        return InteractionResult.success();
     }
 
     @Override

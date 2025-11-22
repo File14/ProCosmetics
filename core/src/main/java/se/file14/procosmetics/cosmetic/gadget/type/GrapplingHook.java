@@ -23,15 +23,15 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerFishEvent;
 import org.bukkit.util.Vector;
+import org.jetbrains.annotations.Nullable;
 import se.file14.procosmetics.api.cosmetic.CosmeticContext;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetBehavior;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetType;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.cosmetic.gadget.GadgetImpl;
-
-import javax.annotation.Nullable;
 
 public class GrapplingHook implements GadgetBehavior, Listener {
 
@@ -50,11 +50,22 @@ public class GrapplingHook implements GadgetBehavior, Listener {
     }
 
     @Override
-    public InteractionResult onInteract(CosmeticContext<GadgetType> context, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
-        if (!thrownHook) {
-            return InteractionResult.SUCCESS_NO_EVENT_CANCEL;
+    public InteractionResult onInteract(CosmeticContext<GadgetType> context, Action action, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
+        // PlayerInteractEvent triggers twice when reeling in the hook:
+        // first with LEFT_CLICK_AIR, then with RIGHT_CLICK.
+        // We ignore all left-clicks entirely.
+        if (action == Action.LEFT_CLICK_AIR || action == Action.LEFT_CLICK_BLOCK) {
+            return InteractionResult.fail();
         }
-        return InteractionResult.FAILED_NO_EVENT_CANCEL;
+
+        if (thrownHook) {
+            return InteractionResult.of(false, false, false);
+        }
+        // Hook is not thrown if you are looking at a block
+        if (clickedBlock != null) {
+            return InteractionResult.fail();
+        }
+        return InteractionResult.of(false, true, true);
     }
 
     @Override
@@ -82,7 +93,6 @@ public class GrapplingHook implements GadgetBehavior, Listener {
 
     @EventHandler
     public void onFish(PlayerFishEvent event) {
-
         if (event.getPlayer() != player
                 || !GadgetImpl.GADGET_ID.is(event.getPlayer().getInventory().getItemInMainHand())
                 || event.getState() == PlayerFishEvent.State.BITE

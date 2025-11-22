@@ -25,6 +25,7 @@ import org.bukkit.block.Block;
 import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityPickupItemEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.FireworkMeta;
@@ -42,7 +43,8 @@ import se.file14.procosmetics.util.MathUtil;
 import se.file14.procosmetics.util.MetadataUtil;
 import se.file14.procosmetics.util.item.ItemBuilderImpl;
 
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -81,16 +83,16 @@ public class CoinPartyBomb implements GadgetBehavior, Listener {
     }
 
     @Override
-    public InteractionResult onInteract(CosmeticContext<GadgetType> context, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
+    public InteractionResult onInteract(CosmeticContext<GadgetType> context, Action action, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
         Player player = context.getPlayer();
 
         if (context.getType().hasPurchasableAmmo()) {
-            long totalValue = pickupReward * context.getType().getDurationInTicks();
+            long totalValue = pickupReward * context.getType().getDurationTicks();
 
             if (totalValue < context.getType().getAmmoCost()) {
                 context.getUser().sendMessage(Component.text("Incorrect setup detected! This configuration can lead to profit " +
                         "and infinite money exploits. Please contact a server administrator.", NamedTextColor.RED));
-                return InteractionResult.FAILED;
+                return InteractionResult.fail();
             }
         }
         player.getLocation(location);
@@ -115,7 +117,7 @@ public class CoinPartyBomb implements GadgetBehavior, Listener {
         context.getPlugin().getJavaPlugin().getServer().getScheduler().runTaskLater(context.getPlugin().getJavaPlugin(), () -> {
             tick = 0;
             despawnBlock();
-        }, context.getType().getDurationInTicks());
+        }, context.getType().getDurationTicks());
 
         context.getPlugin().getJavaPlugin().getServer().getScheduler().runTaskLater(context.getPlugin().getJavaPlugin(),
                 () -> {
@@ -124,9 +126,9 @@ public class CoinPartyBomb implements GadgetBehavior, Listener {
                         onUnequip(context);
                     }
                 },
-                context.getType().getDurationInTicks() + EXTRA_TIME
+                context.getType().getDurationTicks() + EXTRA_TIME
         );
-        return InteractionResult.SUCCESS;
+        return InteractionResult.success();
     }
 
     @Override

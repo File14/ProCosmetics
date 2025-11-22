@@ -51,7 +51,7 @@ public class Villager implements MorphBehavior {
             player.getWorld().playSound(player, Sound.ENTITY_VILLAGER_NO, 0.5f, 1.0f);
             player.getWorld().spawnParticle(Particle.ANGRY_VILLAGER, location, 10, 0.8d, 0.8d, 0.8d);
         }
-        return InteractionResult.SUCCESS;
+        return InteractionResult.success();
     }
 
     @Override

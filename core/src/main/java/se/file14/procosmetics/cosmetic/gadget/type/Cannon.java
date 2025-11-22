@@ -23,6 +23,7 @@ import org.bukkit.Sound;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Fireball;
+import org.bukkit.event.block.Action;
 import org.bukkit.util.Vector;
 import se.file14.procosmetics.api.cosmetic.CosmeticContext;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetBehavior;
@@ -32,7 +33,7 @@ import se.file14.procosmetics.util.MathUtil;
 import se.file14.procosmetics.util.MetadataUtil;
 import se.file14.procosmetics.util.structure.type.BlockDisplayStructureImpl;
 
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 public class Cannon implements GadgetBehavior {
 
@@ -52,7 +53,7 @@ public class Cannon implements GadgetBehavior {
     }
 
     @Override
-    public InteractionResult onInteract(CosmeticContext<GadgetType> context, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
+    public InteractionResult onInteract(CosmeticContext<GadgetType> context, Action action, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
         center = context.getPlayer().getLocation();
 
         double angle = structure.spawn(center);
@@ -61,9 +62,9 @@ public class Cannon implements GadgetBehavior {
 
         context.getPlugin().getJavaPlugin().getServer().getScheduler().runTaskLater(context.getPlugin().getJavaPlugin(),
                 () -> onUnequip(context),
-                context.getType().getDurationInTicks()
+                context.getType().getDurationTicks()
         );
-        return InteractionResult.SUCCESS;
+        return InteractionResult.success();
     }
 
     @Override

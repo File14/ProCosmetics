@@ -66,9 +66,9 @@ public class Squid implements MorphBehavior {
             Player player = context.getPlayer();
             player.getWorld().playSound(player, Sound.ENTITY_SQUID_SQUIRT, 1.0f, 2.0f);
             context.getPlugin().getJavaPlugin().getServer().getScheduler().runTaskLater(context.getPlugin().getJavaPlugin(), this::clearItems, 140L);
-            return InteractionResult.SUCCESS;
+            return InteractionResult.success();
         }
-        return InteractionResult.NO_ACTION;
+        return InteractionResult.noAction();
     }
 
     private final Location itemLocation = new Location(null, 0.0d, 0.0d, 0.0d);

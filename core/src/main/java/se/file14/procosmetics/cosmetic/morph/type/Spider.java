@@ -74,9 +74,9 @@ public class Spider implements MorphBehavior {
             activated = true;
             tick = 0;
 
-            return InteractionResult.SUCCESS;
+            return InteractionResult.success();
         }
-        return MorphBehavior.InteractionResult.NO_ACTION;
+        return MorphBehavior.InteractionResult.noAction();
     }
 
 

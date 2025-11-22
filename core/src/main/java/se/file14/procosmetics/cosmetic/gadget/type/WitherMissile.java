@@ -25,15 +25,15 @@ import org.bukkit.entity.Player;
 import org.bukkit.entity.WitherSkull;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.ExplosionPrimeEvent;
 import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.util.Vector;
+import org.jetbrains.annotations.Nullable;
 import se.file14.procosmetics.api.cosmetic.CosmeticContext;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetBehavior;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetType;
 import se.file14.procosmetics.util.MetadataUtil;
-
-import javax.annotation.Nullable;
 
 public class WitherMissile implements GadgetBehavior, Listener {
 
@@ -45,7 +45,7 @@ public class WitherMissile implements GadgetBehavior, Listener {
     }
 
     @Override
-    public InteractionResult onInteract(CosmeticContext<GadgetType> context, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
+    public InteractionResult onInteract(CosmeticContext<GadgetType> context, Action action, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
         despawn();
 
         Player player = context.getPlayer();
@@ -61,7 +61,7 @@ public class WitherMissile implements GadgetBehavior, Listener {
         });
         witherSkull.addPassenger(player);
 
-        return InteractionResult.SUCCESS;
+        return InteractionResult.success();
     }
 
     @Override
@@ -72,7 +72,7 @@ public class WitherMissile implements GadgetBehavior, Listener {
             location.getWorld().spawnParticle(Particle.CLOUD, location, 0);
             location.getWorld().playSound(location, Sound.BLOCK_TRIPWIRE_CLICK_ON, 0.2f, 2.0f);
 
-            if (witherSkull.getTicksLived() > context.getType().getDurationInTicks()) {
+            if (witherSkull.getTicksLived() > context.getType().getDurationTicks()) {
                 explode();
             }
         }

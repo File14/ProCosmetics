@@ -22,7 +22,9 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
+import org.bukkit.event.block.Action;
 import org.bukkit.util.Vector;
+import org.jetbrains.annotations.Nullable;
 import se.file14.procosmetics.api.cosmetic.CosmeticContext;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetBehavior;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetType;
@@ -31,7 +33,6 @@ import se.file14.procosmetics.util.LocationUtil;
 import se.file14.procosmetics.util.MathUtil;
 import se.file14.procosmetics.util.material.Materials;
 
-import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,14 +59,14 @@ public class ParkourSpiral implements GadgetBehavior {
     }
 
     @Override
-    public InteractionResult onInteract(CosmeticContext<GadgetType> context, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
+    public InteractionResult onInteract(CosmeticContext<GadgetType> context, Action action, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
         placeBlock(context, step++);
 
         context.getPlugin().getJavaPlugin().getServer().getScheduler().runTaskLater(context.getPlugin().getJavaPlugin(),
                 () -> onUnequip(context),
-                context.getType().getDurationInTicks()
+                context.getType().getDurationTicks()
         );
-        return InteractionResult.SUCCESS;
+        return InteractionResult.success();
     }
 
     @Override

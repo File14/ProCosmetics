@@ -22,28 +22,33 @@ import org.bukkit.FireworkEffect;
 import org.bukkit.Location;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Firework;
+import org.bukkit.event.block.Action;
 import org.bukkit.inventory.meta.FireworkMeta;
 import org.bukkit.util.Vector;
+import org.jetbrains.annotations.Nullable;
 import se.file14.procosmetics.api.cosmetic.CosmeticContext;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetBehavior;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetType;
 import se.file14.procosmetics.util.MathUtil;
 import se.file14.procosmetics.util.MetadataUtil;
 
-import javax.annotation.Nullable;
+import java.util.List;
 
 public class Fireworks implements GadgetBehavior {
+
+    private static final List<FireworkEffect.Type> FIREWORK_EFFECTS = List.of(FireworkEffect.Type.values());
+    private static final int RGB_COLOR_COUNT = 1 << 24; // 0x1000000
 
     @Override
     public void onEquip(CosmeticContext<GadgetType> context) {
     }
 
     @Override
-    public InteractionResult onInteract(CosmeticContext<GadgetType> context, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
+    public InteractionResult onInteract(CosmeticContext<GadgetType> context, Action action, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
         Location location;
 
-        if (clickedBlock != null) {
-            location = clickedBlock.getLocation().add(0.5d, 1.0d, 0.5d);
+        if (clickedBlock != null && clickedPosition != null) {
+            location = clickedBlock.getLocation().add(clickedPosition.multiply(1.2d));
         } else {
             location = context.getPlayer().getLocation();
         }
@@ -51,16 +56,16 @@ public class Fireworks implements GadgetBehavior {
             FireworkMeta fireworkMeta = entity.getFireworkMeta();
             fireworkMeta.addEffect(FireworkEffect.builder()
                     .flicker(MathUtil.THREAD_LOCAL_RANDOM.nextBoolean())
-                    .withColor(Color.fromBGR(MathUtil.randomRangeInt(0, 255), MathUtil.randomRangeInt(0, 255), MathUtil.randomRangeInt(0, 255)))
-                    .withFade(Color.fromBGR(MathUtil.randomRangeInt(0, 255), MathUtil.randomRangeInt(0, 255), MathUtil.randomRangeInt(0, 255)))
-                    .with(FireworkEffect.Type.STAR)
+                    .withColor(Color.fromRGB(MathUtil.THREAD_LOCAL_RANDOM.nextInt(RGB_COLOR_COUNT)))
+                    .withFade(Color.fromRGB(MathUtil.THREAD_LOCAL_RANDOM.nextInt(RGB_COLOR_COUNT)))
+                    .with(MathUtil.getRandomElement(FIREWORK_EFFECTS))
                     .build());
             fireworkMeta.setPower(2);
             entity.setFireworkMeta(fireworkMeta);
 
             MetadataUtil.setCustomEntity(entity);
         });
-        return InteractionResult.SUCCESS;
+        return InteractionResult.success();
     }
 
     @Override

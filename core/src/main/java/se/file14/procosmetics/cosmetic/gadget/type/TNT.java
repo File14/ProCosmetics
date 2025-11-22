@@ -28,9 +28,11 @@ import org.bukkit.entity.Player;
 import org.bukkit.entity.TNTPrimed;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityChangeBlockEvent;
 import org.bukkit.event.entity.EntityExplodeEvent;
 import org.bukkit.util.Vector;
+import org.jetbrains.annotations.Nullable;
 import se.file14.procosmetics.ProCosmeticsPlugin;
 import se.file14.procosmetics.api.ProCosmetics;
 import se.file14.procosmetics.api.cosmetic.CosmeticContext;
@@ -40,7 +42,6 @@ import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.util.MathUtil;
 import se.file14.procosmetics.util.MetadataUtil;
 
-import javax.annotation.Nullable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -58,7 +59,7 @@ public class TNT implements GadgetBehavior, Listener {
     }
 
     @Override
-    public InteractionResult onInteract(CosmeticContext<GadgetType> context, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
+    public InteractionResult onInteract(CosmeticContext<GadgetType> context, Action action, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
         Player player = context.getPlayer();
         Location location = player.getEyeLocation().add(0.0d, 0.8d, 0.0d);
 
@@ -69,7 +70,7 @@ public class TNT implements GadgetBehavior, Listener {
 
             MetadataUtil.setCustomEntity(entity);
         }));
-        return InteractionResult.SUCCESS;
+        return InteractionResult.success();
     }
 
     @Override

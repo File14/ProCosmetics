@@ -28,17 +28,17 @@ import org.bukkit.entity.Firework;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityDismountEvent;
 import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.inventory.meta.FireworkMeta;
 import org.bukkit.util.Vector;
+import org.jetbrains.annotations.Nullable;
 import se.file14.procosmetics.api.cosmetic.CosmeticContext;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetBehavior;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetType;
 import se.file14.procosmetics.util.LocationUtil;
 import se.file14.procosmetics.util.MetadataUtil;
-
-import javax.annotation.Nullable;
 
 public class EtherealPearl implements GadgetBehavior, Listener {
 
@@ -60,7 +60,7 @@ public class EtherealPearl implements GadgetBehavior, Listener {
     }
 
     @Override
-    public InteractionResult onInteract(CosmeticContext<GadgetType> context, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
+    public InteractionResult onInteract(CosmeticContext<GadgetType> context, Action action, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
         Player player = context.getPlayer();
         location = player.getEyeLocation();
 
@@ -71,7 +71,7 @@ public class EtherealPearl implements GadgetBehavior, Listener {
         enderPearl.addPassenger(player);
         context.getUser().setFallDamageProtection(15);
 
-        return InteractionResult.SUCCESS;
+        return InteractionResult.success();
     }
 
     @Override

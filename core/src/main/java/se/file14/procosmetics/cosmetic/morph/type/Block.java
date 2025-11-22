@@ -77,10 +77,10 @@ public class Block implements MorphBehavior {
                         Effect.STEP_SOUND,
                         currentMaterial
                 );
-                return InteractionResult.SUCCESS;
+                return InteractionResult.success();
             }
         }
-        return InteractionResult.NO_ACTION;
+        return InteractionResult.noAction();
     }
 
     @Override

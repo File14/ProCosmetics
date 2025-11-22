@@ -63,9 +63,9 @@ public class Dog implements MorphBehavior {
             Player player = context.getPlayer();
 
             player.getWorld().playSound(player, Sound.ENTITY_WOLF_AMBIENT, 0.8f, 1.0f);
-            return InteractionResult.SUCCESS;
+            return InteractionResult.success();
         }
-        return InteractionResult.NO_ACTION;
+        return InteractionResult.noAction();
     }
 
     @Override

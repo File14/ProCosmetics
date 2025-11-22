@@ -19,7 +19,6 @@ package se.file14.procosmetics.api.cosmetic.morph;
 
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
-import org.jetbrains.annotations.ApiStatus;
 import se.file14.procosmetics.api.cosmetic.CosmeticBehavior;
 import se.file14.procosmetics.api.cosmetic.CosmeticContext;
 import se.file14.procosmetics.api.nms.NMSEntity;
@@ -63,7 +62,7 @@ public interface MorphBehavior extends CosmeticBehavior<MorphType> {
      * @return an {@link InteractionResult} describing the outcome of the interaction
      */
     default InteractionResult onToggleSneak(CosmeticContext<MorphType> context, PlayerToggleSneakEvent event, NMSEntity nmsEntity) {
-        return InteractionResult.NO_ACTION;
+        return InteractionResult.noAction();
     }
 
     /**
@@ -94,31 +93,52 @@ public interface MorphBehavior extends CosmeticBehavior<MorphType> {
 
     /**
      * Represents the result of a morph ability interaction.
-     * <p>
-     * Defines whether the interaction succeeded, failed, or took no action,
-     * and whether a cooldown should be applied.
      */
-    enum InteractionResult {
-        /**
-         * Ability was used successfully, apply cooldown.
-         */
-        SUCCESS(true),
-
-        /**
-         * Ability failed, don't apply cooldown.
-         */
-        FAILED(false),
-
-        /**
-         * No action taken (e.g., wrong event type).
-         */
-        NO_ACTION(false);
-
+    class InteractionResult {
         private final boolean applyCooldown;
 
-        @ApiStatus.Internal
-        InteractionResult(boolean applyCooldown) {
+        private InteractionResult(boolean applyCooldown) {
             this.applyCooldown = applyCooldown;
+        }
+
+        /**
+         * Creates a result indicating the ability was used successfully.
+         * Applies cooldown.
+         *
+         * @return a successful interaction result with cooldown
+         */
+        public static InteractionResult success() {
+            return new InteractionResult(true);
+        }
+
+        /**
+         * Creates a result indicating the ability failed.
+         * Doesn't apply cooldown.
+         *
+         * @return a failed interaction result without cooldown
+         */
+        public static InteractionResult fail() {
+            return new InteractionResult(false);
+        }
+
+        /**
+         * Creates a result indicating no action was taken.
+         * Doesn't apply cooldown.
+         *
+         * @return a no-action interaction result without cooldown
+         */
+        public static InteractionResult noAction() {
+            return new InteractionResult(false);
+        }
+
+        /**
+         * Creates a custom result with specific cooldown behavior.
+         *
+         * @param applyCooldown whether to apply cooldown
+         * @return a custom interaction result with the specified cooldown behavior
+         */
+        public static InteractionResult of(boolean applyCooldown) {
+            return new InteractionResult(applyCooldown);
         }
 
         /**
@@ -128,6 +148,16 @@ public interface MorphBehavior extends CosmeticBehavior<MorphType> {
          */
         public boolean shouldApplyCooldown() {
             return applyCooldown;
+        }
+
+        /**
+         * Returns a new result with cooldown application modified.
+         *
+         * @param cooldown whether to apply cooldown
+         * @return a new interaction result with the modified cooldown behavior
+         */
+        public InteractionResult withApplyCooldown(boolean cooldown) {
+            return new InteractionResult(cooldown);
         }
     }
 }

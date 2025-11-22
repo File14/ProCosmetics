@@ -35,7 +35,7 @@ import se.file14.procosmetics.cosmetic.morph.FlyableMorph;
 import se.file14.procosmetics.util.MathUtil;
 import se.file14.procosmetics.util.MetadataUtil;
 
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 public class ElderGuardian extends FlyableMorph {
 
@@ -107,7 +107,7 @@ public class ElderGuardian extends FlyableMorph {
             });
             setGuardianTarget(nmsEntity, armorStand);
         }
-        return InteractionResult.SUCCESS;
+        return InteractionResult.success();
     }
 
     public void setGuardianTarget(NMSEntity nmsEntity, @Nullable LivingEntity target) {

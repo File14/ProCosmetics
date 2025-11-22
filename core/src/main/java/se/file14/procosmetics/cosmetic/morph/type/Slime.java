@@ -69,9 +69,9 @@ public class Slime implements MorphBehavior, Listener {
                     removeBlock();
                 }
             }, 75L);
-            return InteractionResult.SUCCESS;
+            return InteractionResult.success();
         }
-        return InteractionResult.NO_ACTION;
+        return InteractionResult.noAction();
     }
 
     @Override

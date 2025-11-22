@@ -17,8 +17,10 @@
  */
 package se.file14.procosmetics.cosmetic.gadget;
 
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.TextComponent;
+import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
-import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.block.Block;
 import org.bukkit.event.Event.Result;
@@ -33,6 +35,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerSwapHandItemsEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Vector;
+import org.jetbrains.annotations.Nullable;
 import se.file14.procosmetics.ProCosmeticsPlugin;
 import se.file14.procosmetics.api.cosmetic.gadget.Gadget;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetBehavior;
@@ -46,15 +49,35 @@ import se.file14.procosmetics.menu.menus.purchase.AmmoPurchaseMenu;
 import se.file14.procosmetics.util.item.ItemBuilderImpl;
 import se.file14.procosmetics.util.item.ItemIdentifier;
 
-import javax.annotation.Nullable;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 
 public class GadgetImpl extends CosmeticImpl<GadgetType, GadgetBehavior> implements Gadget {
 
     public static final ItemIdentifier GADGET_ID = new ItemIdentifier("GADGET_ITEM");
 
     private static final int BAR_LENGTH = 50;
-    private static final String GREEN_BAR = ChatColor.GREEN + "┃";
-    private static final String RED_BAR = ChatColor.RED + "┃";
+    private static final Component[] COOLDOWN_BAR_CACHE = new Component[BAR_LENGTH + 1];
+    private static final Component GREEN_BAR_COMPONENT = Component.text("┃", NamedTextColor.GREEN);
+    private static final Component RED_BAR_COMPONENT = Component.text("┃", NamedTextColor.RED);
+    private DecimalFormat decimalFormat;
+
+    static {
+        // Pre-compute all possible bar combinations
+        for (int i = 0; i <= BAR_LENGTH; i++) {
+            TextComponent.Builder builder = Component.text();
+
+            // Add green bars
+            for (int j = 0; j < i; j++) {
+                builder.append(GREEN_BAR_COMPONENT);
+            }
+            // Add red bars
+            for (int j = i; j < BAR_LENGTH; j++) {
+                builder.append(RED_BAR_COMPONENT);
+            }
+            COOLDOWN_BAR_CACHE[i] = builder.build();
+        }
+    }
 
     protected static final int GADGET_SLOT = ProCosmeticsPlugin.getPlugin().getCategoryRegistries().gadgets().getConfig().getInt("slot");
 
@@ -86,22 +109,33 @@ public class GadgetImpl extends CosmeticImpl<GadgetType, GadgetBehavior> impleme
     public void onEquip() {
         setGadgetItemInInventory();
         runTaskTimer(plugin, 0L, 1L);
+
+        // We cache this while the gadget is equipped
+        DecimalFormatSymbols symbols = new DecimalFormatSymbols();
+        symbols.setDecimalSeparator(user.translateRaw("generic.decimal_separator").charAt(0));
+        decimalFormat = new DecimalFormat("0.0", symbols);
     }
 
     @Override
     public void onUpdate() {
         if (player.getInventory().getHeldItemSlot() == GADGET_SLOT && user.hasCooldown(cosmeticType)) {
-            long current = System.currentTimeMillis();
-            double cooldown = (user.getCooldown(cosmeticType) - current) / 1000L;
-            double progress = cooldown / cosmeticType.getCooldown();
-            int greenBars = Math.max(0, BAR_LENGTH - (int) (progress * BAR_LENGTH));
-            String text = GREEN_BAR.repeat(Math.max(0, greenBars)) + RED_BAR.repeat(Math.max(0, BAR_LENGTH - greenBars));
+            long currentTime = System.currentTimeMillis();
+            double cooldownEndTime = user.getCooldown(cosmeticType);
+            double remainingSeconds = (cooldownEndTime - currentTime) / 1000.0;
+            double totalCooldown = cosmeticType.getCooldown();
+            double progress = Math.min(1.0, remainingSeconds / totalCooldown);
+
+            // Calculate bar position (0 = all green, BAR_LENGTH = all red)
+            int redBars = Math.min(BAR_LENGTH, Math.max(0, (int) (progress * BAR_LENGTH)));
+            int greenBars = BAR_LENGTH - redBars;
+            Component barComponent = COOLDOWN_BAR_CACHE[greenBars];
+            String formattedCooldown = decimalFormat.format(remainingSeconds);
 
             user.sendActionBar(user.translate(
                     "cosmetic.gadgets.cooldown",
                     Placeholder.unparsed("gadget", cosmeticType.getName(user)),
-                    Placeholder.unparsed("cooldown_bar", text),
-                    Placeholder.unparsed("cooldown_duration", String.valueOf(Math.round(cooldown * 10) / 10.0d))
+                    Placeholder.component("cooldown_bar", barComponent),
+                    Placeholder.unparsed("cooldown_duration", formattedCooldown)
             ));
         }
         behavior.onUpdate(this);
@@ -164,20 +198,17 @@ public class GadgetImpl extends CosmeticImpl<GadgetType, GadgetBehavior> impleme
                             Placeholder.unparsed("gadget", cosmeticType.getName(user))
                     ));
                 }
-            }, (long) (20L * cosmeticType.getCooldown() + 1L));
-        }
+            }, cosmeticType.getCooldownTicks() + 1L);
 
-        // We cannot set cooldown for GrapplingHook (fishing rod) because it won't throw the hook then (ugly workaround right now)
-        if (!(behavior instanceof GrapplingHook)) {
-            // Apply item cooldown if either ammo consumed or cooldown applied
-            if ((consumeAmmo || applyCooldown) && cosmeticType.getCooldown() > 0.0d) {
-                player.setCooldown(cosmeticType.getItemStack().getType(), (int) (20 * cosmeticType.getCooldown()));
+            // We cannot set cooldown for GrapplingHook (fishing rod) because it won't throw the hook then (ugly workaround right now)
+            if (!(behavior instanceof GrapplingHook)) {
+                player.setCooldown(cosmeticType.getItemStack().getType(), (int) cosmeticType.getCooldownTicks());
             }
         }
     }
 
-    private GadgetBehavior.InteractionResult onUse(@Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
-        GadgetBehavior.InteractionResult result = behavior.onInteract(this, clickedBlock, clickedPosition);
+    private GadgetBehavior.InteractionResult onUse(Action action, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
+        GadgetBehavior.InteractionResult result = behavior.onInteract(this, action, clickedBlock, clickedPosition);
 
         if (result.shouldConsumeAmmo() || result.shouldApplyCooldown()) {
             consume(result.shouldConsumeAmmo(), result.shouldApplyCooldown());
@@ -196,7 +227,7 @@ public class GadgetImpl extends CosmeticImpl<GadgetType, GadgetBehavior> impleme
                 event.setCancelled(true);
                 return;
             }
-            GadgetBehavior.InteractionResult result = onUse(event.getClickedBlock(), event.getClickedPosition());
+            GadgetBehavior.InteractionResult result = onUse(event.getAction(), event.getClickedBlock(), event.getClickedPosition());
 
             if (result.shouldCancelEvent()) {
                 event.setCancelled(true);

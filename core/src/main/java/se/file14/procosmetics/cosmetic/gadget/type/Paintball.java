@@ -27,9 +27,11 @@ import org.bukkit.entity.Projectile;
 import org.bukkit.entity.Snowball;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Vector;
+import org.jetbrains.annotations.Nullable;
 import se.file14.procosmetics.ProCosmeticsPlugin;
 import se.file14.procosmetics.api.cosmetic.CosmeticContext;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetBehavior;
@@ -38,7 +40,6 @@ import se.file14.procosmetics.util.MathUtil;
 import se.file14.procosmetics.util.MetadataUtil;
 import se.file14.procosmetics.util.material.Materials;
 
-import javax.annotation.Nullable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -57,7 +58,7 @@ public class Paintball implements GadgetBehavior, Listener {
     }
 
     @Override
-    public InteractionResult onInteract(CosmeticContext<GadgetType> context, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
+    public InteractionResult onInteract(CosmeticContext<GadgetType> context, Action action, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
         Player player = context.getPlayer();
         Location location = player.getEyeLocation();
 
@@ -69,7 +70,7 @@ public class Paintball implements GadgetBehavior, Listener {
             MetadataUtil.setCustomEntity(entity);
         }));
         location.getWorld().playSound(location, Sound.ENTITY_CHICKEN_EGG, 1.0f, 1.0f);
-        return InteractionResult.SUCCESS;
+        return InteractionResult.success();
     }
 
     @Override

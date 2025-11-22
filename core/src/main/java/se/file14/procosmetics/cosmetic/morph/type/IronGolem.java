@@ -76,9 +76,9 @@ public class IronGolem implements MorphBehavior {
             }
             player.getWorld().playSound(location, Sound.ENTITY_IRON_GOLEM_HURT, 0.6f, 1.2f);
 
-            return InteractionResult.SUCCESS;
+            return InteractionResult.success();
         }
-        return InteractionResult.NO_ACTION;
+        return InteractionResult.noAction();
     }
 
     @Override

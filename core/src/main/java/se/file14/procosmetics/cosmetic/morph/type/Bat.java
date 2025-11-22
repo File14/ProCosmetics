@@ -60,9 +60,9 @@ public class Bat implements MorphBehavior {
             player.setVelocity(location.getDirection().multiply(0.4d).setY(0.6d));
             player.getWorld().playSound(location, Sound.ENTITY_BAT_TAKEOFF, 0.6f, 1.5f);
 
-            return InteractionResult.SUCCESS;
+            return InteractionResult.success();
         }
-        return InteractionResult.NO_ACTION;
+        return InteractionResult.noAction();
     }
 
     @Override
@@ -78,7 +78,7 @@ public class Bat implements MorphBehavior {
         droppedItem.getTracker().startTracking();
         droppedItem.getTracker().destroyAfter(80);
 
-        return InteractionResult.SUCCESS;
+        return InteractionResult.success();
     }
 
     @Override

@@ -21,12 +21,12 @@ import org.bukkit.Location;
 import org.bukkit.Particle;
 import org.bukkit.Sound;
 import org.bukkit.block.Block;
+import org.bukkit.event.block.Action;
 import org.bukkit.util.Vector;
+import org.jetbrains.annotations.Nullable;
 import se.file14.procosmetics.api.cosmetic.CosmeticContext;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetBehavior;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetType;
-
-import javax.annotation.Nullable;
 
 public class FlameThrower implements GadgetBehavior {
 
@@ -38,15 +38,15 @@ public class FlameThrower implements GadgetBehavior {
     }
 
     @Override
-    public InteractionResult onInteract(CosmeticContext<GadgetType> context, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
+    public InteractionResult onInteract(CosmeticContext<GadgetType> context, Action action, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
         location = context.getPlayer().getEyeLocation();
         started = true;
 
         context.getPlugin().getJavaPlugin().getServer().getScheduler().runTaskLater(context.getPlugin().getJavaPlugin(),
                 () -> onUnequip(context),
-                context.getType().getDurationInTicks()
+                context.getType().getDurationTicks()
         );
-        return InteractionResult.SUCCESS;
+        return InteractionResult.success();
     }
 
     @Override

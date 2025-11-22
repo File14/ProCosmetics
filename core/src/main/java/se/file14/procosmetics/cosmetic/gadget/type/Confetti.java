@@ -22,6 +22,7 @@ import org.bukkit.Particle;
 import org.bukkit.Sound;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
+import org.bukkit.event.block.Action;
 import org.bukkit.util.Vector;
 import se.file14.procosmetics.api.cosmetic.CosmeticContext;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetBehavior;
@@ -29,7 +30,7 @@ import se.file14.procosmetics.api.cosmetic.gadget.GadgetType;
 import se.file14.procosmetics.util.MathUtil;
 import se.file14.procosmetics.util.material.Materials;
 
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 public class Confetti implements GadgetBehavior {
 
@@ -40,7 +41,7 @@ public class Confetti implements GadgetBehavior {
     }
 
     @Override
-    public InteractionResult onInteract(CosmeticContext<GadgetType> context, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
+    public InteractionResult onInteract(CosmeticContext<GadgetType> context, Action action, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
         Player player = context.getPlayer();
         Location location = player.getEyeLocation();
         Vector vector = player.getLocation().getDirection();
@@ -69,7 +70,7 @@ public class Confetti implements GadgetBehavior {
                     Materials.getRandomWoolItem()
             );
         }
-        return InteractionResult.SUCCESS;
+        return InteractionResult.success();
     }
 
     @Override

@@ -47,9 +47,9 @@ public class Pig implements MorphBehavior {
         if (action == Action.LEFT_CLICK_AIR || action == Action.LEFT_CLICK_BLOCK) {
             Player player = context.getPlayer();
             player.getWorld().playSound(player, Sound.ENTITY_PIG_AMBIENT, 0.8f, 1.0f);
-            return InteractionResult.SUCCESS;
+            return InteractionResult.success();
         }
-        return InteractionResult.NO_ACTION;
+        return InteractionResult.noAction();
     }
 
     @Override

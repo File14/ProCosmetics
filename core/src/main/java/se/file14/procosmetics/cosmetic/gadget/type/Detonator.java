@@ -25,6 +25,7 @@ import org.bukkit.block.Block;
 import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
+import org.bukkit.event.block.Action;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Vector;
 import org.jetbrains.annotations.Nullable;
@@ -53,7 +54,7 @@ public class Detonator implements GadgetBehavior {
     }
 
     @Override
-    public InteractionResult onInteract(CosmeticContext<GadgetType> context, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
+    public InteractionResult onInteract(CosmeticContext<GadgetType> context, Action action, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
         if (shouldExplode()) {
             // Explode all
             for (NMSEntity nmsEntity : entities) {
@@ -67,11 +68,11 @@ public class Detonator implements GadgetBehavior {
                 nmsEntity.getTracker().destroy();
             }
             entities.clear();
-            return InteractionResult.SUCCESS;
+            return InteractionResult.success();
         } else {
             // Should never happen in this case
             if (clickedBlock == null || clickedPosition == null) {
-                return InteractionResult.FAILED;
+                return InteractionResult.fail();
             }
             // Place new tnt
             Location location = clickedBlock.getLocation().add(clickedPosition.getX(), clickedPosition.getY() - 0.7d, clickedPosition.getZ());
@@ -93,7 +94,7 @@ public class Detonator implements GadgetBehavior {
             nmsEntity.getTracker().startTracking();
             entities.add(nmsEntity);
 
-            return InteractionResult.FAILED;
+            return InteractionResult.fail();
         }
     }
 

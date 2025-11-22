@@ -25,7 +25,9 @@ import org.bukkit.block.Block;
 import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
+import org.bukkit.event.block.Action;
 import org.bukkit.util.Vector;
+import org.jetbrains.annotations.Nullable;
 import se.file14.procosmetics.api.cosmetic.CosmeticContext;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetBehavior;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetType;
@@ -33,8 +35,6 @@ import se.file14.procosmetics.api.nms.NMSEntity;
 import se.file14.procosmetics.util.MathUtil;
 import se.file14.procosmetics.util.RGBFade;
 import se.file14.procosmetics.util.material.Materials;
-
-import javax.annotation.Nullable;
 
 public class DiscoBall implements GadgetBehavior {
 
@@ -53,7 +53,7 @@ public class DiscoBall implements GadgetBehavior {
     }
 
     @Override
-    public InteractionResult onInteract(CosmeticContext<GadgetType> context, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
+    public InteractionResult onInteract(CosmeticContext<GadgetType> context, Action action, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
         Player player = context.getPlayer();
         location = player.getLocation();
 
@@ -67,9 +67,9 @@ public class DiscoBall implements GadgetBehavior {
 
         context.getPlugin().getJavaPlugin().getServer().getScheduler().runTaskLater(context.getPlugin().getJavaPlugin(),
                 () -> onUnequip(context),
-                context.getType().getDurationInTicks()
+                context.getType().getDurationTicks()
         );
-        return InteractionResult.SUCCESS;
+        return InteractionResult.success();
     }
 
     @Override

@@ -23,8 +23,10 @@ import org.bukkit.Sound;
 import org.bukkit.block.Block;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
+import org.bukkit.event.block.Action;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Vector;
+import org.jetbrains.annotations.Nullable;
 import se.file14.procosmetics.api.ProCosmetics;
 import se.file14.procosmetics.api.cosmetic.CosmeticContext;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetBehavior;
@@ -32,8 +34,6 @@ import se.file14.procosmetics.api.cosmetic.gadget.GadgetType;
 import se.file14.procosmetics.api.nms.NMSEntity;
 import se.file14.procosmetics.util.MathUtil;
 import se.file14.procosmetics.util.material.Materials;
-
-import javax.annotation.Nullable;
 
 public class PartyPopper implements GadgetBehavior {
 
@@ -48,7 +48,7 @@ public class PartyPopper implements GadgetBehavior {
     }
 
     @Override
-    public InteractionResult onInteract(CosmeticContext<GadgetType> context, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
+    public InteractionResult onInteract(CosmeticContext<GadgetType> context, Action action, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
         location = context.getPlayer().getLocation();
         started = true;
 
@@ -56,9 +56,9 @@ public class PartyPopper implements GadgetBehavior {
                     started = false;
                     i = 0;
                 },
-                context.getType().getDurationInTicks()
+                context.getType().getDurationTicks()
         );
-        return InteractionResult.SUCCESS;
+        return InteractionResult.success();
     }
 
     @Override

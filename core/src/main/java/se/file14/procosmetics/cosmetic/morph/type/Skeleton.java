@@ -48,7 +48,7 @@ public class Skeleton implements MorphBehavior {
 
     @Override
     public InteractionResult onInteract(CosmeticContext<MorphType> context, PlayerInteractEvent event, NMSEntity nmsEntity) {
-        return InteractionResult.NO_ACTION;
+        return InteractionResult.noAction();
     }
 
     @Override
@@ -82,9 +82,9 @@ public class Skeleton implements MorphBehavior {
             player.getWorld().playSound(player, Sound.ENTITY_SKELETON_HURT, 0.8f, 1.0f);
             location.getWorld().spawnParticle(Particle.CLOUD, location.add(0.0d, 1.0d, 0.0d), 10, 0.3d, 0.3d, 0.3d, 0.0d);
 
-            return InteractionResult.SUCCESS;
+            return InteractionResult.success();
         }
-        return InteractionResult.NO_ACTION;
+        return InteractionResult.noAction();
     }
 
     @Override

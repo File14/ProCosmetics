@@ -54,9 +54,9 @@ public class Olaf implements MorphBehavior, Listener {
             Player player = context.getPlayer();
             snowball = player.launchProjectile(Snowball.class);
             player.getWorld().playSound(player, Sound.ENTITY_SNOWBALL_THROW, 0.8f, 1.2f);
-            return InteractionResult.SUCCESS;
+            return InteractionResult.success();
         }
-        return InteractionResult.NO_ACTION;
+        return InteractionResult.noAction();
     }
 
     @Override

@@ -22,7 +22,9 @@ import org.bukkit.block.Block;
 import org.bukkit.entity.BlockDisplay;
 import org.bukkit.entity.Display;
 import org.bukkit.entity.Player;
+import org.bukkit.event.block.Action;
 import org.bukkit.util.Vector;
+import org.jetbrains.annotations.Nullable;
 import se.file14.procosmetics.api.cosmetic.CosmeticContext;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetBehavior;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetType;
@@ -30,8 +32,6 @@ import se.file14.procosmetics.api.nms.NMSEntity;
 import se.file14.procosmetics.api.util.structure.type.ParentBlockDisplayStructure;
 import se.file14.procosmetics.util.MetadataUtil;
 import se.file14.procosmetics.util.structure.type.ParentBlockDisplayStructureImpl;
-
-import javax.annotation.Nullable;
 
 public class Rocket implements GadgetBehavior {
 
@@ -56,7 +56,7 @@ public class Rocket implements GadgetBehavior {
     }
 
     @Override
-    public InteractionResult onInteract(CosmeticContext<GadgetType> context, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
+    public InteractionResult onInteract(CosmeticContext<GadgetType> context, Action action, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
         Player player = context.getPlayer();
         Location center = player.getLocation();
 
@@ -74,7 +74,7 @@ public class Rocket implements GadgetBehavior {
 
         speed = 0.0d;
         tick = 0;
-        return InteractionResult.SUCCESS;
+        return InteractionResult.success();
     }
 
     @Override

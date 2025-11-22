@@ -39,7 +39,8 @@ import se.file14.procosmetics.api.cosmetic.gadget.GadgetType;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.util.MetadataUtil;
 
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
+
 import java.util.UUID;
 
 public class Cowboy implements GadgetBehavior, Listener {
@@ -54,7 +55,7 @@ public class Cowboy implements GadgetBehavior, Listener {
     }
 
     @Override
-    public InteractionResult onInteract(CosmeticContext<GadgetType> context, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
+    public InteractionResult onInteract(CosmeticContext<GadgetType> context, Action action, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
         Player player = context.getPlayer();
         Player clickedPlayer = null;
 
@@ -63,7 +64,7 @@ public class Cowboy implements GadgetBehavior, Listener {
         }
 
         if (clickedPlayer == null) {
-            return InteractionResult.FAILED;
+            return InteractionResult.fail();
         }
         Location location = clickedPlayer.getLocation().add(0.0d, 2.0d, 0.0d);
         armorStand = location.getWorld().spawn(clickedPlayer.getLocation(), ArmorStand.class, entity -> {
@@ -78,7 +79,7 @@ public class Cowboy implements GadgetBehavior, Listener {
         armorStand.addPassenger(player);
         player.playSound(location, Sound.ENTITY_HORSE_ARMOR, 0.5f, 1.2f);
 
-        return InteractionResult.SUCCESS;
+        return InteractionResult.success();
     }
 
     @Override

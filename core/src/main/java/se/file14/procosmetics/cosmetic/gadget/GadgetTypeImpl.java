@@ -34,7 +34,8 @@ import se.file14.procosmetics.cosmetic.CosmeticTypeImpl;
 import se.file14.procosmetics.treasure.loot.number.RangedIntProviderImpl;
 import se.file14.procosmetics.util.structure.StructureReader;
 
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -105,11 +106,6 @@ public class GadgetTypeImpl extends CosmeticTypeImpl<GadgetType, GadgetBehavior>
     @Override
     public double getDuration() {
         return duration;
-    }
-
-    @Override
-    public long getDurationInTicks() {
-        return (long) (20L * duration);
     }
 
     @Override

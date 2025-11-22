@@ -63,7 +63,7 @@ public class CaveSpider implements MorphBehavior, Listener {
         }
 
         if (clickedPlayer == null) {
-            return InteractionResult.NO_ACTION;
+            return InteractionResult.noAction();
         }
         Player player = context.getPlayer();
 
@@ -93,7 +93,7 @@ public class CaveSpider implements MorphBehavior, Listener {
                 0.1d,
                 SPIDER_EYE_ITEM
         );
-        return InteractionResult.SUCCESS;
+        return InteractionResult.success();
     }
 
     @Override
