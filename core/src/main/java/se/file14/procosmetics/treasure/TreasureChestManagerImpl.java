@@ -17,6 +17,7 @@
  */
 package se.file14.procosmetics.treasure;
 
+import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import org.bukkit.Location;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -44,8 +45,9 @@ import se.file14.procosmetics.util.structure.StructureDataImpl;
 import se.file14.procosmetics.util.structure.StructureReader;
 
 import javax.annotation.Nullable;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Level;
 
 public class TreasureChestManagerImpl implements TreasureChestManager {
@@ -54,9 +56,9 @@ public class TreasureChestManagerImpl implements TreasureChestManager {
     private final Config treasureChestsConfig;
     private final Config platformsConfig;
     private final Broadcaster openingBroadcaster;
-    private final LootBroadcasterImpl lootBroadcaster;
-    private final List<TreasureChest> treasuresChests = new ArrayList<>();
-    private final List<TreasureChestPlatform> platforms = new ArrayList<>();
+    private final LootBroadcaster lootBroadcaster;
+    private final Map<String, TreasureChest> treasuresChests = new HashMap<>();
+    private final Map<Integer, TreasureChestPlatform> platforms = new Int2ObjectOpenHashMap<>();
 
     public TreasureChestManagerImpl(ProCosmeticsPlugin plugin) {
         this.plugin = plugin;
@@ -71,7 +73,8 @@ public class TreasureChestManagerImpl implements TreasureChestManager {
 
     private void loadTreasureChests() {
         for (String key : treasureChestsConfig.getSectionKeys("treasure_chests")) {
-            treasuresChests.add(new TreasureChestImpl(plugin, treasureChestsConfig, key.toLowerCase()));
+            key = key.toLowerCase();
+            treasuresChests.put(key, new TreasureChestImpl(plugin, treasureChestsConfig, key));
         }
     }
 
@@ -111,7 +114,7 @@ public class TreasureChestManagerImpl implements TreasureChestManager {
                 plugin.getLogger().log(Level.WARNING, "Invalid or missing location for treasure chest platform " + id + ". Skipping.");
                 continue;
             }
-            platforms.add(new TreasureChestPlatformImpl(plugin, id, location, namedStructureData));
+            platforms.put(id, new TreasureChestPlatformImpl(plugin, id, location, namedStructureData));
         }
     }
 
@@ -130,7 +133,7 @@ public class TreasureChestManagerImpl implements TreasureChestManager {
         platformsConfig.set("platforms." + platform.getId(), null);
         platformsConfig.save();
 
-        platforms.remove(platform);
+        platforms.remove(platform.getId());
     }
 
     public void createPlatform(Location location, NamedStructureData structureData) {
@@ -139,7 +142,7 @@ public class TreasureChestManagerImpl implements TreasureChestManager {
 
         TreasureChestPlatformImpl platform = new TreasureChestPlatformImpl(plugin, id, location, structureData);
         savePlatform(platform);
-        platforms.add(platform);
+        platforms.put(id, platform);
     }
 
     private int generateID() {
@@ -191,7 +194,7 @@ public class TreasureChestManagerImpl implements TreasureChestManager {
         if (location == null) {
             return null;
         }
-        for (TreasureChestPlatform platform : platforms) {
+        for (TreasureChestPlatform platform : platforms.values()) {
             if (location.equals(platform.getCenter().getBlock().getLocation())) {
                 return platform;
             }
@@ -202,12 +205,7 @@ public class TreasureChestManagerImpl implements TreasureChestManager {
     @Override
     @Nullable
     public TreasureChestPlatform getPlatform(int id) {
-        for (TreasureChestPlatform platform : platforms) {
-            if (id == platform.getId()) {
-                return platform;
-            }
-        }
-        return null;
+        return platforms.get(id);
     }
 
     @Override
@@ -216,12 +214,7 @@ public class TreasureChestManagerImpl implements TreasureChestManager {
         if (key == null || key.isBlank()) {
             return null;
         }
-        for (TreasureChest treasureChest : treasuresChests) {
-            if (treasureChest.getKey().equalsIgnoreCase(key)) {
-                return treasureChest;
-            }
-        }
-        return null;
+        return treasuresChests.get(key.toLowerCase());
     }
 
     @Override
@@ -245,12 +238,12 @@ public class TreasureChestManagerImpl implements TreasureChestManager {
     }
 
     @Override
-    public List<TreasureChestPlatform> getPlatforms() {
-        return platforms;
+    public Collection<TreasureChestPlatform> getPlatforms() {
+        return platforms.values();
     }
 
     @Override
-    public List<TreasureChest> getTreasureChests() {
-        return treasuresChests;
+    public Collection<TreasureChest> getTreasureChests() {
+        return treasuresChests.values();
     }
 }

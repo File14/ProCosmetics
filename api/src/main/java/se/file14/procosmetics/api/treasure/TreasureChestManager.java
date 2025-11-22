@@ -23,7 +23,7 @@ import se.file14.procosmetics.api.config.Config;
 import se.file14.procosmetics.api.util.broadcaster.Broadcaster;
 import se.file14.procosmetics.api.util.broadcaster.LootBroadcaster;
 
-import java.util.List;
+import java.util.Collection;
 
 /**
  * Manages all registered treasure chests and active treasure platforms.
@@ -93,16 +93,16 @@ public interface TreasureChestManager {
     LootBroadcaster getLootBroadcaster();
 
     /**
-     * Gets the current treasure chest platforms.
+     * Gets a list of all treasure chest platforms.
      *
-     * @return the list of {@link TreasureChestPlatform}
+     * @return the collection of all {@link TreasureChestPlatform} instances
      */
-    List<TreasureChestPlatform> getPlatforms();
+    Collection<TreasureChestPlatform> getPlatforms();
 
     /**
      * Gets a list of all loaded treasure chests.
      *
      * @return a list of all {@link TreasureChest} instances
      */
-    List<TreasureChest> getTreasureChests();
+    Collection<TreasureChest> getTreasureChests();
 }

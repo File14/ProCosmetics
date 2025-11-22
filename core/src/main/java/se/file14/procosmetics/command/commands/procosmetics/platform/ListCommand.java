@@ -28,6 +28,7 @@ import se.file14.procosmetics.api.locale.Translator;
 import se.file14.procosmetics.api.treasure.TreasureChestPlatform;
 import se.file14.procosmetics.command.SubCommand;
 
+import java.util.Comparator;
 import java.util.List;
 
 public class ListCommand extends SubCommand<CommandSender> {
@@ -46,10 +47,13 @@ public class ListCommand extends SubCommand<CommandSender> {
                 Placeholder.unparsed("amount", String.valueOf(plugin.getTreasureChestManager().getPlatforms().size()))
         ));
         TextComponent.Builder builder = Component.text();
-        List<TreasureChestPlatform> platforms = plugin.getTreasureChestManager().getPlatforms();
+        List<TreasureChestPlatform> sortedPlatforms = plugin.getTreasureChestManager().getPlatforms()
+                .stream()
+                .sorted(Comparator.comparingInt(TreasureChestPlatform::getId))
+                .toList();
 
-        for (int i = 0; i < platforms.size(); i++) {
-            TreasureChestPlatform platform = platforms.get(i);
+        for (int i = 0; i < sortedPlatforms.size(); i++) {
+            TreasureChestPlatform platform = sortedPlatforms.get(i);
             Location center = platform.getCenter();
 
             builder.append(translator.translate(
@@ -61,7 +65,7 @@ public class ListCommand extends SubCommand<CommandSender> {
                     Placeholder.unparsed("world", center.getWorld().getName())
             ).clickEvent(ClickEvent.runCommand("/pc platform teleport " + platform.getId())));
 
-            if (i < platforms.size() - 1) {
+            if (i < sortedPlatforms.size() - 1) {
                 builder.append(Component.newline());
             }
         }
