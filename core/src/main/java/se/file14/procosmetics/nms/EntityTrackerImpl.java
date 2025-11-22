@@ -20,12 +20,11 @@ package se.file14.procosmetics.nms;
 import com.google.common.collect.ImmutableSet;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.Nullable;
 import se.file14.procosmetics.ProCosmeticsPlugin;
 import se.file14.procosmetics.api.nms.EntityTracker;
 import se.file14.procosmetics.api.nms.NMSEntity;
 import se.file14.procosmetics.util.AbstractRunnable;
-
-import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 import java.util.function.BiPredicate;
@@ -34,11 +33,10 @@ import java.util.function.Predicate;
 public class EntityTrackerImpl extends AbstractRunnable implements EntityTracker {
 
     private static final ProCosmeticsPlugin PLUGIN = ProCosmeticsPlugin.getPlugin();
-    private static final double DEFAULT_TRACKING_RANGE = 48.0d;
     private static final long DEFAULT_UPDATE_INTERVAL = 20L;
     private static final long DEFAULT_START_DELAY = 1L;
 
-    private double trackingRange = DEFAULT_TRACKING_RANGE;
+    private double trackingRange;
     private long updateInterval = DEFAULT_UPDATE_INTERVAL;
     private long startDelay = DEFAULT_START_DELAY;
 
@@ -57,9 +55,11 @@ public class EntityTrackerImpl extends AbstractRunnable implements EntityTracker
     private final Set<Player> playersToRemove = new HashSet<>();
 
     public EntityTrackerImpl() {
+        this(null);
     }
 
     public EntityTrackerImpl(@Nullable Player owner) {
+        trackingRange = PLUGIN.getConfigManager().getMainConfig().getDouble("settings.entity_tracking_range");
         setOwner(owner);
     }
 

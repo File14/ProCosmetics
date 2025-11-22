@@ -153,6 +153,9 @@ settings:
   # Placeholders: <player_name>, <player_uuid> <cosmetic_key>, <cosmetic_permission>
   permission_add_command: "lp user <player_uuid> permission set <cosmetic_permission> true"
 
+  # Maximum distance (in blocks) at which players can see packet-based entities.
+  entity_tracking_range: 48.0
+
 # This is the cosmetic menu item. It is placed in the player’s inventory, and when clicked,
 # it opens the main cosmetics menu that contains all (enabled) categories.
 cosmetic_item:
