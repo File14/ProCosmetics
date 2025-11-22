@@ -17,12 +17,10 @@
  */
 package se.file14.procosmetics.cosmetic.gadget.type;
 
-import org.bukkit.Location;
-import org.bukkit.Material;
-import org.bukkit.Particle;
-import org.bukkit.Sound;
+import org.bukkit.*;
 import org.bukkit.block.Block;
-import org.bukkit.entity.ArmorStand;
+import org.bukkit.entity.BlockDisplay;
+import org.bukkit.entity.Display;
 import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
 import se.file14.procosmetics.api.cosmetic.CosmeticContext;
@@ -30,7 +28,7 @@ import se.file14.procosmetics.api.cosmetic.gadget.GadgetBehavior;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetType;
 import se.file14.procosmetics.api.nms.NMSEntity;
 import se.file14.procosmetics.util.MetadataUtil;
-import se.file14.procosmetics.util.structure.type.FallingBlockStructure;
+import se.file14.procosmetics.util.structure.type.BlockDisplayParentStructure;
 
 import javax.annotation.Nullable;
 
@@ -40,10 +38,10 @@ public class Rocket implements GadgetBehavior {
 
     private static final double MAX_SPEED = 0.5d;
     private static final double ACCELERATION = 0.01d;
+    private static final float HEIGHT_OFFSET = 3.5f;
 
-    private FallingBlockStructure structure;
-    private NMSEntity nmsArmorStand;
-    private ArmorStand seat;
+    private BlockDisplayParentStructure structure;
+    private NMSEntity seat;
     private boolean launching;
     private int tick;
     private double speed;
@@ -52,36 +50,30 @@ public class Rocket implements GadgetBehavior {
     @Override
     public void onEquip(CosmeticContext<GadgetType> context) {
         if (structure == null) {
-            structure = new FallingBlockStructure(context.getType().getStructure());
+            structure = new BlockDisplayParentStructure(context.getType().getStructure());
         }
     }
 
     @Override
     public InteractionResult onInteract(CosmeticContext<GadgetType> context, @Nullable Block clickedBlock, @Nullable Vector clickedPosition) {
         Player player = context.getPlayer();
-        seatLocation = player.getLocation();
-        structure.spawn(seatLocation);
-        seatLocation = seatLocation.add(0.0d, 1.5d, 0.0d);
+        Location center = player.getLocation();
 
-        seat = seatLocation.getWorld().spawn(seatLocation, ArmorStand.class, entity -> {
-            entity.setVisible(false);
-            entity.setGravity(false);
+        seatLocation = center.clone().add(0.0d, HEIGHT_OFFSET, 0.0d);
 
+        Display seatEntity = seatLocation.getWorld().spawn(seatLocation, BlockDisplay.class, entity -> {
+            entity.setTeleportDuration(1);
             MetadataUtil.setCustomEntity(entity);
         });
-        seat.addPassenger(player);
-        nmsArmorStand = context.getPlugin().getNMSManager().entityToNMSEntity(seat);
-        nmsArmorStand.setNoClip(true);
+        seatEntity.addPassenger(player);
+        structure.spawn(center, seatEntity, HEIGHT_OFFSET);
+        seat = context.getPlugin().getNMSManager().entityToNMSEntity(seatEntity);
 
-        context.getUser().setFallDamageProtection(25);
+        context.getUser().setFallDamageProtection((int) (context.getType().getDuration() + 6));
 
-        speed = 0.01d;
+        speed = 0.0d;
         tick = 0;
         return InteractionResult.SUCCESS;
-    }
-
-    private void addY(Location location, double amount) {
-        location.setY(location.getY() + amount);
     }
 
     @Override
@@ -89,54 +81,52 @@ public class Rocket implements GadgetBehavior {
         if (seat == null) {
             return;
         }
-        seat.getLocation(seatLocation);
+        World world = seatLocation.getWorld();
 
         if (launching) {
             if (speed < MAX_SPEED) {
                 speed += ACCELERATION;
-                addY(seatLocation, speed * 1.1d);
-                nmsArmorStand.setPositionRotation(seatLocation);
-            } else {
-                addY(seatLocation, speed);
-                nmsArmorStand.setPositionRotation(seatLocation);
             }
+            seat.setPositionRotation(seatLocation.add(0.0d, speed, 0.0d));
 
+            // Set this to make sure the tracker updates its location and also prevent a spawn-in flicker
             for (NMSEntity entity : structure.getPlacedEntries()) {
-                addY(entity.getPreviousLocation(), speed);
-                entity.setPositionRotation(entity.getPreviousLocation());
-                entity.setVelocity(0.0d, speed, 0.0d);
-                entity.sendVelocityPacket();
+                entity.setPreviousLocation(entity.getPreviousLocation().add(0.0d, speed, 0.0d));
             }
-            addY(seatLocation, -1.0d);
-            seatLocation.getWorld().spawnParticle(Particle.FLAME, seatLocation, 10, 0.2f, 0.2f, 0.2f, 0.0d);
-            seatLocation.getWorld().spawnParticle(Particle.CLOUD, seatLocation, 10, 0.2f, 0.2f, 0.2f, 0.0d);
-            seatLocation.getWorld().spawnParticle(Particle.EXPLOSION, seatLocation, 1, 0.2f, 0.2f, 0.2f, 0.0d);
-            seatLocation.getWorld().playSound(seatLocation, Sound.ENTITY_LIGHTNING_BOLT_THUNDER, 0.8f, 0.0f);
+            seatLocation.subtract(0.0d, HEIGHT_OFFSET, 0.0d);
+            world.spawnParticle(Particle.FLAME, seatLocation, 10, 0.2f, 0.2f, 0.2f, 0.0d);
+            world.spawnParticle(Particle.CLOUD, seatLocation, 10, 0.2f, 0.2f, 0.2f, 0.0d);
+            world.spawnParticle(Particle.EXPLOSION, seatLocation, 1, 0.2f, 0.2f, 0.2f, 0.0d);
+            seatLocation.add(0.0d, HEIGHT_OFFSET, 0.0d);
+            world.playSound(seatLocation, Sound.ENTITY_LIGHTNING_BOLT_THUNDER, 0.8f, 0.0f);
 
-            if (tick > 190 && tick < 200) {
-                seatLocation.getWorld().playSound(seatLocation, Sound.ENTITY_ZOMBIE_ATTACK_IRON_DOOR, 0.4f, 0.0f);
-                seatLocation.getWorld().playSound(seatLocation, Sound.BLOCK_ANVIL_LAND, 0.4f, 0.0f);
-            } else if (tick == 200) {
+            if (tick > 220 && tick < 240) {
+                world.playSound(seatLocation, Sound.ENTITY_ZOMBIE_ATTACK_IRON_DOOR, 0.4f, 0.0f);
+                world.playSound(seatLocation, Sound.BLOCK_ANVIL_LAND, 0.4f, 0.0f);
+            } else if (tick == 240) {
                 explode(context, seatLocation);
             }
-            addY(seatLocation, Y_COLLISION_CHECK);
+            seatLocation.add(0.0d, Y_COLLISION_CHECK, 0.0d);
             Material topMaterial = seatLocation.getBlock().getType();
 
             if (!topMaterial.isAir()) {
                 explode(context, seatLocation);
                 return;
             }
+            seatLocation.subtract(0.0d, Y_COLLISION_CHECK, 0.0d);
         } else {
-            addY(seatLocation, -1.0d);
-            seatLocation.getWorld().playSound(seatLocation, Sound.ENTITY_LIGHTNING_BOLT_THUNDER, 0.1f, 0.0f);
+            world.playSound(seatLocation, Sound.ENTITY_LIGHTNING_BOLT_THUNDER, 0.1f, 0.0f);
 
             if (tick % 20 == 0) {
+                seatLocation.subtract(0.0d, HEIGHT_OFFSET, 0.0d);
+                world.spawnParticle(Particle.CLOUD, seatLocation, 10, 0.2f, 0.2f, 0.2f, 0.0d);
+                seatLocation.add(0.0d, HEIGHT_OFFSET, 0.0d);
+
                 if (tick == 100) {
                     launching = true;
-                    seatLocation.getWorld().playSound(seatLocation, Sound.ENTITY_FIREWORK_ROCKET_LAUNCH, 1.0f, 0.0f);
-                    seatLocation.getWorld().playSound(seatLocation, Sound.ENTITY_LIGHTNING_BOLT_THUNDER, 1.0f, 0.0f);
+                    world.playSound(seatLocation, Sound.ENTITY_FIREWORK_ROCKET_LAUNCH, 1.0f, 0.0f);
+                    world.playSound(seatLocation, Sound.ENTITY_LIGHTNING_BOLT_THUNDER, 1.0f, 0.0f);
                 }
-                seatLocation.getWorld().spawnParticle(Particle.CLOUD, seatLocation, 20, 0.2f, 0.2f, 0.2f, 0.0d);
             }
         }
         tick++;
@@ -154,9 +144,8 @@ public class Rocket implements GadgetBehavior {
         launching = false;
 
         if (seat != null) {
-            seat.remove();
+            seat.getBukkitEntity().remove();
             seat = null;
-            nmsArmorStand = null;
         }
     }
 

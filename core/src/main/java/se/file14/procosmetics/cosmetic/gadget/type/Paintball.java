@@ -39,8 +39,8 @@ import se.file14.procosmetics.util.MetadataUtil;
 import se.file14.procosmetics.util.material.Materials;
 
 import javax.annotation.Nullable;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Paintball implements GadgetBehavior, Listener {
 
@@ -50,7 +50,7 @@ public class Paintball implements GadgetBehavior, Listener {
     private static final int PAINT_DURATION = 5;
     private static final double PAINT_PARTICLE_CHANCE = 0.6d;
 
-    private final List<Projectile> balls = new ArrayList<>();
+    private final Set<Projectile> balls = new HashSet<>();
 
     @Override
     public void onEquip(CosmeticContext<GadgetType> context) {

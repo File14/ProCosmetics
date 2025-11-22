@@ -27,26 +27,26 @@ import se.file14.procosmetics.api.cosmetic.CosmeticContext;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetBehavior;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetType;
 import se.file14.procosmetics.util.MathUtil;
-import se.file14.procosmetics.util.structure.type.FallingBlockStructure;
+import se.file14.procosmetics.util.structure.type.BlockDisplayStructure;
 
 import javax.annotation.Nullable;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Shower implements GadgetBehavior {
 
     private static final double DRIP_HEIGHT = 3.15d;
 
-    private FallingBlockStructure structure;
+    private BlockDisplayStructure structure;
     private Location center;
     private Location shower;
     private Location eyeLocation;
-    private final List<Location> waterDripLocations = new ArrayList<>(4);
+    private final Set<Location> waterDripLocations = new HashSet<>(4);
 
     @Override
     public void onEquip(CosmeticContext<GadgetType> context) {
         if (structure == null) {
-            structure = new FallingBlockStructure(context.getType().getStructure());
+            structure = new BlockDisplayStructure(context.getType().getStructure());
         }
     }
 

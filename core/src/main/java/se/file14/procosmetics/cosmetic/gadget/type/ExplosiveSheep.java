@@ -33,8 +33,9 @@ import se.file14.procosmetics.util.MathUtil;
 import se.file14.procosmetics.util.MetadataUtil;
 
 import javax.annotation.Nullable;
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class ExplosiveSheep implements GadgetBehavior {
 
@@ -42,7 +43,7 @@ public class ExplosiveSheep implements GadgetBehavior {
     private static final int SHEEP_AMOUNT = 10;
 
     private Sheep sheep;
-    private final List<Sheep> babies = new ArrayList<>();
+    private final Set<Sheep> babies = new HashSet<>();
     private Location location;
 
     @Override

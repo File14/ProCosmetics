@@ -32,11 +32,11 @@ import se.file14.procosmetics.util.MathUtil;
 import se.file14.procosmetics.util.structure.type.BlockStructure;
 
 import javax.annotation.Nullable;
-import java.util.List;
+import java.util.Set;
 
 public class Trampoline implements GadgetBehavior {
 
-    private static final List<Material> BOUNCE_MATERIALS = List.of(
+    private static final Set<Material> BOUNCE_MATERIALS = Set.of(
             Material.BLACK_WOOL,
             Material.WHITE_WOOL
     );

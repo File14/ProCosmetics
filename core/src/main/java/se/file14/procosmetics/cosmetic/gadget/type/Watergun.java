@@ -34,15 +34,15 @@ import se.file14.procosmetics.api.cosmetic.gadget.GadgetType;
 import se.file14.procosmetics.util.MetadataUtil;
 
 import javax.annotation.Nullable;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Watergun implements GadgetBehavior {
 
     private static final ItemStack ITEM_STACK = new ItemStack(Material.BLUE_DYE);
     private static final Vector OFFSET_VECTOR = new Vector(0.0d, 0.4d, 0.0d);
 
-    private final List<Projectile> balls = new ArrayList<>();
+    private final Set<Projectile> balls = new HashSet<>();
 
     private Location location;
 

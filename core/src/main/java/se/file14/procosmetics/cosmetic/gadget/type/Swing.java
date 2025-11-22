@@ -34,7 +34,7 @@ import se.file14.procosmetics.util.FastMathUtil;
 import se.file14.procosmetics.util.LocationUtil;
 import se.file14.procosmetics.util.MathUtil;
 import se.file14.procosmetics.util.MetadataUtil;
-import se.file14.procosmetics.util.structure.type.FallingBlockStructure;
+import se.file14.procosmetics.util.structure.type.BlockDisplayStructure;
 
 import javax.annotation.Nullable;
 
@@ -45,7 +45,7 @@ public class Swing implements GadgetBehavior {
     private static final double ACCELERATION = 0.01d;
     private static final double MAX_ACCELERATION = 1.0d;
 
-    private FallingBlockStructure structure;
+    private BlockDisplayStructure structure;
     private Location center;
     private double angle;
     private NMSEntity seat;
@@ -57,7 +57,7 @@ public class Swing implements GadgetBehavior {
     @Override
     public void onEquip(CosmeticContext<GadgetType> context) {
         if (structure == null) {
-            structure = new FallingBlockStructure(context.getType().getStructure());
+            structure = new BlockDisplayStructure(context.getType().getStructure());
         }
     }
 

@@ -29,7 +29,7 @@ import se.file14.procosmetics.api.cosmetic.gadget.GadgetBehavior;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetType;
 import se.file14.procosmetics.util.MathUtil;
 import se.file14.procosmetics.util.MetadataUtil;
-import se.file14.procosmetics.util.structure.type.FallingBlockStructure;
+import se.file14.procosmetics.util.structure.type.BlockDisplayStructure;
 
 import javax.annotation.Nullable;
 
@@ -37,7 +37,7 @@ public class Cannon implements GadgetBehavior {
 
     private static final double PARTICLE_OFFSET = 0.5d;
 
-    private FallingBlockStructure structure;
+    private BlockDisplayStructure structure;
     private Location center;
     private Location shootLocation;
     private Entity fireball;
@@ -46,7 +46,7 @@ public class Cannon implements GadgetBehavior {
     @Override
     public void onEquip(CosmeticContext<GadgetType> context) {
         if (structure == null) {
-            structure = new FallingBlockStructure(context.getType().getStructure());
+            structure = new BlockDisplayStructure(context.getType().getStructure());
         }
     }
 

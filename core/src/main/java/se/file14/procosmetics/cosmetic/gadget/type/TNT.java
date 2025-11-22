@@ -41,8 +41,8 @@ import se.file14.procosmetics.util.MathUtil;
 import se.file14.procosmetics.util.MetadataUtil;
 
 import javax.annotation.Nullable;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class TNT implements GadgetBehavior, Listener {
 
@@ -50,8 +50,8 @@ public class TNT implements GadgetBehavior, Listener {
 
     private static final int FUSE_TICKS = 80;
 
-    private final List<Entity> entities = new ArrayList<>();
-    private final List<FallingBlock> fallingBlocks = new ArrayList<>();
+    private final Set<Entity> entities = new HashSet<>();
+    private final Set<FallingBlock> fallingBlocks = new HashSet<>();
 
     @Override
     public void onEquip(CosmeticContext<GadgetType> context) {
