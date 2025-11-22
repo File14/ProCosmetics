@@ -32,11 +32,19 @@ public interface GadgetType extends CosmeticType<GadgetType, GadgetBehavior> {
 
     /**
      * Gets the cooldown period for this gadget in seconds.
-     * The player must wait this duration after using the gadget before using it again.
      *
      * @return the cooldown duration in seconds
      */
     double getCooldown();
+
+    /**
+     * Gets the cooldown period for this gadget in ticks.
+     *
+     * @return the cooldown duration in seconds
+     */
+    default long getCooldownTicks() {
+        return (long) (getCooldown() * 20L);
+    }
 
     /**
      * Gets the duration this gadget remains active in seconds.
@@ -47,11 +55,13 @@ public interface GadgetType extends CosmeticType<GadgetType, GadgetBehavior> {
     double getDuration();
 
     /**
-     * Gets the duration this gadget remains active in server ticks.
+     * Gets the duration this gadget remains active in ticks.
      *
      * @return the active duration in ticks
      */
-    long getDurationInTicks();
+    default long getDurationTicks() {
+        return (long) (getDuration() * 20L);
+    }
 
     /**
      * Gets the structure data for this gadget.
