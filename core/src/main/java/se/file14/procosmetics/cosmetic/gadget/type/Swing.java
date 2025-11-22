@@ -148,7 +148,7 @@ public class Swing implements GadgetBehavior {
 
     @Override
     public boolean requiresGroundOnUse() {
-        return false;
+        return true;
     }
 
     @Override

@@ -99,7 +99,7 @@ public class Trampoline implements GadgetBehavior {
 
     @Override
     public boolean requiresGroundOnUse() {
-        return false;
+        return true;
     }
 
     @Override

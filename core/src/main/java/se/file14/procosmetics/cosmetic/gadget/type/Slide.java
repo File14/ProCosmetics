@@ -132,7 +132,7 @@ public class Slide implements GadgetBehavior, Listener {
 
     @Override
     public boolean requiresGroundOnUse() {
-        return false;
+        return true;
     }
 
     @Override
