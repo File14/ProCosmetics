@@ -74,7 +74,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   armadillo:
@@ -94,7 +94,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   axolotl:
@@ -114,7 +114,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   bee:
@@ -134,7 +134,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   body_guard:
@@ -154,7 +154,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   breeze:
@@ -174,7 +174,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   calf:
@@ -194,7 +194,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   camel:
@@ -214,7 +214,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   cave_spider:
@@ -234,7 +234,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   chicken:
@@ -254,7 +254,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   colorful_lamb:
@@ -274,7 +274,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   copper_golem:
@@ -294,7 +294,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   creaking:
@@ -314,7 +314,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   easter_bunny:
@@ -334,7 +334,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   elf:
@@ -354,7 +354,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   endermite:
@@ -374,7 +374,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   fox:
@@ -394,7 +394,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   frog:
@@ -414,7 +414,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   goat:
@@ -434,7 +434,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   hoglin:
@@ -454,7 +454,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   kitten:
@@ -474,7 +474,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   llama:
@@ -494,7 +494,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   mushroom_calf:
@@ -514,7 +514,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   panda:
@@ -534,7 +534,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   parrot:
@@ -554,7 +554,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   piggy:
@@ -574,7 +574,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   piglin:
@@ -594,7 +594,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   polar_bear:
@@ -614,7 +614,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   puppy:
@@ -634,7 +634,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   santa_claus:
@@ -654,7 +654,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   silverfish:
@@ -674,7 +674,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   sniffer:
@@ -694,7 +694,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   turtle:
@@ -714,7 +714,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   villager:
@@ -734,7 +734,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   warden:
@@ -754,7 +754,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   zombie_villager:
@@ -774,7 +774,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
 # Do not edit this!

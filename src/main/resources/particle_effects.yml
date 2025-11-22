@@ -66,7 +66,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   aura_of_flame:
@@ -79,7 +79,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   big_heart:
@@ -92,7 +92,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   black_hole:
@@ -105,7 +105,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   blood_helix:
@@ -118,7 +118,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   bunny:
@@ -131,7 +131,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   christmas_tree:
@@ -144,7 +144,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   colorful_trail:
@@ -157,7 +157,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   confetti:
@@ -170,7 +170,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   crushed_candy_cane:
@@ -183,7 +183,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   demon_twist:
@@ -196,7 +196,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   emerald_twirl:
@@ -209,7 +209,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   enchanted:
@@ -222,7 +222,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   flame_flairy:
@@ -235,7 +235,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   flame_of_magic:
@@ -248,7 +248,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   flame_of_the_demons:
@@ -261,7 +261,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   flame_rings:
@@ -274,7 +274,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   frost_lord:
@@ -287,7 +287,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   in_love:
@@ -300,7 +300,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   jack_o_lantern:
@@ -313,7 +313,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   legendary_aura:
@@ -326,7 +326,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   music:
@@ -339,7 +339,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   party_time:
@@ -352,7 +352,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   protective_shield:
@@ -365,7 +365,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   rain_cloud:
@@ -378,7 +378,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   rainbow_wings:
@@ -391,7 +391,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   shadow_walk:
@@ -404,7 +404,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   skull:
@@ -417,7 +417,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   snow_cloud:
@@ -430,7 +430,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   snowflake:
@@ -443,7 +443,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   star:
@@ -456,7 +456,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   tornado:
@@ -469,7 +469,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   umbrella:
@@ -482,7 +482,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   vampire_wings:
@@ -495,7 +495,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   yin_and_yang:
@@ -508,7 +508,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
 # Do not edit this!

@@ -85,7 +85,7 @@ cosmetics:
     refresh_interval: -1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   coins:
@@ -99,7 +99,7 @@ cosmetics:
     refresh_interval: 120
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   do_not_disturb:
@@ -113,7 +113,7 @@ cosmetics:
     refresh_interval: -1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   just_chilling:
@@ -127,7 +127,7 @@ cosmetics:
     refresh_interval: -1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   looking_to_chat:
@@ -141,7 +141,7 @@ cosmetics:
     refresh_interval: -1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   looking_to_team_up:
@@ -155,7 +155,7 @@ cosmetics:
     refresh_interval: -1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   ping:
@@ -169,7 +169,7 @@ cosmetics:
     refresh_interval: 120
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
 # Do not edit this!

@@ -63,7 +63,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   candy_cane_arrows:
@@ -76,7 +76,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   confetti_arrows:
@@ -89,7 +89,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   enchanted_arrows:
@@ -102,7 +102,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   flame_arrows:
@@ -115,7 +115,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   frost_lord_arrows:
@@ -128,7 +128,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   green_arrows:
@@ -141,7 +141,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   lava_arrows:
@@ -154,7 +154,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   love_arrows:
@@ -167,7 +167,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   magical_arrows:
@@ -180,7 +180,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   music_arrows:
@@ -193,7 +193,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   rain_arrows:
@@ -206,7 +206,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   shadow_arrows:
@@ -219,7 +219,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   sparkly_arrows:
@@ -232,7 +232,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
 # Do not edit this!

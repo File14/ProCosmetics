@@ -31,7 +31,7 @@ import se.file14.procosmetics.menu.MenuImpl;
 import se.file14.procosmetics.menu.menus.purchase.TreasurePurchaseMenu;
 import se.file14.procosmetics.treasure.animation.type.Common;
 import se.file14.procosmetics.treasure.animation.type.Legendary;
-import se.file14.procosmetics.treasure.animation.type.Mythical;
+import se.file14.procosmetics.treasure.animation.type.Rare;
 import se.file14.procosmetics.util.item.ItemBuilderImpl;
 
 public class TreasureChestMenu extends MenuImpl {
@@ -113,8 +113,8 @@ public class TreasureChestMenu extends MenuImpl {
                                             new Common(plugin, platform, treasureChest, user);
                                             break;
                                         }
-                                        case MYTHICAL: {
-                                            new Mythical(plugin, platform, treasureChest, user);
+                                        case RARE: {
+                                            new Rare(plugin, platform, treasureChest, user);
                                             break;
                                         }
                                         case LEGENDARY: {

@@ -212,7 +212,7 @@
   ],
 
   "treasure_chest.common": "Common Chest",
-  "treasure_chest.mythical": "Mythical Chest",
+  "treasure_chest.rare": "Rare Chest",
   "treasure_chest.legendary": "Legendary Chest",
 
   "menu.treasure_chest.loot_categories.title": "<name> loot",
@@ -292,8 +292,8 @@
     "<yellow>Left Click to open!</yellow>",
     "<yellow>Shift Click to view loot!</yellow>"
   ],
-  "menu.treasure_chests.mythical.purchasable.name": "<green><name></green>",
-  "menu.treasure_chests.mythical.purchasable.desc": [
+  "menu.treasure_chests.rare.purchasable.name": "<green><name></green>",
+  "menu.treasure_chests.rare.purchasable.desc": [
     "<gray>You own: <green><current></green></gray>",
     "",
     "<gray>Cost:</gray> <yellow><cost> <currency></yellow>",
@@ -302,8 +302,8 @@
     "<yellow>Right Click to purchase!</yellow>",
     "<yellow>Shift Click to view loot!</yellow>"
   ],
-  "menu.treasure_chests.mythical.purchase_disabled.name": "<green><name></green>",
-  "menu.treasure_chests.mythical.purchase_disabled.desc": [
+  "menu.treasure_chests.rare.purchase_disabled.name": "<green><name></green>",
+  "menu.treasure_chests.rare.purchase_disabled.desc": [
     "<gray>You own: <green><current></green></gray>",
     "",
     "<red>Cannot be purchased!</red>",
@@ -311,8 +311,8 @@
     "<yellow>Left Click to open!</yellow>",
     "<yellow>Shift Click to view loot!</yellow>"
   ],
-  "menu.treasure_chests.mythical.purchase_no_permission.name": "<green><name></green>",
-  "menu.treasure_chests.mythical.purchase_no_permission.desc": [
+  "menu.treasure_chests.rare.purchase_no_permission.name": "<green><name></green>",
+  "menu.treasure_chests.rare.purchase_no_permission.desc": [
     "<gray>You own: <green><current></green></gray>",
     "",
     "<red>No permission to purchase!</red>",

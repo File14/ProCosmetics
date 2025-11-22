@@ -73,7 +73,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   candy_cane:
@@ -93,7 +93,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   castle:
@@ -112,7 +112,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   cat:
@@ -132,7 +132,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   chicken:
@@ -152,7 +152,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   christmas_creeper:
@@ -172,7 +172,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   creeper:
@@ -192,7 +192,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   crown:
@@ -210,7 +210,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   crying_creeper:
@@ -229,7 +229,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   demon:
@@ -248,7 +248,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   disco:
@@ -287,7 +287,7 @@ cosmetics:
         duration: 2
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   duck:
@@ -307,7 +307,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   ender_dragon:
@@ -327,7 +327,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   enderman:
@@ -347,7 +347,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   fire:
@@ -367,7 +367,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   fox:
@@ -386,7 +386,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   goose:
@@ -406,7 +406,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   halloween_creeper:
@@ -425,7 +425,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   happy_ghast:
@@ -445,7 +445,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   happy_sheep:
@@ -463,7 +463,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   heart:
@@ -481,7 +481,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   ice_cream:
@@ -501,7 +501,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   iron_golem:
@@ -521,7 +521,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   lightning:
@@ -541,7 +541,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   llama:
@@ -561,7 +561,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   mirror:
@@ -581,7 +581,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   moon:
@@ -600,7 +600,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   mountain:
@@ -619,7 +619,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   nether_portal:
@@ -637,7 +637,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   octopus:
@@ -657,7 +657,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   ominous:
@@ -677,7 +677,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   panda:
@@ -697,7 +697,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   pig:
@@ -717,7 +717,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   pineapple:
@@ -737,7 +737,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   pirate_skull:
@@ -756,7 +756,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   potion:
@@ -776,7 +776,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   present:
@@ -796,7 +796,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   pug:
@@ -821,7 +821,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   rabbit:
@@ -841,7 +841,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   rat:
@@ -860,7 +860,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   rose:
@@ -880,7 +880,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   santa_hat:
@@ -899,7 +899,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   smile:
@@ -919,7 +919,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   snowflake:
@@ -937,7 +937,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   snowy_tree:
@@ -962,7 +962,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   speech_bubble:
@@ -981,7 +981,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   sun_flower:
@@ -1002,7 +1002,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   sunrise:
@@ -1020,7 +1020,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   sweden:
@@ -1036,7 +1036,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   sword:
@@ -1056,7 +1056,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   taco:
@@ -1075,7 +1075,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   united_states_of_america:
@@ -1091,7 +1091,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   white_flower:
@@ -1111,7 +1111,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   wither:
@@ -1129,7 +1129,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   wolf:
@@ -1149,7 +1149,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   wreath:
@@ -1167,7 +1167,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   yellow_flower:
@@ -1187,7 +1187,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
 # Do not edit this!

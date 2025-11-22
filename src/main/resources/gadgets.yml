@@ -68,7 +68,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
     ammo:
       rarity: "common"
@@ -81,7 +81,7 @@ cosmetics:
         common:
           minimum_amount: 2
           maximum_amount: 8
-        mythical:
+        rare:
           minimum_amount: 8
           maximum_amount: 16
         legendary:
@@ -100,7 +100,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
     ammo:
       rarity: "common"
@@ -113,7 +113,7 @@ cosmetics:
         common:
           minimum_amount: 2
           maximum_amount: 8
-        mythical:
+        rare:
           minimum_amount: 8
           maximum_amount: 16
         legendary:
@@ -131,7 +131,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
     ammo:
       rarity: "common"
@@ -144,7 +144,7 @@ cosmetics:
         common:
           minimum_amount: 2
           maximum_amount: 8
-        mythical:
+        rare:
           minimum_amount: 8
           maximum_amount: 16
         legendary:
@@ -165,7 +165,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
     ammo:
       rarity: "uncommon"
@@ -178,7 +178,7 @@ cosmetics:
         common:
           minimum_amount: 1
           maximum_amount: 1
-        mythical:
+        rare:
           minimum_amount: 1
           maximum_amount: 2
         legendary:
@@ -196,7 +196,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
     ammo:
       rarity: "common"
@@ -209,7 +209,7 @@ cosmetics:
         common:
           minimum_amount: 2
           maximum_amount: 8
-        mythical:
+        rare:
           minimum_amount: 8
           maximum_amount: 16
         legendary:
@@ -227,7 +227,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
     ammo:
       rarity: "common"
@@ -240,7 +240,7 @@ cosmetics:
         common:
           minimum_amount: 2
           maximum_amount: 8
-        mythical:
+        rare:
           minimum_amount: 8
           maximum_amount: 16
         legendary:
@@ -258,7 +258,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
     ammo:
       rarity: "common"
@@ -271,7 +271,7 @@ cosmetics:
         common:
           minimum_amount: 2
           maximum_amount: 8
-        mythical:
+        rare:
           minimum_amount: 8
           maximum_amount: 16
         legendary:
@@ -290,7 +290,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
     ammo:
       rarity: "common"
@@ -303,7 +303,7 @@ cosmetics:
         common:
           minimum_amount: 2
           maximum_amount: 8
-        mythical:
+        rare:
           minimum_amount: 8
           maximum_amount: 16
         legendary:
@@ -322,7 +322,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
     ammo:
       rarity: "common"
@@ -335,7 +335,7 @@ cosmetics:
         common:
           minimum_amount: 2
           maximum_amount: 8
-        mythical:
+        rare:
           minimum_amount: 8
           maximum_amount: 16
         legendary:
@@ -353,7 +353,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
     ammo:
       rarity: "common"
@@ -366,7 +366,7 @@ cosmetics:
         common:
           minimum_amount: 2
           maximum_amount: 8
-        mythical:
+        rare:
           minimum_amount: 8
           maximum_amount: 16
         legendary:
@@ -385,7 +385,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
     ammo:
       rarity: "common"
@@ -398,7 +398,7 @@ cosmetics:
         common:
           minimum_amount: 2
           maximum_amount: 8
-        mythical:
+        rare:
           minimum_amount: 8
           maximum_amount: 16
         legendary:
@@ -417,7 +417,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
     ammo:
       rarity: "common"
@@ -430,7 +430,7 @@ cosmetics:
         common:
           minimum_amount: 2
           maximum_amount: 8
-        mythical:
+        rare:
           minimum_amount: 8
           maximum_amount: 16
         legendary:
@@ -448,7 +448,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
     ammo:
       rarity: "common"
@@ -461,7 +461,7 @@ cosmetics:
         common:
           minimum_amount: 2
           maximum_amount: 8
-        mythical:
+        rare:
           minimum_amount: 8
           maximum_amount: 16
         legendary:
@@ -479,7 +479,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
     ammo:
       rarity: "common"
@@ -492,7 +492,7 @@ cosmetics:
         common:
           minimum_amount: 2
           maximum_amount: 8
-        mythical:
+        rare:
           minimum_amount: 8
           maximum_amount: 16
         legendary:
@@ -510,7 +510,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
     ammo:
       rarity: "common"
@@ -523,7 +523,7 @@ cosmetics:
         common:
           minimum_amount: 2
           maximum_amount: 8
-        mythical:
+        rare:
           minimum_amount: 8
           maximum_amount: 16
         legendary:
@@ -542,7 +542,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
     ammo:
       rarity: "common"
@@ -555,7 +555,7 @@ cosmetics:
         common:
           minimum_amount: 2
           maximum_amount: 8
-        mythical:
+        rare:
           minimum_amount: 8
           maximum_amount: 16
         legendary:
@@ -574,7 +574,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
     ammo:
       rarity: "common"
@@ -587,7 +587,7 @@ cosmetics:
         common:
           minimum_amount: 2
           maximum_amount: 8
-        mythical:
+        rare:
           minimum_amount: 8
           maximum_amount: 16
         legendary:
@@ -605,7 +605,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
     ammo:
       rarity: "common"
@@ -618,7 +618,7 @@ cosmetics:
         common:
           minimum_amount: 2
           maximum_amount: 8
-        mythical:
+        rare:
           minimum_amount: 8
           maximum_amount: 16
         legendary:
@@ -637,7 +637,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
     ammo:
       rarity: "common"
@@ -650,7 +650,7 @@ cosmetics:
         common:
           minimum_amount: 2
           maximum_amount: 8
-        mythical:
+        rare:
           minimum_amount: 8
           maximum_amount: 16
         legendary:
@@ -668,7 +668,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
     ammo:
       rarity: "common"
@@ -681,7 +681,7 @@ cosmetics:
         common:
           minimum_amount: 2
           maximum_amount: 8
-        mythical:
+        rare:
           minimum_amount: 8
           maximum_amount: 16
         legendary:
@@ -700,7 +700,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
     ammo:
       rarity: "common"
@@ -713,7 +713,7 @@ cosmetics:
         common:
           minimum_amount: 2
           maximum_amount: 8
-        mythical:
+        rare:
           minimum_amount: 8
           maximum_amount: 16
         legendary:
@@ -732,7 +732,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
     ammo:
       rarity: "common"
@@ -745,7 +745,7 @@ cosmetics:
         common:
           minimum_amount: 2
           maximum_amount: 8
-        mythical:
+        rare:
           minimum_amount: 8
           maximum_amount: 16
         legendary:
@@ -763,7 +763,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
     ammo:
       rarity: "common"
@@ -776,7 +776,7 @@ cosmetics:
         common:
           minimum_amount: 2
           maximum_amount: 8
-        mythical:
+        rare:
           minimum_amount: 8
           maximum_amount: 16
         legendary:
@@ -795,7 +795,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
     ammo:
       rarity: "common"
@@ -808,7 +808,7 @@ cosmetics:
         common:
           minimum_amount: 2
           maximum_amount: 8
-        mythical:
+        rare:
           minimum_amount: 8
           maximum_amount: 16
         legendary:
@@ -827,7 +827,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
     ammo:
       rarity: "common"
@@ -840,7 +840,7 @@ cosmetics:
         common:
           minimum_amount: 2
           maximum_amount: 8
-        mythical:
+        rare:
           minimum_amount: 8
           maximum_amount: 16
         legendary:
@@ -859,7 +859,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
     ammo:
       rarity: "common"
@@ -872,7 +872,7 @@ cosmetics:
         common:
           minimum_amount: 2
           maximum_amount: 8
-        mythical:
+        rare:
           minimum_amount: 8
           maximum_amount: 16
         legendary:
@@ -891,7 +891,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
     ammo:
       rarity: "common"
@@ -904,7 +904,7 @@ cosmetics:
         common:
           minimum_amount: 2
           maximum_amount: 8
-        mythical:
+        rare:
           minimum_amount: 8
           maximum_amount: 16
         legendary:
@@ -922,7 +922,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
     ammo:
       rarity: "common"
@@ -935,7 +935,7 @@ cosmetics:
         common:
           minimum_amount: 2
           maximum_amount: 8
-        mythical:
+        rare:
           minimum_amount: 8
           maximum_amount: 16
         legendary:
@@ -954,7 +954,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
     ammo:
       rarity: "common"
@@ -967,7 +967,7 @@ cosmetics:
         common:
           minimum_amount: 2
           maximum_amount: 8
-        mythical:
+        rare:
           minimum_amount: 8
           maximum_amount: 16
         legendary:
@@ -985,7 +985,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
     ammo:
       rarity: "common"
@@ -998,7 +998,7 @@ cosmetics:
         common:
           minimum_amount: 2
           maximum_amount: 8
-        mythical:
+        rare:
           minimum_amount: 8
           maximum_amount: 16
         legendary:
@@ -1017,7 +1017,7 @@ cosmetics:
     count: 1
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
     ammo:
       rarity: "common"
@@ -1030,7 +1030,7 @@ cosmetics:
         common:
           minimum_amount: 2
           maximum_amount: 8
-        mythical:
+        rare:
           minimum_amount: 8
           maximum_amount: 16
         legendary:

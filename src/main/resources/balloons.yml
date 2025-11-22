@@ -70,7 +70,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   bee:
@@ -86,7 +86,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   belgium:
@@ -102,7 +102,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   bunny:
@@ -118,7 +118,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   burger:
@@ -134,7 +134,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   cake:
@@ -150,7 +150,7 @@ cosmetics:
     scale: 0.75
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   calf:
@@ -166,7 +166,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   canada:
@@ -182,7 +182,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   china:
@@ -198,7 +198,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   denmark:
@@ -214,7 +214,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   disco:
@@ -230,7 +230,7 @@ cosmetics:
     scale: 0.5
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   earth:
@@ -246,7 +246,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   egg:
@@ -262,7 +262,7 @@ cosmetics:
     scale: 0.5
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   emerald:
@@ -278,7 +278,7 @@ cosmetics:
     scale: 0.5
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   explosive:
@@ -294,7 +294,7 @@ cosmetics:
     scale: 0.5
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   finland:
@@ -310,7 +310,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   france:
@@ -326,7 +326,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   germany:
@@ -342,7 +342,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   ghost:
@@ -358,7 +358,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   greece:
@@ -374,7 +374,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   guardian:
@@ -390,7 +390,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   italy:
@@ -406,7 +406,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   japan:
@@ -422,7 +422,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   kitten:
@@ -438,7 +438,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   mini_pig:
@@ -454,7 +454,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   money_bag:
@@ -470,7 +470,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   mouse:
@@ -486,7 +486,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   mushroom_cow:
@@ -502,7 +502,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   norway:
@@ -518,7 +518,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   pigeon:
@@ -534,7 +534,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   poland:
@@ -550,7 +550,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   police_car:
@@ -566,7 +566,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   portugal:
@@ -582,7 +582,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   present:
@@ -598,7 +598,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   pride:
@@ -614,7 +614,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   pumpkin:
@@ -630,7 +630,7 @@ cosmetics:
     scale: 0.5
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   puppy:
@@ -646,7 +646,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   rabbit:
@@ -662,7 +662,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   soccer_ball:
@@ -678,7 +678,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   spain:
@@ -694,7 +694,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   sun:
@@ -710,7 +710,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   sweden:
@@ -726,7 +726,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   tiny_villager:
@@ -742,7 +742,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   truck:
@@ -758,7 +758,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   turkey:
@@ -774,7 +774,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   united_kingdom:
@@ -790,7 +790,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   united_states_of_america:
@@ -806,7 +806,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
   zombie:
@@ -822,7 +822,7 @@ cosmetics:
     scale: 1.0
     treasure_chests:
       - common
-      - mythical
+      - rare
       - legendary
 
 # Do not edit this!

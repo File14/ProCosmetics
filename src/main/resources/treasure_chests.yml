@@ -194,19 +194,19 @@ treasure_chests:
           commands:
             - "pc add coins <player> 100"
 
-  mythical:
+  rare:
     enabled: true
     purchasable:
       enabled: true
       cost: 5000
     chests_to_open: 4
-    chest_animation: "MYTHICAL"
+    chest_animation: "RARE"
     animation_layouts:
-      - "mythical_1"
-      - "mythical_2"
-      - "mythical_3"
+      - "rare_1"
+      - "rare_2"
+      - "rare_3"
     opening_broadcast: true
-    item: "minecraft:ender_chest"
+    item: "minecraft:chest"
     count: 1
     slot: 13
     # Rarity weights (integers) determine the chance of getting each rarity tier
@@ -254,7 +254,7 @@ treasure_chests:
       - "legendary_2"
       - "legendary_3"
     opening_broadcast: true
-    item: "minecraft:chest"
+    item: "minecraft:ender_chest"
     count: 1
     slot: 16
     # Rarity weights (integers) determine the chance of getting each rarity tier

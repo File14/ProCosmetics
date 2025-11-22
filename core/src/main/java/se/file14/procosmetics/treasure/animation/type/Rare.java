@@ -33,7 +33,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class Mythical extends TreasureChestAnimation {
+public class Rare extends TreasureChestAnimation {
 
     private static final int ANGLE_OFFSET = 110;
     private static final double SPEED = 6.0d;
@@ -58,7 +58,7 @@ public class Mythical extends TreasureChestAnimation {
 
     private int chests;
 
-    public Mythical(ProCosmetics plugin, TreasureChestPlatform platform, TreasureChest treasure, User user) {
+    public Rare(ProCosmetics plugin, TreasureChestPlatform platform, TreasureChest treasure, User user) {
         super(plugin, platform, treasure, user);
     }
 
