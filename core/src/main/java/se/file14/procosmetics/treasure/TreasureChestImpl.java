@@ -62,6 +62,7 @@ public class TreasureChestImpl implements TreasureChest {
     private final ProCosmeticsPlugin plugin;
     private final String key;
     private final boolean enabled;
+    private final int priority;
     private final boolean purchasable;
     private final String purchasePermission;
     private final int cost;
@@ -78,6 +79,7 @@ public class TreasureChestImpl implements TreasureChest {
 
         String path = "treasure_chests." + key;
         enabled = config.getBoolean(path + ".enabled");
+        priority = config.getInt(path + ".priority");
         purchasable = config.getBoolean(path + ".purchasable.enabled");
         purchasePermission = "procosmetics.purchase.treasure_chest." + key;
         cost = config.getInt(path + ".purchasable.cost");
@@ -243,6 +245,11 @@ public class TreasureChestImpl implements TreasureChest {
     @Override
     public boolean isEnabled() {
         return enabled;
+    }
+
+    @Override
+    public int getPriority() {
+        return priority;
     }
 
     @Override

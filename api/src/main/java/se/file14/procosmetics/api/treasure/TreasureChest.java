@@ -83,6 +83,13 @@ public interface TreasureChest {
     boolean isEnabled();
 
     /**
+     * Gets the priority of this treasure chest.
+     *
+     * @return the priority
+     */
+    int getPriority();
+
+    /**
      * Checks whether this treasure chest can be purchased.
      *
      * @return {@code true} if purchasable, otherwise {@code false}

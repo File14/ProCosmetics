@@ -147,6 +147,7 @@ loot_entries:
 
 treasure_chests:
   common:
+    priority: 1
     enabled: true
     purchasable:
       enabled: true
@@ -196,11 +197,12 @@ treasure_chests:
 
   rare:
     enabled: true
+    priority: 10
     purchasable:
       enabled: true
       cost: 5000
     chests_to_open: 4
-    chest_animation: "RARE"
+    chest_animation: "rare"
     animation_layouts:
       - "rare_1"
       - "rare_2"
@@ -220,7 +222,7 @@ treasure_chests:
       legendary: 2
     coins:
       enabled: true
-      rarity: "RARE"
+      rarity: "rare"
       minimum_amount: 500
       maximum_amount: 2000
     custom:
@@ -236,7 +238,7 @@ treasure_chests:
         medium_coin_bag:
           enabled: true
           category: "coin_bag"
-          rarity: "RARE"
+          rarity: "rare"
           item: "minecraft:sunflower"
           count: 1
           commands:
@@ -244,11 +246,12 @@ treasure_chests:
 
   legendary:
     enabled: true
+    priority: 20
     purchasable:
       enabled: true
       cost: 10000
     chests_to_open: 3
-    chest_animation: "LEGENDARY"
+    chest_animation: "legendary"
     animation_layouts:
       - "legendary_1"
       - "legendary_2"
@@ -268,7 +271,7 @@ treasure_chests:
       legendary: 8
     coins:
       enabled: true
-      rarity: "LEGENDARY"
+      rarity: "legendary"
       minimum_amount: 1000
       maximum_amount: 2500
     custom:
@@ -284,7 +287,7 @@ treasure_chests:
         large_coin_bag:
           enabled: true
           category: "coin_bag"
-          rarity: "LEGENDARY"
+          rarity: "legendary"
           item: "minecraft:sunflower"
           count: 1
           commands:
