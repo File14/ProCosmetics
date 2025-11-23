@@ -115,7 +115,7 @@ public class CosmeticCategoryImpl<T extends CosmeticType<T, B>,
         int i = 0;
 
         for (CosmeticType<?, ?> cosmeticType : cosmeticTypes) {
-            if (player.hasPermission(cosmeticType.getPermission())) {
+            if (cosmeticType.hasPermission(player)) {
                 i++;
             }
         }
