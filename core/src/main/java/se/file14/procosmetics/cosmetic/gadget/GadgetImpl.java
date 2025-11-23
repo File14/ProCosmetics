@@ -40,11 +40,11 @@ import se.file14.procosmetics.ProCosmeticsPlugin;
 import se.file14.procosmetics.api.cosmetic.gadget.Gadget;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetBehavior;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetType;
+import se.file14.procosmetics.api.event.PlayerPreUseGadgetEvent;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.api.util.item.ItemBuilder;
 import se.file14.procosmetics.cosmetic.CosmeticImpl;
 import se.file14.procosmetics.cosmetic.gadget.type.GrapplingHook;
-import se.file14.procosmetics.event.PlayerPreUseGadgetEventImpl;
 import se.file14.procosmetics.menu.menus.purchase.AmmoPurchaseMenu;
 import se.file14.procosmetics.util.item.ItemBuilderImpl;
 import se.file14.procosmetics.util.item.ItemIdentifier;
@@ -173,7 +173,7 @@ public class GadgetImpl extends CosmeticImpl<GadgetType, GadgetBehavior> impleme
             user.sendMessage(user.translate("cosmetic.equip.deny.space"));
             return false;
         }
-        PlayerPreUseGadgetEventImpl event = new PlayerPreUseGadgetEventImpl(plugin, user, player, this);
+        PlayerPreUseGadgetEvent event = new PlayerPreUseGadgetEvent(plugin, user, player, this);
         plugin.getServer().getPluginManager().callEvent(event);
 
         if (event.isCancelled()) {

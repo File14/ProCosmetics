@@ -27,9 +27,9 @@ import se.file14.procosmetics.api.config.Config;
 import se.file14.procosmetics.api.cosmetic.CosmeticType;
 import se.file14.procosmetics.api.cosmetic.registry.CosmeticCategory;
 import se.file14.procosmetics.api.economy.EconomyProvider;
+import se.file14.procosmetics.api.event.PlayerPurchaseCosmeticEvent;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.api.util.item.ItemBuilder;
-import se.file14.procosmetics.event.PlayerPurchaseCosmeticEventImpl;
 import se.file14.procosmetics.menu.MenuImpl;
 import se.file14.procosmetics.util.item.ItemBuilderImpl;
 
@@ -105,7 +105,7 @@ public class CosmeticPurchaseMenu extends MenuImpl {
             economy.removeCoinsAsync(user, cost).thenAcceptAsync(result -> {
                 if (result.booleanValue()) {
                     grantCosmeticPermission(plugin, player, cosmeticType);
-                    server.getPluginManager().callEvent(new PlayerPurchaseCosmeticEventImpl(plugin, user, player, cosmeticType));
+                    server.getPluginManager().callEvent(new PlayerPurchaseCosmeticEvent(plugin, user, player, cosmeticType));
                     // TODO: The permission might not yet have been added to the player causing it to not equip
                     cosmeticType.equip(user, false, true);
                     plugin.getJavaPlugin().getLogger().log(Level.INFO, "[COSMETIC] " + user + " bought " + cosmeticType.getKey() + " for " + cost + ".");

@@ -18,32 +18,81 @@
 package se.file14.procosmetics.api.event;
 
 import org.bukkit.entity.Player;
+import org.bukkit.event.HandlerList;
+import org.jetbrains.annotations.NotNull;
+import se.file14.procosmetics.api.ProCosmetics;
 import se.file14.procosmetics.api.cosmetic.gadget.GadgetType;
 import se.file14.procosmetics.api.user.User;
 
 /**
  * Called when a player purchases gadget ammo.
  */
-public interface PlayerPurchaseGadgetAmmoEvent extends ProCosmeticsEvent {
+public class PlayerPurchaseGadgetAmmoEvent extends ProCosmeticsEvent {
+
+    private static final HandlerList HANDLER_LIST = new HandlerList();
+
+    private final User user;
+    private final Player player;
+    private final GadgetType gadgetType;
+
+    /**
+     * Constructs a new PlayerPurchaseGadgetAmmoEvent.
+     *
+     * @param plugin     the ProCosmetics plugin instance
+     * @param user       the user who purchased the gadget ammo
+     * @param player     the player who purchased the gadget ammo
+     * @param gadgetType the type of gadget for which ammo was purchased
+     */
+    public PlayerPurchaseGadgetAmmoEvent(ProCosmetics plugin, User user, Player player, GadgetType gadgetType) {
+        super(plugin);
+        this.user = user;
+        this.player = player;
+        this.gadgetType = gadgetType;
+    }
 
     /**
      * Gets the user for this event.
      *
      * @return the {@link User} instance
      */
-    User getUser();
+    public User getUser() {
+        return user;
+    }
 
     /**
      * Gets the player for this event.
      *
      * @return the {@link Player} instance
      */
-    Player getPlayer();
+    public Player getPlayer() {
+        return player;
+    }
 
     /**
      * Gets the gadget type for this event.
      *
      * @return the {@link GadgetType} instance
      */
-    GadgetType getGadgetType();
+    public GadgetType getGadgetType() {
+        return gadgetType;
+    }
+
+    /**
+     * Gets the handler list for this event.
+     *
+     * @return the {@link HandlerList} instance
+     */
+    @Override
+    public @NotNull HandlerList getHandlers() {
+        return HANDLER_LIST;
+    }
+
+    /**
+     * Gets the handler list for this event.
+     *
+     * @return the {@link HandlerList} instance
+     */
+    public static HandlerList getHandlerList() {
+        return HANDLER_LIST;
+    }
 }

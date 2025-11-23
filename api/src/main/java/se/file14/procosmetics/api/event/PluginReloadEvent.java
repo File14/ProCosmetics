@@ -17,9 +17,42 @@
  */
 package se.file14.procosmetics.api.event;
 
+import org.bukkit.event.HandlerList;
+import org.jetbrains.annotations.NotNull;
+import se.file14.procosmetics.api.ProCosmetics;
+
 /**
  * Called after the plugin has finished reloading.
  */
-public interface PluginReloadEvent extends ProCosmeticsEvent {
+public class PluginReloadEvent extends ProCosmeticsEvent {
 
+    private static final HandlerList HANDLER_LIST = new HandlerList();
+
+    /**
+     * Constructs a new PluginReloadEvent.
+     *
+     * @param plugin the ProCosmetics plugin instance
+     */
+    public PluginReloadEvent(ProCosmetics plugin) {
+        super(plugin);
+    }
+
+    /**
+     * Gets the handler list for this event.
+     *
+     * @return the {@link HandlerList} instance
+     */
+    @Override
+    public @NotNull HandlerList getHandlers() {
+        return HANDLER_LIST;
+    }
+
+    /**
+     * Gets the handler list for this event.
+     *
+     * @return the {@link HandlerList} instance
+     */
+    public static HandlerList getHandlerList() {
+        return HANDLER_LIST;
+    }
 }

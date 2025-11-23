@@ -18,32 +18,81 @@
 package se.file14.procosmetics.api.event;
 
 import org.bukkit.entity.Player;
+import org.bukkit.event.HandlerList;
+import org.jetbrains.annotations.NotNull;
+import se.file14.procosmetics.api.ProCosmetics;
 import se.file14.procosmetics.api.treasure.TreasureChest;
 import se.file14.procosmetics.api.user.User;
 
 /**
  * Called when a player opens a treasure chest.
  */
-public interface PlayerOpenTreasureChestEvent extends ProCosmeticsEvent {
+public class PlayerOpenTreasureChestEvent extends ProCosmeticsEvent {
+
+    private static final HandlerList HANDLER_LIST = new HandlerList();
+
+    private final User user;
+    private final Player player;
+    private final TreasureChest treasureChest;
+
+    /**
+     * Constructs a new PlayerOpenTreasureChestEvent.
+     *
+     * @param plugin        the ProCosmetics plugin instance
+     * @param user          the user who is opening the treasure chest
+     * @param player        the player who is opening the treasure chest
+     * @param treasureChest the treasure chest being opened
+     */
+    public PlayerOpenTreasureChestEvent(ProCosmetics plugin, User user, Player player, TreasureChest treasureChest) {
+        super(plugin);
+        this.user = user;
+        this.player = player;
+        this.treasureChest = treasureChest;
+    }
 
     /**
      * Gets the user for this event.
      *
      * @return the {@link User} instance
      */
-    User getUser();
+    public User getUser() {
+        return user;
+    }
 
     /**
      * Gets the player for this event.
      *
      * @return the {@link Player} instance
      */
-    Player getPlayer();
+    public Player getPlayer() {
+        return player;
+    }
 
     /**
      * Gets the treasure chest for this event.
      *
      * @return the {@link TreasureChest} instance
      */
-    TreasureChest getTreasureChest();
+    public TreasureChest getTreasureChest() {
+        return treasureChest;
+    }
+
+    /**
+     * Gets the handler list for this event.
+     *
+     * @return the {@link HandlerList} instance
+     */
+    @Override
+    public @NotNull HandlerList getHandlers() {
+        return HANDLER_LIST;
+    }
+
+    /**
+     * Gets the handler list for this event.
+     *
+     * @return the {@link HandlerList} instance
+     */
+    public static HandlerList getHandlerList() {
+        return HANDLER_LIST;
+    }
 }

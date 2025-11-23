@@ -18,39 +18,93 @@
 package se.file14.procosmetics.api.event;
 
 import org.bukkit.entity.Player;
+import org.bukkit.event.HandlerList;
+import org.jetbrains.annotations.NotNull;
+import se.file14.procosmetics.api.ProCosmetics;
 import se.file14.procosmetics.api.treasure.TreasureChest;
 import se.file14.procosmetics.api.user.User;
 
 /**
  * Called when a player purchases a treasure chest.
  */
-public interface PlayerPurchaseTreasureChestEvent extends ProCosmeticsEvent {
+public class PlayerPurchaseTreasureChestEvent extends ProCosmeticsEvent {
+
+    private static final HandlerList HANDLER_LIST = new HandlerList();
+
+    private final User user;
+    private final Player player;
+    private final TreasureChest treasureChest;
+    private final int amount;
+
+    /**
+     * Constructs a new PlayerPurchaseTreasureChestEvent.
+     *
+     * @param plugin        the ProCosmetics plugin instance
+     * @param user          the user who purchased the treasure chest(s)
+     * @param player        the player who purchased the treasure chest(s)
+     * @param treasureChest the type of treasure chest that was purchased
+     * @param amount        the number of treasure chests purchased
+     */
+    public PlayerPurchaseTreasureChestEvent(ProCosmetics plugin, User user, Player player, TreasureChest treasureChest, int amount) {
+        super(plugin);
+        this.user = user;
+        this.player = player;
+        this.treasureChest = treasureChest;
+        this.amount = amount;
+    }
 
     /**
      * Gets the user for this event.
      *
      * @return the {@link User} instance
      */
-    User getUser();
+    public User getUser() {
+        return user;
+    }
 
     /**
      * Gets the player for this event.
      *
      * @return the {@link Player} instance
      */
-    Player getPlayer();
+    public Player getPlayer() {
+        return player;
+    }
 
     /**
      * Gets the treasure chest for this event.
      *
      * @return the {@link TreasureChest} instance
      */
-    TreasureChest getTreasureChest();
+    public TreasureChest getTreasureChest() {
+        return treasureChest;
+    }
 
     /**
      * Gets the number of treasure chests the user purchased.
      *
      * @return the amount of treasure chests bought
      */
-    int getAmount();
+    public int getAmount() {
+        return amount;
+    }
+
+    /**
+     * Gets the handler list for this event.
+     *
+     * @return the {@link HandlerList} instance
+     */
+    @Override
+    public @NotNull HandlerList getHandlers() {
+        return HANDLER_LIST;
+    }
+
+    /**
+     * Gets the handler list for this event.
+     *
+     * @return the {@link HandlerList} instance
+     */
+    public static HandlerList getHandlerList() {
+        return HANDLER_LIST;
+    }
 }

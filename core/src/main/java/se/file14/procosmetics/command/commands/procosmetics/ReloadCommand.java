@@ -22,8 +22,8 @@ import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.command.CommandSender;
 import se.file14.procosmetics.ProCosmeticsPlugin;
+import se.file14.procosmetics.api.event.PluginReloadEvent;
 import se.file14.procosmetics.command.SubCommand;
-import se.file14.procosmetics.event.PluginReloadEventImpl;
 
 public class ReloadCommand extends SubCommand<CommandSender> {
 
@@ -43,7 +43,7 @@ public class ReloadCommand extends SubCommand<CommandSender> {
         plugin.onDisable();
         plugin.onLoad();
         plugin.onEnable();
-        plugin.getServer().getPluginManager().callEvent(new PluginReloadEventImpl(plugin));
+        plugin.getServer().getPluginManager().callEvent(new PluginReloadEvent(plugin));
 
         long took = System.currentTimeMillis() - before;
         audience(sender).sendMessage(Component.text().append(

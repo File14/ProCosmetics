@@ -27,15 +27,16 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.server.ServerLoadEvent;
+import org.jetbrains.annotations.Nullable;
 import se.file14.procosmetics.ProCosmeticsPlugin;
 import se.file14.procosmetics.api.config.Config;
+import se.file14.procosmetics.api.event.PluginReloadEvent;
 import se.file14.procosmetics.api.treasure.TreasureChest;
 import se.file14.procosmetics.api.treasure.TreasureChestManager;
 import se.file14.procosmetics.api.treasure.TreasureChestPlatform;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.api.util.broadcaster.Broadcaster;
 import se.file14.procosmetics.api.util.broadcaster.LootBroadcaster;
-import se.file14.procosmetics.event.PluginReloadEventImpl;
 import se.file14.procosmetics.menu.menus.TreasureChestMenu;
 import se.file14.procosmetics.util.LocationUtil;
 import se.file14.procosmetics.util.broadcaster.BroadcasterImpl;
@@ -43,8 +44,6 @@ import se.file14.procosmetics.util.broadcaster.LootBroadcasterImpl;
 import se.file14.procosmetics.util.structure.NamedStructureData;
 import se.file14.procosmetics.util.structure.StructureDataImpl;
 import se.file14.procosmetics.util.structure.StructureReader;
-
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -163,7 +162,7 @@ public class TreasureChestManagerImpl implements TreasureChestManager {
         }
 
         @EventHandler
-        public void onPluginReload(PluginReloadEventImpl event) {
+        public void onPluginReload(PluginReloadEvent event) {
             loadPlatforms();
         }
 

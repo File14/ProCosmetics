@@ -31,11 +31,11 @@ import se.file14.procosmetics.api.cosmetic.CosmeticBehavior;
 import se.file14.procosmetics.api.cosmetic.CosmeticContext;
 import se.file14.procosmetics.api.cosmetic.CosmeticType;
 import se.file14.procosmetics.api.cosmetic.registry.CosmeticCategory;
+import se.file14.procosmetics.api.event.PlayerEquipCosmeticEvent;
+import se.file14.procosmetics.api.event.PlayerPreEquipCosmeticEvent;
+import se.file14.procosmetics.api.event.PlayerUnequipCosmeticEvent;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.config.ConfigManagerImpl;
-import se.file14.procosmetics.event.PlayerEquipCosmeticEventImpl;
-import se.file14.procosmetics.event.PlayerPreEquipCosmeticEventImpl;
-import se.file14.procosmetics.event.PlayerUnequipCosmeticEventImpl;
 import se.file14.procosmetics.util.AbstractRunnable;
 
 public abstract class CosmeticImpl<T extends CosmeticType<T, B>,
@@ -64,7 +64,7 @@ public abstract class CosmeticImpl<T extends CosmeticType<T, B>,
         }
         Server server = plugin.getServer();
         PluginManager pluginManager = server.getPluginManager();
-        PlayerPreEquipCosmeticEventImpl event = new PlayerPreEquipCosmeticEventImpl(plugin, user, player, cosmeticType);
+        PlayerPreEquipCosmeticEvent event = new PlayerPreEquipCosmeticEvent(plugin, user, player, cosmeticType);
         pluginManager.callEvent(event);
 
         if (event.isCancelled()) {
@@ -118,7 +118,7 @@ public abstract class CosmeticImpl<T extends CosmeticType<T, B>,
             )));
         }
         equipped = true;
-        pluginManager.callEvent(new PlayerEquipCosmeticEventImpl(plugin, user, player, cosmeticType));
+        pluginManager.callEvent(new PlayerEquipCosmeticEvent(plugin, user, player, cosmeticType));
 
         if (saveToDatabase) {
             plugin.getDatabase().saveEquippedCosmeticAsync(user, cosmeticType);
@@ -154,7 +154,7 @@ public abstract class CosmeticImpl<T extends CosmeticType<T, B>,
                     Placeholder.unparsed("cosmetic", cosmeticType.getName(user))
             ));
         }
-        plugin.getServer().getPluginManager().callEvent(new PlayerUnequipCosmeticEventImpl(plugin, player, cosmeticType));
+        plugin.getServer().getPluginManager().callEvent(new PlayerUnequipCosmeticEvent(plugin, player, cosmeticType));
         equipped = false;
 
         if (saveToDatabase) {

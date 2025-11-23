@@ -17,25 +17,31 @@
  */
 package se.file14.procosmetics.api.event;
 
-import org.bukkit.event.HandlerList;
+import org.bukkit.event.Event;
 import se.file14.procosmetics.api.ProCosmetics;
 
 /**
  * A superinterface for all ProCosmetics events.
  */
-public interface ProCosmeticsEvent {
+public abstract class ProCosmeticsEvent extends Event {
+
+    private final ProCosmetics plugin;
+
+    /**
+     * Constructs a new ProCosmeticsEvent.
+     *
+     * @param plugin the ProCosmetics plugin instance
+     */
+    public ProCosmeticsEvent(ProCosmetics plugin) {
+        this.plugin = plugin;
+    }
 
     /**
      * Get the API instance this event was dispatched from.
      *
      * @return the api instance
      */
-    ProCosmetics getPlugin();
-
-    /**
-     * Gets the handler list for this event.
-     *
-     * @return the {@link HandlerList} instance
-     */
-    HandlerList getHandlers();
+    public ProCosmetics getPlugin() {
+        return plugin;
+    }
 }
