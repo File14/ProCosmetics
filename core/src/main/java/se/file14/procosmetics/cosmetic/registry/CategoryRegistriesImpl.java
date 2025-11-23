@@ -319,7 +319,7 @@ public class CategoryRegistriesImpl implements CategoryRegistries {
         particleEffects.register(particleEffects.builder("demon_twist").readFromConfig().factory(DemonTwist::new).build());
         particleEffects.register(particleEffects.builder("emerald_twirl").readFromConfig().factory(EmeraldTwirl::new).build());
         particleEffects.register(particleEffects.builder("enchanted").readFromConfig().factory(Enchanted::new).build());
-        particleEffects.register(particleEffects.builder("flame_flairy").readFromConfig().factory(FlameFlairy::new).build());
+        particleEffects.register(particleEffects.builder("flame_fairy").readFromConfig().factory(FlameFlairy::new).build());
         particleEffects.register(particleEffects.builder("flame_of_magic").readFromConfig().factory(FlameOfMagic::new).build());
         particleEffects.register(particleEffects.builder("flame_of_the_demons").readFromConfig().factory(FlameOfTheDemons::new).build());
         particleEffects.register(particleEffects.builder("flame_rings").readFromConfig().factory(FlameRings::new).build());

@@ -984,7 +984,7 @@ cosmetics:
       - rare
       - legendary
 
-  sun_flower:
+  sunflower:
     enabled: true
     rarity: "uncommon"
     purchasable:

@@ -225,7 +225,7 @@ cosmetics:
       - rare
       - legendary
 
-  flame_flairy:
+  flame_fairy:
     enabled: true
     rarity: "legendary"
     purchasable:

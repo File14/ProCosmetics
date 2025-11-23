@@ -557,7 +557,7 @@ cosmetics:
       - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2UzNGRhZDZjOWVhYjBiYWY5ZjlkOWIwZjZiZTZlMTk5MzZiM2ExZTIwZmMzZTIxN2I4ODVlYWRlYjMxOCJ9fX0='}]},!minecraft:rarity]"
         duration: 1
 
-  sun_tan:
+  suntan:
     enabled: true
     rarity: "uncommon"
     purchasable:

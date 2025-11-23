@@ -25,7 +25,7 @@
 
   "cosmetic.morphs.equip": "<gray>You morphed into <yellow><cosmetic></yellow>.</gray>",
   "cosmetic.morphs.unequip": "<gray>You unmorphed from <yellow><cosmetic></yellow>.</gray>",
-  "cosmetic.morphs.ability.cooldown.ready": "<yellow>You can now use the ability again!</yellow>",
+  "cosmetic.morphs.ability.cooldown.ready": "<yellow>Your ability has recharged!</yellow>",
 
   "cosmetic.mounts.equip": "<gray>You spawned <yellow><cosmetic></yellow>.</gray>",
   "cosmetic.mounts.unequip": "<gray>You despawned <yellow><cosmetic></yellow>.</gray>",
@@ -91,9 +91,9 @@
   "command.addall.cosmetic": "<green>Gave <yellow><cosmetic></yellow> to <green><player_count> players</green>!",
   "command.addall.treasure_chest": "<green>Added <yellow><amount> <treasure_chest> treasure chest(s)</yellow> to <green><player_count> players</green>!",
 
-  "command.set.ammo": "<green>Set <yellow><player></yellow>’s <gadget> ammo to <yellow><amount></yellow>!",
-  "command.set.coins": "<green>Set <yellow><player></yellow>’s <currency> to <yellow><amount></yellow>!",
-  "command.set.treasure_chest": "<green>Set <yellow><player></yellow>’s <treasure_chest> treasure chest(s) to <yellow><amount></yellow>!",
+  "command.set.ammo": "<green>Set <yellow><player></yellow>'s <gadget> ammo to <yellow><amount></yellow>!",
+  "command.set.coins": "<green>Set <yellow><player></yellow>'s <currency> to <yellow><amount></yellow>!",
+  "command.set.treasure_chest": "<green>Set <yellow><player></yellow>'s <treasure_chest> treasure chest(s) to <yellow><amount></yellow>!",
 
   "command.remove.ammo": "<red>Removed <yellow><amount> <gadget> ammo</yellow> from <yellow><player></yellow>!",
   "command.remove.coins": "<red>Removed <yellow><amount> <currency></yellow> from <yellow><player></yellow>!",
@@ -391,7 +391,7 @@
   "menu.main.title": "Cosmetics",
   "menu.main.unequip_all.name": "<red>Unequip All Cosmetics</red>",
   "menu.main.unequip_all.desc": [
-    "<yellow>Click to unequip your cosmetics!</yellow>"
+    "<yellow>Click to unequip all your cosmetics!</yellow>"
   ],
   "menu.main.coins.name": "<green>You have <yellow><coins> <currency></yellow></green>",
   "menu.main.coins.desc": [
@@ -412,7 +412,7 @@
   ],
   "menu.main.balloons.name": "<green>Balloons</green>",
   "menu.main.balloons.desc": [
-    "<gray>Summon a ballon that hover above</gray>",
+    "<gray>Summon a balloon that hovers above</gray>",
     "<gray>your head as you wander the world.</gray>",
     "",
     "<gray>Unlocked: <green><unlocked_count>/<total_count></green></gray> <dark_gray>(<unlocked_percent>)</dark_gray>",
@@ -505,7 +505,7 @@
   "menu.main.particle_effects.name": "<green>Particle Effects</green>",
   "menu.main.particle_effects.desc": [
     "<gray>Visual effects that appear around,</gray>",
-    "<gray>above, or behind you as you.</gray>",
+    "<gray>above, or behind you.</gray>",
     "",
     "<gray>Unlocked: <green><unlocked_count>/<total_count></green></gray> <dark_gray>(<unlocked_percent>)</dark_gray>",
     "",
@@ -658,7 +658,7 @@
   "menu.arrow_effects.love_arrows.desc": [
     "<gray>Spread love, not war! These</gray>",
     "<gray>romantic arrows bring hearts</gray>",
-    "<gray>hearts to your battles.</gray>"
+    "<gray>to your battles.</gray>"
   ],
   "menu.arrow_effects.magical_arrows.name": "<name>",
   "menu.arrow_effects.magical_arrows.desc": [
@@ -691,7 +691,7 @@
     "<gray>the battlefield with joy!</gray>"
   ],
 
-  "cosmetic.balloons.beach_ball": "Beach ball Balloon",
+  "cosmetic.balloons.beach_ball": "Beach Ball Balloon",
   "cosmetic.balloons.bee": "Bee Balloon",
   "cosmetic.balloons.belgium": "Flag Belgium",
   "cosmetic.balloons.bunny": "Bunny Balloon",
@@ -730,7 +730,7 @@
   "cosmetic.balloons.pumpkin": "Pumpkin Balloon",
   "cosmetic.balloons.puppy": "Puppy Balloon",
   "cosmetic.balloons.rabbit": "Rabbit Balloon",
-  "cosmetic.balloons.soccer_ball": "Soccer ball Balloon",
+  "cosmetic.balloons.soccer_ball": "Soccer Ball Balloon",
   "cosmetic.balloons.spain": "Flag Spain",
   "cosmetic.balloons.sun": "Sun Balloon",
   "cosmetic.balloons.sweden": "Flag Sweden",
@@ -1039,7 +1039,7 @@
   "cosmetic.banners.snowflake": "Snowflake",
   "cosmetic.banners.snowy_tree": "Snowy Tree",
   "cosmetic.banners.speech_bubble": "Speech Bubble",
-  "cosmetic.banners.sun_flower": "Sunflower",
+  "cosmetic.banners.sunflower": "Sunflower",
   "cosmetic.banners.sunrise": "Sunrise",
   "cosmetic.banners.sweden": "Sweden",
   "cosmetic.banners.sword": "Sword",
@@ -1252,7 +1252,7 @@
   ],
   "menu.banners.pirate_skull.name": "<name>",
   "menu.banners.pirate_skull.desc": [
-    "<gray>YaRrr!</gray>"
+    "<gray>Yarr!</gray>"
   ],
   "menu.banners.potion.name": "<name>",
   "menu.banners.potion.desc": [
@@ -1298,8 +1298,8 @@
   "menu.banners.speech_bubble.desc": [
     "<gray>Express yourself.</gray>"
   ],
-  "menu.banners.sun_flower.name": "<name>",
-  "menu.banners.sun_flower.desc": [
+  "menu.banners.sunflower.name": "<name>",
+  "menu.banners.sunflower.desc": [
     "<gray>We're all golden sunflowers inside.</gray>"
   ],
   "menu.banners.sunrise.name": "<name>",
@@ -1466,7 +1466,7 @@
   ],
   "menu.death_effects.magical_death.name": "<name>",
   "menu.death_effects.magical_death.desc": [
-    "<gray>Cast the last spell you've.</gray>"
+    "<gray>Cast the last spell you've got.</gray>"
   ],
   "menu.death_effects.musical_death.name": "<name>",
   "menu.death_effects.musical_death.desc": [
@@ -1503,7 +1503,7 @@
   "cosmetic.emotes.sad": "Sad",
   "cosmetic.emotes.sleepy": "Sleepy",
   "cosmetic.emotes.spicy": "Spicy",
-  "cosmetic.emotes.sun_tan": "Sun-Tan",
+  "cosmetic.emotes.suntan": "Suntan",
   "cosmetic.emotes.surprised": "Surprised",
   "cosmetic.emotes.wink": "Wink",
 
@@ -1584,7 +1584,7 @@
   ],
   "menu.emotes.happy.name": "<name>",
   "menu.emotes.happy.desc": [
-    "<gray>Show everyone how happy.</gray>",
+    "<gray>Show everyone how happy</gray>",
     "<gray>you are.</gray>"
   ],
   "menu.emotes.in_love.name": "<name>",
@@ -1612,8 +1612,8 @@
   "menu.emotes.spicy.desc": [
     "<gray>That pepper was way too hot!</gray>"
   ],
-  "menu.emotes.sun_tan.name": "<name>",
-  "menu.emotes.sun_tan.desc": [
+  "menu.emotes.suntan.name": "<name>",
+  "menu.emotes.suntan.desc": [
     "<gray>Looks like you stayed too</gray>",
     "<gray>long in the sun.</gray>"
   ],
@@ -2248,7 +2248,7 @@
   "menu.morphs.bat.name": "<name>",
   "menu.morphs.bat.desc": [
     "<gray>Fly around to annoy people by screeching</gray>",
-    "<gray>loudly and dropping poop in their faces.</gray>",
+    "<gray>loudly.</gray>",
     "",
     "<aqua>Left Click</aqua> <gray>to fly in a short period.</gray>",
     "<aqua>Sneak</aqua> <gray>to drop poop.</gray>"
@@ -2270,7 +2270,7 @@
   "menu.morphs.bunny.name": "<name>",
   "menu.morphs.bunny.desc": [
     "<gray>Transform into a cute little</gray>",
-    "<gray> bunny jumping around.</gray>",
+    "<gray>bunny jumping around.</gray>",
     "",
     "<aqua>Hold sneak</aqua> <gray>to jump.</gray>"
   ],
@@ -2278,7 +2278,7 @@
   "menu.morphs.cat.desc": [
     "<gray>Finally, you get to sleep all day just like a cat!</gray>",
     "",
-    "<aqua>Left Click</aqua> <gray>to miaow.</gray>",
+    "<aqua>Left Click</aqua> <gray>to meow.</gray>",
     "<aqua>Sneak</aqua> <gray>to purr.</gray>"
   ],
   "menu.morphs.cave_spider.name": "<name>",
@@ -2290,7 +2290,7 @@
   ],
   "menu.morphs.chicken.name": "<name>",
   "menu.morphs.chicken.desc": [
-    "<gray>Pop, ah an egg!</gray>",
+    "<gray>Pop! Oh, an egg!</gray>",
     "",
     "<aqua>Left Click</aqua> <gray>to cackle.</gray>",
     "<aqua>Tap sneak</aqua> <gray>to pop an egg.</gray>"
@@ -2344,7 +2344,7 @@
   ],
   "menu.morphs.magma_cube.name": "<name>",
   "menu.morphs.magma_cube.desc": [
-    "<gray>Don't touch me! I am hot!</gray>",
+    "<gray>Don't touch me! I'm hot!</gray>",
     "",
     "<aqua>Hold sneak</aqua> <gray>to jump.</gray>",
     "<gray>Look up to jump higher.</gray>"
@@ -2361,7 +2361,7 @@
     "<gray>Everyone loves Olaf!</gray>",
     "",
     "<aqua>Left Click</aqua> <gray>to throw a</gray>",
-    "<gray>snowball at somone.</gray>"
+    "<gray>snowball at someone.</gray>"
   ],
   "menu.morphs.pig.name": "<name>",
   "menu.morphs.pig.desc": [
@@ -2378,7 +2378,7 @@
   ],
   "menu.morphs.sheep.name": "<name>",
   "menu.morphs.sheep.desc": [
-    "<gray>Change color quickly to blend in with the</gray>",
+    "<gray>Change colors quickly to blend in with the</gray>",
     "<gray>surrounding environment.</gray>",
     "",
     "<aqua>Tap sneak</aqua> <gray>to change color of the wool.</gray>"
@@ -2415,7 +2415,7 @@
   ],
   "menu.morphs.villager.name": "<name>",
   "menu.morphs.villager.desc": [
-    "<gray>Transform into the best dealer</gray>",
+    "<gray>Transform into the best trader</gray>",
     "<gray>in the world.</gray>",
     "",
     "<aqua>Left Click</aqua> <gray>to agree.</gray>",
@@ -2541,8 +2541,8 @@
   ],
   "menu.mounts.crazy_chicken.name": "<name>",
   "menu.mounts.crazy_chicken.desc": [
-    "<gray>Hold on tight! This wild feathered</gray>",
-    "<gray>escape artist runs fast!</gray>"
+    "<gray>Hold on tight! This wild chicken</gray>",
+    "<gray>runs incredibly fast!</gray>"
   ],
   "menu.mounts.decrepit_warhorse.name": "<name>",
   "menu.mounts.decrepit_warhorse.desc": [
@@ -2711,7 +2711,7 @@
   "cosmetic.particle_effects.demon_twist": "Demon Twist",
   "cosmetic.particle_effects.emerald_twirl": "Emerald Twirl",
   "cosmetic.particle_effects.enchanted": "Enchanted",
-  "cosmetic.particle_effects.flame_flairy": "Flame Flairy",
+  "cosmetic.particle_effects.flame_fairy": "Flame Fairy",
   "cosmetic.particle_effects.flame_of_magic": "Flame of Magic",
   "cosmetic.particle_effects.flame_of_the_demons": "Flame of the Demons",
   "cosmetic.particle_effects.flame_rings": "Flame Rings",
@@ -2866,8 +2866,8 @@
     "<gray>chosen one! Wisdom radiates from</gray>",
     "<gray>your aura.</gray>"
   ],
-  "menu.particle_effects.flame_flairy.name": "<name>",
-  "menu.particle_effects.flame_flairy.desc": [
+  "menu.particle_effects.flame_fairy.name": "<name>",
+  "menu.particle_effects.flame_fairy.desc": [
     "<gray>A loyal fire spirit follows</gray>",
     "<gray>you around constantly!</gray>"
   ],
@@ -2904,7 +2904,7 @@
   ],
   "menu.particle_effects.legendary_aura.name": "<name>",
   "menu.particle_effects.legendary_aura.desc": [
-    "<gray>Only true legends uses this!</gray>"
+    "<gray>Only true legends use this!</gray>"
   ],
   "menu.particle_effects.music.name": "<name>",
   "menu.particle_effects.music.desc": [
@@ -2952,7 +2952,7 @@
   ],
   "menu.particle_effects.snowflake.name": "<name>",
   "menu.particle_effects.snowflake.desc": [
-    "<gray>A snowflakes drift below</gray>",
+    "<gray>A snowflake drift below</gray>",
     "<gray>you gracefully!</gray>"
   ],
   "menu.particle_effects.star.name": "<name>",
@@ -3099,7 +3099,7 @@
   "menu.pets.body_guard.name": "<name>",
   "menu.pets.body_guard.desc": [
     "<gray>Follows you around with a</gray>",
-    "<gray>rose in his hand.</gray>"
+    "<gray>rose in hand.</gray>"
   ],
   "menu.pets.breeze.name": "<name>",
   "menu.pets.breeze.desc": [
@@ -3108,7 +3108,7 @@
   ],
   "menu.pets.calf.name": "<name>",
   "menu.pets.calf.desc": [
-    "<gray>He wants a lot of grass</gray>",
+    "<gray>It wants a lot of grass</gray>",
     "<gray>to eat.</gray>"
   ],
   "menu.pets.camel.name": "<name>",
@@ -3171,7 +3171,7 @@
   "menu.pets.kitten.name": "<name>",
   "menu.pets.kitten.desc": [
     "<gray>Who wouldn't want a kitten</gray>",
-    "<gray>following them around?</gray>"
+    "<gray>following you around?</gray>"
   ],
   "menu.pets.llama.name": "<name>",
   "menu.pets.llama.desc": [
@@ -3180,7 +3180,7 @@
   "menu.pets.mushroom_calf.name": "<name>",
   "menu.pets.mushroom_calf.desc": [
     "<gray>It grows mushrooms on</gray>",
-    "<gray>their back.</gray>"
+    "<gray>its back.</gray>"
   ],
   "menu.pets.panda.name": "<name>",
   "menu.pets.panda.desc": [
@@ -3206,7 +3206,7 @@
   ],
   "menu.pets.puppy.name": "<name>",
   "menu.pets.puppy.desc": [
-    "<gray>Voff...</gray>"
+    "<gray>Woof!</gray>"
   ],
   "menu.pets.santa_claus.name": "<name>",
   "menu.pets.santa_claus.desc": [
