@@ -59,7 +59,7 @@
   "cosmetic.equip.deny.space": "<red>There is not enough space to use this cosmetic here!</red>",
   "cosmetic.equip.deny.ground": "<red>You must stand on the ground to use this cosmetic!</red>",
 
-  "player.not_enough_money": "<red>You don't have enough <currency>! You are missing <amount> <currency>!</red>",
+  "player.not_enough_coins": "<red>You don't have enough <currency>! You are missing <amount> <currency>!</red>",
   "player.not_permission": "<red>You don't have permission to do this!</red>",
 
   "category.not_found": "<red>Could not find a cosmetic category by that name!</red>",

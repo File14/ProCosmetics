@@ -98,7 +98,7 @@ public interface EconomyProvider {
     default void sendInsufficientCoinsMessage(User user, int cost) {
         int missing = cost - getCoins(user);
         user.sendMessage(user.translate(
-                "player.not_enough_money",
+                "player.not_enough_coins",
                 Placeholder.unparsed("amount", String.valueOf(missing)),
                 Placeholder.unparsed("currency", user.translateRaw("generic.currency"))
         ));
