@@ -33,14 +33,13 @@ import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.profile.PlayerProfile;
+import org.jetbrains.annotations.Nullable;
 import se.file14.procosmetics.ProCosmeticsPlugin;
 import se.file14.procosmetics.api.config.Config;
 import se.file14.procosmetics.api.util.item.ItemBuilder;
 import se.file14.procosmetics.util.LogUtil;
 import se.file14.procosmetics.util.mapping.Mapping;
 import se.file14.procosmetics.util.mapping.MappingType;
-
-import org.jetbrains.annotations.Nullable;
 
 import java.net.MalformedURLException;
 import java.net.URI;
@@ -180,14 +179,20 @@ public class ItemBuilderImpl implements ItemBuilder {
 
     @Override
     public ItemBuilderImpl addLore(Component line) {
-        List<Component> currentLore = new ArrayList<>(getLore());
+        List<Component> currentLore = getLore();
+        if (currentLore == null) {
+            currentLore = new ArrayList<>();
+        }
         currentLore.add(line);
         return setLore(currentLore);
     }
 
     @Override
     public ItemBuilderImpl addLore(List<Component> lines) {
-        List<Component> currentLore = new ArrayList<>(getLore());
+        List<Component> currentLore = getLore();
+        if (currentLore == null) {
+            currentLore = new ArrayList<>();
+        }
         currentLore.addAll(lines);
         return setLore(currentLore);
     }
@@ -196,24 +201,23 @@ public class ItemBuilderImpl implements ItemBuilder {
         ItemMeta itemMeta = itemStack.getItemMeta();
 
         if (itemMeta != null && itemMeta.hasLore()) {
-            List<String> lore = itemMeta.getLore();
-            return lore != null ? new ArrayList<>(lore) : Collections.emptyList();
+            return itemMeta.getLore();
         }
-        return Collections.emptyList();
+        return null;
     }
 
     @Override
     public List<Component> getLore() {
         List<String> lore = getLoreList();
 
-        if (!lore.isEmpty()) {
+        if (lore != null) {
             List<Component> components = new ArrayList<>();
             for (String line : lore) {
                 components.add(SERIALIZER.deserialize(line));
             }
             return components;
         }
-        return Collections.emptyList();
+        return null;
     }
 
     @Override
@@ -331,8 +335,11 @@ public class ItemBuilderImpl implements ItemBuilder {
         ItemMeta itemMeta = itemStack.getItemMeta();
 
         if (itemMeta != null) {
+            //Bukkit.broadcastMessage("1. Before is null? " + itemMeta.getLore());
             modifier.accept(itemMeta);
+            //Bukkit.broadcastMessage("2. Modified meta lore null? " + itemMeta.getLore());
             itemStack.setItemMeta(itemMeta);
+            //Bukkit.broadcastMessage("3. After set item meta lore: " + itemStack.getItemMeta().getLore());
         }
         return this;
     }

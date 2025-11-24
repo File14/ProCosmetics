@@ -181,7 +181,7 @@ public class CosmeticMenuImpl<T extends CosmeticType<T, ?>> extends PaginatedMen
 
     private ItemStack getSortingItem() {
         sortingItem.setDisplayName(user.translate("menu." + category.getKey() + ".sort.name"));
-        sortingItem.setLore(List.of());
+        sortingItem.setLore(null);
 
         for (Sorting s : Sorting.VALUES) {
             if (this.sorting == s) {
