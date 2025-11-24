@@ -34,7 +34,6 @@ import se.file14.procosmetics.api.cosmetic.registry.CosmeticCategory;
 import se.file14.procosmetics.api.menu.ClickableItem;
 import se.file14.procosmetics.api.menu.CosmeticMenu;
 import se.file14.procosmetics.api.user.User;
-import se.file14.procosmetics.menu.menus.MainMenu;
 import se.file14.procosmetics.menu.menus.purchase.CosmeticPurchaseMenu;
 import se.file14.procosmetics.util.item.ItemBuilderImpl;
 
@@ -130,7 +129,7 @@ public class CosmeticMenuImpl<T extends CosmeticType<T, ?>> extends PaginatedMen
         }
 
         // Add go back button
-        if (goBackItem != null) {
+        if (goBackItem != null && getPreviousMenu() != null) {
             String path = "menu.items.go_back.on_click.";
             String command = category.getConfig().getString(path + "command")
                     .replace("<player>", player.getName())
@@ -147,8 +146,6 @@ public class CosmeticMenuImpl<T extends CosmeticType<T, ?>> extends PaginatedMen
                 setItem(goBackItem.getSlot(), goBackItem.getItemStack(), event -> {
                     if (getPreviousMenu() != null) {
                         getPreviousMenu().open();
-                    } else {
-                        new MainMenu(plugin, user).open();
                     }
                     playClickSound();
                 });
