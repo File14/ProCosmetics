@@ -212,7 +212,7 @@ public abstract class SQLDatabase extends DatabaseImpl {
                     CosmeticType<?, ?> type = category.getCosmeticRegistry().getType(cosmeticKey);
 
                     // Ignore if not found
-                    if (type == null) {
+                    if (type == null || !type.isEnabled()) {
                         continue;
                     }
                     // TODO: Remove cast when more stuff is exposed to API

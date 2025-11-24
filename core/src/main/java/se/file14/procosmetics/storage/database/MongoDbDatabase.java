@@ -200,7 +200,7 @@ public class MongoDbDatabase extends DatabaseImpl {
                 }
                 CosmeticType<?, ?> type = category.getCosmeticRegistry().getType(cosmeticKey);
 
-                if (type == null) {
+                if (type == null || !type.isEnabled()) {
                     continue;
                 }
                 user.setCosmetic(category, ((CosmeticTypeImpl<?, ?>) type).create(plugin, user));
