@@ -55,13 +55,13 @@ public class AddCosmeticCommand extends SubCommand<CommandSender> {
             audience(sender).sendMessage(translator.translate("generic.error.player_data.target"));
             return;
         }
-        CosmeticCategory<?, ?, ?> cosmeticCategory = plugin.getCategoryRegistries().getCategory(parseArgument(args, 3));
+        CosmeticCategory<?, ?, ?> category = plugin.getCategoryRegistries().getCategory(parseArgument(args, 3));
 
-        if (cosmeticCategory == null) {
+        if (category == null) {
             audience(sender).sendMessage(translator.translate("cosmetic.category_not_found"));
             return;
         }
-        CosmeticType<?, ?> cosmeticType = cosmeticCategory.getCosmeticRegistry().getType(parseArgument(args, 4));
+        CosmeticType<?, ?> cosmeticType = category.getCosmeticRegistry().getType(parseArgument(args, 4));
 
         if (cosmeticType == null) {
             audience(sender).sendMessage(translator.translate("cosmetic.not_found"));

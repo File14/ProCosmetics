@@ -35,7 +35,7 @@ public class UnequipCommand extends SubCommand<CommandSender> {
         super(plugin, "procosmetics.command.unequip.other", true);
         addFlat("unequip");
         addArgument(Player.class, "target", sender -> plugin.getServer().getOnlinePlayers().stream().map(Player::getName).collect(Collectors.toList()));
-        addArgument(String.class, "category", sender -> plugin.getCategoryRegistries().getCategories().stream().map(CosmeticCategory::getKey).collect(Collectors.toList()));
+        addArgument(String.class, "category", sender -> plugin.getCategoryRegistries().getCategories().stream().filter(CosmeticCategory::isEnabled).map(CosmeticCategory::getKey).collect(Collectors.toList()));
     }
 
     @Override
@@ -64,6 +64,11 @@ public class UnequipCommand extends SubCommand<CommandSender> {
 
         if (category == null) {
             audience(sender).sendMessage(translator.translate("category.not_found"));
+            return;
+        }
+
+        if (!category.isEnabled()) {
+            audience(sender).sendMessage(translator.translate("category.disabled"));
             return;
         }
         user.removeCosmetic(category, false, true);

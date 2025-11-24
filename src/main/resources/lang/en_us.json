@@ -63,6 +63,7 @@
   "player.not_permission": "<red>You don't have permission to do this!</red>",
 
   "category.not_found": "<red>Could not find a cosmetic category by that name!</red>",
+  "category.disabled": "<red>That category is disabled!</red>",
   "cosmetic.not_found": "<red>Could not find a cosmetic by that name!</red>",
   "cosmetic.not_equipped": "<red>You don't have any cosmetic equipped from that category.</red>",
   "cosmetic.already_equipped": "<red>That cosmetic is already equipped!</red>",
@@ -80,24 +81,24 @@
   "command.add.coins": "<green>Added <yellow><amount> <currency></yellow> to <yellow><player></yellow>!",
   "command.add.cosmetic": "<green>Gave <yellow><cosmetic></yellow> to <yellow><player></yellow>!",
   "command.add.cosmetic.already_owned": "<red><player> already owns that cosmetic!</red>",
-  "command.add.treasure_chest": "<green>Added <yellow><amount> <treasure_chest> treasure chest(s)</yellow> to <yellow><player></yellow>!",
+  "command.add.treasure_chest": "<green>Added <yellow><amount> <treasure_chest> </yellow> to <yellow><player></yellow>!",
 
   "command.get.ammo": "<yellow><player></yellow> has <yellow><amount> <gadget> ammo</yellow>.",
   "command.get.coins": "<yellow><player></yellow> has <yellow><amount> <currency></yellow>.",
-  "command.get.treasure_chest": "<yellow><player></yellow> has <yellow><amount> <treasure_chest> treasure chest(s)</yellow>.",
+  "command.get.treasure_chest": "<yellow><player></yellow> has <yellow><amount> <treasure_chest></yellow>.",
 
   "command.addall.ammo": "<green>Added <yellow><amount> <gadget> ammo</yellow> to <green><player_count> players</green>!",
   "command.addall.coins": "<green>Added <yellow><amount> <currency></yellow> to <green><player_count> players</green>!",
   "command.addall.cosmetic": "<green>Gave <yellow><cosmetic></yellow> to <green><player_count> players</green>!",
-  "command.addall.treasure_chest": "<green>Added <yellow><amount> <treasure_chest> treasure chest(s)</yellow> to <green><player_count> players</green>!",
+  "command.addall.treasure_chest": "<green>Added <yellow><amount> <treasure_chest></yellow> to <green><player_count> players</green>!",
 
   "command.set.ammo": "<green>Set <yellow><player></yellow>'s <gadget> ammo to <yellow><amount></yellow>!",
   "command.set.coins": "<green>Set <yellow><player></yellow>'s <currency> to <yellow><amount></yellow>!",
-  "command.set.treasure_chest": "<green>Set <yellow><player></yellow>'s <treasure_chest> treasure chest(s) to <yellow><amount></yellow>!",
+  "command.set.treasure_chest": "<green>Set <yellow><player></yellow>'s <treasure_chest> to <yellow><amount></yellow>!",
 
   "command.remove.ammo": "<red>Removed <yellow><amount> <gadget> ammo</yellow> from <yellow><player></yellow>!",
   "command.remove.coins": "<red>Removed <yellow><amount> <currency></yellow> from <yellow><player></yellow>!",
-  "command.remove.treasure_chest": "<red>Removed <yellow><amount> <treasure_chest> treasure chest(s)</yellow> from <yellow><player></yellow>!",
+  "command.remove.treasure_chest": "<red>Removed <yellow><amount> <treasure_chest></yellow> from <yellow><player></yellow>!",
 
   "generic.error.player_data": "<red>An error occurred! Please contact an administrator!</red>",
   "generic.error.player_data.target": "<red>Could not find data of that player!</red>",
@@ -123,8 +124,8 @@
   "command.platform.teleport.not_found": "<red>Could not find that platform.</red>",
   "command.platform.teleport.success": "<yellow>You teleported to platform <id>!</yellow>",
 
-  "command.equipplayer.already_equipped": "<red>That cosmetic is already equipped for that <player>!</red>",
-  "command.equipplayer.success": "<yellow>Attempted to equip the cosmetic for <player>.</yellow> <gray>(May fail if they don't own it or are in a cosmetic-disabled area)</gray>",
+  "command.equipplayer.already_equipped": "<red>That cosmetic is already equipped for <player>!</red>",
+  "command.equipplayer.success": "<yellow>Attempted to equip the cosmetic for <player>.</yellow> <dark_gray>(May fail if they don't own it or are in a cosmetic-disabled area)</dark_gray>",
 
   "command.info.header": "<aqua><player>'s information:</aqua>",
   "command.info.id": "Database Id: <yellow><hover:show_text:'<yellow>Click to copy!</yellow>'><click:copy_to_clipboard:'<id>'><id></click></hover></yellow>",
@@ -134,12 +135,12 @@
   "command.info.self_view.status": "Self View Status: <status>",
   "command.info.status.enable": "<green>✔</green>",
   "command.info.status.disable": "<red>❌</red>",
-  "command.info.treasure_chests.header": "Treasure Chests:",
-  "command.info.treasure_chests.entry": "• <treasure_chest>: <green><amount></green>",
-  "command.info.equipped_cosmetics.header": "Equipped Cosmetics:",
+  "command.info.treasure_chests.header": "<green>Treasure Chests:</green>",
+  "command.info.treasure_chests.entry": "• <treasure_chest>: <yellow><amount></yellow>",
+  "command.info.equipped_cosmetics.header": "<green>Equipped Cosmetics:</green>",
   "command.info.equipped_cosmetics.entry": "• <category>: <yellow><cosmetic></yellow>",
-  "command.info.ammo.header": "Gadget Ammo:",
-  "command.info.ammo.entry": "<gadget>: <yellow><amount></yellow>",
+  "command.info.ammo.header": "<green>Gadget Ammo:</green>",
+  "command.info.ammo.entry": "• <gadget>: <yellow><amount></yellow>",
 
   "command.menu.not_found": "<red>Could not find a menu by that name!</red>",
   "command.menu.success": "<yellow>You opened the <menu> menu for <player>!</yellow>",

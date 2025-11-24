@@ -51,8 +51,13 @@ public class ToggleSelfViewCommand extends SimpleCommand<CommandSender> {
 
         public ArgumentSubCommand(ProCosmeticsPlugin plugin) {
             super(plugin, "procosmetics.command.toggleselfview", false);
-            TYPES.put("morph", user -> user.setSelfViewMorph(!user.hasSelfViewMorph(), true));
-            TYPES.put("status", user -> user.setSelfViewStatus(!user.hasSelfViewStatus(), true));
+
+            if (plugin.getCategoryRegistries().morphs().isEnabled()) {
+                TYPES.put("morph", user -> user.setSelfViewMorph(!user.hasSelfViewMorph(), true));
+            }
+            if (plugin.getCategoryRegistries().statuses().isEnabled()) {
+                TYPES.put("status", user -> user.setSelfViewStatus(!user.hasSelfViewStatus(), true));
+            }
             addArgument(String.class, "category", sender -> new ArrayList<>(TYPES.keySet()));
         }
 

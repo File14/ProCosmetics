@@ -40,7 +40,7 @@ public class MenuCommand extends SubCommand<CommandSender> {
         addFlat("menu");
         addArgument(Player.class, "player", sender -> plugin.getServer().getOnlinePlayers().stream().map(Player::getName).collect(Collectors.toList()));
         addArgument(String.class, "menu", sender -> {
-            List<String> menus = plugin.getCategoryRegistries().getCategories().stream().map(CosmeticCategory::getKey).collect(Collectors.toList());
+            List<String> menus = plugin.getCategoryRegistries().getCategories().stream().filter(CosmeticCategory::isEnabled).map(CosmeticCategory::getKey).collect(Collectors.toList());
             menus.add(MAIN_MENU);
             return menus;
         });
@@ -61,15 +61,19 @@ public class MenuCommand extends SubCommand<CommandSender> {
             audience(sender).sendMessage(translator.translate("generic.error.player_data.target"));
             return;
         }
-        String menuName = parseArgument(args, 2).toString().toLowerCase().replace("-", "_");
+        String menuName = parseArgument(args, 2).toString().toLowerCase();
 
         if (menuName.startsWith(MAIN_MENU)) {
             new MainMenu(plugin, user).open();
         } else {
-            CosmeticCategory<?, ?, ?> category = plugin.getCategoryRegistries().getCategory(menuName);
+            CosmeticCategory<?, ?, ?> category = plugin.getCategoryRegistries().getCategoryRaw(menuName);
 
             if (category == null) {
                 audience(sender).sendMessage(translator.translate("command.menu.not_found"));
+                return;
+            }
+            if (!category.isEnabled()) {
+                audience(sender).sendMessage(translator.translate("category.disabled"));
                 return;
             }
             category.createMenu(plugin, user).open();

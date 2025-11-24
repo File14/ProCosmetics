@@ -18,17 +18,16 @@
 package se.file14.procosmetics.command.commands.procosmetics;
 
 import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.JoinConfiguration;
 import net.kyori.adventure.text.TextComponent;
 import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import se.file14.procosmetics.ProCosmeticsPlugin;
-import se.file14.procosmetics.api.cosmetic.gadget.GadgetType;
 import se.file14.procosmetics.api.locale.Translator;
 import se.file14.procosmetics.api.user.User;
 import se.file14.procosmetics.command.SubCommand;
 
-import java.util.Map;
 import java.util.stream.Collectors;
 
 public class InfoCommand extends SubCommand<CommandSender> {
@@ -96,41 +95,50 @@ public class InfoCommand extends SubCommand<CommandSender> {
 
         // Treasure chests
         if (!user.getTreasureChests().isEmpty()) {
-            messageBuilder.append(translator.translate("command.info.treasure_chests.header"), Component.newline());
-
-            user.getTreasureChests().forEach((treasure, amount) -> {
-                messageBuilder.append(translator.translate(
-                        "command.info.treasure_chests.entry",
-                        Placeholder.unparsed("treasure_chest", treasure.getName(translator)),
-                        Placeholder.unparsed("amount", String.valueOf(amount))
-                ), Component.newline());
-            });
+            messageBuilder.append(translator.translate("command.info.treasure_chests.header"),
+                    Component.newline(),
+                    Component.join(JoinConfiguration.newlines(),
+                            user.getTreasureChests().entrySet().stream()
+                                    .map(entry -> translator.translate(
+                                            "command.info.treasure_chests.entry",
+                                            Placeholder.unparsed("treasure_chest", entry.getKey().getName(translator)),
+                                            Placeholder.unparsed("amount", String.valueOf(entry.getValue()))
+                                    ))
+                                    .collect(Collectors.toList())
+                    ),
+                    Component.newline()
+            );
         }
 
         // Equipped Cosmetics
         if (!user.getCosmetics().isEmpty()) {
-            messageBuilder.append(translator.translate("command.info.equipped_cosmetics.header"), Component.newline());
-
-            user.getCosmetics().forEach((cosmeticCategory, cosmetic) -> {
-                messageBuilder.append(translator.translate(
-                        "command.info.equipped_cosmetics.entry",
-                        Placeholder.unparsed("category", cosmeticCategory.getKey()),
-                        Placeholder.unparsed("cosmetic", cosmetic.getType().getName(translator))
-                ), Component.newline());
-            });
+            messageBuilder.append(translator.translate("command.info.equipped_cosmetics.header"),
+                    Component.newline(),
+                    Component.join(JoinConfiguration.newlines(), user.getCosmetics().entrySet().stream()
+                            .map(entry -> translator.translate(
+                                    "command.info.equipped_cosmetics.entry",
+                                    Placeholder.unparsed("category", entry.getKey().getKey()),
+                                    Placeholder.unparsed("cosmetic", entry.getValue().getType().getName(translator))
+                            ))
+                            .collect(Collectors.toList())
+                    ),
+                    Component.newline()
+            );
         }
 
         // Gadget Ammo
         if (!user.getAmmo().isEmpty()) {
-            messageBuilder.append(translator.translate("command.info.ammo.header"), Component.newline());
-
-            for (Map.Entry<GadgetType, Integer> entry : user.getAmmo().entrySet()) {
-                messageBuilder.append(translator.translate(
-                        "command.info.ammo.entry",
-                        Placeholder.unparsed("gadget", entry.getKey().getKey()),
-                        Placeholder.unparsed("amount", String.valueOf(entry.getValue()))
-                ), Component.newline());
-            }
+            messageBuilder.append(translator.translate("command.info.ammo.header"),
+                    Component.newline(),
+                    Component.join(JoinConfiguration.newlines(),
+                            user.getAmmo().entrySet().stream()
+                                    .map(entry -> translator.translate(
+                                            "command.info.ammo.entry",
+                                            Placeholder.unparsed("gadget", entry.getKey().getName(translator)),
+                                            Placeholder.unparsed("amount", String.valueOf(entry.getValue()))
+                                    ))
+                                    .collect(Collectors.toList())
+                    ));
         }
         audience(sender).sendMessage(messageBuilder.build());
     }

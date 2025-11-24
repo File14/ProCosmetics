@@ -48,7 +48,7 @@ public class EquipCommand extends SimpleCommand<CommandSender> {
 
         public ArgumentSubCommand(ProCosmeticsPlugin plugin) {
             super(plugin, "procosmetics.command.equip", false);
-            addArgument(String.class, "category", sender -> plugin.getCategoryRegistries().getCategories().stream().map(CosmeticCategory::getKey).collect(Collectors.toList()));
+            addArgument(String.class, "category", sender -> plugin.getCategoryRegistries().getCategories().stream().filter(CosmeticCategory::isEnabled).map(CosmeticCategory::getKey).collect(Collectors.toList()));
             addArgument(String.class, "cosmetic");
         }
 
@@ -61,9 +61,10 @@ public class EquipCommand extends SimpleCommand<CommandSender> {
                 return;
             }
             String type = parseArgument(args, 0);
-            CosmeticCategory<?, ?, ?> category = plugin.getCategoryRegistries().getCategory(type);
+            CosmeticCategory<?, ?, ?> category = plugin.getCategoryRegistries().getCategoryRaw(type);
 
-            if (category == null) {
+            // Don't expose disabled categories
+            if (category == null || !category.isEnabled()) {
                 user.sendMessage(user.translate("category.not_found"));
                 return;
             }

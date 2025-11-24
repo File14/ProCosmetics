@@ -37,7 +37,7 @@ public class EquipCommand extends SubCommand<CommandSender> {
         super(plugin, "procosmetics.command.equip.other", true);
         addFlat("equip");
         addArgument(Player.class, "target", sender -> plugin.getServer().getOnlinePlayers().stream().map(Player::getName).collect(Collectors.toList()));
-        addArgument(CosmeticCategory.class, "category", sender -> plugin.getCategoryRegistries().getCategories().stream().map(CosmeticCategory::getKey).collect(Collectors.toList()));
+        addArgument(String.class, "category", sender -> plugin.getCategoryRegistries().getCategories().stream().filter(CosmeticCategory::isEnabled).map(CosmeticCategory::getKey).collect(Collectors.toList()));
         addArgument(String.class, "cosmetic");
     }
 
@@ -56,13 +56,17 @@ public class EquipCommand extends SubCommand<CommandSender> {
             audience(sender).sendMessage(translator.translate("generic.error.player_data.target"));
             return;
         }
-        CosmeticCategory<?, ?, ?> category = parseArgument(args, 2);
+        CosmeticCategory<?, ?, ?> category = plugin.getCategoryRegistries().getCategoryRaw(parseArgument(args, 2));
 
         if (category == null) {
             audience(sender).sendMessage(translator.translate("category.not_found"));
             return;
         }
-        CosmeticType<?, ?> cosmeticType = category.getCosmeticRegistry().getType(parseArgument(args, 3));
+        if (!category.isEnabled()) {
+            audience(sender).sendMessage(translator.translate("category.disabled"));
+            return;
+        }
+        CosmeticType<?, ?> cosmeticType = category.getCosmeticRegistry().getEnabledType(parseArgument(args, 3));
 
         if (cosmeticType == null) {
             audience(sender).sendMessage(translator.translate("cosmetic.not_found"));

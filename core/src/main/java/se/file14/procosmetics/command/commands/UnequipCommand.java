@@ -47,7 +47,7 @@ public class UnequipCommand extends SimpleCommand<CommandSender> {
 
         public ArgumentSubCommand(ProCosmeticsPlugin plugin) {
             super(plugin, "procosmetics.command.unequip", false);
-            addArgument(String.class, "category", sender -> plugin.getCategoryRegistries().getCategories().stream().map(CosmeticCategory::getKey).collect(Collectors.toList()));
+            addArgument(String.class, "category", sender -> plugin.getCategoryRegistries().getCategories().stream().filter(CosmeticCategory::isEnabled).map(CosmeticCategory::getKey).collect(Collectors.toList()));
         }
 
         @Override
@@ -61,7 +61,8 @@ public class UnequipCommand extends SimpleCommand<CommandSender> {
             String type = parseArgument(args, 0);
             CosmeticCategory<?, ?, ?> category = plugin.getCategoryRegistries().getCategory(type);
 
-            if (category == null) {
+            // Don't expose disabled categories
+            if (category == null || !category.isEnabled()) {
                 user.sendMessage(user.translate("category.not_found"));
                 return;
             }
