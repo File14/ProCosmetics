@@ -78,7 +78,8 @@ public class MainMenu extends MenuImpl {
         }
 
         for (CosmeticCategory<?, ?, ?> category : plugin.getCategoryRegistries().getCategories()) {
-            if (!category.isEnabled()) {
+            // Check if category is disabled or the item
+            if (!category.isEnabled() || !config.getBoolean("menu.main.items." + category.getKey() + ".enabled")) {
                 continue;
             }
             int unlocked = category.getUnlockedCosmetics(player);
