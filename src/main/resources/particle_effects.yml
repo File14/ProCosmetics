@@ -439,7 +439,7 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 50000
-    item: "minecraft:nether_star[!minecraft:rarity]"
+    item: "minecraft:wind_charge"
     count: 1
     treasure_chests:
       - common
