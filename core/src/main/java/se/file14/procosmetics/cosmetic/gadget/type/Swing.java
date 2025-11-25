@@ -89,7 +89,7 @@ public class Swing implements GadgetBehavior {
             rabbit.setPositionRotation(location);
             rabbit.setLeashHolder(seat.getBukkitEntity());
 
-            if (rabbit instanceof Ageable ageable) {
+            if (rabbit.getBukkitEntity() instanceof Ageable ageable) {
                 ageable.setBaby();
                 ageable.setInvisible(true);
             }
