@@ -73,7 +73,7 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 2500
-    item: "minecraft:music_disc_13"
+    item: "minecraft:music_disc_13[!minecraft:jukebox_playable]"
     count: 1
     treasure_chests:
       - common
@@ -86,7 +86,7 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 2500
-    item: "minecraft:music_disc_strad"
+    item: "minecraft:music_disc_strad[!minecraft:jukebox_playable]"
     count: 1
     treasure_chests:
       - common
@@ -99,7 +99,7 @@ cosmetics:
     purchasable:
       enabled: true
       cost: 2500
-    item: "minecraft:music_disc_wait"
+    item: "minecraft:music_disc_wait[!minecraft:jukebox_playable]"
     count: 1
     treasure_chests:
       - common
