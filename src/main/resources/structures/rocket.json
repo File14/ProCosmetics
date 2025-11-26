@@ -310,7 +310,7 @@
         "y": 1.0,
         "z": -1.0
       },
-      "data": "minecraft:mangrove_slab"
+      "data": "minecraft:mangrove_slab[type=top]"
     },
     {
       "vector": {
@@ -318,7 +318,7 @@
         "y": 1.0,
         "z": 1.0
       },
-      "data": "minecraft:mangrove_slab"
+      "data": "minecraft:mangrove_slab[type=top]"
     },
     {
       "vector": {
@@ -350,7 +350,7 @@
         "y": 1.0,
         "z": -1.0
       },
-      "data": "minecraft:mangrove_slab"
+      "data": "minecraft:mangrove_slab[type=top]"
     },
     {
       "vector": {
@@ -358,7 +358,7 @@
         "y": 1.0,
         "z": 1.0
       },
-      "data": "minecraft:mangrove_slab"
+      "data": "minecraft:mangrove_slab[type=top]"
     },
     {
       "vector": {
@@ -422,7 +422,7 @@
         "y": 1.0,
         "z": 0.0
       },
-      "data": "minecraft:mangrove_slab"
+      "data": "minecraft:mangrove_slab[type=top]"
     },
     {
       "vector": {
@@ -470,7 +470,7 @@
         "y": 1.0,
         "z": 1.0
       },
-      "data": "minecraft:mangrove_slab"
+      "data": "minecraft:mangrove_slab[type=top]"
     },
     {
       "vector": {
@@ -486,7 +486,7 @@
         "y": 1.0,
         "z": -1.0
       },
-      "data": "minecraft:mangrove_slab"
+      "data": "minecraft:mangrove_slab[type=top]"
     },
     {
       "vector": {
@@ -494,7 +494,7 @@
         "y": 1.0,
         "z": 0.0
       },
-      "data": "minecraft:mangrove_slab"
+      "data": "minecraft:mangrove_slab[type=top]"
     },
     {
       "vector": {
