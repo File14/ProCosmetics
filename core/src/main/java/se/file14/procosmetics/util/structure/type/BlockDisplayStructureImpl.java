@@ -50,7 +50,7 @@ public class BlockDisplayStructureImpl extends StructureImpl<NMSEntity> implemen
         transformationMatrix.identity()
                 //.scale(scale)
                 //.rotateY(radians)
-                .translate(-0.5f, -0.5f, -0.5f);
+                .translate(-0.5f, 0.0f, -0.5f);
 
         for (Map.Entry<Vector, BlockData> entry : data.getPlacement().entrySet()) {
             Vector vector = MathUtil.rotateAroundAxisY(entry.getKey().clone(), angle);
