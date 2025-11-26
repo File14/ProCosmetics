@@ -30,6 +30,7 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityInteractEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.util.Vector;
+import org.jetbrains.annotations.Nullable;
 import se.file14.procosmetics.ProCosmeticsPlugin;
 import se.file14.procosmetics.api.ProCosmetics;
 import se.file14.procosmetics.api.cosmetic.CosmeticContext;
@@ -42,8 +43,6 @@ import se.file14.procosmetics.util.MathUtil;
 import se.file14.procosmetics.util.MetadataUtil;
 import se.file14.procosmetics.util.structure.type.BlockStructureImpl;
 
-import org.jetbrains.annotations.Nullable;
-
 public class Slide implements GadgetBehavior, Listener {
 
     private static final ProCosmetics PLUGIN = ProCosmeticsPlugin.getPlugin();
@@ -54,6 +53,7 @@ public class Slide implements GadgetBehavior, Listener {
     private Location plate;
     private NMSEntity seat;
     private int ticks;
+    private final Vector vector = new Vector();
 
     @Override
     public void onEquip(CosmeticContext<GadgetType> context) {
@@ -90,11 +90,11 @@ public class Slide implements GadgetBehavior, Listener {
                 return;
             }
             double movementAngle = FastMathUtil.toRadians(ticks) * 4;
-            double forward = -Math.abs(Math.sin(movementAngle)) * 4.5d;
-            double height = -Math.abs(Math.cos(movementAngle)) * 4.2d;
+            double forward = -Math.abs(Math.sin(movementAngle)) * 4.5d + 6.0;
+            double height = -Math.abs(Math.cos(movementAngle)) * 4.2d + 3.0d;
 
-            Vector vector = MathUtil.rotateAroundAxisY(new Vector(0.0d, height + 3.0d, forward + 6.0d), angle);
-            seat.setPositionRotation(center.clone().add(vector));
+            vector.setX(0.0d).setY(height).setZ(forward);
+            seat.setPositionRotation(center.clone().add(MathUtil.rotateAroundAxisY(vector, angle)));
 
             ticks++;
 
@@ -107,13 +107,9 @@ public class Slide implements GadgetBehavior, Listener {
                 Entity passenger = seat.getBukkitEntity().getPassenger();
                 seat.getBukkitEntity().remove();
 
-                // Must run 1 tick later. Cannot apply velocity on 1.19.4+ in the same tick as the entity remove
-                context.getPlugin().getJavaPlugin().getServer().getScheduler().runTaskLater(context.getPlugin().getJavaPlugin(), () -> {
-                    if (passenger instanceof Player player && player.isOnline()) {
-                        passenger.setVelocity(passenger.getVelocity().add(
-                                center.getDirection().multiply(0.5d).add(new Vector(0.0d, 0.4d, 0.0d))));
-                    }
-                }, 1L);
+                Vector force = center.getDirection().multiply(0.4d);
+                force.setY(force.getY() + 0.4d);
+                passenger.setVelocity(passenger.getVelocity().add(force));
                 seat = null;
             }
         }
