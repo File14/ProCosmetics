@@ -24,6 +24,7 @@ import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.ItemStack;
@@ -46,7 +47,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class MerryGoRound implements GadgetBehavior {
+public class MerryGoRound implements GadgetBehavior, Listener {
 
     public static final List<CoasterHorse> COASTER_HORSES = new CopyOnWriteArrayList<>();
 
@@ -108,7 +109,6 @@ public class MerryGoRound implements GadgetBehavior {
             if (nmsEntityLeash.getBukkitEntity() instanceof LivingEntity livingEntity) {
                 livingEntity.setInvisible(true);
             }
-
             CoasterHorse coasterHorse = new CoasterHorse(nmsEntityHorse, nmsEntityArmorStand, nmsEntityLeash);
             coasterHorses.add(coasterHorse);
             COASTER_HORSES.add(coasterHorse);
@@ -139,8 +139,8 @@ public class MerryGoRound implements GadgetBehavior {
     }
 
     private double getYOffset(float angle) {
-        double y = FastMathUtil.sin(angle * 2.0f);
-        return center.getY() + y + 2.0d;
+        double y = FastMathUtil.sin(angle * 2.0f) + 2.0d;
+        return center.getY() + y;
     }
 
     @Override

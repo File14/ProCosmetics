@@ -22,6 +22,7 @@ import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractAtEntityEvent;
 import org.bukkit.inventory.ItemStack;
@@ -39,7 +40,7 @@ import se.file14.procosmetics.util.MathUtil;
 import se.file14.procosmetics.util.MetadataUtil;
 import se.file14.procosmetics.util.structure.type.BlockDisplayStructureImpl;
 
-public class Swing implements GadgetBehavior {
+public class Swing implements GadgetBehavior, Listener {
 
     private static final ItemStack SEAT_ITEM = new ItemStack(Material.SPRUCE_SLAB);
 
