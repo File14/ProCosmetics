@@ -22,7 +22,7 @@ world_guard:
   restore_cosmetics: true
 
 storage:
-  # Types: SQLite, MySQL, MariaDB or PostgreSQL
+  # Types: SQLite, MySQL, MariaDB or PostgreSQL, MongoDB
   type: SQLITE
 
   # Used for MySQL, MariaDB and PostgreSQL databases
