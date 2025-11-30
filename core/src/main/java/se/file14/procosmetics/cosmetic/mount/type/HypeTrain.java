@@ -17,13 +17,15 @@
  */
 package se.file14.procosmetics.cosmetic.mount.type;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Particle;
 import org.bukkit.Sound;
-import org.bukkit.entity.ArmorStand;
+import org.bukkit.block.data.BlockData;
+import org.bukkit.entity.BlockDisplay;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -33,35 +35,30 @@ import org.bukkit.event.player.PlayerInteractAtEntityEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Vector;
+import org.joml.Matrix4f;
 import se.file14.procosmetics.ProCosmeticsPlugin;
 import se.file14.procosmetics.api.cosmetic.CosmeticContext;
 import se.file14.procosmetics.api.cosmetic.mount.MountBehavior;
 import se.file14.procosmetics.api.cosmetic.mount.MountType;
 import se.file14.procosmetics.api.nms.NMSEntity;
 import se.file14.procosmetics.api.user.User;
-import se.file14.procosmetics.nms.NMSEntityImpl;
 import se.file14.procosmetics.util.MetadataUtil;
 import se.file14.procosmetics.util.material.Materials;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public class HypeTrain implements MountBehavior, Listener {
 
     private static final ProCosmeticsPlugin PLUGIN = ProCosmeticsPlugin.getPlugin();
-    private static final ItemStack DIAMOND_ITEM = new ItemStack(Material.DIAMOND_BLOCK);
+    private static final BlockData BLOCK_DATA = new ItemStack(Material.DIAMOND_BLOCK).getType().createBlockData();
 
-    private final Location location = new Location(null, 0.0d, 0.0d, 0.0d);
-    private final List<TrainData> carriages = new ArrayList<>();
+    private final Object2ObjectArrayMap<Player, TrainData> carriagesByPlayers = new Object2ObjectArrayMap<>();
+    private final List<BlockDisplay> carriages = new ArrayList<>();
     private int ticks;
 
     private static Vector getTrajectory2d(Location from, Location to) {
-        return getTrajectory2d(from.toVector(), to.toVector());
-    }
-
-    private static Vector getTrajectory2d(Vector from, Vector to) {
-        return to.clone().subtract(from).normalize();
+        return to.clone().subtract(from).toVector().normalize();
     }
 
     private Player player;
@@ -77,14 +74,15 @@ public class HypeTrain implements MountBehavior, Listener {
         nmsEntity.setNoClip(true);
         Player player = context.getPlayer();
 
-        if (entity instanceof ArmorStand armorStand) {
-            armorStand.setSmall(true);
-            armorStand.getEquipment().setHelmet(DIAMOND_ITEM);
-            armorStand.setVisible(false);
+        // Move up location on spawn to prevent despawn
+        nmsEntity.setPositionRotation(entity.getLocation().add(0.0d, 1.5d, 0.0d));
 
+        if (entity instanceof BlockDisplay blockDisplay) {
+            setProperties(blockDisplay, BLOCK_DATA);
             entity.addPassenger(player);
 
-            carriages.add(new TrainData(nmsEntity, player));
+            carriagesByPlayers.put(player, new TrainData(nmsEntity, player));
+            carriages.add(blockDisplay);
         }
         train = entity;
     }
@@ -93,45 +91,42 @@ public class HypeTrain implements MountBehavior, Listener {
     public void onUpdate(CosmeticContext<MountType> context, Entity entity, NMSEntity nmsEntity) {
         Player player = context.getPlayer();
         Location before = null;
-        Vector vector = player.getLocation(location).getDirection().multiply(0.3d);
+        Location location = entity.getLocation().subtract(0.d, 0.5d, 0.d);
 
-        Location location = entity.getLocation().add(0.0d, 0.7d, 0.0d);
-        Material material = location.getBlock().getType();
-
-        if (material.isSolid()) {
-            context.getUser().removeCosmetic(context.getType().getCategory(), false, true);
+        if (location.getBlock().getType().isSolid()) {
+            entity.eject();
+            Vector vector = player.getLocation(location).getDirection().multiply(0.3d);
             player.teleport(location.subtract(vector));
             player.getWorld().playSound(location, Sound.ENTITY_CHICKEN_EGG, 0.8f, 1.0f);
             return;
         }
-        entity.setVelocity(vector);
 
         // TODO: Can this be optimized? to avoid .clone()
-        for (TrainData trainData : carriages) {
-            NMSEntity nmsEntity2 = trainData.nmsEntity();
+        for (TrainData trainData : carriagesByPlayers.values()) {
+            NMSEntity blockNMSEntity = trainData.nmsEntity();
+            Entity blockEntity = blockNMSEntity.getBukkitEntity();
             Player rider = trainData.player;
-            ArmorStand armorStand = (ArmorStand) nmsEntity2.getBukkitEntity();
-            armorStand.getLocation(location);
+            Location tail = blockEntity.getLocation();
 
             if (before != null) {
-                Location tp = before.clone().add(getTrajectory2d(before, location));
-                tp.setPitch(location.getPitch());
-                tp.setYaw(location.getYaw());
-
+                Location tp = before.clone().add(getTrajectory2d(before, tail));
+                tp.setPitch(tail.getPitch());
+                tp.setYaw(tail.getYaw());
                 tp.setDirection(before.getDirection());
 
-                nmsEntity2.setPositionRotation(tp);
+                blockNMSEntity.setPositionRotation(tp);
             } else {
-                location.setDirection(rider.getLocation().getDirection());
-                nmsEntity2.setPositionRotation(location);
+                Vector forward = rider.getLocation().getDirection();
+                tail.setDirection(forward);
+                blockNMSEntity.setPositionRotation(tail.add(forward.multiply(0.3d)));
             }
-            before = location;
+            before = tail;
 
             if (ticks % 20 == 0 && rider.isOnline()) {
                 User user = context.getPlugin().getUserManager().getConnected(rider);
 
                 if (user != null) {
-                    user.sendActionBar(Component.text(context.getType().getName(user) + ": " + carriages.size(), NamedTextColor.YELLOW));
+                    user.sendActionBar(Component.text(context.getType().getName(user) + ": " + carriagesByPlayers.size(), NamedTextColor.YELLOW));
                 }
             }
         }
@@ -149,25 +144,21 @@ public class HypeTrain implements MountBehavior, Listener {
 
     @EventHandler
     public void onClickedCarriage(PlayerInteractAtEntityEvent event) {
+        Player clicker = event.getPlayer();
+
+        if (clicker.isInsideVehicle() || clicker.isSneaking()) {
+            return;
+        }
         Entity clickedEntity = event.getRightClicked();
 
-        if (clickedEntity instanceof Player || clickedEntity instanceof ArmorStand) {
-            Player clicker = event.getPlayer();
+        // Spawn a new carriage if they click the driver
+        if (clickedEntity instanceof Player && clickedEntity == player) {
+            spawnCarriage(clicker);
+        }
 
-            if (clicker.isInsideVehicle() || clicker.isSneaking()) {
-                return;
-            }
-
-            if (clickedEntity == player) {
-                spawnArmorStand(clicker);
-            }
-
-            for (TrainData wagon : carriages) {
-                if (wagon.nmsEntity.getBukkitEntity() == clickedEntity) {
-                    spawnArmorStand(clicker);
-                    break;
-                }
-            }
+        // Spawn a new carriage if they click an existing one
+        if (clickedEntity instanceof BlockDisplay blockDisplay && carriages.contains(blockDisplay)) {
+            spawnCarriage(clicker);
         }
     }
 
@@ -179,63 +170,67 @@ public class HypeTrain implements MountBehavior, Listener {
             User user = PLUGIN.getUserManager().getConnected(player);
 
             if (user != null) {
-                user.removeCosmetic(PLUGIN.getCategoryRegistries().gadgets(), false, true);
+                user.removeCosmetic(PLUGIN.getCategoryRegistries().mounts(), false, true);
             }
             return;
         }
-        Entity entity = event.getEntity();
-        dismountTrainWagon(entity, dismounted);
+        if (event.getEntity() instanceof Player rider) {
+            dismountTrainWagon(rider, dismounted);
+        }
     }
 
     @EventHandler
     public void onQuitEvent(PlayerQuitEvent event) {
         Player player = event.getPlayer();
-        Entity vehicle = player.getVehicle();
-
-        dismountTrainWagon(player, vehicle);
+        dismountTrainWagon(player, player.getVehicle());
     }
 
-    private void spawnArmorStand(Player target) {
+    private void spawnCarriage(Player target) {
         Location tail = player.getLocation();
         int carriageAmount = carriages.size();
 
         if (carriageAmount > 1) {
-            tail = carriages.get(carriageAmount - 1).nmsEntity().getBukkitEntity().getLocation();
+            tail = carriages.get(carriageAmount - 1).getLocation();
         }
 
         if (carriageAmount > 2) {
-            tail.add(getTrajectory2d(carriages.get(carriageAmount - 2).nmsEntity().getBukkitEntity().getLocation(),
-                    carriages.get(carriageAmount - 1).nmsEntity().getBukkitEntity().getLocation()
+            tail.add(getTrajectory2d(
+                    carriages.get(carriageAmount - 2).getLocation(),
+                    carriages.get(carriageAmount - 1).getLocation()
             ));
         } else {
-            tail.subtract(player.getLocation().getDirection().setY(0));
+            tail.subtract(tail.getDirection().setY(0));
         }
+        BlockDisplay blockDisplay = tail.getWorld().spawn(tail, BlockDisplay.class, entity
+                -> setProperties(entity, Materials.getRandomWoolItem().getType().createBlockData()));
+        blockDisplay.getWorld().playSound(blockDisplay, Sound.ENTITY_HORSE_SADDLE, 0.5f, 1.0f);
+        blockDisplay.addPassenger(target);
 
-        ArmorStand armorStand = tail.getWorld().spawn(tail, ArmorStand.class, entity -> {
-            entity.setVisible(false);
-            entity.setGravity(false);
-            entity.setSmall(true);
-            entity.setHelmet(Materials.getRandomWoolItem());
-            MetadataUtil.setCustomEntity(entity);
-        });
-        armorStand.teleport(tail);
-
-        tail.getWorld().playSound(tail, Sound.ENTITY_HORSE_SADDLE, 0.5f, 1.0f);
-
-        armorStand.addPassenger(target);
-        NMSEntityImpl nmsEntity = PLUGIN.getNMSManager().entityToNMSEntity(armorStand);
-        nmsEntity.setNoClip(true);
-        carriages.add(new TrainData(nmsEntity, target));
+        NMSEntity nmsEntity = PLUGIN.getNMSManager().entityToNMSEntity(blockDisplay);
+        carriages.add(blockDisplay);
+        carriagesByPlayers.put(target, new TrainData(nmsEntity, target));
     }
 
-    private void dismountTrainWagon(Entity entity, Entity vehicle) {
-        if (entity instanceof Player && vehicle instanceof ArmorStand && entity != player) {
-            Optional<TrainData> optionalTrainData = carriages.stream().filter(
-                    trainData1 -> trainData1.nmsEntity().getBukkitEntity() == vehicle).findAny();
+    private void setProperties(BlockDisplay blockDisplay, BlockData blockData) {
+        blockDisplay.setBlock(blockData);
+        blockDisplay.setTeleportDuration(2);
+        Matrix4f transformationMatrix = new Matrix4f();
+        transformationMatrix.identity()
+                .scale(0.6f)
+                //.rotateY(DEGREES_180)
+                .translate(-0.5f, -1.0f, -0.5f);
+        blockDisplay.setTransformationMatrix(transformationMatrix);
+        MetadataUtil.setCustomEntity(blockDisplay);
+    }
 
-            if (optionalTrainData.isPresent()) {
-                TrainData trainData = optionalTrainData.get();
-                carriages.remove(trainData);
+    private void dismountTrainWagon(Player rider, Entity vehicle) {
+        if (vehicle instanceof BlockDisplay blockDisplay && rider != player) {
+            TrainData trainData = carriagesByPlayers.get(rider);
+
+            if (trainData != null) {
+                carriages.remove(blockDisplay);
+                carriagesByPlayers.remove(rider);
+
                 vehicle.eject();
                 vehicle.remove();
             }
@@ -243,14 +238,11 @@ public class HypeTrain implements MountBehavior, Listener {
     }
 
     public void clearTrain() {
-        for (TrainData trainData : carriages) {
-            Location location = trainData.nmsEntity().getPreviousLocation();
-
-            if (location != null) {
-                location.getWorld().spawnParticle(Particle.CLOUD, location, 3, 0.0, 0.0, 0.0, 0.0);
-            }
-            trainData.nmsEntity().getBukkitEntity().remove();
+        for (BlockDisplay blockDisplay : new ArrayList<>(carriages)) {
+            blockDisplay.getWorld().spawnParticle(Particle.CLOUD, blockDisplay.getLocation(), 3, 0.0, 0.0, 0.0, 0.0);
+            blockDisplay.remove();
         }
+        carriagesByPlayers.clear();
         carriages.clear();
     }
 

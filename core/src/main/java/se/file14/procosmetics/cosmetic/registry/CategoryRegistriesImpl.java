@@ -289,7 +289,7 @@ public class CategoryRegistriesImpl implements CategoryRegistries {
         mounts.register(mounts.builder("ethereal_dragon").entityType(EntityType.ENDER_DRAGON).readFromConfig().factory(EtherealDragon::new).build());
         mounts.register(mounts.builder("frosty_snowman").entityType(EntityType.SNOW_GOLEM).readFromConfig().factory(FrostySnowman::new).build());
         mounts.register(mounts.builder("glacial_steed").entityType(EntityType.HORSE).readFromConfig().factory(GlacialSteed::new).build());
-        mounts.register(mounts.builder("hype_train").entityType(EntityType.ARMOR_STAND).readFromConfig().factory(HypeTrain::new).build());
+        mounts.register(mounts.builder("hype_train").entityType(EntityType.BLOCK_DISPLAY).readFromConfig().factory(HypeTrain::new).build());
         mounts.register(mounts.builder("infernal_horror").entityType(EntityType.SKELETON_HORSE).readFromConfig().factory(InfernalHorror::new).build());
         mounts.register(mounts.builder("lovely_sheep").entityType(EntityType.SHEEP).readFromConfig().factory(LovelySheep::new).build());
         mounts.register(mounts.builder("molten_snake").entityType(EntityType.MAGMA_CUBE).readFromConfig().factory(MoltenSnake::new).build());
