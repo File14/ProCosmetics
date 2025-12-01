@@ -182,7 +182,16 @@ public abstract class TreasureChestAnimationImpl extends BukkitRunnable implemen
 
     private void giveRandomLoot(LootTable lootTable, Location location) {
         LootEntry lootEntry = lootTable.rollLoot();
+
+        if (lootEntry == null) {
+            return;
+        }
         GeneratedLoot generatedLoot = lootEntry.generate();
+
+        if (generatedLoot == null) {
+            plugin.getJavaPlugin().getLogger().warning("Failed to generate loot for entry " + lootEntry.getKey() + ".");
+            return;
+        }
         generatedLoot.give(player, user);
 
         CosmeticRarity rarity = generatedLoot.getRarity();

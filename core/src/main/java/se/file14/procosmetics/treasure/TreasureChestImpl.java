@@ -107,6 +107,8 @@ public class TreasureChestImpl implements TreasureChest {
         loadCoinLoot(config, path, entries);
         loadCustomLoot(config, path, entries);
 
+        pruneUnusedRarities(rarityWeights, entries);
+
         this.lootTable = new LootTableImpl(entries, rarityWeights);
     }
 
@@ -117,7 +119,10 @@ public class TreasureChestImpl implements TreasureChest {
         for (String rarityKey : config.getSectionKeys(rarityWeightsPath)) {
             CosmeticRarity rarity = plugin.getCosmeticRarityRegistry().getSafely(rarityKey);
             int weight = config.getInt(rarityWeightsPath + "." + rarityKey);
-            weights.put(rarity, weight);
+
+            if (weight > 0) {
+                weights.put(rarity, weight);
+            }
         }
         return weights;
     }
@@ -211,6 +216,15 @@ public class TreasureChestImpl implements TreasureChest {
             customCategories.put(categoryKey, new LootCategoryImpl(categoryKey, categoryItem));
         }
         return customCategories;
+    }
+
+    // Remove rarity weights that don't correspond to any actual loot entries.
+    // This prevents the loot table from attempting to roll rarities that have no items,
+    // which would result in failed loot generation attempts.
+    private void pruneUnusedRarities(Map<CosmeticRarity, Integer> rarityWeights, List<LootEntry> entries) {
+        rarityWeights.entrySet().removeIf(entry ->
+                entries.stream().noneMatch(lootEntry -> lootEntry.getRarity() == entry.getKey())
+        );
     }
 
     @Override
