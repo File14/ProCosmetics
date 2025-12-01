@@ -17,7 +17,9 @@
  */
 package se.file14.procosmetics.config;
 
+import com.google.common.collect.Maps;
 import dev.dejvokep.boostedyaml.YamlDocument;
+import dev.dejvokep.boostedyaml.block.implementation.Section;
 import dev.dejvokep.boostedyaml.dvs.versioning.BasicVersioning;
 import dev.dejvokep.boostedyaml.settings.dumper.DumperSettings;
 import dev.dejvokep.boostedyaml.settings.general.GeneralSettings;
@@ -29,9 +31,7 @@ import se.file14.procosmetics.api.config.Config;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.logging.Level;
 
 public class BoostedYmlConfig implements Config {
@@ -71,6 +71,9 @@ public class BoostedYmlConfig implements Config {
                         .setDefaultBoolean(false)
                         .setDefaultString("missing-string")
                         .setDefaultNumber(0)
+                        .setDefaultList(ArrayList::new)
+                        .setDefaultSet(LinkedHashSet::new)
+                        .setDefaultMap(LinkedHashMap::new)
                         .build();
 
                 // Create document
@@ -134,12 +137,22 @@ public class BoostedYmlConfig implements Config {
 
     @Override
     public Set<String> getSectionKeys(String key) {
-        return document.getSection(key).getRoutesAsStrings(false);
+        Section section = document.getSection(key);
+
+        if (section == null) {
+            return Collections.emptySet();
+        }
+        return section.getRoutesAsStrings(false);
     }
 
     @Override
     public Map<String, Object> getSectionValues(String key) {
-        return document.getSection(key).getStringRouteMappedValues(false);
+        Section section = document.getSection(key);
+
+        if (section == null) {
+            return Maps.newHashMap();
+        }
+        return section.getStringRouteMappedValues(false);
     }
 
     @Override

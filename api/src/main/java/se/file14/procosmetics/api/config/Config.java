@@ -100,19 +100,19 @@ public interface Config {
 
     /**
      * Gets the keys of a configuration section.
-     * Looks in main config first, then default config, then returns null.
+     * Looks in main config first, then default config, then returns empty set.
      *
      * @param key The configuration key
-     * @return The configuration section keys from config, default config, or null if not found in either
+     * @return The configuration section keys from config, default config, or empty set if not found in either
      */
     Set<String> getSectionKeys(String key);
 
     /**
      * Gets the values of a configuration section as a map.
-     * Looks in main config first, then default config, then returns null.
+     * Looks in main config first, then default config, then returns empty map.
      *
      * @param key The configuration key
-     * @return The configuration section values from config, default config, or null if not found in either
+     * @return The configuration section values from config, default config, or empty map if not found in either
      */
     Map<String, Object> getSectionValues(String key);
 
