@@ -332,6 +332,7 @@ public class CategoryRegistriesImpl implements CategoryRegistries {
         particleEffects.register(particleEffects.builder("protective_shield").readFromConfig().factory(ProtectiveShield::new).build());
         particleEffects.register(particleEffects.builder("rainbow_wings").readFromConfig().factory(RainbowWings::new).build());
         particleEffects.register(particleEffects.builder("rain_cloud").readFromConfig().factory(RainCloud::new).build());
+        particleEffects.register(particleEffects.builder("santa").readFromConfig().factory(Santa::new).build());
         particleEffects.register(particleEffects.builder("shadow_walk").readFromConfig().factory(ShadowWalk::new).repeatDelay(5).build());
         particleEffects.register(particleEffects.builder("skull").readFromConfig().factory(Skull::new).repeatDelay(1).build());
         particleEffects.register(particleEffects.builder("snow_cloud").readFromConfig().factory(SnowCloud::new).build());

@@ -394,6 +394,19 @@ cosmetics:
       - rare
       - legendary
 
+  santa:
+    enabled: true
+    rarity: "rare"
+    purchasable:
+      enabled: true
+      cost: 10000
+    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzJkNjFjY2JmZGNkZjg5NDFhZGFmNzZjNmMwZTAxODJkMmM4YmJiNWRjMThmMzc0ODk1NjUyYmM2NjFiNmVkIn19fQ=='}]},!minecraft:rarity]"
+    count: 1
+    treasure_chests:
+      - common
+      - rare
+      - legendary
+
   shadow_walk:
     enabled: true
     rarity: "uncommon"
@@ -512,4 +525,4 @@ cosmetics:
       - legendary
 
 # Do not edit this!
-config_version: 1
+config_version: 2

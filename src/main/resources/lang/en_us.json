@@ -2725,6 +2725,7 @@
   "cosmetic.particle_effects.protective_shield": "Protective Shield",
   "cosmetic.particle_effects.rain_cloud": "Rain Cloud",
   "cosmetic.particle_effects.rainbow_wings": "Rainbow Wings",
+  "cosmetic.particle_effects.santa": "Santa",
   "cosmetic.particle_effects.shadow_walk": "Shadow Walk",
   "cosmetic.particle_effects.skull": "Skull",
   "cosmetic.particle_effects.snow_cloud": "Snow Cloud",
@@ -2934,6 +2935,11 @@
   "menu.particle_effects.rainbow_wings.desc": [
     "<gray>Spectrum wings of pure color</gray>",
     "<gray>spread behind you!</gray>"
+  ],
+  "menu.particle_effects.santa.name": "<name>",
+  "menu.particle_effects.santa.desc": [
+    "<gray>Bring Santa along as he follows</gray>",
+    "<gray>closely behind!</gray>"
   ],
   "menu.particle_effects.shadow_walk.name": "<name>",
   "menu.particle_effects.shadow_walk.desc": [
