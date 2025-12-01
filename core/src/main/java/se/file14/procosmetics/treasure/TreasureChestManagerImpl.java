@@ -130,7 +130,7 @@ public class TreasureChestManagerImpl implements TreasureChestManager {
     public void deletePlatform(TreasureChestPlatform platform) {
         platform.destroy();
 
-        platformsConfig.set("platforms." + platform.getId(), null);
+        platformsConfig.remove("platforms." + platform.getId());
         platformsConfig.save();
 
         platforms.remove(platform.getId());

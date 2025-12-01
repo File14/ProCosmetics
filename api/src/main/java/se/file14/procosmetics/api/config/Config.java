@@ -125,6 +125,14 @@ public interface Config {
     void set(String key, Object value);
 
     /**
+     * Removes a configuration value.
+     *
+     * @param key the configuration key to remove
+     * @return true if the key existed and was removed, false otherwise
+     */
+    boolean remove(String key);
+
+    /**
      * Gets the configuration file.
      *
      * @return The file of the config instance

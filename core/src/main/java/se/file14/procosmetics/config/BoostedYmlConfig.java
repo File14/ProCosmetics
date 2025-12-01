@@ -161,6 +161,11 @@ public class BoostedYmlConfig implements Config {
     }
 
     @Override
+    public boolean remove(String key) {
+        return document.remove(key);
+    }
+
+    @Override
     public File getFile() {
         return file;
     }
