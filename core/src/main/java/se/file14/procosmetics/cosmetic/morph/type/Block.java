@@ -19,7 +19,6 @@ package se.file14.procosmetics.cosmetic.morph.type;
 
 import org.bukkit.Effect;
 import org.bukkit.Material;
-import org.bukkit.Sound;
 import org.bukkit.entity.BlockDisplay;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.Action;
@@ -65,13 +64,6 @@ public class Block implements MorphBehavior {
                     blockDisplay.setBlock(currentMaterial.createBlockData());
                     nmsEntity.sendEntityMetadataPacket();
                 }
-
-                player.getWorld().playSound(
-                        player,
-                        Sound.UI_BUTTON_CLICK,
-                        0.5f,
-                        1.0f
-                );
                 player.getWorld().playEffect(
                         player.getLocation(),
                         Effect.STEP_SOUND,
