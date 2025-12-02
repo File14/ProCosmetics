@@ -27,7 +27,7 @@ import se.file14.procosmetics.api.cosmetic.particleeffect.ParticleEffectType;
 import se.file14.procosmetics.util.FastMathUtil;
 import se.file14.procosmetics.util.MathUtil;
 
-public class FlameFlairy implements ParticleEffectBehavior {
+public class FlameFairy implements ParticleEffectBehavior {
 
     private final Vector velocity = new Vector();
     private final Vector tempVector = new Vector();
