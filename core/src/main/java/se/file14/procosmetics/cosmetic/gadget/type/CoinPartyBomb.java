@@ -30,6 +30,7 @@ import org.bukkit.event.entity.EntityPickupItemEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.FireworkMeta;
 import org.bukkit.util.Vector;
+import org.jetbrains.annotations.Nullable;
 import org.joml.Matrix4f;
 import se.file14.procosmetics.api.ProCosmetics;
 import se.file14.procosmetics.api.cosmetic.CosmeticContext;
@@ -42,8 +43,6 @@ import se.file14.procosmetics.util.FastMathUtil;
 import se.file14.procosmetics.util.MathUtil;
 import se.file14.procosmetics.util.MetadataUtil;
 import se.file14.procosmetics.util.item.ItemBuilderImpl;
-
-import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,6 +62,7 @@ public class CoinPartyBomb implements GadgetBehavior, Listener {
 
     private static final ItemStack GOLD_ITEM = new ItemStack(Material.GOLD_BLOCK);
     private static final long EXTRA_TIME = 400L;
+    private static final int DROP_INTERVAL = 4;
 
     private final List<Item> items = new ArrayList<>();
     private NMSEntity nmsEntity;
@@ -87,11 +87,11 @@ public class CoinPartyBomb implements GadgetBehavior, Listener {
         Player player = context.getPlayer();
 
         if (context.getType().hasPurchasableAmmo()) {
-            long totalValue = pickupReward * context.getType().getDurationTicks();
+            long totalValue = pickupReward * (context.getType().getDurationTicks() / DROP_INTERVAL);
 
-            if (totalValue < context.getType().getAmmoCost()) {
-                context.getUser().sendMessage(Component.text("Incorrect setup detected! This configuration can lead to profit " +
-                        "and infinite money exploits. Please contact a server administrator.", NamedTextColor.RED));
+            if (totalValue > context.getType().getAmmoCost()) {
+                context.getUser().sendMessage(Component.text("This gadget is misconfigured and cannot be used. " +
+                        "The coin rewards exceed the ammo cost. Please contact a server administrator.", NamedTextColor.RED));
                 return InteractionResult.fail();
             }
         }
@@ -142,7 +142,7 @@ public class CoinPartyBomb implements GadgetBehavior, Listener {
 
         nmsEntity.sendPositionRotationPacket(location);
 
-        if (tick % 3 == 0) {
+        if (tick % DROP_INTERVAL == 0) {
             Location location = nmsEntity.getPreviousLocation();
 
             items.add(location.getWorld().dropItem(location,

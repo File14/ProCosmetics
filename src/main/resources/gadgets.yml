@@ -158,8 +158,12 @@ cosmetics:
       enabled: true
       cost: 10000
     cooldown: 50.0
-    duration: 30.0
-    # Specifies the number of coins a player receives for each coin collected. Coins drop at a rate of 20 per second.
+    duration: 25.0
+    # Specifies the number of coins a player receives for each coin collected.
+    # Coins drop every 4 ticks (5 coin items per second at 20 TPS).
+    # Total coin items dropped: (duration * 20) / 4
+    # Total value given: total_coins * pickup_reward
+    # Example with current settings: ((25 * 20) / 4) * 10 = 1250
     pickup_reward: 10
     item: "minecraft:sunflower"
     count: 1
@@ -173,7 +177,7 @@ cosmetics:
       purchasable:
         enabled: true
         amount: 1
-        cost: 500
+        cost: 1500
       treasure_chests:
         common:
           minimum_amount: 1
