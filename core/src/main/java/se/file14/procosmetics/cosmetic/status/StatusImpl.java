@@ -54,7 +54,7 @@ public class StatusImpl extends CosmeticImpl<StatusType, StatusBehavior> impleme
 
         if (nmsEntity.getBukkitEntity() instanceof TextDisplay textDisplay) {
             textDisplay.setBillboard(TextDisplay.Billboard.CENTER);
-            textDisplay.setTeleportDuration(1);
+            textDisplay.setTeleportDuration(3);
         }
         refreshText(false);
 

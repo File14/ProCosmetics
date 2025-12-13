@@ -63,7 +63,7 @@ public class Rocket implements GadgetBehavior {
         seatLocation = center.clone().add(0.0d, HEIGHT_OFFSET, 0.0d);
 
         Display seatEntity = seatLocation.getWorld().spawn(seatLocation, BlockDisplay.class, entity -> {
-            entity.setTeleportDuration(1);
+            entity.setTeleportDuration(2);
             MetadataUtil.setCustomEntity(entity);
         });
         seatEntity.addPassenger(player);

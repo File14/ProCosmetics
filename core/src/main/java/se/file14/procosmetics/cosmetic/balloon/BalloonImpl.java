@@ -177,7 +177,7 @@ public class BalloonImpl extends CosmeticImpl<BalloonType, BalloonBehavior> impl
                     .translate(-0.5f, 0.0f, -0.5f);
         }
         display.setTransformationMatrix(transformationMatrix);
-        display.setTeleportDuration(1);
+        display.setTeleportDuration(2);
     }
 
     private void createLeashEntity() {

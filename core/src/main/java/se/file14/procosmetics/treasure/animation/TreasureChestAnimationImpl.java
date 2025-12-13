@@ -214,7 +214,7 @@ public abstract class TreasureChestAnimationImpl extends BukkitRunnable implemen
                     rarity.getResolvers(user)
             )));
             textDisplay.setBillboard(TextDisplay.Billboard.CENTER);
-            textDisplay.setTeleportDuration(1);
+            textDisplay.setTeleportDuration(2);
         }
         text.setPositionRotation(location.clone().add(0.0d, 1.0d, 0.0d));
         text.getTracker().startTracking();
@@ -275,7 +275,7 @@ public abstract class TreasureChestAnimationImpl extends BukkitRunnable implemen
 
         if (nmsEntity.getBukkitEntity() instanceof BlockDisplay blockDisplay) {
             blockDisplay.setBlock(material.createBlockData());
-            blockDisplay.setTeleportDuration(1);
+            blockDisplay.setTeleportDuration(2);
 
             Matrix4f transformationMatrix = new Matrix4f();
             transformationMatrix.identity()

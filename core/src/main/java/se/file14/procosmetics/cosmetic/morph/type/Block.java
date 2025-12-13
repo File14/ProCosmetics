@@ -43,7 +43,7 @@ public class Block implements MorphBehavior {
             blockDisplay.setBlock(currentMaterial.createBlockData());
             blockDisplay.setInterpolationDelay(0);
             blockDisplay.setInterpolationDuration(1);
-            blockDisplay.setTeleportDuration(1);
+            blockDisplay.setTeleportDuration(2);
 
             Transformation transformation = blockDisplay.getTransformation();
             transformation.getTranslation().set(-0.5f, 0.0f, -0.5f); // Center on X and Z

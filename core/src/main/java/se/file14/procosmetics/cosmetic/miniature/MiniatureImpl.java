@@ -163,7 +163,7 @@ public class MiniatureImpl extends CosmeticImpl<MiniatureType, MiniatureBehavior
                     .translate(-0.5f, 0.0f, -0.5f);
         }
         display.setTransformationMatrix(transformationMatrix);
-        display.setTeleportDuration(1);
+        display.setTeleportDuration(2);
     }
 
     private Location getSpawnLocation() {

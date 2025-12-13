@@ -109,7 +109,7 @@ public class CoinPartyBomb implements GadgetBehavior, Listener {
                     //.rotateY(radians)
                     .translate(-0.5f, 0.0f, -0.5f);
             blockDisplay.setTransformationMatrix(transformationMatrix);
-            blockDisplay.setTeleportDuration(1);
+            blockDisplay.setTeleportDuration(2);
         }
         nmsEntity.setPositionRotation(center);
         nmsEntity.getTracker().startTracking();

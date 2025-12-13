@@ -58,7 +58,7 @@ public class ParentBlockDisplayStructureImpl extends StructureImpl<NMSEntity> im
             NMSEntity nmsFallingBlock = PLUGIN.getNMSManager().createEntity(location.getWorld(), EntityType.BLOCK_DISPLAY, tracker);
             if (nmsFallingBlock.getBukkitEntity() instanceof BlockDisplay blockDisplay) {
                 blockDisplay.setBlock(blockData);
-                blockDisplay.setTeleportDuration(1);
+                blockDisplay.setTeleportDuration(2);
 
                 transformationMatrix.identity()
                         //.scale(scale)

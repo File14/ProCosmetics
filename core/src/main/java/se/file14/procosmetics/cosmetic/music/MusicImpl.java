@@ -276,7 +276,7 @@ public class MusicImpl extends CosmeticImpl<MusicType, MusicBehavior> implements
                     //.rotateY(radians)
                     .translate(-0.5f, 0.0f, -0.5f);
             blockDisplay.setTransformationMatrix(transformationMatrix);
-            blockDisplay.setTeleportDuration(1);
+            blockDisplay.setTeleportDuration(2);
         }
     }
 
@@ -291,7 +291,7 @@ public class MusicImpl extends CosmeticImpl<MusicType, MusicBehavior> implements
                     //.rotateY(radians)
                     .translate(0.0f, 0.25f, 0.0f);
             itemDisplay.setTransformationMatrix(transformationMatrix);
-            itemDisplay.setTeleportDuration(1);
+            itemDisplay.setTeleportDuration(2);
         }
         discoBall.setPositionRotation(location.clone().add(0.0d, 4.0d, 0.0d));
     }
