@@ -66,8 +66,12 @@ public class BoostedYmlConfig implements Config {
                     plugin.getLogger().log(Level.SEVERE, "Default resource not found: " + resourceName);
                     return;
                 }
+                // Defaults must not be used here. Example:
+                // If the default config defines treasure_chests.legendary, but a server owner
+                // removes "legendary" from their config file, enabling defaults would cause
+                // it to still appear as if the chest exists.
                 GeneralSettings settings = GeneralSettings.builder()
-                        .setUseDefaults(true)
+                        .setUseDefaults(false)
                         .setDefaultBoolean(false)
                         .setDefaultString("missing-string")
                         .setDefaultNumber(0)

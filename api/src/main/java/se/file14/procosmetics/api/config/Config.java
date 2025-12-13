@@ -37,82 +37,73 @@ public interface Config {
 
     /**
      * Gets a boolean value from the configuration.
-     * Looks in main config first, then default config, then returns false.
      *
      * @param key The configuration key
-     * @return The boolean value from config, default config, or false if not found in either
+     * @return The boolean value from config or false if not found
      */
     boolean getBoolean(String key);
 
     /**
      * Gets a string value from the configuration.
-     * Looks in main config first, then default config, then returns "missing-string".
      *
      * @param key The configuration key
-     * @return The processed string value from config, default config, or "missing-string" if not found in either
+     * @return The processed string value from config or "missing-string" if not found
      */
     String getString(String key);
 
     /**
      * Gets an integer value from the configuration.
-     * Looks in main config first, then default config, then returns 1.
      *
      * @param key The configuration key
-     * @return The integer value from config, default config, or 1 if not found in either
+     * @return The integer value from config or 1 if not found
      */
     int getInt(String key);
 
     /**
      * Gets a double value from the configuration.
-     * Looks in main config first, then default config, then returns 1.0.
      *
      * @param key The configuration key
-     * @return The double value from config, default config, or 1.0 if not found in either
+     * @return The double value from config or 1.0 if not found
      */
     double getDouble(String key);
 
     /**
      * Gets a list of strings from the configuration.
-     * Looks in main config first, then default config, then returns empty list.
      *
      * @param key The configuration key
-     * @return The string list from config, default config, or empty list if not found in either
+     * @return The string list from config or empty list if not found
      */
     List<String> getStringList(String key);
 
     /**
      * Gets a generic list from the configuration.
-     * Looks in main config first, then default config, then returns empty list.
      *
      * @param key The configuration key
-     * @return The generic list from config, default config, or empty list if not found in either
+     * @return The generic list from config or default config if not found
      */
     List<?> getGenericList(String key);
 
     /**
      * Gets a list of maps from the configuration.
-     * Looks in main config first, then default config, then returns empty list.
      *
      * @param key The configuration key
-     * @return The list of maps from config, default config, or empty list if not found in either
+     * @return The list of maps from config or empty list if not found
      */
     List<Map<?, ?>> getMapList(String key);
 
     /**
      * Gets the keys of a configuration section.
-     * Looks in main config first, then default config, then returns empty set.
      *
      * @param key The configuration key
-     * @return The configuration section keys from config, default config, or empty set if not found in either
+     * @return The configuration section keys from config or empty set if not found
      */
     Set<String> getSectionKeys(String key);
 
     /**
      * Gets the values of a configuration section as a map.
-     * Looks in main config first, then default config, then returns empty map.
      *
      * @param key The configuration key
-     * @return The configuration section values from config, default config, or empty map if not found in either
+     * @return The configuration section values from config or empty map if not found
      */
     Map<String, Object> getSectionValues(String key);
 
