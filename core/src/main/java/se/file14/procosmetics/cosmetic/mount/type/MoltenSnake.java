@@ -61,7 +61,7 @@ public class MoltenSnake implements MountBehavior {
             if (tailEntity.getBukkitEntity() instanceof BlockDisplay blockDisplay) {
                 blockDisplay.setBlock(BLOCK_DATA);
                 blockDisplay.setTransformationMatrix(transformationMatrix);
-                blockDisplay.setTeleportDuration(1);
+                blockDisplay.setTeleportDuration(2);
             }
             tailEntity.setPositionRotation(location.add(vector));
         }
@@ -71,12 +71,17 @@ public class MoltenSnake implements MountBehavior {
     @Override
     public void onUpdate(CosmeticContext<MountType> context, Entity entity, NMSEntity nmsEntity) {
         entity.getLocation(reusableEntityLocation);
-        Location tempLocation;
         Player player = context.getPlayer();
 
         if (player.getVehicle() == entity) {
-            tempLocation = player.getLocation();
-            entity.setVelocity(tempLocation.getDirection().multiply(0.7d));
+            // TODO: Temporary fix, rework in the future
+            // Velocity cannot be applied if AI is set to false.
+            if (entity instanceof LivingEntity livingEntity) {
+                livingEntity.setAI(true);
+            }
+            Location location = player.getLocation();
+            nmsEntity.setYaw(location.getYaw());
+            entity.setVelocity(location.getDirection().multiply(0.7d));
         }
         Location location = reusableEntityLocation;
 
