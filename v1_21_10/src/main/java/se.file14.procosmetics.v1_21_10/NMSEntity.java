@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package v1_21_10;
+package se.file14.procosmetics.v1_21_10;
 
 import com.mojang.datafixers.util.Pair;
 import net.kyori.adventure.text.Component;

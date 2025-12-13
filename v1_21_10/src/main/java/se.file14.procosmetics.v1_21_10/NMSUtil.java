@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package v1_21_10;
+package se.file14.procosmetics.v1_21_10;
 
 import io.netty.channel.Channel;
 import net.minecraft.core.BlockPos;
