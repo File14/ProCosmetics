@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package se.file14.procosmetics.v1_21;
+package se.file14.procosmetics.v1_21_11;
 
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.network.protocol.Packet;
@@ -23,8 +23,8 @@ import net.minecraft.network.protocol.game.ClientboundContainerSetSlotPacket;
 import net.minecraft.network.protocol.game.ClientboundSetEquipmentPacket;
 import net.minecraft.server.network.ServerGamePacketListenerImpl;
 import net.minecraft.world.entity.EquipmentSlot;
-import org.bukkit.craftbukkit.v1_21_R6.entity.CraftPlayer;
-import org.bukkit.craftbukkit.v1_21_R6.inventory.CraftItemStack;
+import org.bukkit.craftbukkit.v1_21_R7.entity.CraftPlayer;
+import org.bukkit.craftbukkit.v1_21_R7.inventory.CraftItemStack;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import se.file14.procosmetics.nms.AbstractNMSEquipment;

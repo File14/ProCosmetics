@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package se.file14.procosmetics.v1_21;
+package se.file14.procosmetics.v1_21_11;
 
 import com.mojang.datafixers.util.Pair;
 import net.kyori.adventure.text.Component;
@@ -26,7 +26,7 @@ import net.minecraft.network.protocol.game.*;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
-import net.minecraft.world.entity.animal.horse.Horse;
+import net.minecraft.world.entity.animal.equine.Horse;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.item.FallingBlockEntity;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -40,21 +40,20 @@ import org.bukkit.Input;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.block.data.BlockData;
-import org.bukkit.craftbukkit.v1_21_R6.CraftWorld;
-import org.bukkit.craftbukkit.v1_21_R6.block.data.CraftBlockData;
-import org.bukkit.craftbukkit.v1_21_R6.entity.CraftEntity;
-import org.bukkit.craftbukkit.v1_21_R6.entity.CraftPlayer;
-import org.bukkit.craftbukkit.v1_21_R6.inventory.CraftItemStack;
-import org.bukkit.craftbukkit.v1_21_R6.util.CraftChatMessage;
+import org.bukkit.craftbukkit.v1_21_R7.CraftWorld;
+import org.bukkit.craftbukkit.v1_21_R7.block.data.CraftBlockData;
+import org.bukkit.craftbukkit.v1_21_R7.entity.CraftEntity;
+import org.bukkit.craftbukkit.v1_21_R7.entity.CraftPlayer;
+import org.bukkit.craftbukkit.v1_21_R7.inventory.CraftItemStack;
+import org.bukkit.craftbukkit.v1_21_R7.util.CraftChatMessage;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.EntityEquipment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Vector;
+import org.jetbrains.annotations.Nullable;
 import se.file14.procosmetics.api.nms.EntityTracker;
 import se.file14.procosmetics.nms.NMSEntityImpl;
 import se.file14.procosmetics.nms.entitytype.CachedEntityType;
-
-import org.jetbrains.annotations.Nullable;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -75,7 +74,7 @@ public class NMSEntity extends NMSEntityImpl<Packet<? super ClientGamePacketList
 
     public NMSEntity(World world, CachedEntityType cachedEntityType, EntityTracker tracker) {
         super(world, cachedEntityType, tracker);
-        entity = ((net.minecraft.world.entity.EntityType<?>) cachedEntityType.getEntityTypeObject()).create(((CraftWorld) world).getHandle(), EntitySpawnReason.COMMAND);
+        entity = ((EntityType<?>) cachedEntityType.getEntityTypeObject()).create(((CraftWorld) world).getHandle(), EntitySpawnReason.COMMAND);
     }
 
     public NMSEntity(World world, BlockData blockData, EntityTracker tracker) {

@@ -293,7 +293,7 @@ public class CategoryRegistriesImpl implements CategoryRegistries {
         mounts.register(mounts.builder("infernal_horror").entityType(EntityType.SKELETON_HORSE).readFromConfig().factory(InfernalHorror::new).build());
         mounts.register(mounts.builder("lovely_sheep").entityType(EntityType.SHEEP).readFromConfig().factory(LovelySheep::new).build());
         mounts.register(mounts.builder("molten_snake").entityType(EntityType.MAGMA_CUBE).readFromConfig().factory(MoltenSnake::new).build());
-        mounts.register(mounts.builder("pirate_ship").entityType(VersionUtil.isHigherThanOrEqualTo(BukkitVersion.v1_21) ? EntityType.OAK_BOAT : EntityType.valueOf("BOAT")).readFromConfig().factory(PirateShip::new).build());
+        mounts.register(mounts.builder("pirate_ship").entityType(VersionUtil.isHigherThanOrEqualTo(BukkitVersion.v1_21_10) ? EntityType.OAK_BOAT : EntityType.valueOf("BOAT")).readFromConfig().factory(PirateShip::new).build());
         mounts.register(mounts.builder("rudolf").entityType(EntityType.HORSE).readFromConfig().factory(Rudolf::new).build());
         mounts.register(mounts.builder("slime").entityType(EntityType.SLIME).readFromConfig().factory(se.file14.procosmetics.cosmetic.mount.type.Slime::new).build());
         mounts.register(mounts.builder("unicorn").entityType(EntityType.HORSE).readFromConfig().factory(Unicorn::new).build());
